@@ -61,7 +61,7 @@ this.legend_demon_hound <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		this.actor.onDamageReceived(_attacker, _skill, _hitInfo);
 
-		if (!this.actor.isAlive() || this.actor.isDying())
+		if (!this.isAlive() || this.isDying())
 			return;
 
 		this.Sound.play(this.m.SoundOnTeleport[this.Math.rand(0, this.m.SoundOnTeleport.len() - 1)], this.Const.Sound.Volume.Skill);
