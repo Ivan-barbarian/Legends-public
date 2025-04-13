@@ -1,4 +1,4 @@
-::mods_hookExactClass("items/ammo/quiver_of_coated_arrows", function(o) {
+::mods_hookExactClass("items/ammo/legendary/quiver_of_coated_arrows", function(o) {
 	o.onDamageDealt = function ( _target, _skill, _hitInfo )
 	{
 		local item = _skill.getItem();

@@ -49,19 +49,19 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/effects
 
 	function onUpdate(_properties)
 	{
+		local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
 		if (!this.checkEntities())
 		{
-			this.updateEffect(false);
+			this.updateEffect(false, distance);
 			return;
 		}
 
 		if (!this.isInRange())
 		{
-			this.updateEffect(false);
+			this.updateEffect(false, distance);
 			return;
 		}
 
-		local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
 		local bonus = ((this.m.Vala.getFatigueMax() - this.m.Vala.getFatigue()) / 15.0) + this.m.Vala.getBravery() / 15.0;
 
 		if (this.isMastered())
@@ -114,18 +114,18 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/effects
 	{
 		if (!this.checkEntities())
 		{
-			this.updateEffect(false);
+			this.updateEffect(false, distance);
 			return;
 		}
 
 		if (!this.isInRange())
 		{
-			this.updateEffect(false);
+			this.updateEffect(false, distance);
 			return;
 		}
 
 		this.spawnIcon("status_effect_65", this.getContainer().getActor().getTile());
-		this.updateEffect(true);
+		this.updateEffect(true, distance);
 	}
 
 	function onRemoved()
