@@ -28,14 +28,8 @@ extractVersion() {
     echo "$(grep -oP 'Version = "\K[0-9]+\.[0-9]+\.[0-9]+' "$file")"
 }
 
-# Extract the major and minor versions, then append ".0" for the patch version
-getBaseVersion() {
-    local extractedVersion=$(extractVersion)
-    echo "$(echo "$extractedVersion" | sed -E 's/^([0-9]+\.[0-9]+)\.[0-9]+$/\1.0/')"
-}
-
 getLegendsAssetsVersion() {
-    local file="$1"
+    local file="scripts/!mods_preload/register_legends.nut"
     grep -oE 'mod_legends_assets\(>=([0-9]+\.[0-9]+\.[0-9]+)\)' "$file" | \
         sed -E 's/.*\(>=([0-9]+\.[0-9]+\.[0-9]+)\).*/\1/'
 }
@@ -54,5 +48,5 @@ artifactNameMod() {
   echo "mod_legends-$(extractVersion).zip"
 }
 artifactNameAssets() {
-  echo "mod_legends-assets-$(getBaseVersion).zip"
+  echo "mod_legends-assets-$(getLegendsAssetsVersion).zip"
 }
