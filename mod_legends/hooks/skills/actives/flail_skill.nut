@@ -2,10 +2,9 @@
 {
 	o.m.IsChain <- false;
 
-	local create = o.create;
-	o.create = function ()
+	o.setItem <- function (_item)
 	{
-		create();
+		this.skill.setItem(_item);
 		if (this.m.IsChain)
 		{
 			this.m.Name = "Chain Flail";
