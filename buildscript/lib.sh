@@ -34,11 +34,17 @@ getBaseVersion() {
     echo "$(echo "$extractedVersion" | sed -E 's/^([0-9]+\.[0-9]+)\.[0-9]+$/\1.0/')"
 }
 
+getLegendsAssetsVersion() {
+    local file="$1"
+    grep -oE 'mod_legends_assets\(>=([0-9]+\.[0-9]+\.[0-9]+)\)' "$file" | \
+        sed -E 's/.*\(>=([0-9]+\.[0-9]+\.[0-9]+)\).*/\1/'
+}
+
 # Builds asset mod script dynamically, according to versions of main mod
 buildAssetsScript() {
     echo "::LegendsAssets <- {
     ID = \"mod_legends_assets\",
-    Version = \"$(getBaseVersion)\",
+    Version = \"$(getLegendsAssetsVersion)\",
     Name = \"Legends assets\"
 };
 ::mods_registerMod(::LegendsAssets.ID, ::LegendsAssets.Version, ::LegendsAssets.Name);"
