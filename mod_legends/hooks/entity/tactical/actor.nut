@@ -210,8 +210,12 @@
 		}
 		local isAliedPtrs = [];
 		foreach(i, actor in otherActors) {
+			if (actor == null)
+				continue;
 			isAliedPtrs.push(actor.isAlliedWith);
 			actor.isAlliedWith = function(_other) {
+				if (_other == null)
+					return false;
 				// check if checkMorale should happen when enemies are affected by it
 				return isAliedPtrs[i](_other) && this.m.CurrentProperties.IsAffectedByMovementMorale;
 			}.bindenv(actor);
