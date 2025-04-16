@@ -141,6 +141,11 @@
 			skill.setItem(this);
 	}
 
+	o.onSlingUpdateProperties <- function ()
+	{
+		this.onPutIntoBag();
+	}
+
 	o.onRemovedFromBag <- function()
 	{
 		this.item.onRemovedFromBag();

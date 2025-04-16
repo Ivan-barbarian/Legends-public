@@ -34,9 +34,8 @@
 	o.onUpdateProperties <- function (_properties)
 	{
 		this.weapon.onUpdateProperties(_properties);
-		foreach (item in this.getContainer().getActor().getItems().getAllItemsAtSlot(this.Const.ItemSlot.Bag))
-		{
-			item.onPutIntoBag();
+		foreach (item in this.getContainer().getActor().getItems().getAllItemsAtSlot(this.Const.ItemSlot.Bag)) {
+			item.onSlingUpdateProperties();
 		}
 	}
 });
