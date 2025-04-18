@@ -4,7 +4,7 @@ this.legend_random_3_scenario <- this.inherit("scripts/scenarios/world/starting_
 	{
 		this.m.ID = "scenario.legend_random_3";
 		this.m.Name = "Random Trio";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_80.png[/img][/p][p]Having fled a raid, three fellows decide to forge out a new path.\n\n[color=#bcad8c]Random Backgrounds:[/color] The backgrounds are different each time you start.\n[color=#bcad8c]Random equipment:[/color] The equipment you begin with is different each time.\n[color=#bcad8c]Random perks:[/color] The abilities of your mercenaries will be different each time.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_80.png[/img][/p][p]Having fled a raid, three fellows decide to forge out a new path.\n\n[color=#bcad8c]Random Backgrounds:[/color] The backgrounds are different each time you start.\n[color=#bcad8c]Random Equipment:[/color] The equipment you begin with is different each time.\n[color=#bcad8c]Random Perks:[/color] The abilities of your mercenaries will be different each time.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 220;
 	}

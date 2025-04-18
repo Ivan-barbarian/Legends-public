@@ -4,7 +4,7 @@ this.legend_random_party_scenario <- this.inherit("scripts/scenarios/world/start
 	{
 		this.m.ID = "scenario.legend_random_party";
 		this.m.Name = "Random Party";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_80.png[/img][/p][p]A wild new adventure each time, 1-6 party members randomly chosen from all backgrounds.\n\n[color=#bcad8c]Random Backgrounds:[/color] The backgrounds are different each time you start.\n[color=#bcad8c]Random equipment:[/color] The equipment you begin with is different each time.\n[color=#bcad8c]Random perks:[/color] The abilities of your mercenaries will be different each time.\n[color=#bcad8c]Random supplies:[/color] Randomly get 3 times less to 3 times more money, tools, meds and ammo.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_80.png[/img][/p][p]A wild new adventure each time, 1-6 party members randomly chosen from all backgrounds.\n\n[color=#bcad8c]Random Backgrounds:[/color] The backgrounds are different each time you start.\n[color=#bcad8c]Random Equipment:[/color] The equipment you begin with is different each time.\n[color=#bcad8c]Random Perks:[/color] The abilities of your mercenaries will be different each time.\n[color=#bcad8c]Random Supplies:[/color] Get between 3 times less or 3 times more money, tools, medicine and ammo.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 200;
 	}
