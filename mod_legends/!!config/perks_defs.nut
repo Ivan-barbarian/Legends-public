@@ -4444,4 +4444,15 @@ perkDefObjects.push({
 	Const = "LegendStrengthInNumbers"
 });
 
+::Legends.Perk.LegendBackswing <- null;
+perkDefObjects.push({
+	ID = "perk.legend_backswing",
+	Script = "scripts/skills/perks/perk_legend_backswing",
+	Name = ::Const.Strings.PerkName.LegendBackswing,
+	Tooltip = ::Const.Strings.PerkDescription.LegendBackswing,
+	Icon = "ui/perks/feint_circle.png",
+	IconDisabled = "ui/perks/feint_circle_bw.png",
+	Const = "LegendBackswing"
+});
+
 ::Const.Perks.addPerkDefObjects(perkDefObjects);

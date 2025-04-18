@@ -408,7 +408,7 @@ if (!("Perks" in ::Const))
 		[],
 		[::Legends.Perk.SpecSword],
 		[],
-		[],
+		[::Legends.Perk.LegendBackswing],
 		[]
 	]
 };
