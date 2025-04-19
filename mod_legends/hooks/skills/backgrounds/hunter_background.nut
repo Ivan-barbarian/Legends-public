@@ -95,7 +95,9 @@
 				this.Const.Perks.SchratTree,
 				this.Const.Perks.ArcherTree
 			],
-			Class = [],
+			Class = [
+				this.Const.Perks.SharpshooterClassTree
+			],
 			Magic = []
 		}
 	}

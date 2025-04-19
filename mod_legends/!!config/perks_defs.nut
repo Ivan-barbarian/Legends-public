@@ -4455,4 +4455,37 @@ perkDefObjects.push({
 	Const = "LegendBackswing"
 });
 
+::Legends.Perk.LegendSpecialistSharpshooter <- null;
+perkDefObjects.push({
+	ID = "perk.legend_specialist_sharpshooter",
+	Script = "scripts/skills/perks/perk_legend_specialist_sharpshooter",
+	Name = ::Const.Strings.PerkName.LegendSpecialistSharpshooter,
+	Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistSharpshooter,
+	Icon = "ui/perks/perk_spec_longbow.png",
+	IconDisabled = "ui/perks/perk_spec_longbow_bw.png",
+	Const = "LegendSpecialistSharpshooter"
+});
+
+::Legends.Perk.LegendSpecialistRaider <- null;
+perkDefObjects.push({
+	ID = "perk.legend_specialist_raider",
+	Script = "scripts/skills/perks/perk_legend_specialist_raider",
+	Name = ::Const.Strings.PerkName.LegendSpecialistRaider,
+	Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistRaider,
+	Icon = "ui/perks/perk_spec_raider.png",
+	IconDisabled = "ui/perks/perk_spec_raider_bw.png",
+	Const = "LegendSpecialistRaider"
+});
+
+::Legends.Perk.LegendSpecialistSpearfisher <- null;
+perkDefObjects.push({
+	ID = "perk.legend_specialist_spearfisher",
+	Script = "scripts/skills/perks/perk_legend_specialist_spearfisher",
+	Name = ::Const.Strings.PerkName.LegendSpecialistSpearfisher,
+	Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistSpearfisher,
+	Icon = "ui/perks/perk_spec_javelin.png",
+	IconDisabled = "ui/perks/perk_spec_javelin_bw.png",
+	Const = "LegendSpecialistSpearfisher"
+});
+
 ::Const.Perks.addPerkDefObjects(perkDefObjects);

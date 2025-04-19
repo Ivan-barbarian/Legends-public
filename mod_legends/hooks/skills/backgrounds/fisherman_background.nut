@@ -54,7 +54,8 @@
 				this.Const.Perks.LindwurmTree
 			],
 			Class = [
-				this.Const.Perks.BeastClassTree
+				this.Const.Perks.BeastClassTree,
+				this.Const.Perks.SpearfisherClassTree
 			],
 			Magic = []
 		}

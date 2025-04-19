@@ -74,7 +74,9 @@
 				this.Const.Perks.CaravanTree,
 				this.Const.Perks.MercenaryTree
 			],
-			Class = [],
+			Class = [
+				this.Const.Perks.RaiderClassTree
+			],
 			Magic = []
 		}
 	}
