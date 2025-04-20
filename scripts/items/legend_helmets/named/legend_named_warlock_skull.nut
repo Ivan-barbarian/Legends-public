@@ -37,6 +37,14 @@ this.legend_named_warlock_skull <- this.inherit("scripts/items/legend_helmets/le
 		return result;
 	}
 
+	function resetStats()
+	{
+		this.m.Condition = 90;
+		this.m.ConditionMax = 90;
+		this.m.StaminaModifier = -2;
+		this.m.Vision = 0;
+	}
+
 	// taste the pain
 	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
 	{
