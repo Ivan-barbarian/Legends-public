@@ -111,12 +111,12 @@ this.legend_safeguarded_effect <- this.inherit("scripts/skills/skill", {
 		local rotate = false;
 		local canRotate = !this.m.Protector.getCurrentProperties().IsRooted && !ward.getCurrentProperties().IsRooted && ward.getCurrentProperties().IsMovable && !ward.getCurrentProperties().IsImmuneToRotation && (protectorHasAdjacentEnemies || this.m.Protector.getSkills().hasPerk(::Legends.Perk.LegendTwirl));
 
-		if (attackerIsAdjacentToWard && attackerIsAdjacentToProtector && protectorIsAdjacentToWard)
+		if (_skill != null && attackerIsAdjacentToWard && attackerIsAdjacentToProtector && protectorIsAdjacentToWard)
 		{
 			ret = _skill.attackEntity(_user, this.m.Protector);
 		}
 
-		if ((attackerIsAdjacentToWard || _skill != null && _skill.isRanged()) && !attackerIsAdjacentToProtector && !protectorHasAdjacentEnemies && protectorIsAdjacentToWard && canRotate)
+		if (_skill != null && (attackerIsAdjacentToWard || _skill.isRanged()) && !attackerIsAdjacentToProtector && !protectorHasAdjacentEnemies && protectorIsAdjacentToWard && canRotate)
 		{
 			this.rotate(this.m.Protector, this.getContainer().getActor());
 			ret = _skill.attackEntity(_user, this.m.Protector);
