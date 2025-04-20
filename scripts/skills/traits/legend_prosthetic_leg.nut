@@ -76,7 +76,7 @@ this.legend_prosthetic_leg <- this.inherit("scripts/skills/traits/character_trai
 		_properties.InitiativeMult *= 0.8;
 	}
 
-	o.onAnySkillUsed <- function ( _skill, _targetEntity, _properties )
+	function onAnySkillUsed ( _skill, _targetEntity, _properties )
 	{
 		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.LegendKick) && this.m.IsUpgraded)
 		{
