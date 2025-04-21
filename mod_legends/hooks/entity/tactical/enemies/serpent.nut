@@ -4,7 +4,13 @@
 	o.create = function ()
 	{
 		create();
-		this.m.ExcludedInjuries.push("injury.cut_leg_muscles");
+		this.m.ExcludedInjuries.extend([
+			"injury.cut_leg_muscles",
+			"injury.split_shoulder",
+			"injury.dislocated_shoulder",
+			"injury.bruised_leg"
+
+		]);
 	}
 
 	local onInit = o.onInit;
