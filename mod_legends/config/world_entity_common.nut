@@ -1189,7 +1189,7 @@ if (!("World" in ::Const))
 	if (_script == "")
 		return selected[1];
 
-	if (selected[1] == "")
+	if (selected[1] == "" || selected[1] == null)
 		return null;
 
 	local ret = ::new(_script + selected[1]);

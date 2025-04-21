@@ -334,47 +334,33 @@ this.legend_bandit_veteran <- this.inherit("scripts/entity/tactical/human", {
 
 			if (this.Math.rand(1, 100) <= 75)
 			{
-				if (this.Math.rand(1, 100) <= 75)
-				{
-					this.m.Items.equip(this.new("scripts/items/shields/kite_shield"));
-				}
-				else
-				{
-					this.m.Items.equip(this.new("scripts/items/shields/legend_tower_shield"));
-				}
+				this.getItems().equip(::Const.World.Common.pickItem([
+					[3, "shields/kite_shield"],
+					[1, "shields/legend_tower_shield"],
+				], "scripts/items/"));
 			}
 		}
 
 		if (this.getIdealRange() == 1 && this.Math.rand(1, 100) <= 35)
 		{
-			r = this.Math.rand(1, 3);
-
-			if (r == 1)
-			{
-				this.m.Items.addToBag(this.new("scripts/items/weapons/throwing_axe"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.addToBag(this.new("scripts/items/weapons/javelin"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.addToBag(this.new("scripts/items/weapons/throwing_spear"));
-			}
+			this.getItems().addToBag(::Const.World.Common.pickItem([
+				[1, "weapons/throwing_axe"],
+				[1, "weapons/javelin"],
+				[1, "weapons/throwing_spear"],
+			], "scripts/items/"));
 		}
 
-		local item = this.Const.World.Common.pickArmor([
+		this.getItems().equip(::Const.World.Common.pickArmor([
 			[1, ::Legends.Armor.Standard.reinforced_mail_hauberk],
 			[1, ::Legends.Armor.Standard.scale_armor],
 			[2, ::Legends.Armor.Standard.heavy_lamellar_armor],
 			[2, ::Legends.Armor.Standard.bandit_armor_heavy],
 			[3, ::Legends.Armor.Standard.bandit_armor_ultraheavy]
-		]);
-		this.m.Items.equip(item);
+		]));
 
 		if (this.Math.rand(1, 100) <= 85)
 		{
-			local item = this.Const.World.Common.pickHelmet([
+			this.getItems().equip(::Const.World.Common.pickHelmet([
 				[1, ::Legends.Helmet.Standard.nasal_helmet],
 				[1, ::Legends.Helmet.Standard.rondel_helm],
 				[1, ::Legends.Helmet.Standard.barbute_helmet],
@@ -386,11 +372,7 @@ this.legend_bandit_veteran <- this.inherit("scripts/entity/tactical/human", {
 				[1, ::Legends.Helmet.Standard.nasal_helmet_with_rusty_mail],
 				[1, ::Legends.Helmet.Standard.rusty_mail_coif],
 				[1, ::Legends.Helmet.Standard.headscarf]
-			]);
-			if (item != null)
-			{
-				this.m.Items.equip(item);
-			}
+			]));
 		}
 	}
 
