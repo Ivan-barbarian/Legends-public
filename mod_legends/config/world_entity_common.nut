@@ -529,6 +529,20 @@ if (!("World" in ::Const))
 	UpgradeResourceCost = 50,
 }
 
+::Const.World.Common.getMinibossChances <- function (_template, _minibossify) {
+	local minibossChanceMap = {};
+	foreach (troop in _template.Troops) {
+		if (troop.Type.ID in minibossChanceMap)
+			continue;
+
+		local chance = _minibossify;
+		chance += ::World.getTime().Days > 100 ? 0 : -1;
+		chance += ::Const.LegendMod.GetFavEnemyBossChance(troop.Type.ID);
+		minibossChanceMap[troop.Type.ID] <- chance;
+	}
+	return minibossChanceMap;
+}
+
 ::Const.World.Common.assignTroops = function( _party, _partyList, _resources, _minibossify = 0, _weightMode = 1 )
 {
 	local p;
@@ -631,24 +645,12 @@ if (!("World" in ::Const))
 	_party.setVisionRadius(this.Const.World.Settings.Vision * p.VisionMult);
 	_party.getSprite("body").setBrush(p.Body);
 
-
-	local troopMbMap = {};
-	foreach( t in p.Troops )
-	{
-		local key = "Enemy" + t.Type.ID;
-		if (!(key in troopMbMap))
-		{
-			troopMbMap[key] <- this.Const.LegendMod.GetFavEnemyBossChance(t.Type.ID);
-		}
-
-		local mb = troopMbMap[key];
-
-		for( local i = 0; i != t.Num; i = ++i )
-		{
-			this.addTroop(_party, t, false, mb);
+	local minibossChanceMap = this.getMinibossChances(p, _minibossify);
+	foreach( t in p.Troops ) {
+		for( local i = 0; i != t.Num; i = ++i ) {
+			this.addTroop(_party, t, false, minibossChanceMap[t.Type.ID]);
 		}
 	}
-
 	_party.updateStrength();
 	return p;
 }
@@ -752,17 +754,9 @@ if (!("World" in ::Const))
 		}
 	}
 
-	local troopMbMap = {};
+	local minibossChanceMap = this.getMinibossChances(p, _minibossify);
 	foreach( t in p.Troops )
 	{
-		local key = "Enemy" + t.Type.ID;
-		if (!(key in troopMbMap))
-		{
-			troopMbMap[key] <- this.Const.LegendMod.GetFavEnemyBossChance(t.Type.ID);
-		}
-		local mb = troopMbMap[key];
-		mb += _minibossify;
-
 		for( local i = 0; i != t.Num; i = ++i )
 		{
 			local unit = clone t.Type;
@@ -772,7 +766,7 @@ if (!("World" in ::Const))
 			if (unit.Variant > 0)
 			{
 				local upperBound = ("DieRoll" in unit) ? unit.DieRoll : 100;
-				if (this.Math.rand(1, upperBound) > unit.Variant + mb + (this.World.getTime().Days > 100 ? 0 : -1))
+				if (this.Math.rand(1, upperBound) > unit.Variant + minibossChanceMap[t.Type.ID] + (this.World.getTime().Days > 100 ? 0 : -1))
 				{
 					unit.Variant = 0;
 				}
