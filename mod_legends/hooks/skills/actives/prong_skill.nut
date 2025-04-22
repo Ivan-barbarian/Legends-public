@@ -33,10 +33,8 @@
 		return tooltip;
 	}
 
-	local onAnySkillUsed = o.onAnySkillUsed;
 	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties )
 	{
-		onAnySkillUsed( _skill, _targetEntity, _properties );
 		if (_skill == this)
 		{
 			if (_properties.IsSpecializedInSpearThrust)
@@ -48,8 +46,8 @@
 
 			if (_targetEntity != null && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
 			{
-				_properties.MeleeSkill += -15;
-				this.m.HitChanceBonus += -5;
+				_properties.MeleeSkill -= 15;
+				this.m.HitChanceBonus -= 5;
 			}
 		}
 	}
