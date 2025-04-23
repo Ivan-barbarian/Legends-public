@@ -113,7 +113,7 @@
 ::Legends.Compat.HardIncompat.add("CampaignTweakster", "6");
 ::Legends.Compat.HardIncompat.add("mod_cartupgrade", "1.0");
 ::Legends.Compat.HardIncompat.add("mod_challengeScenarioPack", "1.0");
-::Legends.Compat.HardIncompat.add("mod_champion_beasts", "1.2.0");
+::Legends.Compat.HardIncompat.add("mod_champion_beasts", "1.2.0"); // Necro's Vanila champ beasts.
 ::Legends.Compat.HardIncompat.add("mod_Chirutiru_enemies", "1", "Sellswords not compaible, there's Legends version of this mod (SSU) on Legends Discord"); // This entry should cover old Sellswords
 ::Legends.Compat.HardIncompat.add("sarisofoi_company_tabards"); // Company Tabards
 ::Legends.Compat.HardIncompat.add("comrades_mod", "4.3.0");
@@ -132,6 +132,7 @@
 ::Legends.Compat.HardIncompat.add("mod_faster", null, "Use Swifter instead, found on Nexus");
 ::Legends.Compat.HardIncompat.add("mod_fastest", null, "Use Swifter instead, found on Nexus");
 ::Legends.Compat.HardIncompat.add("mod_legends_favoured_enemy_refund", "2.0.1");
+::Legends.Compat.SoftIncompat.add("mod_fun_facts", "0.5.0"); // Seen some reports causing hard crashes with this mod.
 ::Legends.Compat.HardIncompat.add("graven_passive_shield_damage_bonus", "1.0");
 ::Legends.Compat.HardIncompat.add("graven_plentiful_paints", "1.1");
 ::Legends.Compat.HardIncompat.add("mod_hackflows_perks", "1.4");
@@ -220,7 +221,6 @@
 ::Legends.Compat.SoftIncompat.add("mod_career_stats", "1.0.2");
 ::Legends.Compat.SoftIncompat.add("mod_cultists", "1.04"); // Davkul Rising
 ::Legends.Compat.SoftIncompat.add("mod_fantasybro", "1.0");
-::Legends.Compat.SoftIncompat.add("mod_fun_facts", "0.5.0");
 ::Legends.Compat.SoftIncompat.add("mod_find_legendary_locations", "1", "Use Chopek's Find Legendary Maps instead, at Nexus or Legends Discord (#submod_files/Find Legendary Maps)");
 ::Legends.Compat.SoftIncompat.add("mod_necropolis", "1.0");
 ::Legends.Compat.SoftIncompat.add("mod_PLHO", "0.1.1"); // Darx's Player Hideout
