@@ -34,4 +34,20 @@
 	"Moronic Plungers",
 	"The Bloodhound Gang"
 ]);
+
 ::Const.Strings.FreeCompanyNames <- clone ::Const.Strings.MercenaryCompanyNames;
+
+local gt = this.getroottable();
+
+if (!("Encounters" in gt.Const))
+{
+    gt.Const.Encounters <- {};
+}
+
+
+if (!("TownTitleTemplates" in gt.Const.Encounters))
+{
+    gt.Const.TownTitleTemplates <- {};
+}
+
+gt.Const.Encounters.TownTitleTemplates= ["{While at %settlement... | Strolling through %settlement% | Something\'s up at %settlement}"];
