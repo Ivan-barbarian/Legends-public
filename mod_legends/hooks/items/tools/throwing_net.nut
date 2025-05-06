@@ -50,14 +50,14 @@
 			}
 		}
 
-		if (m.Ammo <= 0)
+		if (m.Ammo <= 0){
 			result.push({
 				id = 10,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
 				text = "[color=" + ::Const.UI.Color.NegativeValue + "]Is broken and useless[/color]"
 			});
-
+		}
 		return result;
 	}
 

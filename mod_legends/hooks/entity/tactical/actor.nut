@@ -628,6 +628,32 @@
 			onDeath(null, _skill, _tile, _fatalityType);
 		else
 			onDeath(_killer, _skill, _tile, _fatalityType);
+
+
+		// Drops net if net flags are met. It should be used in dropLoot to free space here
+		if (this.getFlags().has("DropNet") && this.getFlags().get("DropNet")){
+			local net;
+
+			if (this.getFlags().has("IsReinforcedNet") && this.getFlags().get("IsReinforcedNet"))
+				net = this.new("scripts/items/tools/reinforced_throwing_net");
+			else
+				net = this.new("scripts/items/tools/throwing_net");
+
+			if (!this.getFlags().has("IsByNetCasting") || !this.getFlags().get("IsByNetCasting")){
+				net.m.Ammo = 0; 
+				net.updateAmmo();
+			}
+			
+			if (net != null){
+				if (net.drop(this.getTile())) {// drops the net on the tile
+					::Tactical.Entities.addNetTiles(this.getTile());
+				}
+			}
+
+			this.getFlags().remove("DropNet");
+   			this.getFlags().remove("IsReinforcedNet");
+    		this.getFlags().remove("IsByNetCasting");
+		}
 	}
 
 	// local onResurrected = o.onResurrected;
@@ -645,5 +671,5 @@
 	//	 o.m.BloodPoolScale = 1.25;
 	//	 o.m.BloodSplatterOffset = this.createVec(-1, -1);
 	// }
-	// }
+	// 
 });
