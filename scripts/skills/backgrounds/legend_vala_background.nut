@@ -87,6 +87,8 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 	function getTooltip()
 	{
 		local ret = this.character_background.getTooltip();
+		if (this.getContainer() == null)
+			return ret; // this is for crafting because the preview in crafting screen creates the background but it has no actor attached
 		ret.extend([
 		{
 			id = 13,
@@ -116,7 +118,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 			});
 		}
 
-		return ret
+		return ret;
 	}
 
 	function onBuildDescription()
