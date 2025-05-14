@@ -4,7 +4,7 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
     },
     function create() {
         this.createScreens();
-        this.m.Type = "encounter.legend_recruitment_druid_encounter";
+        this.m.Type = "encounter.legend_recruitment_druid_camp_encounter";
         this.m.Name = "The forest dies";
 		this.m.Cooldown = 60 * ::World.getTime().SecondsPerDay;
 	}
