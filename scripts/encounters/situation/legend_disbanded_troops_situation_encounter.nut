@@ -5,7 +5,7 @@ this.legend_disbanded_troops_situation_encounter <- this.inherit("scripts/encoun
     function create() {
         this.createScreens();
         this.m.Type = "legend_disbanded_troops_situation_encounter";
-        this.m.Name = "Disbanded Troops";
+        this.m.Name = "{While at %settlement... | Strolling through %settlement%. | Something\'s up at %settlement.}";
     }
 
     function createScreens() {
