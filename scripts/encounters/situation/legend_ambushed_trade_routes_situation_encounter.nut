@@ -3,7 +3,7 @@ this.legend_ambushed_trade_routes_situation_encounter <- this.inherit("scripts/e
     function create() {
         this.createScreens();
         this.m.Type = "legend_ambushed_trade_routes_situation_encounter";
-        this.m.Name = "Empty Markets in Town";
+        this.m.Name = "{While at %settlement... | Strolling through %settlement%. | Something\'s up at %settlement.}";
     }
 
     function createScreens() {
