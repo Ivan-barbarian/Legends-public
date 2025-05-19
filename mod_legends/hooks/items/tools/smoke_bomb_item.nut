@@ -6,7 +6,7 @@
 	o.create = function()
 	{
 		create();
-		this.m.Description = "A flask filled with the concentrate of a Lindwurm\'s acidic blood. It is highly corrosive to many materials and burns through armor quickly.";
+		this.m.Description = "A small pot that quickly creates a dense smoke cloud when broken on the ground. Useful for covering movement.";
 		this.m.OriginalDescription = this.m.Description;
 		this.m.Value = 700;
 		this.m.OriginalValue = this.m.Value;
