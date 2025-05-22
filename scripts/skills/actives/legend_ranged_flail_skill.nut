@@ -81,7 +81,7 @@ this.legend_ranged_flail_skill <- this.inherit("scripts/skills/skill", {
 		return this.attackEntity(_user, _targetTile.getEntity());
 	}
 
-	q.onAnySkillUsed <- function( _skill, _targetEntity, _properties )
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_skill == this)
 		{
