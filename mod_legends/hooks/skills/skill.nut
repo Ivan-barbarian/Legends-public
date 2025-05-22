@@ -1225,6 +1225,14 @@
 			toHit = toHit + this.Const.Combat.LevelDifferenceToHitMalus * levelDifference;
 		}
 
+		if (!this.m.IsShieldRelevant) {
+			local shield = _targetEntity.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+			if (shield != null && shield.isItemType(this.Const.Items.ItemType.Shield)) {
+				local shieldBonus = (this.m.IsRanged ? shield.getRangedDefense() : shield.getMeleeDefense()) * (_targetEntity.getCurrentProperties().IsSpecializedInShields ? 1.25 : 1.0);
+				toHit = toHit + shieldBonus;
+			}
+		}
+
 		local shieldBonus = 0;
 		local shield = _targetEntity.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 		if (shield != null && !shield.isItemType(this.Const.Items.ItemType.Shield))
