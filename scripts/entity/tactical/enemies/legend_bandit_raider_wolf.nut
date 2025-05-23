@@ -123,6 +123,9 @@ this.legend_bandit_raider_wolf <- this.inherit("scripts/entity/tactical/enemies/
 				this.m.Items.equip(item);
 			}
 		}
+
+		this.assignPerks();
+
 	}
 
 });
