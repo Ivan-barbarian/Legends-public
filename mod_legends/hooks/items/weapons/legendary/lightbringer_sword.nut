@@ -21,7 +21,7 @@
 	{
 		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.SlashLightning))
 		{
-			::Legends.Actives.grant(this, ::Legends.Active.Slash);
+			::Legends.Actives.grant(this.weapon, ::Legends.Active.Slash);
 			return;
 		}
 
@@ -31,10 +31,7 @@
 	o.onAnySkillUsed <- function ( _skill, _targetEntity, _properties )
 	{
 		if (_skill.getItem() != null && _skill.getItem().getID() == this.getID() && _targetEntity != null)
-		{
-			::logInfo("we're adding tile");
 			this.m.TargetTile = _targetEntity.getTile();
-		}
 	}
 
 	o.applyEffect <- function ( _data, _delay )
@@ -84,7 +81,6 @@
 
 		if (targetTile != null && _target != null && _target.isAlive() && !_target.isDying())
 		{
-			::logInfo("we're here");
 			target = targetTile.getEntity();
 			selectedTargets.push(target.getID());
 		}

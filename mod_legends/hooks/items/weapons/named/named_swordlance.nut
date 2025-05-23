@@ -11,7 +11,7 @@
 	{
 		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.Strike))
 		{
-			::Legends.Actives.grant(this, ::Legends.Active.LegendScytheCleave, function (_skill)
+			::Legends.Actives.grant(this.weapon, ::Legends.Active.LegendScytheCleave, function (_skill)
 			{
 				_skill = this.new("scripts/skills/actives/legend_scythe_cleave_skill"); // replace strike with scythe cleave
 				_skill.m.Icon = "skills/active_200.png";

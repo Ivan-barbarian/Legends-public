@@ -17,21 +17,15 @@
 
 	o.addSkill <- function( _skill )
 	{
-		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.SplitShield) && !::Legends.Actives.has(this.getContainer().getActor(), ::Legends.Active.Swing))
+		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.SplitShield))
 		{
-			::Legends.Actives.grant(this, ::Legends.Active.Swing, function (_skill) {
+			::Legends.Actives.grant(this.weapon, ::Legends.Active.Swing, function (_skill) {
 				_skill.setApplyAxeMastery(true);
 			}.bindenv(this));
+			::Legends.Actives.grant(this.weapon, ::Legends.Active.SplitShield);
 			return;
 		}
 
 		weapon.addSkill(_skill);
-	}
-
-	local onEquip = o.onEquip;
-	o.onEquip = function ()
-	{
-		onEquip();
-		::Legends.Actives.grant(this, ::Legends.Active.SplitShield)
 	}
 });
