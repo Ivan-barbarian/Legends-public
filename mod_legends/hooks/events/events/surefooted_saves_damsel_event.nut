@@ -10,7 +10,7 @@
 	}
 
 	local onUpdateScore = o.onUpdateScore;
-	o.onUpdateScore()
+	o.onUpdateScore = function ()
 	{
 		onUpdateScore();
 		if (this.m.Surefooted != null)
