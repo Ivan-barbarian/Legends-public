@@ -19,7 +19,7 @@ this.legend_risen_legion_intro_event<- this.inherit("scripts/events/event", {
 						this.World.uncoverFogOfWar(_event.m.Location.getTile().Pos, 700.0);
 						// _event.m.Location.getFlags().set("IsEventLocation", true);
 						_event.m.Location.setDiscovered(true);
-						this.World.getCamera().moveTo(_event.m.Location);
+						// this.World.getCamera().moveTo(_event.m.Location);
 						return 0;
 					} //entity/world/locations/legendary/black_monolith_location
 
