@@ -186,6 +186,30 @@
 	{
 		this.clearSkills();
 		if (this.m.Container != null && ("getSkills" in this.getContainer().getActor())) this.getContainer().getActor().getSkills().update();
+		maybeUpdateParryingDaggerSkills();
+	}
+
+	// Parrying dagger may hide its skills when the main hand weapon is stronger.
+	// So when the main hand is unequipped, we check if we have to re-add the skills.
+	function maybeUpdateParryingDaggerSkills() {
+		// Check we are not a parrying dagger (otherwise this will stack overflow)
+		if (isParryingDagger(this)) {
+			return;
+		}
+		local offhand = getContainer().getActor().getOffhandItem();
+		if (!isParryingDagger(offhand)) {
+			return;
+		}
+		offhand.onUnequip();
+		offhand.onEquip();
+	}
+
+	function isParryingDagger(_item) {
+		if (_item == null || !("m" in _item)) {
+			return false;
+		}
+		return _item.m.ID == "shield.legend_parrying_dagger"
+			|| _item.m.ID == "shield.legend_named_parrying_dagger";
 	}
 
 	o.onEquip = function ()
