@@ -31,7 +31,7 @@
 		if (shield != null)
 		{
 			this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectSplitShield);
-			local damage = calculateDamage(_targetTile.getEntity());
+			local damage = calculateDamage(target);
 
 			local conditionBefore = shield.getCondition();
 			shield.applyShieldDamage(damage);
@@ -47,7 +47,7 @@
 			{
 				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 				{
-					local logMessage = this.Const.UI.getColorizedEntityName(_user) + " has destroyed " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + "\'s shield";
+					local logMessage = this.Const.UI.getColorizedEntityName(_user) + " has destroyed " + this.Const.UI.getColorizedEntityName(target) + "\'s shield";
 					if (this.getContainer().hasPerk(::Legends.Perk.LegendSmashingShields))
 					{
 						_user.setActionPoints(this.Math.min(_user.getActionPointsMax(), _user.getActionPoints() + 4));

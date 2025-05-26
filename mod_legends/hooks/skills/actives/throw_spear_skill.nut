@@ -108,19 +108,19 @@
 
 	o.onUse = function ( _user, _targetTile )
 	{
-		local targetEntity = _targetTile.getEntity();
+		local target = _targetTile.getEntity();
 		this.consumeAmmo();
-		local shield = targetEntity.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+		local shield = target.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 
 		if (shield != null && shield.isItemType(this.Const.Items.ItemType.Shield))
 		{
-			local damage = this.calculateDamage();
+			local damage = this.calculateDamage(target);
 
 			if (shield.getID() == "weapon.legend_parrying_dagger" || shield.getID() == "shield.legend_named_parrying_dagger")
 			{
 				damage *= 0.20;
 			}
-			local flip = !this.m.IsProjectileRotated && targetEntity.getPos().X > _user.getPos().X;
+			local flip = !this.m.IsProjectileRotated && target.getPos().X > _user.getPos().X;
 			local time = this.Tactical.spawnProjectileEffect(this.Const.ProjectileSprite[this.m.ProjectileType], _user.getTile(), _targetTile, 1.0, this.m.ProjectileTimeScale, this.m.IsProjectileRotated, flip);
 			this.Time.scheduleEvent(this.TimeUnit.Virtual, time, this.onApplyShieldDamage.bindenv(this), {
 				User = _user,
