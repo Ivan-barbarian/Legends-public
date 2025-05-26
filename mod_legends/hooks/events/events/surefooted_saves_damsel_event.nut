@@ -9,18 +9,15 @@
 		}
 	}
 
-	local onUpdateScore = o.onUpdateScore;
 	o.onUpdateScore = function ()
 	{
-		onUpdateScore();
-		if (this.m.Surefooted != null)
-		{
-			if (this.m.Surefooted.getGender() == 0)
-			{
-				return;
-			}
-		}
 		local brothers = this.World.getPlayerRoster().getAll();
+
+		if (brothers.len() < 3)
+		{
+			return;
+		}
+
 		local candidates = [];
 
 		foreach( bro in brothers )
@@ -36,7 +33,33 @@
 			return;
 		}
 
+		local towns = this.World.EntityManager.getSettlements();
+		local nearTown = false;
+		local town;
+		local playerTile = this.World.State.getPlayer().getTile();
+
+		foreach( t in towns )
+		{
+			if (t.isMilitary())
+			{
+				continue;
+			}
+
+			if (t.getTile().getDistanceTo(playerTile) <= 3 && t.isAlliedWithPlayer())
+			{
+				nearTown = true;
+				town = t;
+				break;
+			}
+		}
+
+		if (!nearTown)
+		{
+			return;
+		}
+
 		this.m.Surefooted = candidates[this.Math.rand(0, candidates.len() - 1)];
+		this.m.Town = town;
 		this.m.Score = candidates.len() * 15;
 	}
 });
