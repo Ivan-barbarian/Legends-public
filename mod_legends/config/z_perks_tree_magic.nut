@@ -116,82 +116,16 @@ if (!("Perks" in ::Const))
 	ID = "RangerHuntMagicTree",
 	Name = "Ranger",
 	Descriptions = [
-		"hunting big game"
-	],
-	Tree = [
-		[],
-		[
-			::Legends.Perk.LegendSummonHound,
-			::Legends.Perk.LegendNightvision
-		],
-		[
-			::Legends.Perk.LegendSummonFalcon,
-			::Legends.Perk.DevastatingStrikes
-		],
-		[
-			::Legends.Perk.LegendSpecPoison
-		],
-		[
-			::Legends.Perk.LegendSummonWolf
-		],
-		[],
-		[
-			::Legends.Perk.LegendBigGameHunter,
-		]
-	]
-};
-
-::Const.Perks.ArcherCommandTree <- {
-	ID = "ArcherCommandTree",
-	Name = "ArcherCommand",
-	Descriptions = [
-		"archer command"
+		"hunting"
 	],
 	Tree = [
 		[],
 		[],
-		[
-			::Legends.Perk.LegendAmmoBinding
-		],
-		[
-			::Legends.Perk.LegendIncoming
-		],
-		[
-			::Legends.Perk.LegendAmmoBundles
-		],
-		[
-			::Legends.Perk.LegendCoordinatedVolleys
-		],
-		[]
-	]
-};
-
-::Const.Perks.MasterArcherTree <- {
-	ID = "MasterArcherTree",
-	Name = "MasterArcher",
-	Descriptions = [
-		"archery"
-	],
-	Tree = [
-		[
-			::Legends.Perk.LegendBlendIn,
-			::Legends.Perk.CoupDeGrace
-		],
-		[
-			::Legends.Perk.BagsAndBelts,
-		],
 		[],
-		[
-			::Legends.Perk.LegendCascade
-		],
+		[::Legends.Perk.LegendSpecPoison],
 		[],
-		[
-			::Legends.Perk.LegendEvasion
-		],
-		[
-			::Legends.Perk.KillingFrenzy,
-			::Legends.Perk.LegendPerfectFocus
-		]
+		[::Legends.Perk.LegendFavouredEnemyArcher],
+		[::Legends.Perk.LegendBigGameHunter]
 	]
 };
 

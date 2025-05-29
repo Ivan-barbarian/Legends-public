@@ -76,39 +76,100 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 			0.0, //desert
 			0.0 //oasis
 		];
-		this.m.PerkTreeDynamic = {
-			Weapon = [
-				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.BowTree,
-				this.Const.Perks.SlingTree,
-				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.DaggerTree
+		this.m.CustomPerkTree = [
+			[
+				::Legends.Perk.CripplingStrikes,
+				::Legends.Perk.FastAdaption,
+				::Legends.Perk.BagsAndBelts,
+				::Legends.Perk.Student,
+				::Legends.Perk.Recover,
+				::Legends.Perk.Pathfinder,
+				::Legends.Perk.LegendLookout,
+				::Legends.Perk.LegendSummonHound,
+				::Legends.Perk.LegendBackToBasics,
+				::Legends.Perk.LegendAlert
 			],
-			Defense = [
-				this.Const.Perks.LightArmorTree,
-				this.Const.Perks.MediumArmorTree
+			[
+				::Legends.Perk.CoupDeGrace,
+				::Legends.Perk.Bullseye,
+				::Legends.Perk.Dodge,
+				::Legends.Perk.QuickHands,
+				::Legends.Perk.Gifted,
+				::Legends.Perk.LegendNightvision,
+				::Legends.Perk.LegendDebilitate,
+				::Legends.Perk.LegendAthlete,
+				::Legends.Perk.LegendFavouredEnemyDirewolf,
+				::Legends.Perk.LegendFavouredEnemySpider,
 			],
-			Traits = [
-				this.Const.Perks.ViciousTree,
-				this.Const.Perks.FastTree,
-				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.FitTree,
-				this.Const.Perks.AgileTree
+			[
+				::Legends.Perk.Backstabber,
+				::Legends.Perk.Anticipation,
+				::Legends.Perk.Rotation,
+				::Legends.Perk.LegendFeint,
+				::Legends.Perk.LegendOnslaught,
+				::Legends.Perk.LegendDoubleStrike,
+				::Legends.Perk.LegendSummonFalcon,
+				::Legends.Perk.LegendAmmoBinding,
+				::Legends.Perk.LegendFavouredEnemyDirewolf,
+				::Legends.Perk.DevastatingStrikes
 			],
-			Enemy = [
-				this.Const.Perks.BeastsTree,
-				this.Const.Perks.UnholdTree,
-				this.Const.Perks.SchratTree,
-				this.Const.Perks.ArchersTree
+			[
+				::Legends.Perk.SpecAxe,
+				::Legends.Perk.SpecSword,
+				::Legends.Perk.SpecDagger,
+				::Legends.Perk.SpecCrossbow,
+				::Legends.Perk.SpecBow,
+				::Legends.Perk.LegendMasterySlings,
+				::Legends.Perk.LegendMasteryNets,
+				::Legends.Perk.LegendSpecPoison,
+				::Legends.Perk.SpecThrowing
 			],
-			Class = [
-				this.Const.Perks.BeastClassTree
+			[
+				::Legends.Perk.Overwhelm,
+				::Legends.Perk.LoneWolf,
+				::Legends.Perk.Footwork,
+				::Legends.Perk.LegendCloseCombatArcher,
+				::Legends.Perk.LegendBallistics,
+				::Legends.Perk.LegendIncoming,
+				::Legends.Perk.LegendSummonWolf,
+				::Legends.Perk.LegendHeightenedReflexes,
+				::Legends.Perk.LegendLithe,
+				::Legends.Perk.LegendAmmoBundles,
+				::Legends.Perk.LegendFavouredEnemyOrk,
+				::Legends.Perk.LegendFavouredEnemyGoblin
 			],
-			Magic = [
-				this.Const.Perks.RangerHuntMagicTree,
-				this.Const.Perks.MasterArcherTree
-			]
-		};
+			[
+				::Legends.Perk.Berserk,
+				::Legends.Perk.HeadHunter,
+				::Legends.Perk.Nimble,
+				::Legends.Perk.LegendRebound,
+				::Legends.Perk.LegendWindReader,
+				::Legends.Perk.LegendCascade,
+				::Legends.Perk.LegendCoordinatedVolleys,
+				::Legends.Perk.LegendPiercingShot,
+				::Legends.Perk.LegendPerfectFit,
+				::Legends.Perk.LegendSecondWind,
+				::Legends.Perk.LegendBlendIn,
+				::Legends.Perk.LegendFavouredEnemySchrat,
+				::Legends.Perk.LegendFavouredEnemyArcher
+			],
+			[
+				::Legends.Perk.KillingFrenzy,
+				::Legends.Perk.LegendPerfectFocus,
+				::Legends.Perk.BattleFlow,
+				::Legends.Perk.LegendEvasion,
+				::Legends.Perk.LegendBalance,
+				::Legends.Perk.LegendBigGameHunter,
+				::Legends.Perk.LegendFavouredEnemyUnhold,
+				::Legends.Perk.LegendFavouredEnemyLindwurm,
+				::Legends.Perk.LegendFreedomOfMovement,
+				::Legends.Perk.LegendFavouredEnemyUnhold,
+			],
+			[],
+			[],
+			[],
+			[]
+		];
 	}
 
 	//Default Male
