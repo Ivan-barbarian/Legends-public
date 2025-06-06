@@ -34,6 +34,13 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
 					}
 				}
 			]
+			function start(_event) {
+				local roster = ::World.getTemporaryRoster();
+				_event.m.Druid = roster.create("scripts/entity/tactical/player");
+				_event.m.Druid.setStartValuesEx(["legend_druid_background"]);
+				roster.add(_event.m.Druid);
+				this.Characters.push(_event.m.Druid.getImagePath());
+			}
 		});
 		this.m.Screens.push({
 			ID = "recruit",
@@ -58,6 +65,8 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
 					Text = "Forests can regrow. You will regain your stewardship in time.",
 					function getResult( _event )
 					{
+						this.World.getTemporaryRoster().clear();
+						_event.m.Druid = null;
 						return 0;
 					}
 
@@ -71,9 +80,6 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
 	}
 
 	function onPrepareVariables (_vars) {
-		local roster = ::World.getTemporaryRoster();
-		this.m.Druid = roster.create("scripts/entity/tactical/player");
-		this.m.Druid.setStartValuesEx(["legend_druid_background"]);
 		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Druid.getGender(), "Druid");
 	}
 
