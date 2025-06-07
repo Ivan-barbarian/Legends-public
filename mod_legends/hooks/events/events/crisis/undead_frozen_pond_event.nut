@@ -19,7 +19,7 @@
 	// `candidates_lightweight` array ends up empty before it is read - hence why we override it.
 	o.onUpdateScore = function () {
 		if(!World.FactionManager.isUndeadScourge())
-			return
+			return;
 
 		// limit by terrain
 		local currentTile = World.State.getPlayer().getTile();

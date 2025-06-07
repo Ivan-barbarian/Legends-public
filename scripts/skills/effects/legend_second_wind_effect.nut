@@ -40,7 +40,7 @@ this.legend_second_wind_effect <- this.inherit("scripts/skills/skill", {
 				type = "description",
 				text = this.getDescription()
 			}
-		]
+		];
 		if (this.m.Counter >= 0)
 		{
 			ret.push({
