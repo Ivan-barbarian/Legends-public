@@ -36,6 +36,8 @@
 			return _properties.IsSpecializedInAxes;
 		case _weapon.isWeaponType(::Const.Items.WeaponType.Bow):
 			return _properties.IsSpecializedInBows;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Cleaver):
+			return _properties.IsSpecializedInCleavers;
 		case _weapon.isWeaponType(::Const.Items.WeaponType.Crossbow):
 		case _weapon.isWeaponType(::Const.Items.WeaponType.Firearm): // handgonne
 			return _properties.IsSpecializedInCrossbows;

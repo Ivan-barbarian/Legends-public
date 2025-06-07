@@ -100,10 +100,9 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 		{
 			if (!_forFree)
 			{
-				if (_targetTile == null || _originTile == null) // Is this necessary?
-					return;
-
 				if (!actor.isAlive() || actor.isDying())
+					return;
+				if (_targetTile == null || actor.getTile() == null) // Is this necessary?
 					return;
 
 				// i need to somehow do this more dynamically

@@ -100,7 +100,7 @@
 		if (this.World.getTime().Days <= 200)
 			return;
 
-		if (this.World.Assets.getOrigin().getID() == "scenario.cultists")
+		if (this.World.Assets.getOrigin().getID() != "scenario.cultists")
 			return;
 
 		local brothers = this.World.getPlayerRoster().getAll();
@@ -121,7 +121,7 @@
 				if ((bestCultist == null || bro.getLevel() > bestCultist.getLevel()) && bro.getBackground().getID() == "background.cultist")
 					bestCultist = bro;
 			}
-			else if (bro.getLevel() >= 12 && !bro.getSkills().hasTrait(::Legends.Trait.Player) && !bro.getSkills().hasTrait(::Legends.Trait.Player) && !bro.getFlags().get("IsPlayerCharacter"))
+			else if (bro.getLevel() >= 12 && !bro.getSkills().hasTrait(::Legends.Trait.Player) && !bro.getFlags().get("IsPlayerCharacter"))
 				sacrifice_candidates.push(bro);
 		}
 

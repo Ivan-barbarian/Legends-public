@@ -63,7 +63,7 @@
 
 	o.addSkill <- function( _skill )
 	{
-		if (_skill.getID() == "actives.throw_net" && getContainer().getActor().getSkills().hasPerk(::Legends.Perk.LegendNetCasting))
+		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.ThrowNet) && getContainer().getActor().getSkills().hasPerk(::Legends.Perk.LegendNetCasting))
 			_skill.m.MaxRange = 5;
 
 		weapon.addSkill(_skill);

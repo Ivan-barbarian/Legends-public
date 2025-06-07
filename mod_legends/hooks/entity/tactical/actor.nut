@@ -136,6 +136,46 @@
 	// 	}
 	// }
 
+	o.querySwitchableItems <- function()
+	{
+		local items = [];
+		local inv = this.getItems();
+
+		if (inv.isActionAffordable([]))
+		{
+			for( local i = 0; i < inv.getUnlockedBagSlots(); i++ )
+			{
+				local item = inv.getItemAtBagSlot(i);
+
+				if (item == null)
+				{
+					continue;
+				}
+				
+				local slot = item.getSlotType();
+
+				if (slot == ::Const.ItemSlot.None || slot == ::Const.ItemSlot.Bag)
+				{
+					continue;
+				}
+				
+				local currentItem = inv.getItemAtSlot(slot);
+
+				if (item != null && (item.isItemType(::Const.Items.ItemType.Weapon) || item.isItemType(::Const.Items.ItemType.Tool) || item.isItemType(::Const.Items.ItemType.Shield) || item.isItemType(::Const.Items.ItemType.Accessory) || item.isItemType(::Const.Items.ItemType.Ammo) && item.m.Ammo != 0) && inv.isActionAffordable(currentItem != null ? [
+					currentItem,
+					item
+				] : [
+					item
+				]))
+				{
+					items.append(item);
+				}
+			}
+		}
+
+		return items;
+	}
+
 	local onOtherActorDeath = o.onOtherActorDeath;
 	o.onOtherActorDeath = function ( _killer, _victim, _skill )
 	{
