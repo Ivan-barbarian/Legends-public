@@ -100,7 +100,7 @@
 		if (this.World.getTime().Days <= 200)
 			return;
 
-		if (this.World.Assets.getOrigin().getID() == "scenario.cultists")
+		if (this.World.Assets.getOrigin().getID() != "scenario.cultists")
 			return;
 
 		local brothers = this.World.getPlayerRoster().getAll();

@@ -14,7 +14,7 @@
 	}
 
 	o.onUpdateScore = function () {
-		if (this.World.Assets.getOrigin().getID() == "scenario.cultists")
+		if (this.World.Assets.getOrigin().getID() != "scenario.cultists")
 			return;
 
 		local brothers = this.World.getPlayerRoster().getAll();
