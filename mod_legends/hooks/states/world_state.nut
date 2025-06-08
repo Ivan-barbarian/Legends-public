@@ -187,6 +187,8 @@
 		{
 			party.getFlags().set("IsCaravan", true); // reverse the change
 		}
+
+		::Legends.Maps.cleanUp();
 	}
 
 	o.getLocalCombatProperties = function ( _pos, _ignoreNoEnemies = false )

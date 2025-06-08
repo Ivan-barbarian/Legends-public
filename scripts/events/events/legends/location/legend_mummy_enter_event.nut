@@ -264,6 +264,8 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				::Legends.Maps.markVisited(::Legends.Map.AncientMastaba);
+				::Legends.Maps.cleanUp();
 			}
 
 		});
