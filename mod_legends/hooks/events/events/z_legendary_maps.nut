@@ -37,7 +37,7 @@ foreach (location in [
 	::mods_hookExactClass(location, function(o) {
 		local onDropLootForPlayer = o.onDropLootForPlayer;
 		o.onDropLootForPlayer = function (_lootTable) {
-			_lootTable.push(this.new("scripts/items/misc/mfl_legendary_map"));
+			_lootTable.push(this.new("scripts/items/misc/legend_map_legendary_item"));
 			onDropLootForPlayer(_lootTable);
 		}
 	});
@@ -56,7 +56,7 @@ foreach (location in [
 		local onDropLootForPlayer = o.onDropLootForPlayer;
 		o.onDropLootForPlayer = function (_lootTable) {
 			if (this.Math.rand(1, 4) == 1)
-				_lootTable.push(this.new("scripts/items/misc/mfl_named_map"));
+				_lootTable.push(this.new("scripts/items/misc/legend_map_named_item"));
 			onDropLootForPlayer(_lootTable);
 		}
 	});
