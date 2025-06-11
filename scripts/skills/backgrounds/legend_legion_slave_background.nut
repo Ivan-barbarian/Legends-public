@@ -71,7 +71,8 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Hitpoints,
-			this.Const.Attributes.Fatigue
+			this.Const.Attributes.Fatigue,
+			this.Const.Attributes.Bravery
 		];
 
 		//apperance
@@ -88,6 +89,7 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
+		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[4]; // 5, 8, 13, 21, 34, 55
 		this.m.Modifiers.Terrain = [
 				0.0, // ?
 				0.0, //ocean
@@ -115,7 +117,8 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 				this.Const.Perks.ShieldTree,
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.CleaverTree 
+				this.Const.Perks.SlingTree,
+				this.Const.Perks.CleaverTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree,
@@ -128,7 +131,8 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.BeastClassTree
+				this.Const.Perks.BeastClassTree,
+				this.Const.Perks.SlingClassTree
 			],
 			Magic = []
 		}
@@ -241,7 +245,7 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
-		r = this.Math.rand(1, 3);
+		r = this.Math.rand(1, 4);
 
 		if (r == 1)
 		{
@@ -254,6 +258,10 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 		else if (r == 3)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_spear"));
+		}
+		else if (r == 4)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_sling"));
 		}
 
 		if (this.Math.rand(1, 100) <= 66)

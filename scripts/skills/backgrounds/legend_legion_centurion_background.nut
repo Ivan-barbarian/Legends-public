@@ -1,22 +1,23 @@
-this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrounds/character_background", {
+this.legend_legion_centurion_background <- this.inherit("scripts/skills/backgrounds/character_background", {
 	m = {},
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_legion_auxiliary";
-		this.m.Name = "Auxiliary";
+		this.m.ID = "background.legend_legion_centurion"; //I don't care who they send, im not spelling it 'honor'.
+		this.m.Name = "Centurion";
 		this.m.Icon = "ui/backgrounds/background_puppet.png"; //to do
-		this.m.BackgroundDescription = "Pressed onto service by some means or another, the Auxiliary serves their masters in exchange for a promise of a better life.";
+		this.m.BackgroundDescription = "A leader of many, a slave to a few.";
 		// this.m.GoodEnding = ""; //to do
 		// this.m.BadEnding = ""; //to do
 		this.m.HiringCost = 0;
 		this.m.DailyCost = 0;
-		this.m.Excluded = [ //can roll; brute, clubfooted, clumsy, fragile, huge, hesitant, strong, sure footing, survivor, tiny, tough, bright, lucky, shortsighted, aggressive, martial, predictable, lumbering, quick, swift, team player, hate nobles, frail, etc (see commented out below)
+		this.m.Excluded = [ //can roll; brute, clubfooted, clumsy, fragile, huge, hesitant, strong, sure footing, survivor, tough, bright, lucky, shortsighted, aggressive, martial, predictable, lumbering, quick, swift, team player, hate nobles, frail, etc (see commented out below)
 			::Legends.Traits.getID(::Legends.Trait.Ailing), //only including naturally occouring or obtainable traits.
 			::Legends.Traits.getID(::Legends.Trait.Asthmatic),
 			::Legends.Traits.getID(::Legends.Trait.Bleeder),
 			// ::Legends.Traits.getID(::Legends.Trait.Bloodthirsty),
 			::Legends.Traits.getID(::Legends.Trait.Brave),
+			::Legends.Traits.getID(::Legends.Trait.Tiny),
 			::Legends.Traits.getID(::Legends.Trait.Gluttonous),
 			// ::Legends.Traits.getID(::Legends.Trait.Cocky),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
@@ -33,7 +34,7 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 			::Legends.Traits.getID(::Legends.Trait.FearGreenskins),
 			::Legends.Traits.getID(::Legends.Trait.FearBeasts),
 			::Legends.Traits.getID(::Legends.Trait.Fearless),
-			::Legends.Traits.getID(::Legends.Trait.EagleEyes),
+			// ::Legends.Traits.getID(::Legends.Trait.EagleEyes),
 			::Legends.Traits.getID(::Legends.Trait.Greedy),
 			::Legends.Traits.getID(::Legends.Trait.HateUndead),
 			// ::Legends.Traits.getID(::Legends.Trait.HateBeasts),
@@ -47,11 +48,12 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 			::Legends.Traits.getID(::Legends.Trait.NightOwl),
 			::Legends.Traits.getID(::Legends.Trait.NightBlind),
 			::Legends.Traits.getID(::Legends.Trait.Optimist),
-			::Legends.Traits.getID(::Legends.Trait.Paranoid),
+			// ::Legends.Traits.getID(::Legends.Trait.Paranoid),
 			::Legends.Traits.getID(::Legends.Trait.Pessimist),
 			::Legends.Traits.getID(::Legends.Trait.Spartan),
 			::Legends.Traits.getID(::Legends.Trait.Superstitious),
 			::Legends.Traits.getID(::Legends.Trait.Weasel),
+			
 			//legend traits
 			// ::Legends.Traits.getID(::Legends.Trait.LegendAmbitious),
 			::Legends.Traits.getID(::Legends.Trait.LegendFearNobles),
@@ -72,8 +74,8 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 		this.m.ExcludedTalents = [
 			// this.Const.Attributes.RangedSkill,
 			//this.Const.Attributes.Hitpoints,
-			this.Const.Attributes.Fatigue,
-			this.Const.Attributes.Bravery
+			// this.Const.Attributes.Bravery,
+			this.Const.Attributes.Fatigue
 		];
 
 		//apperance
@@ -85,56 +87,65 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 		//---
 		this.m.BackgroundType = this.Const.BackgroundType.Untalented;
 		this.m.Names = this.Const.Strings.AncientDeadNames;
-		// this.m.LastNames = this.Const.Strings.AncientDeadTitles;
-		this.m.Level = this.Math.rand(1, 2);
+		this.m.LastNames = this.Const.Strings.AncientDeadTitles;
+		this.m.Level = this.Math.rand(3, 5);
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
-		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[1];
-		// this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
+		// this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[1];
+		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
+		// this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[1];
+		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[3]; // 0.0, 0.1, 0.2, 0.3
+		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[3]; // 5, 8, 13, 21, 34, 55
+		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[2]; // 0.0, 0.05, 0.10, 0.20
+		// this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[3]; // 0.0, 0.10, 0.30, 0.50, 1.0
+		// this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[3]; // 0.0, 0.10, 0.30, 0.50
 		this.m.Modifiers.Terrain = [
 				0.0, // ?
 				0.0, //ocean
-				0.07, //plains
-				0.03, //swamp
-				0.04, //hills
-				0.05, //forest
-				0.05, //forest
-				0.05, //forest_leaves
-				0.05, //autumn_forest
-				0.0, //mountains
+				0.05, //plains
+				0.01, //swamp
+				0.02, //hills
+				0.03, //forest
+				0.03, //forest
+				0.03, //forest_leaves
+				0.03, //autumn_forest
+				3.0, //mountains - hannibal time
 				0.0, // ?
-				0.07, //farmland
-				0.04, //snow
-				0.04, //badlands
-				0.04, //highlands
-				0.04, //stepps
+				0.03, //farmland
+				0.02, //snow
+				0.02, //badlands
+				0.02, //highlands
+				0.02, //stepps
 				0.0, //ocean
-				0.07, //desert
-				0.07 //oasis
+				0.1, //desert
+				0.1 //oasis
 			];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.SpearTree,
+				this.Const.Perks.TwoHandedTree,
 				this.Const.Perks.ShieldTree,
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.CleaverTree				
+				this.Const.Perks.CleaverTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree,
-				this.Const.Perks.MediumArmorTree
+				this.Const.Perks.HeavyArmorTree,
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [
 				this.Const.Perks.TrainedTree,
 				this.Const.Perks.DeviousTree,
-				this.Const.Perks.FastTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.InspirationalTree,
 				this.Const.Perks.ViciousTree
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.BeastClassTree,
-				this.Const.Perks.SpearfisherClassTree
+				this.Const.Perks.ButcherClassTree,
+				this.Const.Perks.ScytheClassTree
 			],
 			Magic = []
 		}
@@ -149,7 +160,7 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.Names = this.Const.Strings.AncientDeadNamesFemale;
-		// this.m.LastNames = this.Const.Strings.AncientDeadTitles;
+		this.m.LastNames = this.Const.Strings.AncientDeadTitles;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Beards = null;
@@ -166,36 +177,36 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 	{
 		local c = {
 			Hitpoints = [
-				-1,
-				2
+				10,
+				12
 			],
 			Bravery = [ //not needed except for resisting charm and sleep
-				0,
-				5
+				20,
+				25
 			],
 			Stamina = [ //not needed except for equipment weight
-				10,
-				10
+				20,
+				25
 			],
 			MeleeSkill = [
-				1,
-				3
+				8,
+				10
 			],
 			RangedSkill = [
 				4,
-				8
+				7
 			],
 			MeleeDefense = [
-				0,
-				2
+				5,
+				8
 			],
 			RangedDefense = [
-				1,
-				4
+				3,
+				6
 			],
 			Initiative = [
-				0,
-				3
+				10,
+				15
 			]
 		};
 		return c;
@@ -251,45 +262,39 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 
 		if (r == 1)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/throwing_spear"));
+			this.m.Items.equip(this.new("scripts/items/weapons/ancient/bladed_pike"));
 		}
 		else if (r == 2)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/falx"));
+			this.m.Items.equip(this.new("scripts/items/weapons/ancient/warscythe"));
 		}
 		else if (r == 3)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_spear"));
+			this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_gladius"));
 		}
 		else if (r == 4)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_sword"));
+			this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_kopis"));
 		}
 		else if (r == 5)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/broken_ancient_sword"));
-		}
-
-		if (this.Math.rand(1, 100) <= 50)
-		{
-			this.m.Items.equip(this.new("scripts/items/shields/ancient/auxiliary_shield"));
+			this.m.Items.equip(this.new("scripts/items/weapons/ancient/crypt_cleaver"));
 		}
 
 	o.onAddEquipment = function () //1 = least likely
 	{
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, ::Legends.Armor.Standard.tattered_sackcloth],
-			[2, ::Legends.Armor.Standard.leather_wraps],
-			[3, ::Legends.Armor.Standard.indebted_armor_rags],
-			[2, ::Legends.Armor.Ancient.ancient_ripped_cloth],
-			[3, ::Legends.Armor.None]
+			[2, ::Legends.Armor.Ancient.ancient_plated_scale_hauberk],
+			[1, ::Legends.Armor.Ancient.ancient_scale_coat],
+			[2, ::Legends.Armor.Ancient.ancient_plate_harness],
+			[1, ::Legends.Armor.Ancient.ancient_plated_mail_hauberk]
 		]));
 
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, ::Legends.Helmet.Ancient.ancient_household_helmet],
-			[2, ::Legends.Helmet.None]
+			[2, ::Legends.Helmet.Ancient.ancient_honorguard_helmet],
+			[1, ::Legends.Helmet.None]
 		]));
 	}
 });
