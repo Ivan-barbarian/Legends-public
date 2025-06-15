@@ -1,6 +1,8 @@
 this.legend_vala_crafts_staff_encounter <- this.inherit("scripts/encounters/encounter", {
     m = {
-		Druid = null
+		Vala = null,
+		RandomBrother = null,
+		RandomBrother2 = null
     },
 
     function create() {
@@ -121,13 +123,14 @@ this.legend_vala_crafts_staff_encounter <- this.inherit("scripts/encounters/enco
 			{
 				randomBros.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.legend_vala")
+			else if (bro.getBackground().getID() == "background.legend_vala" && bro.getLevel >= 12)
 			{
 				this.m.Vala = bro;
 			}
 		}
 		if (this.m.Vala == null)
 			return;
+
 		this.m.RandomBrother = randomBros[this.Math.rand(0, randomBros.len() - 1)];
 		this.m.RandomBrother2 = randomBros[this.Math.rand(0, randomBros.len() - 1)];
 
