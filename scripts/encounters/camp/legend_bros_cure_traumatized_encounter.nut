@@ -1,4 +1,4 @@
-this.legend_bros_cures_traumatized_encounter <- this.inherit("scripts/encounters/encounter", {
+this.legend_bros_cure_traumatized_encounter <- this.inherit("scripts/encounters/encounter", {
     m = {
 		Monk = null,
 		Drunkard = null,
@@ -8,7 +8,7 @@ this.legend_bros_cures_traumatized_encounter <- this.inherit("scripts/encounters
 
     function create() {
         this.createScreens();
-        this.m.Type = "encounter.legend_monk_cures_traumatized";
+        this.m.Type = "encounter.legend_bros_cure_traumatized";
         this.m.Name = "Monk cures traumatized";
 		this.m.Cooldown = 30 * ::World.getTime().SecondsPerDay;
 	}
@@ -29,40 +29,40 @@ this.legend_bros_cures_traumatized_encounter <- this.inherit("scripts/encounters
 						return 0;
 					}
 				}
-				function start( _event )
-				{
-					if (_event.m.Drunkard != null)
-					{
-						this.Options.push({
-							Text = "%drunkard%, I need you to fix this issue.",
-							function getResult( _event )
-							{
-								return "Drunkard";
-							}
-						});
-					}
-					if (_event.m.Monk != null)
-					{
-						this.Options.push({
-							Text = "%monk%, talk to %them_traumatized%.",
-							function getResult( _event )
-							{
-								return "Monk";
-							}
-						});
-					}
-					if (_event.m.Dervish != null)
-					{
-						this.Options.push({
-							Text = "Care to share some of that inner peace, %dervish%?",
-							function getResult( _event )
-							{
-								return "Dervish";
-							}
-						});
-					}
-				}
 			]
+			function start( _event )
+			{
+				if (_event.m.Drunkard != null)
+				{
+					this.Options.push({
+						Text = "%drunkard%, I need you to fix this issue.",
+						function getResult( _event )
+						{
+							return "Drunkard";
+						}
+					});
+				}
+				if (_event.m.Monk != null)
+				{
+					this.Options.push({
+						Text = "%monk%, talk to %them_traumatized%.",
+						function getResult( _event )
+						{
+							return "Monk";
+						}
+					});
+				}
+				if (_event.m.Dervish != null)
+				{
+					this.Options.push({
+						Text = "Care to share some of that inner peace, %dervish%?",
+						function getResult( _event )
+						{
+							return "Dervish";
+						}
+					});
+				}
+			}
 		});
 		this.m.Screens.push({
 			ID = "Drunkard",
