@@ -193,7 +193,7 @@
 ::Legends.Compat.HardIncompat.add("mod_rpgr_raids", "4.0.1");
 ::Legends.Compat.HardIncompat.add("mod_save", "1.0.0"); // Enhanced Autosave
 //::Legends.Compat.HardIncompat.add("mod_sellswords", "8.2.9"); // SSU, now Legends V19+ compatible
-::Legends.Compat.HardIncompat.add("mod_smart_recruiter_legends", "1.0");
+::Legends.Compat.HardIncompat.add("mod_smart_recruiter_legends", "1.0", "Use Clever Recruiter instead, found on Nexus");
 ::Legends.Compat.HardIncompat.add("mod_solostart", "1.0");
 ::Legends.Compat.HardIncompat.add("mod_southernNomad", "1.0");
 ::Legends.Compat.HardIncompat.add("mod_standout_enemies", "1.2");
