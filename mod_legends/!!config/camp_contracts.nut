@@ -1,11 +1,50 @@
 ::Legends.CampContracts <- {
+	EmployerFactory = [],
+	EmployerBanner = [],
+	EmployersPerFaction = 4,
 	EmployerFaction = {
-		Barbarians = 0,
-		Bandits = 1,
-		Necromancers = 2,
-		COUNT = 3
+		COUNT = 0
+	}
+	addFaction = function (_banner, _factory) {
+		local faction = this.EmployerFaction.COUNT++;
+		if (_banner.find(".png") != null)
+			_banner = _banner.slice(0, _banner.len() - 4);
+		this.EmployerBanner.push(_banner);
+		this.EmployerFactory.push(_factory);
+		return faction;
 	}
 }
+
+::Legends.CampContracts.EmployerFaction.Barbarians <- ::Legends.CampContracts.addFaction("ui/banners/factions/banner_legend_barbarians_s.png", function (_factionID, _roster) {
+	local unit = ::Const.World.Spawn.Troops.BarbarianChampion;
+	local character = _roster.create(unit.Script);
+	character.setFaction(_factionID);
+	character.m.HairColors = ::Const.HairColors.Young;
+	character.setAppearance();
+	character.assignRandomEquipment();
+	character.setName(::Const.World.Common.generateName(unit.NameList) + (unit.TitleList != null ? " " + unit.TitleList[::Math.rand(0, unit.TitleList.len() - 1)] : ""));
+});
+
+::Legends.CampContracts.EmployerFaction.Bandits <- ::Legends.CampContracts.addFaction("ui/banners/factions/banner_legend_bandits_s.png", function (_factionID, _roster) {
+	local unit = ::Const.World.Spawn.Troops.BanditLeader;
+	local character = _roster.create(unit.Script);
+	character.setFaction(_factionID);
+	character.m.HairColors = ::Const.HairColors.Young;
+	character.setAppearance();
+	character.assignRandomEquipment();
+	character.setName(::Const.World.Common.generateName(unit.NameList) + (unit.TitleList != null ? " " + unit.TitleList[::Math.rand(0, unit.TitleList.len() - 1)] : ""));
+});
+
+::Legends.CampContracts.EmployerFaction.Necromancers <- ::Legends.CampContracts.addFaction("ui/banners/factions/banner_legend_necro_s.png", function (_factionID, _roster) {
+	local unit = ::Const.World.Spawn.Troops.Necromancer;
+	local character = _roster.create(unit.Script);
+	character.setFaction(_factionID);
+	character.m.HairColors = this.Const.HairColors.Old;
+	character.setAppearance();
+	character.assignRandomEquipment();
+	character.setName(::Const.World.Common.generateName(unit.NameList) + (unit.TitleList != null ? " " + unit.TitleList[::Math.rand(0, unit.TitleList.len() - 1)] : ""));
+});
+
 
 ::Legends.CampContracts.IntroBarbarians <- [{
 	ID = "Intro",

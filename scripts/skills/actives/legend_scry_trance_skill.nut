@@ -29,6 +29,11 @@ this.legend_scry_trance_skill <- this.inherit("scripts/skills/actives/legend_tra
 	{
 		this.legend_trance_abstract_skill.onUse(_user, _targetTile);
 		this.Tactical.queryTilesInRange( _user.getTile(), 1, 12, false, [], this.onQueryTile, _user.getFaction());
+		if (this.Tactical.TurnSequenceBar.getActiveEntity() != null)
+		{
+			this.Tactical.TurnSequenceBar.getActiveEntity().updateVisibilityForFaction();
+		}
+		return true;
 	}
 
 	function onQueryTile( _tile, _tag )

@@ -56,7 +56,7 @@ cd "$current_dir"
 if [ -n "$commit_hash" ]; then
   modified_files=$(git diff --name-only "$Source" HEAD)
   # Filter the files that are in 'gfx' or 'sounds' directories
-  filtered_files=$(echo "$modified_files" | grep -E '^(gfx|sounds)/')
+  filtered_files=$(echo "$modified_files" | grep -E '^(gfx|sounds|preload)/')
   # Add the filtered files into the existing zip archive
   if [ -n "$filtered_files" ]; then
     # Add the filtered files into the existing zip archive

@@ -310,7 +310,7 @@
 		Loot = [
 			[4,"scripts/items/loot/goblin_carved_ivory_iconographs_item"],
 			[3,"scripts/items/loot/goblin_minted_coins_item"],
-			[2,"scripts/items/loot/goblin_rank_insignia"]
+			[2,"scripts/items/loot/goblin_rank_insignia_item"]
 		],
 		Backgrounds = [
 			"background.legend_cannibal",
@@ -479,7 +479,7 @@
 			[3,"scripts/items/misc/unhold_bones_item"],
 			[3,"scripts/items/misc/unhold_heart_item"],
 			[4,"scripts/items/misc/unhold_hide_item"],
-			[3,"scripts/items/misc/frost_unhold_fur"]
+			[3,"scripts/items/misc/frost_unhold_fur_item"]
 		],
 		Backgrounds = [
 			"background.barbarian",

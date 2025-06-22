@@ -50,3 +50,7 @@ while(::Const.FactionTrait.Actions.len() <= lastTrait)
 	"scripts/factions/actions/legend_build_location_action",
 	"scripts/factions/actions/legend_upgrade_locations_action",
 ]);
+
+::Const.FactionTrait.Actions[::Const.FactionTrait.FreeCompany] = [
+	"scripts/factions/contracts/legend_camp_unhold_bondage_action",
+];
