@@ -18,8 +18,15 @@ this.legend_camp_contract <- ::inherit("scripts/contracts/contract", {
 		}
 	}
 
+	function getBanner() {
+		if (this.m.EmployerFaction != null)
+			return ::Legends.CampContracts.EmployerBanner[this.m.EmployerFaction];
+		return "ui/banners/factions/banner_legend_s";
+	}
+
 	function isValid() {
-		if (!this.m.IsValid) return false;
+		if (!this.m.IsValid)
+			return false;
 
 		if (::World.FactionManager.getFaction(this.getFaction()).getType() != ::Const.FactionType.FreeCompany)
 			return false;

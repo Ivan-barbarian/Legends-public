@@ -6,7 +6,7 @@ this.legend_unhold_throwing_net <- this.inherit("scripts/items/weapons/weapon", 
 		this.weapon.create();
 		this.m.ID = "tool.legend_unhold_throwing_net";
 		this.m.Name = "Unhold bindings";
-		this.m.Description = "A net provided by barbarian tribe, used to bind unholds. Tainted with secret poison, it makes [color=" + ::Const.UI.Color.NegativeValue + "]dazed[/color]m or [color=" + ::Const.UI.Color.NegativeValue + "]baffled[/color] unholds docile when trapped.";
+		this.m.Description = "A net provided by barbarian tribe, used to bind unholds. Tainted with secret poison, it makes [color=" + ::Const.UI.Color.NegativeValue + "]dazed[/color] or [color=" + ::Const.UI.Color.NegativeValue + "]baffled[/color] unholds docile when trapped.";
 		this.m.IconLarge = "tools/inventory_throwing_net_unhold.png";
 		this.m.Icon = "tools/throwing_net_unhold_70x70.png";
 		this.m.ArmamentIcon = "icon_throwing_net_02";

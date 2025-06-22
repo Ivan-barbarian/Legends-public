@@ -19,7 +19,7 @@ this.legend_camp_unhold_bondage_action <- this.inherit("scripts/factions/faction
 		if (!_faction.isReadyForContract())
 			return;
 
-		this.m.Score = 1;
+		this.m.Score = 0; //1; // TODO, disabled for now
 	}
 
 	function onClear() {

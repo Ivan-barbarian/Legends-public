@@ -18,10 +18,6 @@ this.legend_camp_unhold_bondage_contract <- this.inherit("scripts/contracts/lege
 		];
 	}
 
-	function getBanner() {
-		return "ui/banners/factions/banner_legend_barbarians_s";
-	}
-
 	function start() {
 		this.m.Payment.Pool = 400 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 

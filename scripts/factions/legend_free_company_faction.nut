@@ -17,33 +17,10 @@ this.legend_free_company_faction <- this.inherit("scripts/factions/faction", {
 	}
 
 	function onUpdateRoster() {
-		// note, that only champions have names
-		for (local roster = this.getRoster(); roster.getSize() < 4;) {
-			local character = roster.create("scripts/entity/tactical/humans/barbarian_champion");
-			character.setFaction(this.m.ID);
-			character.m.HairColors = ::Const.HairColors.Young;
-			character.setAppearance();
-			character.assignRandomEquipment();
-			local unit = ::Const.World.Spawn.Troops.BarbarianChampion;
-			character.setName(::Const.World.Common.generateName(unit.NameList) + (unit.TitleList != null ? " " + unit.TitleList[::Math.rand(0, unit.TitleList.len() - 1)] : ""));
-		}
-		for (local roster = this.getRoster(); roster.getSize() < 8;) {
-			local character = roster.create("scripts/entity/tactical/enemies/bandit_leader");
-			character.setFaction(this.m.ID);
-			character.m.HairColors = ::Const.HairColors.Young;
-			character.setAppearance();
-			character.assignRandomEquipment();
-			local unit = ::Const.World.Spawn.Troops.BanditLeader;
-			character.setName(::Const.World.Common.generateName(unit.NameList) + (unit.TitleList != null ? " " + unit.TitleList[::Math.rand(0, unit.TitleList.len() - 1)] : ""));
-		}
-		for (local roster = this.getRoster(); roster.getSize() < 12;) {
-			local character = roster.create("scripts/entity/tactical/enemies/necromancer");
-			character.setFaction(this.m.ID);
-			character.m.HairColors = this.Const.HairColors.Old;
-			character.setAppearance();
-			character.assignRandomEquipment();
-			local unit = ::Const.World.Spawn.Troops.Necromancer;
-			character.setName(::Const.World.Common.generateName(unit.NameList) + (unit.TitleList != null ? " " + unit.TitleList[::Math.rand(0, unit.TitleList.len() - 1)] : ""));
+		for (local faction = 0; faction < ::Legends.CampContracts.EmployerFaction.COUNT; faction++) {
+			for (local roster = this.getRoster(); roster.getSize() < (faction + 1) * ::Legends.CampContracts.EmployersPerFaction;) {
+				::Legends.CampContracts.EmployerFactory[faction](this.m.ID, roster);
+			}
 		}
 	}
 
@@ -51,7 +28,7 @@ this.legend_free_company_faction <- this.inherit("scripts/factions/faction", {
 		if (_faction == null)
 			return this.faction.getRandomCharacter();
 		local roster = ::World.getRoster(this.m.ID).getAll();
-		local idx = ::Math.rand(_faction * 4, _faction * 4 + 3);
+		local idx = ::Math.rand(_faction * ::Legends.CampContracts.EmployersPerFaction, _faction * ::Legends.CampContracts.EmployersPerFaction + ::Legends.CampContracts.EmployersPerFaction - 1);
 		if (idx < roster.len())
 			return roster[idx];
 		return this.faction.getRandomCharacter();
