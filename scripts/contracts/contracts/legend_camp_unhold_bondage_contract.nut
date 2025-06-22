@@ -11,7 +11,7 @@ this.legend_camp_unhold_bondage_contract <- this.inherit("scripts/contracts/lege
 		this.m.Name = "Capture Unhold";
 		this.m.EmployerFaction = ::Legends.CampContracts.EmployerFaction.Barbarians;
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
-		this.m.DifficultyMult = this.Math.rand(95, 125) * 0.01;
+		this.m.DifficultyMult = ::Math.rand(95, 125) * 0.01;
 		this.m.DescriptionTemplates = [
 			"Friendly barbarian tribe tries to expand their forces. They're looking for some unholds.",
 			"Local barbarian warlord is looking for new pet. You can only imagine what he wants.",
@@ -19,9 +19,9 @@ this.legend_camp_unhold_bondage_contract <- this.inherit("scripts/contracts/lege
 	}
 
 	function start() {
-		this.m.Payment.Pool = 400 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
+		this.m.Payment.Pool = 800 * this.getPaymentMult() * ::Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 
-		if (this.Math.rand(1, 100) <= 10) {
+		if (::Math.rand(1, 100) <= 10) {
 			this.m.Payment.Completion = 0.9;
 			this.m.Payment.Advance = 0.1;
 		} else {
@@ -40,7 +40,7 @@ this.legend_camp_unhold_bondage_contract <- this.inherit("scripts/contracts/lege
 					"Hunt and capture at least one unhold"
 				];
 
-				if (this.Math.rand(1, 100) <= this.Const.Contracts.Settings.IntroChance) {
+				if (::Math.rand(1, 100) <= ::Const.Contracts.Settings.IntroChance) {
 					this.Contract.setScreen("Intro");
 				} else {
 					this.Contract.setScreen("Task");
@@ -49,7 +49,7 @@ this.legend_camp_unhold_bondage_contract <- this.inherit("scripts/contracts/lege
 
 			function end() {
 				this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
-				local r = this.Math.rand(1, 100);
+				local r = ::Math.rand(1, 100);
 
 				this.Flags.set("StartTime", this.Time.getVirtualTimeF());
 				this.Contract.spawnEnemies();
@@ -241,7 +241,7 @@ this.legend_camp_unhold_bondage_contract <- this.inherit("scripts/contracts/lege
 		this.m.Screens.push({
 			ID = "Success",
 			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{Success text}",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{You hand over the cage over to the %employer%.%speech_on%Impressive, fine specimen.%speech_off%Tribe leaves with their new pet, while you wonder, what will happen to it.}",
 			Image = "",
 			Characters = [],
 			List = [],
@@ -275,7 +275,7 @@ this.legend_camp_unhold_bondage_contract <- this.inherit("scripts/contracts/lege
 		this.m.Screens.push({
 			ID = "Failure",
 			Title = "After battle...",
-			Text = "[img]gfx/ui/events/legend_rock_unhold.png[/img]{Failure text}",
+			Text = "[img]gfx/ui/events/legend_rock_unhold.png[/img]{You failed to capture requested unhold. You worry there might be consequences of your sloppiness...}",
 			Image = "",
 			List = [],
 			Options = [{
@@ -300,10 +300,9 @@ this.legend_camp_unhold_bondage_contract <- this.inherit("scripts/contracts/lege
 		]);
 		local nearTile = this.getTileToSpawnLocation(playerTile, 1, 3);
 		local party;
-		party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Unholds", false, ::Const.World.Spawn.Unhold, 200 * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
+		party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Unholds", false, ::Const.World.Spawn.Unhold, 100 * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
 		party.setDescription("One or more lumbering giants.");
 		party.setAttackableByAI(false);
-		party.setFootprintSizeOverride(0.85);
 		party.getFlags().set("IsUnholds", true);
 		::Const.World.Common.addFootprintsFromTo(nearTile, party.getTile(), this.Const.BeastFootprints, 0.85);
 		this.m.Target = this.WeakTableRef(party);
@@ -336,7 +335,7 @@ this.legend_camp_unhold_bondage_contract <- this.inherit("scripts/contracts/lege
 		]);
 		local nearTile = this.getTileToSpawnLocation(playerTile, 4, 8);
 		local party;
-		party = ::World.FactionManager.getFactionOfType(::Const.FactionType.Barbarians).spawnEntity(tile, "Barbarians", false, ::Const.World.Spawn.BarbarianHunters, 200 * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
+		party = ::World.FactionManager.getFactionOfType(::Const.FactionType.Barbarians).spawnEntity(tile, "Barbarians", false, ::Const.World.Spawn.BarbarianHunters, 120 * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
 		party.setDescription("A warband of your barbarian employer.");
 		party.setMovementSpeed(::Const.World.MovementSettings.Speed * 2.0);
 		party.setAttackableByAI(false);
@@ -354,14 +353,7 @@ this.legend_camp_unhold_bondage_contract <- this.inherit("scripts/contracts/lege
 	}
 
 	function onPrepareVariables(_vars) {
-		_vars.push([
-			"shouter",
-			this.m.Dude != null ? this.m.Dude.getName() : ""
-		]);
-		_vars.push([
-			"direction",
-			this.m.Target == null || this.m.Target.isNull() ? "" : this.Const.Strings.Direction8[this.World.State.getPlayer().getTile().getDirection8To(this.m.Target.getTile())]
-		]);
+
 	}
 
 	function onClear() {
