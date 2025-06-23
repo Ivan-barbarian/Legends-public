@@ -184,7 +184,7 @@
 				id = 7,
 				type = "text",
 				icon = "ui/icons/chance_to_hit_head.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.min(100, p.HitChance[this.Const.BodyPart.Head]) + "%[/color] chance to hit the head"
+				text = "Has a combined total [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.min(100, p.HitChance[this.Const.BodyPart.Head]) + "%[/color] chance to hit the head"
 			});
 		}
 
