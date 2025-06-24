@@ -182,10 +182,10 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 			this.Tactical.Entities.addCorpse(_tile);
 		}
 
-		this.actor.onDeath(_killer, _skill, _tile, _fatalityType, _killer);
+		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
 
-	function generateCorpse( _tile, _fatalityType )
+	function generateCorpse( _tile, _fatalityType, _killer )
 	{
 		local corpse = clone this.Const.Corpse;
 		corpse.CorpseName = "An Orc Behemoth";
