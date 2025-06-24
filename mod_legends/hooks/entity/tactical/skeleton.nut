@@ -1,11 +1,11 @@
 ::mods_hookExactClass("entity/tactical/skeleton", function(o)
 {
-//	local generateCorpse2 = o.generateCorpse;
-//	o.generateCorpse = function (_tile, _fatalityType) {
-//		local corpse = generateCorpse2(_tile, _fatalityType);
-//		corpse.IsResurrectable = _fatalityType != this.Const.FatalityType.Decapitated && this.m.IsResurrectable;
-//		return corpse;
-//	}
+	local generateCorpse = o.generateCorpse;
+	o.generateCorpse = function (_tile, _fatalityType, _killer) {
+		local corpse = generateCorpse(_tile, _fatalityType, _killer);
+		corpse.IsResurrectable = _fatalityType != this.Const.FatalityType.Decapitated && this.m.IsResurrectable;
+		return corpse;
+	}
 
 	o.onFactionChanged = function ()
 	{
