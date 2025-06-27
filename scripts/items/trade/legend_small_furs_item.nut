@@ -9,7 +9,8 @@ this.legend_small_furs_item <- this.inherit("scripts/items/trade/trading_good_it
 		this.m.Icon = "trade/inventory_trade_small_furs.png";
 		this.m.Culture = this.Const.World.Culture.Northern;
 		this.m.ProducingBuildings = [
-			"attached_location.trapper"
+			"attached_location.trapper",
+			"attached_location.hunters_cabin"
 		];
 		this.m.Value = 30;
 		this.m.ResourceValue = 2;
