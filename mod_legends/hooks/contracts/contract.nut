@@ -268,9 +268,9 @@
 	{
 		if (this.m.DifficultyMult < 0.9)
 			return 1;
-		if (this.m.DifficultyMult >= 0.9 && this.m.DifficultyMult < 1.1)
+		if (this.m.DifficultyMult < 1.1)
 			return 2;
-		if (this.m.DifficultyMult >= 1.1 && this.m.DifficultyMult < 1.4)
+		if (this.m.DifficultyMult < 1.4)
 			return 3;
 		return 4;
 	}

@@ -2,7 +2,8 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 	m = {
 		Town = null,
 		Fortress = null,
-		Camp = null
+		Camp = null,
+		PursuitParty = null
 	},
 	function create() {
 		this.contract.create();
@@ -10,7 +11,7 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		this.m.Name = "Smuggle item";
 		this.m.EmployerFaction = ::Legends.CampContracts.EmployerFaction.Bandits;
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
-		this.m.DifficultyMult = ::Math.rand(95, 135) * 0.01;
+		this.m.DifficultyMult = ::Math.rand(80, 135) * 0.01;
 		this.m.DescriptionTemplates = [
 			"Bandits want to procure an item, but as outlaws they cannot enter town.",
 			"Local criminal is in dire need of new equipment. You can help them smuggle goods.",
@@ -69,6 +70,7 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 
 		this.m.Town = ::WeakTableRef(sourceSettlements[::Math.rand(0, sourceSettlements.len() - 1)]);
 		this.m.Fortress = ::WeakTableRef(militarySettlements[::Math.rand(0, militarySettlements.len() - 1)]);
+		this.m.Flags.set("EnemyNobleHouse", this.m.Fortress.getOwner().getID());
 
 		this.contract.start();
 	}
@@ -78,7 +80,7 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 			ID = "Offer",
 			function start() {
 				this.Contract.m.BulletpointsObjectives = [
-					"Pick up requested item from " + this.Contract.Town.getName()
+					"Pick up requested item from " + this.Contract.m.Town.getName()
 				];
 
 				if (::Math.rand(1, 100) <= ::Const.Contracts.Settings.IntroChance) {
@@ -90,7 +92,6 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 
 			function end() {
 				this.Flags.set("StartTime", this.Time.getVirtualTimeF());
-				this.Flags.set("Nobles", ::Math.rand(0, 2) == 0); // 33% spawned party will be noble patrol
 				if (::Math.rand(0, 2)) { // 66% chance for enemy spawn
 					if(::Math.rand(0, 1)) {
 						this.Flags.set("Ambush", true); // 50% for ambush
@@ -124,14 +125,38 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 			function start() {
 				if (this.Contract.m.Camp != null && !this.Contract.m.Camp.isNull())
 					this.Contract.m.Camp.getSprite("selection").Visible = true;
+				if (this.Flags.has("Pursuit")) {
+					this.Contract.m.PursuitParty = ::WeakTableRef(this.Contract.spawnPursuitParty());
+					this.Contract.m.PursuitParty.setOnCombatWithPlayerCallback(this.onPursuitCombat.bindenv(this));
+				}
 				this.Contract.m.BulletpointsObjectives = [
 					"Deliver requested item to bandit camp"
 				];
 			}
 			function update() {
+				if (this.Flags.get("IsFailure")) {
+					this.Contract.setScreen("FailedPursuit");
+					this.World.Contracts.showActiveContract();
+					return;
+				}
 				if (this.Contract.isPlayerAt(this.Contract.m.Camp)) {
 					this.Contract.setScreen("Success");
 					::World.Contracts.showActiveContract();
+				}
+			}
+
+			function onPursuitCombat(_dest, _isPlayerInitiated) {
+				local p = ::World.State.getLocalCombatProperties(::World.State.getPlayer().getPos());
+				p.CombatID = "Pursuit";
+				::World.Contracts.startScriptedCombat(p, _isPlayerInitiated, true, true);
+			}
+
+			function onRetreatedFromCombat(_combatID) {
+				if (_combatID == "Pursuit") {
+					this.Flags.set("IsFailure", true);
+					if (this.Contract.m.PursuitParty != null && !this.Contract.m.PursuitParty.isNull()) {
+						this.Contract.m.PursuitParty.die();
+					}
 				}
 			}
 		});
@@ -182,9 +207,6 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 					::Settings.getTempGameplaySettings().CameraLocked = false;
 					::World.getCamera().Zoom = 1.0;
 					::World.getCamera().setPos(this.Contract.m.Camp.getPos());
-					if (this.Flags.has("Pursuit")) {
-						this.spawnPursuitParty();
-					}
 	//				::World.Assets.getStash().add(::new("scripts/items/tools/legend_unhold_throwing_net"));
 					this.Contract.setState("Delivery");
 					return 0;
@@ -218,6 +240,25 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 				this.Contract.m.SituationID = this.Contract.resolveSituation(this.Contract.m.SituationID, this.Contract.m.Home, this.List);
 			}
 		});
+
+		this.m.Screens.push({
+			ID = "FailedPursuit",
+			Title = "After the battle...",
+			Text = "[img]gfx/ui/events/event_05.png[/img]{Defeated, you run from the battlefield. Package is lost.}",
+			Image = "",
+			Characters = [],
+			List = [],
+			ShowEmployer = true,
+			Options = [{
+				Text = "{This is not worth losing the company over...}",
+				function getResult() {
+					this.World.Assets.addBusinessReputation(::Const.World.Assets.ReputationOnContractFail);
+					this.World.Contracts.finishActiveContract(true);
+					return 0;
+				}
+			}],
+			function start() {}
+		});
 	}
 
 	function onSortByDistance( _a, _b ) {
@@ -231,7 +272,62 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 	}
 
 	function spawnPursuitParty() {
+		local tile = this.getTileToSpawnLocation(::World.State.getPlayer().getTile(), 8, 12);
 
+		local party = null;
+		if (this.getDifficulty() <= 2) { // we want militia party for these
+			party = ::World.FactionManager.getFaction(this.m.Town.getFaction())
+				.spawnEntity(tile, this.m.Town.getName() + " Militia", false, ::Const.World.Spawn.Militia, 80 * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
+			party.getSprite("banner").setBrush(this.m.Town.getBanner());
+			party.setDescription("Brave men defending their homes with their lives. Farmers, craftsmen, artisans - but not one real soldier.");
+			party.setFootprintType(this.Const.World.FootprintsType.Militia);
+		} else { // hardest should spawn nobles
+			party = ::World.FactionManager.getFaction(this.m.Flags.get("EnemyNobleHouse"))
+				.spawnEntity(tile, "Patrol", false, ::Const.World.Spawn.Noble, 80 * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
+			party.getSprite("banner").setBrush(::World.FactionManager.getFaction(this.m.Flags.get("EnemyNobleHouse")).getBannerSmall());
+			party.setDescription("Professional soldiers in service to local lords.");
+			party.setFootprintType(::Const.World.FootprintsType.Nobles);
+		}
+		if (this.getDifficulty() >= 2) { // attach small unit of mercenaries
+			local oldMinR = ::Const.World.Spawn.Mercenaries.MinR;
+			::Const.World.Spawn.Mercenaries.MinR = 0;
+			this.addUnitsToEntity(party, ::Const.World.Spawn.Mercenaries, 25 * this.getDifficultyMult() * this.getScaledDifficultyMult());
+			::Const.World.Spawn.Mercenaries.MinR = oldMinR;
+			party.setDescription(party.getDescription() + " Small mercenary contingent attached.");
+		}
+
+		party.getLoot().Money = this.Math.rand(50, 100);
+		party.getLoot().ArmorParts = this.Math.rand(0, 10);
+		party.getLoot().Medicine = this.Math.rand(0, 2);
+		party.getLoot().Ammo = this.Math.rand(0, 20);
+		party.setFaction(::Const.Faction.Enemy);
+		party.setMovementSpeed(::Const.World.MovementSettings.Speed * 2.0);
+
+		local r = this.Math.rand(1, 6);
+		if (r == 1) {
+			party.addToInventory("supplies/bread_item");
+		} else if (r == 2) {
+			party.addToInventory("supplies/roots_and_berries_item");
+		} else if (r == 3) {
+			party.addToInventory("supplies/dried_fruits_item");
+		} else if (r == 4) {
+			party.addToInventory("supplies/ground_grains_item");
+		} else if (r == 5) {
+			party.addToInventory("supplies/pickled_mushrooms_item");
+		}
+
+		party.setAttackableByAI(false);
+		party.setAlwaysAttackPlayer(true);
+
+		local c = party.getController();
+		local intercept = this.new("scripts/ai/world/orders/intercept_order");
+		intercept.setTarget(::World.State.getPlayer());
+		c.addOrder(intercept);
+		c.getBehavior(::Const.World.AI.Behavior.ID.Flee)
+			.setEnabled(true);
+		c.getBehavior(::Const.World.AI.Behavior.ID.Attack)
+			.setEnabled(true);
+		return party;
 	}
 
 	function onPrepareVariables(_vars) {
@@ -248,6 +344,9 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		if (this.m.Camp != null && !this.m.Camp.isNull()) {
 			this.m.Camp.getSprite("selection").Visible = false;
 			this.m.Camp.getFlags().remove("isContractLocation");
+		}
+		if (this.Contract.m.PursuitParty != null && !this.Contract.m.PursuitParty.isNull()) {
+			this.Contract.m.PursuitParty.die();
 		}
 	}
 
@@ -267,6 +366,11 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		} else {
 			_out.writeU32(0);
 		}
+		if (this.m.PursuitParty != null && !this.m.PursuitParty.isNull()) {
+			_out.writeU32(this.m.PursuitParty.getID());
+		} else {
+			_out.writeU32(0);
+		}
 		this.contract.onSerialize(_out);
 	}
 
@@ -282,6 +386,10 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		target = _in.readU32();
 		if (target != 0) {
 			this.m.Camp = this.WeakTableRef(this.World.getEntityByID(target));
+		}
+		target = _in.readU32();
+		if (target != 0) {
+			this.m.PursuitParty = this.WeakTableRef(this.World.getEntityByID(target));
 		}
 		this.contract.onDeserialize(_in);
 	}
