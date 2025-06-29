@@ -70,7 +70,7 @@
 					{
 						id = 2,
 						type = "description",
-						text = "Quickly switch to another item from your bag."
+						text = "Quickly switch to another item from your bag"
 					},
 					{
 						id = 3,
@@ -80,7 +80,7 @@
 							item
 						] : [
 							item
-						]) + "[/color][/b] AP to switch."
+						]) + "[/color][/b] AP to switch"
 					}
 				];
 			}
