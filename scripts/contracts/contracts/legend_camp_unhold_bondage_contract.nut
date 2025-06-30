@@ -248,7 +248,7 @@ this.legend_camp_unhold_bondage_contract <- this.inherit("scripts/contracts/lege
 		this.m.Screens.push({
 			ID = "Success",
 			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{You hand over the cage over to the %employer%.%speech_on%Impressive, fine specimen.%speech_off%Tribe leaves with their new pet, while you wonder, what will happen to it.}",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{You hand over the cage over to the %employer%. %SPEECH_ON%Impressive, fine specimen.%SPEECH_OFF%Tribe leaves with their new pet, while you wonder, what will happen to it.}",
 			Image = "",
 			Characters = [],
 			List = [],
