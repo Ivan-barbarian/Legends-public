@@ -2684,26 +2684,26 @@ perkDefObjects.push({
 	Const = "LegendSpecUnarmed"
 });
 
-::Legends.Perk.LegendKick <- null;
+::Legends.Perk.LegendGrappler <- null;
 perkDefObjects.push({
-	ID = "perk.legend_kick",
-	Script = "scripts/skills/perks/perk_legend_kick",
-	Name = ::Const.Strings.PerkName.LegendKick,
-	Tooltip = ::Const.Strings.PerkDescription.LegendKick,
-	Icon = "ui/perks/kick_circle.png",
-	IconDisabled = "ui/perks/kick_circle_bw.png",
-	Const = "LegendKick"
-});
-
-::Legends.Perk.LegendGrapple <- null;
-perkDefObjects.push({
-	ID = "perk.legend_grapple",
-	Script = "scripts/skills/perks/perk_legend_grapple",
-	Name = ::Const.Strings.PerkName.LegendGrapple,
-	Tooltip = ::Const.Strings.PerkDescription.LegendGrapple,
+	ID = "perk.legend_grappler",
+	Script = "scripts/skills/perks/perk_legend_grappler",
+	Name = ::Const.Strings.PerkName.LegendGrappler,
+	Tooltip = ::Const.Strings.PerkDescription.LegendGrappler,
 	Icon = "ui/perks/grapple_circle.png",
 	IconDisabled = "ui/perks/grapple_circle_bw.png",
-	Const = "LegendGrapple"
+	Const = "LegendGrappler"
+});
+
+::Legends.Perk.LegendPugilist <- null;
+perkDefObjects.push({
+	ID = "perk.legend_kick",
+	Script = "scripts/skills/perks/perk_legend_pugilist",
+	Name = ::Const.Strings.PerkName.LegendPugilist,
+	Tooltip = ::Const.Strings.PerkDescription.LegendPugilist,
+	Icon = "ui/perks/pugilist.png",
+	IconDisabled = "ui/perks/pugilist_bw.png",
+	Const = "LegendPugilist"
 });
 
 ::Legends.Perk.LegendAmbidextrous <- null;
@@ -2717,15 +2717,15 @@ perkDefObjects.push({
 	Const = "LegendAmbidextrous"
 });
 
-::Legends.Perk.LegendTackle <- null;
+::Legends.Perk.LegendPummelIntoSubmission <- null;
 perkDefObjects.push({
-	ID = "perk.legend_tackle",
-	Script = "scripts/skills/perks/perk_legend_tackle",
-	Name = ::Const.Strings.PerkName.LegendTackle,
-	Tooltip = ::Const.Strings.PerkDescription.LegendTackle,
-	Icon = "ui/perks/tackle_circle.png", // Just borrowed duelist, change later w/ Olve's art
-	IconDisabled = "ui/perks/tackle_circle_bw.png",
-	Const = "LegendTackle"
+	ID = "perk.legend_pummel_into_submission",
+	Script = "scripts/skills/perks/perk_legend_pummel_into_submission",
+	Name = ::Const.Strings.PerkName.LegendPummelIntoSubmission,
+	Tooltip = ::Const.Strings.PerkDescription.LegendPummelIntoSubmission,
+	Icon = "ui/perks/unarmed_training.png",
+	IconDisabled = "ui/perks/unarmed_training_bw.png",
+	Const = "LegendPummelIntoSubmission"
 });
 
 ::Legends.Perk.LegendFieldTreats <- null;
@@ -4213,28 +4213,6 @@ perkDefObjects.push({
 	Icon = "ui/perks/missile_circle.png",
 	IconDisabled = "ui/perks/missile_circle_bw.png",
 	Const = "LegendMagicMissileMastery"
-});
-
-::Legends.Perk.LegendUnarmedTraining <- null;
-perkDefObjects.push({
-	ID = "perk.legend_unarmed_training",
-	Script = "scripts/skills/perks/perk_legend_unarmed_training",
-	Name = ::Const.Strings.PerkName.LegendUnarmedTraining,
-	Tooltip = ::Const.Strings.PerkDescription.LegendUnarmedTraining,
-	Icon = "ui/perks/unarmed_training.png",
-	IconDisabled = "ui/perks/unarmed_training_bw.png",
-	Const = "LegendUnarmedTraining"
-});
-
-::Legends.Perk.LegendUnarmedLunge <- null;
-perkDefObjects.push({
-	ID = "perk.legend_unarmed_lunge",
-	Script = "scripts/skills/perks/perk_legend_unarmed_lunge",
-	Name = ::Const.Strings.PerkName.LegendUnarmedLunge,
-	Tooltip = ::Const.Strings.PerkDescription.LegendUnarmedLunge,
-	Icon = "ui/perks/unarmed_lunge.png",
-	IconDisabled = "ui/perks/unarmed_lunge_bw.png",
-	Const = "LegendUnarmedLunge"
 });
 
 ::Legends.Perk.LegendBoondockBlade <- null;

@@ -10,6 +10,7 @@
 	o.m.RiderID <- "";
 	// Follows the [% chance, script|function] convention
 	o.m.OnDeathLootTable <- [];
+	o.m.HitInfo <- null;
 
 	o.getGender <- function()
 	{
@@ -600,7 +601,10 @@
 	o.onDamageReceived = function( _attacker, _skill, _hitInfo )
 	{
 		_hitInfo.BodyDamageMultBeforeSteelBrow = _hitInfo.BodyDamageMult;
-		return onDamageReceived(_attacker, _skill, _hitInfo);
+		_hitInfo.DamageFatigue += this.getFatigueMax() * _hitInfo.Properties.FatigueDealtAsPercentOfMaxFatigue;
+		local ret = onDamageReceived(_attacker, _skill, _hitInfo);
+		this.m.HitInfo = _hitInfo; // save hitInfo for later use
+		return ret;
 	}
 
 	local getLootForTile = o.getLootForTile;
@@ -656,6 +660,10 @@
 
 	local kill = o.kill;
 	o.kill = function (_killer = null, _skill = null, _fatalityType = this.Const.FatalityType.None, _silent = false) {
+		if (!this.isHiddenToPlayer() && this.m.HitInfo)
+			this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this) + "\'s " + this.Const.Strings.BodyPartName[this.m.HitInfo.BodyPart] + " is hit for [b]" + this.Math.floor(this.m.HitInfo.DamageInflictedHitpoints) + "[/b] damage");
+		
+		this.m.HitInfo = null; // yeet hit info that was saved earlier
 		if (this.getFlags().has("tail")) // ignore killer when is tail
 			kill(null, _skill, _fatalityType, _silent);
 		else

@@ -1,6 +1,7 @@
 this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		DazeChance = 25
+		DazeChance = 25,
+		HasLeg = false
 	},
 	function create()
 	{
@@ -32,27 +33,27 @@ this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCost = 14;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
+		this.m.IsHidden = true;
 	}
 
 	function getTooltip()
 	{
 		local actor = this.getContainer().getActor();
 		local p = this.getContainer().getActor().getCurrentProperties();
-		local hasLeg = this.getContainer().hasTrait(::Legends.Trait.LegendProstheticLeg);
-		local ret = (hasLeg && ::Legends.Traits.get(actor, ::Legends.Trait.LegendProstheticLeg).m.IsUpgraded) ? this.getDefaultTooltip() : this.getDefaultUtilityTooltip();
+		local ret = ::Legends.Perks.has(this, ::Legends.Perk.LegendPugilist) ? this.getDefaultTooltip() : this.getDefaultUtilityTooltip();
 
 		if (p.IsSpecializedInFists)
 		{
 
-			if (!hasLeg)
-			{
-				ret.push({
-					id = 6,
-					type = "text",
-					icon = "ui/icons/hitchance.png",
-					text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+40%[/color] chance to hit"
-				});
-			}
+			// if (!this.m.HasLeg)
+			// {
+			// 	ret.push({
+			// 		id = 6,
+			// 		type = "text",
+			// 		icon = "ui/icons/hitchance.png",
+			// 		text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+40%[/color] chance to hit"
+			// 	});
+			// }
 			// New
 			ret.push({
 				id = 7,
@@ -69,15 +70,15 @@ this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-			if (!hasLeg)
-			{
-				ret.push({
-					id = 6,
-					type = "text",
-					icon = "ui/icons/hitchance.png",
-					text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] chance to hit"
-				});
-			}
+			// if (!hasLeg)
+			// {
+			// 	ret.push({
+			// 		id = 6,
+			// 		type = "text",
+			// 		icon = "ui/icons/hitchance.png",
+			// 		text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] chance to hit"
+			// 	});
+			// }
 			// New
 			ret.push({
 				id = 7,
@@ -99,6 +100,19 @@ this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.Const.Combat.FatigueReceivedPerHit * 2 + "[/color] fatigue on hit"
 		});
 		return ret;
+	}
+
+	function isHidden()
+	{
+		if (::Legends.Perks.has(this, ::Legends.Perk.LegendPugilist))
+			return false;
+
+		local skill = ::Legends.Effects.get(this, ::Legends.Effect.DoubleGrip)
+		if (skill.canDoubleGrip())
+			return false;
+		local items = this.getContainer().getActor().getItems();
+		local main = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		return (main != null && !this.getContainer().hasEffect(::Legends.Effect.Disarmed)) || this.m.Container.getActor().isStabled();
 	}
 
 
@@ -149,6 +163,16 @@ this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 			{
 				_properties.MeleeSkill += 15;
 				this.m.HitChanceBonus += 15;
+			}
+
+			if (::Legends.Perks.has(this, ::Legends.Perk.LegendPugilist))
+			{
+				local actor = this.getContainer().getActor();
+				_properties.DamageRegularMin = 10;
+				_properties.DamageRegularMax = 15;
+				_properties.DamageArmorMult = 0.6;
+
+				_properties.FatigueDealtPerHitMult += 1.0; // Increase fatigue damage from 5 to 10
 			}
 		}
 	}

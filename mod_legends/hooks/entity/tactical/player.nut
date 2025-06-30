@@ -495,6 +495,8 @@
 		::Legends.Effects.grant(this, ::Legends.Effect.LegendRealmOfNightmares);
 		::Legends.Effects.grant(this, ::Legends.Effect.LegendHorseriderSkill);
 		::Legends.Effects.grant(this, ::Legends.Effect.LegendVeteranLevels);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendGrapple);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendKick);
 	}
 
 	local onHired = o.onHired;

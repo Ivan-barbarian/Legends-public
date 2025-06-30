@@ -912,12 +912,21 @@ if (!("Perks" in ::Const))
 		]
 	},
 	Tree = [
-		[::Legends.Perk.LegendAmbidextrous],
-		[::Legends.Perk.LegendChoke],
-		[::Legends.Perk.LegendGrapple],
-		[::Legends.Perk.LegendSpecUnarmed],
+		[
+			::Legends.Perk.LegendAmbidextrous,
+			::Legends.Perk.LegendPugilist
+		],
+		[
+			::Legends.Perk.LegendGrappler
+		],
 		[],
-		[::Legends.Perk.LegendUnarmedTraining],
+		[
+			::Legends.Perk.LegendSpecUnarmed
+		],
+		[],
+		[
+			::Legends.Perk.LegendPummelIntoSubmission
+		],
 		[]
 	]
 };

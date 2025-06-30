@@ -578,7 +578,7 @@
 			{
 				R = 70,
 				P = 1.0,
-				S = "accessory/legend_spiked_gauntlets_item"
+				S = "accessory/gloves/legend_spiked_gauntlets_item"
 			}
 		];
 

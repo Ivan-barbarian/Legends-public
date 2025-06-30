@@ -156,7 +156,7 @@
 			{
 				R = 70,
 				P = 1.0,
-				S = "accessory/legend_cestus_item"
+				S = "accessory/gloves/legend_cestus_item"
 			},
 			{
 				R = 99,
