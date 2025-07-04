@@ -36,9 +36,7 @@ this.perk_legend_net_casting <- this.inherit("scripts/skills/skill", {
 
 		// Equipping a net into a free offhand (whether from the bag or from the ground) is always free
 		if (_items.len() == 3 && nets == 1 && notNets == 0)
-		{
-			return 0
-		}
+			return 0;
 
 		return null;
 

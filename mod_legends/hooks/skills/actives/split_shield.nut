@@ -3,6 +3,13 @@
 	o.m.IsOrcWeapon <- false;
 	o.m.OverflowDamage <- 0;
 
+	local create = o.create;
+	o.create = function()
+	{
+		create();
+		this.m.DirectDamageMult = 0.4;
+	}
+
 	local getTooltip = o.getTooltip;
 	o.getTooltip = function()
 	{
