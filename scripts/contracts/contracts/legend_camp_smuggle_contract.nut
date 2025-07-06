@@ -104,9 +104,6 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 				this.Contract.setScreen("Overview");
 				::World.Contracts.setActiveContract(this.Contract);
 				this.Contract.m.Town.getSprite("selection").Visible = true;
-				if (!::World.Assets.getStash().hasEmptySlot())
-					::World.Assets.getStash().makeEmptySlots(1);
-				::World.Assets.getStash().add(::new("scripts/items/misc/legend_smuggle_box_item"));
 			}
 		});
 
@@ -234,7 +231,7 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/legend_camp_hunt.png[/img]{TODO}",
+			Text = "[img]gfx/ui/events/legend_camp_hunt.png[/img]{With a cocky grin, %employer% strolls into your tent like he owns the place. %SPEECH_ON%I need a favor. %Town%'s got something of mine, but I'm not welcome here. Could you, uh, go shopping for me?%SPEECH_OFF% }",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
@@ -256,13 +253,16 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		this.m.Screens.push({
 			ID = "ItemPickedUp",
 			Title = "Inside town",
-			Text = "[img]gfx/ui/events/event_112.png[/img]{Item picked up TODO}",
+			Text = ::format("[img]gfx/ui/events/event_112.png[/img]{%s|%s}",
+				"A smuggler meets you behind the tavern, tossing a wrapped bundle into your hands. %SPEECH_ON%Road's clear - for now. And if it starts squeaking, you didn’t get it from me.%SPEECH_OFF%",
+				"A nervous clerk meets you by the well, handing off a bundle wrapped in rags. %SPEECH_ON%Here! Just take it and go. I never saw you, understood?%SPEECH_OFF%"
+			),
 			Image = "",
 			List = [],
 			ShowEmployer = true,
 			ShowDifficulty = true,
 			Options = [{
-				Text = "{Pick item and head out.}",
+				Text = "{Pick the package and head out.}",
 				function getResult() {
 					this.Contract.m.Town.getSprite("selection").Visible = false;
 					this.Contract.m.Camp = ::WeakTableRef(::World.FactionManager.getFactionOfType(::Const.FactionType.Bandits).getNearestSettlement(::World.State.getPlayer().getTile()));
@@ -272,7 +272,9 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 					::Settings.getTempGameplaySettings().CameraLocked = false;
 					::World.getCamera().Zoom = 1.0;
 					::World.getCamera().setPos(this.Contract.m.Camp.getPos());
-	//				::World.Assets.getStash().add(::new("scripts/items/tools/legend_unhold_throwing_net"));
+					if (!::World.Assets.getStash().hasEmptySlot())
+						::World.Assets.getStash().makeEmptySlots(1);
+					::World.Assets.getStash().add(::new("scripts/items/misc/legend_smuggle_box_item"));
 					this.Contract.setState("Delivery");
 					return 0;
 				}
@@ -282,7 +284,10 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		this.m.Screens.push({
 			ID = "Ambush",
 			Title = "At bandit camp...",
-			Text = "[img]gfx/ui/events/event_05.png[/img]{Ambush TODO}",
+			Text = ::format("[img]gfx/ui/events/event_05.png[/img]{%s|%s}",
+				"You arrive at the camp, package in hand — but you're not alone. Steel flashes from the treeline as enemies pour in. %SPEECH_ON%You bastards, lay down your arms and surrender the contraband!%SPEECH_OFF%",
+				"As you hand the package to %employer%'s hands, a rustling sounds come from nearby bushes. %SPEECH_ON%Thought you could smuggle goods into outlaw hands under our noses and get away with it? Get them all!%SPEECH_OFF%"
+			),
 			Image = "",
 			Characters = [],
 			List = [],
@@ -489,7 +494,12 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 	}
 
 	function onPrepareVariables(_vars) {
-
+		if (this.m.Town != null) {
+			_vars.push([
+				"Town",
+				this.m.Town.getName()
+			]);
+		}
 	}
 
 	function onClear() {
