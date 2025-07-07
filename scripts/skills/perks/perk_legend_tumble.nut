@@ -37,7 +37,7 @@ this.perk_legend_tumble <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 		local myTile = this.getContainer().getActor().getTile();
-
+		local freeTiles = [];
 		for( local i = 0; i < 6; i++ )
 		{
 			if (myTile.hasNextTile(i))
@@ -46,10 +46,13 @@ this.perk_legend_tumble <- this.inherit("scripts/skills/skill", {
 
 				if (!nextTile.IsOccupiedByActor && this.Math.abs(nextTile.Level - myTile.Level) <= 1)
 				{
-					return nextTile;
+					freeTiles.push(nextTile)
 				}
 			}
 		}
+		if (freeTiles.len() > 0)
+			return freeTiles[this.Math.rand(0, freeTiles.len() - 1)];
+
 		return null; // tile or null
 	}
 
