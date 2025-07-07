@@ -10,7 +10,6 @@ import subprocess
 import shutil
 import argparse
 from pathlib import Path
-import platform
 
 
 class PatchBuildError(Exception):
@@ -22,7 +21,6 @@ class PatchBuildError(Exception):
 class PatchBuilder:
     def __init__(self, source=None, build_dir=None):
         self.current_dir = Path.cwd()
-        self.log_file = self.current_dir / "log.txt"
 
         if build_dir is None:
             build_dir = "./build"
@@ -105,26 +103,6 @@ class PatchBuilder:
         version = self.extract_version()
         return f"mod_legends-{version}.zip"
 
-    def run_python_script(self, script_path, context=""):
-        """Run a Python script and handle errors"""
-        script_full_path = self.current_dir / script_path
-        print(f"Running {script_path}...")
-
-        if not script_full_path.exists():
-            raise PatchBuildError(f"Python script {script_path} not found")
-
-        try:
-            result = subprocess.run(
-                [sys.executable, str(script_full_path), str(self.current_dir)],
-                capture_output=True,
-                text=True,
-                cwd=self.current_dir,
-            )
-            self.handle_exit(result, context)
-            return result.stdout
-        except FileNotFoundError:
-            raise PatchBuildError(f"Python script {script_path} not found")
-
     def build_helmets(self):
         """Build helmet scripts"""
         print("Building helmets...")
@@ -135,8 +113,10 @@ class PatchBuilder:
             shutil.rmtree(helmet_scripts_dir)
         helmet_scripts_dir.mkdir(exist_ok=True)
 
-        # Run helmet generation script
-        self.run_python_script("buildscript/python/make_legend_helmets.py", "helmet generation")
+        # Run helmet generation directly
+        from buildscript.python.make_legend_helmets import generate_legend_helmets
+
+        generate_legend_helmets(self.current_dir)
 
         # Copy helmet scripts to build directory
         build_helmet_dir = self.build_dir / "scripts" / "items" / "legend_helmets"
@@ -155,8 +135,10 @@ class PatchBuilder:
             shutil.rmtree(armor_scripts_dir)
         armor_scripts_dir.mkdir(exist_ok=True)
 
-        # Run armor generation script
-        self.run_python_script("buildscript/python/make_legend_armor.py", "armor generation")
+        # Run armor generation directly
+        from buildscript.python.make_legend_armor import generate_legend_armor
+
+        generate_legend_armor(self.current_dir)
 
         # Copy armor scripts to build directory
         build_armor_dir = self.build_dir / "scripts" / "items" / "legend_armor"
@@ -168,7 +150,9 @@ class PatchBuilder:
     def build_enemies(self):
         """Build enemies"""
         print("Building enemies...")
-        self.run_python_script("buildscript/python/make_legend_enemies.py", "enemies generation")
+        from buildscript.python.make_legend_enemies import generate_legend_enemies
+
+        generate_legend_enemies(self.current_dir)
 
     def copy_mod_directories(self):
         """Copy mod directories to build directory"""
@@ -207,6 +191,8 @@ class PatchBuilder:
 
     def create_initial_zip(self):
         """Create initial zip archive"""
+        import zipfile
+
         zip_archive = self.artifact_name_mod()
 
         # Change to build directory
@@ -214,40 +200,13 @@ class PatchBuilder:
         os.chdir(self.build_dir)
 
         try:
-            # Check if 7z is available, otherwise use Python's zipfile
-            try:
-                with open(self.log_file, "a") as log:
-                    result = subprocess.run(
-                        [
-                            "7z",
-                            "a",
-                            "-tzip",
-                            zip_archive,
-                            "mod_legends",
-                            "scripts",
-                            "ui",
-                        ],
-                        stdout=log,
-                        stderr=subprocess.STDOUT,
-                        text=True,
-                    )
-
-                if result.returncode != 0:
-                    raise subprocess.CalledProcessError(result.returncode, "7z")
-
-            except (FileNotFoundError, subprocess.CalledProcessError):
-                # Fall back to Python zipfile
-                print("7z not found, using Python zipfile...")
-                import zipfile
-
-                with zipfile.ZipFile(zip_archive, "w", zipfile.ZIP_DEFLATED) as zf:
-                    for root, dirs, files in os.walk("."):
-                        for file in files:
-                            file_path = Path(root) / file
-                            if any(
-                                str(file_path).startswith(d)
-                                for d in ["mod_legends", "scripts", "ui"]
-                            ):
+            with zipfile.ZipFile(zip_archive, "w", zipfile.ZIP_DEFLATED) as zf:
+                # Only walk through the specific directories we want to include
+                for dir_name in ["mod_legends", "scripts", "ui"]:
+                    if Path(dir_name).exists():
+                        for root, dirs, files in os.walk(dir_name):
+                            for file in files:
+                                file_path = Path(root) / file
                                 zf.write(file_path, file_path)
 
             # Move zip to build directory root
@@ -260,34 +219,18 @@ class PatchBuilder:
 
     def add_scripts_to_zip(self, zip_archive):
         """Add scripts directory to existing zip"""
+        import zipfile
+
         # Change to build directory
         original_cwd = os.getcwd()
         os.chdir(self.build_dir)
 
         try:
-            # Check if 7z is available, otherwise use Python's zipfile
-            try:
-                with open(self.log_file, "a") as log:
-                    result = subprocess.run(
-                        ["7z", "a", "-tzip", zip_archive, "scripts"],
-                        stdout=log,
-                        stderr=subprocess.STDOUT,
-                        text=True,
-                    )
-
-                if result.returncode != 0:
-                    raise subprocess.CalledProcessError(result.returncode, "7z")
-
-            except (FileNotFoundError, subprocess.CalledProcessError):
-                # Fall back to Python zipfile
-                print("7z not found, using Python zipfile...")
-                import zipfile
-
-                with zipfile.ZipFile(zip_archive, "a", zipfile.ZIP_DEFLATED) as zf:
-                    for root, dirs, files in os.walk("scripts"):
-                        for file in files:
-                            file_path = Path(root) / file
-                            zf.write(file_path, file_path)
+            with zipfile.ZipFile(zip_archive, "a", zipfile.ZIP_DEFLATED) as zf:
+                for root, dirs, files in os.walk("scripts"):
+                    for file in files:
+                        file_path = Path(root) / file
+                        zf.write(file_path, file_path)
 
         finally:
             os.chdir(original_cwd)
@@ -341,27 +284,16 @@ class PatchBuilder:
                 for file_path in filtered_files:
                     asset_dirs.add(file_path.split("/")[0])
 
-                # Check if 7z is available, otherwise use Python's zipfile
-                try:
+                # Use Python zipfile
+                import zipfile
+
+                with zipfile.ZipFile(zip_archive, "a", zipfile.ZIP_DEFLATED) as zf:
                     for asset_dir in asset_dirs:
                         if Path(asset_dir).exists():
-                            result = subprocess.run(
-                                ["7z", "a", "-tzip", zip_archive, asset_dir],
-                                capture_output=True,
-                                text=True,
-                            )
-
-                except (FileNotFoundError, subprocess.CalledProcessError):
-                    # Fall back to Python zipfile
-                    import zipfile
-
-                    with zipfile.ZipFile(zip_archive, "a", zipfile.ZIP_DEFLATED) as zf:
-                        for asset_dir in asset_dirs:
-                            if Path(asset_dir).exists():
-                                for root, dirs, files in os.walk(asset_dir):
-                                    for file in files:
-                                        file_path = Path(root) / file
-                                        zf.write(file_path, file_path)
+                            for root, dirs, files in os.walk(asset_dir):
+                                for file in files:
+                                    file_path = Path(root) / file
+                                    zf.write(file_path, file_path)
 
             finally:
                 os.chdir(original_cwd)
