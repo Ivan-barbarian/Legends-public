@@ -1,5 +1,7 @@
 ::Legends.S <- {};
 
+::Legends.S.isNull <- ::MSU.isNull;
+
 ::Legends.S.colorize <- function(_valueString, _value)
 {
     local color = (_value >= 0) ? this.Const.UI.Color.PositiveValue : this.Const.UI.Color.NegativeValue;
@@ -143,4 +145,14 @@
 		}
 	}
 	return nearestTown;
+}
+
+::Legends.S.skillEntityAliveCheck <- function (_entity, _otherEntity = null) {
+	if (::Legends.S.isNull(_entity) || !_entity.isAlive() || _entity.isDead())
+		return true;
+	if (_otherEntity == null)
+		return false;
+	if (::Legends.S.isNull(_otherEntity) || !_otherEntity.isAlive() || _otherEntity.isDead())
+		return true;
+	return false;
 }

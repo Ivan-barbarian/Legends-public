@@ -100,8 +100,9 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 		{
 			if (!_forFree)
 			{
-				if (!actor.isAlive() || actor.isDying())
+				if (::Legends.S.skillEntityAliveCheck(actor))
 					return;
+
 				if (_targetTile == null || actor.getTile() == null) // Is this necessary?
 					return;
 

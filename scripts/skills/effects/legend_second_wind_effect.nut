@@ -67,19 +67,18 @@ this.legend_second_wind_effect <- this.inherit("scripts/skills/skill", {
 	function onAdded()
 	{
 		local actor = this.getContainer().getActor();
-		if (!actor.isAlive() || actor.isDying())
+
+		if (::Legends.S.skillEntityAliveCheck(actor))
 			return;
+
 		actor.setFatigue(0);
-		foreach (effect in this.m.ApplicableEffects)
-		{
-			if (this.getContainer().hasEffect(effect))
-			{
+		foreach (effect in this.m.ApplicableEffects) {
+			if (this.getContainer().hasEffect(effect)) {
 				::Legends.Effects.remove(actor, effect);
 			}
 		}
 
-		if (!actor.isHiddenToPlayer())
-		{
+		if (!actor.isHiddenToPlayer()) {
 			actor.playSound(this.Const.Sound.ActorEvent.Fatigue, this.Const.Sound.Volume.Actor * actor.getSoundVolume(this.Const.Sound.ActorEvent.Fatigue));
 		}
 	}

@@ -22,7 +22,7 @@
 		if (this.getContainer() != null)
 		{
 			local actor = this.getContainer().getActor();
-			if (actor == null || actor.isNull() || !actor.isAlive())
+			if (::Legends.S.skillEntityAliveCheck(actor))
 				return;
 
 			if (actor.hasSprite("status_rage"))
