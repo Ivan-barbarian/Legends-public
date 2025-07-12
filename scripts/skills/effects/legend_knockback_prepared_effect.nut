@@ -53,7 +53,7 @@ this.legend_knockback_prepared_effect <- this.inherit("scripts/skills/skill", {
 		if (this.m.AttacksLeft <= 0)
 			this.removeSelf();
 
-		if (!_targetEntity.isAlive() || _targetEntity.isDying())
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
 			return;
 
 		::Legends.Effects.grant(_targetEntity, ::Legends.Effect.LegendBaffled);
