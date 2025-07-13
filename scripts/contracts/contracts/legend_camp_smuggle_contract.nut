@@ -549,6 +549,7 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		target = _in.readU32();
 		if (target != 0) {
 			this.m.PursuitParty = ::WeakTableRef(::World.getEntityByID(target));
+			this.m.PursuitParty.setFaction(::Const.Faction.Enemy);
 		}
 		this.contract.onDeserialize(_in);
 	}
