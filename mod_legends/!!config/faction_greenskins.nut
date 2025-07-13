@@ -57,6 +57,44 @@
 	],
 	FatigueRecoveryRate = 20
 };
+::Const.Tactical.Actor.LegendGoblinBerserker <- {
+	XP = 600,
+	ActionPoints = 12,
+	Hitpoints = 140,
+	Bravery = 125,
+	Stamina = 140,
+	MeleeSkill = 80,
+	RangedSkill = 50,
+	MeleeDefense = 5,
+	RangedDefense = 35,
+	Initiative = 110,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 25
+};
+::Const.Tactical.Actor.LegendGoblinTribeDefender <- {
+	XP = 400,
+	ActionPoints = 9,
+	Hitpoints = 65,
+	Bravery = 65,
+	Stamina = 120,
+	MeleeSkill = 60,
+	RangedSkill = 75,
+	MeleeDefense = 5,
+	RangedDefense = 40,
+	Initiative = 70,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		150,
+		60
+	],
+	FatigueRecoveryRate = 15
+};
 ::Const.Tactical.Actor.LegendGoblinWhiteDirewolfRider <- {
 	XP = 500, // 400 + 600 / 2
 	ActionPoints = 15,

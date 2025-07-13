@@ -264,6 +264,10 @@ for (local i = -1; i < ::Const.EntityIcon.len(); i++) {
 	::Const.EntityType.addNew("enraged_hyena_orientation", "Enraged Hyena", "Enraged Hyenas", this.Const.FactionType.Beasts);
 ::Const.EntityType.LegendGoblinEliteFighter <-
 	::Const.EntityType.addNew("goblin_03_orientation", "Goblin Harrier", "Goblin Harriers", this.Const.FactionType.Goblins);
+::Const.EntityType.LegendGoblinBerserker <-
+	::Const.EntityType.addNew("goblin_01_orientation", "Goblin Berserker", "Goblin Berserkers", ::Const.FactionType.Goblins);
+::Const.EntityType.LegendGoblinTribeDefender <-
+	::Const.EntityType.addNew("goblin_03_orientation", "Goblin Tribe Defender", "Goblin Tribe Defenders", ::Const.FactionType.Goblins);
 ::Const.EntityType.LegendGoblinDirewolfRider <-
 	::Const.EntityType.addNew("goblin_05_orientation", "Direwolf Rider", "Direwolf Riders", this.Const.FactionType.Goblins);
 ::Const.EntityType.LegendGoblinWhiteDirewolfRider <-

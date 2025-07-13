@@ -795,6 +795,28 @@
 	Script = "scripts/entity/tactical/legend_enraged_hyena"
 };
 
+::Const.World.Spawn.Troops.LegendGoblinBerserker <- {
+	ID = ::Const.EntityType.LegendGoblinBerserker,
+	Variant = 100,
+	Strength = 50,
+	Cost = 50,
+	Row = -1,
+	NameList = ::Const.Strings.GoblinNames,
+	TitleList = ::Const.Strings.GoblinTitles,
+	Script = "scripts/entity/tactical/enemies/legend_goblin_berserker"
+};
+
+::Const.World.Spawn.Troops.LegendGoblinTribeDefender <- {
+	ID = ::Const.EntityType.LegendGoblinTribeDefender,
+	Variant = 35,
+	Strength = 40,
+	Cost = 40,
+	Row = 1,
+	NameList = ::Const.Strings.GoblinNames,
+	TitleList = ::Const.Strings.GoblinTitles,
+	Script = "scripts/entity/tactical/enemies/legend_goblin_tribe_defender"
+};
+
 ::Const.World.Spawn.CaravanFort <-
 {
 	Name = "CaravanFort",
