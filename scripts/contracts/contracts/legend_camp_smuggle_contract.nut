@@ -92,13 +92,13 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 
 			function end() {
 				this.Flags.set("StartTime", this.Time.getVirtualTimeF());
-				if (::Math.rand(0, 2)) { // 66% chance for enemy spawn
-					if(::Math.rand(0, 1)) {
-						this.Flags.set("Ambush", true); // 50% for ambush
-					} else {
+//				if (::Math.rand(0, 2)) { // 66% chance for enemy spawn
+//					if(::Math.rand(0, 1)) {
+//						this.Flags.set("Ambush", true); // 50% for ambush
+//					} else {
 						this.Flags.set("Pursuit", true); // 50% for pursuit
-					}
-				}
+//					}
+//				}
 
 				::World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
 				this.Contract.setScreen("Overview");
@@ -158,10 +158,16 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 
 			function onRetreatedFromCombat(_combatID) {
 				if (_combatID == "Pursuit") {
-					this.Flags.set("IsFailure", true);
+					this.Flags.remove("Pursuit");
 					if (this.Contract.m.PursuitParty != null && !this.Contract.m.PursuitParty.isNull()) {
 						this.Contract.m.PursuitParty.die();
 					}
+				}
+			}
+
+			function onCombatVictory(_combatID) {
+				if (_combatID == "Pursuit") {
+					this.Flags.remove("Pursuit");
 				}
 			}
 
@@ -253,7 +259,7 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		this.m.Screens.push({
 			ID = "ItemPickedUp",
 			Title = "Inside town",
-			Text = ::format("[img]gfx/ui/events/event_112.png[/img]{%s|%s}",
+			Text = ::format("[img]gfx/ui/events/event_112.png[/img]{%s | %s}",
 				"A smuggler meets you behind the tavern, tossing a chest into your hands. %SPEECH_ON%Road's clear - for now. And if it starts squeaking, you didn’t get it from me.%SPEECH_OFF%",
 				"A nervous clerk meets you by the well, handing off a small chest. %SPEECH_ON%Here! Just take it and go. I never saw you, understood?%SPEECH_OFF%"
 			),
@@ -284,7 +290,7 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		this.m.Screens.push({
 			ID = "Ambush",
 			Title = "At bandit camp...",
-			Text = ::format("[img]gfx/ui/events/event_05.png[/img]{%s|%s}",
+			Text = ::format("[img]gfx/ui/events/event_05.png[/img]{%s | %s}",
 				"You arrive at the camp, package in hand — but you're not alone. Steel flashes from the treeline as enemies pour in. %SPEECH_ON%You bastards, lay down your arms and surrender the contraband!%SPEECH_OFF%",
 				"As you hand the package to %employer%'s hands, a rustling sounds come from nearby bushes. %SPEECH_ON%Thought you could smuggle goods into outlaw hands under our noses and get away with it? Get them all!%SPEECH_OFF%"
 			),
@@ -551,9 +557,28 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		}
 		target = _in.readU32();
 		if (target != 0) {
-			this.m.PursuitParty = ::WeakTableRef(::World.getEntityByID(target));
-			this.m.PursuitParty.setFaction(::Const.Faction.Enemy);
+			local entity = ::World.getEntityByID(target);
+			if (entity != null) {
+				this.m.PursuitParty = ::WeakTableRef(entity);
+				this.m.PursuitParty.setFaction(::Const.Faction.Enemy);
+			}
 		}
 		this.contract.onDeserialize(_in);
+
+//		local skipPursuit = false;
+//		target = _in.readU32();
+//		if (target != 0) {
+//			local entity = ::World.getEntityByID(target);
+//			if (entity != null) {
+//				this.m.PursuitParty = ::WeakTableRef(entity);
+//				this.m.PursuitParty.setFaction(::Const.Faction.Enemy);
+//			} else {
+//				skipPursuit = true;
+//			}
+//		}
+//		this.contract.onDeserialize(_in);
+//		if (skipPursuit) {
+//			this.m.Flags.remove("Pursuit");
+//		}
 	}
 });
