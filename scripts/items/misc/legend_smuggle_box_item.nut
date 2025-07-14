@@ -32,15 +32,12 @@ this.legend_smuggle_box_item <- ::inherit("scripts/items/item", {
 		local idx = itemTypeSeed % 3;
 		if (idx == 0) {
 			local items = clone ::Const.Items.NamedWeapons;
-			::MSU.Log.printData(items);
 			item = ::new("scripts/items/" + items[itemSeed % items.len()]);
 		} else if (idx == 1) {
 			local helmets = ::Const.World.Common.convNameToList(::Const.Items.NamedHelmets);
-			::MSU.Log.printData(helmets);
 			item = ::Const.World.Common.pickHelmet([helmets[itemSeed % helmets.len()]]);
 		} else if (idx == 2) {
 			local armors = ::Const.World.Common.convNameToList(::Const.Items.NamedArmors);
-			::MSU.Log.printData(armors);
 			item = ::Const.World.Common.pickArmor([armors[itemSeed % armors.len()]]);
 		}
 		::World.Assets.getStash().makeEmptySlots(1);
