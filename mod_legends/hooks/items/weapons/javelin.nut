@@ -25,13 +25,9 @@
 			return;
 		}
 		if (this.m.Ammo > 0) {
-			this.m.Icon = "weapons/ranged/javelins_01_" + this.m.Variant + "_70x70.png";
-			this.m.IconLarge = "weapons/ranged/javelins_01_" + this.m.Variant + ".png";
-		} else {
-			this.m.Icon = "weapons/ranged/javelins_01_bag.png";
-			this.m.IconLarge = "weapons/ranged/javelins_01_bag_70x70.png";
+			this.updateVariant();
+			this.updateAppearance();
 		}
-		this.updateAppearance();
 	}
 
 });

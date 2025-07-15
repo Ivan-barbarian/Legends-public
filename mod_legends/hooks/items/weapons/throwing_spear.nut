@@ -1,7 +1,7 @@
 ::mods_hookExactClass("items/weapons/throwing_spear", function(o) {
+
 	local create = o.create;
-	o.create = function ()
-	{
+	o.create = function() {
 		create();
 		this.m.Categories = "Throwing Weapon, Spear, One-Handed";
 		this.m.Description = "Lighter than a common spear, but heavier than a javelin, this weapon is intended to be thrown over short distances. The tip will bend on impact, potentially rendering shields unusable. Can be used against unshielded opponents as well for great effect.";
@@ -11,6 +11,20 @@
 		this.m.Ammo = 1;
 		this.m.AmmoMax = 1;
 		this.m.AmmoCost = 6;
+		this.m.Variant = this.Math.rand(0, 2);
+		this.updateVariant();
+	}
+
+	o.updateVariant <- function() {
+		if (this.m.Variant == 0) {
+			this.m.Icon = "weapons/ranged/throwing_spear_01_70x70.png";
+			this.m.IconLarge = "weapons/ranged/throwing_spear_01.png";
+			this.m.ArmamentIcon = "icon_throwing_spear_01";
+		} else {
+			this.m.Icon = "weapons/ranged/throwing_spear_01_" + this.m.Variant + "_70x70.png";
+			this.m.IconLarge = "weapons/ranged/throwing_spear_01_" + this.m.Variant + ".png";
+			this.m.ArmamentIcon = "icon_throwing_spear_01_" + this.m.Variant;
+		}
 	}
 
 	o.getTooltip = function ()
@@ -35,25 +49,19 @@
 		return this.m.Ammo + "/" + this.m.AmmoMax;
 	}
 
-	o.setAmmo <- function ( _a )
-	{
+	o.setAmmo <- function(_a) {
 		this.weapon.setAmmo(_a);
-
-		if (this.m.Ammo > 0)
-		{
+		if (this.m.Ammo > 0) {
 			this.m.Name = "Throwing Spear";
-			this.m.IconLarge = "weapons/ranged/throwing_spear_01.png";
-			this.m.Icon = "weapons/ranged/throwing_spear_01_70x70.png";
+			this.updateVariant();
 			this.m.ShowArmamentIcon = true;
-		}
-		else
-		{
+		} else {
 			this.m.Name = "Throwing Spear (Used)";
 			this.m.IconLarge = "weapons/ranged/javelins_01_bag.png";
 			this.m.Icon = "weapons/ranged/javelins_01_bag_70x70.png";
 			this.m.ShowArmamentIcon = false;
 		}
-
 		this.updateAppearance();
 	}
+
 });

@@ -19,4 +19,16 @@
 		this.m.ArmamentIcon = "icon_throwing_axes_01_" + this.m.Variant;
 	}
 
+	local setAmmo = o.setAmmo;
+	o.setAmmo = function(_a) {
+		setAmmo(_a);
+		if (this.m.Variant == 0) {
+			return;
+		}
+		if (this.m.Ammo > 0) {
+			this.updateVariant();
+			this.updateAppearance();
+		}
+	}
+
 });
