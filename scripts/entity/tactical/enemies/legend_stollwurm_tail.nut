@@ -498,12 +498,10 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Body.checkMorale(_change, _difficulty, _type, _showIconBeforeMoraleIcon, _noNewLine);
 	}
 
-	function kill( _killer = null, _skill = null, _fatalityType = this.Const.FatalityType.None, _silent = false )
-	{
+	function kill( _killer = null, _skill = null, _fatalityType = this.Const.FatalityType.None, _silent = false ) {
 		this.actor.kill(_killer, _skill, _fatalityType, _silent);
 
-		if (this.m.Body != null && !this.m.Body.isNull() && this.m.Body.isAlive() && !this.m.Body.isDying())
-		{
+		if (!::Legends.S.skillEntityAliveCheck(this.m.Body)) {
 			this.m.Body.kill(_killer, _skill, _fatalityType, _silent);
 			this.m.Body = null;
 		}
@@ -618,4 +616,3 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 
 
 });
-
