@@ -151,6 +151,7 @@
 ::Const.Strings.PerkName.LegendMeistersanger <- "Meistersänger";
 ::Const.Strings.PerkName.LegendHimshaw <- "Himshaw";
 ::Const.Strings.PerkName.LegendSwagger <- "Swagger";
+::Const.Strings.PerkName.LegendKeenEyesight <- "Keen Eyesight";
 
 //MASTERIES - skills that have a unified effect on their weapon class
 ::Const.Strings.PerkName.LegendSpecPoison <- "Poison Mastery";
@@ -700,3 +701,4 @@
 ::Const.Strings.PerkDescription.LegendHelpful <- "Enhance your logistical support in battle.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Pass Item[/color] skill which allows you to give items from your bag. Taking [color=#400080]Quick Hands[/color] reduces the Action Point cost by [color=" + this.Const.UI.Color.NegativeValue + "]2[/color].\n\n• Does not work when receiving items.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]2[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]5[/color] Fatigue.";
 ::Const.Strings.PerkDescription.LegendLionheart <- "A lion\'s heart beats with unyielding strength, facing every challenge with with fearless resolve!\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Being surrounded by enemies no longer affects your morale and increases your resolve by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color].";
 ::Const.Strings.PerkDescription.LegendStrengthInNumbers <- "Surround, distract and strike true.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• The bonus to hitchance in melee is doubled to [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] for each ally surrounding and distracting your target.";
+::Const.Strings.PerkDescription.LegendKeenEyesight <- "Learn how to use your superb eyesight to notice the smallest movements and predict your opponent's next attack, to hit distant targets and to avoid incoming projectiles. \n\n[color=#4f1800][u]Passive:[/u][/color]\n• Gain a [color=" + ::Const.UI.Color.PositiveValue + "]+3/+5[/color] bonus to Melee/Ranged Skill for each point of vision above 7. \n\n• Gain a [color=" + ::Const.UI.Color.PositiveValue + "]+3/+4[/color] bonus to Melee/Ranged Defense for each point of vision above 7. \n\n• If your helmet reduces your vision score by at least 3/5 these bonuses are reduced by [color=" + ::Const.UI.Color.NegativeValue + "]10%/20%[/color]. \n\n• For the purposes of this perk, your current vision is calculated as if you had no helmet, only the above penalty applies.";

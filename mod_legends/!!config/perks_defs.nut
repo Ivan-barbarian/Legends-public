@@ -4391,4 +4391,15 @@ perkDefObjects.push({
 	Const = "LegendSwagger"
 });
 
+::Legends.Perk.LegendKeenEyesight <- null;
+perkDefObjects.push({
+	ID = "perk.legend_keen_eyesight",
+	Script = "scripts/skills/perks/perk_legend_keen_eyesight",
+	Name = ::Const.Strings.PerkName.LegendKeenEyesight,
+	Tooltip = ::Const.Strings.PerkDescription.LegendKeenEyesight,
+	Icon = "ui/perks/perk_vision.png",
+	IconDisabled = "ui/perks/perk_vision_sw.png",
+	Const = "LegendKeenEyesight"
+});
+
 ::Const.Perks.addPerkDefObjects(perkDefObjects);

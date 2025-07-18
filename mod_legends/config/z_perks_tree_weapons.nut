@@ -661,7 +661,7 @@ if (!("Perks" in ::Const))
 		[::Legends.Perk.Bullseye],
 		[],
 		[::Legends.Perk.SpecBow],
-		[::Legends.Perk.LegendWindReader],
+		[::Legends.Perk.LegendKeenEyesight],
 		[],
 		[]
 	]
