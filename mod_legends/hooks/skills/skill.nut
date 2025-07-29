@@ -41,11 +41,10 @@
 	local getFatigueCost = o.getFatigueCost;
 	o.getFatigueCost = function()
 	{
-		if (this.m.Container != null && this.m.IsWeaponSkill)
+		if (this.m.Container != null && this.m.IsWeaponSkill && this.getItem() != null)
 		{
 			local containerProperties = this.m.Container.getActor().getCurrentProperties();
-			local item = this.getItem();
-			this.m.FatigueCostMult = ::Legends.S.isCharacterWeaponSpecialized(containerProperties, item) ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+			this.m.FatigueCostMult = ::Legends.S.isCharacterWeaponSpecialized(containerProperties, this.getItem()) ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		}
 		return getFatigueCost();
 	}
