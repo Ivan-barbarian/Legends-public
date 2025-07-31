@@ -53,7 +53,7 @@ this.perk_legend_keen_eyesight <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onUpdate( _properties )
+	function onAfterUpdate( _properties )
 	{
 		this.setBonus(_properties.Vision);
 		_properties.MeleeSkill += this.m.MeleeSkillBonus;
