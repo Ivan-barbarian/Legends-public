@@ -33,7 +33,9 @@ this.legend_banshee_scream <- this.inherit("scripts/skills/skill", {
 	{
 		if (!_user.isHiddenToPlayer() || _targetTile.IsVisibleForPlayer)
 		{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " uses Banshee Scream");
+			::Tactical.EventLog.log(::Legends.S.format("%actor% uses Banshee Scream", {
+				actor = ::Const.UI.getColorizedEntityName(_user)
+			}));
 		}
 
 		local target = _targetTile.getEntity();
@@ -60,9 +62,10 @@ this.legend_banshee_scream <- this.inherit("scripts/skills/skill", {
 		target.onDamageReceived(this.getContainer().getActor(), this, hitInfo);
 
 		::Legends.Effects.grant(target, ::Legends.Effect.Horrified);
-		if (!_user.isHiddenToPlayer() && !target.isHiddenToPlayer())
-		{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(target) + " is horrified");
+		if (!target.isHiddenToPlayer()) {
+			::Tactical.EventLog.log(::Legends.S.format("%actor% is horrified", {
+				actor = ::Const.UI.getColorizedEntityName(target)
+			}));
 		}
 
 		return true;

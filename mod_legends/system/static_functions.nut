@@ -156,3 +156,15 @@
 		return true;
 	return false;
 }
+
+::Legends.S.format <- function (_obj, _vars = null) {
+	if (_vars == null)
+		return _obj;
+	if (typeof(_vars) != "table")
+		return ::buildTextFromTemplate(_obj, _vars);
+	local vars = [];
+	foreach (key, value in _vars) {
+		vars.push([key, value]);
+	}
+	return ::buildTextFromTemplate(_obj, vars);
+}

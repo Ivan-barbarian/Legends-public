@@ -90,7 +90,9 @@ this.legend_alp_summon_nightmare_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		if (!_user.isHiddenToPlayer() && !_targetTile.getEntity().isHiddenToPlayer())
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " creates monsters from the shadow");
+			::Tactical.EventLog.log(::Legends.S.format("%actor% creates monsters from the shadow", {
+				actor = ::Const.UI.getColorizedEntityName(_targetTile.getEntity())
+			}));
 
 		return true;
 	}

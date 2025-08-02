@@ -19,7 +19,9 @@
 
 			if (!_user.isHiddenToPlayer())
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " eats  Strange Mushrooms");
+				::Tactical.EventLog.log(::Legends.S.format("%actor% eats Strange Mushrooms" , {
+					actor = ::Const.UI.getColorizedEntityName(user)
+				}));
 			}
 
 			if (this.m.Item != null && !this.m.Item.isNull())

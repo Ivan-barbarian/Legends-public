@@ -22,16 +22,22 @@
 				if (r <= waverchance)
 				{
 					ally.setMoraleState(this.Const.MoraleState.Wavering);
-					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(ally) + " is wavering after being scared by a speech");
+					::Tactical.EventLog.log(::Legends.S.format("%actor% is wavering after being scared by a speech", {
+						actor = ::Const.UI.getColorizedEntityName(ally)
+					}));
 				}
 				else if (r >= (resolve_ally * 0.33))
 				{
 					ally.setMoraleState(this.Const.MoraleState.Confident);
-					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(ally) + " is confident due to an inspiring speech");
+					::Tactical.EventLog.log(::Legends.S.format("%actor% is confident due to an inspiring speech", {
+						actor = ::Const.UI.getColorizedEntityName(ally)
+					}));
 				}
 				else
 				{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(ally) + " was not paying attention to a speech");
+					::Tactical.EventLog.log(::Legends.S.format("%actor% was not paying attention to a speech", {
+						actor = ::Const.UI.getColorizedEntityName(ally)
+					}));
 				}
 
 			}

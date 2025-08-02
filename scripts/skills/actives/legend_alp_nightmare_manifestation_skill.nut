@@ -93,7 +93,9 @@ this.legend_alp_nightmare_manifestation_skill <- this.inherit("scripts/skills/sk
 		}
 
 		if (!_user.isHiddenToPlayer() && !_targetTile.getEntity().isHiddenToPlayer())
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + "\'s nightmare becomes real!");
+			::Tactical.EventLog.log(::Legends.S.format("%actor%\'s nightmare becomes real!", {
+				actor = ::Const.UI.getColorizedEntityName(_targetTile.getEntity())
+			}));
 
 		if (_targetTile.IsVisibleForPlayer || !_user.isHiddenToPlayer())
 			this.Time.scheduleEvent(this.TimeUnit.Virtual, 400, this.onDelayedEffect.bindenv(this), tag);

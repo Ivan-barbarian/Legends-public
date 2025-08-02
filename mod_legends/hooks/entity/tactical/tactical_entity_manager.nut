@@ -624,7 +624,7 @@
 		// holyflame stop the ressurection
 		if (_info.Tile.Properties.Effect != null && _info.Tile.Properties.Effect.Type == "legend_holyflame") {
 			if (_info.Tile.IsVisibleForPlayer)
-				this.Tactical.EventLog.log("The simmering holy flame stops the dead from raising back to life again.");
+				::Tactical.EventLog.log("The simmering holy flame stops the dead from raising back to life again.");
 
 			return null;
 		}

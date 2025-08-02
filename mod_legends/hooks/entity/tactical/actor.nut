@@ -229,7 +229,10 @@
 				});
 			}
 
-			::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(this) + " Parries the attack from " + ::Const.UI.getColorizedEntityName(_attacker));
+			::Tactical.EventLog.log(::Legends.S.format("%self% Parries the attack from %attacker%", {
+				self = ::Const.UI.getColorizedEntityName(this),
+				attacker = ::Const.UI.getColorizedEntityName(_attacker)
+			}));
 		}
 		else
 		{
@@ -268,7 +271,11 @@
 		// this.Sound.play("sounds/combat/legend_parried_01.wav", ::Const.Sound.Volume.Skill, _info.Actor.getPos())
 		this.Sound.play(sound, ::Const.Sound.Volume.Skill, _info.Actor.getPos());
 		::Legends.Effects.grant(_info.Attacker, ::Legends.Effect.LegendParried);
-		::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(_info.Attacker) + " is Vulnerable");
+
+		::Tactical.EventLog.log(::Legends.S.format("%attacker% is Vulnerable", {
+			attacker = ::Const.UI.getColorizedEntityName(_info.Attacker)
+		}));
+
 		// Attempt to perform a Riposte after the Parry (with a delay so that it only begins after the Parry animation is finished)
 		this.onBeforeRiposte(_info.Attacker, _info.Skill, 1.5);
 	}

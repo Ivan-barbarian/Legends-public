@@ -36,7 +36,9 @@
 
 			if (_user.isDiscovered() && (!_user.isHiddenToPlayer() || _targetTile.IsVisibleForPlayer))
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " feasts on a corpse");
+				::Tactical.EventLog.log(::Legends.S.format("%actor% feasts on a corpse", {
+					actor = ::Const.UI.getColorizedEntityName(_user)
+				}));
 			}
 		}
 

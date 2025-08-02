@@ -190,9 +190,10 @@ this.legend_basilisk_sentry_fowleye_skill <- this.inherit("scripts/skills/skill"
 			{
 				::Legends.Effects.grant(target, ::Legends.Effect.Horrified);
 
-				if (!_user.isHiddenToPlayer() && !target.isHiddenToPlayer())
-				{
-					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(target) + " is horrified");
+				if (!target.isHiddenToPlayer()) {
+					::Tactical.EventLog.log(::Legends.S.format("%actor% is horrified", {
+						actor = ::Const.UI.getColorizedEntityName(target)
+					}));
 				}
 			}
 		}

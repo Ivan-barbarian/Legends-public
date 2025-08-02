@@ -31,7 +31,9 @@
 		{
 			if (!this.getContainer().getActor().isHiddenToPlayer())
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " shook off being stunned thanks to his unnatural physiology");
+				::Tactical.EventLog.log(::Legends.S.format("%actor% shook off being stunned thanks to his unnatural physiology", {
+					actor = ::Const.UI.getColorizedEntityName(this.getContainer().getActor())
+				}));
 			}
 
 			this.removeSelf();

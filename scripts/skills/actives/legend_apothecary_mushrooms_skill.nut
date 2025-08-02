@@ -87,7 +87,9 @@ this.legend_apothecary_mushrooms_skill <- this.inherit("scripts/skills/actives/b
 
 			if (!_user.isHiddenToPlayer())
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " eats Magic Mushrooms");
+				::Tactical.EventLog.log(::Legends.S.format("%actor% eats Magic Mushrooms", {
+					actor = ::Const.UI.getColorizedEntityName(user)
+				}));
 			}
 
 			if (this.m.Item != null && !this.m.Item.isNull())

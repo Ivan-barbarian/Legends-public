@@ -323,7 +323,12 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 			{
 				overflowDamage = overflowDamage - this.m.Body.m.BaseProperties.Armor[_hitInfo.BodyPart] * this.m.Body.m.BaseProperties.ArmorMult[_hitInfo.BodyPart];
 				this.m.Body.m.BaseProperties.Armor[_hitInfo.BodyPart] = this.Math.max(0, this.m.Body.m.BaseProperties.Armor[_hitInfo.BodyPart] * this.m.Body.m.BaseProperties.ArmorMult[_hitInfo.BodyPart] - _hitInfo.DamageArmor);
-				this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this) + "\'s natural armor is hit for [b]" + this.Math.floor(_hitInfo.DamageArmor) + "[/b] damage");
+				::Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this) + "\'s natural armor is hit for [b]" + this.Math.floor(_hitInfo.DamageArmor) + "[/b] damage");
+
+				::Tactical.EventLog.logEx(::Legends.S.format("%self%\'s natural armor is hit for %dmg% damage", {
+					self = ::Const.UI.getColorizedEntityName(this),
+					dmg = ::Const.UI.bold(::Math.floor(_hitInfo.DamageArmor))
+				}));
 			}
 
 			if (overflowDamage > 0)
@@ -403,6 +408,13 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 					if (this.isPlayerControlled() || !this.isHiddenToPlayer())
 					{
 						this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this) + "\'s " + this.Const.Strings.BodyPartName[_hitInfo.BodyPart] + " is hit for [b]" + this.Math.floor(damage) + "[/b] damage and suffers " + injury.getNameOnly() + "!");
+
+						::Tactical.EventLog.logEx(::Legends.S.format("%self%\'s %part% is hit for %dmg% damage and suffers %injury%!", {
+							self = ::Const.UI.getColorizedEntityName(this),
+							part = ::Const.Strings.BodyPartName[_hitInfo.BodyPart],
+							dmg = ::Const.UI.bold(::Math.floor(damage)),
+							injury = injury.getNameOnly()
+						}));
 					}
 				}
 				else if (damage > 0 && !this.isHiddenToPlayer())

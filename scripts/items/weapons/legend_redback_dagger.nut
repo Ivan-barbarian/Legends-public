@@ -103,7 +103,9 @@ this.legend_redback_dagger <- this.inherit("scripts/items/weapons/weapon", {
 				this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 1.5, _target.getPos());
 			}
 
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_target) + " is poisoned");
+			::Tactical.EventLog.log(::Legends.S.format("%actor% is poisoned", {
+				actor = ::Const.UI.getColorizedEntityName(_target)
+			}));
 		}
 
 		this.spawnIcon("status_effect_54", _target.getTile());

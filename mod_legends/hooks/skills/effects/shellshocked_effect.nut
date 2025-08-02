@@ -1,5 +1,5 @@
 ::mods_hookExactClass("skills/effects/shellshocked_effect", function(o) {
-	
+
 	o.onAdded = function()
 	{
 		local actor = this.getContainer().getActor();
@@ -12,7 +12,9 @@
 		{
 			if (!actor.isHiddenToPlayer())
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " resists being shellshocked thanks to their unnatural physiology");
+				::Tactical.EventLog.log(::Legends.S.format("%actor% resists being shellshocked thanks to their unnatural physiology", {
+					actor = ::Const.UI.getColorizedEntityName(actor)
+				}));
 			}
 
 			this.removeSelf();

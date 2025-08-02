@@ -28,7 +28,9 @@
 			{
 				if (!_user.isHiddenToPlayer() && !target.isHiddenToPlayer())
 				{
-					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(target) + " can not be charmed");
+					::Tactical.EventLog.log(::Legends.S.format("%actor% cannot be charmed", {
+						actor = ::Const.UI.getColorizedEntityName(target)
+					}));
 				}
 
 				return false;
@@ -39,7 +41,9 @@
 			{
 				if (!_user.isHiddenToPlayer() && !target.isHiddenToPlayer())
 				{
-					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(target) + " resists being charmed thanks to his resolve");
+					::Tactical.EventLog.log(::Legends.S.format("%actor% resists being charmed thanks to his resolve", {
+						actor = ::Const.UI.getColorizedEntityName(target)
+					}));
 				}
 
 				return false;
@@ -49,7 +53,9 @@
 			{
 				if (!_user.isHiddenToPlayer() && !target.isHiddenToPlayer())
 				{
-					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(target) + " resists being charmed thanks to his resolve");
+					::Tactical.EventLog.log(::Legends.S.format("%actor% resists being charmed thanks to his resolve", {
+						actor = ::Const.UI.getColorizedEntityName(target)
+					}));
 				}
 
 				return false;
@@ -59,7 +65,9 @@
 			{
 				if (!_user.isHiddenToPlayer() && !target.isHiddenToPlayer())
 				{
-					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(target) + " resists being charmed thanks to his unnatural physiology");
+					::Tactical.EventLog.log(::Legends.S.format("%actor% resists being charmed thanks to his unnatural physiology", {
+						actor = ::Const.UI.getColorizedEntityName(target)
+					}));
 				}
 
 				return false;
@@ -74,7 +82,9 @@
 
 			if (!_user.isHiddenToPlayer() && !target.isHiddenToPlayer())
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(target) + " is charmed");
+				::Tactical.EventLog.log(::Legends.S.format("%actor% is charmed", {
+					actor = ::Const.UI.getColorizedEntityName(target)
+				}));
 			}
 
 			_user.setCharming(true);

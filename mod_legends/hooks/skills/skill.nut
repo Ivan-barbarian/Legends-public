@@ -1356,7 +1356,11 @@
 		{
 			if (defenderProperties.IsEvadingAllAttacks)
 			{
-				::Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " uses " + this.getName() + " and " + this.Const.UI.getColorizedEntityName(_targetEntity) + " evades the attack");
+				::Tactical.EventLog.log(::Legends.S.format("%actor% uses %skill% and %target% evades the attack", {
+					actor = ::Const.UI.getColorizedEntityName(_user),
+					skill = this.getName(),
+					target = ::Const.UI.getColorizedEntityName(_targetEntity)
+				}));
 			}
 			else
 			{
