@@ -714,20 +714,17 @@
   <sprite id="icon_wooden_stake_01_bloodied" offsetY="35" ic="FF6B6B74" width="75" height="75" img="icons\icon_wooden_stake_01_bloodied.png" left="-6" right="30" top="-55" bottom="-15" />
   <sprite id="icon_wooden_stake_01" offsetY="35" ic="FF6B6B74" width="75" height="75" img="icons\icon_wooden_stake_01.png" left="-6" right="30" top="-55" bottom="-15" />
   <sprite id="mummy_shield_01_damaged" offsetY="35" ic="FF262635" width="104" height="142" img="icons\mummy_shield_01_damaged.png" left="10" right="52" top="-69" bottom="17" />
-  <sprite id="mummy_shield_01_destroyed" offsetX="18" offsetY="-16" f="6402" ic="FF252634" width="97" height="61" img="icons\mummy_shield_01_destroyed.png" top="-26" bottom="22" />
+  <sprite id="mummy_shield_01_destroyed" offsetX="18" offsetY="-16" f="6402" ic="FF252634" width="97" height="61" img="icons\mummy_shield_01_destroyed.png" top="-26" bottom="29" />
   <sprite id="mummy_shield_01" offsetY="35" ic="FF2B293A" width="104" height="142" img="icons\mummy_shield_01.png" left="10" right="52" top="-69" bottom="15" />
   <sprite id="mummy_shield_02_damaged" offsetY="35" ic="FF262635" width="104" height="142" img="icons\mummy_shield_02_damaged.png" left="10" right="52" top="-69" bottom="17" />
-  <sprite id="mummy_shield_02_destroyed" offsetX="18" offsetY="-16" f="6402" ic="FF252634" width="97" height="61" img="icons\mummy_shield_02_destroyed.png" top="-26" bottom="22" />
+  <sprite id="mummy_shield_02_destroyed" offsetX="18" offsetY="-16" f="6402" ic="FF252634" width="97" height="61" img="icons\mummy_shield_02_destroyed.png" top="-26" bottom="29" />
   <sprite id="mummy_shield_02" offsetY="35" ic="FF2B293A" width="104" height="142" img="icons\mummy_shield_02.png" left="10" right="52" top="-69" bottom="15" />
   <sprite id="mummy_shield_03_damaged" offsetY="35" ic="FF262635" width="104" height="142" img="icons\mummy_shield_03_damaged.png" left="10" right="52" top="-69" bottom="17" />
-  <sprite id="mummy_shield_03_destroyed" offsetX="18" offsetY="-16" f="6402" ic="FF252634" width="97" height="61" img="icons\mummy_shield_03_destroyed.png" top="-26" bottom="22" />
+  <sprite id="mummy_shield_03_destroyed" offsetX="18" offsetY="-16" f="6402" ic="FF252634" width="97" height="61" img="icons\mummy_shield_03_destroyed.png" top="-26" bottom="29" />
   <sprite id="mummy_shield_03" offsetY="35" ic="FF2B293A" width="104" height="142" img="icons\mummy_shield_03.png" left="10" right="52" top="-69" bottom="15" />
   <sprite id="mummy_shield_04_damaged" offsetY="35" ic="FF262635" width="104" height="142" img="icons\mummy_shield_04_damaged.png" left="10" right="52" top="-69" bottom="17" />
-  <sprite id="mummy_shield_04_destroyed" offsetX="18" offsetY="-16" f="6402" ic="FF252634" width="97" height="61" img="icons\mummy_shield_04_destroyed.png" top="-26" bottom="22" />
+  <sprite id="mummy_shield_04_destroyed" offsetX="18" offsetY="-16" f="6402" ic="FF252634" width="97" height="61" img="icons\mummy_shield_04_destroyed.png" top="-26" bottom="29" />
   <sprite id="mummy_shield_04" offsetY="35" ic="FF2B293A" width="104" height="142" img="icons\mummy_shield_04.png" left="10" right="52" top="-69" bottom="15" />
-  <sprite id="mummy_shield_05_damaged" offsetY="35" ic="FF262635" width="104" height="142" img="icons\mummy_shield_05_damaged.png" left="10" right="52" top="-69" bottom="17" />
-  <sprite id="mummy_shield_05_destroyed" offsetX="18" offsetY="-16" f="6402" ic="FF252634" width="97" height="61" img="icons\mummy_shield_05_destroyed.png" top="-26" bottom="22" />
-  <sprite id="mummy_shield_05" offsetY="35" ic="FF2B293A" width="104" height="142" img="icons\mummy_shield_05.png" left="10" right="52" top="-69" bottom="15" />
   <sprite id="mummy_towershield_01_damaged" offsetY="35" ic="FF494C52" width="130" height="142" img="icons\mummy_towershield_01_damaged.png" left="12" right="54" top="-70" bottom="18" />
   <sprite id="mummy_towershield_01_destroyed" offsetX="18" offsetY="-16" f="6402" ic="FF252634" width="97" height="61" img="icons\mummy_towershield_01_destroyed.png" top="-26" bottom="22" />
   <sprite id="mummy_towershield_01" offsetY="35" ic="FF595A5D" width="130" height="142" img="icons\mummy_towershield_01.png" left="12" right="54" top="-70" bottom="18" />
