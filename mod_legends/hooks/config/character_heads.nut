@@ -17,9 +17,6 @@
 	"26",
 	"27",
 	"28",
-	"29",
-	"31",
-	"32",
 	"southern_01",
 	"southern_02",
 	"southern_03",
@@ -32,8 +29,6 @@
 
 ::Const.Hair.AllMale.extend([
 	"22",
-	"31",
-	"32",
 	"southern_01",
 	"southern_02",
 	"southern_03",
@@ -45,8 +40,6 @@
 ]);
 
 ::Const.Hair.WildMale.extend([
-	"31",
-	"32",
 ]);
 
 ::Const.Beards.Barber.extend([
