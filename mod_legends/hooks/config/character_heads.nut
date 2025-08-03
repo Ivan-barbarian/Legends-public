@@ -1,9 +1,7 @@
 ::Const.Faces.AllMale.extend([
 	"bust_head_19",
 	"bust_head_20",
-	"bust_head_34",
-	"bust_head_50",
-	"bust_head_51"
+	"bust_head_34"
 ]);
 
 ::Const.Faces.Necromancer.extend([
