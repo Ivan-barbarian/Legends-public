@@ -206,7 +206,7 @@
 			{
 				R = 60,
 				P = 1.0,
-				S = "accessory/legend_hand_wraps_item"
+				S = "accessory/gloves/legend_hand_wraps_item"
 			},
 			{
 				R = 90,
@@ -222,6 +222,11 @@
 				R = 50,
 				P = 1.0,
 				S = "weapons/warfork"
+			},
+			{
+				R = 60,
+				P = 1.0,
+				S = "accessory/legend_dawg_item"
 			}
 		];
 

@@ -12,25 +12,6 @@
 					_event.m.Dude.setStartValuesEx([
 						"lindwurm_slayer_background"
 					]);
-					_event.m.Dude.getBackground().m.RawDescription = "{%name% is a supposedly famous monster hunter with a particular talent for slaying lindwurms. They says he is the son of Dirk the Dragonslayer, the monster hunter who ostensibly slew the last living dragon.}";
-					_event.m.Dude.getBackground().buildDescription(true);
-
-					if (_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null)
-						_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).removeSelf();
-
-					if (_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) != null)
-						_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).removeSelf();
-
-					if (_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Head) != null)
-						_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Head).removeSelf();
-
-					if (_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Body) != null)
-						_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Body).removeSelf();
-
-					_event.m.Dude.getItems().equip(this.new("scripts/items/weapons/fighting_spear"));
-					_event.m.Dude.getItems().equip(this.new("scripts/items/shields/buckler_shield"));
-					_event.m.Dude.getItems().equip(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.heavy_mail_coif]]));
-					_event.m.Dude.getItems().equip(this.new("scripts/items/legend_armor/legendary/legend_lindwurm_armor"));
 					this.Characters.push(_event.m.Dude.getImagePath());
 				}
 
@@ -42,25 +23,6 @@
 					_event.m.Dude.setStartValuesEx([
 						"lindwurm_slayer_background"
 					]);
-					_event.m.Dude.getBackground().m.RawDescription = "{%name% is a supposedly famous monster hunter with a particular talent for slaying lindwurms. They say they are the child of Dirk the Dragonslayer, the monster hunter who ostensibly slew the last living dragon.}";
-					_event.m.Dude.getBackground().buildDescription(true);
-
-					if (_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null)
-						_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).removeSelf();
-
-					if (_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) != null)
-						_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).removeSelf();
-
-					if (_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Head) != null)
-						_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Head).removeSelf();
-
-					if (_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Body) != null)
-						_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Body).removeSelf();
-
-					_event.m.Dude.getItems().equip(this.new("scripts/items/weapons/fighting_spear"));
-					_event.m.Dude.getItems().equip(this.new("scripts/items/shields/buckler_shield"));
-					_event.m.Dude.getItems().equip(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.heavy_mail_coif]]));
-					_event.m.Dude.getItems().equip(this.new("scripts/items/legend_armor/legendary/legend_lindwurm_armor"));
 					this.Characters.push(_event.m.Dude.getImagePath());
 				}
 			}

@@ -105,6 +105,7 @@
 			Class = [
 				this.Const.Perks.BeastClassTree
 			],
+			Profession = [], 
 			Magic = []
 		}
 	}
@@ -199,12 +200,7 @@
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, ::Legends.Armor.Standard.mail_hauberk],
-			[1, ::Legends.Armor.Standard.leather_scale_armor],
-			[1, ::Legends.Armor.Standard.noble_mail_armor],
-			[1, ::Legends.Armor.Standard.light_scale_armor],
-			[1, ::Legends.Armor.Standard.footman_armor],
-			[1, ::Legends.Armor.Standard.reinforced_mail_hauberk]
+			[1, ::Legends.Armor.Standard.lindwurm_armor]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

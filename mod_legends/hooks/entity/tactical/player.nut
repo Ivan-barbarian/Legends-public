@@ -495,6 +495,8 @@
 		::Legends.Effects.grant(this, ::Legends.Effect.LegendRealmOfNightmares);
 		::Legends.Effects.grant(this, ::Legends.Effect.LegendHorseriderSkill);
 		::Legends.Effects.grant(this, ::Legends.Effect.LegendVeteranLevels);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendGrapple);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendKick);
 	}
 
 	local onHired = o.onHired;
@@ -621,6 +623,8 @@
 	local onDeath = o.onDeath;
 	o.onDeath = function ( _killer, _skill, _tile, _fatalityType )
 	{
+		if (this.Tactical.State.isScenarioMode())
+			return onDeath(_killer, _skill, _tile, _fatalityType);
 		local bro = this;
 		local originalAddFallen = ::World.Statistics.addFallen;
 		::World.Statistics.addFallen = function (_fallen) {
@@ -1708,6 +1712,23 @@
 		this.Sound.play(this.m.Sound[_type][this.Math.rand(0, this.m.Sound[_type].len() - 1)], volume, this.getPos(), _pitch);
 	}
 
+	o.getToggleAccessoryTooltip <- function (_slot, _layer) {
+		local accessory = this.getItems().getItemAtSlot(_slot);
+		local tt = [
+			{
+				id = 1,
+				type = "title",
+				text = "Accessory Layer"
+			},
+			{
+				id = 2,
+				type = "description",
+				text = "Click to toggle the visibility of the accessory layer."
+			}
+		];
+		return tt;
+	}
+
 	o.getRemoveLayerTooltip <- function (_slot, _layer)
 	{
 		local armor = this.getItems().getItemAtSlot(_slot);
@@ -1801,7 +1822,6 @@
 
 		return tt;
 	}
-
 
 	// todo delete it - chopeks
 	o.TherianthropeInfection <- function (_killer)

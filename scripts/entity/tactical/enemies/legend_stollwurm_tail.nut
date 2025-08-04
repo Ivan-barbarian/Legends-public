@@ -457,9 +457,8 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )
 	{
-		if (_tile != null)
-		{
-			local flip = this.Math.rand(0, 100) < 50;
+		local flip = this.Math.rand(0, 100) < 50;
+		if (_tile != null) {
 			local decal;
 			this.m.IsCorpseFlipped = flip;
 			local body = this.getSprite("body");
@@ -470,7 +469,10 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 			this.spawnTerrainDropdownEffect(_tile);
 		}
 
-		local corpse = this.generateCorpse(_tile, _fatalityType);
+		local tileLoot = this.getLootForTile(_killer, []);
+		this.dropLoot(_tile, tileLoot, !flip);
+		local corpse = this.generateCorpse(_tile, _fatalityType, _killer);
+
 		if (_tile == null) {
 			this.Tactical.Entities.addUnplacedCorpse(corpse);
 		} else {
@@ -481,12 +483,13 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
 
-	function generateCorpse( _tile, _fatalityType )
+	function generateCorpse( _tile, _fatalityType, _killer )
 	{
 		local corpse = clone this.Const.Corpse;
 		corpse.CorpseName = "A Stollwurm";
 		corpse.IsHeadAttached = true;
-		corpse.Tile = _tile;
+		if (_tile != null)
+			corpse.Tile = _tile;
 		return corpse;
 	}
 

@@ -11,7 +11,7 @@
 		local rolls = ::Legends.S.extraLootChance(1);
 		for(local i = 0; i < rolls; i++)
 		{
-			this.m.OnDeathLootTable.push([5, "scripts/items/misc/legend_ancient_scroll_item"]);
+			this.m.OnDeathLootTable.push([0.5, "scripts/items/misc/legend_ancient_scroll_item"]);
 		}
 	}
 

@@ -67,6 +67,7 @@
 			Class = [
 				this.Const.Perks.JugglerClassTree
 			],
+			Profession = [],
 			Magic = [
 				this.Const.Perks.AssassinMagicTree
 			]

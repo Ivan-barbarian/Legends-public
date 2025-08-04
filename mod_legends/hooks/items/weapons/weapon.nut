@@ -8,8 +8,9 @@
 			return this.m.ShieldDamage;
 		}
 		local perk = ::Legends.Perks.get(this, ::Legends.Perk.LegendSmashingShields);
-
-		return perk == null ? this.m.ShieldDamage : this.Math.round(this.m.ShieldDamage * perk.getModifier());
+		local doubleGrip = ::Legends.Effects.has(this, ::Legends.Effect.DoubleGrip) && ::Legends.Effects.get(this, ::Legends.Effect.DoubleGrip).canDoubleGrip() ? true : false;
+		local shieldDamage = perk == null ? this.m.ShieldDamage : this.m.ShieldDamage * perk.getModifier();
+		return doubleGrip ? this.Math.floor(shieldDamage * 1.25) : this.Math.floor(shieldDamage);
 	}
 
 	local getTooltip = o.getTooltip;

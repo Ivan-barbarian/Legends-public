@@ -31,6 +31,7 @@ this.legend_gladiator_prizefighter_background <- this.inherit("scripts/skills/ba
 			Class = [
 				this.Const.Perks.BeastClassTree
 			],
+			Profession = [],
 			Magic = []
 		}
 	}
@@ -118,7 +119,7 @@ this.legend_gladiator_prizefighter_background <- this.inherit("scripts/skills/ba
 			[1, ::Legends.Helmet.None]
 		]));
 
-		this.getContainer().getActor().getItems().equip(this.new("scripts/items/accessory/legend_cestus_item"));
+		this.getContainer().getActor().getItems().equip(this.new("scripts/items/accessory/gloves/legend_cestus_item"));
 
 	}
 });

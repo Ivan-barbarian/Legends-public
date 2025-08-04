@@ -1,6 +1,13 @@
 ::mods_hookExactClass("items/accessory/special/arena_collar_item", function(o) {
 	o.m.affectedSkills <- ["legend_leap_skill", "legend_climb_skill", "legend_levitating_skill"];
 
+	local create = o.create;
+	o.create = function()
+	{
+		create();
+		this.m.IsAllowedInBag = true;
+	}
+
 	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
@@ -24,6 +31,11 @@
 				skills.removeByID("actives." + skill);
 			}
 		}
+	}
+
+	o.onPutIntoBag <- function ()
+	{
+		this.onEquip();
 	}
 
 	o.onUnequip <- function ()

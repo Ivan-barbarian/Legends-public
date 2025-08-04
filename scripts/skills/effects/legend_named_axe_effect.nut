@@ -37,13 +37,11 @@ this.legend_named_axe_effect <- this.inherit("scripts/skills/skill", {
         this.m.Bonus = _bonus;
     }
 
-    function onBeforeTargetHit( _skill, _targetEntity, _hitInfo )
+    function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-        if ( _skill.m.IsWeaponSkill == false ) { return; }
-		if ( _targetEntity != null && _hitInfo.BodyPart == ::Const.BodyPart.Head)
+		if (_skill == this)
 		{
-			_hitInfo.DamageRegular *= 1 + (this.m.Bonus * 0.01);
+			_properties.DamageAgainstMult[this.Const.BodyPart.Head] *= 1 + (this.m.Bonus * 0.01);
 		}
 	}
-
 });

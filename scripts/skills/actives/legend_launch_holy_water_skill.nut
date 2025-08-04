@@ -132,6 +132,12 @@ this.legend_launch_holy_water_skill <- this.inherit("scripts/skills/actives/thro
 			return;
 
 		local effect = ::Legends.Effects.grant(_target, ::Legends.Effect.HolyWater);
+
+		// Prevents resetTime from trying to spawn an icon on an already dead entity.
+		if (_target.m.IsDying) {
+			return;
+		}
+
 		effect.resetTime();
 	}
 
@@ -216,4 +222,3 @@ this.legend_launch_holy_water_skill <- this.inherit("scripts/skills/actives/thro
 		this.m.FatigueCostMult = _properties.IsSpecializedInSlings ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 });
-

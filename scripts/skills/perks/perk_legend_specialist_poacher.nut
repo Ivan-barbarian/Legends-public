@@ -43,8 +43,8 @@ this.perk_legend_specialist_poacher <- this.inherit("scripts/skills/legend_speci
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if (!_targetEntity.isAlive() || _targetEntity.isDying())
-			return false;
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
+			return;
 
 		if (_targetEntity.getCurrentProperties().IsImmuneToBleeding)
 			return false;

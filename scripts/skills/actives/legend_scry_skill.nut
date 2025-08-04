@@ -1,7 +1,5 @@
 this.legend_scry_skill <- this.inherit("scripts/skills/skill", {
-	m = {
-		Item = null
-	},
+	m = {},
 	function create()
 	{
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendScry);
@@ -26,11 +24,6 @@ this.legend_scry_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
-	function setItem( _i )
-	{
-		this.m.Item = this.WeakTableRef(_i);
-	}
-
 	function getTooltip()
 	{
 		local ret = [
@@ -53,12 +46,15 @@ this.legend_scry_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-
-
-
 	function onUse( _user, _targetTile )
 	{
 		this.Tactical.queryTilesInRange(_user.getTile(), 1, 12, false, [], this.onQueryTile, _user.getFaction());
+
+		if (this.Tactical.TurnSequenceBar.getActiveEntity() != null)
+		{
+			this.Tactical.TurnSequenceBar.getActiveEntity().updateVisibilityForFaction();
+		}
+
 		return true;
 	}
 

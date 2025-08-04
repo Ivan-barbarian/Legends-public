@@ -206,6 +206,7 @@ this.legends_tundra_village <- this.inherit("scripts/entity/world/settlements/le
 			"legend_shieldmaiden_background",
 		]];
 		this.m.StablesLists = [[],[],[]];
+		this.m.Culture = this.Const.World.Culture.Northern;
 		this.m.Rumors = this.Const.Strings.RumorsTundraSettlement;
 		this.m.ProduceString = "pelts";
 	}

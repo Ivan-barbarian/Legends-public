@@ -540,7 +540,7 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 			if (stats.Strength >= this.m.MinStrength)
 				return true;
 		}
-		_out.writeBool(this.m.IsRandomlyAdded);
+
 		return this.m.IsRandomlyAdded && sumLevels > this.m.LevelSumRequiredForRandomSpawn;
 	}
 
@@ -554,7 +554,7 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 		{
 			_out.writeU32(0);
 		}
-
+		_out.writeBool(this.m.IsRandomlyAdded);
 		this.contract.onSerialize(_out);
 	}
 
@@ -566,9 +566,8 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 		{
 			this.m.Target = this.WeakTableRef(this.World.getEntityByID(target));
 		}
-		this.m.IsRandomlyAdded = _out.readBool();
+		this.m.IsRandomlyAdded = _in.readBool();
 		this.contract.onDeserialize(_in);
 	}
 
 });
-

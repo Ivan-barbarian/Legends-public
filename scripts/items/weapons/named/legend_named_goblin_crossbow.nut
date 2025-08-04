@@ -19,6 +19,7 @@ this.legend_named_goblin_crossbow <- this.inherit("scripts/items/weapons/named/n
 		this.updateVariant();
 		this.m.ID = "weapon.legend_named_goblin_crossbow";
 		this.m.NameList = this.Const.Strings.CrossbowNames;
+		this.m.PrefixList = this.Const.Strings.GoblinWeaponPrefix;
 		this.m.Description = "A large and heavy crossbow with menacing spikes in front. It's a mystery how goblins could improve upon a miniature ballista, but here we are. It shoots stakes with enough force to knock back a target hit.";
 		this.m.Categories = "Crossbow, Two-Handed";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
@@ -42,7 +43,7 @@ this.legend_named_goblin_crossbow <- this.inherit("scripts/items/weapons/named/n
 		this.randomizeValues();
 	}
 
-  function updateVariant()
+	function updateVariant()
 	{
 		this.m.IconLarge = "weapons/ranged/goblin_crossbow_named_0" + this.m.Variant + ".png";
 		this.m.Icon = "weapons/ranged/goblin_crossbow_named_0" + this.m.Variant + "_70x70.png";

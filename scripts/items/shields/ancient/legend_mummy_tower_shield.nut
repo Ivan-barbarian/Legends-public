@@ -12,8 +12,7 @@ this.legend_mummy_tower_shield <- this.inherit("scripts/items/shields/shield", {
 			1,
 			2,
 			3,
-			4,
-			5
+			4
 		];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();

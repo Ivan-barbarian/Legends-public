@@ -299,7 +299,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/accessory/legend_hand_wraps_item"));
+			items.equip(this.new("scripts/items/accessory/gloves/legend_hand_wraps_item"));
 		}
 		else if (r == 1)
 		{

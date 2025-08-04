@@ -38,6 +38,17 @@
 		return this.buildTextFromTemplate(this.m.Description, vars);
 	}
 
+	local getFatigueCost = o.getFatigueCost;
+	o.getFatigueCost = function()
+	{
+		if (this.m.Container != null && this.m.IsWeaponSkill && this.getItem() != null)
+		{
+			local containerProperties = this.m.Container.getActor().getCurrentProperties();
+			this.m.FatigueCostMult = ::Legends.S.isCharacterWeaponSpecialized(containerProperties, this.getItem()) ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		}
+		return getFatigueCost();
+	}
+
 	o.getActionPointCost = function()
 	{
 		if (this.m.Container.getActor().getCurrentProperties().IsSkillUseFree)
@@ -158,6 +169,16 @@
 			});
 		}
 
+		if (!this.m.IsShieldRelevant)
+		{
+			ret.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Ignores the bonus to Melee Defense granted by shields"
+			});
+		}
+
 		if (p.DamageMinimum > 0)
 		{
 			ret.push({
@@ -165,6 +186,16 @@
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Always inflicts at least [color=" + this.Const.UI.Color.DamageValue + "]" + p.DamageMinimum + "[/color] damage to hitpoints, regardless of armor"
+			});
+		}
+
+		if (p.HitChance[this.Const.BodyPart.Head] > 0)
+		{
+			ret.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/chance_to_hit_head.png",
+				text = "Has a combined total [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.min(100, p.HitChance[this.Const.BodyPart.Head]) + "%[/color] chance to hit the head"
 			});
 		}
 
@@ -906,8 +937,28 @@
 				text = desc + " " + "\n(" + colorize(sign + diff + "%") + " Lunge damage)"
 			});
 		};
+		local addShieldDamageRow = function ()
+		{
+			if (thisSkill.getID() != ::Legends.Actives.getID(::Legends.Active.SplitShield) && thisSkill.getID() != ::Legends.Actives.getID(::Legends.Active.ThrowSpear))
+				return;
+
+			if (!_targetTile.IsOccupiedByActor)
+				return;
+
+			if (!targetEntity.isArmedWithShield())
+				return;
+
+			local damage = thisSkill.calculateDamage(targetEntity);
+			if (targetEntity.getCurrentProperties().IsSpecializedInShields)
+				damage *= 0.50;
+			ret.push({
+				icon = "ui/icons/shield_damage.png",
+				text = red(damage) + " Shield Damage"
+			});
+		};
 		addDamageResistanceRow();
 		addLungeDamageRow();
+		addShieldDamageRow();
 		return ret;
 	}
 
@@ -1225,6 +1276,14 @@
 			toHit = toHit + this.Const.Combat.LevelDifferenceToHitMalus * levelDifference;
 		}
 
+		if (!this.m.IsShieldRelevant) {
+			local shield = _targetEntity.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+			if (shield != null && shield.isItemType(this.Const.Items.ItemType.Shield)) {
+				local shieldBonus = (this.m.IsRanged ? shield.getRangedDefense() : shield.getMeleeDefense()) * (_targetEntity.getCurrentProperties().IsSpecializedInShields ? 1.25 : 1.0);
+				toHit = toHit + shieldBonus;
+			}
+		}
+
 		local shieldBonus = 0;
 		local shield = _targetEntity.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 		if (shield != null && !shield.isItemType(this.Const.Items.ItemType.Shield))
@@ -1351,7 +1410,7 @@
 			}
 		}
 
-		if (isHit && this.Math.rand(1, 100) <= _targetEntity.getCurrentProperties().RerollDefenseChance)
+		if (isHit && this.Math.rand(1, 100) <= defenderProperties.RerollDefenseChance)
 		{
 			r = this.Math.rand(1, 100);
 			isHit = r <= toHit;
@@ -1562,7 +1621,7 @@
 		hitInfo.DamageRegular = damageRegular * damageMult;
 		hitInfo.DamageArmor = damageArmor * damageMult;
 		hitInfo.DamageDirect = damageDirect;
-		hitInfo.DamageFatigue = this.Const.Combat.FatigueReceivedPerHit * _info.Properties.FatigueDealtPerHitMult;
+		hitInfo.DamageFatigue = this.Const.Combat.FatigueReceivedPerHit * _info.Properties.FatigueDealtPerHitMult + _info.Properties.FatigueDealtAsPercentOfMaxFatigue * _info.TargetEntity.getFatigueMax();
 		hitInfo.DamageMinimum = _info.Properties.DamageMinimum;
 		hitInfo.BodyPart = bodyPart;
 		hitInfo.BodyDamageMult = bodyPartDamageMult;

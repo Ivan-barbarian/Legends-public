@@ -52,7 +52,7 @@ this.legend_mummy_light <- this.inherit("scripts/entity/tactical/legend_mummy", 
 				[1, "weapons/ancient/broken_ancient_sword"],
 				[1, "weapons/ancient/ancient_spear"],
 				[1, "weapons/ancient/ancient_sword"],
-				[1, "weapons/ancient/legend_brass_khopesh"]
+				[1, "weapons/ancient/khopesh"]
 			], "scripts/items/"));
 
 			this.getItems().equip(::Const.World.Common.pickItem([
@@ -67,7 +67,7 @@ this.legend_mummy_light <- this.inherit("scripts/entity/tactical/legend_mummy", 
 			], "scripts/items/"));
 
 			this.getItems().addToBag(::Const.World.Common.pickItem([
-				[1, "weapons/ancient/legend_brass_khopesh"]
+				[1, "weapons/ancient/khopesh"]
 			], "scripts/items/"));
 		}
 

@@ -68,7 +68,25 @@ this.legend_trance_abstract_skill <- this.inherit("scripts/skills/skill", {
 		if (this.m.IsInTrance)
 		{
 			this.doTranceStartTurn();
+			this.swapOn();
 			this.getContainer().getActor().setActionPoints(0);
+		}
+	}
+
+	function onAfterUpdate(_properties)
+	{
+		if (this.m.IsInTrance)
+		{
+			this.m.Description = this.m.ToggleOffDescription;
+			this.getContainer().getActor().setActionPoints(0);
+			this.m.FatigueCost = 0;
+			this.m.ActionPointCost = 0;
+		}
+		else
+		{
+			this.m.Description = this.m.ToggleOnDescription;
+			this.m.FatigueCost = this.m.BaseFatigueCost;
+			this.m.ActionPointCost = this.m.BaseAPCost;
 		}
 	}
 

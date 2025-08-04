@@ -10,6 +10,14 @@ this.perk_legend_scholar <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	// this perk is handled in starting scenario
+	function onAdded()
+	{
+		getContainer().getActor().getFlags().set("HasScholar", true);
+	}
+
+	function onRemoved()
+	{
+		getContainer().getActor().getFlags().remove("HasScholar");
+	}
 
 });

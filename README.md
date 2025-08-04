@@ -20,12 +20,13 @@
 - *Emo Used HM01* - programming, art
 - *Koltira* - programming
 - *Breaky* - programming, support
-- *Chopeks* - programming, support
+- *chopeks* - programming, support
 - *Son of Satan* - programming
 - *Olve* - art
 - *Shiro* - art
 - *Evie Nekomancer* ꜀(^. .^꜀ )꜆੭ - art
 - *kamy (Cutethulu)* - art
+- *Thog* - art
 
 #### Previous Contributors
 - *Hanter* - programming
@@ -67,3 +68,6 @@
 
 ## Legends Discord
 If you enjoy chatting about Battle Brothers and the Legends Mod, receive fast bug support and have access to our collection of submods - join the [Official Legends Mod Discord](https://discord.gg/a9MmzEDhE8).
+
+## Contributions
+If you'd like to contribute to the project, make sure you read and comply with our [Contributor License Agreement](CLA.md).

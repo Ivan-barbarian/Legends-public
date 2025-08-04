@@ -116,9 +116,21 @@
 		items.equip(this.new("scripts/items/armor/coat_of_plates"));
 		items.equip(this.new("scripts/items/weapons/greatsword"));
 
-		for( local i = 0; i < 10; i = ++i )
+		for( local i = 0; i < 4; i = ++i )
+		{
+			entity = this.spawnEnemy("scripts/entity/tactical/enemies/legend_goblin_direwolf_rider");
+			entity.setFaction(this.Const.Faction.Goblins);
+			entity.assignRandomEquipment();
+		}
+		for( local i = 0; i < 4; i = ++i )
 		{
 			entity = this.spawnEnemy("scripts/entity/tactical/enemies/goblin_wolfrider");
+			entity.setFaction(this.Const.Faction.Goblins);
+			entity.assignRandomEquipment();
+		}
+		for( local i = 0; i < 4; i = ++i )
+		{
+			entity = this.spawnEnemy("scripts/entity/tactical/enemies/legend_goblin_white_direwolf_rider");
 			entity.setFaction(this.Const.Faction.Goblins);
 			entity.assignRandomEquipment();
 		}

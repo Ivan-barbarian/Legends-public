@@ -5,7 +5,7 @@ this.perk_legend_specialist_cultist <- this.inherit("scripts/skills/legend_speci
 		],
 		ApplicableWeaponTypes = [
 			this.Const.Items.WeaponType.Flail,
-			// this.Const.Items.WeaponType.Whip
+			this.Const.Items.WeaponType.Whip
 		],
 		BonusMelee = 12,
 		BonusDamage = 10

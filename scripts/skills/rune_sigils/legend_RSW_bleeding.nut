@@ -15,33 +15,22 @@ this.legend_RSW_bleeding <- this.inherit("scripts/skills/skill", {
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 		if (this.getItem() == null)
-		{
 			return;
-		}
 
-		local actor = this.getContainer().getActor();
-
-		if (!actor.isAlive() || actor.isDying())
-		{
+		if (::Legends.S.skillEntityAliveCheck(this.getContainer().getActor(), _targetEntity))
 			return;
-		}
 
-		if (!_targetEntity.isAlive() || _targetEntity.isDying())
-		{
+		if (_targetEntity.getCurrentProperties().IsImmuneToBleeding)
 			return;
+
+		::Legends.Effects.grant(_targetEntity, ::Legends.Effect.LegendRswBleedingEffect, function (_effect) {
+			_effect.setActor(this.getContainer().getActor());
+			_effect.setStats(this.getItem().getRuneBonus1(), this.getItem().getRuneBonus2());
+		}.bindenv(this));
+
+		if (!_targetEntity.isHiddenToPlayer()) {
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_targetEntity) + " is bleeding.");
 		}
 
-		if (!_targetEntity.getCurrentProperties().IsImmuneToBleeding)
-		{
-			::Legends.Effects.grant(_targetEntity, ::Legends.Effect.LegendRswBleedingEffect, function (_effect) {
-				_effect.setActor(this.getContainer().getActor());
-				_effect.setStats(this.getItem().getRuneBonus1(), this.getItem().getRuneBonus2());
-			}.bindenv(this));
-
-			if (!_targetEntity.isHiddenToPlayer())
-			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_targetEntity) + " is bleeding.");
-			}
-		}
 	}
 });

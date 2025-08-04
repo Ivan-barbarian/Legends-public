@@ -15,17 +15,18 @@
 
 	o.isDroppedAsLoot = function (_item)
 	{
-		local chanceIsLucky = 0;
-		local brothers = ::World.getPlayerRoster().getAll();
-		foreach (bro in brothers)
-		{
-			if (bro.getSkills().hasPerk(::Legends.Perk.LegendScholar))
-				chanceIsLucky += 10;
+		// local chanceIsLucky = 0;
+		// local brothers = ::World.getPlayerRoster().getAll();
+		// foreach (bro in brothers)
+		// {
+		// 	if (bro.getSkills().hasPerk(::Legends.Perk.LegendScholar))
+		// 		chanceIsLucky += 10;
 
-			if (bro.getSkills().hasPerk(::Legends.Perk.LegendFavouredEnemyCaravan))
-				chanceIsLucky += 5;
-		}
-		return ::Math.rand(1, 100) < chanceIsLucky;
+		// 	if (bro.getSkills().hasPerk(::Legends.Perk.LegendFavouredEnemyCaravan))
+		// 		chanceIsLucky += 5;
+		// }
+		// return ::Math.rand(1, 100) < chanceIsLucky;
+		return false; // produces too many errors with unlayered items
 	}
 
 	local getDifficultyForUI = o.getDifficultyForUI;

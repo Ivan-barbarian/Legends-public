@@ -43,20 +43,14 @@ this.perk_legend_specialist_butcher <- this.inherit("scripts/skills/legend_speci
 	function onTargetHit ( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 
-		if (!_targetEntity.isAlive() || _targetEntity.isDying())
-		{
-			return false;
-		}
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
+			return;
 
 		if (_targetEntity.getCurrentProperties().IsImmuneToBleeding)
-		{
 			return false;
-		}
 
 		if (_targetEntity.isNonCombatant())
-		{
 			return false;
-		}
 
 		local user = _skill.getContainer().getActor();
 		local item = user.getMainhandItem();
@@ -65,8 +59,7 @@ this.perk_legend_specialist_butcher <- this.inherit("scripts/skills/legend_speci
 
 		_targetEntity.getSkills().add(this.new("scripts/skills/effects/legend_grazed_effect"));
 
-		if (!user.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer)
-		{
+		if (!user.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer) {
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " filleted " + this.Const.UI.getColorizedEntityName(_targetEntity) + " leaving them grazed");
 		}
 

@@ -4,17 +4,22 @@
 	o.create = function ()
 	{
 		create();
-		this.m.Variants = [1,2,3,4];
-		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() -1)];
+		this.m.Variants = [1, 2, 3, 4, 5];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 	}
 
-	local onEquip = o.onEquip;
-	o.onEquip = function ()
+	o.addSkill <- function( _skill )
 	{
-		onEquip();
-		::Legends.Actives.grant(this, ::Legends.Active.Swing, function (_skill) {
-			_skill.setApplyAxeMastery(true);
-		}.bindenv(this));
+		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.SplitShield))
+		{
+			::Legends.Actives.grant(this.weapon, ::Legends.Active.Swing, function (_skill) {
+				_skill.setApplyAxeMastery(true);
+			}.bindenv(this));
+			::Legends.Actives.grant(this.weapon, ::Legends.Active.SplitShield);
+			return;
+		}
+
+		weapon.addSkill(_skill);
 	}
 });

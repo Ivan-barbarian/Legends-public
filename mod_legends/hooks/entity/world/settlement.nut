@@ -39,6 +39,16 @@
 		}
 
 		this.updateSprites();
+
+		if (this.m.IsActive) {
+			this.m.HousesType = this.getHousesType();
+			foreach (h in this.m.HousesTiles) {
+				local tile = this.World.getTileSquare(h.X, h.Y);
+				tile.clear(this.Const.World.DetailType.Houses);
+				local d = tile.spawnDetail("world_houses_0" + this.m.HousesType + "_0" + h.V, this.Const.World.ZLevel.Object - 3, this.Const.World.DetailType.Houses);
+				d.Scale = 0.85;
+			}
+		}
 	}
 
 	o.changeSupportedOrAbandonedAttachedLocations <- function ()
@@ -725,6 +735,7 @@
 	o.onInit = function ()
 	{
 		this.m.HousesMax = getHousesMax();
+		this.m.HousesType = getHousesType();
 		this.m.Sprite = getSpriteName();
 		onInit();
 		this.updateSurroundingTileData();
@@ -1071,21 +1082,6 @@
 			this.getSprite("location_banner").Visible = true;
 			this.getLabel("name").Visible = true;
 			this.getSprite("body").setBrush(this.getSpriteName());
-
-			foreach( h in this.m.HousesTiles )
-			{
-				continue;
-				local tile = this.World.getTileSquare(h.X, h.Y);
-				tile.clear(this.Const.World.DetailType.Houses);
-				local d = tile.spawnDetail("world_houses_0" + this.getHousesType() + "_0" + h.V, this.Const.World.ZLevel.Object - 3, this.Const.World.DetailType.Houses);
-
-				if (d == null)
-				{
-					continue;
-				}
-
-				d.Scale = 0.85;
-			}
 		}
 		else
 		{
@@ -1102,10 +1098,9 @@
 
 			foreach( h in this.m.HousesTiles )
 			{
-				continue;
 				local tile = this.World.getTileSquare(h.X, h.Y);
 				tile.clear(this.Const.World.DetailType.Houses | this.Const.World.DetailType.Lighting);
-				local d = tile.spawnDetail("world_houses_0" + this.getHousesType() + "_0" + h.V + "_ruins", this.Const.World.ZLevel.Object - 3, this.Const.World.DetailType.Houses);
+				local d = tile.spawnDetail("world_houses_0" + this.m.HousesType + "_0" + h.V + "_ruins", this.Const.World.ZLevel.Object - 3, this.Const.World.DetailType.Houses);
 				d.Scale = 0.85;
 				this.spawnFireAndSmoke(tile.Pos);
 			}

@@ -90,33 +90,31 @@ this.legend_root_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		local targets = [];
+		local target = _targetTile.getEntity();
 
-		if (_targetTile.IsOccupiedByActor)
+		if (this.isViableTarget(_user, target))
 		{
-			local entity = _targetTile.getEntity();
-
-			if (this.isViableTarget(_user, entity))
+			local item = _user.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+			local hasStaff = item != null && item.getID() == "legend_named_goblin_staff";
+			if (!hasStaff)
 			{
-				targets.push(entity);
+				::Legends.Effects.grant(target, ::Legends.Effect.Rooted);
 			}
-		}
-
-		foreach( target in targets )
-		{
-			::Legends.Effects.grant(target, ::Legends.Effect.Rooted);
-			local breakFree = this.new("scripts/skills/actives/break_free_skill");
-			breakFree.setDecal("roots_destroyed");
-			breakFree.m.Icon = "skills/active_75.png";
-			breakFree.m.IconDisabled = "skills/active_75_sw.png";
-			breakFree.m.Overlay = "active_75";
-			breakFree.m.SoundOnUse = this.m.SoundOnHitHitpoints;
-			target.getSkills().add(breakFree);
+			else
+			{
+				::Legends.Effects.grant(target, ::Legends.Effect.Rooted, function(_effect) {
+					_effect.setDamage(10, 20);
+				}.bindenv(this));
+			}
+			::Legends.Actives.grant(this, ::Legends.Active.BreakFree, function (_skill) {
+				_skill.setDecal("roots_destroyed");
+				_skill.m.Icon = "skills/active_75.png";
+				_skill.m.IconDisabled = "skills/active_75_sw.png";
+				_skill.m.Overlay = "active_75";
+				_skill.m.SoundOnUse = this.m.SoundOnHitHitpoints;
+			}.bindenv(this));
 			target.raiseRootsFromGround("bust_roots", "bust_roots_back");
-		}
 
-		if (targets.len() > 0 && this.m.SoundOnHit.len() != 0)
-		{
 			this.Sound.play(this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill, this.targetEntity.getPos());
 		}
 

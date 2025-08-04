@@ -696,9 +696,32 @@
 	o.onToggleUpgradeVisibility <- function ( _data )
 	{
 		local bro = this.Tactical.getEntityByID(_data[1]);
-		local armor = bro.getItems().getItemAtSlot(_data[2] == "body" ? this.Const.ItemSlot.Body : this.Const.ItemSlot.Head);
-		local upgrade = armor.getUpgrade(_data[0]);
-		local result = upgrade.toggleVisible();
+		local slot;
+		switch(_data[2]) {
+			case "head":
+				slot = this.Const.ItemSlot.Head;
+				break;
+			case "body":
+				slot = this.Const.ItemSlot.Body;
+				break;
+			case "accessory":
+				slot = this.Const.ItemSlot.Accessory;
+				break;
+			default:
+				::logError("Unknown slot type: " + _data[2]);
+				return;
+		}
+
+		local item = bro.getItems().getItemAtSlot(slot);
+		if (slot == this.Const.ItemSlot.Accessory) {
+			// Some items are not visible, like dogs.
+			if (item.m.ShowOnCharacter) {
+				item.toggleAccessoryVisible();
+			}
+		} else {
+			local upgrade = item.getUpgrade(_data[0]);
+			local result = upgrade.toggleVisible();
+		}
 		return this.UIDataHelper.convertStashAndEntityToUIData(bro, null, false, this.m.InventoryFilter);
 	}
 

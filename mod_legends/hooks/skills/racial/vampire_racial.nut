@@ -24,10 +24,12 @@
 	local onTargetHit = o.onTargetHit;
 	o.onTargetHit = function ( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if (_targetEntity.isAlive() && !_targetEntity.isDying() && !_targetEntity.getCurrentProperties().IsImmuneToBleeding)
-		{
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
 			return;
-		}
+
+		if(_targetEntity.getCurrentProperties().IsImmuneToBleeding)
+			return;
+
 		onTargetHit(_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor);
 	}
 });

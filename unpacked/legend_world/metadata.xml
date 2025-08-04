@@ -1,5 +1,5 @@
 <brush name="gfx/legend_world.png" version="17">
-	<sprite id="legend_mastaba" ic="FF3E525F" img="world_entity\location\legend_mastaba.png" />
+	<sprite id="legend_pyramid" ic="FF3E525F" img="world_entity\location\legend_pyramid.png" />
 	<sprite id="legend_berserker_cave" ic="FF3E525F" img="world_entity\location\berserker_cave.png" />
 	<sprite id="legend_necromancer_swamp" ic="FF3E525F" img="world_entity\location\necromancer_swamp.png" />
 	<sprite id="legend_ranger_tower" ic="FF3E525F" img="world_entity\location\ranger_tower.png" />
@@ -73,7 +73,6 @@
 	<sprite id="figure_white_direwolf_01" offsetY="20" ic="FF232832" width="68" height="106" img="world_entity\party\figure_white_direwolf_01.png" left="-22" right="26" top="-46" bottom="0" />
 	<sprite id="figure_skin_ghoul_01" offsetY="20" ic="FF33383C" width="68" height="106" img="world_entity\party\figure_skin_ghoul_01.png" left="-17" right="21" top="-41" bottom="1" />
 	<sprite id="figure_skin_ghoul_02" offsetY="20" ic="FF33383C" width="68" height="106" img="world_entity\party\figure_skin_ghoul_02.png" left="-17" right="21" top="-41" bottom="1" />
-	<sprite id="figure_kobold_01" offsetY="20" ic="FF33383C" width="68" height="106" img="world_entity\party\figure_kobold_01.png" left="-18" right="22" top="-40" bottom="4" />
 	<sprite id="figure_basilisk_01" offsetY="20" ic="FF295956" width="68" height="106" img="world_entity\party\figure_basilisk_01.png" left="-24" right="22" top="-43" bottom="21" />
 
 	<sprite id="legend_world_amber_collector_01_upgrade" ic="FF556A6F" width="239" height="145" img="world_settlement\amber_collector_01_upgrade.png" left="-118" right="116" top="-73" bottom="63" />

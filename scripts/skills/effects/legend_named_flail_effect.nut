@@ -38,10 +38,10 @@ this.legend_named_flail_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if ( _skill == null || _skill.m.IsWeaponSkill == false ) 
+		if ( _skill == null || _skill.m.IsWeaponSkill == false )
 			return;
 
-		if (!_targetEntity.isAlive() || _targetEntity.isDying())
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
 			return;
 
 		local user = this.getContainer().getActor();

@@ -1,5 +1,7 @@
 ::Legends.S <- {};
 
+::Legends.S.isNull <- ::MSU.isNull;
+
 ::Legends.S.colorize <- function(_valueString, _value)
 {
     local color = (_value >= 0) ? this.Const.UI.Color.PositiveValue : this.Const.UI.Color.NegativeValue;
@@ -36,6 +38,8 @@
 			return _properties.IsSpecializedInAxes;
 		case _weapon.isWeaponType(::Const.Items.WeaponType.Bow):
 			return _properties.IsSpecializedInBows;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Cleaver):
+			return _properties.IsSpecializedInCleavers;
 		case _weapon.isWeaponType(::Const.Items.WeaponType.Crossbow):
 		case _weapon.isWeaponType(::Const.Items.WeaponType.Firearm): // handgonne
 			return _properties.IsSpecializedInCrossbows;
@@ -141,4 +145,14 @@
 		}
 	}
 	return nearestTown;
+}
+
+::Legends.S.skillEntityAliveCheck <- function (_entity, _otherEntity = null) {
+	if (::Legends.S.isNull(_entity) || !_entity.isAlive() || _entity.isDying())
+		return true;
+	if (_otherEntity == null)
+		return false;
+	if (::Legends.S.isNull(_otherEntity) || !_otherEntity.isAlive() || _otherEntity.isDying())
+		return true;
+	return false;
 }

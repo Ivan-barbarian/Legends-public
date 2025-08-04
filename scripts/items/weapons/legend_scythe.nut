@@ -12,7 +12,6 @@ this.legend_scythe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded | this.Const.Items.ItemType.Pitchfork;
-		this.m.IsAgainstShields = true;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
@@ -34,7 +33,10 @@ this.legend_scythe <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		::Legends.Actives.grant(this, ::Legends.Active.LegendScytheCleave);
+		::Legends.Actives.grant(this.weapon, ::Legends.Active.Cleave, function (_skill)
+		{
+			_skill.m.IsScytheCleave = true;
+		}.bindenv(this));
 		::Legends.Actives.grant(this, ::Legends.Active.Reap);
 	}
 

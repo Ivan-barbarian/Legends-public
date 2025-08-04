@@ -13,6 +13,7 @@ class Defs:
         {"name": "tabard_named", "min" : 1, "max" : 26, "layer": "tabard"},
         {"name": "mountain_armor", "min" : 1, "max" : 2, "layer": "plate"},
         {"name": "skin_armor", "min" : 1, "max" : 2, "layer": "plate"},
+        {"name": "wild_scale", "min" : 1, "max" : 1, "layer" : "chain"}
     ]
 
     layers = [
@@ -90,6 +91,21 @@ class Defs:
 {"name": "legend_robes",                                  "layer": "cloth", "min": 0, "max": 0, "value" : 25, "con" : 25, "stam" : -2, "impactSound" : "leather", "invSound" : "cloth", "variants" : [1,2,11,12,13,14,15,16,17,18,19],
  "title" :  "Monk\'s Robe",
  "desc" :  "A rugged, large robe made of simple cloth usually worn by monks and similar individuals who don\'t care for fashion.",
+ "adesc" :""
+},
+{"name": "legend_vala_dress",                                  "layer": "cloth", "min": 1, "max": 1, "value" : 0, "con" : 40, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth",
+ "title" :  "Vala\'s Dress",
+ "desc" :  "A strong leather dress worn by a vala on her travels.",
+ "adesc" :""
+},
+{"name": "legend_vala_robe",                                  "layer": "cloth", "min": 1, "max": 1, "value" : 0, "con" : 60, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth",
+ "title" :  "Vala\'s Cloak",
+ "desc" :  "A rugged cloak for a vala\'s journeys through the lands.",
+ "adesc" :""
+},
+{"name": "legend_armor_rabble_fur",                            "layer": "cloth", "min": 1, "max": 1, "value" : 100, "con" : 5, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "rabble_fur",
+ "title" :  "Fur Armor",
+ "desc" :  "Matted fur and torn cloth, barely clothes",
  "adesc" :""
 },
 {"name": "legend_robes_magic",                            "layer": "cloth", "min": 1, "max": 7, "value" : 100, "con" : 5, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "magic_robe",
@@ -269,11 +285,6 @@ class Defs:
  "desc" :  "A basic mail shirt. Offers decent and affordable protection against slashing and piercing attacks.",
  "adesc" : "Includes a basic mail shirt that offers good protection against slashing and piercing attacks."
 },
-{"name": "wild_scale",                              "layer": "chain", "min": 1, "max": 1, "value" : 2000, "con" : 60, "stam" : -6, "impactSound" : "chain", "invSound" : "leather",
- "title" :  "Wild Scale",
- "desc" :  "A well crafted scale mail shirt",
- "adesc" : "Includes a basic mail shirt that offers good protection against slashing and piercing attacks."
-},
 {"name": "legend_armor_mail_shirt_simple",                "layer": "chain", "min": 1, "max": 1, "value" : 250, "con" : 25, "stam" : -3, "impactSound" : "chain", "invSound" : "leather",
  "title" :  "Simple Mail Shirt",
  "desc" :  "A simple mail shirt. Offers decent and affordable protection against slashing and piercing attacks.",
@@ -313,6 +324,12 @@ class Defs:
  "title" :  "Light Mail",
  "desc" :  "A shorter and lighter chainmail that offers good protection and is fatiguing to wear.",
  "adesc" : "Includes a shorter and lighter chainmail that offers good protection but is fatiguing to wear."
+},
+{"name": "legend_noble_mail",                  "layer": "chain", "min": 1, "max": 14, "value" : 1300, "con" : 60, "stam" : -7, "impactSound" : "chain", "invSound" : "leather", "brush" : "legend_heavy_mail",
+ "title" :  "Noble Mail",
+ "desc" :  "A wonderful long leather coat sewn over a light chain provides excellent protection for the vitals, while not weighing you down.",
+ "adesc" : "Includes a wonderful long leather coat sewn over a light chain provides excellent protection for the vitals, while not weighing you down.",
+ "named" : True, "rminStam" : 5, "rmaxStam": 7, "rminCond" : 70, "rmaxCond" : 90,  "names" : ['Heraldic Mail', "Splendor", "Grandiosity", "Pageantry", "Swank", "Full Mail", "Mail Hauberk", "Chainmail", "Surcoat", "Duty", "Honor", "Noble Mail"]
 },
 
 
@@ -433,11 +450,6 @@ class Defs:
 {"name": "legend_armor_leather_riveted",                  "layer": "plate", "min": 1, "max": 9, "value" : 900, "con" : 95, "stam" : -13, "impactSound" : "chain", "invSound" : "leather",
  "title" :  "Sellsword\'s Leather Armor",
  "desc" :  "A long leather armor coat reinforced with metal plates.",
- "adesc" : "Includes a long leather coat reinforced with metal plates that offers good protection but is very fatiguing to wear."
-},
-{"name": "legend_heavy_mail",                  "layer": "plate", "min": 1, "max": 14, "value" : 1300, "con" : 105, "stam" : -14, "impactSound" : "chain", "invSound" : "leather",
- "title" :  "Heavy Mail",
- "desc" :  "A long armor coat reinforced with studded metal plates and covered in colorful cloth.",
  "adesc" : "Includes a long leather coat reinforced with metal plates that offers good protection but is very fatiguing to wear."
 },
 {"name": "legend_armor_leather_riveted_light",            "layer": "plate", "min": 1, "max": 1, "value" : 700, "con" : 80, "stam" : -11, "impactSound" : "chain", "invSound" : "leather",
@@ -711,9 +723,6 @@ class Defs:
  "desc" :  "A heavy lamellar plated harness",
  "adesc" : "Has a heavy lamellar plated harness"
 },
-
-
-
 {"name": "legend_shoulder_cloth",           "layer": "cloak", "min": 1, "max": 12, "value" : 50, "con" : 5, "stam" : 0, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "shoulder_cloth",
  "title" :  "Shoulder Cloth",
  "desc" :  "A Piece of cloth drapped over the shoulder",

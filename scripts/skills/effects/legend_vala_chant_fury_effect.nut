@@ -95,7 +95,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 		if (_damageHitpoints >= actor.getHitpoints())
 			return;
 
-		if (!actor.isAlive() || actor.isDying())
+		if (::Legends.S.skillEntityAliveCheck(actor))
 			return;
 
 		if (!this.checkEntities() || !this.isInRange())

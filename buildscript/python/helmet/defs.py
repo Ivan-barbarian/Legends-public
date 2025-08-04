@@ -13,7 +13,8 @@ class Defs:
         {"name": "nach_helm", "min" : 1, "max" : 1, "layer": "vanity"},
         {"name": "mountain_helm", "min" : 1, "max" : 2, "layer": "vanity"},
         {"name": "demon_alp_helm", "min" : 1, "max" : 1, "layer": "vanity"},
-        {"name": "legend_jewelry", "min" : 1, "max" : 1, "layer": "vanity"}
+        {"name": "legend_jewelry", "min" : 1, "max" : 1, "layer": "vanity"},
+        {"name": "wild_helmet", "min" : 1, "max" : 1, "layer": "helm"}
     ]
 
     layers = [
@@ -727,7 +728,7 @@ class Defs:
  "title" :  "Southern Bearded Faceplate",
  "desc" :  "A faceplate in the southern bearded style."
  },
-{"name" : "mummy_mask"                     , "layer" : "top", "min" : 1, "max" : 2, "value" : 450, "con" : 40, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true",
+{"name" : "mummy_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 40, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true",
  "title" :  "Ancient Southern Facemask",
  "desc" :  "A facemask from a long dead civilisation."
  },

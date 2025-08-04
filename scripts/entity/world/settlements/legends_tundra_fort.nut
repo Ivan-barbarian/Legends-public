@@ -192,7 +192,7 @@ this.legends_tundra_fort <- this.inherit("scripts/entity/world/settlements/legen
 			"legend_horse_rouncey",
 			"legend_horse_destrier"
 		]];
-
+		this.m.Culture = this.Const.World.Culture.Northern;
 		this.m.Rumors = this.Const.Strings.RumorsTundraSettlement;
 	}
 

@@ -94,9 +94,9 @@
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.CleaverTree,
+				this.Const.Perks.SwordTree,
 				this.Const.Perks.SpearTree,
 				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.SlingTree,
 				this.Const.Perks.StaffTree
 			],
 			Defense = [
@@ -111,9 +111,12 @@
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.HealerClassTree,
 				this.Const.Perks.SickleClassTree
 
+			],
+			Profession = [
+				this.Const.Perks.HealerProfessionTree,
+				this.Const.Perks.HerbalistProfessionTree,
 			],
 			Magic = [
 				this.Const.Perks.PhilosophyMagicTree

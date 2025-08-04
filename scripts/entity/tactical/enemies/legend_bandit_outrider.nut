@@ -336,21 +336,5 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 			]));
 		}
 	}
-
-	function getHeadNames() {
-		local r = this.Math.rand(0,1);
-
-		//I only see these two, feel free to fix. Just needs to assign "bust_head_xx" for horse to work properly, not from Heads array for some reason
-		if (r == 0) {
-			return "bust_head_5" + this.Math.rand(0,1);
-		}
-		else {
-			local r = this.Math.rand(0,1);
-			if (r == 0)
-				return "bust_head_female_0" + this.Math.rand(1, 9);
-			return "bust_head_female_1" + this.Math.rand(0,6);
-		}
-	}
-
 });
 

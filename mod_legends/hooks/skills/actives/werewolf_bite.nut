@@ -1,5 +1,13 @@
 ::mods_hookExactClass("skills/actives/werewolf_bite", function(o)
 {
+	o.m.IsRestrained <- false;
+	o.m.IsSpent <- false;
+
+	o.isUsable <- function ()
+	{
+		return this.skill.isUsable() && !this.m.IsSpent;
+	}
+
 	local create = o.create;
 	o.create = function ()
 	{
@@ -34,5 +42,39 @@
 				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + p.DamageRegularMin + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + p.DamageRegularMax + "[/color] damage"
 			}
 		];
+	}
+
+	o.onAnySkillUsed <- function ( _skill, _targetEntity, _properties )
+	{
+		if (_skill == this)
+		{
+			_properties.DamageRegularMin += 20;
+			_properties.DamageRegularMax += 40;
+			_properties.DamageArmorMult *= 0.7;
+		}
+	}
+
+	o.onUpdate = function( _properties )
+	{
+	}
+
+	local onUse = o.onUse;
+	o.onUse <- function( _user, _targetTile )
+	{
+		if (this.m.IsRestrained)
+		{
+			this.m.IsSpent = true;
+		}
+		return onUse(_user, _targetTile);
+	}
+
+	o.onTurnStart <- function()
+	{
+		this.m.IsSpent = false;
+	}
+
+	o.setRestrained <- function( _f )
+	{
+		this.m.IsRestrained = _f;
 	}
 });

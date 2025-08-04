@@ -54,30 +54,21 @@
 		EnemyChance = 0.01,
 		Class = 1,
 		ClassChance = 0.01,
+		Profession = 1,
+		ProfessionChance = 0.01,
 		Magic = 1,
 		MagicChance = 0
 	};
-	o.m.PerkTreeDynamicMinsMagic <- {
-		Weapon = 8,
-		Defense = 2,
-		Traits = 8,
-		Enemy = 1,
-		EnemyChance = 0.01,
-		Class = 1,
-		ClassChance = 0.01,
-		Magic = 1,
-		MagicChance = 0.001
-	};
-	o.m.PerkTreeDynamicMinsBeast <- {
-		Weapon = 8,
-		Defense = 2,
-		Traits = 8,
-		Enemy = 1,
-		EnemyChance = 0.05,
-		Class = 1,
-		ClassChance = 0.02,
-		Magic = 1,
-		MagicChance = 0.001
+	o.m.PerkTreeCustomMins <- { // overwritten if needed
+		Weapon = 0,
+		Defense = 0,
+		Traits = 0,
+		Enemy = 0,
+		EnemyChance = 0.00,
+		Class = 0,
+		ClassChance = 0.00,
+		Magic = 0,
+		MagicChance = 0
 	};
 	o.m.PerkTreeDynamicBase <- { // this is a base perk tree so even if you don't add custom or dynamic perk tree it will default to this and build an average bro
 		Weapon = [
@@ -116,12 +107,12 @@
 			if (!_type) return
 			this.m.BackgroundType = this.m.BackgroundType == this.Const.BackgroundType.None ? _constType : this.m.BackgroundType | _constType
 		}
-		addToBackgroundType(this.m.IsScenarioOnly, this.Const.BackgroundType.Scenario);
-		addToBackgroundType(this.m.IsUntalented, this.Const.BackgroundType.Untalented);
-		addToBackgroundType(this.m.IsOffendedByViolence, this.Const.BackgroundType.OffendedByViolence);
-		addToBackgroundType(this.m.IsCombatBackground, this.Const.BackgroundType.Combat);
-		addToBackgroundType(this.m.IsNoble, this.Const.BackgroundType.Noble);
-		addToBackgroundType(this.m.IsLowborn, this.Const.BackgroundType.Lowborn);
+		addToBackgroundType(this.m.IsScenarioOnly, ::Const.BackgroundType.Scenario);
+		addToBackgroundType(this.m.IsUntalented, ::Const.BackgroundType.Untalented);
+		addToBackgroundType(this.m.IsOffendedByViolence, ::Const.BackgroundType.OffendedByViolence);
+		addToBackgroundType(this.m.IsCombatBackground, ::Const.BackgroundType.Combat);
+		addToBackgroundType(this.m.IsNoble, ::Const.BackgroundType.Noble);
+		addToBackgroundType(this.m.IsLowborn, ::Const.BackgroundType.Lowborn);
 	}
 
 	o.isBackgroundType <- function ( _type )
@@ -151,6 +142,31 @@
 		{
 			this.logError(_type + " is not contained in " + this.getID());
 		}
+	}
+
+	local isUntalented = o.isUntalented;
+	o.isUntalented = function () {
+		return isUntalented() || this.isBackgroundType(::Const.BackgroundType.Untalented);
+	}
+
+	local isOffendedByViolence = o.isOffendedByViolence;
+	o.isOffendedByViolence = function () {
+		return isOffendedByViolence() || this.isBackgroundType(::Const.BackgroundType.OffendedByViolence);
+	}
+
+	local isCombatBackground = o.isCombatBackground;
+	o.isCombatBackground = function () {
+		return isCombatBackground() || this.isBackgroundType(::Const.BackgroundType.Combat);
+	}
+
+	local isNoble = o.isNoble;
+	o.isNoble = function () {
+		return isNoble() || this.isBackgroundType(::Const.BackgroundType.Noble);
+	}
+
+	local isLowborn = o.isLowborn;
+	o.isLowborn = function () {
+		return isLowborn() || this.isBackgroundType(::Const.BackgroundType.Lowborn);
 	}
 
 	o.getModifiers <- function() {
@@ -1277,11 +1293,10 @@
 	o.getPerkTreeDynamicMins <- function ()
 	{
 		local mins = this.m.PerkTreeDynamicMins;
-
-		if (this.World.Assets.getOrigin().getID() == "scenario.beast_hunters")
-		{
-			mins = this.m.PerkTreeDynamicMinsBeast;
-		}
+		if (this.isBackgroundType(this.Const.BackgroundType.Educated))
+			mins.ProfessionChance += 0.09;
+		if (this.isBackgroundType(this.Const.BackgroundType.Lowborn))
+			mins.ClassChance += 0.09;
 		return mins;
 	}
 

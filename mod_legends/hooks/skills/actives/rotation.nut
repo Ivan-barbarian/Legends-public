@@ -9,7 +9,7 @@
 		local actor = this.getContainer().getActor();
 		local setting = ::Legends.Mod.ModSettings.getSetting("AiRotation").getValue();
 
-		if (setting == "Disabled")
+		if (actor.getFaction() != this.Const.Faction.Player && setting == "Disabled")
 			return false;
 
 		if (!target.isAlive() && ::MSU.isNull(target))
