@@ -1470,6 +1470,14 @@ activesDefs.push({
 	Name = "Flail",
 });
 
+::Legends.Active.LegendScytheCleave <- null;
+activesDefs.push({
+	ID = "actives.legend_scythe_cleave",
+	Script = "scripts/skills/actives/legend_scythe_cleave_skill",
+	Const = "LegendScytheCleave",
+	Name = "Cleave",
+});
+
 ::Legends.Active.LegendHorseKick <- null;
 activesDefs.push({
 	ID = "actives.legend_horse_kick",
@@ -2926,6 +2934,14 @@ activesDefs.push({
 	Name = "Transform into Wolf",
 });
 
+::Legends.Active.LegendTumble <- null;
+activesDefs.push({
+	ID = "actives.legend_tumble",
+	Script = "scripts/skills/actives/legend_tumble_skill",
+	Const = "LegendTumble",
+	Name = "Tumble",
+});
+
 ::Legends.Active.LegendUnarmedLunge <- null;
 activesDefs.push({
 	ID = "actives.legend_unarmed_lunge",
@@ -3110,20 +3126,12 @@ activesDefs.push({
 	Name = "Censer Strike",
 });
 
-::Legends.Active.LegendDawgBite <- null;
+::Legends.Active.legendCommandLegion <- null;
 activesDefs.push({
-	ID = "actives.legend_dawg_bite",
-	Script = "scripts/skills/actives/legend_dawg_bite_skill",
-	Const = "LegendDawgBite",
-	Name = "Dawg Bite",
-});
-
-::Legends.Active.LegendUnleashDawg <- null;
-activesDefs.push({
-	ID = "actives.legend_unleash_dawg",
-	Script = "scripts/skills/actives/legend_unleash_dawg_skill",
-	Const = "LegendUnleashDawg",
-	Name = "Unleash Dawg",
+	ID = "actives.legend_command_legion",
+	Script = "scripts/skills/actives/legend_command_legion",
+	Const = "CommandLegionary",
+	Name = "Command Legionary",
 });
 
 ::Legends.Actives.addActiveDefObjects(activesDefs);

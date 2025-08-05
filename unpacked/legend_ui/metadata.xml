@@ -175,4 +175,6 @@
 	<sprite id="mini_unleash_dawg" ic="2E343FFF" img="skills\mini\mini_unleash_dawg.png" />
 	<sprite id="dawg_bite" ic="2E343FFF" img="skills\dawg_bite.png" />
 	<sprite id="mini_dawg_bite" ic="2E343FFF" img="skills\mini\mini_dawg_bite.png" />
+	<sprite id="legend_legion_command_square" ic="FF1B293C" img="skills\legend_legion_command_square.png" />
+	<sprite id="legend_status_effect_legion_command_mini" offsetY="35" ic="FF223041" img="skills\mini\legend_status_effect_legion_command_mini.png" />
 </brush>

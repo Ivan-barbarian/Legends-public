@@ -5,7 +5,7 @@ this.legend_fleshless_trait <- this.inherit("scripts/skills/traits/character_tra
 		this.character_trait.create();
 		this.m.ID = ::Legends.Traits.getID(::Legends.Trait.LegendFleshless);
 		this.m.Name = "Fleshless";
-		this.m.Description = "All skin is rotted or torn away, only bones remain.";
+		this.m.Description = "Only bones remain, with all skin rotten or torn away.";
 		this.m.Icon = "ui/traits/fleshless_trait.png";
 	}
 
@@ -26,37 +26,31 @@ this.legend_fleshless_trait <- this.inherit("scripts/skills/traits/character_tra
 				id = 7,
 				type = "text",
 				icon = "ui/icons/damage_received.png",
-				text = "Has no flesh. Immune to Bleeding, poison and fresh injuries."
+				text = "Immune to Bleeding, poison and most fresh injuries."
 			},
 			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/days_wounded.png",
-				text = "Has no blood. 50% fewer hitpoints. Heals at 10% normal rate. Requires no food."
+				text = "Recovers hitpoints at only 20% of the normal rate. Requires no food and has resistance to piercing type attacks."
 			},
 			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "Has no lungs. Effected by fatigue at 10% normal rate. Resistance to piercing type attacks."
-			},
-			{
-				id = 7,
-				type = "text",
-				icon = "ui/icons/fatigue.png",
-				text = "Has no brain. Gains experience at 85% of normal rate, free upkeep."
+				text = "Effected by fatigue at 10% normal rate."
 			},
 			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/morale.png",
-				text = "Has no heart. Not affected by morale, or allies fleeing or dying."
+				text = "Not affected by morale checks or allies fleeing or dying."
 			},
 			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "Has no eyes, Not affected by night."
+				text = "Not affected by nighttime penalties"
 			}
 		];
 		return ret;
@@ -79,6 +73,7 @@ this.legend_fleshless_trait <- this.inherit("scripts/skills/traits/character_tra
 		if (this.m.IsNew)
 		{
 			this.onApplyAppearance();
+			actor.m.Flags.add("PlayerSkeleton");
 			actor.m.Flags.add("skeleton");
 			actor.m.Flags.add("undead");
 			::Legends.Traits.grant(this, ::Legends.Trait.RacialSkeleton);
@@ -121,12 +116,12 @@ this.legend_fleshless_trait <- this.inherit("scripts/skills/traits/character_tra
 		_properties.IsAffectedByFreshInjuries = false;
 		_properties.MoraleEffectMult = 0.1;
 		_properties.FatigueEffectMult = 0.1;
-		_properties.HitpointsRecoveryRateMult = 0.1;
+		_properties.HitpointsRecoveryRateMult = 0.2;
 		_properties.MovementFatigueCostMult = 0.1;
 		_properties.DailyWageMult *= 0;
-		_properties.XPGainMult *= 0.85;
+		_properties.XPGainMult *= 1.0;
 		_properties.DailyFood = 0;
-		_properties.HitpointsMult *= 0.5;
+		// _properties.HitpointsMult *= 0.5; //best decided in bg/summon files from now on - Luft
 	}
 
 	function onApplyAppearance()
@@ -221,4 +216,25 @@ this.legend_fleshless_trait <- this.inherit("scripts/skills/traits/character_tra
 		];
 	}
 
+	function onRemoved()
+	{
+		local actor = this.getContainer().getActor();
+		actor.m.BloodType = this.Const.BloodType.Bones;
+		actor.m.MoraleState = this.Const.MoraleState.Steady;
+		actor.getFlags().remove("undead");
+		actor.getFlags().remove("skeleton");
+		actor.getFlags().remove("PlayerSkeleton");
+	}
+
+	function onSerialize( _out )
+	{
+		this.skill.onSerialize(_out);
+		_out.writeU8(this.m.InjuryType);
+	}
+
+	function onDeserialize( _in )
+	{
+		this.skill.onDeserialize(_in);
+		this.m.InjuryType = _in.readU8();
+	}
 });
