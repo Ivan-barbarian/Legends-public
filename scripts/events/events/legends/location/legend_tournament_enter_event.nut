@@ -28,6 +28,8 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				::Legends.Maps.markVisited(::Legends.Map.Tournament);
+				::Legends.Maps.cleanUp();
 			}
 
 		});
