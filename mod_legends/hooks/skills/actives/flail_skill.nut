@@ -2,10 +2,9 @@
 {
 	o.m.IsChain <- false;
 
-	local create = o.create;
-	o.create = function ()
+	o.setItem <- function (_item)
 	{
-		create();
+		this.skill.setItem(_item);
 		if (this.m.IsChain)
 		{
 			this.m.Name = "Chain Flail";
@@ -16,10 +15,9 @@
 		}
 	}
 
-	local getTooltip = o.getTooltip;
 	o.getTooltip = function()
 	{
-		local ret = getTooltip();
+		local ret = this.getDefaultTooltip();
 		if (this.m.IsChain)
 		{
 			ret.push({

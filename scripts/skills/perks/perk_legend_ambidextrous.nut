@@ -87,20 +87,25 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillExecuted( _skill, _targetTile, _targetEntity, _forFree )
 	{
-		if (!_skill.m.IsAttack || (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.HandToHand) && this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Mainhand) != null))
-		{
-			// Don't execute a follow up attack if the first skill is not an attack, or if you are using hand to hand while the mainhand is holding a weapon
+		if (!_skill.m.IsAttack)
+			return; // Don't execute a follow up attack if the first skill is not an attack
+		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.HandToHand) && this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Mainhand) != null)
+			return;// or if you are using hand to hand while the mainhand is holding a weapon
+
+		local actor = this.getContainer().getActor();
+		if (::Legends.S.skillEntityAliveCheck(actor, _targetEntity))
 			return;
-		}
-		local items = this.getContainer().getActor().getItems();
+
+		local items = actor.getItems();
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 
 		if (_targetEntity != null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand) && (off == null || !::MSU.isNull(m.offHandSkill)))
 		{
 			if (!_forFree)
 			{
-				if (_targetTile == null) // Is this necessary?
+				if (_targetTile == null || actor.getTile() == null) // Is this necessary?
 					return;
+
 				// i need to somehow do this more dynamically
 				::Time.scheduleEvent(::TimeUnit.Virtual, ::Const.Combat.RiposteDelay, this.executeFollowUpAttack.bindenv(this), {
 					TargetTile = _targetTile,
@@ -112,6 +117,8 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 
 	function executeFollowUpAttack( _info )
 	{
+		if (::Legends.S.skillEntityAliveCheck(_info.TargetTile.getEntity()))
+			return;
 		if (!::MSU.isNull(_info.Skill))
 			_info.Skill.useForFree(_info.TargetTile);
 	}

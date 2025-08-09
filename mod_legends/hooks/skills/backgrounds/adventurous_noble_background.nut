@@ -87,6 +87,7 @@
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.FemaleMuscular;
+		this.m.Names = this.Const.Strings.LadyNames;
 
 		this.m.PerkTreeDynamic = {
 			Weapon = [

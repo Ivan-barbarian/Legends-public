@@ -17,8 +17,10 @@ this.perk_legend_opportunist <- this.inherit("scripts/skills/skill", {
 		if (_skill == null)
 			return;
 
-		// the target must still alive
-		if (!_targetEntity.isAlive() || _targetEntity.isDying() || _targetEntity.isAlliedWith(this.getContainer().getActor()))
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
+			return;
+
+		if (_targetEntity.isAlliedWith(this.getContainer().getActor()))
 			return;
 
 		// don't have resistance

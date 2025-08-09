@@ -14,11 +14,18 @@
 	{
 		local result = queryBlueprints();
 		result.SubTitle = "A taxidermist can create useful items from all kinds of beast trophies that you bring";
+
 		local bps = ::World.Crafting.getQualifiedBlueprintsForUI(this.m.InventoryFilter);
+		result.Pages <- (bps.len() > 0 ? ::Math.floor((bps.len() + 3) / 4) : 1);
+		this.m.CurrentPage = ::Math.max(0, ::Math.min(this.m.CurrentPage, result.Pages - 1));
+
 		local indexStart = this.m.CurrentPage * 4;
-		result.Blueprints = bps.slice(indexStart, ::Math.min(indexStart + 4, bps.len()));
+		result.Blueprints = [];
+		if (bps.len() > 0 && indexStart < bps.len()) {
+			result.Blueprints = bps.slice(indexStart, ::Math.min(indexStart + 4, bps.len()));
+		}
+
 		result.CurrentPage <- this.m.CurrentPage;
-		result.Pages <- ::Math.floor((bps.len() + 3) / 4);
 		return result;
 	}
 

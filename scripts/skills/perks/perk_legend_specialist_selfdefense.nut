@@ -34,7 +34,7 @@ this.perk_legend_specialist_selfdefense <- this.inherit("scripts/skills/legend_s
 		else if (item.isWeaponType(this.Const.Items.WeaponType.MagicStaff) && item.isWeaponType(this.Const.Items.WeaponType.Sword))
 			bonus = 8;
 		else if (item.isWeaponType(this.Const.Items.WeaponType.Musical))
-			bonus = 8
+			bonus = 8;
 		if (item.isWeaponType(this.Const.Items.WeaponType.Staff) || item.isWeaponType(this.Const.Items.WeaponType.MagicStaff) || item.isWeaponType(this.Const.Items.WeaponType.Musical))
 		{
 			_properties.MeleeDefense  += bonus;

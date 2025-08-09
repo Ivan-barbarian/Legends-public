@@ -112,16 +112,21 @@ this.legend_belly_dancer_encounter <- this.inherit("scripts/encounters/encounter
 				]);
 				_event.m.Dude.getBackground().m.RawDescription = "You found %name% in " + ::Legends.S.getClosestSettlement().getName() + ", masked by green silk and drawing crowds with rhythmic movements and impressively precise fruit slicing. The latter skill is a boon to any mercenary company, and so you didn\'t hesitate to recruit them	.";
 				_event.m.Dude.getBackground().buildDescription(true);
-//				local items = _event.m.Dude.getItems();
-//				items.equip(::Const.World.Common.pickArmor([
-//					[1, "cloth/legend_ancient_cloth_restored"],
-//					[1, "tabard/necro_embalmbed_priest_body"]
-//				]));
-//				items.equip(::Const.World.Common.pickHelmet([
-//					[1, "hood/legend_helmet_southern_headband_coin"],
-//					[1, "vanity/legend_helmet_southern_headress_coin"],
-//					[1, "top/legend_helmet_southern_veil"]
-//				]));
+				local items = _event.m.Dude.getItems();
+				local armor = items.getItemAtSlot(::Const.ItemSlot.Body);
+				if (armor != null)
+					items.unequip(armor);
+				armor = ::new("scripts/items/legend_armor/cloth/legend_ancient_cloth");
+				armor.setVariant(4);
+				armor.setUpgrade(::new("scripts/items/legend_armor/plate/legend_southern_arm_guards"));
+				items.equip(armor);
+				local helmet = items.getItemAtSlot(::Const.ItemSlot.Head);
+				if (helmet != null)
+					items.unequip(helmet);
+				helmet = ::new("scripts/items/legend_helmets/hood/legend_helmet_southern_headband_coin");
+				helmet.setUpgrade(::new("scripts/items/legend_helmets/top/legend_helmet_southern_veil"));
+				helmet.setUpgrade(::new("scripts/items/legend_helmets/vanity/legend_helmet_southern_headress_coin"));
+				items.equip(helmet);
 				::Legends.Traits.grant(_event.m.Dude, ::Legends.Trait.Dexterous);
 				this.Characters.push(_event.m.Dude.getImagePath());
 			}
@@ -217,21 +222,22 @@ this.legend_belly_dancer_encounter <- this.inherit("scripts/encounters/encounter
     }
 
     function isValid(_settlement) {
-		if (!this.World.getTime().IsDaytime)
-		{
-			return false;
-		}
-        if (this.World.getPlayerRoster().getSize() >= this.World.Assets.getBrothersMax())
-		{
-			return false;
-		}
+	    if (!_settlement.isSouthern())
+		    return false;
 
-		if (this.World.Assets.getMoney() < 750)
-		{
-			return false;
-		}
+	    if (::World.Assets.getBusinessReputation() < 1050)
+		    return false;
 
-        return true;
+		if (!::World.getTime().IsDaytime)
+			return false;
+
+        if (::World.getPlayerRoster().getSize() >= ::World.Assets.getBrothersMax())
+			return false;
+
+		if (::World.Assets.getMoney() < 750)
+			return false;
+
+	    return !isOnCooldown();
     }
 
 	function onClear() {

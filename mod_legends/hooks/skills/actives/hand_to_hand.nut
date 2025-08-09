@@ -58,10 +58,7 @@
 		if(_properties.IsSpecializedInFists)
 		{
 			this.m.FatigueCostMult = _properties.IsSpecializedInFists ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-			if (this.m.Container.hasPerk(::Legends.Perk.LegendAmbidextrous)) //ambidextrous & specialzed
-			{
-				this.m.ActionPointCost = 3
-			}
+			this.m.ActionPointCost = 3;
 		}
 		if (this.m.Container.hasPerk(::Legends.Perk.LegendAmbidextrous))
 		{

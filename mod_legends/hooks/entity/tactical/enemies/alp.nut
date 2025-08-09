@@ -125,7 +125,7 @@
 
 		local deathLoot = this.getItems().getDroppableLoot(_killer);
 		local tileLoot = this.getLootForTile(_killer, deathLoot);
-		local corpse = this.generateCorpse(_tile, _fatalityType);
+		local corpse = this.generateCorpse(_tile, _fatalityType, _killer);
 		this.dropLoot(_tile, tileLoot, !flip);
 
 		if (_tile == null)
@@ -139,18 +139,6 @@
 		}
 
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
-	}
-
-	o.generateCorpse = function (_tile, _fatalityType)
-	{
-		local corpse = clone this.Const.Corpse;
-		corpse.CorpseName = "An " + this.getName();
-		corpse.Value = 2.0;
-		corpse.Items = this.getItems();
-		corpse.IsResurrectable = false;
-		corpse.IsHeadAttached = _fatalityType != this.Const.FatalityType.Decapitated;
-		corpse.Tile = _tile;
-		return corpse;
 	}
 
 	local onInit = o.onInit;

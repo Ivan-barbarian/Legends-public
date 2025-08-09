@@ -1459,7 +1459,7 @@ activesDefs.push({
 	ID = "actives.legend_demon_hound_bite",
 	Script = "scripts/skills/actives/legend_demon_hound_bite_skill",
 	Const = "LegendDemonHoundBite",
-	Name = "H÷llenhund Bite",
+	Name = "Höllenhund Bite",
 });
 
 ::Legends.Active.LegendRangedFlail <- null;

@@ -27,114 +27,45 @@
 		setCurrentMovementType(_t);
 	}
 
-	/*
-	o.onRender <- function ()
+	o.querySwitchableItems <- function()
 	{
-		if (this.m.IsLoweringWeapon)
+		local items = [];
+		local inv = this.getItems();
+
+		if (inv.isActionAffordable([]))
 		{
-			local p = (this.Time.getVirtualTimeF() - this.m.RenderAnimationStartTime) / this.Const.Items.Default.LowerWeaponDuration;
+			for( local i = 0; i < inv.getUnlockedBagSlots(); i++ )
+			{
+				local item = inv.getItemAtBagSlot(i);
 
-			if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).m.ID == "weapon.legend_named_swordstaff" || this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).m.ID == "weapon.legend_swordstaff" || this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).m.ID == "weapon.legend_mage_swordstaff")
-			{
-				this.getSprite("arms_icon").Rotation = this.Math.minf(1.0, p) * -70.0;
-				this.moveSpriteOffset("arms_icon", this.getSpriteOffset("arms_icon"), this.createVec(46 * this.Math.minf(1.0, p), -33 * this.Math.minf(1.0, p)), this.Const.Items.Default.LowerWeaponDuration, this.m.RenderAnimationStartTime);
-			}
-			else if (this.m.Items.getAppearance().TwoHanded)
-			{
-				this.getSprite("arms_icon").Rotation = this.Math.minf(1.0, p) * -70.0;
-			}
-			else
-			{
-				this.getSprite("arms_icon").Rotation = this.Math.minf(1.0, p) * -33.0;
-			}
-
-			if (p >= 1.0)
-			{
-				this.m.IsLoweringWeapon = false;
-
-				if (!this.m.IsUsingCustomRendering)
+				if (item == null)
 				{
-					this.setRenderCallbackEnabled(false);
+					continue;
+				}
+
+				local slot = item.getSlotType();
+
+				if (slot == ::Const.ItemSlot.None || slot == ::Const.ItemSlot.Bag)
+				{
+					continue;
+				}
+
+				local currentItem = inv.getItemAtSlot(slot);
+
+				if (item != null && (item.isItemType(::Const.Items.ItemType.Weapon) || item.isItemType(::Const.Items.ItemType.Tool) || item.isItemType(::Const.Items.ItemType.Shield) || item.isItemType(::Const.Items.ItemType.Accessory) || item.isItemType(::Const.Items.ItemType.Ammo) && item.m.Ammo != 0) && inv.isActionAffordable(currentItem != null ? [
+					currentItem,
+					item
+				] : [
+					item
+				]))
+				{
+					items.append(item);
 				}
 			}
 		}
-		else if (this.m.IsRaisingWeapon)
-		{
-			local p = (this.Time.getVirtualTimeF() - this.m.RenderAnimationStartTime) / this.Const.Items.Default.RaiseWeaponDuration;
 
-			if (this.getSpriteOffset("arms_icon").X != 0 || this.getSpriteOffset("arms_icon").Y != 0)
-			{
-				this.getSprite("arms_icon").Rotation = (1.0 - this.Math.minf(1.0, p)) * -70.0;
-				this.moveSpriteOffset("arms_icon", this.getSpriteOffset("arms_icon"), this.createVec(46 * (1-this.Math.minf(1.0, p)), -33 * (1-this.Math.minf(1.0, p))), this.Const.Items.Default.LowerWeaponDuration, this.m.RenderAnimationStartTime);
-				//this.logDebug("hey there calls");
-			}
-			else if (this.m.Items.getAppearance().TwoHanded)
-			{
-				this.getSprite("arms_icon").Rotation = (1.0 - this.Math.minf(1.0, p)) * -70.0;
-			}
-			else
-			{
-				this.getSprite("arms_icon").Rotation = (1.0 - this.Math.minf(1.0, p)) * -33.0;
-			}
-
-			if (p >= 1.0)
-			{
-				this.m.IsRaisingWeapon = false;
-
-				if (!this.m.IsUsingCustomRendering)
-				{
-					this.setRenderCallbackEnabled(false);
-				}
-			}
-		}
+		return items;
 	}
-	*/
-
-	// local onRender = o.onRender;
-	// o.onRender = function()
-	// {
-	// 	if (this.m.IsLoweringWeapon) {
-	// 		local mainhand = this.getMainhandItem();
-	// 		if (mainhand != null && ::Const.Items.LegendItemWithSpearwall.find(mainhand.getID()) != null) {
-	// 			local p = (this.Time.getVirtualTimeF() - this.m.RenderAnimationStartTime) / this.Const.Items.Default.LowerWeaponDuration;
-	// 			this.getSprite("arms_icon").Rotation = this.Math.minf(1.0, p) * -70.0;
-	// 			this.moveSpriteOffset("arms_icon", this.getSpriteOffset("arms_icon"), this.createVec(46 * this.Math.minf(1.0, p), -33 * this.Math.minf(1.0, p)), this.Const.Items.Default.LowerWeaponDuration, this.m.RenderAnimationStartTime);
-
-	// 			if (p >= 1.0) {
-	// 				this.m.IsLoweringWeapon = false;
-
-	// 				if (!this.m.IsUsingCustomRendering)
-	// 					this.setRenderCallbackEnabled(false);
-	// 			}
-	// 			else {
-	// 				this.m.IsLoweringWeapon = true;
-	// 			}
-	// 		}
-	// 		else{
-	// 			onRender();
-	// 		}
-	// 	}
-	// 	else if (this.m.IsRaisingWeapon) {
-	// 		if (this.getSpriteOffset("arms_icon").X != 0 || this.getSpriteOffset("arms_icon").Y != 0) {
-	// 			local p = (this.Time.getVirtualTimeF() - this.m.RenderAnimationStartTime) / this.Const.Items.Default.RaiseWeaponDuration;
-	// 			this.getSprite("arms_icon").Rotation = (1.0 - this.Math.minf(1.0, p)) * -70.0;
-	// 			this.moveSpriteOffset("arms_icon", this.getSpriteOffset("arms_icon"), this.createVec(46 * (1-this.Math.minf(1.0, p)), -33 * (1-this.Math.minf(1.0, p))), this.Const.Items.Default.LowerWeaponDuration, this.m.RenderAnimationStartTime);
-
-	// 			if (p >= 1.0) {
-	// 				this.m.IsRaisingWeapon = false;
-
-	// 				if (!this.m.IsUsingCustomRendering)
-	// 					this.setRenderCallbackEnabled(false);
-	// 			}
-	// 			else {
-	// 				this.m.IsRaisingWeapon = true;
-	// 			}
-	// 		}
-	// 		else {
-	// 			onRender();
-	// 		}
-	// 	}
-	// }
 
 	local onOtherActorDeath = o.onOtherActorDeath;
 	o.onOtherActorDeath = function ( _killer, _victim, _skill )
@@ -212,6 +143,10 @@
 		foreach(i, actor in otherActors) {
 			isAliedPtrs.push(actor.isAlliedWith);
 			actor.isAlliedWith = function(_other) {
+				if (this == null)
+					return false;
+				if (_other == null)
+					return false;
 				// check if checkMorale should happen when enemies are affected by it
 				return isAliedPtrs[i](_other) && this.m.CurrentProperties.IsAffectedByMovementMorale;
 			}.bindenv(actor);
@@ -229,8 +164,11 @@
 		// Lionheart perk stop
 		onMovementFinish(_tile);
 		// restore state
-		foreach (i, actor in otherActors)
+		foreach (i, actor in otherActors) {
+			if (actor == null)
+				continue;
 			actor.isAlliedWith = isAliedPtrs[i];
+		}
 		this.checkMorale = fnPtr;
 	}
 
@@ -259,20 +197,35 @@
 	o.onMissed = function ( _attacker, _skill, _dontShake = false )
 	{
 		// Attempt to Parry
-		local isParrying = false, validAttackerToParry = _attacker != null && _attacker.isAlive() && !_attacker.isAlliedWith(this) && _attacker.getTile().getDistanceTo(this.getTile()) == 1 && ::Tactical.TurnSequenceBar.getActiveEntity() != null && ::Tactical.TurnSequenceBar.getActiveEntity().getID() == _attacker.getID();
-		local validSkillToParry = _skill != null && !_skill.isIgnoringRiposte() && _skill.m.IsWeaponSkill;
+		local isParrying = false;
+		local validAttackerToParry = _attacker != null
+			&& _attacker.isAlive()
+			&& !_attacker.isAlliedWith(this)
+			&& _attacker.getTile().getDistanceTo(this.getTile()) == 1
+			&& ::Tactical.TurnSequenceBar.getActiveEntity() != null
+			&& ::Tactical.TurnSequenceBar.getActiveEntity().getID() == _attacker.getID();
+		local validSkillToParry = _skill != null
+			&& !_skill.isIgnoringRiposte()
+			&& _skill.m.IsWeaponSkill;
 
-		if (getCurrentProperties().IsParrying && !getCurrentProperties().IsStunned && validAttackerToParry && validSkillToParry && !_attacker.getCurrentProperties().IsImmuneToDisarm && !_attacker.getSkills().hasEffect(::Legends.Effect.LegendParried)) {
-			if (isHiddenToPlayer()) {
+		if (this.getCurrentProperties().IsParrying
+			&& !this.getCurrentProperties().IsStunned
+			&& validAttackerToParry
+			&& validSkillToParry
+			&& !_attacker.getCurrentProperties().IsImmuneToDisarm
+			&& !_attacker.getSkills().hasEffect(::Legends.Effect.LegendParried)
+		) {
+			if (this.isHiddenToPlayer()) {
 				::Legends.Effects.grant(_attacker, ::Legends.Effect.LegendParried);
 				this.onBeforeRiposte(_attacker, _skill);
 			}
 			else {
 				isParrying = true;
-				::Time.scheduleEvent(::TimeUnit.Virtual, ::Const.Combat.RiposteDelay * 1.5, onParryVisible.bindenv(this), {
-					Actor = this,
-					Attacker = _attacker,
-					Skill = _skill
+				local attacker = _attacker, skill = _skill;
+				::Time.scheduleEvent(::TimeUnit.Virtual, ::Const.Combat.RiposteDelay * 1.5, this.onParryVisible.bindenv(this), {
+					Actor = this, // this is technically not needed here because of bindenv
+					Attacker = attacker,
+					Skill = skill
 				});
 			}
 
@@ -280,27 +233,44 @@
 		}
 		else
 		{
-			this.onBeforeRiposte(_attacker,_skill);
+			this.onBeforeRiposte(_attacker, _skill);
 		}
 
-		if (isParrying) m.CurrentProperties.IsRiposting = false;
+		if (isParrying)
+			this.m.CurrentProperties.IsRiposting = false;
 		onMissed(_attacker, _skill, _dontShake);
 	}
 
-	o.onParryVisible <- function ( _info )
+	o.onParryVisible <- function (_info)
 	{
+		if (_info.Attacker == null) {
+			::logInfo("attacker == null, wtf?");
+		}
+		if (_info.Skill == null) {
+			::logInfo("skill == null, wtf?");
+		}
+		if (_info.Actor == null) {
+			::logInfo("actor == null, wtf?");
+		}
+		if (this == null) {
+			::logInfo("this == null, wtf?");
+		}
 		// Animate and provide sound effects for the Parry, and apply the Vulnerable effect
-		this.Tactical.spawnSpriteEffect("en_garde_square", this.createColor("#ffffff"), _info.Actor.getTile(), this.Const.Tactical.Settings.SkillOverlayOffsetX, this.Const.Tactical.Settings.SkillOverlayOffsetY, this.Const.Tactical.Settings.SkillOverlayScale, this.Const.Tactical.Settings.SkillOverlayScale, this.Const.Tactical.Settings.SkillOverlayStayDuration, 0, this.Const.Tactical.Settings.SkillOverlayFadeDuration);
-		_info.Skill.spawnAttackEffect(_info.Attacker.getTile(), this.Const.Tactical.AttackEffectSlash);
-		this.Tactical.getShaker().cancel(_info.Attacker);
-		this.Tactical.getShaker().shake(_info.Attacker, _info.Actor.getTile(), 2);
-		local sound = this.Const.Sound.getParrySoundByWeaponType(_info.Skill);
-		// this.Sound.play("sounds/combat/legend_parried_01.wav", this.Const.Sound.Volume.Skill, _info.Actor.getPos())
-		this.Sound.play(sound, this.Const.Sound.Volume.Skill, _info.Actor.getPos());
+		::Tactical.spawnSpriteEffect("en_garde_square", this.createColor("#ffffff"), _info.Actor.getTile(),
+			::Const.Tactical.Settings.SkillOverlayOffsetX, ::Const.Tactical.Settings.SkillOverlayOffsetY,
+			::Const.Tactical.Settings.SkillOverlayScale, ::Const.Tactical.Settings.SkillOverlayScale,
+			::Const.Tactical.Settings.SkillOverlayStayDuration, 0, ::Const.Tactical.Settings.SkillOverlayFadeDuration
+		);
+		_info.Skill.spawnAttackEffect(_info.Attacker.getTile(), ::Const.Tactical.AttackEffectSlash);
+		::Tactical.getShaker().cancel(_info.Attacker);
+		::Tactical.getShaker().shake(_info.Attacker, _info.Actor.getTile(), 2);
+		local sound = ::Const.Sound.getParrySoundByWeaponType(_info.Skill);
+		// this.Sound.play("sounds/combat/legend_parried_01.wav", ::Const.Sound.Volume.Skill, _info.Actor.getPos())
+		this.Sound.play(sound, ::Const.Sound.Volume.Skill, _info.Actor.getPos());
 		::Legends.Effects.grant(_info.Attacker, ::Legends.Effect.LegendParried);
-		this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_info.Attacker) + " is Vulnerable");
+		::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(_info.Attacker) + " is Vulnerable");
 		// Attempt to perform a Riposte after the Parry (with a delay so that it only begins after the Parry animation is finished)
-		this.onBeforeRiposte(_info.Attacker,_info.Skill,1.5);
+		this.onBeforeRiposte(_info.Attacker, _info.Skill, 1.5);
 	}
 
 	// Preparation to call onRiposte(). Given its own function so it can be easily reused
@@ -317,7 +287,7 @@
 					Skill = skill,
 					TargetTile = _attacker.getTile()
 				};
-				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.Const.Combat.RiposteDelay * _delayMultiplier, this.onRiposte.bindenv(this), info);
+				this.Time.scheduleEvent(this.TimeUnit.Virtual, ::Const.Combat.RiposteDelay * _delayMultiplier, this.onRiposte.bindenv(this), info);
 			}
 
 			this.getFlags().set("PerformedRiposte", true);
@@ -391,14 +361,6 @@
 		}
 
 		perks -= nonRefundable.len();
-
-		// Witch gets
-		// todo delete it - chopeks
-//		if (this.getBackground().getID() == "background.legend_witch" && this.LegendsMod.Configs().LegendMagicEnabled())
-//		{
-//			::Legends.Perks.grant(this, ::Legends.Perk.LegendMagicMissile);
-//			perks = perks - 1;
-//		}
 
 		this.m.PerkPoints = perks;
 
@@ -531,6 +493,21 @@
 	{
 	}
 
+	local makeMiniboss = o.makeMiniboss;
+	o.makeMiniboss = function ()
+	{
+		local ret = makeMiniboss();
+		if (ret)
+		{
+			this.m.OnDeathLootTable.extend([
+				[5, "scripts/items/misc/legend_masterwork_fabric"],
+				[5, "scripts/items/misc/legend_masterwork_metal"],
+				[5, "scripts/items/misc/legend_masterwork_tools"]
+			]);
+		}
+		return ret;
+	}
+
 	local isReallyKilled = o.isReallyKilled;
 	o.isReallyKilled = function( _fatalityType )
 	{
@@ -621,7 +598,143 @@
 			onDeath(null, _skill, _tile, _fatalityType);
 		else
 			onDeath(_killer, _skill, _tile, _fatalityType);
+
+
+		// Drops net if net flags are met. It should be used in dropLoot to free space here
+		if (this.getFlags().get("DropNet")){
+			local net;
+
+			if (this.getFlags().get("IsReinforcedNet"))
+				net = this.new("scripts/items/tools/reinforced_throwing_net");
+			else
+				net = this.new("scripts/items/tools/throwing_net");
+
+			if (!this.getFlags().get("IsByNetCasting")){
+				net.m.Ammo = 0;
+				net.updateAmmo();
+			}
+
+			if (net != null){
+				if (net.drop(this.getTile())) {// drops the net on the tile
+					::Tactical.Entities.addNetTiles(this.getTile());
+				}
+			}
+
+			this.getFlags().remove("DropNet");
+   			this.getFlags().remove("IsReinforcedNet");
+    		this.getFlags().remove("IsByNetCasting");
+		}
 	}
+
+
+	/*
+	o.onRender <- function ()
+	{
+		if (this.m.IsLoweringWeapon)
+		{
+			local p = (this.Time.getVirtualTimeF() - this.m.RenderAnimationStartTime) / this.Const.Items.Default.LowerWeaponDuration;
+
+			if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).m.ID == "weapon.legend_named_swordstaff" || this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).m.ID == "weapon.legend_swordstaff" || this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).m.ID == "weapon.legend_mage_swordstaff")
+			{
+				this.getSprite("arms_icon").Rotation = this.Math.minf(1.0, p) * -70.0;
+				this.moveSpriteOffset("arms_icon", this.getSpriteOffset("arms_icon"), this.createVec(46 * this.Math.minf(1.0, p), -33 * this.Math.minf(1.0, p)), this.Const.Items.Default.LowerWeaponDuration, this.m.RenderAnimationStartTime);
+			}
+			else if (this.m.Items.getAppearance().TwoHanded)
+			{
+				this.getSprite("arms_icon").Rotation = this.Math.minf(1.0, p) * -70.0;
+			}
+			else
+			{
+				this.getSprite("arms_icon").Rotation = this.Math.minf(1.0, p) * -33.0;
+			}
+
+			if (p >= 1.0)
+			{
+				this.m.IsLoweringWeapon = false;
+
+				if (!this.m.IsUsingCustomRendering)
+				{
+					this.setRenderCallbackEnabled(false);
+				}
+			}
+		}
+		else if (this.m.IsRaisingWeapon)
+		{
+			local p = (this.Time.getVirtualTimeF() - this.m.RenderAnimationStartTime) / this.Const.Items.Default.RaiseWeaponDuration;
+
+			if (this.getSpriteOffset("arms_icon").X != 0 || this.getSpriteOffset("arms_icon").Y != 0)
+			{
+				this.getSprite("arms_icon").Rotation = (1.0 - this.Math.minf(1.0, p)) * -70.0;
+				this.moveSpriteOffset("arms_icon", this.getSpriteOffset("arms_icon"), this.createVec(46 * (1-this.Math.minf(1.0, p)), -33 * (1-this.Math.minf(1.0, p))), this.Const.Items.Default.LowerWeaponDuration, this.m.RenderAnimationStartTime);
+				//this.logDebug("hey there calls");
+			}
+			else if (this.m.Items.getAppearance().TwoHanded)
+			{
+				this.getSprite("arms_icon").Rotation = (1.0 - this.Math.minf(1.0, p)) * -70.0;
+			}
+			else
+			{
+				this.getSprite("arms_icon").Rotation = (1.0 - this.Math.minf(1.0, p)) * -33.0;
+			}
+
+			if (p >= 1.0)
+			{
+				this.m.IsRaisingWeapon = false;
+
+				if (!this.m.IsUsingCustomRendering)
+				{
+					this.setRenderCallbackEnabled(false);
+				}
+			}
+		}
+	}
+	*/
+
+	// local onRender = o.onRender;
+	// o.onRender = function()
+	// {
+	// 	if (this.m.IsLoweringWeapon) {
+	// 		local mainhand = this.getMainhandItem();
+	// 		if (mainhand != null && ::Const.Items.LegendItemWithSpearwall.find(mainhand.getID()) != null) {
+	// 			local p = (this.Time.getVirtualTimeF() - this.m.RenderAnimationStartTime) / this.Const.Items.Default.LowerWeaponDuration;
+	// 			this.getSprite("arms_icon").Rotation = this.Math.minf(1.0, p) * -70.0;
+	// 			this.moveSpriteOffset("arms_icon", this.getSpriteOffset("arms_icon"), this.createVec(46 * this.Math.minf(1.0, p), -33 * this.Math.minf(1.0, p)), this.Const.Items.Default.LowerWeaponDuration, this.m.RenderAnimationStartTime);
+
+	// 			if (p >= 1.0) {
+	// 				this.m.IsLoweringWeapon = false;
+
+	// 				if (!this.m.IsUsingCustomRendering)
+	// 					this.setRenderCallbackEnabled(false);
+	// 			}
+	// 			else {
+	// 				this.m.IsLoweringWeapon = true;
+	// 			}
+	// 		}
+	// 		else{
+	// 			onRender();
+	// 		}
+	// 	}
+	// 	else if (this.m.IsRaisingWeapon) {
+	// 		if (this.getSpriteOffset("arms_icon").X != 0 || this.getSpriteOffset("arms_icon").Y != 0) {
+	// 			local p = (this.Time.getVirtualTimeF() - this.m.RenderAnimationStartTime) / this.Const.Items.Default.RaiseWeaponDuration;
+	// 			this.getSprite("arms_icon").Rotation = (1.0 - this.Math.minf(1.0, p)) * -70.0;
+	// 			this.moveSpriteOffset("arms_icon", this.getSpriteOffset("arms_icon"), this.createVec(46 * (1-this.Math.minf(1.0, p)), -33 * (1-this.Math.minf(1.0, p))), this.Const.Items.Default.LowerWeaponDuration, this.m.RenderAnimationStartTime);
+
+	// 			if (p >= 1.0) {
+	// 				this.m.IsRaisingWeapon = false;
+
+	// 				if (!this.m.IsUsingCustomRendering)
+	// 					this.setRenderCallbackEnabled(false);
+	// 			}
+	// 			else {
+	// 				this.m.IsRaisingWeapon = true;
+	// 			}
+	// 		}
+	// 		else {
+	// 			onRender();
+	// 		}
+	// 	}
+	// }
 
 	// local onResurrected = o.onResurrected;
 	// o.onResurrected = function ( _info )
@@ -638,5 +751,5 @@
 	//	 o.m.BloodPoolScale = 1.25;
 	//	 o.m.BloodSplatterOffset = this.createVec(-1, -1);
 	// }
-	// }
+	//
 });

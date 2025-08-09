@@ -6,7 +6,7 @@
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getMainhandItem();
-		if ((item.getID() == "weapon.legend_shovel" || item.getID() == "weapon.legend_named_shovel") && this.getContainer().hasPerk(::Legends.Perk.LegendSpecialistGravedigger))
+		if ((item.getID() == "weapon.legend_shovel" || item.getID() == "weapon.legend_named_shovel") && !this.getContainer().hasPerk(::Legends.Perk.LegendSpecialistGravedigger))
 			return true;
 
 		return this.skill.isHidden();
@@ -39,6 +39,12 @@
 			icon = "ui/icons/special.png",
 			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + fatPerHit + "[/color] extra fatigue"
 		});
+		ret.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/vision.png",
+			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] tiles"
+		});
 
 		local properties = this.getContainer().getActor().getCurrentProperties();
 		local effects = properties.IsSpecializedInStaffStun ? "daze, stagger and stun" : "daze";
@@ -51,7 +57,7 @@
 				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to" + effects + " on a hit"
 			});
 		}
-		else if (properties.IsSpecializedInStaves)
+		else if (!properties.IsSpecializedInStaves)
 		{
 			ret.push({
 				id = 7,
@@ -91,15 +97,18 @@
 		{
 			local target = _targetTile.getEntity();
 
-			if (this.m.IsStaffKnockOut && (_user.getCurrentProperties().IsSpecializedInStaves || this.Math.rand(1, 100) <= this.m.StunChance) && !target.getCurrentProperties().IsImmuneToDaze)
-			{
-				::Legends.Effects.grant(target, ::Legends.Effect.Dazed);
+			local stun = (this.m.IsStaffKnockOut ? _user.getCurrentProperties().IsSpecializedInStaves : _user.getCurrentProperties().IsSpecializedInMaces) || this.Math.rand(1, 100) <= this.m.StunChance;
+			local canStun = !target.getCurrentProperties().IsImmuneToStun && !target.getSkills().hasEffect(::Legends.Effect.Stunned);
+			if (this.m.IsStaffKnockOut && stun)
+			{	
+				if (!target.getCurrentProperties().IsImmuneToDaze)
+					::Legends.Effects.grant(target, ::Legends.Effect.Dazed);
 
 				if (_user.getCurrentProperties().IsSpecializedInStaffStun)
 				{
 					::Legends.Effects.grant(target, ::Legends.Effect.Staggered);
 
-					if (!target.getCurrentProperties().IsImmuneToStun)
+					if (canStun)
 					{
 						::Legends.Effects.grant(target, ::Legends.Effect.Stunned);
 					}
@@ -110,7 +119,7 @@
 					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has dazed " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
 				}
 			}
-			else if ((_user.getCurrentProperties().IsSpecializedInMaces || this.Math.rand(1, 100) <= this.m.StunChance) && !target.getCurrentProperties().IsImmuneToStun && !target.getSkills().hasEffect(::Legends.Effect.Stunned))
+			else if (!this.m.IsStaffKnockOut && (_user.getCurrentProperties().IsSpecializedInMaces || stun) && canStun)
 			{
 				::Legends.Effects.grant(target, ::Legends.Effect.Stunned);
 

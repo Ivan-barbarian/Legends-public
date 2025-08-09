@@ -30,6 +30,71 @@
 		return _item == null ? false : addToBag(_item, _slot);
 	}
 
+	local isActionAffordable = o.isActionAffordable;
+	o.isActionAffordable = function (_items)
+	{
+		local ret = isActionAffordable(_items);
+		if (!::Legends.Perks.has(this.m.Actor, ::Legends.Perk.LegendNetCasting))
+			return ret;
+		else if (::Legends.Perks.has(this.m.Actor, ::Legends.Perk.LegendNetCasting) && _items.len() == 1 && _items[0].getID().find("throwing_net") != null )
+			return true;
+		local nets = 0;
+		local notNets = 0;
+		foreach (item in _items)
+		{
+			if (item != null)
+			{
+				if (item.getID().find("throwing_net") != null)
+				{
+					nets += 1;
+				}
+				else
+				{
+					notNets += 1;
+				}
+			}
+		}
+
+		// Equipping a net into a free offhand (whether from the bag or from the ground) is always free
+		if (_items.len() == 3 && nets == 1 && notNets == 0)
+		{
+			return true;
+		}
+		return ret;
+	}
+
+	local getActionCost = o.getActionCost;
+	o.getActionCost = function ( _items )
+	{
+		local ret = getActionCost(_items);
+		if (!::Legends.Perks.has(this.m.Actor, ::Legends.Perk.LegendNetCasting))
+			return ret;
+		else if (::Legends.Perks.has(this.m.Actor, ::Legends.Perk.LegendNetCasting) && _items.len() == 1 && _items[0].getID().find("throwing_net") != null )
+			return 0;
+		local nets = 0;
+		local notNets = 0;
+		foreach (item in _items)
+		{
+			if (item != null)
+			{
+				if (item.getID().find("throwing_net") != null)
+				{
+					nets += 1;
+				}
+				else
+				{
+					notNets += 1;
+				}
+			}
+		}
+
+		if (_items.len() == 3 && nets == 1 && notNets == 0)
+		{
+			return 0;
+		}
+		return ret;
+	}
+
 	o.drop <- function( item )
 	{
 		if (!this.m.Actor.isPlacedOnMap())
@@ -134,103 +199,11 @@
 		// }
 	}
 
-	o.doOnFunction <- function (_function, _argsArray = null, _slotType = null)
-	{
-		this.m.IsUpdating = true;
-
-		if (_argsArray == null) _argsArray = [];
-		_argsArray.insert(0, null);
-
-		if (_slotType != null)
-		{
-			this.doOnFunctionSlot(_function, _argsArray, this.m.Items[_slotType])
-		}
-		else
-		{
-			foreach (slot in this.m.Items)
-			{
-				this.doOnFunctionSlot(_function, _argsArray, slot);
-			}
-		}
-
-		this.m.IsUpdating = false;
+	local canDropItems = o.canDropItems;
+	o.canDropItems = function ( _killer ) {
+		if(this.m.Actor == null || (this.m.Actor instanceof ::WeakTableRef && this.m.Actor.isNull()))
+			return false;
+		return canDropItems(_killer);
 	}
 
-	o.doOnFunctionSlot <- function (_function, _argsArray, _slot)
-	{
-		foreach (item in _slot)
-		{
-			if (item != null && item != -1)
-			{
-				_argsArray[0] = item;
-				item[_function].acall(_argsArray);
-			}
-		}
-	}
-
-	o.collectGarbage = function ( _slotType = null )
-	{
-		if (this.m.IsUpdating)
-		{
-			return;
-		}
-
-		this.m.IsUpdating = true;
-
-		if (_slotType != null)
-		{
-			this.collectGarbageSlot(this.m.Items[_slotType]);
-		}
-		else
-		{
-			foreach( slot in this.m.Items )
-			{
-				this.collectGarbageSlot(slot);
-			}
-		}
-
-		this.m.IsUpdating = false;
-	}
-
-	o.collectGarbageSlot <- function ( _slot )
-	{
-		foreach( item in _slot )
-		{
-			if (item != null && item != -1 && item.isGarbage())
-			{
-				if (item.isEquipped())
-				{
-					this.unequip(item);
-				}
-				else
-				{
-					this.removeFromBag(item);
-				}
-			}
-		}
-	}
-
-	o.onBeforeDamageReceived = function (_attacker, _skill, _hitInfo, _properties)
-	{
-		this.doOnFunction("onBeforeDamageReceived", [_attacker, _skill, _hitInfo, _properties]);
-		this.collectGarbage();
-	}
-
-	o.onDamageReceived = function (_damage, _fatalityType, _slotType, _attacker)
-	{
-		this.doOnFunction("onDamageReceived", [_damage, _fatalityType, _attacker], _slotType);
-		this.collectGarbage(_slotType);
-	}
-
-	o.onDamageDealt = function (_target, _skill, _hitInfo)
-	{
-		this.doOnFunction("onDamageDealt", [_target, _skill, _hitInfo], this.Const.ItemSlot.Mainhand);
-		this.collectGarbage(this.Const.ItemSlot.Mainhand);
-	}
-
-	o.onShieldHit = function (_attacker, _skill)
-	{
-		this.doOnFunction("onShieldHit", [_attacker, _skill], this.Const.ItemSlot.Offhand);
-		this.collectGarbage(this.Const.ItemSlot.Offhand);
-	}
 });

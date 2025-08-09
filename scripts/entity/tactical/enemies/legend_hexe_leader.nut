@@ -182,13 +182,26 @@ this.legend_hexe_leader <- this.inherit("scripts/entity/tactical/actor", {
 			this.spawnFlies(_tile);
 		}
 
+		local deathLoot = this.getItems().getDroppableLoot(_killer);
+		local tileLoot = this.getLootForTile(_killer, deathLoot);
+		local corpse = this.generateCorpse(_tile, _fatalityType, _killer);
+		this.dropLoot(_tile, tileLoot, !flip);
+
+		if (_tile == null) {
+			this.Tactical.Entities.addUnplacedCorpse(corpse);
+		} else {
+			_tile.Properties.set("Corpse", corpse);
+			this.Tactical.Entities.addCorpse(_tile);
+		}
+
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
 
-	function generateCorpse( _tile, _fatalityType )
+	function generateCorpse( _tile, _fatalityType, _killer )
 	{
 		local corpse = clone this.Const.Corpse;
 		corpse.CorpseName = "A Hexe";
+		corpse.Items = this.getItems().prepareItemsForCorpse(_killer);
 		corpse.IsHeadAttached = _fatalityType != this.Const.FatalityType.Decapitated;
 		corpse.Tile = _tile;
 		return corpse;

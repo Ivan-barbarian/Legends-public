@@ -154,8 +154,16 @@
 					foreach( bro in roster )
 					{
 						local item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
-
-						if (item != null && item.getID() == "accessory.arena_collar") {
+						local hasInBag = false;
+						local itemsInBag = bro.getItems().getAllItemsAtSlot(this.Const.ItemSlot.Bag);
+						foreach (item in itemsInBag)
+						{
+							if (item != null && item.getID() == "accessory.arena_collar")
+							{
+								hasInBag = true;
+							}
+						}
+						if ((item != null && item.getID() == "accessory.arena_collar") || hasInBag) {
 							local skill;
 							bro.getFlags().increment("ArenaFightsWon", 1);
 							bro.getFlags().increment("ArenaFights", 1);
@@ -186,7 +194,8 @@
 										text = bro.getName() + " is now " + this.Const.Strings.getArticle(skill.getName()) + skill.getName()
 									});
 								}.bindenv(this));
-							} else if (bro.getFlags().getAsInt("ArenaFightsWon") >= 25 && bro.getSkills().hasTrait(::Legends.Trait.LegendArenaVeteran)) {
+							} else if (bro.getFlags().getAsInt("ArenaFightsWon") >= 25 && (bro.getSkills().hasTrait(::Legends.Trait.LegendArenaVeteran) || bro.getSkills().hasSkill("trait.arena_veteran"))) {
+								bro.getSkills().removeByID("trait.arena_veteran"); // could be vanilla?
 								::Legends.Traits.remove(bro, ::Legends.Trait.LegendArenaVeteran);
 								::Legends.Traits.grant(bro, ::Legends.Trait.LegendArenaChampion, function(skill) {
 									this.List.push({
@@ -273,6 +282,51 @@
 					}
 				}
 			}
+			if (s.ID == "Failure1")
+			{
+				s.Options[0].getResult <- function ()
+				{
+					local roster = this.World.getPlayerRoster().getAll();
+					local n = 0;
+
+					foreach( bro in roster )
+					{
+						local item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
+						local hasInBag = false;
+						foreach (item in itemsInBag)
+						{
+							if (item != null && item.getID() == "accessory.arena_collar")
+							{
+								hasInBag = true;
+							}
+						}
+						if (item != null && item.getID() == "accessory.arena_collar" || hasInBag)
+						{
+							bro.getFlags().increment("ArenaFights", 1);
+							n = ++n;
+						}
+
+						local itemsInBag = bro.getItems().getAllItemsAtSlot(this.Const.ItemSlot.Bag);
+						foreach (item in itemsInBag)
+						{
+							if (item != null && item.getID() == "accessory.arena_collar")
+							{
+								bro.getFlags().increment("ArenaFights", 1);
+								n = ++n;
+							}
+
+							if (n >= 3)
+							{
+								break;
+							}
+						}
+					}
+
+					this.Contract.getHome().getBuilding("building.arena").refreshCooldown();
+					this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractFail);
+					this.World.Contracts.finishActiveContract(true);
+				}
+			}
 		}
 	}
 
@@ -294,6 +348,19 @@
 					bro.setInReserves(false);
 				}
 				ret.push(bro);
+			}
+			local itemsInBag = bro.getItems().getAllItemsAtSlot(this.Const.ItemSlot.Bag);
+			foreach (item in itemsInBag)
+			{
+				if (item != null && item.getID() == "accessory.arena_collar")
+				{
+					if (bro.isInReserves())
+					{
+						this.m.WasInReserves.push(bro);
+						bro.setInReserves(false);
+					}
+					ret.push(bro);
+				}
 			}
 		}
 
@@ -319,6 +386,19 @@
 					"bro" + currentBro++ + "name",
 					" - " + bro.getName()
 				]);
+				continue;
+			}
+			local itemsInBag = bro.getItems().getAllItemsAtSlot(this.Const.ItemSlot.Bag);
+			foreach (item in itemsInBag)
+			{
+				if (item != null && item.getID() == "accessory.arena_collar")
+				{
+					_vars.push([
+						"bro" + currentBro++ + "name",
+						" - " + bro.getName()
+					]);
+					break;
+				}
 			}
 
 		}
@@ -341,6 +421,20 @@
 		}
 
 		this.m.WasInReserves.clear();
+		local roster = this.World.getPlayerRoster().getAll();
+
+		foreach( bro in roster )
+		{
+			local itemsInBag = bro.getItems().getAllItemsAtSlot(this.Const.ItemSlot.Bag);
+			foreach (item in itemsInBag)
+			{
+				if (item != null && item.getID() == "accessory.arena_collar")
+				{
+					bro.getItems().removeFromBag(item);
+				}
+			}
+		}
+
 		onClear();
 	}
 

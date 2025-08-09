@@ -82,12 +82,6 @@ this.legend_shoot_precise_stone_skill <- this.inherit("scripts/skills/skill", {
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]100%[/color] chance to daze a target on a hit to the head"
-			},
-			{
-				id = 9,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to hit the head"
 			}
 		]);
 
@@ -167,21 +161,26 @@ this.legend_shoot_precise_stone_skill <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if (_skill == this && _targetEntity.isAlive() && !_targetEntity.isDying() && !_targetEntity.getCurrentProperties().IsImmuneToDaze)
-		{
-			local targetTile = _targetEntity.getTile();
-			local user = this.getContainer().getActor();
+		if (_skill != this)
+			return;
 
-			if (_bodyPart == this.Const.BodyPart.Head)
-			{
-				::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Dazed);
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
+			return;
 
-				if (!user.isHiddenToPlayer() && targetTile.IsVisibleForPlayer)
-				{
-					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " struck a hit that leaves " + this.Const.UI.getColorizedEntityName(_targetEntity) + " dazed");
-				}
+		if (_targetEntity.getCurrentProperties().IsImmuneToDaze)
+			return;
+
+		local targetTile = _targetEntity.getTile();
+		local user = this.getContainer().getActor();
+
+		if (_bodyPart == this.Const.BodyPart.Head) {
+			::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Dazed);
+
+			if (!user.isHiddenToPlayer() && targetTile.IsVisibleForPlayer) {
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " struck a hit that leaves " + this.Const.UI.getColorizedEntityName(_targetEntity) + " dazed");
 			}
 		}
+
 	}
 
 });

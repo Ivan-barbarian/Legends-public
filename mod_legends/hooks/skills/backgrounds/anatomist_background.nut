@@ -94,9 +94,9 @@
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.CleaverTree,
+				this.Const.Perks.SwordTree,
 				this.Const.Perks.SpearTree,
 				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.SlingTree,
 				this.Const.Perks.StaffTree
 			],
 			Defense = [

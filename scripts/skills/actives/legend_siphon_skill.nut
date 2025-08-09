@@ -22,7 +22,7 @@ this.legend_siphon_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
-		this.m.IsRanged = false;
+		this.m.IsRanged = true;
 		this.m.IsShowingProjectile = false;
 		this.m.IsUsingHitchance = false;
 		this.m.DirectDamageMult = 1.0;
@@ -30,6 +30,7 @@ this.legend_siphon_skill <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCost = 10;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 5;
+		this.m.MaxLevelDifference = 5;
 	}
 
 

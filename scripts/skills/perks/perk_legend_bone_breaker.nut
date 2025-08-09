@@ -1,8 +1,5 @@
 this.perk_legend_bone_breaker <- this.inherit("scripts/skills/skill", {
-	m = {
-		AppliedMultiplier = 1.0,
-		DidApply = false,
-	},
+	m = {},
 	function create()
 	{
 		::Const.Perks.setup(this.m, ::Legends.Perk.LegendBoneBreaker);
@@ -13,27 +10,35 @@ this.perk_legend_bone_breaker <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
-	{
-		local effect = _skill.getDamageType().contains(this.Const.Damage.DamageType.Blunt) ? 0.25 : 0.15;
-		this.m.AppliedMultiplier = _properties.DamageArmorMult * effect;
-	}
-
 	function onBeforeTargetHit( _skill, _targetEntity, _hitInfo )
 	{
-		if (_skill.isAttack() && !_skill.isRanged())
-		{
-			::Const.Combat.ArmorDirectDamageMitigationMult *= 1.0 - this.m.AppliedMultiplier;
-			this.m.DidApply = true;
-		}
-	}
+		if (_skill == null)
+			return;
 
-	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
-	{
-		if (this.m.DidApply)
-		{
-			::Const.Combat.ArmorDirectDamageMitigationMult /= 1.0 - this.m.AppliedMultiplier;
-			this.m.DidApply = false;
-		}
+		if (!_skill.isAttack())
+			return;
+
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
+			return;
+
+		if (!_targetEntity.isPlacedOnMap())
+			return;
+
+		if (_hitInfo.DamageRegular == 0 && _hitInfo.DamageArmor == 0)
+			return;
+
+		if (_hitInfo.DamageDirect >= 1.0)
+			return;
+
+		// recalculating everything cause there's nowhere to hook
+		local actor = this.getContainer().getActor();
+		local p = _targetEntity.m.Skills.buildPropertiesForBeingHit(actor, _skill, _hitInfo);
+		_targetEntity.m.Items.onBeforeDamageReceived(actor, _skill, _hitInfo, p);
+		local dmgMult = p.DamageReceivedTotalMult * (_skill.isRanged() ? p.DamageReceivedRangedMult : p.DamageReceivedMeleeMult);;
+		local armorDamage = _hitInfo.DamageArmor - p.DamageArmorReduction;
+		local armor = p.Armor[_hitInfo.BodyPart] * p.ArmorMult[_hitInfo.BodyPart];
+		armorDamage *= p.DamageReceivedArmorMult * dmgMult;
+		armorDamage = this.Math.max(this.Math.min(armor, armorDamage), 0);
+		_hitInfo.DamageRegular += armorDamage * 0.1;
 	}
 });

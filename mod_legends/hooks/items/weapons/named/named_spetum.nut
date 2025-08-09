@@ -6,4 +6,11 @@
 		create();
 		this.m.Variants = [1,2]
 	}
+
+	local onEquip = o.onEquip;
+	o.onEquip = function ()
+	{
+		onEquip();
+		::Legends.Actives.grant(this, ::Legends.Active.LegendSkewer);
+	}
 });

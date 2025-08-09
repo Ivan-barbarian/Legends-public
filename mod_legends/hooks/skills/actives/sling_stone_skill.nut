@@ -81,56 +81,62 @@
 
 	o.onTargetHit = function ( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if (_skill == this && _targetEntity.isAlive() && !_targetEntity.isDying() && !_targetEntity.getCurrentProperties().IsImmuneToStun)
+		if (_skill != this)
+			return;
+
+		if (::Legends.S.skillEntityAliveCheck(this.getContainer().getActor(), _targetEntity))
+			return;
+
+		if(_targetEntity.getCurrentProperties().IsImmuneToStun)
+			return;
+
+		local targetTile = _targetEntity.getTile();
+		local user = this.getContainer().getActor();
+		local isApplied = _bodyPart == this.Const.BodyPart.Head ? true : this.Math.rand(1, 100) <= 33;
+		local effect = !_targetEntity.getCurrentProperties().IsImmuneToDaze ? ::Legends.Effects.new(::Legends.Effect.Dazed) : ::Legends.Effects.new(::Legends.Effect.Staggered);
+		local effectName = !_targetEntity.getCurrentProperties().IsImmuneToDaze ? "dazed" : "staggered";
+
+		if (user.getSkills().hasPerk(::Legends.Perk.LegendBarrage) && isApplied)
 		{
-			local targetTile = _targetEntity.getTile();
-			local user = this.getContainer().getActor();
-			local isApplied = _bodyPart == this.Const.BodyPart.Head ? true : this.Math.rand(1, 100) <= 33;
-			local effect = !_targetEntity.getCurrentProperties().IsImmuneToDaze ? ::Legends.Effects.new(::Legends.Effect.Dazed) : ::Legends.Effects.new(::Legends.Effect.Staggered);
-			local effectName = !_targetEntity.getCurrentProperties().IsImmuneToDaze ? "dazed" : "staggered";
+			local targetStatus = _targetEntity.getSkills();
+			local effectCounter = 0;
 
-			if (user.getSkills().hasPerk(::Legends.Perk.LegendBarrage) && isApplied)
+			switch (true)
 			{
-				local targetStatus = _targetEntity.getSkills();
-				local effectCounter = 0;
-
-				switch (true)
-				{
-					case targetStatus.hasEffect(::Legends.Effect.Dazed):
-					case targetStatus.hasEffect(::Legends.Effect.LegendDazed):
-					case targetStatus.hasEffect(::Legends.Effect.LegendBaffled):
-					case targetStatus.hasEffect(::Legends.Effect.Debilitated):
-					case targetStatus.hasEffect(::Legends.Effect.Staggered):
-						effectCounter += 1;
-				}
-				if (effectCounter >= 3 && !_targetEntity.getCurrentProperties().IsImmuneToStun)
-				{
-					::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Stunned);
-					if (!user.isHiddenToPlayer() && targetTile.IsVisibleForPlayer)
-						this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " struck a hit that leaves the already reeling " + this.Const.UI.getColorizedEntityName(_targetEntity) + " stunned");
-					return;
-				}
-				else
-				{
-					// todo, this is bs, doesn't check if can be dazed for example
-					local effects = [
-						[::Legends.Effect.Dazed, "dazed"],
-						[::Legends.Effect.Staggered, "staggered"],
-						[::Legends.Effect.Debilitated, "debilitated"],
-						[::Legends.Effect.LegendBaffled, "baffled"]
-					];
-					local rand = this.Math.rand(0, effects.len() - 1);
-					effect = ::Legends.Effects.new(effects[rand][0]);
-					effectName = effects[rand][1];
-				}
+				case targetStatus.hasEffect(::Legends.Effect.Dazed):
+				case targetStatus.hasEffect(::Legends.Effect.LegendDazed):
+				case targetStatus.hasEffect(::Legends.Effect.LegendBaffled):
+				case targetStatus.hasEffect(::Legends.Effect.Debilitated):
+				case targetStatus.hasEffect(::Legends.Effect.Staggered):
+					effectCounter += 1;
 			}
-
-			_targetEntity.getSkills().add(effect);
-
-			if (!user.isHiddenToPlayer() && targetTile.IsVisibleForPlayer)
+			if (effectCounter >= 3 && !_targetEntity.getCurrentProperties().IsImmuneToStun)
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " struck a hit that leaves " + this.Const.UI.getColorizedEntityName(_targetEntity) + " " + effectName);
+				::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Stunned);
+				if (!user.isHiddenToPlayer() && targetTile.IsVisibleForPlayer)
+					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " struck a hit that leaves the already reeling " + this.Const.UI.getColorizedEntityName(_targetEntity) + " stunned");
+				return;
 			}
+			else
+			{
+				// todo, this is bs, doesn't check if can be dazed for example
+				local effects = [
+					[::Legends.Effect.Dazed, "dazed"],
+					[::Legends.Effect.Staggered, "staggered"],
+					[::Legends.Effect.Debilitated, "debilitated"],
+					[::Legends.Effect.LegendBaffled, "baffled"]
+				];
+				local rand = this.Math.rand(0, effects.len() - 1);
+				effect = ::Legends.Effects.new(effects[rand][0]);
+				effectName = effects[rand][1];
+			}
+		}
+
+		_targetEntity.getSkills().add(effect);
+
+		if (!user.isHiddenToPlayer() && targetTile.IsVisibleForPlayer)
+		{
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " struck a hit that leaves " + this.Const.UI.getColorizedEntityName(_targetEntity) + " " + effectName);
 		}
 	}
 });

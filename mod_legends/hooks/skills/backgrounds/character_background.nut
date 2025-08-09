@@ -116,12 +116,12 @@
 			if (!_type) return
 			this.m.BackgroundType = this.m.BackgroundType == this.Const.BackgroundType.None ? _constType : this.m.BackgroundType | _constType
 		}
-		addToBackgroundType(this.m.IsScenarioOnly, this.Const.BackgroundType.Scenario);
-		addToBackgroundType(this.m.IsUntalented, this.Const.BackgroundType.Untalented);
-		addToBackgroundType(this.m.IsOffendedByViolence, this.Const.BackgroundType.OffendedByViolence);
-		addToBackgroundType(this.m.IsCombatBackground, this.Const.BackgroundType.Combat);
-		addToBackgroundType(this.m.IsNoble, this.Const.BackgroundType.Noble);
-		addToBackgroundType(this.m.IsLowborn, this.Const.BackgroundType.Lowborn);
+		addToBackgroundType(this.m.IsScenarioOnly, ::Const.BackgroundType.Scenario);
+		addToBackgroundType(this.m.IsUntalented, ::Const.BackgroundType.Untalented);
+		addToBackgroundType(this.m.IsOffendedByViolence, ::Const.BackgroundType.OffendedByViolence);
+		addToBackgroundType(this.m.IsCombatBackground, ::Const.BackgroundType.Combat);
+		addToBackgroundType(this.m.IsNoble, ::Const.BackgroundType.Noble);
+		addToBackgroundType(this.m.IsLowborn, ::Const.BackgroundType.Lowborn);
 	}
 
 	o.isBackgroundType <- function ( _type )
@@ -151,6 +151,31 @@
 		{
 			this.logError(_type + " is not contained in " + this.getID());
 		}
+	}
+
+	local isUntalented = o.isUntalented;
+	o.isUntalented = function () {
+		return isUntalented() || this.isBackgroundType(::Const.BackgroundType.Untalented);
+	}
+
+	local isOffendedByViolence = o.isOffendedByViolence;
+	o.isOffendedByViolence = function () {
+		return isOffendedByViolence() || this.isBackgroundType(::Const.BackgroundType.OffendedByViolence);
+	}
+
+	local isCombatBackground = o.isCombatBackground;
+	o.isCombatBackground = function () {
+		return isCombatBackground() || this.isBackgroundType(::Const.BackgroundType.Combat);
+	}
+
+	local isNoble = o.isNoble;
+	o.isNoble = function () {
+		return isNoble() || this.isBackgroundType(::Const.BackgroundType.Noble);
+	}
+
+	local isLowborn = o.isLowborn;
+	o.isLowborn = function () {
+		return isLowborn() || this.isBackgroundType(::Const.BackgroundType.Lowborn);
 	}
 
 	o.getModifiers <- function() {

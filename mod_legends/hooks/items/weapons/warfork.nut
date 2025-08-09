@@ -5,4 +5,11 @@
 		create();
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded | this.Const.Items.ItemType.Defensive;
 	}
+
+	local onEquip = o.onEquip;
+	o.onEquip = function ()
+	{
+		onEquip();
+		::Legends.Actives.grant(this, ::Legends.Active.LegendSkewer);
+	}
 });

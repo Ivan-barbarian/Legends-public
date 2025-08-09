@@ -3,7 +3,8 @@
 		local potential_origins = [];
 
 		foreach (s in _faction.getSettlements()) {
-			if (s.getLastSpawnTime() + 300.0 > this.Time.getVirtualTimeF()) continue;
+			if (s.getLastSpawnTime() + 300.0 > this.Time.getVirtualTimeF())
+				continue;
 
 			potential_origins.push({
 				D = s,

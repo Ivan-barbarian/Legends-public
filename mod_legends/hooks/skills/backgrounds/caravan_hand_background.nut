@@ -161,11 +161,10 @@
 			[1, "leather_tunic"]
 		]));
 
-		local item = this.Const.World.Common.pickHelmet([
+		items.equip(this.Const.World.Common.pickHelmet([
 				[1, "headscarf"],
 				[1, "open_leather_cap"]
-		]);
-		items.equip(item);
+		]));
 	}
 
 });

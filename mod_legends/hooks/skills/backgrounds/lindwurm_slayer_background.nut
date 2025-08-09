@@ -47,6 +47,7 @@
 		this.m.Level = this.Math.rand(2, 4);
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
+		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Ranger | this.Const.BackgroundType.ExpertHunter;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[1];
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[2];

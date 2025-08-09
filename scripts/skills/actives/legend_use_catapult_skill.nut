@@ -202,21 +202,28 @@ this.legend_use_catapult_skill <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if (_skill == this && _targetEntity.isAlive() && !_targetEntity.isDying() && !_targetEntity.getCurrentProperties().IsImmuneToStun)
+		if (_skill != this)
+			return;
+
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
+			return;
+
+		if (_targetEntity.getCurrentProperties().IsImmuneToStun)
+			return;
+
+		local targetTile = _targetEntity.getTile();
+		local user = this.getContainer().getActor();
+
+		if (_bodyPart == this.Const.BodyPart.Head)
 		{
-			local targetTile = _targetEntity.getTile();
-			local user = this.getContainer().getActor();
+			::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Dazed);
 
-			if (_bodyPart == this.Const.BodyPart.Head)
+			if (!user.isHiddenToPlayer() && targetTile.IsVisibleForPlayer)
 			{
-				::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Dazed);
-
-				if (!user.isHiddenToPlayer() && targetTile.IsVisibleForPlayer)
-				{
-					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " struck a blow that leaves " + this.Const.UI.getColorizedEntityName(_targetEntity) + " dazed");
-				}
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " struck a blow that leaves " + this.Const.UI.getColorizedEntityName(_targetEntity) + " dazed");
 			}
 		}
+
 	}
 
 });

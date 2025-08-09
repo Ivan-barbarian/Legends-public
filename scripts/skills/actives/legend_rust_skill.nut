@@ -10,7 +10,7 @@ this.legend_rust_skill <- this.inherit("scripts/skills/legend_magic_skill", {
 		this.m.Description = "Tarnish leather and metal with rapid age, thereby undermining the solidity of the armor worn by your target. Damaged done is based off current initiative.\nHitchcance is determined by Ranged Skill.";
 		this.m.Icon = "skills/rust56.png";
 		this.m.IconDisabled = "skills/rust56_bw.png";
-		this.m.Overlay = "rust56";
+		this.m.Overlay = "rust";
 		this.m.SoundOnUse = [
 			"sounds/combat/crush_armor_01.wav",
 			"sounds/combat/crush_armor_02.wav",
@@ -38,6 +38,7 @@ this.legend_rust_skill <- this.inherit("scripts/skills/legend_magic_skill", {
 		this.m.FatigueCost = 10;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 3;
+		this.m.MaxLevelDifference = 3;
 		this.m.ChanceDecapitate = 0;
 		this.m.ChanceDisembowel = 0;
 		this.m.ChanceSmash = 0;

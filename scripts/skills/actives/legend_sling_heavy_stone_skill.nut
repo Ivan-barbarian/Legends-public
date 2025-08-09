@@ -86,7 +86,7 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]100%[/color] chance to stun and daze target on a hit to the head if not immune and always staggers the target"
-			});	
+			});
 		}
 		else
 		{
@@ -95,7 +95,7 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]100%[/color] chance to daze a target on a hit to the head and always staggers the target"
-			});	
+			});
 		}
 
 		if (this.Tactical.isActive() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
@@ -118,10 +118,15 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.MaxRange = this.m.Item.getRangeMax() + (_properties.IsSpecializedInSlings ? 1 : 0);
-		this.m.AdditionalAccuracy = _properties.IsSpecializedInSlings ? 0 : -5;
-		this.m.AdditionalHitChance = _properties.IsSpecializedInSlings ? -2 : -4;
-		this.m.FatigueCostMult = _properties.IsSpecializedInSlings ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.MaxRange = this.m.Item.getRangeMax();
+		this.m.AdditionalAccuracy = this.m.Item.getAdditionalAccuracy();
+		if (_properties.IsSpecializedInSlings)
+		{
+			this.m.MaxRange = this.m.Item.getRangeMax() + 1;
+			this.m.AdditionalAccuracy += 5;
+			this.m.AdditionalHitChance += 2;
+			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
+		}
 		if (_properties.IsSpecializedInSlings && this.getContainer().hasPerk(::Legends.Perk.LegendBarrage))
 		{
 			this.m.ActionPointCost = 7;
@@ -187,29 +192,36 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if (_skill == this && _targetEntity.isAlive() && !_targetEntity.isDying())
-			_targetEntity.getSkills().add(this.new("scripts/skills/effects/staggered_effect"));
+		if (_skill != this)
+			return;
 
-		if (_skill == this && _targetEntity.isAlive() && !_targetEntity.isDying() && !_targetEntity.getCurrentProperties().IsImmuneToDaze)
-		{
-			local targetTile = _targetEntity.getTile();
-			local user = this.getContainer().getActor();
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
+			return;
 
-			if (_bodyPart == this.Const.BodyPart.Head)
-			{
-				_targetEntity.getSkills().add(this.new("scripts/skills/effects/dazed_effect"));
-				
-				if (user.getCurrentProperties().IsSpecializedInStaffStun)
-					if (!_targetEntity.getCurrentProperties().IsImmuneToStun)
-						_targetEntity.getSkills().add(this.new("scripts/skills/effects/stunned_effect"));
-						if (!user.isHiddenToPlayer() && targetTile.IsVisibleForPlayer)
-							this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " struck a hit that leaves " + this.Const.UI.getColorizedEntityName(_targetEntity) + " stunned and dazed");
-							return;
-				
-				if (!user.isHiddenToPlayer() && targetTile.IsVisibleForPlayer)
-					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " struck a hit that leaves " + this.Const.UI.getColorizedEntityName(_targetEntity) + " dazed");
+		::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Staggered);
+
+		if (_targetEntity.getCurrentProperties().IsImmuneToDaze)
+			return;
+
+		local targetTile = _targetEntity.getTile();
+		local user = this.getContainer().getActor();
+
+		if (_bodyPart == this.Const.BodyPart.Head) {
+			::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Dazed);
+
+			if (user.getCurrentProperties().IsSpecializedInStaffStun && !_targetEntity.getCurrentProperties().IsImmuneToStun) {
+				::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Stunned);
+
+				if (!user.isHiddenToPlayer() && targetTile.IsVisibleForPlayer) {
+					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " struck a hit that leaves " + this.Const.UI.getColorizedEntityName(_targetEntity) + " stunned and dazed");
+					return;
+				}
 			}
+
+			if (!user.isHiddenToPlayer() && targetTile.IsVisibleForPlayer)
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " struck a hit that leaves " + this.Const.UI.getColorizedEntityName(_targetEntity) + " dazed");
 		}
+
 	}
 });
 
