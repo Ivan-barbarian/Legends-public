@@ -1,6 +1,6 @@
 ::mods_hookExactClass("skills/actives/riposte", function(o)
 {
-	o.getDescription <- function ()
+	o.getDescription = function ()
 	{
 		return this.m.Description + " Attacks from this ability are considered attacks of opportunity."
 	}

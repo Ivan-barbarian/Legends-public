@@ -2,7 +2,7 @@ this.legend_ball_on_roof_encounter <- this.inherit("scripts/encounters/encounter
     m = {},
     function create() {
         this.m.Type = "encounter.legend_ball_on_roof_encounter";
-        this.m.Name = "{While at %settlement... | Strolling through %settlement% | Something\'s up at %settlement}";
+        this.m.Name = "{While at %settlement... | Strolling through %settlement% | Something\'s up at %settlement};
 		this.m.Event = "event.ball_on_roof";
     }
 })
