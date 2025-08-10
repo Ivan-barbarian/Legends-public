@@ -2,7 +2,7 @@ this.legend_captured_oathbringer_camp_encounter <- this.inherit("scripts/encount
     m = {},
     function create() {
         this.m.Type = "encounter.legend_captured_oathbringer_camp_encounter";
-        this.m.Name = "Captured Oathbringer";
+        this.m.Name = "During camp...";
 		this.m.Event = "event.captured_oathbringer";
     }
 })
