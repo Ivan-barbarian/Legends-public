@@ -3192,15 +3192,15 @@ perkDefObjects.push({
 	Const = "LegendHorseDesensitization"
 });
 
-::Legends.Perk.LegendHorseHippology <- null;
+::Legends.Perk.LegendHippology <- null;
 perkDefObjects.push({
-	ID = "perk.legend_horse_hippology",
-	Script = "scripts/skills/perks/perk_legend_horse_hippology",
-	Name = ::Const.Strings.PerkName.LegendHorseHippology,
-	Tooltip = ::Const.Strings.PerkDescription.LegendHorseHippology,
+	ID = "perk.legend_hippology",
+	Script = "scripts/skills/perks/perk_legend_hippology",
+	Name = ::Const.Strings.PerkName.LegendHippology,
+	Tooltip = ::Const.Strings.PerkDescription.LegendHippology,
 	Icon = "ui/perks/hippology_perk.png",
 	IconDisabled = "ui/perks/hippology_perk_bw.png",
-	Const = "LegendHorseHippology"
+	Const = "LegendHippology"
 });
 
 ::Legends.Perk.LegendHorseImpulsion <- null;
@@ -4422,6 +4422,17 @@ perkDefObjects.push({
 	Icon = "ui/perks/promised_potential.png",
 	IconDisabled = "ui/perks/promised_potential_bw.png",
 	Const = "LegendPromisedPotential"
+});
+
+::Legends.Perk.LegendWheelMaintenance <- null;
+perkDefObjects.push({
+	ID = "perk.legend_wheel_maintenance",
+	Script = "scripts/skills/perks/perk_legend_wheel_maintenance",
+	Name = ::Const.Strings.PerkName.LegendWheelMaintenance,
+	Tooltip = ::Const.Strings.PerkDescription.LegendWheelMaintenance,
+	Icon = "ui/perks/wheel_maintenance.png",
+	IconDisabled = "ui/perks/wheel_maintenance.png",
+	Const = "LegendWheelMaintenance"
 });
 
 ::Const.Perks.addPerkDefObjects(perkDefObjects);

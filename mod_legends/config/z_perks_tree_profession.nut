@@ -92,7 +92,7 @@ if (!("Perks" in ::Const))
 		[],
 		[],
 		[::Legends.Perk.LegendDogBreeder],
-		[],
+		[::Legends.Perk.LegendHippology],
 		[],
 		[]
 	]
@@ -128,6 +128,30 @@ if (!("Perks" in ::Const))
 		[],
 		[],
 		[],
+		[]
+	]
+};
+
+::Const.Perks.CaravaneerTree <- {
+	ID = "CaravaneerTree",
+	Name = "Caraveneering",
+	Descriptions = [
+		"woodworking"
+	],
+	Tree = [
+		[],
+		[],
+		[
+			::Legends.Perk.LegendEfficientPacking
+		],
+		[],
+		[
+			::Legends.Perk.LegendHippology,
+			::Legends.Perk.LegendSkillfulStacking
+		],
+		[
+			::Legends.Perk.LegendWheelMaintenance
+		],
 		[]
 	]
 };

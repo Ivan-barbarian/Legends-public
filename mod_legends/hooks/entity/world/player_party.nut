@@ -462,6 +462,11 @@
 				s += bro.getStashModifier();
 			}
 
+			if (this.World.Retinue.hasFollower("follower.quartermaster"))
+			{
+				s += 27;
+			}
+
 			if (resize && s != ::Stash.getCapacity())
 				::Stash.resize(s);
 

@@ -1531,12 +1531,18 @@
 
 	o.getStashModifier <- function ()
 	{
-		local broStash = this.getBackground().getModifiers().Stash;
+		local background = this.getBackground();
+		local broStash = background.getModifiers().Stash;
 		local item = this.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
 
 		if (item != null)
 		{
 			broStash = broStash + item.getStashModifier();
+		}
+
+		if (background.getID() == "background.legend_donkey")
+		{
+			broStash += background.getModifier();
 		}
 
 		local skills = [

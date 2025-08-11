@@ -154,6 +154,7 @@
 ::Const.Strings.PerkName.LegendKeenEyesight <- "Keen Eyesight";
 ::Const.Strings.PerkName.LegendSleightOfHand <- "Sleight of Hand";
 ::Const.Strings.PerkName.LegendPromisedPotential <- "Promised Potential";
+::Const.Strings.PerkName.LegendWheelMaintenance <- "Wheel Maintenance";
 
 //MASTERIES - skills that have a unified effect on their weapon class
 ::Const.Strings.PerkName.LegendSpecPoison <- "Poison Mastery";
@@ -320,7 +321,7 @@
 ::Const.Strings.PerkName.LegendHorsePirouette <- "Pirouette";
 ::Const.Strings.PerkName.LegendHorseBitting <- "Bitting";
 ::Const.Strings.PerkName.LegendHorseDesensitization <- "Desensitization";
-::Const.Strings.PerkName.LegendHorseHippology <- "Hippology";
+::Const.Strings.PerkName.LegendHippology <- "Hippology";
 ::Const.Strings.PerkName.LegendHorseImpulsion <- "Impulsion";
 ::Const.Strings.PerkName.LegendHorseLeadChange <- "Lead Change";
 ::Const.Strings.PerkName.LegendHorseLegControl <- "Leg Control";
@@ -597,7 +598,7 @@
 ::Const.Strings.PerkDescription.LegendHorsePirouette <- "[color=#4f1800][u]Passive:[/u][/color]\n•Learning to turn quickly allows quick changes in direction required to escape enemies.";
 ::Const.Strings.PerkDescription.LegendHorseBitting <- "[color=#4f1800][u]Passive:[/u][/color]\n•Getting a horse accustomed to the feel of a bit and a bridle, makes it easier to control the movements. This increases defenses in battle by 25% of the rider\'s Melee Defense.";
 ::Const.Strings.PerkDescription.LegendHorseDesensitization <- "[color=#4f1800][u]Passive:[/u][/color]\n•Using loud noises and sudden movements, the horse is trained to not react to the sounds of battle until the rider tells it to. This increases melee attack in battle by 25% of the rider\'s melee attack ";
-::Const.Strings.PerkDescription.LegendHorseHippology <- "[color=#4f1800][u]Passive:[/u][/color]\n•Knowledge of horse physiology allows for better diet, exercise and care. Increases Hitpoints by 25%";
+::Const.Strings.PerkDescription.LegendHippology <- "Knowledge of an animal\'s physiology allows for better diet, exercise and care. \n\n[color=#4f1800][u]Passive:[/u][/color]\n• Increases Hitpoints by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] for each donkey in the company and their carrying capacity by [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color].";
 ::Const.Strings.PerkDescription.LegendHorseImpulsion <- "[color=#4f1800][u]Passive:[/u][/color]\n•Effective leverage of equestrian physiology relaxes the spinal column and allows the hindquarters to engage effectively. Increases Initiative by 25%";
 ::Const.Strings.PerkDescription.LegendHorseLeadChange <- "[color=#4f1800][u]Passive:[/u][/color]\n•A horse\'s lead leg can tire, by training a horse to swap legs it is possible to prevent the horse from tiring. Movement costs 25% less Fatigue.";
 ::Const.Strings.PerkDescription.LegendHorseLegControl <- "[color=#4f1800][u]Passive:[/u][/color]\n•it is not possible to hold the reins while firing a bow. Horse and rider must learn to communicate through the rider\'s legs. Increases ranged attack in battle by 25%";
@@ -706,3 +707,4 @@
 ::Const.Strings.PerkDescription.LegendKeenEyesight <- "Learn how to use your superb eyesight to notice the smallest movements and predict your opponent's next attack, to hit distant targets and to avoid incoming projectiles. \n\n[color=#4f1800][u]Passive:[/u][/color]\n• Gain a [color=" + ::Const.UI.Color.PositiveValue + "]+3/+5[/color] bonus to Melee/Ranged Skill for each point of vision above 7. \n\n• Gain a [color=" + ::Const.UI.Color.PositiveValue + "]+3/+4[/color] bonus to Melee/Ranged Defense for each point of vision above 7. \n\n• If your helmet reduces your vision score by at least 3/5 these bonuses are reduced by [color=" + ::Const.UI.Color.NegativeValue + "]10%/20%[/color]. \n\n• For the purposes of this perk, your current vision is calculated as if you had no helmet, only the above penalty applies.";
 ::Const.Strings.PerkDescription.LegendSleightOfHand <- "An ace up your sleeve. \n\n[color=#4f1800][u]Passive:[/u][/color]\n• Currently equipped throwing items that use ammo regain 1 ammo each turn.";
 ::Const.Strings.PerkDescription.LegendPromisedPotential <- "A natural talent, realized. \n\n[color=#4f1800][u]Passive:[/u][/color]\n• Upon picking up increase every attribute by [color=" + ::Const.UI.Color.PositiveValue + "]1-6[/color] depending on how many stars each attribute has. Untalented attributes are increase by [color=" + ::Const.UI.Color.PositiveValue + "]1[/color], while talented are increased by [color=" + ::Const.UI.Color.PositiveValue + "]2[/color] for every star.";
+::Const.Strings.PerkDescription.LegendWheelMaintenance <- "True caravaneers know that regular wheel maintenance is vital on the road and wilderness. \n\n[color=#4f1800][u]Passive:[/u][/color]\n• Increases movement speed on the world map by [color=" + ::Const.UI.Color.PositiveValue + "]5%[/color]. Stacks with itself.";
