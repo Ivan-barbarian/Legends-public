@@ -12,12 +12,12 @@ this.perk_legend_scholar <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		getContainer().getActor().getFlags().set("HasScholar", true);
+		::World.Statistics.getFlags().set("HasScholar", true);
 	}
 
 	function onRemoved()
 	{
-		getContainer().getActor().getFlags().remove("HasScholar");
+		::World.Statistics.getFlags().remove("HasScholar");
 	}
 
 });
