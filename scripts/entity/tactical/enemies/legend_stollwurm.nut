@@ -199,7 +199,7 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 	function kill( _killer = null, _skill = null, _fatalityType = this.Const.FatalityType.None, _silent = false ) {
 		this.m.IsDying = true;
 
-		if (::Legends.S.skillEntityAliveCheck(this.m.Tail)) {
+		if (!::Legends.S.skillEntityAliveCheck(this.m.Tail)) {
 			this.m.Tail.kill(_killer, _skill, _fatalityType, _silent);
 			this.m.Tail = null;
 		}
