@@ -650,6 +650,16 @@
 				bro.addXP(this.Math.max(1, this.Math.floor(XPgroup / brothers.len())));
 			}
 		}
+		if (::World.Statistics.getFlags().get("HasDrillSergeant") && this.getLevel() >= 12)
+		{
+			foreach( bro in brothers )
+			{
+				if (!bro.getCurrentProperties().IsAllyXPBlocked && bro.getLevel() < 12)
+				{
+					bro.addXP(this.Math.max(1, this.Math.floor(XPgroup / brothers.len())))
+				}
+			}
+		}
 	}
 
 	o.checkMorale = function ( _change, _difficulty, _type = this.Const.MoraleCheckType.Default, _showIconBeforeMoraleIcon = "", _noNewLine = false )

@@ -4431,8 +4431,30 @@ perkDefObjects.push({
 	Name = ::Const.Strings.PerkName.LegendWheelMaintenance,
 	Tooltip = ::Const.Strings.PerkDescription.LegendWheelMaintenance,
 	Icon = "ui/perks/wheel_maintenance.png",
-	IconDisabled = "ui/perks/wheel_maintenance.png",
+	IconDisabled = "ui/perks/wheel_maintenance_bw.png",
 	Const = "LegendWheelMaintenance"
+});
+
+::Legends.Perk.LegendMasterTrainer <- null;
+perkDefObjects.push({
+	ID = "perk.legend_master_trainer",
+	Script = "scripts/skills/perks/perk_legend_master_trainer",
+	Name = ::Const.Strings.PerkName.LegendMasterTrainer,
+	Tooltip = ::Const.Strings.PerkDescription.LegendMasterTrainer,
+	Icon = "ui/perks/Quiltain_tilting_perk.png",
+	IconDisabled = "ui/perks/Quiltain_tilting_perk_bw.png",
+	Const = "LegendMasterTrainer"
+});
+
+::Legends.Perk.LegendWhipThemInShape <- null;
+perkDefObjects.push({
+	ID = "perk.legend_whip_them_in_shape",
+	Script = "scripts/skills/perks/perk_legend_whip_them_in_shape",
+	Name = ::Const.Strings.PerkName.LegendWhipThemInShape,
+	Tooltip = ::Const.Strings.PerkDescription.LegendWhipThemInShape,
+	Icon = "ui/perks/Quiltain_tilting_perk.png",
+	IconDisabled = "ui/perks/Quiltain_tilting_perk_bw.png",
+	Const = "LegendWhipThemInShape"
 });
 
 ::Const.Perks.addPerkDefObjects(perkDefObjects);

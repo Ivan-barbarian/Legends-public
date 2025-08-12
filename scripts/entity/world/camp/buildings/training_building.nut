@@ -167,6 +167,16 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			Modifiers = []
 		};
 		local roster = this.World.getPlayerRoster().getAll();
+		local hasTrainer = false;
+
+		foreach( bro in roster )
+		{
+			if (bro.getCampAssignment() == this.m.ID && bro.getSkills().hasPerk(::Legends.Perk.LegendMasterTrainer))
+			{
+				hasTrainer = true;
+			}
+		}
+
 
 		foreach( bro in roster )
 		{
@@ -180,6 +190,11 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			if (bro.getSkills().hasPerk(::Legends.Perk.LegendBackToBasics))
 			{
 				mod = mod + 0.1;
+			}
+
+			if (hasTrainer)
+			{
+				mod += 0.1;
 			}
 
 			local max_reached = false;
@@ -639,12 +654,6 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 					adjectives.push(text3);
 				}
 			}
-		}
-
-		if (bro.getLevel() < 3)
-		{
-			adjectives.push(bro.getName() + " figures out what end of the weapon to hold");
-			adjectives.push(bro.getName() + " remembers that you can move your legs as well as your arms");
 		}
 
 		this.m.Results.push({

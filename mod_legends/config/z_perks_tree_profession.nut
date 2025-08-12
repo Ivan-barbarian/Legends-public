@@ -186,7 +186,10 @@ if (!("Perks" in ::Const))
 		[],
 		[],
 		[],
-		[::Legends.Perk.LegendMasterTrainer]
+		[
+			::Legends.Perk.LegendMasterTrainer,
+			::Legends.Perk.LegendWhipThemInShape
+		]
 	]
 };
 

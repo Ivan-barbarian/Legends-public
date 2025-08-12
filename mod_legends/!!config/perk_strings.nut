@@ -155,6 +155,8 @@
 ::Const.Strings.PerkName.LegendSleightOfHand <- "Sleight of Hand";
 ::Const.Strings.PerkName.LegendPromisedPotential <- "Promised Potential";
 ::Const.Strings.PerkName.LegendWheelMaintenance <- "Wheel Maintenance";
+::Const.Strings.PerkName.LegendMasterTrainer <- "Master Trainer";
+::Const.Strings.PerkName.LegendWhipThemInShape <- "Whip them in Shape";
 
 //MASTERIES - skills that have a unified effect on their weapon class
 ::Const.Strings.PerkName.LegendSpecPoison <- "Poison Mastery";
@@ -708,3 +710,5 @@
 ::Const.Strings.PerkDescription.LegendSleightOfHand <- "An ace up your sleeve. \n\n[color=#4f1800][u]Passive:[/u][/color]\n• Currently equipped throwing items that use ammo regain 1 ammo each turn.";
 ::Const.Strings.PerkDescription.LegendPromisedPotential <- "A natural talent, realized. \n\n[color=#4f1800][u]Passive:[/u][/color]\n• Upon picking up increase every attribute by [color=" + ::Const.UI.Color.PositiveValue + "]1-6[/color] depending on how many stars each attribute has. Untalented attributes are increase by [color=" + ::Const.UI.Color.PositiveValue + "]1[/color], while talented are increased by [color=" + ::Const.UI.Color.PositiveValue + "]2[/color] for every star.";
 ::Const.Strings.PerkDescription.LegendWheelMaintenance <- "True caravaneers know that regular wheel maintenance is vital on the road and wilderness. \n\n[color=#4f1800][u]Passive:[/u][/color]\n• Increases movement speed on the world map by [color=" + ::Const.UI.Color.PositiveValue + "]5%[/color]. Stacks with itself.";
+::Const.Strings.PerkDescription.LegendMasterTrainer <- "My sword is my best friend. It is my life. I must master it as I must master my life. \n\n[color=#4f1800][u]Passive:[/u][/color]\n• As long as this character is in the training tent every character training receives an additional [color=" + ::Const.UI.Color.PositiveValue + "]+10%[/color] training speed in camp.";
+::Const.Strings.PerkDescription.LegendMasterTrainer <- "\'You maggots may yet earn my respect\'. \n\n[color=#4f1800][u]Passive:[/u][/color]\n• Kills made by veteran mercenaries earn [color=" + ::Const.UI.Color.PositiveValue + "]+100%[/color] shared XP for mercenaries who are level 11 or under.";

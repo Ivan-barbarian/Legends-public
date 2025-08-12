@@ -82,9 +82,13 @@
 				this.Const.Perks.SturdyTree,
 				this.Const.Perks.ViciousTree
 			],
-			Enemy = [this.Const.Perks.SwordmastersTree],
+			Enemy = [
+				this.Const.Perks.SwordmastersTree
+			],
 			Class = [],
-			Profession = [], 
+			Profession = [
+				this.Const.Perks.FencingTeacherProfessionTree
+			], 
 			Magic = []
 		}
 	}
