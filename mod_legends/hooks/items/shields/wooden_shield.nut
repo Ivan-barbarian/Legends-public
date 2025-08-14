@@ -48,7 +48,8 @@
 			42,
 			43,
 			44,
-			104
+			104,
+			105
 		];
 		if (this.Const.DLC.UnholdSupporter)
 			this.m.Variants.push(33);
