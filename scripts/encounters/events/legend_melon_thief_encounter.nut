@@ -2,7 +2,7 @@ this.legend_melon_thief_encounter <- this.inherit("scripts/encounters/encounter_
     m = {},
     function create() {
         this.m.Type = "encounter.legend_melon_thief";
-        this.m.Name = ::Const.Strings.RandomCityEncounterNames;
+        this.m.Name = ::Const.Strings.randomCityEncounterName();
 		this.m.Event = "event.melon_thief";
     }
 })

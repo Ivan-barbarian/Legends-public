@@ -9,7 +9,7 @@ this.legend_bros_cure_traumatized_encounter <- this.inherit("scripts/encounters/
     function create() {
         this.createScreens();
         this.m.Type = "encounter.legend_bros_cure_traumatized";
-        this.m.Name = ::Const.Strings.RandomCampEncounterNames;
+        this.m.Name = ::Const.Strings.randomCampEncounterName();
 		this.m.Cooldown = 30 * ::World.getTime().SecondsPerDay;
 	}
 

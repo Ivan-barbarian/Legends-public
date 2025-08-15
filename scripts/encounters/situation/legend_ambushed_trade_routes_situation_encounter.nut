@@ -3,7 +3,7 @@ this.legend_ambushed_trade_routes_situation_encounter <- this.inherit("scripts/e
     function create() {
         this.createScreens();
         this.m.Type = "encounter.legend_ambushed_trade_routes_situation";
-        this.m.Name = ::Const.Strings.RandomCityEncounterNames;
+        this.m.Name = ::Const.Strings.randomCityEncounterName();
     }
 
     function createScreens() {

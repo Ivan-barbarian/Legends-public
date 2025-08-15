@@ -5,7 +5,7 @@ this.legend_greenskins_situation_encounter <- this.inherit("scripts/encounters/e
     function create() {
         this.createScreens();
         this.m.Type = "encounter.legend_greenskins_situation";
-        this.m.Name = ::Const.Strings.RandomCityEncounterNames;
+        this.m.Name = ::Const.Strings.randomCityEncounterName();
     }
 
     function createScreens() {

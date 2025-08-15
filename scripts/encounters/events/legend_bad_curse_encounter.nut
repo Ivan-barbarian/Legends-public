@@ -2,7 +2,7 @@ this.legend_bad_curse_encounter <- this.inherit("scripts/encounters/encounter_ev
     m = {},
     function create() {
         this.m.Type = "encounter.legend_bad_curse";
-        this.m.Name = ::Const.Strings.RandomCityEncounterNames;
+        this.m.Name = ::Const.Strings.randomCityEncounterName();
 		this.m.Event = "event.bad_curse";
     }
 })

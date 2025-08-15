@@ -2,7 +2,7 @@ this.legend_traveling_troupe_camp_encounter <- this.inherit("scripts/encounters/
     m = {},
     function create() {
         this.m.Type = "encounter.legend_traveling_troupe_camp";
-        this.m.Name = ::Const.Strings.RandomCampEncounterNames;
+        this.m.Name = ::Const.Strings.randomCampEncounterName();
 		this.m.Event = "event.traveling_troupe";
 	}
 })
