@@ -142,6 +142,7 @@ this.legend_legion_honour_guard_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.LongswordClassTree,
 				this.Const.Perks.ScytheClassTree
 			],
+			Profession = [],
 			Magic = []
 		}
 	}

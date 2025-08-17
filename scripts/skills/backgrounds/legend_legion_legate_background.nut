@@ -141,6 +141,7 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 				this.Const.Perks.ButcherClassTree,
 				this.Const.Perks.ScytheClassTree
 			],
+			Profession = [],
 			Magic = []
 		}
 	}

@@ -135,6 +135,7 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 				this.Const.Perks.BeastClassTree,
 				this.Const.Perks.SlingClassTree
 			],
+			Profession = [],
 			Magic = []
 		}
 	}

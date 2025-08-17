@@ -139,6 +139,7 @@ this.legend_legion_legionary_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.SpearfisherClassTree,
 				this.Const.Perks.ScytheClassTree
 			],
+			Profession = [],
 			Magic = []
 		}
 	}

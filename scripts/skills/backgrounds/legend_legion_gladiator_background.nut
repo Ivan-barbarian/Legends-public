@@ -141,6 +141,7 @@ this.legend_legion_gladiator_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.JugglerClassTree,
 				this.Const.Perks.LegendSpecialistSpearfisher
 			],
+			Profession = [],
 			Magic = []
 		}
 	}
