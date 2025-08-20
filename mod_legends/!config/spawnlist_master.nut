@@ -56,11 +56,9 @@
 	Script = "scripts/entity/tactical/enemies/legend_greenwood_schrat"
 };
 
-::Const.World.Spawn.Troops.Schrat.Variant = 1;
-
 ::Const.World.Spawn.Troops.SchratSmall <- {
 	ID = this.Const.EntityType.SchratSmall,
-	Variant = 1,
+	Variant = 0,
 	Strength = 70,
 	Cost = 70,
 	Row = -1,

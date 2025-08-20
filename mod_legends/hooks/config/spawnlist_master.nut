@@ -1,10 +1,7 @@
 ::Const.World.Spawn.Troops.Zombie.Strength = 5;
 ::Const.World.Spawn.Troops.Zombie.Cost = 5;
 
-::Const.World.Spawn.Troops.Schrat.Variant = 1;
-
 ::Const.World.Spawn.Troops.OrcWarrior.TitleList = this.Const.Strings.GoblinTitles;
-
 ::Const.World.Spawn.Troops.OrcWarlord.TitleList = this.Const.Strings.GoblinTitles;
 
 ::Const.World.Spawn.Troops.Peasant.Script = "scripts/entity/tactical/humans/legend_peasant";

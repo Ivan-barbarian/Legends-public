@@ -4,27 +4,8 @@
 
 	o.m.Resources <- 0;
 
-	o.getDefenderCount <- function ()
-	{
-
+	o.getDefenderCount <- function () {
 		return this.m.Troops.len()
-		// local count = 0
-		// foreach( t in this.m.Troops )
-		// {
-		// 	if (t.Script.len() != "")
-		// 	{
-		// 		if (t.Variant != 0)
-		// 		{
-		// 			count++
-		// 		}
-		// 		else
-		// 		{
-		// 			++entityTypes[t.ID];
-		// 		}
-		// 	}
-		// }
-		// return count;
-
 	}
 
 	o.getTroopComposition = function ()
