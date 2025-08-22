@@ -146,9 +146,10 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 				}
 
 				if (this.Flags.get("BoxOpened")) {
-					if (this.Contract.m.PursuitParty != null && !this.Contract.m.PursuitParty.isNull()) {
+					if (this.Contract.m.PursuitParty != null && !this.Contract.m.PursuitParty.isNull() && this.Contract.m.PursuitParty.isAlive()) {
 						this.Contract.m.PursuitParty.die();
 					}
+					this.Contract.m.PursuitParty = null;
 					this.Contract.setState("Revenge");
 				}
 			}
@@ -162,9 +163,10 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 			function onRetreatedFromCombat(_combatID) {
 				if (_combatID == "Pursuit") {
 					this.Flags.remove("Pursuit");
-					if (this.Contract.m.PursuitParty != null && !this.Contract.m.PursuitParty.isNull()) {
+					if (this.Contract.m.PursuitParty != null && !this.Contract.m.PursuitParty.isNull() && this.Contract.m.PursuitParty.isAlive()) {
 						this.Contract.m.PursuitParty.die();
 					}
+					this.Contract.m.PursuitParty = null;
 				}
 			}
 
@@ -203,6 +205,7 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 					this.World.Contracts.showActiveContract();
 					if (this.Contract.m.Camp != null && !this.Contract.m.Camp.isNull()) {
 						this.Contract.m.Camp.die();
+						this.Contract.m.Camp = null;
 					}
 					return;
 				}
@@ -550,9 +553,10 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 			this.m.Camp.getFlags().remove("isContractLocation");
 			this.m.Camp.setOnCombatWithPlayerCallback(null);
 		}
-		if (this.m.PursuitParty != null && !this.m.PursuitParty.isNull()) {
+		if (this.m.PursuitParty != null && !this.m.PursuitParty.isNull() && this.m.PursuitParty.isAlive()) {
 			this.m.PursuitParty.die();
 		}
+		this.m.PursuitParty = null;
 		local stash = ::World.Assets.getStash().getItems();
 		foreach( i, item in stash ) {
 			if (item != null && item.getID() == "misc.legend_smuggle_box") {
