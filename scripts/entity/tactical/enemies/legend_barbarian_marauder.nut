@@ -155,7 +155,7 @@ this.legend_barbarian_marauder <- this.inherit("scripts/entity/tactical/human", 
 		}
 	}
 
-	function makeMiniboss = function ()
+	function makeMiniboss ()
 	{
 		if (!this.actor.makeMiniboss())
 		{
@@ -173,4 +173,3 @@ this.legend_barbarian_marauder <- this.inherit("scripts/entity/tactical/human", 
 	}
 
 });
-
