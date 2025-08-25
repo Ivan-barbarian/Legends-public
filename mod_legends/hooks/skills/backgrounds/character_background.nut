@@ -1868,7 +1868,7 @@
 		}
 	}
 
-	// little hack to remove it from onDeserialize() - chopeks
+	// little hack to remove it from onDeserialize()
 	local adjustHiringCostBasedOnEquipment = o.adjustHiringCostBasedOnEquipment;
 	o.adjustHiringCostBasedOnEquipment = function () {};
 
