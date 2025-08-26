@@ -31,6 +31,12 @@
 				this.m.HitChanceBonus += 5;
 			}
 
+			if (this.m.IsStaffStrike && this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
+			{
+				_properties.MeleeSkill += 5;
+				this.m.HitChanceBonus += 5;
+			}
+
 			if (_targetEntity != null && (this.m.ApplyAxeMastery && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInAxes || !this.m.ApplyAxeMastery && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms) && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
 			{
 				_properties.MeleeSkill += -15;

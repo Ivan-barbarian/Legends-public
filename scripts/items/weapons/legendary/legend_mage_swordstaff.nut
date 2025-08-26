@@ -20,6 +20,9 @@ this.legend_mage_swordstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 120.0;
 		this.m.ConditionMax = 120.0;
+		this.m.RangeMin = 1;
+		this.m.RangeMax = 2;
+		this.m.RangeIdeal = 1;
 		this.m.StaminaModifier = -10;
 		this.m.RegularDamage = 70;
 		this.m.RegularDamageMax = 90;
@@ -33,7 +36,7 @@ this.legend_mage_swordstaff <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.Slash, function (_skill) {
-			_skill.m.IsStaffSlash = true;
+			_skill.m.IsGreatSlash = true;
 		}.bindenv(this));
 		::Legends.Actives.grant(this, ::Legends.Active.Swing);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendSkewer);

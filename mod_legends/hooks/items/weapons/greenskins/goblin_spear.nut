@@ -16,8 +16,8 @@
 		this.m.Condition = 48.0;
 		this.m.ConditionMax = 48.0;
 		this.m.RangeMin = 1;
-		this.m.RangeMax = 2;
-		this.m.RangeIdeal = 2;
+		this.m.RangeMax = 1;
+		this.m.RangeIdeal = 1;
 		this.m.RegularDamage = 35;
 		this.m.RegularDamageMax = 60;
 	}
@@ -26,7 +26,7 @@
 	{
 		this.weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.Slash, function (_skill) {
-			_skill.m.IsStaffSlash = true;
+			_skill.m.IsGreatSlash = true;
 		}.bindenv(this));
 		::Legends.Actives.grant(this.weapon, ::Legends.Active.LegendSkewer, function (_skill)
 		{

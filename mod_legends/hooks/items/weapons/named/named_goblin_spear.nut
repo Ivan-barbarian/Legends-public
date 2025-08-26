@@ -13,8 +13,8 @@
 		this.m.IsAoE = true;
 		this.m.Value = 3000;
 		this.m.RangeMin = 1;
-		this.m.RangeMax = 2;
-		this.m.RangeIdeal = 2;
+		this.m.RangeMax = 1;
+		this.m.RangeIdeal = 1;
 	}
 
 	o.randomizeValues <- function ()
@@ -32,7 +32,7 @@
 	{
 		this.named_weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.Slash, function (_skill) {
-			_skill.m.IsStaffSlash = true;
+			_skill.m.IsGreatSlash = true;
 		}.bindenv(this));
 		::Legends.Actives.grant(this.weapon, ::Legends.Active.LegendSkewer, function (_skill)
 		{
