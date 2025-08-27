@@ -1,14 +1,14 @@
 this.legend_barbarian_runechosen <- this.inherit("scripts/entity/tactical/human", {
 	m = {
 		ChosenRunes = [
-				::Legends.Rune.LegendRsaEndurance,
-				::Legends.Rune.LegendRsaSafety,
-				::Legends.Rune.LegendRshBravery,
-				::Legends.Rune.LegendRswBleeding,
-				::Legends.Rune.LegendRswPoison,
-				::Legends.Rune.LegendRswAccuracy,
-				::Legends.Rune.LegendRswPower
-			];
+			::Legends.Rune.LegendRsaEndurance,
+			::Legends.Rune.LegendRsaSafety,
+			::Legends.Rune.LegendRshBravery,
+			::Legends.Rune.LegendRswBleeding,
+			::Legends.Rune.LegendRswPoison,
+			::Legends.Rune.LegendRswAccuracy,
+			::Legends.Rune.LegendRswPower
+		]
 	},
 	function create()
 	{
@@ -198,4 +198,3 @@ this.legend_barbarian_runechosen <- this.inherit("scripts/entity/tactical/human"
 	}
 
 });
-
