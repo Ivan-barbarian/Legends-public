@@ -80,7 +80,7 @@ this.legend_safeguard_skill <- this.inherit("scripts/skills/skill", {
 
 		local target = _targetTile.getEntity();
 		::Legends.Effects.grant(target, ::Legends.Effect.LegendSafeguarded, function(_effect) {
-			_effect.setWard(this.getContainer().getActor());
+			_effect.setProtector(this.getContainer().getActor());
 			_effect.activate();
 		}.bindenv(this));
 
