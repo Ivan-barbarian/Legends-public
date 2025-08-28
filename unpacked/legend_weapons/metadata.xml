@@ -342,6 +342,10 @@
   <sprite id="icon_legend_sling_01" offsetY="35" ic="FF484F57" width="104" height="142" img="icons\icon_legend_sling_01.png" left="0" right="48" top="-56" bottom="8" />
   <sprite id="icon_legend_sling_02_bloodied" offsetY="35" ic="FF3B4153" width="104" height="142" img="icons\icon_legend_sling_02_bloodied.png" left="0" right="48" top="-56" bottom="8" />
   <sprite id="icon_legend_sling_02" offsetY="35" ic="FF484F57" width="104" height="142" img="icons\icon_legend_sling_02.png" left="0" right="48" top="-56" bottom="8" />
+  <!-- New northern sling -->
+  <sprite id="icon_legend_northern_sling_01_1" offsetY="35" ic="FF2D3E5B" width="130" height="142" img="icons\icon_legend_northern_sling_01_1.png" left="-49" right="15" top="-51" bottom="23" />
+  <sprite id="icon_legend_northern_sling_01_2" offsetY="35" ic="FF2D3E5B" width="130" height="142" img="icons\icon_legend_northern_sling_01_2.png" left="-49" right="15" top="-51" bottom="23" />
+  <!-- Old northern sling -->
   <sprite id="icon_legend_slingstaff_01_bloodied" offsetY="35" f1="20" f2="-45" ic="FF2F3A4F" width="130" height="142" img="icons\icon_legend_slingstaff_01_bloodied.png" left="-10" right="50" top="-67" bottom="13" />
   <sprite id="icon_legend_slingstaff_01" offsetY="35" f1="20" f2="-45" ic="FF4E5159" width="130" height="142" img="icons\icon_legend_slingstaff_01.png" left="-9" right="49" top="-62" bottom="12" />
   <sprite id="icon_legend_staff_01_bloodied" offsetY="35" ic="FF3D4758" width="130" height="142" img="icons\icon_legend_staff_01_bloodied.png" left="-52" right="12" top="-64" bottom="52" />
@@ -574,8 +578,6 @@
   <sprite id="icon_scythe_01_2" offsetY="35" ic="FF616061" width="104" height="142" img="icons\icon_scythe_01_2.png" left="-52" right="10" />
   <sprite id="icon_short_bow_1" offsetY="35" ic="FF3F5267" width="104" height="142" img="icons\icon_short_bow_1.png" left="0" right="52" top="-56" bottom="0" />
   <sprite id="icon_short_bow_2" offsetY="35" ic="FF3F5267" width="104" height="142" img="icons\icon_short_bow_2.png" left="0" right="52" top="-56" bottom="0" />
-  <sprite id="icon_sling_01_1" offsetY="35" ic="FF2D3E5B" width="130" height="142" img="icons\icon_sling_01_1.png" left="-49" right="15" top="-51" bottom="23" />
-  <sprite id="icon_sling_01_2" offsetY="35" ic="FF2D3E5B" width="130" height="142" img="icons\icon_sling_01_2.png" left="-49" right="15" top="-51" bottom="23" />
   <sprite id="icon_sling_02_1" offsetY="35" ic="FF2F405A" width="130" height="142" img="icons\icon_sling_02_1.png" left="-50" right="12" top="-48" bottom="26" />
   <sprite id="icon_sling_02_2" offsetY="35" ic="FF2F405A" width="130" height="142" img="icons\icon_sling_02_2.png" left="-50" right="12" top="-48" bottom="26" />
   <sprite id="icon_southern_short_sword_01_1_bloodied" offsetY="35" ic="FF3C4153" width="160" height="142" img="icons\icon_southern_short_sword_01_1_bloodied.png" left="-3" right="41" top="-58" bottom="8" />
