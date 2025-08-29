@@ -129,12 +129,13 @@ foreach (i in garbage)
 ::Const.Items.NamedGoblinWeapons.extend([
 	"weapons/named/legend_named_goblin_axe_2h",
 	"weapons/named/legend_named_goblin_notched_blade",
-	"weapons/named/legend_named_goblin_crossbow"
+	"weapons/named/legend_named_goblin_crossbow",
+	"weapons/named/legend_named_goblin_gruesome_falchion"
 ]);
 
 ::Const.Items.NamedMeleeWeapons.extend([
 	"weapons/named/named_fencing_sword",
-	"weapons/named/legend_named_longsword",
+	"weapons/named/legend_named_flamberge,
 	"weapons/named/legend_named_longsword",
 	"weapons/named/legend_named_estoc",
 	"weapons/named/legend_named_glaive",
