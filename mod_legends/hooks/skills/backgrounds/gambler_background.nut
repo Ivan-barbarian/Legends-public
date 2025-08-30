@@ -56,7 +56,7 @@
 			Weapon = [
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.StaffTree
+				this.Const.Perks.PolearmTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree
@@ -68,7 +68,9 @@
 				this.Const.Perks.FastTree
 			],
 			Enemy = [],
-			Class = [],
+			Class = [
+				this.Const.Perks.ConArtistTree
+			],
 			Profession = [], 
 			Magic = []
 		}

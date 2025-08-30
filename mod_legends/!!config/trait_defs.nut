@@ -153,11 +153,11 @@ traitDefs.push({
 	Random = true
 });
 
-::Legends.Trait.Fainthearthed <- null;
+::Legends.Trait.Fainthearted <- null;
 traitDefs.push({
 	ID = "trait.fainthearted",
 	Script = "scripts/skills/traits/fainthearted_trait",
-	Const = "Fainthearthed",
+	Const = "Fainthearted",
 	Random = true
 });
 

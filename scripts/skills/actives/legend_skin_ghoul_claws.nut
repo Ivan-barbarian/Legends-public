@@ -154,7 +154,7 @@ this.legend_skin_ghoul_claws <- this.inherit("scripts/skills/skill", {
 				ret = this.attackEntity(_user, t.getEntity()) || ret;
 				if (!target.isAlive() || target.isDying())
 				{
-					if (this.isKindOf(target, "lindwurm_tail") || !target.getCurrentProperties().IsImmuneToBleeding)
+					if (target.getFlags().has("tail") || !target.getCurrentProperties().IsImmuneToBleeding)
 					{
 						this.Sound.play(this.m.SoundsA[this.Math.rand(0, this.m.SoundsA.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 					}

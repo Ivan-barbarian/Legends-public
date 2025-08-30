@@ -19,7 +19,7 @@ this.legend_talented_trait <- this.inherit("scripts/skills/traits/character_trai
 			::Legends.Traits.getID(::Legends.Trait.Craven),
 			::Legends.Traits.getID(::Legends.Trait.Hesistant),
 			::Legends.Traits.getID(::Legends.Trait.Dastard),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Paranoid),
 			::Legends.Traits.getID(::Legends.Trait.FearBeasts),
 			::Legends.Traits.getID(::Legends.Trait.FearUndead),
@@ -28,7 +28,7 @@ this.legend_talented_trait <- this.inherit("scripts/skills/traits/character_trai
 			::Legends.Traits.getID(::Legends.Trait.LegendSlack),
 			::Legends.Traits.getID(::Legends.Trait.Pessimist),
 			::Legends.Traits.getID(::Legends.Trait.Dumb),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.LegendFrail)
 		];
 	}
@@ -75,4 +75,3 @@ this.legend_talented_trait <- this.inherit("scripts/skills/traits/character_trai
 	}
 
 });
-

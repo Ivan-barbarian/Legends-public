@@ -8,4 +8,12 @@
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 	}
+
+	o.onEquip = function()
+	{
+		this.named_weapon.onEquip();
+		::Legends.Actives.grant(this, ::Legends.Active.Thrust);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendHeartseeker);
+		::Legends.Actives.grant(this, ::Legends.Active.Spearwall);
+	}
 });

@@ -20,7 +20,7 @@
 	],
 	Troops = [
 		{
-			Weight = 80,
+			Weight = 60,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BarbarianThrall,
@@ -35,6 +35,26 @@
 					MinR = 500,
 					Type = this.Const.World.Spawn.Troops.BarbarianChampion,
 					Cost = 35
+				},
+				{
+					MinR = 900,
+					Type = this.Const.World.Spawn.Troops.LegendBarbarianRunechosen,
+					Cost = 60
+				}
+			]
+		},
+		{
+			Weight = 20,
+			Types = [
+				{
+					MinR = 250,
+					Type = this.Const.World.Spawn.Troops.LegendBarbarianPillager,
+					Cost = 22
+				},
+				{
+					MinR = 500,
+					Type = this.Const.World.Spawn.Troops.LegendBarbarianMarauder,
+					Cost = 35
 				}
 			]
 		},
@@ -44,6 +64,11 @@
 				{
 					Type = this.Const.World.Spawn.Troops.Warhound,
 					Cost = 10
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendBear,
+					MinR = 500,
+					Cost = 40
 				}
 			]
 		},
@@ -91,19 +116,34 @@
 	Body = "figure_wildman_03",
 	Fixed = [],
 	MinR = 56,
-	MaxR = 214,
+	MaxR = 428,
 	Troops = [
 		{
-			Weight = 66,
+			Weight = 60,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BarbarianThrall,
 					Cost = 12
+				},
+				{
+					MinR = 250,
+					Type = this.Const.World.Spawn.Troops.BarbarianMarauder,
+					Cost = 22
 				}
 			]
 		},
 		{
-			Weight = 34,
+			Weight = 15,
+			Types = [
+				{
+					MinR = 250,
+					Type = this.Const.World.Spawn.Troops.LegendBarbarianPillager,
+					Cost = 22
+				}
+			]
+		},
+		{
+			Weight = 25,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Warhound,

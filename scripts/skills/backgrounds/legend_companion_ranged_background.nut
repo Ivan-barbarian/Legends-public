@@ -16,7 +16,7 @@ this.legend_companion_ranged_background <- this.inherit("scripts/skills/backgrou
 			::Legends.Traits.getID(::Legends.Trait.Craven),
 			::Legends.Traits.getID(::Legends.Trait.Dastard),
 			::Legends.Traits.getID(::Legends.Trait.Disloyal),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Fat),
 			::Legends.Traits.getID(::Legends.Trait.FearUndead),
 			::Legends.Traits.getID(::Legends.Trait.FearGreenskins),
@@ -329,4 +329,3 @@ this.legend_companion_ranged_background <- this.inherit("scripts/skills/backgrou
 	}
 
 });
-

@@ -311,7 +311,6 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 					Sling = this.Const.Perks.SlingTree,
 					Spear = this.Const.Perks.SpearTree,
 					Sword = this.Const.Perks.SwordTree,
-					Staff = this.Const.Perks.StaffTree,
 					Throwing = this.Const.Perks.ThrowingTree
 				}
 				foreach (weapon, tree in weaponToPerkMap)

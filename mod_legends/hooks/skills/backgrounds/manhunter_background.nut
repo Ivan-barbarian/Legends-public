@@ -15,7 +15,7 @@
 			::Legends.Traits.getID(::Legends.Trait.Bleeder),
 			::Legends.Traits.getID(::Legends.Trait.Bright),
 			::Legends.Traits.getID(::Legends.Trait.Clumsy),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.IronLungs),
 			::Legends.Traits.getID(::Legends.Trait.Tiny),
 			::Legends.Traits.getID(::Legends.Trait.Optimist),
@@ -83,7 +83,7 @@
 			Class = [
 				this.Const.Perks.BeastClassTree
 			],
-			Profession = [], 
+			Profession = [],
 			Magic = []
 		}
 	}

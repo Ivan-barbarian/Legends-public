@@ -56,7 +56,7 @@ this.legend_revolt_skill <- this.inherit("scripts/skills/skill", {
 			text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] chance to hit"
 		});
 
-		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInStaves)
+		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInMusic)
 		{
 			ret.push({
 				id = 6,
@@ -112,8 +112,8 @@ this.legend_revolt_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-		this.m.ActionPointCost = _properties.IsSpecializedInStaves ? 2 : 3;
+		this.m.FatigueCostMult = _properties.IsSpecializedInMusic ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.ActionPointCost = _properties.IsSpecializedInMusic ? 2 : 3;
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -219,16 +219,16 @@ this.legend_revolt_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.MeleeSkill += 10;
+			_properties.RangedSkill += 10;
 
-			if (_targetEntity != null && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInStaves && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
+			if (_targetEntity != null && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInMusic && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
 			{
 				_properties.RangedSkill += -15;
-				this.m.HitChanceBonus = -5;
+				this.m.HitChanceBonus += -5;
 			}
 			else
 			{
-				this.m.HitChanceBonus = 10;
+				this.m.HitChanceBonus += 10;
 			}
 		}
 	}

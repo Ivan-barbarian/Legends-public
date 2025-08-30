@@ -28,7 +28,6 @@
 		Helms = [
 		],
 		Tops = [
-			[1, "top/legend_helmet_mummy_beard"],
 			[1, ""]
 		],
 		Vanity = [
@@ -67,7 +66,6 @@
 		Helms = [
 		],
 		Tops = [
-			[1, "top/legend_helmet_mummy_beard"],
 			[1, ""]
 		],
 		Vanity = [
@@ -94,26 +92,6 @@
 	}]
 };
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Ancient.legend_mummy_headband);
-
-::Legends.Helmet.Ancient.legend_mummy_beard <- {
-	ID = "ancient/legend_mummy_beard",
-	Script = "",
-	Sets = [{
-		Hoods = [
-			[1, "hood/legend_helmet_mummy_bandage"]
-		],
-		Helms = [
-		],
-		Tops = [
-			[1, "top/legend_helmet_mummy_beard"]
-		],
-		Vanity = [
-			[1, ""],
-			[1, "vanity/legend_helmet_mummy_headband"]
-		]
-	}]
-};
-::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Ancient.legend_mummy_beard);
 
 ::Legends.Helmet.Ancient.ancient_honorguard_helmet <- {
 	ID = "ancient/ancient_honorguard_helmet", //180, -13, -3   1000

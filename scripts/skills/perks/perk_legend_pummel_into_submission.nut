@@ -1,8 +1,8 @@
-this.perk_legend_unarmed_training <- this.inherit("scripts/skills/skill", {
+this.perk_legend_pummel_into_submission <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		::Const.Perks.setup(this.m, ::Legends.Perk.LegendUnarmedTraining);
+		::Const.Perks.setup(this.m, ::Legends.Perk.LegendPummelIntoSubmission);
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.First + 2;
 		this.m.IsActive = false;

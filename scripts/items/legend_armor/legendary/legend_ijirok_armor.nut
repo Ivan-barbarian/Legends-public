@@ -3,8 +3,8 @@ this.legend_ijirok_armor <- this.inherit("scripts/items/legend_armor/legend_armo
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;		
-		this.m.ID = "armor.body.legend_ijirok_armor";	
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
+		this.m.ID = "armor.body.legend_ijirok_armor";
 		this.m.Name = "Armor of the Ijirok";
 		this.m.Description = "Once a barbarian armor broken in battle, this piece has been bathed in the blood of the legendary Ijirok. Powers beyond your understanding mended it whole again, and will likewise mend any wounds of the wearer as well.";
 		this.m.ArmorDescription = "Once a barbarian armor broken in battle, this piece has been bathed in the blood of the legendary Ijirok. Powers beyond your understanding mended it whole again, and will likewise mend any wounds of the wearer as well.";
@@ -18,7 +18,7 @@ this.legend_ijirok_armor <- this.inherit("scripts/items/legend_armor/legend_armo
 		this.m.StaminaModifier = -20;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
 	}
-	
+
 	function updateVariant()
 	{
 		this.m.SpriteBack = "bust_body_98";
@@ -27,9 +27,9 @@ this.legend_ijirok_armor <- this.inherit("scripts/items/legend_armor/legend_armo
 		this.m.Icon = "armor/icon_body_armor_98.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor/icon_body_armor_98.png";
-		this.m.OverlayIconLarge = "armor/inventory_body_armor_98.png";		
-	}	
-	
+		this.m.OverlayIconLarge = "armor/inventory_body_armor_98.png";
+	}
+
 	function getTooltip()
 	{
 		local result = this.legend_armor_upgrade.getTooltip();
@@ -41,7 +41,7 @@ this.legend_ijirok_armor <- this.inherit("scripts/items/legend_armor/legend_armo
 		});
 		return result;
 	}
-	
+
 	function onArmorTooltip( _result )
 	{
 		_result.push({
@@ -50,14 +50,19 @@ this.legend_ijirok_armor <- this.inherit("scripts/items/legend_armor/legend_armo
 			icon = "ui/icons/health.png",
 			text = "Heals [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] hitpoints of the wearer each turn"
 		});
-	}	
+	}
 
 	function onCombatFinished()
 	{
+		if (::Legends.S.isNull(this.getContainer()))
+			return;
+
 		local actor = this.getContainer().getActor();
 
-		if (actor != null && !actor.isNull() && actor.isAlive())
-		{
+		if (::Legends.S.isNull(actor))
+			return;
+
+		if (actor.isAlive() && !actor.isDying()) {
 			actor.setHitpoints(actor.getHitpointsMax());
 			actor.setDirty(true);
 		}
@@ -83,6 +88,6 @@ this.legend_ijirok_armor <- this.inherit("scripts/items/legend_armor/legend_armo
 			this.Sound.play("sounds/enemies/unhold_regenerate_01.wav", this.Const.Sound.Volume.RacialEffect * 1.25, actor.getPos());
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " heals for " + healthAdded + " points");
 		}
-	}	
+	}
 
 });

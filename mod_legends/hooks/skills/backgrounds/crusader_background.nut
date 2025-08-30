@@ -39,7 +39,7 @@
 			::Legends.Traits.getID(::Legends.Trait.Tiny),
 			::Legends.Traits.getID(::Legends.Trait.Fragile),
 			::Legends.Traits.getID(::Legends.Trait.Clumsy),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
 			::Legends.Traits.getID(::Legends.Trait.Bleeder),
 			::Legends.Traits.getID(::Legends.Trait.Dastard),
@@ -95,7 +95,7 @@
 				this.Const.Perks.SkeletonTree
 			],
 			Class = [],
-			Profession = [], 
+			Profession = [],
 			Magic = [
 				this.Const.Perks.FaithClassTree
 			]
@@ -207,4 +207,3 @@
 		]));
 	}
 });
-

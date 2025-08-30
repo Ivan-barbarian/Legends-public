@@ -335,7 +335,7 @@
 	"Severa"
 ]);
 
-::Const.Strings.AncientDeadNamesFemale.extend([
+::Const.Strings.AncientDeadNamesFemale <- [
 	"Julia",
 	"Claudia",
 	"Cornelia",
@@ -372,7 +372,7 @@
 	"Flaviana",
 	"Tiberia",
 	"Severa"
-]);
+];
 
 ::Const.Strings.AncientDeadTitles.extend([
 	"the Hanter",

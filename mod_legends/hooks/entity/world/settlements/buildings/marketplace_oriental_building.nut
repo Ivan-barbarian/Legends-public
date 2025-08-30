@@ -194,11 +194,6 @@
 				S = "helmets/legend_southern_veil"
 			},
 			{
-				R = 80,
-				P = 1.0,
-				S = "helmets/legend_southern_veil_coin"
-			},
-			{
 				R = 70,
 				P = 1.0,
 				S = "helmets/legend_headress_coin"

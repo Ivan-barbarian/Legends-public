@@ -84,7 +84,6 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 		{
 		case 1:
 			return gainGiftedEffect(_actor);
-
 		case 2:
 			return gainTrainingEffect(_actor);
 		case 3:
@@ -108,7 +107,7 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 		return format("You gain free [color=%s]Gifted[/color] perk worth amount of level-up stats.", ::Const.UI.Color.NegativeValue);
 	}
 
-	function gainGiftedEffect( _actor )
+	function gainExperience( _actor )
 	{
 		_actor.addXP( this.Math.rand(100, 150));
 	}
@@ -191,7 +190,7 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 			case 2:
 				return "Use the scroll on a character to increase experience gains by +50% for at least the next 3 battles. This will override any other current trained effects.";
 			case 3:
-				return "Use the scroll on a character to gain 100-150 XP.";		
+				return "Use the scroll on a character to gain 100-150 XP.";
 		}
 	}
 

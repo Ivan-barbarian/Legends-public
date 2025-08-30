@@ -28,7 +28,17 @@
 	MaxR = 535,
 	Troops = [
 		{
-			Weight = 100,
+			Weight = 20
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+					Cost = 400,
+					MinR = 1200
+				}
+			]
+		},
+		{
+			Weight = 80,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Direwolf,
@@ -77,6 +87,32 @@
 					//Roll = true // Was true
 				}
 			]
+		},
+		{
+			Weight = 10,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendSkinGhoulLOW,
+					Cost = 50,
+					MinR = 1000
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendSkinGhoulMED,
+					Cost = 100,
+					MinR = 1000
+				}
+			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
+					Cost = 200,
+					MinR = 1200,
+					Roll = true
+				}
+			]
 		}
 	]
 }
@@ -97,6 +133,16 @@
 				{
 					Type = this.Const.World.Spawn.Troops.Lindwurm,
 					Cost = 80
+				}
+			]
+		},
+		{
+			Weight = 20
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+					Cost = 400,
+					MinR = 1200
 				}
 			]
 		}
@@ -150,7 +196,7 @@
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-					Cost = 200
+					Cost = 240
 				}
 			]
 		}
@@ -190,7 +236,17 @@
 	MaxR = 384,
 	Troops = [
 		{
-			Weight = 100,
+			Weight = 20
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+					Cost = 250,
+					MinR = 600
+				}
+			]
+		},
+		{
+			Weight = 80,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Spider,
@@ -259,6 +315,16 @@
 				{
 					Type = this.Const.World.Spawn.Troops.Schrat,
 					Cost = 70
+				}
+			]
+		},
+		{
+			Weight = 10
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+					Cost = 280,
+					MinR = 1000
 				}
 			]
 		}

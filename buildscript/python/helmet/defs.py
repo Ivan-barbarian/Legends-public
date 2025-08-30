@@ -152,7 +152,7 @@ class Defs:
  "title" :  "Southern Coin Headband",
  "desc" :  "A southern headband of coins strung together."
  },
-{"name" : "mummy_bandage"                     , "layer" : "hood", "min" : 1, "max" : 2, "base" : True, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "true",
+{"name" : "mummy_bandage"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "true",
  "title" :  "Ancient Southern Facemask",
  "desc" :  "Wrappings from a long dead embalmed corpse."
  },
@@ -342,13 +342,9 @@ class Defs:
  "title" :  "Kettle Hat",
  "desc" :  "A full-metal helmet with a very wide rim."
  },
-{"name" : "kettle_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3500, "con" : 130, "stam" : -9, "vis" : -2, "hair" : "true", "beard" : "false", "named" : True, "rmaxViz" : 1, "rminViz" : 2, "rmaxStam" : 7, "rminStam" : 9, "rminCond" : 130, "rmaxCond" : 155, "names" : Names,
+{"name" : "kettle_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 2, "value" : 3500, "con" : 130, "stam" : -9, "vis" : -2, "hair" : "true", "beard" : "false", "named" : True, "rmaxViz" : 1, "rminViz" : 2, "rmaxStam" : 7, "rminStam" : 9, "rminCond" : 130, "rmaxCond" : 155, "names" : Names,
  "title" :  "Kettle Helm",
  "desc" :  "An exceptional and sturdy kettle helm. Blackened and polished, it has a gilded point."
- },
-{"name" : "fluted_kettle_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3500, "con" : 130, "stam" : -9, "vis" : -2, "hair" : "true", "beard" : "false", "named" : True, "rmaxViz" : 1, "rminViz" : 2, "rmaxStam" : 7, "rminStam" : 9, "rminCond" : 130, "rmaxCond" : 155, "names" : Names,
- "title" :  "Kettle Helm",
- "desc" :  "An exceptional and sturdy kettle helm. Masterfully crafted, it has flutes which converge at the top point."
  },
 {"name" : "enclave_kettle"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1250, "con" : 145, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "false",
  "title" :  "Kettle Sallet",
@@ -430,7 +426,7 @@ class Defs:
  "title" :  "Great Helm",
  "desc" :  "A closed metal helm with breathing holes. Great in the way of protection but hard to breathe in and limiting the field of view."
  },
-{"name" : "legend_armet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1750, "con" : 155, "stam" : -11, "vis" : -2, "hair" : "true", "beard" : "true",
+{"name" : "legend_armet"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 1750, "con" : 155, "stam" : -11, "vis" : -2, "hair" : "true", "beard" : "true",
  "title" :  "Armet",
  "desc" :  "A finely crafted close helm of outstanding workmanship."
  },
@@ -596,10 +592,6 @@ class Defs:
  "title" :  "Ancient Mask",
  "desc" :  "A masked helm of an ancient honor guard."
  },
-{"name" : "vampire_crown"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",
- "title" :  "Ancient Crown",
- "desc" :  "A crown of ancient design, relic of a bygone era in a far away land."
- },
 {"name" : "ancient_crown"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 200, "con" : 20, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "false",
  "title" :  "Ancient Diadem",
  "desc" :  "An ancient crown from ages past."
@@ -732,12 +724,6 @@ class Defs:
  "title" :  "Ancient Southern Facemask",
  "desc" :  "A facemask from a long dead civilisation."
  },
-
-{"name" : "mummy_beard"                     , "layer" : "top", "min" : 1, "max" : 3, "value" : 200, "con" : 15, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "true",
- "title" :  "Ancient Southern Beard",
- "desc" :  "A beard cover from a long dead civilisation."
- },
-
 {"name" : "faceplate_full_breaths"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 300, "con" : 35, "stam" : -2, "vis" : -1, "hair" : "false", "beard" : "true",
  "title" :  "Breathed Faceplate",
  "desc" :  "A faceplate filled with breathes for easy breathing and increased sight."
@@ -1061,23 +1047,14 @@ class Defs:
  "title" :  "Southern Veil",
  "desc" :  "A thin wispy southern veil."
  },
-
-{"name" : "southern_veil_coin"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 30, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",
- "title" :  "Southern Coin Veil",
- "desc" :  "A southern veil made of coins threaded togther."
- },
 {"name" : "southern_earings"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 20, "con" : 2, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",
  "title" :  "Southern Earings",
  "desc" :  "Delicate southern metal earings."
  },
-
-
-
 {"name" : "southern_headress_coin"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 50, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",
  "title" :  "Southern Coin Headress",
  "desc" :  "A southern headress of coins strung together."
  },
-
 
 # {"name" : "lindwurm_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
 #  "title" :  "Lindwurm Helm", \

@@ -72,11 +72,9 @@
 		local armor = [
 			[33, ::Legends.Armor.Barbarian.scrap_metal_armor],
 			[34, ::Legends.Armor.Barbarian.hide_and_bone_armor],
-			[33, ::Legends.Armor.Barbarian.reinforced_animal_hide_armor]
-		];
-		armor.push(
+			[33, ::Legends.Armor.Barbarian.reinforced_animal_hide_armor],
 			[5, ::Legends.Armor.Barbarian.legend_barbarian_southern_armor]
-		);
+		];
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor(armor));
 

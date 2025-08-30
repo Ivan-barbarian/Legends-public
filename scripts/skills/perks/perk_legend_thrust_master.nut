@@ -22,7 +22,7 @@ this.perk_legend_thrust_master <- this.inherit("scripts/skills/skill", {
 			return;
 
 		if (!_skill.getDamageType().contains(::Const.Damage.DamageType.Piercing))
-			return
+			return;
 
 		if (_skill.getItem() == null || _skill.getItem().isWeaponType(this.Const.WeaponType.Dagger))
 			return;

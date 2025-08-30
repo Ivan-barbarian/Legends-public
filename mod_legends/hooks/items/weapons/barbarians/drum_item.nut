@@ -5,7 +5,7 @@
 		create();
 		this.m.Name = "Barbarian Drum";
 		this.m.Description = "A barbarian instrument, can produce inspiring rhythms if you have the skill. The drum sticks make weak maces in a pinch.";
-		this.m.Categories = "Musical, Staff, Two-Handed";
+		this.m.Categories = "Musical Instrument, Two-Handed";
 		this.m.IconLarge = "weapons/melee/wildmen_10.png";
 		this.m.Icon = "weapons/melee/wildmen_10_70x70.png";
 		this.m.BreakingSound = "sounds/combat/bash_hit_03.wav";

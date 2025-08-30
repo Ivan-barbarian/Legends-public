@@ -421,10 +421,9 @@ this.camp_manager <- {
 	}
 
 	function getUIContractInformation() {
-		local isEscorting = ::World.State.m.EscortedEntity != null && !::World.State.m.EscortedEntity.isNull();
 		local result = {
 			Contracts = [],
-			IsContractActive = !isEscorting && ::World.Contracts.getActiveContract() != null,
+			IsContractActive = ::World.Contracts.getActiveContract() != null,
 			IsContractsLocked = false
 		};
 		local contracts = this.getContracts();
@@ -481,7 +480,6 @@ this.camp_manager <- {
 	}
 
 	function getUIInformation () {
-		local isEscorting = ::World.State.m.EscortedEntity != null && !::World.State.m.EscortedEntity.isNull();
 		local night = !::World.getTime().IsDaytime;
 		local highest = this.getUITerrain();
 		local foreground = ::Const.World.TerrainCampImages[highest].Foreground;
@@ -495,7 +493,7 @@ this.camp_manager <- {
 			Slots = [],
 			Situations = [],
 			Contracts = [],
-			IsContractActive = !isEscorting && ::World.Contracts.getActiveContract() != null,
+			IsContractActive = ::World.Contracts.getActiveContract() != null,
 			IsContractsLocked = false,
 		};
 		foreach (building in this.getBuildings())

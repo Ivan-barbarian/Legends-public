@@ -97,7 +97,7 @@
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.SpearTree,
 				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.StaffTree
+				this.Const.Perks.PolearmTree
 			],
 			Defense = [
 				this.Const.Perks.ClothArmorTree,

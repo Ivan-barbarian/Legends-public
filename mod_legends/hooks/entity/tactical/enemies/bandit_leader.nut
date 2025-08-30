@@ -204,9 +204,9 @@
 			"shields/named/named_bandit_kite_shield",
 			"shields/named/named_bandit_heater_shield"
 		]);
-		local r = this.Math.rand(1, 4);
+		local r = this.Math.rand(1, 100);
 
-		if (r == 1)
+		if (r < 30)
 		{
 			local namedWeaponArray = clone ::Const.Items.NamedMeleeWeapons;		// Temporary solution to prevent these minibosses from spawning with bad or incombatible weapons
 			::MSU.Array.remove(namedWeaponArray, "weapons/named/named_dagger");
@@ -216,21 +216,21 @@
 			::MSU.Array.remove(namedWeaponArray, "weapons/named/named_battle_whip");
 			this.m.Items.equip(this.new("scripts/items/" + ::MSU.Array.rand(namedWeaponArray)));
 		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
-		}
-		else if (r == 3)
+		else if (r < 60)
 		{
 			local named = this.Const.Items.NamedArmors;
 			local weightName = this.Const.World.Common.convNameToList(named);
 			this.m.Items.equip(this.Const.World.Common.pickArmor(weightName));
 		}
-		else
+		else if (r < 90)
 		{
 			local named = this.Const.Items.NamedHelmets;
 			local weightName = this.Const.World.Common.convNameToList(named);
 			this.m.Items.equip(this.Const.World.Common.pickHelmet(weightName));
+		}
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
 		}
 
 		::Legends.Perks.grant(this, ::Legends.Perk.Underdog);

@@ -59,13 +59,15 @@ this.legend_bandit_raider_wolf <- this.inherit("scripts/entity/tactical/enemies/
 		this.getItems().equip(item);
 
 		if (this.Math.rand(1, 100) <= 75) {
-			this.getItems().equip(::Const.World.Common.pickHelmet([
+			local item = ::Const.World.Common.pickHelmet([
 				[1, ::Legends.Helmet.Standard.nasal_helmet],
 				[1, ::Legends.Helmet.Standard.dented_nasal_helmet],
 				[1, ::Legends.Helmet.Standard.rusty_mail_coif],
 				[1, ::Legends.Helmet.Standard.headscarf],
 				[1, ::Legends.Helmet.Standard.nasal_helmet_with_rusty_mail]
-			]));
+			]);
+			item.setUpgrade(this.new("scripts/items/legend_helmets/vanity/legend_helmet_wolf_helm"));
+			this.getItems().equip(item);
 		}
 
 		this.assignPerks();

@@ -149,7 +149,7 @@ if (!("Perks" in ::Const))
 			::Legends.Perk.LegendBackToBasics
 		],
 		[
-			::Legends.Perk.Rotation,
+			::Legends.Perk.LegendTacticalManeuvers,
 			::Legends.Perk.Anticipation
         ],
 		[],

@@ -124,6 +124,7 @@
 		local weapons = [
 			"weapons/named/named_axe",
 			"weapons/named/named_greatsword",
+			"weapons/named/legend_named_flamberge_sword",
 			"weapons/named/named_mace",
 			"weapons/named/named_sword",
 			"weapons/named/legend_named_longsword"

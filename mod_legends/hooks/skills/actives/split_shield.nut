@@ -23,6 +23,21 @@
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] bonus damage to shields from Double Grip"
 			});
 		}
+		if (this.getContainer().hasPerk(::Legends.Perk.LegendSmashingShields))
+		{
+			ret.push({
+				id = 9,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Destroying the shield will refund [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] Action Points"
+			});
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/damage_dealt.png",
+				text = "Any positive damage difference between the skill\'s shield damage and the target\'s shield condition will be dealt as damage to the body"
+			});
+		}
 		return ret;
 	}
 

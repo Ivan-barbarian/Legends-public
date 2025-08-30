@@ -2,8 +2,8 @@ this.legend_ambushed_trade_routes_situation_encounter <- this.inherit("scripts/e
     m = {},
     function create() {
         this.createScreens();
-        this.m.Type = "legend_ambushed_trade_routes_situation_encounter";
-        this.m.Name = "Empty Markets in Town";
+        this.m.Type = "encounter.legend_ambushed_trade_routes_situation";
+        this.m.Name = ::Const.Strings.randomCityEncounterName();
     }
 
     function createScreens() {

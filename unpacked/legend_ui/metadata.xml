@@ -159,6 +159,7 @@
 	<sprite id="active_kick" ic="FF2B206C" img="skills\kick_square.png" />
 	<sprite id="active_choke" ic="FF2B206C" img="skills\choke_square.png" />
 	<sprite id="active_grapple" ic="FF2B206C" img="skills\grapple_square.png" />
+	<sprite id="active_heartseeker" ic="FF2B206C" img="skills\active_heartseeker.png" />
 	<sprite id="mini_vengeance" ic ="322E2DFF" img="skills\mini\mini_vengeance.png" />
 	<sprite id="basilisk_peck" ic="60312BFF" img="skills\basilisk_peck.png" />
 	<sprite id="mini_second_wind" ic="4D3315FF" img="skills\mini\mini_second_wind.png" />
@@ -177,4 +178,64 @@
 	<sprite id="mini_dawg_bite" ic="2E343FFF" img="skills\mini\mini_dawg_bite.png" />
 	<sprite id="legend_legion_command_square" ic="FF1B293C" img="skills\legend_legion_command_square.png" />
 	<sprite id="legend_status_effect_legion_command_mini" offsetY="35" ic="FF223041" img="skills\mini\legend_status_effect_legion_command_mini.png" />
+	<sprite id="skewer_spetum" ic="FF1B293C" img="skills\skewer_spetum.png" />
+	<sprite id="skewer_warfork" ic="FF1B293C" img="skills\skewer_warfork.png" />
+	<sprite id="skewer_general" ic="FF1B293C" img="skills\skewer_general.png" />
+	<!-- Orientation below -->
+
+
+	<sprite id="cat_orientation"  ic="FF22200A" img="orientation\cat_orientation.png" />
+	<sprite id="rabble_orientation"  ic="FF22200A" img="orientation\rabble_orientation.png" />
+	<sprite id="rabble_poacher_orientation"  ic="FF22200A" img="orientation\rabble_poacher_orientation.png" />
+	<sprite id="orc_elite_orientation"  ic="FF22200A" img="orientation\orc_elite_orientation.png" />
+	<sprite id="orc_behemoth_orientation" ic="FF22200A" img="orientation\orc_behemoth_orientation.png" />
+	<sprite id="demonalp_orientation"  ic="FF22200A" img="orientation\demonalp_orientation.png" />
+	<sprite id="greenwood_schrat_orientation" ic="FF22200A" img="orientation\greenwood_schrat_orientation.png" />
+	<sprite id="greenwood_schrat_small_orientation"  ic="FF22200A" img="orientation\greenwood_schrat_small_orientation.png" />
+	<sprite id="hexen_leader_orientation"  ic="FF22200A" img="orientation\hexen_leader_orientation.png" />
+	<sprite id="redback_spider_orientation"  ic="FF22200A" img="orientation\redback_spider_orientation.png" />
+	<sprite id="rock_unhold_orientation"  ic="FF22200A" img="orientation\rock_unhold_orientation.png" />
+	<sprite id="skin_ghoul_orientation"  ic="FF22200A" img="orientation\skin_ghoul_orientation.png" />
+	<sprite id="stollwurm_orientation"  ic="FF22200A" img="orientation\stollwurm_orientation.png" />
+	<sprite id="white_direwolf_orientation"  ic="FF22200A" img="orientation\white_direwolf_orientation.png" />
+	<sprite id="banshee_orientation_2"  ic="FF22200A" img="orientation\banshee_orientation_2.png" />
+	<sprite id="hollenhound_orientation"  ic="FF22200A" img="orientation\hollenhound_orientation.png" />
+	<sprite id="vampire_lord_orientation"  ic="FF22200A" img="orientation\vampire_lord_orientation.png" />
+	<sprite id="blacksmith_orientation"  ic="FF22200A" img="orientation\blacksmith_orientation.png" />
+	<sprite id="butcher_orientation"  ic="FF22200A" img="orientation\butcher_orientation.png" />
+	<sprite id="farmhand_orientation"  ic="FF22200A" img="orientation\farmhand_orientation.png" />
+	<sprite id="minstrel_orientation"  ic="FF22200A" img="orientation\minstrel_orientation.png" />
+	<sprite id="monk_orientation"  ic="FF22200A" img="orientation\monk_orientation.png" />
+	<sprite id="poacher_orientation"  ic="FF22200A" img="orientation\poacher_orientation.png" />
+	<sprite id="woodcutter_orientation"  ic="FF22200A" img="orientation\woodcutter_orientation.png" />
+	<sprite id="werebear_orientation"  ic="FF22200A" img="orientation\werebear_orientation.png" />
+	<sprite id="miner_orientation"  ic="FF22200A" img="orientation\miner_orientation.png" />
+	<sprite id="squire_orientation" ic="FF22200A" img="orientation\squire_orientation.png" />
+	<sprite id="witchhunter_orientation"  ic="FF22200A" img="orientation\witchhunter_orientation.png" />
+	<sprite id="banditveteran_orientation" ic="FF22200A" img="orientation\banditveteran_orientation.png" />
+	<sprite id="banditwarlord_orientation" ic="FF22200A" img="orientation\banditwarlord_orientation.png" />
+	<sprite id="banditoutrider_orientation" ic="FF22200A" img="orientation\banditoutrider_orientation.png" />
+	<sprite id="bear_orientation"  ic="FF22200A" img="orientation\bear_orientation.png" />
+	<sprite id="catapult_orientation" ic="FF22200A" img="orientation\catapult_orientation.png" />
+	<sprite id="horse_orientation"  ic="FF22200A" img="orientation\horse_orientation.png" />
+	<sprite id="slinger_orientation"  ic="FF22200A" img="orientation\slinger_orientation.png" />
+	<sprite id="fencer_orientation" ic="FF22200A" img="orientation\fencer_orientation.png" />
+	<sprite id="halberdier_orientation"  ic="FF22200A" img="orientation\halberdier_orientation.png" />
+	<sprite id="mummy_light_orientation"  ic="FF22200A" img="orientation\mummy_light_orientation.png" />
+	<sprite id="mummy_medium_orientation"  ic="FF22200A" img="orientation\mummy_medium_orientation.png" />
+	<sprite id="mummy_priest_orientation"  ic="FF22200A" img="orientation\mummy_medium_orientation.png" />
+	<sprite id="mummy_heavy_orientation" ic="FF22200A" img="orientation\mummy_heavy_orientation.png" />
+	<sprite id="mummy_queen_orientation"  ic="FF22200A" img="orientation\mummy_queen_orientation.png" />
+	<sprite id="mummy_queen_orientation" ic="FF22200A" img="orientation\mummy_medium_orientation.png" />
+	<sprite id="basilisk_drone_orientation" ic="FF22200A" img="orientation\basilisk_drone_orientation.png" />
+	<sprite id="dawg_orientation" ic="FF22200A" img="orientation\dawg_orientation.png" />
+	<sprite id="barbarian_pillager_orientation" ic="FF22200A" img="orientation\barbarian_pillager_orientation.png" />
+	<sprite id="barbarian_marauder_orientation" ic="FF22200A" img="orientation\barbarian_marauder_orientation.png" />
+	<sprite id="goblin_harrier_orientation" ic="FF22200A" img="orientation\goblin_harrier_orientation.png" />
+	<sprite id="goblin_plunderer_orientation" ic="FF22200A" img="orientation\goblin_plunderer_orientation.png" />
+	<sprite id="goblin_witchdoctor_orientation" ic="FF22200A" img="orientation\goblin_witchdoctor_orientation.png" />
+	<sprite id="goblin_tribe_defender_orientation" ic="FF22200A" img="orientation\goblin_tribe_defender_orientation.png" />
+	<sprite id="goblin_direwolf_rider" ic="FF22200A" img="orientation\goblin_direwolf_rider_orientation.png" />
+	<sprite id="goblin_whitedirewolf_rider" ic="FF22200A" img="orientation\goblin_whitedirewolf_rider_orientation.png" />
+	<sprite id="enraged_hyena_orientation" ic="FF22200A" img="orientation\enraged_hyena_orientation.png" />
 </brush>

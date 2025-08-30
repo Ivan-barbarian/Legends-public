@@ -122,6 +122,23 @@ if (!("Perks" in ::Const))
 	]
 };
 
+::Const.Perks.ConArtistTree <- {
+	ID = "ConArtistTree",
+	Name = "Con Artist",
+	Descriptions = [
+		"sleight of hand"
+	],
+	Tree = [
+		[::Legends.Perk.LegendSleightOfHand],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[]
+	]
+};
+
 ::Const.Perks.PickaxeClassTree <- {
 	ID = "PickaxeClassTree",
 	Name = "Miner",
@@ -352,7 +369,7 @@ if (!("Perks" in ::Const))
 	Tree = [
 		[::Legends.Perk.LegendLeap],
 		[::Legends.Perk.LegendHairSplitter],
-		[::Legends.Perk.Rotation],
+		[::Legends.Perk.LegendTacticalManeuvers],
 		[::Legends.Perk.LegendTwirl],
 		[::Legends.Perk.Footwork],
 		[::Legends.Perk.LegendBackflip],
@@ -466,10 +483,10 @@ if (!("Perks" in ::Const))
 		::Const.Perks.InventorClassTree,
 		::Const.Perks.SickleClassTree,
 		::Const.Perks.ScytheClassTree,
-		::Const.Perks.SharpshooterClassTree
+		::Const.Perks.SharpshooterClassTree,
 		::Const.Perks.ShovelClassTree,
 		::Const.Perks.SlingClassTree,
-		::Const.Perks.SpearfisherClassTree
+		::Const.Perks.SpearfisherClassTree,
 		::Const.Perks.StaffClassTree,
 		::Const.Perks.RaiderClassTree
 	],

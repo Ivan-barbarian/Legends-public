@@ -1877,7 +1877,7 @@
 		],
 		Cloak = [
 			[1, ""],
-			[1, "cloak/legend_dark_wooly_cloak", 13],
+			[1, "cloak/legend_dark_wooly_cloak"],
 			[1, "cloak/legend_southern_scarf", 7],
 			[1, "cloak/legend_southern_scarf", 6],
 			[1, "cloak/legend_southern_scarf", 13],
@@ -2649,7 +2649,7 @@
 			[1, "chain/legend_armor_short_mail"],
 		],
 		Plate = [
-			[1, "plate/legend_lindwurm_scale_armor"],
+			[1, "named/legend_lindwurm_scale_armor"],
 		],
 		Cloak = [
 			[10, ""],

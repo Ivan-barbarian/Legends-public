@@ -30,6 +30,7 @@ this.legend_oxtongue_spear <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.Thrust);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendHeartseeker);
 		::Legends.Actives.grant(this, ::Legends.Active.Spearwall);
 	}
 

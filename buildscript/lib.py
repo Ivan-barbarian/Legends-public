@@ -49,7 +49,7 @@ class BuildUtils:
             raise BuildError(error_msg)
 
     @staticmethod
-    def run_command(cmd, cwd=None, capture_output=True, text=True, context=""):
+    def run_command(cmd, cwd=None, capture_output=True, text=True, context="", encoding='utf-8', errors='replace'):
         """Run a command and handle errors"""
         try:
             result = subprocess.run(cmd, capture_output=capture_output, text=text, cwd=cwd)
@@ -115,7 +115,7 @@ class BuildUtils:
         if use_7z:
             try:
                 cmd = ["7z", "a", "-tzip", str(zip_path)] + [str(item) for item in items]
-                result = subprocess.run(cmd, capture_output=True, text=True)
+                result = subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8', errors='replace')
                 if result.returncode == 0:
                     return
             except FileNotFoundError:
@@ -145,7 +145,7 @@ class BuildUtils:
         if use_7z:
             try:
                 cmd = ["7z", "a", str(zip_path)] + [str(item) for item in items]
-                result = subprocess.run(cmd, capture_output=True, text=True)
+                result = subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8', errors='replace')
                 if result.returncode == 0:
                     return
             except FileNotFoundError:
@@ -234,7 +234,7 @@ class GitUtils:
         """Get git status output"""
         try:
             result = subprocess.run(["git", "status", "-s"],
-                                  capture_output=True, text=True, cwd=self.repo_dir)
+                                  capture_output=True, text=True, cwd=self.repo_dir, encoding='utf-8', errors='replace')
             if result.returncode != 0:
                 print("Warning: Could not get git status")
                 return ""
@@ -247,7 +247,7 @@ class GitUtils:
         """Get commit hash for a given reference"""
         try:
             result = subprocess.run(["git", "rev-parse", ref],
-                                  capture_output=True, text=True, cwd=self.repo_dir)
+                                  capture_output=True, text=True, cwd=self.repo_dir, encoding='utf-8', errors='replace')
             if result.returncode == 0:
                 return result.stdout.strip()
             else:
@@ -263,7 +263,7 @@ class GitUtils:
 
         try:
             result = subprocess.run(["git", "diff", "--name-only", since_ref, "HEAD"],
-                                  capture_output=True, text=True, cwd=self.repo_dir)
+                                  capture_output=True, text=True, cwd=self.repo_dir, encoding='utf-8', errors='replace')
             if result.returncode == 0:
                 return result.stdout.strip().split('\n') if result.stdout.strip() else []
             else:
@@ -348,7 +348,7 @@ class BrushUtils:
                 str(brush_file), str(unpacked_dir)
             ]
 
-            result = subprocess.run(cmd, capture_output=True, text=True)
+            result = subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8', errors='replace')
 
             # Change back to original directory
             os.chdir(original_cwd)

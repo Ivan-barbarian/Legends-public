@@ -57,7 +57,7 @@
 			Weapon = [
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.SlingTree,
-				this.Const.Perks.StaffTree,
+				this.Const.Perks.PolearmTree
 				this.Const.Perks.FistsTree
 			],
 			Defense = [

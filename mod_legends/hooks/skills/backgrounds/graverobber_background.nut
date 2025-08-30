@@ -18,7 +18,7 @@
 			::Legends.Traits.getID(::Legends.Trait.NightBlind),
 			::Legends.Traits.getID(::Legends.Trait.Cocky),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Loyal),
 			::Legends.Traits.getID(::Legends.Trait.Optimist),
 			::Legends.Traits.getID(::Legends.Trait.Superstitious),
@@ -57,7 +57,7 @@
 			Class = [
 				this.Const.Perks.ShovelClassTree
 			],
-			Profession = [], 
+			Profession = [],
 			Magic = []
 		}
 	}

@@ -39,6 +39,9 @@ this.legend_wooden_pitchfork <- this.inherit("scripts/items/weapons/weapon", {
 			_skill.m.IconDisabled = "skills/active_57_sw.png";
 			_skill.m.Overlay = "active_57";
 		}.bindenv(this));
+		::Legends.Actives.grant(this, ::Legends.Active.LegendHeartseeker, function (_skill) {
+			_skill.m.IsPolearm = true;
+		});
 		::Legends.Actives.grant(this, ::Legends.Active.Repel, function (_skill) {
 			_skill.m.Icon = "skills/active_58.png";
 			_skill.m.IconDisabled = "skills/active_58_sw.png";

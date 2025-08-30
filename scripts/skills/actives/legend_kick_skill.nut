@@ -107,7 +107,7 @@ this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 		if (::Legends.Perks.has(this, ::Legends.Perk.LegendPugilist))
 			return false;
 
-		local skill = ::Legends.Effects.get(this, ::Legends.Effect.DoubleGrip)
+		local skill = ::Legends.Effects.get(this, ::Legends.Effect.DoubleGrip);
 		if (skill.canDoubleGrip())
 			return false;
 		local items = this.getContainer().getActor().getItems();

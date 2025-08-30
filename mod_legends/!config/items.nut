@@ -53,7 +53,6 @@
 	"legend_helmets/helm/legend_helmet_barbute_two_piece_named",
 	"legend_helmets/helm/legend_helmet_bascinet_named",
 	"legend_helmets/helm/legend_helmet_kettle_helm_named",
-	"legend_helmets/helm/legend_helmet_fluted_kettle_helm_named",
 	"legend_helmets/helm/legend_helmet_wallace_sallet_named",
 	"legend_helmets/helm/legend_helmet_deep_sallet_named",
 	"legend_helmets/helm/legend_helmet_stag_helm",
@@ -129,12 +128,13 @@ foreach (i in garbage)
 ::Const.Items.NamedGoblinWeapons.extend([
 	"weapons/named/legend_named_goblin_axe_2h",
 	"weapons/named/legend_named_goblin_notched_blade",
-	"weapons/named/legend_named_goblin_crossbow"
+	"weapons/named/legend_named_goblin_crossbow",
+	"weapons/named/legend_named_goblin_gruesome_falchion"
 ]);
 
 ::Const.Items.NamedMeleeWeapons.extend([
 	"weapons/named/named_fencing_sword",
-	"weapons/named/legend_named_longsword",
+	"weapons/named/legend_named_flamberge",
 	"weapons/named/legend_named_longsword",
 	"weapons/named/legend_named_estoc",
 	"weapons/named/legend_named_glaive",
@@ -154,7 +154,10 @@ foreach (i in garbage)
 ]);
 
 ::Const.Items.NamedRangedWeapons.extend([
-	"weapons/named/legend_named_northern_sling"
+	"weapons/named/legend_named_northern_sling",
+	"weapons/named/legend_named_nomad_sling",
+	"weapons/named/legend_named_heavy_javelin",
+	"weapons/named/legend_named_heavy_throwing_axe"
 ]);
 ::Const.Items.NamedWeapons <- clone ::Const.Items.NamedMeleeWeapons;
 ::Const.Items.NamedWeapons.extend(::Const.Items.NamedRangedWeapons);

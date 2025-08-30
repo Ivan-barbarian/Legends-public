@@ -59,9 +59,6 @@
 	"bust_head_southern_female_08",
 	"bust_head_southern_female_09",
 	"bust_head_southern_female_10",
-	"bust_head_southern_female_11",
-	"bust_head_southern_female_12",
-	"bust_head_southern_female_13"
 ];
 
 ::Const.Faces.AllWhiteHuman <- [
@@ -95,14 +92,7 @@
 	"bust_head_female_07",
 	"bust_head_female_08",
 	"bust_head_female_09",
-	"bust_head_female_10",
-	"bust_head_female_11",
-	"bust_head_female_12",
-	"bust_head_female_13",
-	"bust_head_female_14",
-	"bust_head_female_15",
-	"bust_head_female_16",
-	"bust_head_female_17"
+	"bust_head_female_10"
 ];
 
 ::Const.Faces.AllWhiteMale <- [
@@ -139,14 +129,7 @@
 	"bust_head_female_07",
 	"bust_head_female_08",
 	"bust_head_female_09",
-	"bust_head_female_10",
-	"bust_head_female_11",
-	"bust_head_female_12",
-	"bust_head_female_13",
-	"bust_head_female_14",
-	"bust_head_female_15",
-	"bust_head_female_16",
-	"bust_head_female_17",
+	"bust_head_female_10"
 ];
 
 ::Const.Faces.AllFemale <- [
@@ -159,14 +142,7 @@
 	"bust_head_female_07",
 	"bust_head_female_08",
 	"bust_head_female_09",
-	"bust_head_female_10",
-	"bust_head_female_11",
-	"bust_head_female_12",
-	"bust_head_female_13",
-	"bust_head_female_14",
-	"bust_head_female_15",
-	"bust_head_female_16",
-	"bust_head_female_17"
+	"bust_head_female_10"
 ];
 
 ::Const.Faces.PrettyFemale <- [
@@ -179,14 +155,7 @@
 	"bust_head_female_07",
 	"bust_head_female_08",
 	"bust_head_female_09",
-	"bust_head_female_10",
-	"bust_head_female_11",
-	"bust_head_female_12",
-	"bust_head_female_13",
-	"bust_head_female_14",
-	"bust_head_female_15",
-	"bust_head_female_16",
-	"bust_head_female_17"
+	"bust_head_female_10"
 ];
 
 ::Const.Faces.SouthernMale <- [
@@ -210,10 +179,7 @@
 	"bust_head_southern_female_07",
 	"bust_head_southern_female_08",
 	"bust_head_southern_female_09",
-	"bust_head_southern_female_10",
-	"bust_head_southern_female_11",
-	"bust_head_southern_female_12",
-	"bust_head_southern_female_13"
+	"bust_head_southern_female_10"
 ];
 
 ::Const.Faces.Donkey <- [
@@ -233,8 +199,7 @@
 
 ::Const.Faces.OldFemale <- [
 	"bust_head_female_08",
-	"bust_head_female_11",
-	"bust_head_female_15"
+	"bust_head_female_10"
 ];
 
 ::Const.Faces.Berserker <- [
@@ -243,35 +208,9 @@
 ];
 
 ::Const.Faces.WildFemale <- [
-	"bust_head_female_01",
-	"bust_head_female_02",
-	"bust_head_female_03",
-	"bust_head_female_04",
-	"bust_head_female_05",
 	"bust_head_female_06",
-	"bust_head_female_07",
 	"bust_head_female_08",
-	"bust_head_female_09",
-	"bust_head_female_10",
-	"bust_head_female_11",
-	"bust_head_female_12",
-	"bust_head_female_13",
-	"bust_head_female_14",
-	"bust_head_female_15",
-	"bust_head_female_16",
-	"bust_head_female_17"
-];
-
-::Const.Faces.SouthernFemale <- [
-	"bust_head_southern_female_01",
-	"bust_head_southern_female_02",
-	"bust_head_southern_female_03",
-	"bust_head_southern_female_04",
-	"bust_head_southern_female_05",
-	"bust_head_southern_female_06",
-	"bust_head_southern_female_07",
-	"bust_head_southern_female_08",
-	"bust_head_southern_female_09"
+	"bust_head_female_10"
 ];
 
 ::Const.Faces.NecromancerMale <- [
@@ -336,6 +275,10 @@
 	"26",
 	"27",
 	"28",
+	"29",
+	"30",
+	"31",
+	"32",
 	"southern_01",
 	"southern_02",
 	"southern_03",
@@ -365,7 +308,11 @@
 	"25",
 	"26",
 	"27",
-	"28"
+	"28",
+	"29",
+	"30",
+	"31",
+	"32",
 ];
 
 ::Const.Hair.Horse <- [
@@ -377,6 +324,11 @@
 	"horse_hair_ruddy",
 	"horse_hair_tan",
 	"horse_hair_white"
+];
+
+::Const.Hair.VampireLady <- [
+	"zombie_lady_01",
+	"zombie_lady_02"
 ];
 
 ::Const.Beards.Berserker <- [
@@ -467,7 +419,6 @@
 ];
 
 ::Const.Bodies.AllFemale <- [
-	"bust_naked_body_03",
 	"bust_female_southern_body_00",
 	"bust_female_southern_body_01",
 	"bust_female_southern_body_02",
@@ -499,17 +450,19 @@
 	"bust_female_southern_body_04",
 	"bust_female_southern_body_05"
 ];
+
 ::Const.Bodies.BarberNorthernFemale <- [
-	"bust_naked_body_03",
 	"bust_female_northern_body_00",
 	"bust_female_northern_body_01",
 	"bust_female_northern_body_02"
 ];
+
 ::Const.Bodies.BarberSouthernMale <- [
 	"bust_naked_body_southern_00",
 	"bust_naked_body_southern_01",
 	"bust_naked_body_southern_02"
 ];
+
 ::Const.Bodies.BarberNorthernMale <- [
 	"bust_naked_body_00",
 	"bust_naked_body_01",
@@ -553,7 +506,11 @@
 	"25",
 	"26",
 	"27",
-	"28"
+	"28",
+	"29",
+	"30",
+	"31",
+	"32",
 ];
 
 ::Const.HairColors.African <- [

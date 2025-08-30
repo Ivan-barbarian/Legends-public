@@ -27,7 +27,7 @@ this.legend_decorated_crypt_cleaver <- this.inherit("scripts/items/weapons/weapo
 		this.m.ArmorDamageMult = 1.1;
 		this.m.DirectDamageMult = 0.2;
 		this.m.DirectDamageAdd = 0.15;
-		this.m.Bravery = 10;
+		// this.m.Bravery = 10;
 	}
 
 	function onEquip()

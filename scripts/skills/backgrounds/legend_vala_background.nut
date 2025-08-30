@@ -18,7 +18,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 			::Legends.Traits.getID(::Legends.Trait.Cocky),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
 			::Legends.Traits.getID(::Legends.Trait.Dastard),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Insecure),
 			::Legends.Traits.getID(::Legends.Trait.Disloyal),
 			::Legends.Traits.getID(::Legends.Trait.EagleEyes),
@@ -44,7 +44,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Level = 2;
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.StaffTree
+				this.Const.Perks.PolearmTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree,
@@ -69,7 +69,8 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 			Magic = [
 				this.Const.Perks.ValaChantMagicTree,
 				this.Const.Perks.ValaTranceMagicTree,
-				this.Const.Perks.ValaSpiritMagicTree
+				this.Const.Perks.ValaSpiritMagicTree,
+				this.Const.Perks.StavesMagicTree
 			]
 		};
 		this.m.CustomPerkTree = [

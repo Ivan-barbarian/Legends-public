@@ -1,4 +1,4 @@
-this.legends_risen_legion_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
+this.legend_risen_legion_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 	m = {},
 	function create()
 	{
@@ -12,7 +12,7 @@ this.legends_risen_legion_scenario <- this.inherit("scripts/scenarios/world/star
 		this.m.RosterTierMax = this.Const.Roster.getTierForSize(27);
 	}
 
-	o.onSpawnAssets = function ()
+	function onSpawnAssets()
 	{
 		local roster = this.World.getPlayerRoster();
 		local names = [];
@@ -130,7 +130,7 @@ this.legends_risen_legion_scenario <- this.inherit("scripts/scenarios/world/star
 
 				if (tile.IsOccupied)
 				{
-				}		
+				}
 				else if (tile.Type != this.Const.World.TerrainType.Desert)
 				{
 				}
@@ -184,7 +184,7 @@ this.legends_risen_legion_scenario <- this.inherit("scripts/scenarios/world/star
 		if (closest != null)
 		{
 			closest.setActive(false);
-			closest.spawnFireAndSmoke(); 
+			closest.spawnFireAndSmoke();
 		}
 
 		local settlement = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.Settlement); //pes. factions

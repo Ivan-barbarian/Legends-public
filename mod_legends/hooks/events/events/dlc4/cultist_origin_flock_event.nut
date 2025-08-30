@@ -9,19 +9,19 @@
 				s.start <- function ( _event ) {
 					local roster = this.World.getTemporaryRoster();
 					_event.m.Dude = roster.create("scripts/entity/tactical/player");
-					_event.m.Dude.getBaseProperties().MeleeSkill += 10;
 					_event.m.Dude.setStartValuesEx([
-					"cultist_background",
-					"cultist_background",
-					"cultist_background",
-					"cultist_background",
-					"legend_lurker_background",
-					"legend_lurker_background",
-					"legend_lurker_background",
-					"legend_husk_background",
-					"legend_husk_background",
-					"legend_magister_background"
+						"cultist_background",
+						"cultist_background",
+						"cultist_background",
+						"cultist_background",
+						"legend_lurker_background",
+						"legend_lurker_background",
+						"legend_lurker_background",
+						"legend_husk_background",
+						"legend_husk_background",
+						"legend_magister_background"
 					]);
+					_event.m.Dude.getBaseProperties().MeleeSkill += 10;
 					this.Characters.push(_event.m.Dude.getImagePath());
 				}
 			}

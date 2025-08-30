@@ -137,8 +137,8 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 			"shields/named/named_bandit_kite_shield",
 			"shields/named/named_bandit_heater_shield"
 		]);
-		local r = this.Math.rand(1,100);
-		if (r > 50)
+		local r = this.Math.rand(1, 100);
+		if (r > 25)
 		{
 			local namedWeaponArray = clone ::Const.Items.NamedMeleeWeapons;
 			::MSU.Array.remove(namedWeaponArray, "weapons/named/named_dagger");

@@ -21,6 +21,11 @@
 	o.onEquip = function ()
 	{
 		onEquip();
-		::Legends.Actives.grant(this, ::Legends.Active.LegendSkewer);
+		::Legends.Actives.grant(this.weapon, ::Legends.Active.LegendSkewer, function (_skill)
+		{
+			_skill.m.Icon = "skills/skewer_warfork.png";
+			_skill.m.IconDisabled = "skills/skewer_warfork_sw.png";
+			_skill.m.Overlay = "skewer_warfork";
+		}.bindenv(this));
 	}
 });

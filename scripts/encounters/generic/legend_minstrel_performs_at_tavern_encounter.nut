@@ -4,8 +4,9 @@ this.legend_minstrel_performs_at_tavern_encounter <- this.inherit("scripts/encou
     },
     function create() {
         this.createScreens();
-        this.m.Type = "encounter.legend_minstrel_performs_at_tavern_encounter";
+        this.m.Type = "encounter.legend_minstrel_performs_at_tavern";
         this.m.Name = "Minstrel wants to perform.";
+        this.m.Cooldown = 30 * ::World.getTime().SecondsPerDay;
     }
 
     function createScreens() {

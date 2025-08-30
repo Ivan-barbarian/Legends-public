@@ -23,7 +23,7 @@
 			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + fatPerHit + "[/color] extra fatigue on hit"
 		});
 
-		local grappler = ::Legends.Perks.get(this, ::Legends.Perk.LegendGrappler)
+		local grappler = ::Legends.Perks.get(this, ::Legends.Perk.LegendGrappler);
 		if (grappler != null)
 		{
 			tooltip.push({

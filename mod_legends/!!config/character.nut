@@ -182,6 +182,7 @@
 ::Const.CharacterProperties.IsSpecializedInFists <- false;
 ::Const.CharacterProperties.IsSpecializedInSlings <- false;
 ::Const.CharacterProperties.IsSpecializedInStaves <- false;
+::Const.CharacterProperties.IsSpecializedInMusic <- false;
 ::Const.CharacterProperties.IsSpecializedInStaffStun <- false;
 ::Const.CharacterProperties.IsSpecializedInSummons <- false;
 ::Const.CharacterProperties.DamageInitiativeMin <- 0;

@@ -38,24 +38,11 @@ this.legend_named_goblin_gruesome_falchion <- this.inherit("scripts/items/weapon
 	function onEquip()
 	{
 		this.named_weapon.onEquip();
-		::Legends.Actives.grant(this, ::Legends.Active.Gash, function (_skill)
-		{
+		::Legends.Actives.grant(this, ::Legends.Active.Gash, function (_skill) {
 			_skill.m.Icon = "skills/active_78.png";
 			_skill.m.IconDisabled = "skills/active_78_sw.png";
 			_skill.m.Overlay = "active_78";
 		}.bindenv(this));
 		::Legends.Actives.grant(this, ::Legends.Active.Riposte);
 	}
-
-	function onEquip()
-	{
-		this.named_weapon.onEquip();
-		local slash = this.new("scripts/skills/actives/slash");
-		slash.m.Icon = "skills/active_78.png";
-		slash.m.IconDisabled = "skills/active_78_sw.png";
-		slash.m.Overlay = "active_78";
-		this.addSkill(slash);
-		this.addSkill(this.new("scripts/skills/actives/riposte"));
-	}
-
 });

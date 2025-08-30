@@ -11,7 +11,7 @@ this.legend_pragmatic_trait <- this.inherit("scripts/skills/traits/character_tra
 			::Legends.Traits.getID(::Legends.Trait.Pessimist),
 			::Legends.Traits.getID(::Legends.Trait.Irrational),
 			::Legends.Traits.getID(::Legends.Trait.Dastard),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Paranoid),
 			::Legends.Traits.getID(::Legends.Trait.Insecure),
 			::Legends.Traits.getID(::Legends.Trait.Superstitious),
@@ -67,4 +67,3 @@ this.legend_pragmatic_trait <- this.inherit("scripts/skills/traits/character_tra
 	}
 
 });
-

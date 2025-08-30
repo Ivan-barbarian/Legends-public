@@ -19,7 +19,7 @@
 			::Legends.Traits.getID(::Legends.Trait.Bleeder),
 			::Legends.Traits.getID(::Legends.Trait.Bright),
 			::Legends.Traits.getID(::Legends.Trait.Asthmatic),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Tiny)
 		];
 		this.m.Titles = [
@@ -41,7 +41,6 @@
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.StaffTree,
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.SlingTree
@@ -61,7 +60,7 @@
 			],
 			Profession = [
 				this.Const.Perks.DogBreederProfessionTree
-			], 
+			],
 			Magic = []
 		}
 	}

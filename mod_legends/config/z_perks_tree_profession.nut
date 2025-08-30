@@ -92,7 +92,7 @@ if (!("Perks" in ::Const))
 		[],
 		[],
 		[::Legends.Perk.LegendDogBreeder],
-		[],
+		[::Legends.Perk.LegendHippology],
 		[],
 		[]
 	]
@@ -132,6 +132,30 @@ if (!("Perks" in ::Const))
 	]
 };
 
+::Const.Perks.CaravaneerProfessionTree <- {
+	ID = "CaravaneerProfessionTree",
+	Name = "Caraveneering",
+	Descriptions = [
+		"woodworking"
+	],
+	Tree = [
+		[],
+		[],
+		[
+			::Legends.Perk.LegendEfficientPacking
+		],
+		[],
+		[
+			::Legends.Perk.LegendHippology,
+			::Legends.Perk.LegendSkillfulStacking
+		],
+		[
+			::Legends.Perk.LegendWheelMaintenance
+		],
+		[]
+	]
+};
+
 ::Const.Perks.HerbalistProfessionTree <- {
 	ID = "HerbalistProfessionTree",
 	Name = "Herbalism",
@@ -149,11 +173,33 @@ if (!("Perks" in ::Const))
 	]
 };
 
+::Const.Perks.FencingTeacherProfessionTree <- {
+	ID = "FencingTeacherProfessionTree",
+	Name = "Fencing",
+	Descriptions = [
+		"fencing"
+	],
+	Tree = [
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[
+			::Legends.Perk.LegendMasterTrainer,
+			::Legends.Perk.LegendWhipThemInShape
+		]
+	]
+};
+
 ::Const.Perks.ProfessionTrees <- {
 	Tree = [
 		::Const.Perks.BarterProfessionTree,
+		::Const.Perks.CaravaneerProfessionTree,
 		::Const.Perks.ChefProfessionTree,
 		::Const.Perks.DogBreederProfessionTree,
+		::Const.Perks.FencingTeacherProfessionTree,
 		::Const.Perks.HealerProfessionTree,
 		::Const.Perks.HerbalistProfessionTree,
 		::Const.Perks.MinerProfessionTree,

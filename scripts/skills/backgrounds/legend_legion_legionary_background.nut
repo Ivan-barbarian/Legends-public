@@ -28,7 +28,7 @@ this.legend_legion_legionary_background <- this.inherit("scripts/skills/backgrou
 			::Legends.Traits.getID(::Legends.Trait.Disloyal),
 			::Legends.Traits.getID(::Legends.Trait.Drunkard),
 			// ::Legends.Traits.getID(::Legends.Trait.Dumb),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Fat),
 			::Legends.Traits.getID(::Legends.Trait.FearUndead),
 			::Legends.Traits.getID(::Legends.Trait.FearGreenskins),
@@ -122,7 +122,7 @@ this.legend_legion_legionary_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.CleaverTree			
+				this.Const.Perks.CleaverTree
 			],
 			Defense = [
 				this.Const.Perks.HeavyArmorTree,
@@ -139,9 +139,9 @@ this.legend_legion_legionary_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.SpearfisherClassTree,
 				this.Const.Perks.ScytheClassTree
 			],
+			Profession = [],
 			Magic = []
 		}
-		this.getFlags().add("legion_can_command"); //justfies if this background is subject to the legion command skill
 	}
 
 	//Default Male
@@ -163,7 +163,7 @@ this.legend_legion_legionary_background <- this.inherit("scripts/skills/backgrou
 
 	function onBuildDescription() //to do
 	{
-		return "{ | }";
+		return "{ TODO | TODO }";
 	}
 
 	function onChangeAttributes() //uses Character_background.nut template (Skeleton)
@@ -205,7 +205,7 @@ this.legend_legion_legionary_background <- this.inherit("scripts/skills/backgrou
 		return c;
 	}
 
-	function onAdded() 
+	function onAdded()
 	{
 		if (this.m.IsNew)
 		{
@@ -239,6 +239,7 @@ this.legend_legion_legionary_background <- this.inherit("scripts/skills/backgrou
 			"injury.pierced_lung",
 			"injury.pierced_side"
 		];
+		this.getContainer().getActor().getFlags().add("legion_can_command");  //justfies if this background is subject to the legion command skill
 	}
 
 	function adjustHiringCostBasedOnEquipment() //reduces cost for equipment worn on skeletons to zero for recruiting purposes.
@@ -255,40 +256,37 @@ this.legend_legion_legionary_background <- this.inherit("scripts/skills/backgrou
 
 		if (r == 1)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/bladed_pike"));
+			items.equip(this.new("scripts/items/weapons/ancient/bladed_pike"));
 		}
 		else if (r == 2)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/warscythe"));
+			items.equip(this.new("scripts/items/weapons/ancient/warscythe"));
 		}
 		else if (r == 3)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_spear"));
+			items.equip(this.new("scripts/items/weapons/ancient/ancient_spear"));
 		}
 		else if (r == 4)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_sword"));
+			items.equip(this.new("scripts/items/weapons/ancient/ancient_sword"));
 		}
 		else if (r == 5)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/broken_ancient_sword"));
+			items.equip(this.new("scripts/items/weapons/ancient/broken_ancient_sword"));
 		}
 
-		if (this.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
+		if (items.getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
 		{
 			if (this.Math.rand(1, 100) <= 66)
 			{
-				this.m.Items.equip(this.new("scripts/items/shields/ancient/coffin_shield"));
+				items.equip(this.new("scripts/items/shields/ancient/coffin_shield"));
 			}
 			else
 			{
-				this.m.Items.equip(this.new("scripts/items/shields/ancient/tower_shield"));
+				items.equip(this.new("scripts/items/shields/ancient/tower_shield"));
 			}
 		}
 
-	o.onAddEquipment = function () //1 = least likely
-	{
-		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
 			[2, ::Legends.Armor.Ancient.ancient_scale_harness],
 			[2, ::Legends.Armor.Ancient.ancient_breastplate],
@@ -300,11 +298,9 @@ this.legend_legion_legionary_background <- this.inherit("scripts/skills/backgrou
 			// [1, ::Legends.Armor.Ancient.ancient_plated_mail_hauberk]
 		]));
 
-		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickHelmet([
 			[2, ::Legends.Helmet.Ancient.ancient_honorguard_helmet],
 			[1, ::Legends.Helmet.None]
 		]));
 	}
 });
-

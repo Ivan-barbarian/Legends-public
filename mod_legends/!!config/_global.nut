@@ -263,16 +263,22 @@ for (local i = -1; i < ::Const.EntityIcon.len(); i++) {
 ::Const.EntityType.LegendEnragedHyena <-
 	::Const.EntityType.addNew("enraged_hyena_orientation", "Enraged Hyena", "Enraged Hyenas", this.Const.FactionType.Beasts);
 ::Const.EntityType.LegendGoblinHarrier <-
-	::Const.EntityType.addNew("goblin_03_orientation", "Goblin Harrier", "Goblin Harriers", this.Const.FactionType.Goblins);
+	::Const.EntityType.addNew("goblin_harrier_orientation", "Goblin Harrier", "Goblin Harriers", this.Const.FactionType.Goblins);
 ::Const.EntityType.LegendGoblinBerserker <-
-	::Const.EntityType.addNew("goblin_01_orientation", "Goblin Berserker", "Goblin Berserkers", ::Const.FactionType.Goblins);
+	::Const.EntityType.addNew("goblin_berserker_orientation", "Goblin Berserker", "Goblin Berserkers", ::Const.FactionType.Goblins);
 ::Const.EntityType.LegendGoblinTribeDefender <-
-	::Const.EntityType.addNew("goblin_03_orientation", "Goblin Tribe Defender", "Goblin Tribe Defenders", ::Const.FactionType.Goblins);
+	::Const.EntityType.addNew("goblin_tribe_defender_orientation", "Goblin Tribe Defender", "Goblin Tribe Defenders", ::Const.FactionType.Goblins);
 ::Const.EntityType.LegendGoblinDirewolfRider <-
-	::Const.EntityType.addNew("goblin_05_orientation", "Direwolf Rider", "Direwolf Riders", this.Const.FactionType.Goblins);
+	::Const.EntityType.addNew("goblin_direwolf_orientation", "Direwolf Rider", "Direwolf Riders", this.Const.FactionType.Goblins);
 ::Const.EntityType.LegendGoblinWhiteDirewolfRider <-
-	::Const.EntityType.addNew("goblin_05_orientation", "White Direwolf Rider", "White Direwolf Riders", this.Const.FactionType.Goblins);
+	::Const.EntityType.addNew("goblin_whitedirewolf_orientation", "White Direwolf Rider", "White Direwolf Riders", this.Const.FactionType.Goblins);
 ::Const.EntityType.LegendGoblinWitchDoctor <-
-	::Const.EntityType.addNew("goblin_02_orientation", "Goblin Witchdoctor", "Goblin Witchdoctors", this.Const.FactionType.Goblins);
+	::Const.EntityType.addNew("goblin_witchdoctor_orientation", "Goblin Witchdoctor", "Goblin Witchdoctors", this.Const.FactionType.Goblins);
 ::Const.EntityType.LegendGoblinPlunderer <-
-	::Const.EntityType.addNew("goblin_03_orientation", "Goblin Plunderer", "Goblin Plunderer", this.Const.FactionType.Goblins);
+	::Const.EntityType.addNew("goblin_plunderer_orientation", "Goblin Plunderer", "Goblin Plunderers", this.Const.FactionType.Goblins);
+::Const.EntityType.LegendBarbarianPillager <-
+	::Const.EntityType.addNew("barbarian_pillager_orientation", "Barbarian Pillager", "Barbarian Pillagers", this.Const.FactionType.Barbarians);
+::Const.EntityType.LegendBarbarianMarauder <-
+	::Const.EntityType.addNew("barbarian_marauder_orientation", "Barbarian Marauder", "Barbarian Marauders", this.Const.FactionType.Barbarians);
+::Const.EntityType.LegendBarbarianRunechosen <-
+	::Const.EntityType.addNew("barbarian_marauder_orientation", "Barbarian Runechosen", "Barbarian Runechosen", this.Const.FactionType.Barbarians);

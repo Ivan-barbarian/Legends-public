@@ -3126,10 +3126,18 @@ activesDefs.push({
 	Name = "Censer Strike",
 });
 
-::Legends.Active.legendCommandLegion <- null;
+::Legends.Active.LegendDawgBite <- null;
+activesDefs.push({
+	ID = "actives.legend_dawg_bite",
+	Script = "scripts/skills/actives/legend_dawg_bite_skill",
+	Const = "LegendDawgBite",
+	Name = "Dawg Bite",
+});
+
+::Legends.Active.LegendCommandLegion <- null;
 activesDefs.push({
 	ID = "actives.legend_command_legion",
-	Script = "scripts/skills/actives/legend_command_legion",
+	Script = "scripts/skills/actives/legend_command_legion_skill",
 	Const = "CommandLegionary",
 	Name = "Command Legionary",
 });

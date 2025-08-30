@@ -73,7 +73,7 @@
 				[1, ::Legends.Helmet.Standard.barbarian_chosen_helmet_02],
 			];
 			this.m.Items.equip(this.Const.World.Common.pickHelmet(helmet));
-		}
+		}		
 	}
 
 	o.makeMiniboss = function ()
@@ -85,8 +85,24 @@
 
 		this.getSprite("miniboss").setBrush("bust_miniboss");
 		local weapons = this.Const.Items.NamedBarbarianWeapons;
-		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
-		::Legends.Perks.grant(this, ::Legends.Perk.Fearsome);
+		local armor = this.Const.Items.NamedBarbarianArmors;
+		local helmets = this.Const.Items.NamedBarbarianHelmets;
+		local r = this.Math.rand(1, 3);
+
+		if (r == 1)
+		{
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		}
+		else if (r == 2)
+		{
+			local weightName = this.Const.World.Common.convNameToList(armor);
+			this.m.Items.equip(this.Const.World.Common.pickArmor(weightName));
+		}
+		else
+		{
+			local weightName = this.Const.World.Common.convNameToList(helmets);
+			this.m.Items.equip(this.Const.World.Common.pickHelmet(weightName));
+		}
 		return true;
 	}
 });

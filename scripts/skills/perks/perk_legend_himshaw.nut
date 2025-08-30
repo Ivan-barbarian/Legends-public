@@ -22,7 +22,7 @@ this.perk_legend_himshaw <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 		local body = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
-		local bodyAdded = 0
+		local bodyAdded = 0;
 		local bodyMissing = 0;
 		local repaired = false;
 		if (body)

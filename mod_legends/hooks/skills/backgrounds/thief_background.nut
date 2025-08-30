@@ -81,7 +81,10 @@
 				this.Const.Perks.SouthernersTree,
 				this.Const.Perks.MercenaryTree
 			],
-			Class = [this.Const.Perks.KnifeClassTree],
+			Class = [
+				this.Const.Perks.KnifeClassTree,
+				this.Const.Perks.ConArtistTree
+			],
 			Profession = [], 
 			Magic = []
 		}

@@ -34,7 +34,7 @@ this.legend_husk_background <- this.inherit("scripts/skills/backgrounds/characte
 			::Legends.Traits.getID(::Legends.Trait.Bright),
 			::Legends.Traits.getID(::Legends.Trait.Greedy),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed)
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted)
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.RangedSkill,
@@ -263,4 +263,3 @@ this.legend_husk_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.getContainer().getActor().getFlags().add("cultist");
 	}
 });
-

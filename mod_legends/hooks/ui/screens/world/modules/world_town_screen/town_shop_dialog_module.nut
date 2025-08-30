@@ -249,4 +249,34 @@
 
 		return null;
 	}
+
+	local onCanSwapItem = o.onCanSwapItem;
+	o.onCanSwapItem = function (_data) {
+		// if checked, use vanilla
+		if (::Legends.Mod.ModSettings.getSetting("SellDialogNamed").getValue())
+			return onCanSwapItem(_data);
+
+		// if not town shop, use vanilla
+		if (_data[1] != "world-town-screen-shop-dialog-module.stash")
+			return onCanSwapItem(_data);
+
+		// if item null, use vanilla
+		local itemWrapper = this.Stash.getItemAtIndex(_data[0]);
+		if (itemWrapper == null)
+			return onCanSwapItem(_data);
+
+		// little switcheroo to suppress named items in dialog checks
+		local orgIsPrecious = itemWrapper.item.isPrecious;
+		local orgIsUnique = itemWrapper.item.isUnique;
+
+		itemWrapper.item.isPrecious = @() this.isItemType(this.Const.Items.ItemType.Legendary) || this.isItemType(this.Const.Items.ItemType.Quest) || this.m.IsPrecious;
+		itemWrapper.item.isUnique = @() this.isItemType(this.Const.Items.ItemType.Legendary) || this.isItemType(this.Const.Items.ItemType.Quest) || this.m.IsUnique;
+
+		local ret = onCanSwapItem(_data);
+
+		itemWrapper.item.isPrecious = orgIsPrecious;
+		itemWrapper.item.isUnique = orgIsUnique;
+
+		return ret;
+	}
 });

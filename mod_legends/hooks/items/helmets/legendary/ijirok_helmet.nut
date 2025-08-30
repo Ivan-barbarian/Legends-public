@@ -30,6 +30,13 @@
 		return result;
 	}
 
+	local onCombatFinished = o.onCombatFinished;
+	o.onCombatFinished = function () {
+		if (::Legends.S.isNull(this.getContainer()))
+			return;
+		onCombatFinished();
+	}
+
 	o.onTurnStart = function () {
 		local actor = this.getContainer().getActor();
 		local healthMissing = actor.getHitpointsMax() - actor.getHitpoints();

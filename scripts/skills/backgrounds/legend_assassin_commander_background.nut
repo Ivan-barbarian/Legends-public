@@ -35,7 +35,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 			::Legends.Traits.getID(::Legends.Trait.Asthmatic),
 			::Legends.Traits.getID(::Legends.Trait.Greedy),
 			::Legends.Traits.getID(::Legends.Trait.Fragile),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
 			::Legends.Traits.getID(::Legends.Trait.Bleeder),
 			::Legends.Traits.getID(::Legends.Trait.Bright),
@@ -301,4 +301,3 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 	}
 
 });
-

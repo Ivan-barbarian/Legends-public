@@ -49,7 +49,7 @@ this.legend_necromancer_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.StaffTree,
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.CleaverTree
 			],
@@ -66,7 +66,8 @@ this.legend_necromancer_background <- this.inherit("scripts/skills/backgrounds/c
 			Class = [],
 			Profession = [],
 			Magic = [
-				this.Const.Perks.BasicNecroMagicTree
+				this.Const.Perks.BasicNecroMagicTree,
+				this.Const.Perks.StavesMagicTree
 			]
 		}
 	}

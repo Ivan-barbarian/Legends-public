@@ -48,7 +48,7 @@
 
 		local properties = this.getContainer().getActor().getCurrentProperties();
 		local effects = properties.IsSpecializedInStaffStun ? "daze, stagger and stun" : "daze";
-		if (properties.IsSpecializedInStaves)
+		if (properties.IsSpecializedInPolearms)
 		{
 			ret.push({
 				id = 7,
@@ -57,7 +57,7 @@
 				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to" + effects + " on a hit"
 			});
 		}
-		else if (!properties.IsSpecializedInStaves)
+		else if (!properties.IsSpecializedInPolearms)
 		{
 			ret.push({
 				id = 7,
@@ -75,7 +75,7 @@
 	{
 		if (this.m.IsStaffKnockOut)
 		{
-			this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+			this.m.FatigueCostMult = _properties.IsSpecializedInPolearms ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		}
 		else
 		{
@@ -97,7 +97,7 @@
 		{
 			local target = _targetTile.getEntity();
 
-			local stun = (this.m.IsStaffKnockOut ? _user.getCurrentProperties().IsSpecializedInStaves : _user.getCurrentProperties().IsSpecializedInMaces) || this.Math.rand(1, 100) <= this.m.StunChance;
+			local stun = (this.m.IsStaffKnockOut ? _user.getCurrentProperties().IsSpecializedInPolearms : _user.getCurrentProperties().IsSpecializedInMaces) || this.Math.rand(1, 100) <= this.m.StunChance;
 			local canStun = !target.getCurrentProperties().IsImmuneToStun && !target.getSkills().hasEffect(::Legends.Effect.Stunned);
 			if (this.m.IsStaffKnockOut && stun)
 			{	

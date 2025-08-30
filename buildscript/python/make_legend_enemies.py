@@ -408,23 +408,18 @@ enemies = r"""
 <sprite id="bust_vampire_lord_head_03" offsetY="35" ic="FF323E47" width="104" height="142" img="entity\undead\bust_vampire_lord_head_03.png" left="-17" right="29" top="-14" bottom="48" />
 <sprite id="bust_vampire_lord_head_02" offsetY="35" ic="FF3E4C5A" width="104" height="142" img="entity\undead\bust_vampire_lord_head_02.png" left="-17" right="29" top="-12" bottom="48" />
 <sprite id="bust_vampire_lord_head_01" offsetY="35" ic="FF495564" width="104" height="142" img="entity\undead\bust_vampire_lord_head_01.png" left="-17" right="27" top="-30" bottom="44" />
-<sprite id="bust_body_vampire_lord_armor_01" offsetY="39" ic="FF29598E" width="104" height="142" img="entity\undead\armor\bust_body_vampire_lord_armor_01.png" left="-25" right="35" top="-41" bottom="7" />
-<sprite id="bust_body_vampire_lord_armor_01_damaged" offsetY="39" ic="FF265384" width="104" height="142" img="entity\undead\armor\bust_body_vampire_lord_armor_01_damaged.png" left="-25" right="35" top="-41" bottom="7" />
-<sprite id="bust_body_vampire_lord_armor_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF285789" width="191" height="185" img="entity\undead\armor\bust_body_vampire_lord_armor_01_dead.png" left="-31" right="25" top="-43" bottom="9" />
-<sprite id="bust_body_vampire_lord_armor_01_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF464D51" width="191" height="185" img="entity\undead\armor\bust_body_vampire_lord_armor_01_dead_arrows.png" left="-22" right="34" top="-9" bottom="39" />
-<sprite id="bust_body_vampire_lord_armor_01_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF141C29" width="191" height="185" img="entity\undead\armor\bust_body_vampire_lord_armor_01_dead_javelin.png" left="-17" right="15" top="1" bottom="63" />
-<sprite id="bust_helmet_vampire_lord_01" offsetX="-2" offsetY="35" ic="FF2E3C51" width="184" height="222" img="entity\undead\helmets\bust_helmet_vampire_lord_01.png" left="-27" right="37" top="11" bottom="55" />
-<sprite id="bust_helmet_vampire_lord_01_damaged" offsetY="35" ic="FF2C3B51" width="184" height="222" img="entity\undead\helmets\bust_helmet_vampire_lord_01_damaged.png" left="-28" right="36" top="10" bottom="80" />
-<sprite id="bust_helmet_vampire_lord_01_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF2D3C52" width="191" height="185" img="entity\undead\helmets\bust_helmet_vampire_lord_01_dead.png" left="-63" right="3" top="-74" bottom="-8" />
-<sprite id="bust_vampire_lord_hair_01" offsetY="35" ic="FF69798B" width="120" height="248" img="entity\undead\bust_vampire_lord_hair_01.png" left="-16" right="28" top="-4" bottom="48" />
-<sprite id="bust_vampire_lord_hair_01_dead" offsetX="-6" offsetY="6" f="64F2" f1="-5" f2="-10" ic="FF768697" width="179" height="154" img="entity\undead\bust_vampire_lord_hair_01_dead.png" left="-12" right="36" top="-25" bottom="27" />
 <sprite id="bust_vampire_lord_dead" offsetY="12" f="64FF" ic="FF465E6A" img="entity\undead\bust_vampire_lord_dead.png" left="-58" right="59" />
-<sprite id="bust_vampire_lady_head_01" offsetY="35" ic="FF495564" width="44" height="74" img="entity\undead\bust_vampire_lady_head_01.png" left="-17" right="27" top="-30" bottom="44" />
+<sprite id="bust_vampire_lady_head_01" offsetY="35" ic="FF495564" width="104" height="142" img="entity\undead\bust_vampire_lady_head_01.png" left="-24" right="25" top="-21" bottom="52" />
+<sprite id="bust_vampire_lady_head_02" offsetY="35" ic="FF495564" width="104" height="142" img="entity\undead\bust_vampire_lady_head_02.png" left="-24" right="25" top="-21" bottom="52" />
 <sprite id="bust_vampire_lady_body_01" offsetY="35" ic="FF5B6878" width="104" height="142" img="entity\undead\bust_vampire_lady_body_01.png" left="-42" right="40" top="-49" bottom="9" />
-<sprite id="bust_vampire_lady_head_02" offsetY="35" ic="FF495564" width="44" height="74" img="entity\undead\bust_vampire_lady_head_02.png" left="-17" right="27" top="-30" bottom="44" />
 <sprite id="bust_vampire_lady_body_02" offsetY="35" ic="FF5B6878" width="104" height="142" img="entity\undead\bust_vampire_lady_body_02.png" left="-42" right="40" top="-49" bottom="9" />
-
-
+<sprite id="hair_black_zombie_lady_01" offsetY="35" ic="FF5B6878" width="104" height="142" img="entity\undead\hair_zombie_lady_black_01.png" left="-28" right="28" top="-11" bottom="57" />
+<sprite id="hair_black_zombie_lady_02" offsetY="35" ic="FF5B6878" width="104" height="142" img="entity\undead\hair_zombie_lady_black_02.png" left="-23" right="27" top="-28" bottom="53" />
+<sprite id="hair_grey_zombie_lady_01" offsetY="35" ic="FF5B6878" width="104" height="142" img="entity\undead\hair_zombie_lady_grey_01.png" left="-28" right="28" top="-11" bottom="57" />
+<sprite id="hair_grey_zombie_lady_02" offsetY="35" ic="FF5B6878" width="104" height="142" img="entity\undead\hair_zombie_lady_grey_02.png" left="-23" right="27" top="-28" bottom="53" />
+<sprite id="bust_vampire_head_lady_detail_01" offsetY="35" ic="FF5B6878" width="104" height="142" img="entity\undead\bust_vampire_head_lady_detail_01.png" left="-14" right="24" top="12" bottom="48" />
+<sprite id="bust_vampire_lady_detail_01" offsetY="35" ic="FF5B6878" width="104" height="142" img="entity\undead\bust_vampire_lady_detail_01.png" left="-51" right="29" top="-46" bottom="14" />
+<sprite id="bust_vampire_lady_detail_02" offsetY="35" ic="FF5B6878" width="104" height="142" img="entity\undead\bust_vampire_lady_detail_02.png" left="-34" right="31" top="-45" bottom="-4" />
 
 <sprite id="bust_demon_hound_01" offsetY="35" offsetX="-10" ic="FF192432" width="106" height="99" img="entity\undead\bust_demon_hound_01.png" left="-55" right="51" top="-54" bottom="45" />
 <sprite id="bust_demon_hound_02" offsetY="35" offsetX="-10" ic="FF192432" width="106" height="99" img="entity\undead\bust_demon_hound_02.png" left="-55" right="51" top="-54" bottom="45" />
@@ -488,9 +483,6 @@ enemies = r"""
 <sprite id="mummy_bandages_01" offsetY="35" ic="FF1A242E" width="104" height="142" img="entity\undead\armor\mummy_bandages_01.png" left="-42" right="44" top="-50" bottom="10" />
 <sprite id="mummy_bandages_01_damaged" offsetY="35" ic="FF19222C" width="104" height="142" img="entity\undead\armor\mummy_bandages_01_damaged.png" left="-42" right="44" top="-50" bottom="10" />
 <sprite id="mummy_bandages_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF1B252F" width="191" height="185" img="entity\undead\armor\mummy_bandages_01_dead.png" left="-41" right="43" top="-45" bottom="11" />
-<sprite id="mummy_bandages_02" offsetY="35" ic="FF1A222C" width="104" height="142" img="entity\undead\armor\mummy_bandages_02.png" left="-37" right="39" top="-50" bottom="8" />
-<sprite id="mummy_bandages_02_damaged" offsetY="35" ic="FF19222B" width="104" height="142" img="entity\undead\armor\mummy_bandages_02_damaged.png" left="-37" right="39" top="-50" bottom="8" />
-<sprite id="mummy_bandages_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF1B242E" width="191" height="185" img="entity\undead\armor\mummy_bandages_02_dead.png" left="-35" right="33" top="-44" bottom="16" />
 
 <sprite id="mummy_dress_01" offsetY="35" ic="FF1A242E" width="104" height="142" img="entity\undead\armor\mummy_dress_01.png" left="-42" right="44" top="-50" bottom="10" />
 <sprite id="mummy_dress_01_damaged" offsetY="35" ic="FF19222C" width="104" height="142" img="entity\undead\armor\mummy_dress_01_damaged.png" left="-42" right="44" top="-50" bottom="10" />

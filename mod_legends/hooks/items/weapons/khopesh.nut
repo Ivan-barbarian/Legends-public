@@ -1,4 +1,4 @@
-::mods_hookExactClass("items/weapons/khopesh", function(o) {
+::mods_hookExactClass("items/weapons/ancient/khopesh", function(o) {
 
 	local create = o.create;
 	o.create = function() {

@@ -650,6 +650,16 @@
 				bro.addXP(this.Math.max(1, this.Math.floor(XPgroup / brothers.len())));
 			}
 		}
+		if (::World.Statistics.getFlags().get("HasDrillSergeant") && this.getLevel() >= 12)
+		{
+			foreach( bro in brothers )
+			{
+				if (!bro.getCurrentProperties().IsAllyXPBlocked && bro.getLevel() < 12)
+				{
+					bro.addXP(this.Math.max(1, this.Math.floor(XPgroup / brothers.len())))
+				}
+			}
+		}
 	}
 
 	o.checkMorale = function ( _change, _difficulty, _type = this.Const.MoraleCheckType.Default, _showIconBeforeMoraleIcon = "", _noNewLine = false )
@@ -1531,12 +1541,18 @@
 
 	o.getStashModifier <- function ()
 	{
-		local broStash = this.getBackground().getModifiers().Stash;
+		local background = this.getBackground();
+		local broStash = background.getModifiers().Stash;
 		local item = this.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
 
 		if (item != null)
 		{
 			broStash = broStash + item.getStashModifier();
+		}
+
+		if (background.getID() == "background.legend_donkey")
+		{
+			broStash += background.getModifier();
 		}
 
 		local skills = [

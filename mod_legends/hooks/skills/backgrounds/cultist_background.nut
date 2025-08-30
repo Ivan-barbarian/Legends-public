@@ -34,7 +34,7 @@
 			::Legends.Traits.getID(::Legends.Trait.Bright),
 			::Legends.Traits.getID(::Legends.Trait.Greedy),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed)
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted)
 		];
 		this.m.Titles = [
 			"the Cultist",
@@ -86,7 +86,7 @@
 				this.Const.Perks.NinetailsClassTree,
 				this.Const.Perks.BeastClassTree
 			],
-			Profession = [], 
+			Profession = [],
 			Magic = []
 		}
 	}
@@ -257,4 +257,3 @@
 		this.getContainer().getActor().getFlags().add("cultist");
 	}
 });
-

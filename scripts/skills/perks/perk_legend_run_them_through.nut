@@ -75,7 +75,7 @@ this.perk_legend_run_them_through <- this.inherit("scripts/skills/skill", {
 
 	function attackTargetBehind(_targetEntity)
 	{
-		this.cleanup()
+		this.cleanup();
 
 		local actor = this.getContainer().getActor();
 		if (!actor || actor.isDying())
@@ -115,7 +115,7 @@ this.perk_legend_run_them_through <- this.inherit("scripts/skills/skill", {
 	}
 
 	function onTurnEnd()
-	{		
+	{
 		this.m.HasMoved = false;
 	}
 
@@ -129,8 +129,8 @@ this.perk_legend_run_them_through <- this.inherit("scripts/skills/skill", {
 		this.m.PrevTile = _tile;
 	}
 
-	function onMovementFinished (_tile) 
-	{	
+	function onMovementFinished (_tile)
+	{
 		if (_tile.getDistanceTo(this.m.PrevTile) > 0)
 			this.m.HasMoved = true;
 	}

@@ -31,7 +31,7 @@ this.legend_staff_riposte_effect <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.Tactical.TurnSequenceBar.getActiveEntity() == null || this.Tactical.TurnSequenceBar.getActiveEntity().getID() != this.getContainer().getActor().getID())
 		{
-			if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInStaves)
+			if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms)
 			{
 				_properties.MeleeSkill -= 10;
 			}

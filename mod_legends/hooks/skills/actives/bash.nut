@@ -72,7 +72,7 @@
 		}
 		else if (this.m.IsDrumBash || this.m.IsStaffBash)
 		{
-			this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+			this.m.FatigueCostMult = _properties.IsSpecializedInPolearms ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		}
 		else
 		{

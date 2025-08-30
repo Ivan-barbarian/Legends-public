@@ -1,7 +1,6 @@
 ::mods_hookExactClass("skills/actives/slash", function(o)
 {
 	o.m.IsGreatSlash <- false;
-	o.m.IsStaffSlash <- false;
 
 	o.setItem <- function (_item)
 	{
@@ -12,13 +11,6 @@
 			this.m.Description = "A hefty swift slashing attack dealing average damage.";
 			this.m.DirectDamageMult = 0.25;
 			this.m.FatigueCost = 13;
-		}
-		else if (this.m.IsStaffSlash)
-		{
-			this.m.Description = "A swift slashing attack dealing average damage that can cover the distance of 2 tiles and can be used from behind the frontline, outside the range of most melee weapons.";
-			this.m.FatigueCost = 13;
-			this.m.MaxRange = 2;
-			this.m.ActionPointCost = 5;
 		}
 	}
 

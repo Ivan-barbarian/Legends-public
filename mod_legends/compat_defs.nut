@@ -108,6 +108,7 @@
 ::Legends.Compat.HardIncompat.add("mod_background_perks", "2.6"); // Starting Perks by Background Hackflow
 ::Legends.Compat.HardIncompat.add("mod_balanced_tryout", "1.0"); // Balanced Tryouts
 ::Legends.Compat.HardIncompat.add("battle_fatigue", "0.5.0");
+::Legends.Compat.HardIncompat.add("mod_best"); // overhaul conflicts
 ::Legends.Compat.HardIncompat.add("mod_better_bros", "1.1.0");
 ::Legends.Compat.HardIncompat.add("mod_brawny_nimble", "1.0.1");
 ::Legends.Compat.HardIncompat.add("mod_brigandMercenary", "2.34");

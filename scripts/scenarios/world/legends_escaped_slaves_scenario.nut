@@ -47,7 +47,7 @@ this.legends_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/st
 		this.setRetireText(bros[0]);
 		::Legends.Traits.remove(bros[0], ::Legends.Trait.Dastard);
 		::Legends.Traits.remove(bros[0], ::Legends.Trait.Craven);
-		::Legends.Traits.remove(bros[0], ::Legends.Trait.Fainthearthed);
+		::Legends.Traits.remove(bros[0], ::Legends.Trait.Fainthearted);
 		::Legends.Traits.remove(bros[0], ::Legends.Trait.Insecure);
 		::Legends.Traits.remove(bros[0], ::Legends.Trait.Fragile);
 
@@ -453,4 +453,3 @@ this.legends_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/st
 	}
 
 });
-

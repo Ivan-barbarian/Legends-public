@@ -81,7 +81,7 @@
 	"legends_02"
 ]);
 ::Const.Tattoos.All.extend([
-
+	
 ]);
 
 //this is a dummy for dlc

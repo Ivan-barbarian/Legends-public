@@ -157,6 +157,7 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		}
 		else if (_layerID == "body")
 		{
+			::logInfo("ethnicity = " + ethnicity);
 			if (isFemale)
 			{
 				if (ethnicity == 1)
@@ -172,9 +173,9 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 				else
 				{
 					this.changeIndex(this.Const.Bodies.BarberNorthernFemale, temp.getSprite("body"), _change);
-					this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);			
+					this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);
 				}
-				
+
 			}
 			else
 			{
@@ -191,7 +192,7 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 				else
 				{
 					this.changeIndex(this.Const.Bodies.BarberNorthernMale, temp.getSprite("body"), _change);
-					this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);			
+					this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);
 				}
 			}
 		}
@@ -234,7 +235,7 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			{
 				this.changeIndexEx(this.Const.Hair.BarberFemale, temp.getSprite("hair"), _change, "hair", color, "");
 			}
-			
+
 			else
 			{
 				this.changeIndexEx(this.Const.Hair.Barber, temp.getSprite("hair"), _change, "hair", color, "");

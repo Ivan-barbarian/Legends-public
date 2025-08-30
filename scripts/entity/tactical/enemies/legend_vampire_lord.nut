@@ -9,7 +9,7 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.BloodType = this.Const.BloodType.Red;
 		this.m.MoraleState = this.Const.MoraleState.Ignore;
 		this.m.XP = this.Const.Tactical.Actor.LegendVampireLord.XP;
- 		if(this.Math.rand(1, 100) <= 25)
+ 		if(this.Math.rand(1, 100) <= 50)
 		 {
 			 this.m.IsLady = true;
 		 }
@@ -150,11 +150,10 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 		}
 		else if (this.m.IsLady == true)
 		{
-			this.getSprite("body").setBrush("bust_vampire_lady_body_01");
+			this.getSprite("body").setBrush("bust_vampire_lady_body_02");
 			this.getSprite("body_injury").setBrush("bust_skeleton_body_05_injured");
-			this.getSprite("head").setBrush("bust_vampire_lady_head_01");
+			this.getSprite("head").setBrush("bust_vampire_lady_head_02");
 			this.getSprite("injury").setBrush("bust_skeleton_head_05_injured");
-			this.getSprite("hair").setBrush("hair_black_25");
 		}
 		else
 		{
@@ -209,13 +208,13 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (this.Math.rand(1, 100) <= 50)
 		{
-			head_detail.setBrush("bust_skeleton_head_detail_01");
+			this.m.IsLady ? head_detail.setBrush("bust_vampire_head_lady_detail_01") : head_detail.setBrush("bust_skeleton_head_detail_01");
 		}
 
 		local body_detail = this.addSprite("body_detail");
-		if (this.Math.rand(1, 100) <= 50)
+		if (this.Math.rand(1, 100) <= 75)
 		{
-			body_detail.setBrush("bust_skeleton_detail_03")
+			this.m.IsLady ? body_detail.setBrush("bust_vampire_lady_detail_0" + this.Math.rand(1, 2)) : body_detail.setBrush("bust_skeleton_detail_0" + this.Math.rand(2, 3));
 		}
 		local head = this.addSprite("head");
 		head.setBrush("bust_vampire_lord_head_01");
@@ -229,44 +228,26 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 		beard.varyColor(0.02, 0.02, 0.02);
 		local hair = this.addSprite("hair");
 		hair.Color = beard.Color;
-		if (this.Math.rand(1, 100) <= 60)
+		if (this.Math.rand(1, 100) <= 75 && !this.m.IsLady)
 		{
-			local idx = this.Math.rand(0, this.Const.Hair.Vampire.len());
-			if (idx = this.Const.Hair.Vampire.len())
-			{
-				hair.setBrush("bust_vampire_lord_hair_01")
-			}
-			else
-			{
-				hair.setBrush("hair_" + hairColor + "_" + this.Const.Hair.Vampire[idx]);
-			}
+			local idx = this.Math.rand(0, this.Const.Hair.Vampire.len() - 1);
+			hair.setBrush("hair_" + hairColor + "_" + this.Const.Hair.Vampire[idx]);
+			this.setSpriteOffset("hair", this.createVec(0, -3));
 		}
-		this.setSpriteOffset("hair", this.createVec(0, -3));
+		else if (this.Math.rand(1, 100) <= 67 && this.m.IsLady)
+		{
+			local idx = this.Math.rand(0, this.Const.Hair.VampireLady.len() - 1);
+			hair.setBrush("hair_" + hairColor + "_" + this.Const.Hair.VampireLady[idx]);
+		}
+		
 		this.addSprite("helmet");
 		this.addSprite("helmet_damage");
 
 		if (this.m.IsLady)
 		{
-			// if (this.Math.rand(1,100) <= 50)
-			// {
-				// this.getSprite("body").setBrush("bust_vampire_lady_body_01");
-				// this.getSprite("head").setBrush("bust_vampire_lady_head_01");
-			// }
-			// else
-			// {
-			// 	this.getSprite("body").setBrush("bust_vampire_lady_body_02");
-			// 	this.getSprite("head").setBrush("bust_vampire_lady_head_02");
-			// }
-			// if (this.Math.rand(1, 100) <= 60)
-			// {
-			// 	hair.setBrush("hair_black_25")
-			// }
 			this.getSprite("body").setBrush("bust_vampire_lady_body_02");
 			this.getSprite("head").setBrush("bust_vampire_lady_head_02");
-			// hair.Alpha = 0;
-			::Legends.Perks.grant(this, ::Legends.Perk.LegendTerrifyingVisage);
 		}
-
 
 		local body_blood = this.addSprite("body_blood");
 		body_blood.setBrush("bust_body_bloodied_02");
@@ -296,6 +277,7 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 			::Legends.Perks.grant(this, ::Legends.Perk.CoupDeGrace);
 			::Legends.Perks.grant(this, ::Legends.Perk.Nimble);
 			::Legends.Traits.grant(this, ::Legends.Trait.Fearless);
+			::Legends.Perks.grant(this, ::Legends.Perk.LegendTerrifyingVisage);
 		}
 		if (!this.Tactical.State.isScenarioMode())
 		{
@@ -340,12 +322,12 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 			[1, "weapons/ancient/legend_great_khopesh"]
 		], "scripts/items/"));
 
-		this.getItems().equip(::Const.World.Common.pickArmor([
-			[1, ::Legends.Armor.Standard.legend_vampire_lord_armor]
-		]));
-		this.getItems().equip(::Const.World.Common.pickHelmet([
-			[1, ::Legends.Helmet.Standard.legend_vampire_lord_helmet]
-		]));
+		// this.getItems().equip(::Const.World.Common.pickArmor([
+		// 	[1, ::Legends.Armor.Standard.legend_vampire_lord_armor]
+		// ]));
+		// this.getItems().equip(::Const.World.Common.pickHelmet([
+		// 	[1, ::Legends.Helmet.Standard.legend_vampire_lord_helmet]
+		// ]));
 	}
 
 	function makeMiniboss()
@@ -359,8 +341,6 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 			[1, "weapons/named/named_khopesh"],
 			[2, "weapons/named/named_crypt_cleaver"]
 		], "scripts/items/"));
-
-		::Legends.Perks.grant(this, ::Legends.Perk.LegendTerrifyingVisage);
 
 		return true;
 	}

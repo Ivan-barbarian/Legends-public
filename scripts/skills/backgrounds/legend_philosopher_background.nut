@@ -29,7 +29,7 @@ this.legend_philosopher_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.StaffTree
+				this.Const.Perks.PolearmTree
 			],
 			Defense = [
 				this.Const.Perks.ClothArmorTree

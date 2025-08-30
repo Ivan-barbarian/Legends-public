@@ -769,57 +769,6 @@ if (!("Perks" in ::Const))
 	]
 };
 
-::Const.Perks.StaffTree <- {
-	ID = "Staff",
-	Name = "Staff"
-	Descriptions = [
-		"staves"
-	],
-	Attributes = {
-		Hitpoints = [
-			0,
-			0
-		],
-		Bravery = [
-			0,
-			0
-		],
-		Stamina = [
-			0,
-			0
-		],
-		MeleeSkill = [
-			0,
-			0
-		],
-		RangedSkill = [
-			0,
-			0
-		],
-		MeleeDefense = [
-			0,
-			0
-		],
-		RangedDefense = [
-			0,
-			0
-		],
-		Initiative = [
-			0,
-			0
-		]
-	},
-	Tree = [
-		[],
-		[],
-		[],
-		[::Legends.Perk.LegendMasteryStaves],
-		[::Legends.Perk.LegendSpecStaffStun],
-		[::Legends.Perk.LegendStaffBlock],
-		[]
-	]
-};
-
 ::Const.Perks.ShieldTree <- {
 	ID = "ShieldTree",
 	Name = "Shield",
@@ -948,8 +897,7 @@ if (!("Perks" in ::Const))
 		::Const.Perks.BowTree,
 		::Const.Perks.ThrowingTree,
 		::Const.Perks.SlingTree,
-		::Const.Perks.ShieldTree,
-		::Const.Perks.StaffTree
+		::Const.Perks.ShieldTree
 	],
 	function getRandom(_exclude)
 	{
@@ -982,8 +930,7 @@ if (!("Perks" in ::Const))
 		::Const.Perks.DaggerTree,
 		::Const.Perks.PolearmTree,
 		::Const.Perks.SpearTree,
-		::Const.Perks.ShieldTree,
-		::Const.Perks.StaffTree
+		::Const.Perks.ShieldTree
 	],
 	function getRandom(_exclude)
 	{

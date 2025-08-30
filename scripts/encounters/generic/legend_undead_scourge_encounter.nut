@@ -3,7 +3,7 @@ this.legend_undead_scourge_encounter <- this.inherit("scripts/encounters/encount
     function create() {
         this.createScreens();
         this.m.Type = "encounter.legend_undead_scourge_encounter";
-        this.m.Name = "Rampaging Undead";
+        this.m.Name = ::Const.Strings.randomCityEncounterName();
     }
 
     function createScreens() {

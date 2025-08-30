@@ -311,8 +311,8 @@ local VanillaTree = [
 		[::Const.Perks.ClubClassTree, ::Const.Perks.MaceTree],
 		[::Const.Perks.InquisitionClassTree, ::Const.Perks.CrossbowTree],
 		[::Const.Perks.LongswordClassTree, ::Const.Perks.SwordTree],
-		[::Const.Perks.InventorClassTree,::Const.Perks.CrossbowTree],
-		[::Const.Perks.StaffClassTree,::Const.Perks.StaffTree],
+		[::Const.Perks.InventorClassTree, ::Const.Perks.CrossbowTree],
+		[::Const.Perks.StaffClassTree, ::Const.Perks.PolearmTree],
 		[::Const.Perks.SlingClassTree, ::Const.Perks.SlingTree]
 	];
 

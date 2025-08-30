@@ -66,7 +66,7 @@
 		}
 
 		this.spawnIcon("status_effect_54", actor.getTile());
-		local poison = ::Legends.Effects.get(actor, ::Legends.Effect.GoblinPoison)
+		local poison = ::Legends.Effects.get(actor, ::Legends.Effect.GoblinPoison);
 
 		if (poison == null)
 		{

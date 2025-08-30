@@ -57,7 +57,7 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 			{
 				id = 67,
 				type = "text",
-				text = "Will apply a" + this.m.Cooldown + " day cooldown until you can read again."
+				text = "Will apply a " + this.m.Cooldown + " day cooldown until you can read again."
 			}
 		];
 		if (this.m.HasToBeIdentified && ::World.Statistics.getFlags().get("HasScholar") || !this.m.HasToBeIdentified)
@@ -82,7 +82,7 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 	}
 
 	function getName()
-	{	
+	{
 		if (this.m.HasToBeIdentified && ::World.Statistics.getFlags().get("HasScholar") || !this.m.HasToBeIdentified)
 			return this.m.BookName + " " + this.m.PerkGroupSelection;
 		else
@@ -152,4 +152,3 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 	}
 
 });
-

@@ -19,7 +19,7 @@
 		local item = actor.getMainhandItem();
 		if (item != null && item.isWeaponType(this.Const.Items.WeaponType.Staff))
 		{
-			if (!actor.getCurrentProperties().IsSpecializedInStaves)
+			if (!actor.getCurrentProperties().IsSpecializedInPolearms)
 			{
 				_properties.MeleeSkill -= 10;
 			}

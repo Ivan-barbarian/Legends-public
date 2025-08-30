@@ -60,7 +60,7 @@
 					];
 					local itemAmount = this.Math.rand(1, 2);
 
-					for( local i = 0; i < itemAmount; i = ++i ) {
+					for( local i = 0; i < itemAmount; i++) {
 						item = this.new("scripts/items/weapons/" + weaponList[this.Math.rand(0, weaponList.len() - 1)]);
 						this.List.push({
 							id = 10,
@@ -70,18 +70,16 @@
 						this.World.Assets.getStash().add(item);
 					}
 
-					local armorList = this.Const.World.Common.pickArmor([
-						[1, ::Legends.Armor.Standard.leather_tunic],
-						[1, ::Legends.Armor.Standard.leather_tunic],
-						[1, ::Legends.Armor.Standard.thick_tunic],
-						[1, ::Legends.Armor.Standard.thick_tunic],
-						[1, ::Legends.Armor.Standard.padded_surcoat],
-						[1, ::Legends.Armor.Standard.padded_leather]
-					]);
 					itemAmount = this.Math.rand(1, 2);
-
-					for( local i = 0; i < itemAmount; i = ++i ) {
-						item = this.new(armorList[this.Math.rand(0, armorList.len() - 1)]);
+					for(local i = 0; i < itemAmount; i++) {
+						item = ::Const.World.Common.pickArmor([
+							[1, ::Legends.Armor.Standard.leather_tunic],
+							[1, ::Legends.Armor.Standard.leather_tunic],
+							[1, ::Legends.Armor.Standard.thick_tunic],
+							[1, ::Legends.Armor.Standard.thick_tunic],
+							[1, ::Legends.Armor.Standard.padded_surcoat],
+							[1, ::Legends.Armor.Standard.padded_leather]
+						]);
 						this.List.push({
 							id = 10,
 							icon = "ui/items/" + item.getIcon(),

@@ -54,7 +54,8 @@ this.legend_prayer_of_life_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		this.m.TurnsLeft = this.Math.ceil(this.m.Heal / 10); 
+		this.m.TurnsLeft = this.Math.ceil(this.m.Heal / 10);
+		this.applyHealing();
 	}
 
 	function onUpdate( _properties )

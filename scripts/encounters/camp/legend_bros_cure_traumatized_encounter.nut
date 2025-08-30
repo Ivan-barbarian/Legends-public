@@ -9,7 +9,7 @@ this.legend_bros_cure_traumatized_encounter <- this.inherit("scripts/encounters/
     function create() {
         this.createScreens();
         this.m.Type = "encounter.legend_bros_cure_traumatized";
-        this.m.Name = "Monk cures traumatized";
+        this.m.Name = ::Const.Strings.randomCampEncounterName();
 		this.m.Cooldown = 30 * ::World.getTime().SecondsPerDay;
 	}
 
@@ -190,7 +190,7 @@ this.legend_bros_cure_traumatized_encounter <- this.inherit("scripts/encounters/
 			"drunkard",
 			this.m.Monk.getName()
 		]);
-		local title = this.m.Monk.getGender() == 0 ? "the Monk" : "the Nun";  
+		local title = this.m.Monk.getGender() == 0 ? "the Monk" : "the Nun";
 		_vars.push([
 			"monktitle",
 			title
@@ -240,7 +240,7 @@ this.legend_bros_cure_traumatized_encounter <- this.inherit("scripts/encounters/
 	function onClear()
 	{
 		this.m.Monk = null;
-		this.m.Drunkard = null
+		this.m.Drunkard = null;
 		this.m.Traumatized = null;
 	}
 });

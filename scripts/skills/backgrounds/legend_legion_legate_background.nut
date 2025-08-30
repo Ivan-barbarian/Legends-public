@@ -28,7 +28,7 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 			::Legends.Traits.getID(::Legends.Trait.Disloyal),
 			::Legends.Traits.getID(::Legends.Trait.Drunkard),
 			// ::Legends.Traits.getID(::Legends.Trait.Dumb),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Fat),
 			::Legends.Traits.getID(::Legends.Trait.FearUndead),
 			::Legends.Traits.getID(::Legends.Trait.FearGreenskins),
@@ -53,7 +53,7 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 			::Legends.Traits.getID(::Legends.Trait.Spartan),
 			::Legends.Traits.getID(::Legends.Trait.Superstitious),
 			::Legends.Traits.getID(::Legends.Trait.Weasel),
-			
+
 			//legend traits
 			// ::Legends.Traits.getID(::Legends.Trait.LegendAmbitious),
 			::Legends.Traits.getID(::Legends.Trait.LegendFearNobles),
@@ -141,6 +141,7 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 				this.Const.Perks.ButcherClassTree,
 				this.Const.Perks.ScytheClassTree
 			],
+			Profession = [],
 			Magic = []
 		}
 	}
@@ -176,7 +177,7 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 
 	function onBuildDescription() //to do
 	{
-		return "{ | }";
+		return "{ TODO | TODO }";
 	}
 
 	function onChangeAttributes() //uses Character_background.nut template (Skeleton)
@@ -218,7 +219,7 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 		return c;
 	}
 
-	function onAdded() 
+	function onAdded()
 	{
 		if (this.m.IsNew)
 		{
@@ -270,24 +271,21 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 
 		if (r == 1)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/crypt_cleaver"));
+			items.equip(this.new("scripts/items/weapons/ancient/crypt_cleaver"));
 		}
 		else if (r == 2)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/warscythe"));
+			items.equip(this.new("scripts/items/weapons/ancient/warscythe"));
 		}
 		else if (r == 3)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_gladius"));
+			items.equip(this.new("scripts/items/weapons/ancient/legend_gladius"));
 		}
 		else if (r == 4)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_kopis"));
+			items.equip(this.new("scripts/items/weapons/ancient/legend_kopis"));
 		}
 
-	o.onAddEquipment = function () //1 = least likely
-	{
-		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
 			[2, ::Legends.Armor.Ancient.ancient_plated_scale_hauberk],
 			[1, ::Legends.Armor.Ancient.ancient_scale_coat],
@@ -295,11 +293,9 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 			[1, ::Legends.Armor.Ancient.ancient_plated_mail_hauberk]
 		]));
 
-		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickHelmet([
 			[2, ::Legends.Helmet.Ancient.ancient_honorguard_helmet],
 			[1, ::Legends.Helmet.Ancient.legend_ancient_legionary_helmet_restored]
 		]));
 	}
 });
-

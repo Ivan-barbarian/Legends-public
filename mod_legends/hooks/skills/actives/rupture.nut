@@ -68,7 +68,7 @@
 		{
 			if (!target.isAlive() || target.isDying())
 			{
-				if (this.isKindOf(target, "lindwurm_tail") || !target.getCurrentProperties().IsImmuneToBleeding)
+				if (target.getFlags().has("tail") || !target.getCurrentProperties().IsImmuneToBleeding)
 				{
 					this.Sound.play(this.m.BleedingSounds[this.Math.rand(0, this.m.BleedingSounds.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 				}

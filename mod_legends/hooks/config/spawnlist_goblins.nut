@@ -20,6 +20,16 @@
 					Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
 					MinR = 400,
 					Cost = 20
+				},
+				{
+					Type = ::Const.World.Spawn.Troops.LegendGoblinPlunderer,
+					MinR = 800,
+					Cost = 40
+				},
+				{
+					Type = ::Const.World.Spawn.Troops.LegendGoblinHarrier,
+					MinR = 1200,
+					Cost = 50
 				}
 			]
 		},
@@ -64,6 +74,30 @@
 					Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
 					MinR = 800,
 					Cost = 40
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinDirewolfRider,
+					MinR = 1200,
+					Cost = 60
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinWhiteDirewolfRider,
+					MinR = 1600,
+					Cost = 80
+				}
+			]
+		},
+		{
+			Weight = 3,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.GoblinShaman,
+					Cost = 35
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinWitchDoctor,
+					MinR = 1600,
+					Cost = 60
 				}
 			]
 		}
@@ -92,6 +126,16 @@
 					Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
 					MinR = 400,
 					Cost = 20
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinPlunderer,
+					MinR = 800,
+					Cost = 40
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinHarrier,
+					MinR = 1600,
+					Cost = 50
 				}
 			]
 		},
@@ -141,6 +185,16 @@
 					Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
 					MinR = 800,
 					Cost = 40
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinDirewolfRider,
+					MinR = 1200,
+					Cost = 60
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinWhiteDirewolfRider,
+					MinR = 1600,
+					Cost = 80
 				}
 			]
 		}
@@ -169,6 +223,16 @@
 					Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
 					MinR = 400,
 					Cost = 20
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinPlunderer,
+					MinR = 800,
+					Cost = 40
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinHarrier,
+					MinR = 1600,
+					Cost = 50
 				}
 			]
 		},
@@ -213,6 +277,16 @@
 					Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
 					MinR = 800,
 					Cost = 40
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinDirewolfRider,
+					MinR = 1200,
+					Cost = 60
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinWhiteDirewolfRider,
+					MinR = 1600,
+					Cost = 80
 				}
 			]
 		},
@@ -228,11 +302,16 @@
 		},
 		{
 			Weight = 3,
-			MinR = 1200,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinShaman,
+					MinR = 1200,
 					Cost = 35
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinWitchDoctor,
+					MinR = 1600,
+					Cost = 60
 				}
 			]
 		}
@@ -251,7 +330,7 @@
 	MaxR = 585,
 	Troops = [
 		{
-			Weight = 50,
+			Weight = 45,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinSkirmisherLOW,
@@ -261,11 +340,21 @@
 					Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
 					MinR = 400,
 					Cost = 20
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinPlunderer,
+					MinR = 800,
+					Cost = 40
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinHarrier,
+					MinR = 1600,
+					Cost = 50
 				}
 			]
 		},
 		{
-			Weight = 30,
+			Weight = 25,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinAmbusherLOW,
@@ -279,7 +368,7 @@
 			]
 		},
 		{
-			Weight = 40,
+			Weight = 25,
 			Types = [
 				{
 					Type = ::Const.World.Spawn.Troops.LegendGoblinTribeDefender,
@@ -289,7 +378,7 @@
 			]
 		},
 		{
-			Weight = 10,
+			Weight = 25,
 			Types = [
 				{
 					Type = ::Const.World.Spawn.Troops.LegendGoblinBerserker,
@@ -299,12 +388,22 @@
 			]
 		},
 		{
-			Weight = 15,
+			Weight = 25,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
 					MinR = 800,
 					Cost = 40
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinDirewolfRider,
+					MinR = 1200,
+					Cost = 60
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinWhiteDirewolfRider,
+					MinR = 1600,
+					Cost = 80
 				}
 			]
 		},
@@ -320,11 +419,16 @@
 		},
 		{
 			Weight = 3,
-			MinR = 1200,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinShaman,
+					MinR = 1200,
 					Cost = 35
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinWitchDoctor,
+					MinR = 1600,
+					Cost = 60
 				}
 			]
 		}
@@ -350,25 +454,45 @@
 	],
 	Troops = [
 		{
-			Weight = 55,
+			Weight = 45,
 			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.GoblinSkirmisherLOW,
+					Cost = 15
+				},
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
-					Cost = 15
+					MinR = 400,
+					Cost = 20
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinPlunderer,
+					MinR = 800,
+					Cost = 40
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinHarrier,
+					MinR = 1600,
+					Cost = 50
 				}
 			]
 		},
 		{
-			Weight = 30,
+			Weight = 25,
 			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+					Type = this.Const.World.Spawn.Troops.GoblinAmbusherLOW,
 					Cost = 20
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+					MinR = 400,
+					Cost = 25
 				}
 			]
 		},
 		{
-			Weight = 35,
+			Weight = 25,
 			Types = [
 				{
 					Type = ::Const.World.Spawn.Troops.LegendGoblinTribeDefender,
@@ -378,7 +502,7 @@
 			]
 		},
 		{
-			Weight = 30,
+			Weight = 25,
 			Types = [
 				{
 					Type = ::Const.World.Spawn.Troops.LegendGoblinBerserker,
@@ -388,17 +512,28 @@
 			]
 		},
 		{
-			Weight = 8,
+			Weight = 25,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
-					MinR = 400,
+					MinR = 800,
 					Cost = 40
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinDirewolfRider,
+					MinR = 1200,
+					Cost = 60
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinWhiteDirewolfRider,
+					MinR = 1600,
+					Cost = 80
 				}
 			]
 		},
 		{
 			Weight = 3,
+			MinR = 1000,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinOverseer,
@@ -411,19 +546,15 @@
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinShaman,
-					MinR = 600,
+					MinR = 1200,
 					Cost = 35
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendGoblinWitchDoctor,
+					MinR = 1600,
+					Cost = 60
 				}
 			]
-		},
-		 // {
-		 // 	Weight = 1,
-		// 	Types = [
-		 // 		{
-		 // 			Type = this.Const.World.Spawn.Troops.KoboldFighter,
-		 // 			Cost = 10
-		 // 		}
-		 // 	]
-		 // }
+		}
 	]
 }

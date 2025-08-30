@@ -2,11 +2,10 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
     m = {
 		Druid = null
     },
-
     function create() {
         this.createScreens();
-        this.m.Type = "encounter.legend_recruitment_druid_camp_encounter";
-        this.m.Name = "The forest dies";
+        this.m.Type = "encounter.legend_recruitment_druid_camp";
+        this.m.Name = "A burning forest";
 		this.m.Cooldown = 60 * ::World.getTime().SecondsPerDay;
 	}
 
@@ -14,7 +13,7 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
         this.m.Screens.push({
             ID = "Start",
             Title = "The forest burns...",
-			Text = "[img]gfx/ui/events/event_25.png[/img]{From a distance, you see a great blaze, the size of a small mountain, over a section of the old woods. You reckon it\'s perhaps a little under an hour\'s trek, but you feel oddly compelled to pay tribute to the death of something that has spanned so many centuries.}",
+	        Text = "[img]gfx/ui/events/event_25.png[/img]{From a distance, you see a great blaze, the size of a small mountain, over a section of the old woods. You reckon it\'s perhaps a little under an hour\'s trek, but you feel oddly compelled to pay tribute to the death of something that has spanned so many centuries.}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -66,7 +65,9 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
 					Text = "Forests can regrow. You will regain your stewardship in time.",
 					function getResult( _event )
 					{
+						::World.getPlayerRoster().add(_event.m.Druid);
 						this.World.getTemporaryRoster().clear();
+						_event.m.Druid.onHired();
 						_event.m.Druid = null;
 						return 0;
 					}

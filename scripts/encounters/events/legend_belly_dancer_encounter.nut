@@ -5,7 +5,7 @@ this.legend_belly_dancer_encounter <- this.inherit("scripts/encounters/encounter
     function create() {
         this.createScreens();
         this.m.Type = "encounter.legend_belly_dancer_encounter";
-        this.m.Name = "A Dancing Woman";
+        this.m.Name = ::Const.Strings.randomCityEncounterName();
 		this.m.Cooldown = 99999.0 * ::World.getTime().SecondsPerDay;
 	}
 

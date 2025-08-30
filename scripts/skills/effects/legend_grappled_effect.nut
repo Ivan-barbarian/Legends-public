@@ -77,8 +77,8 @@ this.legend_grappled_effect <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 		// Very different in design document. Flat MD debuff and 30% initiative debuff.
-		_properties.MeleeDefense -=12;
-		_properties.Initiative *=0.7;
+		_properties.MeleeDefense -= 12;
+		_properties.Initiative *= 0.7;
 
 		// _properties.StaminaMult *= 0.5;
 		// _properties.MeleeDefense *= 0.5;

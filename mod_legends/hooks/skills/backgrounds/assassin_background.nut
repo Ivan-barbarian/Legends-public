@@ -31,7 +31,7 @@
 			::Legends.Traits.getID(::Legends.Trait.Hesistant),
 			::Legends.Traits.getID(::Legends.Trait.Greedy),
 			::Legends.Traits.getID(::Legends.Trait.Fragile),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Dumb),
 			::Legends.Traits.getID(::Legends.Trait.LegendPredictable)
 		];
@@ -82,7 +82,7 @@
 				this.Const.Perks.MercenaryTree
 			],
 			Class = [],
-			Profession = [], 
+			Profession = [],
 			Magic = [
 				this.Const.Perks.AssassinMagicTree
 			]

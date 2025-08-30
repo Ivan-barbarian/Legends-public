@@ -52,7 +52,7 @@ this.legend_conjurer_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.StaffTree,
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.CrossbowTree
 			],
@@ -69,7 +69,8 @@ this.legend_conjurer_background <- this.inherit("scripts/skills/backgrounds/char
 			Class = [],
 			Profession = [],
 			Magic = [
-				this.Const.Perks.ConjurationMagicTree
+				this.Const.Perks.ConjurationMagicTree,
+				this.Const.Perks.StavesMagicTree
 			]
 		}
 

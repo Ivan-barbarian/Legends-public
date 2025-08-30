@@ -20,7 +20,7 @@
 			::Legends.Traits.getID(::Legends.Trait.Insecure),
 			::Legends.Traits.getID(::Legends.Trait.Cocky),
 			::Legends.Traits.getID(::Legends.Trait.Fat),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Bright),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
 			::Legends.Traits.getID(::Legends.Trait.Greedy),
@@ -58,7 +58,7 @@
 				this.Const.Perks.NinetailsClassTree,
 				this.Const.Perks.FaithClassTree
 			],
-			Profession = [], 
+			Profession = [],
 			Magic = []
 		}
 	}

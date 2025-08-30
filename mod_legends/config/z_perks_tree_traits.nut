@@ -59,7 +59,7 @@ if (!("Perks" in ::Const))
 		],
 		[],
 		[
-			::Legends.Perk.Footwork
+			::Legends.Perk.LegendTacticalManeuvers 
 		],
 		[],
 		[
@@ -433,15 +433,14 @@ if (!("Perks" in ::Const))
 	},
 	Tree = [
 		[
-			::Legends.Perk.Student
-		],
-		[
-			::Legends.Perk.Gifted,
+			::Legends.Perk.Student,
+			::Legends.Perk.Gifted
 		],
 		[],
 		[],
+		[],
 		[
-			::Legends.Perk.LegendAdaptive
+			::Legends.Perk.LegendPromisedPotential,
 		],
 		[
 			::Legends.Perk.LegendMindOverBody
@@ -879,7 +878,7 @@ if (!("Perks" in ::Const))
 		],
 		[],
 		[
-			::Legends.Perk.Rotation
+			::Legends.Perk.LegendTacticalManeuvers
 		],
 		[],
 		[

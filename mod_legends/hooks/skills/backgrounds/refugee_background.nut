@@ -64,7 +64,7 @@
 		this.m.PerkTreeDynamicMins.ClassChance += 0.20;
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.StaffTree,
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.SlingTree,
 				this.Const.Perks.ThrowingTree
 			],

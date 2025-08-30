@@ -15,7 +15,7 @@ this.legend_named_goblin_crossbow <- this.inherit("scripts/items/weapons/named/n
 	function create()
 	{
 		this.named_weapon.create();
-		this.m.Variant = 1;
+		this.m.Variant = this.Math.rand(1, 2);
 		this.updateVariant();
 		this.m.ID = "weapon.legend_named_goblin_crossbow";
 		this.m.NameList = this.Const.Strings.CrossbowNames;

@@ -152,6 +152,7 @@
 		local weapons = [
 			"weapons/named/named_greataxe",
 			"weapons/named/named_greatsword",
+			"weapons/named/legend_named_flamberge_sword",
 			"weapons/named/named_bardiche",
 			"weapons/named/named_two_handed_hammer",
 			"weapons/named/named_two_handed_mace",

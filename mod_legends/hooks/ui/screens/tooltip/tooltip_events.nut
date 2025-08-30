@@ -3815,6 +3815,7 @@
 			];
 
 		case "world-town-screen.main-dialog-module.Arena":
+			local ttinfo = this.World.State.getCurrentTown().getBuilding("building.arena").getAttempts();
 			local ret = [
 				{
 					id = 1,
@@ -3825,6 +3826,12 @@
 					id = 2,
 					type = "description",
 					text = "The arena offers an opportunity to earn gold and fame in fights that are to the death, and in front of crowds that cheer for the most gruesome manner in which lives are dispatched."
+				},
+				{
+					id = 3,
+					type = "hint",
+					icon = "ui/icons/melee_skill.png",
+					text = "There are " + ttinfo[0] + " / " + ttinfo[1] + " fights available today."
 				}
 			];
 

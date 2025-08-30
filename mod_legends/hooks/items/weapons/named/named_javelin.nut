@@ -7,6 +7,10 @@
 		this.m.Variants = [1,2,3];
 		this.m.Categories = "Throwing Weapon, Spear, One-Handed";
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.OneHanded;
+		this.m.Ammo = 6;
+		this.m.AmmoMax = 6;
+		this.updateVariant();
+		this.randomizeValues();
 	}
 
 	// o.setAmmo = function ()

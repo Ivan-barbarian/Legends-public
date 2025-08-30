@@ -26,7 +26,7 @@ this.legend_astrologist_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.StaffTree
+				this.Const.Perks.PolearmTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree
@@ -39,7 +39,8 @@ this.legend_astrologist_background <- this.inherit("scripts/skills/backgrounds/c
 			Class = [],
 			Profession = [],
 			Magic = [
-				this.Const.Perks.PremonitionMagicTree
+				this.Const.Perks.PremonitionMagicTree,
+				this.Const.Perks.StavesMagicTree
 			]
 		}
 	}

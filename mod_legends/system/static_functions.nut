@@ -59,10 +59,11 @@
 			return _properties.IsSpecializedInSwords;
 		case _weapon.isWeaponType(::Const.Items.WeaponType.Throwing):
 			return _properties.IsSpecializedInThrowing;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Staff):
 		case _weapon.isWeaponType(::Const.Items.WeaponType.Polearm):
 			return _properties.IsSpecializedInPolearms;
-		case _weapon.isWeaponType(::Const.Items.WeaponType.Staff):
-			return _properties.IsSpecializedInStaves;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Musical):
+			return _properties.IsSpecializedInMusic;
 		default:
 			return false;
 	}

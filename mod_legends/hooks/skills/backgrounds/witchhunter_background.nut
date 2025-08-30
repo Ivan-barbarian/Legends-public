@@ -23,7 +23,7 @@
 			::Legends.Traits.getID(::Legends.Trait.Insecure),
 			::Legends.Traits.getID(::Legends.Trait.Hesistant),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Dumb),
 			::Legends.Traits.getID(::Legends.Trait.Superstitious),
 			::Legends.Traits.getID(::Legends.Trait.Drunkard)
@@ -89,7 +89,7 @@
 				this.Const.Perks.FaithClassTree,
 				this.Const.Perks.InquisitionClassTree
 			],
-			Profession = [], 
+			Profession = [],
 			Magic = []
 		}
 	}
@@ -250,4 +250,3 @@
 	}
 
 });
-

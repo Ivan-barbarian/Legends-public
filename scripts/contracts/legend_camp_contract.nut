@@ -163,4 +163,20 @@ this.legend_camp_contract <- ::inherit("scripts/contracts/contract", {
 			this.m.Screens.extend(::Legends.CampContracts.IntroLegion);
 		}
 	}
+
+	function getHome() {
+		local playerPosition = ::World.State.getPlayer().getTile();
+		local settlements = ::World.EntityManager.getSettlements();
+		settlements.sort(function (_lhs, _rhs) {
+			local dLhs = _lhs.getDistanceTo(playerPosition);
+			local dRhs = _rhs.getDistanceTo(playerPosition);
+			return (dLhs < dRhs) ? -1 : ((dLhs > dRhs) ? 1 : 0);
+		});
+		return settlements[0];
+	}
+
+	function getOrigin() {
+		return this.getHome();
+	}
+
 });

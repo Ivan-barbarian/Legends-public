@@ -175,7 +175,7 @@ class BrushBuilder:
                 str(unpacked_dir),
             ]
 
-            result = subprocess.run(cmd, capture_output=True, text=True)
+            result = subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8', errors='replace')
 
             # Change back to original directory
             os.chdir(original_cwd)
@@ -223,9 +223,8 @@ class BrushBuilder:
             "world_tiles",
             "legend_horses",
             "legend_detail",
-            "terrain",
+            "legend_terrain",
             "legend_ui",
-            "orientation",
             "legend_objects",
         ]
 
