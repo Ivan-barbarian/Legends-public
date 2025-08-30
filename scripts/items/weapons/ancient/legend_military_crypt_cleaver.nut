@@ -6,8 +6,8 @@ this.legend_military_crypt_cleaver <- this.inherit("scripts/items/weapons/weapon
 		this.m.ID = "weapon.legend_military_crypt_cleaver";
 		this.m.Name = "Military Crypt Cleaver";
 		this.m.Description = "A significantly hefty two-handed cleaver with a recurved end. Despite being worn and blunted, the titanic weight of this weapon makes up for it\'s age.";
-		this.m.IconLarge = "weapons/melee/cryptcleaver_01_2.png";
-		this.m.Icon = "weapons/melee/cryptcleaver_01_2_70x70.png";
+		this.m.IconLarge = "weapons/melee/legend_military_crypt_cleaver_01.png";
+		this.m.Icon = "weapons/melee/legend_military_crypt_cleaver_01_70x70.png";
 		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
@@ -16,7 +16,7 @@ this.legend_military_crypt_cleaver <- this.inherit("scripts/items/weapons/weapon
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_cryptcleaver_01_2";
+		this.m.ArmamentIcon = "icon_legend_military_crypt_cleaver";
 		this.m.Value = 2800;
 		this.m.ShieldDamage = 18;
 		this.m.Condition = 75.0;
@@ -25,6 +25,7 @@ this.legend_military_crypt_cleaver <- this.inherit("scripts/items/weapons/weapon
 		this.m.RegularDamage = 70;
 		this.m.RegularDamageMax = 90;
 		this.m.ArmorDamageMult = 1.3;
+		this.m.DirectDamageMult = 0.25;
 		this.m.DirectDamageAdd = 0.05;
 	}
 
