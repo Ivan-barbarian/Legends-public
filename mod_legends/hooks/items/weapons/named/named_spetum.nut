@@ -19,7 +19,7 @@
 			_skill.m.BaseAttackName = "Prong";
 			_skill.setFatigueCost(spearwall.getFatigueCostRaw() + 5);
 			_skill.m.ActionPointCost = 6;
-		}););
+		});
 		::Legends.Actives.grant(this.weapon, ::Legends.Active.LegendSkewer, function (_skill)
 		{
 			_skill.m.Icon = "skills/skewer_spetum.png";
