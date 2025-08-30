@@ -122,6 +122,7 @@ this.legend_warfork_disarm_skill <- this.inherit("scripts/skills/skill", {
 			else
 			{
 				_properties.MeleeSkill -= 10;
+				this.m.HitChanceBonus += 10;
 			}
 
 			_properties.DamageTotalMult = 0.0;
