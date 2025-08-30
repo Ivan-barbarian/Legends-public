@@ -430,7 +430,7 @@ class Defs:
  "title" :  "Great Helm",
  "desc" :  "A closed metal helm with breathing holes. Great in the way of protection but hard to breathe in and limiting the field of view."
  },
-{"name" : "legend_armet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1750, "con" : 155, "stam" : -11, "vis" : -2, "hair" : "true", "beard" : "true",
+{"name" : "legend_armet"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 1750, "con" : 155, "stam" : -11, "vis" : -2, "hair" : "true", "beard" : "true",
  "title" :  "Armet",
  "desc" :  "A finely crafted close helm of outstanding workmanship."
  },
