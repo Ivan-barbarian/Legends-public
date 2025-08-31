@@ -117,7 +117,7 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
 		if (totalbrothers < 1 || brotherlevels < 30)
 			return false;
 
-		return !isOnCooldown();
+		return !this.isOnCooldown();
 	}
 
 	function onClear() {

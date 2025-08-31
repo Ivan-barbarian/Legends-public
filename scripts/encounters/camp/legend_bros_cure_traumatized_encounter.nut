@@ -233,7 +233,7 @@ this.legend_bros_cure_traumatized_encounter <- this.inherit("scripts/encounters/
 		if ((this.m.Drunkard == null && !this.m.Traumatized.getSkills().hasTrait(::Legends.Trait.Drunkard)) || this.m.Monk == null)
 			return false;
 
-		return !isOnCooldown();
+		return !this.isOnCooldown();
 	}
 
 	function onClear()

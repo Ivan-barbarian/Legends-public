@@ -135,7 +135,7 @@ this.legend_vala_crafts_staff_encounter <- this.inherit("scripts/encounters/enco
 		this.m.RandomBrother2 = randomBros[this.Math.rand(0, randomBros.len() - 1)];
 
 
-		return !isOnCooldown();
+		return !this.isOnCooldown();
 	}
 
 	function onClear()
