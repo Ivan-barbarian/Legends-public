@@ -115,7 +115,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 
 			if (this.World.getTime().Days >= dateToSkip)
 			{
-				local bonus = this.Math.min(1, this.Math.floor((this.World.getTime().Days - dateToSkip) / 20.0));
+				local bonus = this.Math.floor((this.World.getTime().Days - dateToSkip) / 20.0);
 				local b = this.m.BaseProperties;
 				b.MeleeSkill += bonus;
 				b.RangedSkill += bonus;

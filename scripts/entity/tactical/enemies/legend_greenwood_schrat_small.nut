@@ -164,7 +164,7 @@ this.legend_greenwood_schrat_small <- this.inherit("scripts/entity/tactical/acto
 
 			if (this.World.getTime().Days >= dateToSkip)
 			{
-				local bonus = this.Math.min(1, this.Math.floor( (this.World.getTime().Days - dateToSkip) / 20.0));
+				local bonus = this.Math.floor((this.World.getTime().Days - dateToSkip) / 20.0);
 				b.MeleeSkill += bonus;
 				b.RangedSkill += bonus;
 				b.MeleeDefense += this.Math.floor(bonus / 2);

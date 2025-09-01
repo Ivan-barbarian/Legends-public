@@ -239,7 +239,7 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 			local idx = this.Math.rand(0, this.Const.Hair.VampireLady.len() - 1);
 			hair.setBrush("hair_" + hairColor + "_" + this.Const.Hair.VampireLady[idx]);
 		}
-		
+
 		this.addSprite("helmet");
 		this.addSprite("helmet_damage");
 
@@ -300,7 +300,7 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 
 			if (this.World.getTime().Days >= dateToSkip)
 			{
-				local bonus = this.Math.min(1, this.Math.floor( (this.World.getTime().Days - dateToSkip) / 20.0));
+				local bonus = this.Math.floor((this.World.getTime().Days - dateToSkip) / 20.0);
 				b.MeleeSkill += bonus;
 				b.RangedSkill += bonus;
 				b.MeleeDefense += this.Math.floor(bonus / 2);

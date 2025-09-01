@@ -304,7 +304,7 @@ this.legend_hexe_leader <- this.inherit("scripts/entity/tactical/actor", {
 
 			if (this.World.getTime().Days >= dateToSkip)
 			{
-				local bonus = this.Math.min(1, this.Math.floor( (this.World.getTime().Days - dateToSkip) / 20.0));
+				local bonus = this.Math.floor((this.World.getTime().Days - dateToSkip) / 20.0);
 				b.MeleeSkill += this.Math.floor(bonus / 2);
 				b.RangedSkill += bonus;
 				b.MeleeDefense += this.Math.floor(bonus / 2);
