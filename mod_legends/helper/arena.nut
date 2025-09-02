@@ -20,14 +20,12 @@ if (!("Arena" in ::Legends))
 	local item = _bro.getItems().getItemAtSlot(::Const.ItemSlot.Accessory);
 	if (item != null && item.getID() == "accessory.arena_collar") {
 		_bro.getItems().unequip(item);
-		return;
 	}
 
 	local itemsInBag = _bro.getItems().getAllItemsAtSlot(::Const.ItemSlot.Bag);
 	foreach (item in itemsInBag) {
 		if (item != null && item.getID() == "accessory.arena_collar") {
 			_bro.getItems().removeFromBag(item);
-			return;
 		}
 	}
 }
