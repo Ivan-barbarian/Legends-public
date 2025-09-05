@@ -50,16 +50,15 @@ if (!("Arena" in ::Legends))
 		});
 	} else if (_bro.getFlags().getAsInt("ArenaFightsWon") >= 12 && _bro.getSkills().hasTrait(::Legends.Trait.ArenaFighter)) {
 		::Legends.Traits.remove(_bro, ::Legends.Trait.ArenaFighter);
-		::Legends.Traits.grant(_bro, ::Legends.Trait.LegendArenaVeteran, function(skill) {
+		::Legends.Traits.grant(_bro, ::Legends.Trait.ArenaVeteran, function(skill) {
 			_list.push({
 				id = 10,
 				icon = skill.getIcon(),
 				text = _bro.getName() + " is now " + this.Const.Strings.getArticle(skill.getName()) + skill.getName()
 			});
 		});
-	} else if (_bro.getFlags().getAsInt("ArenaFightsWon") >= 25 && (_bro.getSkills().hasTrait(::Legends.Trait.LegendArenaVeteran) || _bro.getSkills().hasSkill("trait.arena_veteran"))) {
-		_bro.getSkills().removeByID("trait.arena_veteran"); // could be vanilla?
-		::Legends.Traits.remove(_bro, ::Legends.Trait.LegendArenaVeteran);
+	} else if (_bro.getFlags().getAsInt("ArenaFightsWon") >= 25 && (_bro.getSkills().hasTrait(::Legends.Trait.ArenaVeteran))) {
+		::Legends.Traits.remove(_bro, ::Legends.Trait.ArenaVeteran);
 		::Legends.Traits.grant(_bro, ::Legends.Trait.LegendArenaChampion, function(skill) {
 			_list.push({
 				id = 10,
