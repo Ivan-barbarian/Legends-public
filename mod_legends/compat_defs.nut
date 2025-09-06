@@ -224,6 +224,7 @@
 //endregion
 
 //region SoftIncompat
+::Legends.Compat.SoftIncompat.add("advanced_grader"); // Needs to be updated with Legends specific things to work with Legends
 ::Legends.Compat.SoftIncompat.add("mod_BLPT", "0.1.2"); // Darx's Bad Luck Protection
 ::Legends.Compat.SoftIncompat.add("mod_bro_storage", "1.0.2");
 ::Legends.Compat.SoftIncompat.add("mod_camps_and_artifacts", "3.4");
