@@ -33,12 +33,9 @@ work-dir/                      # Your workspace folder
 **Windows:**
 
 1. Install git bash
-2. Install python3
+2. Install the latest version of [python3](https://www.python.org/downloads/)
 3. Add all above to PATH variable (if you don't know how, check this [webpage](https://www.computerhope.com/issues/ch000549.htm))
 4. Make sure you have microsoft web runtime
-5. Install python dependencies `pip install Pillow`
-6. Copy `build_compile_poss.sh` and name it something like `build_compile_yourname.sh`
-7. Inside the `build_compile_yourname.sh` replace the destination variable with your own
 
 **Linux/macOS:**
 
@@ -85,10 +82,6 @@ python3 build_legends_mod.py
 # Create a patch since specific commit
 python3 build_patch.py [commit_hash]
 ```
-
-**Windows:**
-
-1. Open git bash in the legends repo and run bash `build_compile_yourname.sh`
 
 ## Note when adding brushes
 
