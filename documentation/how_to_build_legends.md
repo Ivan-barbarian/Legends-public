@@ -36,6 +36,7 @@ work-dir/                      # Your workspace folder
 2. Install the latest version of [python3](https://www.python.org/downloads/)
 3. Add all above to PATH variable (if you don't know how, check this [webpage](https://www.computerhope.com/issues/ch000549.htm))
 4. Make sure you have microsoft web runtime
+5. Install python dependencies `pip install Pillow`
 
 **Linux/macOS:**
 
@@ -67,13 +68,26 @@ The build system automatically detects platform-specific paths:
 - Executables: `.sh` extension
 - Shell scripts: `.sh` extension
 
-### Archive Creation
-
-The build always uses Python's built-in `zipfile` module.
-
 ## How to Build Legends
 
 **Quick Start (OS-Agnostic):**
+
+Create `.build_config.py` in project root and fill variables.
+```
+# Repository directory name (if different from 'Legends-public')
+REPO_DIR = "Legends-public"
+
+# Battle Brothers data directory (set to None for auto-detection).
+# Auto-detection will look in the following locations:
+# Windows: "c:\Steam\steamapps\common\Battle Brothers\data"
+# Others: "~/.local/share/Steam/steamapps/common/Battle Brothers/data"
+BB_DIR = None
+
+# Build output directory
+BUILD_DIR = "./build"
+```
+
+Then use commands:
 
 ```bash
 # Build complete mod from scratch
