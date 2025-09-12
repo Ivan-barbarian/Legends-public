@@ -4,7 +4,7 @@
 		this.follower.create();
 		this.m.ID = "follower.recruiter";
 		this.m.Name = "Pre-filled Contracts";
-		this.m.Description = "The deviousness of a pre-filled contract that needs a single signiture can make the labours of arguing about pay a thing of the past. Just simply sign on the line and you are ready to go! Just don't let them read the small print.";
+		this.m.Description = "The deviousness of a pre-filled contract that needs a single signature can make the labours of arguing about pay a thing of the past. Just simply sign on the line and you are ready to go! Just don't let them read the small print.";
 		this.m.Image = "ui/campfire/legend_recruiter_01";
 		this.m.Cost = 1500;
 		this.m.Effects = [
