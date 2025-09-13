@@ -6,7 +6,7 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 		this.m.ID = "background.legend_legion_auxiliary";
 		this.m.Name = "Auxiliary";
 		this.m.Icon = "ui/backgrounds/background_puppet.png"; //to do
-		this.m.BackgroundDescription = "Pressed onto service by some means or another, the Auxiliary serves their masters in exchange for a promise of a better life.";
+		this.m.BackgroundDescription = "Pressed onto service by some means or another, the Auxiliary serves their masters in exchange of a promise for a better life.";
 		// this.m.GoodEnding = ""; //to do
 		// this.m.BadEnding = ""; //to do
 		this.m.HiringCost = 0;
@@ -159,9 +159,9 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
-	function onBuildDescription() //to do
+	function onBuildDescription()
 	{
-		return "{ TODO | TODO }";
+		return "{%name%} {hails from a far-off land, | comes from a distant place, | visits from not far way, | arrived from the far south, | journeyed from the east, | found themselves here from the north,} {a land surrounded by lakes and mountains as far as the eye could see | a land potted with bogs and trees | an area marked with tall trees and dense thickets | a land marked with scarred landscapes | a place considered to be a green paradise | a land filled with strife and war.} {Taken at a young age, | Taken at an old age,} {they were conscripted into a legion and made to fight. | they took to being a salve and later a legionary when their master died.} {Much was promised to them, including a way to escape their servitude. | Promises were made that given a few harvests more, they could return home.} {Much time has passed as a blur. %name% quietly wonders what their home looks like now, you wonder if it ever existed at all. | Some time has passed since this all transpired, much has changed. %name% has not, outside of the obvious.}";
 	}
 
 	function onChangeAttributes() //uses Character_background.nut template (Skeleton)
