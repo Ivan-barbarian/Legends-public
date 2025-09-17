@@ -1997,4 +1997,20 @@ effectsDefs.push({
 	Name = "Compromised Armor",
 });
 
+::Legends.Effect.LegendFlourish <- null;
+effectsDefs.push({
+	ID = "effects.legend_flourish",
+	Script = "scripts/skills/effects/legend_flourish_effect",
+	Const = "LegendFlourish",
+	Name = "Flourish",
+});
+
+::Legends.Effect.LegendFreedomOfMovement <- null;
+effectsDefs.push({
+	ID = "effects.legend_freedom_of_movement",
+	Script = "scripts/skills/effects/legend_freedom_of_movement_effect",
+	Const = "LegendFreedomOfMovement",
+	Name = "Freedom of Movement",
+});
+
 ::Legends.Effects.addEffectDefObjects(effectsDefs);

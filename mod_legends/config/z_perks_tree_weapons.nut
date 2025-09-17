@@ -357,7 +357,7 @@ if (!("Perks" in ::Const))
 		[::Legends.Perk.LegendVersatile],
 		[],
 		[::Legends.Perk.LegendPushTheAdvantage],
-		[], //::Legends.Perk.Duelist
+		[::Legends.Perk.Duelist],
 		[]
 	]
 };

@@ -3166,4 +3166,12 @@ activesDefs.push({
 	Name = "Pry Armor",
 });
 
+::Legends.Active.LegendFlourish <- null;
+activesDefs.push({
+	ID = "actives.legend_flourish",
+	Script = "scripts/skills/actives/legend_flourish",
+	Const = "LegendFlourish",
+	Name = "Flourish",
+});
+
 ::Legends.Actives.addActiveDefObjects(activesDefs);
