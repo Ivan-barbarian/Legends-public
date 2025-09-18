@@ -10,9 +10,9 @@
 	// ];
 
 	local create = o.create;
-
-		create();	o.create = function()
+	o.create = function()
 	{	
+		create();
 		this.m.Description = "With the second hand free, this character can get a firm double grip on his weapon and inflicts additional damage and penetration. Armor penetration will scale by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] of Melee Skill and Hand Crossbows allow double gripping";
 	}
 
@@ -20,7 +20,7 @@
 	o.getTooltip = function()
 	{
 		local tooltip = getTooltip();
-		local bonus = this.getBonus() * 100;
+		local bonus = this.Math.floor(this.getContainer().getActor().getCurrentProperties().MeleeSkill * 0.25);
 		tooltip.push({
 			id = 6,
 			type = "text",
@@ -82,7 +82,7 @@
 		local newhand = ::Legends.Traits.get(this, ::Legends.Trait.LegendProstheticHand);
 		local main = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local off = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-		local hasXbow = ::MSU.String.endsWith(_offhand.getID(), "_hand_crossbow") ? true : false;
+		local hasXbow = off != null && ::MSU.String.endsWith(off.getID(), "_hand_crossbow");
 		return (missinghand == null || newhand != null) && main != null && (off == null || hasXbow) && main.isDoubleGrippable();
 	}
 

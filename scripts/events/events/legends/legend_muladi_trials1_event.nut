@@ -35,7 +35,7 @@ this.legend_muladi_trials1_event <- this.inherit("scripts/events/event", {
 				_event.m.Muladi.getFlags().set("MuladiTrials", ::World.getTime().Days + 15);
 
 				this.List.extend([
-					::Legends.EventList.changeMood(_event.m.Muladi, -2, "Was battered and alienated by southerners")),
+					::Legends.EventList.changeMood(_event.m.Muladi, -2, "Was battered and alienated by southerners"),
 					::Legends.EventList.addInjury(_event.m.Muladi, ::Const.Injury.Brawl),
 					::Legends.EventList.addLightInjury(_event.m.Muladi),
 					::Legends.EventList.changeResolve(_event.m.Muladi, -2),

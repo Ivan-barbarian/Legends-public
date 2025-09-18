@@ -24,9 +24,9 @@ this.legend_davkul_armor <- this.inherit("scripts/items/legend_armor/legend_armo
 
 	function updateVariant()
 	{
-		this.m.Sprite = "bust_body_81";
-		this.m.SpriteDamaged = "bust_body_81_damaged";
-		this.m.SpriteCorpse = "bust_body_81_dead";
+		this.m.SpriteBack = "bust_body_81";
+		this.m.SpriteDamagedBack = "bust_body_81_damaged";
+		this.m.SpriteCorpseBack = "bust_body_81_dead";
 		this.m.Icon = "legend_armor/icon_named_davkul_armor_01.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/inventory_named_davkul_armor_01.png";
