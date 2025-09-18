@@ -1140,25 +1140,25 @@ class Defs:
  "desc" :  "A knotted tail of hair used as decoration by an goblin."
  },
 
-{"name" : "diviner_wraps"                  , "layer" : "hood", "min" : 1, "max" : 5, "base" : True, "value" : 100, "con" : 50, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "true",
-  "title" :  "Diviner Wraps",
-  "desc" :  "A headwear of a diviner."
+{"name" : "diviner_wraps"                  , "layer" : "hood", "min" : 1, "max" : 5, "base" : True, "value" : 100, "con" : 50, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "true",
+  "title" :  "Diviner's Wraps",
+  "desc" :  "The headwear of The Diviner, despite not having any way to see through the fabric, once it sits on your face you can see through it as if it was never there at all."
 },
-{"name" : "diviner_top"                  , "layer" : "vanity", "min" : 1, "max" : 2, "value" : 100, "con" : 15, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",
-  "title" :  "Diviner Crown",
-  "desc" :  "A crown of a diviner."
+{"name" : "diviner_top"                  , "layer" : "helm", "min" : 1, "max" : 2, "value" : 5000, "con" : 65, "stam" : -3, "vis" : 5, "hair" : "true", "beard" : "false",
+  "title" :  "Diviner's Crown",
+  "desc" :  "The crown of The Diviner. Upon placing it on your head it was as if your mind expanded out from your body"
 },
 {"name" : "fleshcultist_book"                  , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 100, "con" : 15, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",
   "title" :  "Fleshcultist Book",
-  "desc" :  "A fleshcultist book."
+  "desc" :  "An old book strapped to the head that once belonged to a twisted flesh cultist, every page of the book is blank."
 },
-{"name" : "fleshcultist_mask"                  , "layer" : "vanity", "min" : 1, "max" : 2, "value" : 100, "con" : 15, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "true",
+{"name" : "fleshcultist_mask"                  , "layer" : "top", "min" : 1, "max" : 2, "value" : 100, "con" : 15, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "true",
   "title" :  "Fleshcultist Mask",
-  "desc" :  "A fleshcultist mask."
+  "desc" :  "A tattered mask that once belonged to a twisted flesh cultist."
 },
-{"name" : "fleshcultist_straps"                  , "layer" : "vanity", "min" : 1, "max" : 2, "value" : 100, "con" : 15, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",
+{"name" : "fleshcultist_straps"                  , "layer" : "vanity", "min" : 1, "max" : 2, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",
   "title" :  "Fleshcultist Straps",
-  "desc" :  "A fleshcultist straps."
+  "desc" :  "A spattering of supple leather straps that once belonged to a twisted flesh cultist."
 },
 
 ]
