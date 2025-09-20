@@ -1666,8 +1666,8 @@ perkDefObjects.push({
 	Script = "scripts/skills/perks/perk_legend_bribe",
 	Name = ::Const.Strings.PerkName.LegendBribe,
 	Tooltip = ::Const.Strings.PerkDescription.LegendBribe,
-	Icon = "ui/perks/coins_circle.png",
-	IconDisabled = "ui/perks/coins_circle_bw.png",
+	Icon = "ui/perks/bribe_circle.png",
+	IconDisabled = "ui/perks/bribe_circle_bw.png",
 	Const = "LegendBribe"
 });
 
@@ -1677,8 +1677,8 @@ perkDefObjects.push({
 	Script = "scripts/skills/perks/perk_legend_off_book_deal",
 	Name = ::Const.Strings.PerkName.LegendOffBookDeal,
 	Tooltip = ::Const.Strings.PerkDescription.LegendOffBookDeal,
-	Icon = "ui/perks/coins_circle.png",
-	IconDisabled = "ui/perks/coins_circle_bw.png",
+	Icon = "ui/perks/off_book_deal.png",
+	IconDisabled = "ui/perks/off_book_deal_bw.png",
 	Const = "LegendOffBookDeal"
 });
 
@@ -1952,8 +1952,8 @@ perkDefObjects.push({
 	Script = "scripts/skills/perks/perk_legend_danger_pay",
 	Name = ::Const.Strings.PerkName.LegendDangerPay,
 	Tooltip = ::Const.Strings.PerkDescription.LegendDangerPay,
-	Icon = "ui/perks/coins_circle.png",
-	IconDisabled = "ui/perks/coins_circle_bw.png",
+	Icon = "ui/perks/danger_pay.png",
+	IconDisabled = "ui/perks/danger_pay_bw.png",
 	Const = "LegendDangerPay"
 });
 
@@ -3595,7 +3595,7 @@ perkDefObjects.push({
 	Name = ::Const.Strings.PerkName.LegendPrayerOfLife,
 	Tooltip = ::Const.Strings.PerkDescription.LegendPrayerOfLife,
 	Icon = "ui/perks/prayer_green.png",
-	IconDisabled = "ui/perks/prayer_green_bw.png",
+	IconDisabled = "ui/perks/prayer_bw.png",
 	Const = "LegendPrayerOfLife"
 });
 
@@ -3606,7 +3606,7 @@ perkDefObjects.push({
 	Name = ::Const.Strings.PerkName.LegendPrayerOfFaith,
 	Tooltip = ::Const.Strings.PerkDescription.LegendPrayerOfFaith,
 	Icon = "ui/perks/prayer_purple.png",
-	IconDisabled = "ui/perks/prayer_purple_bw.png",
+	IconDisabled = "ui/perks/prayer_bw.png",
 	Const = "LegendPrayerOfFaith"
 });
 
@@ -4442,7 +4442,7 @@ perkDefObjects.push({
 	Name = ::Const.Strings.PerkName.LegendMasterTrainer,
 	Tooltip = ::Const.Strings.PerkDescription.LegendMasterTrainer,
 	Icon = "ui/perks/perk_training_01.png",
-	IconDisabled = "ui/perks/Quiltain_tilting_perk_bw.png",
+	IconDisabled = "ui/perks/perk_training_bw.png",
 	Const = "LegendMasterTrainer"
 });
 
@@ -4453,7 +4453,7 @@ perkDefObjects.push({
 	Name = ::Const.Strings.PerkName.LegendWhipThemInShape,
 	Tooltip = ::Const.Strings.PerkDescription.LegendWhipThemInShape,
 	Icon = "ui/perks/perk_training_02.png",
-	IconDisabled = "ui/perks/Quiltain_tilting_perk_bw.png",
+	IconDisabled = "ui/perks/perk_training_bw.png",
 	Const = "LegendWhipThemInShape"
 });
 
