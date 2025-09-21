@@ -968,7 +968,7 @@ perkDefObjects.push({
 
 ::Legends.Perk.LegendPointBlank <- null;
 perkDefObjects.push({
-	ID = "perk.legend_close_combat_archer",
+	ID = "perk.legend_point_blank",
 	Script = "scripts/skills/perks/perk_legend_point_blank",
 	Name = ::Const.Strings.PerkName.LegendPointBlank,
 	Tooltip = ::Const.Strings.PerkDescription.LegendPointBlank,
