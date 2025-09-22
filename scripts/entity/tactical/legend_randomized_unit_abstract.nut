@@ -211,12 +211,10 @@ this.legend_randomized_unit_abstract <- this.inherit("scripts/entity/tactical/hu
 		}
 
 		local weaponPerkTree = this.Const.GetWeaponPerkTree(weapon);
-		// Can be empty now because some weapons no longer seem to have a weapon tree, eg. staves
-		if (weaponPerkTree.len() > 0) {
-			weaponPerkTree = weaponPerkTree[this.Math.rand(0, weaponPerkTree.len() - 1)];
-			if (weaponPerkTree != null && weaponScriptAndChances.len() >= 2 && this.Math.rand(1, 100) <= weaponScriptAndChances[1]) {
-				this.pickPerk(this.m.PerkPower, weaponPerkTree, this.m.EnemyLevel - 1);
-			}
+		weaponPerkTree = weaponPerkTree[this.Math.rand(0, weaponPerkTree.len() - 1)];
+		if (weaponPerkTree != null && weaponScriptAndChances.len() >= 2 && this.Math.rand(1, 100) <= weaponScriptAndChances[1])
+		{
+			this.pickPerk( this.m.PerkPower,  weaponPerkTree, this.m.EnemyLevel - 1);
 		}
 
 		local weaponClassTree = this.Const.GetWeaponClassTree(weapon);
