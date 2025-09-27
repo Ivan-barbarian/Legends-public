@@ -18,9 +18,11 @@ this.perk_legend_first_blood <- this.inherit("scripts/skills/skill", {
 		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
 			return;
 
-		if (_targetEntity.this.getActor().getHitpointsPct() == 1.0)
+		if (_targetEntity.getHitpointsPct() == 1.0)
+		{
 			_properties.DamageTotalMult *= 1.2;
 			_properties.ThresholdToInflictInjuryMult *= 1.5;
+		}
 	}
 
 });
