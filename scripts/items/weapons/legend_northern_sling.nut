@@ -21,9 +21,9 @@ this.legend_northern_sling <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -12;
 		this.m.Condition = 100.0;
 		this.m.ConditionMax = 100.0;
-		this.m.RegularDamage = 35;
-		this.m.RegularDamageMax = 45;
-		this.m.ArmorDamageMult = 1.1;
+		this.m.RegularDamage = 50;
+		this.m.RegularDamageMax = 75;
+		this.m.ArmorDamageMult = 1.6;
 		this.m.DirectDamageMult = 0.75;
 		this.m.Variant = this.Math.rand(1, 2);
 		this.updateVariant();
@@ -39,6 +39,11 @@ this.legend_northern_sling <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.LegendSlingHeavyStone);
+<<<<<<< Updated upstream
+		// ::Legends.Actives.grant(this, ::Legends.Active.LegendSlingCenterMass);
+=======
+		::Legends.Actives.grant(this, ::Legends.Active.LegendSlingCenterMass);
+>>>>>>> Stashed changes
 		::Legends.Actives.grant(this, ::Legends.Active.LegendSlingstaffBash);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendLaunchAcidFlask);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendLaunchDazeBomb);

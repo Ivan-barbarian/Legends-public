@@ -21,9 +21,9 @@ this.legend_named_nomad_sling <- this.inherit("scripts/items/weapons/named/named
 		this.m.RangeMin = 2;
 		this.m.RangeMax = 8;
 		this.m.RangeIdeal = 8;
-		this.m.RegularDamage = 30;
-		this.m.RegularDamageMax = 40;
-		this.m.ArmorDamageMult = 1.0;
+		this.m.RegularDamage = 45;
+		this.m.RegularDamageMax = 70;
+		this.m.ArmorDamageMult = 1.5;
 		this.m.DirectDamageMult = 0.7;
 		this.m.StaminaModifier = -10;
 		this.m.Condition = 80.0;
@@ -33,8 +33,13 @@ this.legend_named_nomad_sling <- this.inherit("scripts/items/weapons/named/named
 
 	function onEquip()
 	{
-		this.named_weapon.onEquip();
+		this.weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.LegendSlingHeavyStone);
+<<<<<<< Updated upstream
+		// ::Legends.Actives.grant(this, ::Legends.Active.LegendSlingCenterMass);
+=======
+		::Legends.Actives.grant(this, ::Legends.Active.LegendSlingCenterMass);
+>>>>>>> Stashed changes
 		::Legends.Actives.grant(this, ::Legends.Active.LegendSlingstaffBash);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendLaunchAcidFlask);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendLaunchDazeBomb);

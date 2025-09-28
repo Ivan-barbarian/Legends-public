@@ -209,15 +209,6 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 		if (_bodyPart == this.Const.BodyPart.Head) {
 			::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Dazed);
 
-			if (user.getCurrentProperties().IsSpecializedInStaffStun && !_targetEntity.getCurrentProperties().IsImmuneToStun) {
-				::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Stunned);
-
-				if (!user.isHiddenToPlayer() && targetTile.IsVisibleForPlayer) {
-					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " struck a hit that leaves " + this.Const.UI.getColorizedEntityName(_targetEntity) + " stunned and dazed");
-					return;
-				}
-			}
-
 			if (!user.isHiddenToPlayer() && targetTile.IsVisibleForPlayer)
 				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " struck a hit that leaves " + this.Const.UI.getColorizedEntityName(_targetEntity) + " dazed");
 		}
