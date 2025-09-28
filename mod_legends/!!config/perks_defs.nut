@@ -2243,17 +2243,6 @@ perkDefObjects.push({
 	Const = "LegendMasterySlings"
 });
 
-::Legends.Perk.LegendSlingerSpins <- null;
-perkDefObjects.push({
-		ID = "perk.legend_slinger_spins",
-		Script = "scripts/skills/perks/perk_legend_slinger_spins",
-		Name = this.Const.Strings.PerkName.LegendSlingerSpins,
-		Tooltip = this.Const.Strings.PerkDescription.LegendSlingerSpins,
-		Icon = "ui/perks/perk_slinger_spins.png",
-		IconDisabled = "ui/perks/perk_slinger_spins_bw.png",
-		Const = "LegendSlingerSpins"
-});
-
 ::Legends.Perk.LegendBarrage <- null;
 perkDefObjects.push({
 		ID = "perk.legend_barrage",
@@ -2263,6 +2252,17 @@ perkDefObjects.push({
 		Icon = "ui/perks/perk_barrage.png",
 		IconDisabled = "ui/perks/perk_barrage_bw.png",
 		Const = "LegendBarrage"
+});
+
+::Legends.Perk.LegendSlingerSpins <- null;
+perkDefObjects.push({
+		ID = "perk.legend_slinger_spins",
+		Script = "scripts/skills/perks/perk_legend_slinger_spins",
+		Name = this.Const.Strings.PerkName.LegendSlingerSpins,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSlingerSpins,
+		Icon = "ui/perks/perk_slinger_spins.png",
+		IconDisabled = "ui/perks/perk_slinger_spins_bw.png",
+		Const = "LegendSlingerSpins"
 });
 
 ::Legends.Perk.LegendStaffBlock <- null;
@@ -4477,6 +4477,39 @@ perkDefObjects.push({
 	Icon = "ui/perks/jack_of_all_trades.png",
 	IconDisabled = "ui/perks/jack_of_all_trades_bw.png",
 	Const = "LegendVersatile"
+});
+
+::Legends.Perk.LegendAnchor <- null;
+perkDefObjects.push({
+	ID = "perk.legend_anchor",
+	Script = "scripts/skills/perks/perk_legend_anchor",
+	Name = ::Const.Strings.PerkName.LegendAnchor,
+	Tooltip = ::Const.Strings.PerkDescription.LegendAnchor,
+	Icon = "ui/perks/anchor.png",
+	IconDisabled = "ui/perks/anchor_bw.png",
+	Const = "LegendAnchor"
+});
+
+::Legends.Perk.LegendFirstBlood <- null;
+perkDefObjects.push({
+	ID = "perk.legend_first_blood",
+	Script = "scripts/skills/perks/perk_legend_first_blood",
+	Name = ::Const.Strings.PerkName.LegendFirstBlood,
+	Tooltip = ::Const.Strings.PerkDescription.LegendFirstBlood,
+	Icon = "ui/perks/first_blood.png",
+	IconDisabled = "ui/perks/first_blood_bw.png",
+	Const = "LegendFirstBlood"
+});
+
+::Legends.Perk.LegendPatientHunter <- null;
+perkDefObjects.push({
+	ID = "perk.legend_patient_hunter",
+	Script = "scripts/skills/perks/perk_legend_first_blood",
+	Name = ::Const.Strings.PerkName.LegendPatientHunter,
+	Tooltip = ::Const.Strings.PerkDescription.LegendPatientHunter,
+	Icon = "ui/perks/patient_hunter.png",
+	IconDisabled = "ui/perks/patient_hunter_bw.png",
+	Const = "LegendPatientHunter"
 });
 
 ::Const.Perks.addPerkDefObjects(perkDefObjects);
