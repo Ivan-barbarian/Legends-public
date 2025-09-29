@@ -312,7 +312,7 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 			if (a.getFaction() == _entity.getFaction())
 				continue;
 
-			if (a.getFaction() == ::Const.Faction.PlayerAnimals) && a.getFaction() == ::Const.Faction.Player)
+			if (a.getFaction() == ::Const.Faction.PlayerAnimals && a.getFaction() == ::Const.Faction.Player)
 				continue;
 
 			if (myTile.getDistanceTo(a.getTile()) > 4)

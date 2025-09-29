@@ -39,11 +39,7 @@ this.legend_northern_sling <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.LegendSlingHeavyStone);
-<<<<<<< Updated upstream
-		// ::Legends.Actives.grant(this, ::Legends.Active.LegendSlingCenterMass);
-=======
-		::Legends.Actives.grant(this, ::Legends.Active.LegendSlingCenterMass);
->>>>>>> Stashed changes
+
 		::Legends.Actives.grant(this, ::Legends.Active.LegendSlingstaffBash);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendLaunchAcidFlask);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendLaunchDazeBomb);

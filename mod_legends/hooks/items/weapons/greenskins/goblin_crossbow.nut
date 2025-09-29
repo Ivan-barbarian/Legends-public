@@ -31,7 +31,7 @@
 		this.setLoaded(true);
 	}
 
-	o.onAnySkillUsed( _skill, _targetEntity, _properties )
+	o.onAnySkillUsed <- function ( _skill, _targetEntity, _properties )
 	{
 		local item = _skill.getItem();
 

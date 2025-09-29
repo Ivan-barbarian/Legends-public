@@ -2043,6 +2043,7 @@ effectsDefs.push({
 	Script = "scripts/skills/effects/legend_enraged_hyena_grip_effect",
 	Const = "LegendEnragedHyenaGrip",
 	Name = "Predatory Grip",
+});
 
 ::Legends.Effect.LegendPatientHunter <- null;
 effectsDefs.push({

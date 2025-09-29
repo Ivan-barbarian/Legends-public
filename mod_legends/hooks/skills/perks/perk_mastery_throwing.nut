@@ -1,5 +1,5 @@
 ::mods_hookExactClass("skills/perks/perk_mastery_throwing", function(o) {
-	q.onAnySkillUsed = @( __original ) function( _skill, _targetEntity, _properties )
+	o.onAnySkillUsed = function( _skill, _targetEntity, _properties )
 	{
 		if (_targetEntity == null || !_skill.isRanged())
 			return;
