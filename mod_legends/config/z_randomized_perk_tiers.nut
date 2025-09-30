@@ -225,7 +225,7 @@
     ],
     WeaponsAndTrees = [
         [1, ["wonky_bow", 50]],
-        [2, ["legend_dilapitated_sling", 50]]
+        [2, ["legend_dilapitated_sling", 50]],
         [1, ["legend_slingshot", 50]],
     ],
     LegendaryPerks = [

@@ -1,8 +1,8 @@
-this.legend_named_sling <- this.inherit("scripts/items/weapons/weapon", {
+this.legend_named_sling <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	m = {},
 	function create()
 	{
-		this.weapon.create();
+		this.named_weapon.create();
 		this.m.ID = "weapon.legend_named_sling";
 		this.m.NameList = this.Const.Strings.SlingNames;
 		this.m.Description = "This sling is reinforced and features a high quality leather pouch. Used to pelt your enemies with rocks. With stones abundant everywhere, it will never run out of ammunition.";
@@ -33,7 +33,7 @@ this.legend_named_sling <- this.inherit("scripts/items/weapons/weapon", {
 
 	function onEquip()
 	{
-		this.weapon.onEquip();
+		this.named_weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.SlingStone);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendWindUp);
 	}

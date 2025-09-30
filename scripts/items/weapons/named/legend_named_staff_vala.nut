@@ -34,7 +34,7 @@ this.legend_named_staff_vala <- this.inherit("scripts/items/weapons/named/named_
 
 	function onEquip()
 	{
-		this.weapon.onEquip();
+		this.named_weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.Bash, function (_skill) {
 			_skill.m.Icon = "skills/staff_bash_vala.png";
 			_skill.m.IconDisabled = "skills/staff_bash_vala_bw.png";
