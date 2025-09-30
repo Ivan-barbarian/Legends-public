@@ -12,6 +12,7 @@
 		this.attached_location.onUpdateProduce(_list);
 		_list.push("trade/legend_gold_dust_item");
 		_list.push("trade/legend_gold_nugget_item");
+		_list.push("trade/legend_silver_ingots_item");
 	}
 
 	local onUpdateDraftList = o.onUpdateDraftList;
