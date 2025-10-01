@@ -2934,14 +2934,6 @@ activesDefs.push({
 	Name = "Transform into Wolf",
 });
 
-::Legends.Active.LegendTumble <- null;
-activesDefs.push({
-	ID = "actives.legend_tumble",
-	Script = "scripts/skills/actives/legend_tumble_skill",
-	Const = "LegendTumble",
-	Name = "Tumble",
-});
-
 ::Legends.Active.LegendUnarmedLunge <- null;
 activesDefs.push({
 	ID = "actives.legend_unarmed_lunge",
@@ -3137,7 +3129,7 @@ activesDefs.push({
 ::Legends.Active.LegendUnleashSighthound <- null;
 activesDefs.push({
 	ID = "actives.legend_unleash_sighthound",
-	Script = "scripts/skills/actives/legend_unleash_sighthound",
+	Script = "scripts/skills/actives/legend_unleash_sighthound_skill",
 	Const = "LegendUnleashSighthound",
 	Name = "Legend Unleash Sighthound",
 });
