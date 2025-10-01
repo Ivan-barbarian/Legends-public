@@ -48,9 +48,9 @@
 	{
 		if (isUsable())
 		{
-			_properties.DamageRegularMin += 20;
-			_properties.DamageRegularMax += 40;
-			_properties.DamageArmorMult	*= 0.4;
+			_properties.DamageRegularMin += 30;
+			_properties.DamageRegularMax += 50;
+			_properties.DamageArmorMult	*= 0.7;
 		}
 	}
 
