@@ -549,6 +549,19 @@ s<sprite id="bust_demonalp_shadow_01" offsetY="35" ic="FF000000" width="174" hei
 <sprite id="bust_hyena_08" offsetX="-10" offsetY="35" ic="FF1F334E" width="104" height="142" img="entity\beasts\bust_hyena_08.png" top="-58" bottom="30" />
 <sprite id="bust_hyena_08_head" offsetX="-10" offsetY="35" ic="FF2A4059" width="104" height="142" img="entity\beasts\bust_hyena_08_head.png" left="-50" right="10" top="-34" bottom="36" />
 <sprite id="bust_hyena_08_head_dead" offsetX="4" offsetY="24" f="6401" ic="FF283B55" width="179" height="154" img="entity\beasts\bust_hyena_08_head_dead.png" left="-48" right="22" top="-52" bottom="12" />
+<sprite id="mummy_bandage_01" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01.png" left="-17" right="29" top="-14" bottom="48" />
+<sprite id="mummy_bandage_01_damaged" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01_damaged.png" left="-17" right="29" top="-14" bottom="48" />
+<sprite id="mummy_bandage_02" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_02.png" left="-28" right="42" top="-22" bottom="48" />
+<sprite id="mummy_bandage_02_damaged" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_02_damaged.png" left="-28" right="42" top="-22" bottom="48" />
+<sprite id="mummy_bandage_03" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_03.png" left="-31" right="39" top="-11" bottom="59" />
+<sprite id="mummy_bandage_03_damaged" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_03_damaged.png" left="-31" right="39" top="-11" bottom="59" />
+<sprite id="mummy_bandage_04" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_04.png" left="-32" right="38" top="-11" bottom="59" />
+<sprite id="mummy_bandage_04_damaged" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_04_damaged.png" left="-32" right="38" top="-11" bottom="59" />
+<sprite id="mummy_bandage_04_dead" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01_dead.png" left="-17" right="29" top="-14" bottom="48" />
+<sprite id="mummy_bandage_04_dead" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01_dead.png" left="-17" right="29" top="-14" bottom="48" />
+<sprite id="mummy_bandage_04_dead" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01_dead.png" left="-17" right="29" top="-14" bottom="48" />
+<sprite id="mummy_bandage_04_dead" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01_dead.png" left="-17" right="29" top="-14" bottom="48" />
+
 """
 
 
