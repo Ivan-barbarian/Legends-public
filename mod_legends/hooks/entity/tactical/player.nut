@@ -1281,7 +1281,7 @@
 				}
 			}
 
-			pickTraits( traits, maxTraits );
+			this.pickTraits( traits, maxTraits );
 
 			for( local i = 1; i < traits.len(); i = ++i )
 			{
