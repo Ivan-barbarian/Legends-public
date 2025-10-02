@@ -37,7 +37,7 @@
 		{
 			_properties.MeleeSkill += 10;
 
-			if (_targetEntity != null && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
+			if (_targetEntity != null && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInSpears && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
 			{
 				_properties.MeleeSkill -= 15;
 				this.m.HitChanceBonus -= 5;
