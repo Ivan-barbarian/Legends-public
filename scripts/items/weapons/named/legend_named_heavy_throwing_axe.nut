@@ -21,7 +21,7 @@ this.legend_named_heavy_throwing_axe <- inherit("scripts/items/weapons/named/nam
 		this.m.SuffixList = this.Const.Strings.BarbarianPrefix;
 		this.m.NameList = this.Const.Strings.ThrowingAxeNames;
 		this.m.Description = "While you wouldn\'t use these for juggling, the craftsmanship is astounding for heavy barbarian axes. Difficult to throw and hit with, but deadly.";
-		this.m.Categories = "Throwing Weapon, Axe, One-Handed";
+		this.m.Categories = "Throwing Weapon/Axe, One-Handed";
 		this.m.SlotType = Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Ammo | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.OneHanded;
 		this.m.AddGenericSkill = true;

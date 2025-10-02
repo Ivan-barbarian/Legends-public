@@ -3,7 +3,7 @@
 	local create = o.create;
 	o.create = function() {
 		create();
-		this.m.Categories = "Sword, Cleaver, Two-Handed";
+		this.m.Categories = "Sword/Cleaver, Two-Handed";
 		this.m.Value = 2900;
 		this.setVariant(this.Math.rand(0, 2));
 	}

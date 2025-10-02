@@ -3,7 +3,7 @@
 	local create = o.create;
 	o.create = function() {
 		create();
-		this.m.Categories = "Throwing Weapon, Spear, One-Handed";
+		this.m.Categories = "Throwing Weapon/Spear, One-Handed";
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Ammo | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.OneHanded;
 		this.m.Variant = this.Math.rand(0, 2);
 		this.m.Ammo = 6;

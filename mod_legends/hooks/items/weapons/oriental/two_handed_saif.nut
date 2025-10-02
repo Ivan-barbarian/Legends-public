@@ -4,7 +4,7 @@
 	o.create = function() {
 		create();
 		this.m.Value = 2400;
-		this.m.Categories = "Sword, Cleaver, Two-Handed";
+		this.m.Categories = "Sword/Cleaver, Two-Handed";
 		this.setVariant(this.Math.rand(0, 2));
 	}
 

@@ -5,6 +5,6 @@
 	{
 		create();
 		this.m.Variants = [1,2];
-		this.m.Categories = "Cleaver, Sword, Two-Handed";
+		this.m.Categories = "Cleaver/Sword, Two-Handed";
 	}
 });
