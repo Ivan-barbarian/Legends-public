@@ -63,13 +63,6 @@ this.perk_legend_push_the_advantage <- this.inherit("scripts/skills/skill", {
 		return bonus;
 	}
 
-	function onBeforeTargetHit ( _skill, _targetEntity, _hitInfo )
-	{
-		if (_targetEntity != null && this.calculateBonus(_targetEntity) != 0) {
-			this.spawnIcon("perk_16", this.getContainer().getActor().getTile());
-		}
-	}
-
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_targetEntity == null)
