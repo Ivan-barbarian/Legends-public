@@ -2,7 +2,8 @@ this.mods_hookExactClass("skills/injury/injured_knee_cap_injury", function(o) {
 	o.m.Cooldown <- 0;
 	o.onAdded <- function ()
 	{
-		this.m.Cooldown += 1;
+		if (this.m.IsNew)
+			this.m.Cooldown += 1;
 	}
 
 	o.onTurnEnd <- function()
