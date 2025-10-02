@@ -62,7 +62,8 @@
 			Weapon = [
 				this.Const.Perks.SpearTree,
 				this.Const.Perks.ShieldTree,
-				this.Const.Perks.ThrowingTree
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.OneHandedTree
 			],
 			Defense = [
 				this.Const.Perks.HeavyArmorTree

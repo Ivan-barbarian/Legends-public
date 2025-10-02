@@ -69,9 +69,9 @@
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.TwoHandedTree,
 				this.Const.Perks.PolearmTree,
-				this.Const.Perks.CleaverTree,
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.ThrowingTree
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.OneHandedTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

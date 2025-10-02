@@ -58,6 +58,7 @@
 				this.Const.Perks.AxeTree,
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.TwoHandedTree,
+				this.Const.Perks.OneHandedTree,
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [

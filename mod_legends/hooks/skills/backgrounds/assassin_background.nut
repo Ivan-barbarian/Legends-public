@@ -62,9 +62,9 @@
 			Weapon = [
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.PolearmTree,
 				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.ThrowingTree
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.OneHandedTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree,

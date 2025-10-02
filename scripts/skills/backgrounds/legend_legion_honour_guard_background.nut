@@ -125,7 +125,8 @@ this.legend_legion_honour_guard_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.CleaverTree
+				this.Const.Perks.CleaverTree,
+				this.Const.Perks.OneHandedTree
 			],
 			Defense = [
 				this.Const.Perks.HeavyArmorTree
