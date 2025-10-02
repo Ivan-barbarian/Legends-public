@@ -44,7 +44,7 @@
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.SwordTree,
-				this.Const.Perks.TwoHandedTree,
+				this.Const.Perks.OneHandedTree,
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.ThrowingTree
