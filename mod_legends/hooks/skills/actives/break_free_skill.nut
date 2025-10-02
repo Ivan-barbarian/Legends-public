@@ -223,12 +223,10 @@
 	o.onCombatFinished <- function ()
 	{
 		local actor = this.getContainer().getActor();
-		if (actor != null) {
-			if (actor.getSprite("status_rooted").getBrush().Name == "bust_web2")
-				actor.getSprite("status_rooted").Visible = false;
-			if (actor.getSprite("status_rooted_back").getBrush().Name == "bust_web2_back")
-				actor.getSprite("status_rooted_back").Visible = false;
-		}
+		if (actor.getSprite("status_rooted").getBrush() != null && actor.getSprite("status_rooted").getBrush().Name == "bust_web2")
+			actor.getSprite("status_rooted").Visible = false;
+		if (actor.getSprite("status_rooted_back").getBrush() != null && actor.getSprite("status_rooted_back").getBrush().Name == "bust_web2_back")
+			actor.getSprite("status_rooted_back").Visible = false;
 		this.skill.onCombatFinished();
 	}
 });
