@@ -142,7 +142,7 @@
   <sprite id="icon_goblin_bow_01_2" offsetY="35" ic="FF252A31" width="104" height="142" img="icons\icon_goblin_bow_01_2.png" left="2" right="52" top="-56" bottom="2" />
   <sprite id="icon_goblin_bow_02_1" offsetY="35" ic="FF2A3037" width="130" height="142" img="icons\icon_goblin_bow_02_1.png" left="1" right="53" top="-66" bottom="10" />
   <sprite id="icon_goblin_bow_02_2" offsetY="35" ic="FF2A3037" width="130" height="142" img="icons\icon_goblin_bow_02_2.png" left="1" right="53" top="-66" bottom="10" />
-  <sprite id="icon_crossbow_goblin_02" offsetY="35" ic="FF2C3137" width="140" height="142" img="icons\icon_crossbow_goblin_02.png" left="-18" right="70" top="-69" bottom="3" />
+  <sprite id="icon_crossbow_goblin_01_1" offsetY="35" ic="FF2C3137" width="140" height="142" img="icons\icon_crossbow_goblin_01_1.png" left="-18" right="70" top="-69" bottom="3" />
   <sprite id="icon_goblin_crossbow_named_01" offsetY="35" ic="FF2C3137" width="140" height="142" img="icons\icon_goblin_crossbow_named_01.png" left="-25" right="64" top="-66" bottom="6" />
   <sprite id="icon_goblin_crossbow_named_02" offsetY="35" ic="FF2C3137" width="140" height="142" img="icons\icon_goblin_crossbow_named_02.png" left="-18" right="70" top="-69" bottom="3" />
   <sprite id="icon_named_goblin_notched_blade_01_bloodied" offsetY="35" ic="FF30323F" width="104" height="142" img="icons\icon_named_goblin_notched_blade_01_bloodied.png" left="-9" right="39" top="-60" bottom="8" />

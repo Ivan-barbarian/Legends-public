@@ -4,15 +4,14 @@
 	{
 		create();
 		this.m.Description = "A large and heavy crossbow with menacing spikes in front. More like a minitature ballista, it shoots stakes with enough force to knock back a target hit. Deals +100 damage to vampires.";
-		this.m.Variant = this.Math.rand(1, 2);
-		this.updateVariant();
+		this.setVariant(this.Math.rand(0, 1));
 	}
 
-	o.updateVariant <- function()
-	{
-		this.m.Icon = "weapons/ranged/crossbow_goblin_0" + this.m.Variant + "_70x70.png";
-		this.m.IconLarge = "weapons/ranged/crossbow_goblin_0" + this.m.Variant + ".png";
-		this.m.ArmamentIcon = "icon_crossbow_goblin_0" + this.m.Variant;
+	o.updateVariant <- function() {
+		local v = this.getVariant() == 0 ? "" : "_" + this.getVariant();
+		this.m.Icon = "weapons/ranged/crossbow_goblin_01" + v + "_70x70.png";
+		this.m.IconLarge = "weapons/ranged/crossbow_goblin_01" + v + ".png";
+		this.m.ArmamentIcon = "icon_crossbow_goblin_01" + v;
 	}
 
 	local onEquip = o.onEquip;

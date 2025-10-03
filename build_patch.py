@@ -76,7 +76,7 @@ class PatchBuilder:
         print(f"Source: {self.source}")
         print(f"Build directory: {self.build_dir}")
         print(f"Battle Brothers directory: {self.bb_dir}")
-        print(f"Latest tag: {self.latest_tag}")
+        print(f"Latest asset tag: {self.latest_tag}")
 
     def handle_exit(self, result, context=""):
         """Handle subprocess exit codes"""
