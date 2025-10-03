@@ -200,7 +200,7 @@
 			_draftList.push("ratcatcher_background");
 			_draftList.push("refugee_background");
 			// _draftList.push("servant_background");
-			_draftList.push("shepard_background");
+			_draftList.push("shepherd_background");
 			_draftList.push("bowyer_background");
 			// _draftList.push("tailor_background");
 			_draftList.push("vagabond_background");
