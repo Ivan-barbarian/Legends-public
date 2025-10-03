@@ -6,24 +6,24 @@
 		_properties.ThresholdToReceiveInjuryMult *= 1.10; //10%
 	}
 
-	local getTooltip = o.getTooltip;
-	o.getTooltip = function ()
-	{
-		local fm = this.Math.round(this.Math.round(this.getChance() / 6) * 100);
-		local tooltip = getTooltip();
+	// local getTooltip = o.getTooltip;
+	// o.getTooltip = function ()
+	// {
+	// 	local fm = this.Math.round(this.Math.round(this.getChance() / 6) * 100);
+	// 	local tooltip = getTooltip();
 
-		if (fm < 100)
-		{
-			tooltip.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Only receive [color=" + this.Const.UI.Color.PositiveValue + "]" + fm + "%[/color] of any damage to hitpoints from attacks"
-			});
-		}
+	// 	if (fm < 100)
+	// 	{
+	// 		tooltip.push({
+	// 			id = 7,
+	// 			type = "text",
+	// 			icon = "ui/icons/special.png",
+	// 			text = "Only receive [color=" + this.Const.UI.Color.PositiveValue + "]" + fm + "%[/color] of any damage to hitpoints from attacks"
+	// 		});
+	// 	}
 
-		return tooltip;
-	}
+	// 	return tooltip;
+	// }
 
 	o.getChance = function ()
 	{
