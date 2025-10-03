@@ -91,6 +91,12 @@ this.legend_irritable_effect <- this.inherit("scripts/skills/injury/injury", {
 		this.m.HealingTimeMax = this.Math.max(this.m.HealingTimeMin + 1, this.m.HealingTimeMax + days);
 	}
 
+	function onAdded()
+	{
+		if (!this.m.JustCooldown)
+			this.injury.onAdded();
+	}
+
 	function onNewDay()
 	{
 		this.injury.onNewDay();
