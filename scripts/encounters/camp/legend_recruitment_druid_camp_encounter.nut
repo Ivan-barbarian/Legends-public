@@ -86,10 +86,12 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
 	}
 
 	function isVisible() {
+		local currentTile = this.World.State.getPlayer().getTile();
 		local towns = this.World.EntityManager.getSettlements();
-		foreach(t in towns){
-			if (t.getTile().getDistanceTo(currentTile) <= 7)
+		foreach (t in towns) {
+			if (t.getTile().getDistanceTo(currentTile) <= 7) {
 				return false; //if too close to town, hide
+			}
 		}
 		return true;
 	}
