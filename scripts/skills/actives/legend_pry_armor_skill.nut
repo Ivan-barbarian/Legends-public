@@ -44,6 +44,15 @@ this.legend_pry_armor_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.getDefaultTooltip();
+		if (this.m.MaxRange == 2)
+		{
+			ret.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/vision.png",
+				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]2" + "[/color] tiles"
+			});
+		}
 		ret.extend([
 			{
 				id = 6,
