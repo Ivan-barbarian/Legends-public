@@ -338,7 +338,7 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		if (closest != null)
-			return skill.attackEntity(_entity, closest);
+			return skill.onUse(_entity.getTile(), closest);
 	}
 
 });
