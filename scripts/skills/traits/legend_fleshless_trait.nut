@@ -82,6 +82,7 @@ this.legend_fleshless_trait <- this.inherit("scripts/skills/traits/character_tra
 
 		actor.m.MoraleState = this.Const.MoraleState.Ignore;
 		actor.m.ExcludedInjuries = [
+			"injury.collapsed_lung_part",
 			"injury.cut_artery",
 			"injury.cut_throat",
 			"injury.deep_abdominal_cut",
