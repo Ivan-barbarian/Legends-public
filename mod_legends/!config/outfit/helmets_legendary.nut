@@ -70,3 +70,20 @@
 };
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Legendary.mask_of_davkul);
 
+::Legends.Helmet.Legendary.grand_diviner_headdress <- {
+	ID = "golems/grand_diviner_headdress",
+	Script = "",
+	Sets = [{
+		Hoods = [
+			[1, "hood/legend_helmet_diviner_wraps"]
+		],
+		Helms = [
+			[1, "helm/legend_helmet_diviner_top"]
+		],
+		Tops = [
+		],
+		Vanity = [
+		]
+	}]
+};
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Legendary.grand_diviner_headdress);
