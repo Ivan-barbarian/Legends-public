@@ -3198,3 +3198,44 @@
 };
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.mercury_royal_guard_01);
 
+::Legends.Helmet.Standard.fault_finder_mask_01 <- {
+	ID = "fault_finder_mask_01",
+	Script = "",
+	Sets = [{
+		Hoods = [
+			[1, "hood/legend_helmet_cloth_cap", 1]
+		],
+		Helms = [
+			[1, "helm/legend_helmet_flat_top_helm", 1]
+		],
+		Tops = [
+			[1, ""]
+		],
+		Vanity = [
+			[1, "vanity/legend_helmet_fleshcultist_book"],
+			[1, "vanity/legend_helmet_fleshcultist_straps"]
+		],
+	}]
+};
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.fault_finder_mask_01);
+
+::Legends.Helmet.Standard.fault_finder_mask_02 <- {
+	ID = "fault_finder_mask_02",
+	Script = "",
+	Sets = [{
+		Hoods = [
+			[1, "hood/legend_helmet_cloth_scarf", 1]
+		],
+		Helms = [
+			[1, ""]
+		],
+		Tops = [
+			[1, "helm/legend_helmet_fleshcultist_mask"]
+		],
+		Vanity = [
+			[1, ""]
+		],
+	}]
+};
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.fault_finder_mask_02);
+

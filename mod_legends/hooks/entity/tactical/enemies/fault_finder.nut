@@ -7,18 +7,14 @@
 			"scripts/items/weapons/butchers_cleaver"
 		];
 		this.m.Items.equip(this.new(weapons[::Math.rand(0, weapons.len() - 1)]));
+
 		this.m.Items.equip(::Const.World.Common.pickArmor([
 			[1, ::Legends.Armor.Standard.fault_finder_robes]
 		]));
 
-		local helmets = [
-			"scripts/items/helmets/golems/fault_finder_book_head",
-			"scripts/items/helmets/golems/fault_finder_facewrap",
-			"scripts/items/helmets/golems/fault_finder_facewrap",
-			"scripts/items/helmets/golems/fault_finder_eye_mask",
-			"scripts/items/helmets/golems/fault_finder_eye_mask",
-			"scripts/items/helmets/golems/fault_finder_eye_mask",
-		];
-		this.m.Items.equip(this.new(helmets[::Math.rand(0, helmets.len() - 1)]));
+		this.m.Items.equip(::Const.World.Common.pickHelmet([
+			[1, ::Legends.Helmet.Standard.fault_finder_mask_01],
+			[1, ::Legends.Helmet.Standard.fault_finder_mask_02]
+		]));
 	}
 });
