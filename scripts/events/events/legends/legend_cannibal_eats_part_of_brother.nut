@@ -200,11 +200,6 @@ this.legend_cannibal_eats_part_of_brother <- this.inherit("scripts/events/event"
 		]);
 	}
 
-	function onDetermineStartScreen()
-	{
-		return "A";
-	}
-
 	function onClear()
 	{
 		this.m.Cannibal = null;

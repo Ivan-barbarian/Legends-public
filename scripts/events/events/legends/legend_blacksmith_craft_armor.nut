@@ -341,11 +341,6 @@ this.legend_blacksmith_craft_armor <- this.inherit("scripts/events/event", {
 		]);
 	}
 
-	function onDetermineStartScreen()
-	{
-		return "A";
-	}
-
 	function onClear()
 	{
 		this.m.Blacksmith = null;

@@ -620,35 +620,20 @@ this.legend_find_slave_after_battle_event <- this.inherit("scripts/events/event"
 		if (f.getType() == this.Const.FactionType.Bandits)
 		{
 			if (this.Math.rand(1, 100) <= 40)
-			{
 				return "Bandits";
-			}
-			else
-			{
-				return "BanditsSoutherner";
-			}
+			return "BanditsSoutherner";
 		}
 		else if (f.getType() == this.Const.FactionType.Barbarians)
 		{
 			if (this.Math.rand(1, 100) <= 50)
-			{
 				return "Barbarians";
-			}
-			else
-			{
-				return "BarbariansNortherner";
-			}
+			return "BarbariansNortherner";
 		}
 		else if (f.getType() == this.Const.FactionType.OrientalBandits)
 		{
 			if (this.Math.rand(1, 100) <= 60)
-			{
 				return "Nomads";
-			}
-			else
-			{
-				return "NomadsNortherner";
-			}
+			return "NomadsNortherner";
 		}
 		else if (f.getType() == this.Const.FactionType.Zombies)
 		{
