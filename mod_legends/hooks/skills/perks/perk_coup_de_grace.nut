@@ -26,12 +26,12 @@
 			return;
 		}
 
-		local mult = 1.0 + this.calculateBonus(_skill, _targetEntity);
+		local mult = 1.0 + this.calculateBonus(_targetEntity);
 
 		_properties.DamageTotalMult *= mult;
 	}
 
-	o.calculateBonus <- function ( _skill, _targetEntity )
+	o.calculateBonus <- function (_targetEntity)
 	{
 
 		local bonus = 0;
@@ -51,7 +51,7 @@
 				}
 			}
 		}
-		
+
 		foreach (effect in this.m.LowBonus)
 		{
 			if (_targetEntity.getSkills().hasEffect(effect))
