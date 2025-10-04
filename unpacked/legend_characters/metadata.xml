@@ -79,6 +79,7 @@
 	<sprite id="bust_head_48_dead_orc" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="238" height="186" img="entity\heads\bust_head_48_dead_orc.png" left="10" right="74" top="-73" bottom="19" />
 	<sprite id="bust_head_49_dead_orc" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="238" height="186" img="entity\heads\bust_head_49_dead_orc.png" left="10" right="74" top="-73" bottom="19" />
 
+	<sprite id="hair_fan" offsetY="35" ic="FF365A74" img="entity\heads\hair_fan.png" left="-16" right="29" top="19" bottom="70" />
 
 	<sprite id="hair_blonde_21" offsetY="35" ic="FF365A74" width="104" height="142" img="entity\heads\hair_blonde_21.png" left="-23" right="31" top="-11" bottom="51" />
 	<sprite id="hair_blonde_21_dead" offsetX="6" offsetY="10" f="64F2" f1="-15" f2="-15" ic="FF375C75" width="131" height="125" img="entity\heads\hair_blonde_21_dead.png" left="-49" right="15" top="-61" bottom="-17" />
