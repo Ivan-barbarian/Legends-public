@@ -45,8 +45,8 @@ this.perk_legend_swagger <- this.inherit("scripts/skills/skill", {
 	function onCombatStarted ()
 	{
 		local properties = this.getContainer().getActor().getCurrentProperties();
-		this.m.ArmorAdded = this.getBonus();
-		this.m.HelmetAdded = this.Math.floor(this.getBonus() / 2);
+		this.m.ArmorAdded = this.getBonus(this.Const.ItemSlot.Body);
+		this.m.HelmetAdded = this.Math.floor(this.getBonus(this.Const.ItemSlot.Head) / 2);
 		properties.Armor[this.Const.BodyPart.Body] += this.m.ArmorAdded;
 		properties.Armor[this.Const.BodyPart.Head] += this.m.HelmetAdded;
 		properties.ArmorMax[this.Const.BodyPart.Body] += this.m.ArmorAdded;
