@@ -252,7 +252,8 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 			"injury.inhaled_flames",
 			"injury.pierced_chest",
 			"injury.pierced_lung",
-			"injury.pierced_side"
+			"injury.pierced_side",
+			"injury.pierced_cheek"
 		];
 	}
 

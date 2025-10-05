@@ -241,7 +241,8 @@ this.legend_legion_honour_guard_background <- this.inherit("scripts/skills/backg
 			"injury.inhaled_flames",
 			"injury.pierced_chest",
 			"injury.pierced_lung",
-			"injury.pierced_side"
+			"injury.pierced_side",
+			"injury.pierced_cheek"
 		];
 		this.getContainer().getActor().getFlags().add("legion_can_command");  //justfies if this background is subject to the legion command skill
 	}

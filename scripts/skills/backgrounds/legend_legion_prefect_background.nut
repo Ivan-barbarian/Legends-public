@@ -240,7 +240,8 @@ this.legend_legion_prefect_background <- this.inherit("scripts/skills/background
 			"injury.inhaled_flames",
 			"injury.pierced_chest",
 			"injury.pierced_lung",
-			"injury.pierced_side"
+			"injury.pierced_side",
+			"injury.pierced_cheek"
 		];
 		this.getContainer().getActor().getFlags().add("legion_can_command");  //justfies if this background is subject to the legion command skill
 	}
