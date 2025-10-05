@@ -7,8 +7,8 @@ this.legend_legion_honour_guard_background <- this.inherit("scripts/skills/backg
 		this.m.Name = "Honour Guard";
 		this.m.Icon = "ui/backgrounds/background_puppet.png"; //to do
 		this.m.BackgroundDescription = "A veteran of hundreds of battles, the honour guard is rewarded for their prowess with ever increasing danger.";
-		// this.m.GoodEnding = ""; //to do
-		// this.m.BadEnding = ""; //to do
+		this.m.GoodEnding = ""; 
+		this.m.BadEnding = "";
 		this.m.HiringCost = 0;
 		this.m.DailyCost = 0;
 		this.m.Excluded = [ //can roll; brute, clubfooted, clumsy, fragile, huge, hesitant, strong, sure footing, survivor, tough, bright, lucky, shortsighted, aggressive, martial, predictable, lumbering, quick, swift, team player, hate nobles, frail, etc (see commented out below)
