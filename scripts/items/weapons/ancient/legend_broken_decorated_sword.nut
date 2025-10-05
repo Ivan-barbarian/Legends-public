@@ -31,9 +31,9 @@ this.legend_broken_decorated_sword <- this.inherit("scripts/items/weapons/weapon
 
 	function onUpdateProperties ( _properties )
 	{
-		if (!this.isScenarioMode() && this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
 		this.weapon.onUpdateProperties(_properties);
-		_properties.Bravery += this.m.Bravery;
+		if (!this.isScenarioMode() && this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+			_properties.Bravery += this.m.Bravery;
 	}
 
 	function onEquip()
