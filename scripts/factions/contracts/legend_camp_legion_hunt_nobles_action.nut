@@ -9,12 +9,10 @@ this.legend_camp_legion_hunt_nobles_action <- this.inherit("scripts/factions/fac
 		this.faction_action.create();
 	}
 
-	function onUpdate(_faction) 
+	function onUpdate(_faction)
 	{
-		if (!this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
-		{
+		if (::World.Assets.getOrigin().getID() != "scenario.legend_risen_legion")
 			return;
-		}
 
 		if (::World.State.getRegions().len() == 0)
 			return;

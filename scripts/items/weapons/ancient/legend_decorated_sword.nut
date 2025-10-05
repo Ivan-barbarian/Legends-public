@@ -42,11 +42,5 @@ this.legend_decorated_sword <- this.inherit("scripts/items/weapons/weapon", {
 		::Legends.Actives.grant(this, ::Legends.Active.Slash);
 		::Legends.Actives.grant(this, ::Legends.Active.Riposte);
 	}
-
-	function onUpdateProperties( _properties )
-	{
-		this.weapon.onUpdateProperties(_properties);
-	}
-
 });
 

@@ -7,8 +7,8 @@ this.legend_legion_gladiator_background <- this.inherit("scripts/skills/backgrou
 		this.m.Name = "Gladiator";
 		this.m.Icon = "ui/backgrounds/background_puppet.png"; //to do
 		this.m.BackgroundDescription = "A leader to few, a slave of many.";
-		this.m.GoodEnding = ""; 
-		this.m.BadEnding = ""; 
+		this.m.GoodEnding = "";
+		this.m.BadEnding = "";
 		this.m.HiringCost = 0;
 		this.m.DailyCost = 0;
 		this.m.Excluded = [ //can roll; brute, clubfooted, clumsy, fragile, huge, hesitant, strong, sure footing, survivor, tough, bright, lucky, shortsighted, aggressive, martial, predictable, lumbering, quick, swift, team player, hate nobles, frail, etc (see commented out below)
@@ -162,11 +162,9 @@ this.legend_legion_gladiator_background <- this.inherit("scripts/skills/backgrou
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
-	function onBuildDescription() 
+	function onBuildDescription()
 	{
-		return "{Although scarred and worn, %name% frequently stands out of place in the wider display of the legion. | Despite the unusual methods of %name%, they fit well into the legion. | While differant from the rest of the legion, %name% provides a skillset that many of the other legionaries could not hold a candle to.} {They prefer to wear a lighter set of armour, still dodging with uncanny speed despite their apperance. | While they  | has a commanding presence, even when not on the battlefield. | has witnessed many battles with the scars to prove it.} 
-
-		{They keep a keen view on who exists and enters camp, even in death where spies would be obvious, they still act as if any newcomer could be an infiltrator. | They always keeps several legionaries building fortifications. Many of which are pointless given the situation — from latrines to irrigation wells. | They are always pacing around camp, ordering legionaries in charge of logistics to buy more grain. The legonaries pile the grain in the tent, but none touch it thereafter.}";
+		return "{Although scarred and worn, %name% frequently stands out of place in the wider display of the legion. | Despite the unusual methods of %name%, they fit well into the legion. | While differant from the rest of the legion, %name% provides a skillset that many of the other legionaries could not hold a candle to.} {They prefer to wear a lighter set of armour, still dodging with uncanny speed despite their apperance. | While they  | has a commanding presence, even when not on the battlefield. | has witnessed many battles with the scars to prove it.}\n\n{They keep a keen view on who exists and enters camp, even in death where spies would be obvious, they still act as if any newcomer could be an infiltrator. | They always keeps several legionaries building fortifications. Many of which are pointless given the situation — from latrines to irrigation wells. | They are always pacing around camp, ordering legionaries in charge of logistics to buy more grain. The legonaries pile the grain in the tent, but none touch it thereafter.}";
 	}
 
 	function onChangeAttributes() //uses Character_background.nut template (Skeleton)

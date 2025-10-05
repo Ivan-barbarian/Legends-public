@@ -46,7 +46,7 @@
 });
 
 ::Legends.CampContracts.EmployerFaction.Legion <- ::Legends.CampContracts.addFaction("ui/banners/factions/banner_legend_legion_s.png", function (_factionID, _roster) { //needs new banner art for legion ideally. this is a placeholder.
-	local unit = ::this.Const.World.Spawn.Troops.SkeletonHeavy; //may change to priest later
+	local unit = ::Const.World.Spawn.Troops.SkeletonHeavy; //may change to priest later
 	local character = _roster.create("scripts/entity/tactical/employer/legend_legion_employer"); //need to refine this - clothes and style
 	character.setFaction(_factionID);
 	character.m.HairColors = this.Const.HairColors.Old;

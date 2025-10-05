@@ -168,11 +168,10 @@ this.legend_barbarian_runechosen <- this.inherit("scripts/entity/tactical/human"
 		}
 		local selected = ::Legends.Runes[this.Math.rand(0, ::Legends.Runes.len() - 1)];
 
-		local weapons = 
-		[
+		local weapons = [
 			"weapons/named/legend_named_rusty_serrated_axe",
 			"weapons/named/legend_named_rusty_greatsword"
-		]
+		];
 		local armor = this.Const.Items.NamedBarbarianArmors;
 		local helmets = this.Const.Items.NamedBarbarianHelmets;
 		local r = this.Math.rand(1, 3);

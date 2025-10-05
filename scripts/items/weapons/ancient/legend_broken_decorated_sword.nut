@@ -48,11 +48,5 @@ this.legend_broken_decorated_sword <- this.inherit("scripts/items/weapons/weapon
 			_skill.m.DeathblowBonus = true;
 		}.bindenv(this));
 	}
-
-	function onUpdateProperties( _properties )
-	{
-		this.weapon.onUpdateProperties(_properties);
-	}
-
 });
 
