@@ -13,15 +13,19 @@
 		return tooltip;
 	}
 
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties )
 	{
 		if (_skill == this)
 		{
 			if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInAxes)
 			{
+				_properties.MeleeSkill -= 10;
 				_properties.HitChanceBonus += 5;
+			}
+			else
+			{
+				_properties.MeleeSkill -= 15;
 			}
 		}
 	}
-
 });
