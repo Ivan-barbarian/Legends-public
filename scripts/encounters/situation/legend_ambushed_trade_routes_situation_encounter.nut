@@ -26,6 +26,9 @@ this.legend_ambushed_trade_routes_situation_encounter <- this.inherit("scripts/e
     }
 
     function isValid(_settlement) {
+	    if (::World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+		    return false;
+
         if (!_settlement.hasSituation("situation.ambushed_trade_routes"))
             return false;
         return !this.isOnCooldown();

@@ -46,8 +46,10 @@ this.legend_killer_scares_noble_encounter <- ::inherit("scripts/encounters/encou
 	}
 
 	function isValid(_camp) {
-		local brothers = ::World.getPlayerRoster().getAll();
+		if (::World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+			return false;
 
+		local brothers = ::World.getPlayerRoster().getAll();
 		local candidates_noble = brothers.filter(@(idx, bro) bro.getBackground().isNoble());
 		if (candidates_noble.len() == 0)
 			return false;

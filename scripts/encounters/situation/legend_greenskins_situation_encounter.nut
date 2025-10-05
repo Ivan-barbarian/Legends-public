@@ -28,8 +28,12 @@ this.legend_greenskins_situation_encounter <- this.inherit("scripts/encounters/e
     }
 
     function isValid(_settlement) {
+	    if (::World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+		    return false;
+
         if (!_settlement.hasSituation("situation.greenskins"))
             return false;
+
         return !this.isOnCooldown();
     }
 })

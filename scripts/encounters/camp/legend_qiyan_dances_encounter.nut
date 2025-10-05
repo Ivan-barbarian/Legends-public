@@ -43,6 +43,9 @@ this.legend_qiyan_dances_encounter <- this.inherit("scripts/encounters/encounter
 	}
 
 	function isValid(_camp) {
+		if (::World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+			return false;
+
 		local roster = ::World.getPlayerRoster().getAll();
 		if (roster.len() < 3)
 			return false;

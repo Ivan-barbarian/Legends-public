@@ -42,7 +42,7 @@ this.perk_legend_himshaw <- this.inherit("scripts/skills/skill", {
 		if (body)
 		{
 			bodyMissing = body.getArmorMax() - body.getArmor();
-			bodyAdded = this.Math.min(bodyMissing, this.Math.min(0, this.Math.floor(body.getArmorMax() _toRepair * 0.1)));
+			bodyAdded = this.Math.min(bodyMissing, this.Math.min(0, this.Math.floor(body.getArmorMax() * _toRepair * 0.1)));
 
 			if (bodyAdded > 0)
 			{

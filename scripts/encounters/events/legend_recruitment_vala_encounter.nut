@@ -47,6 +47,9 @@ this.legend_recruitment_vala_encounter <- this.inherit("scripts/encounters/encou
     }
 
     function isValid(_settlement) {
+	    if (::World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+		    return false;
+
 		if (_settlement.isIsolatedFromRoads())
 			return false;
 

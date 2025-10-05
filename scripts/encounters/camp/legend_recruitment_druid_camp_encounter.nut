@@ -97,6 +97,9 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
 	}
 
 	function isValid(_camp) {
+		if (::World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+			return false;
+
 		if (::World.getPlayerRoster().getSize() >= ::World.Assets.getBrothersMax())
 			return false;
 

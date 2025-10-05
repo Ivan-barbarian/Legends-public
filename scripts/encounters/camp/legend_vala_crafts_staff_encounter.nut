@@ -111,6 +111,9 @@ this.legend_vala_crafts_staff_encounter <- this.inherit("scripts/encounters/enco
 	}
 
 	function isValid(_camp) {
+		if (::World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+			return false;
+
 		if (::World.getPlayerRoster().getSize() < 3)
 			return false;
 

@@ -106,6 +106,9 @@ this.legend_minstrel_performs_at_tavern_encounter <- this.inherit("scripts/encou
     }
 
     function isValid(_settlement) {
+	    if (::World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+		    return false;
+
 		if (!_settlement.hasBuilding("building.tavern"))
 			return false;
 

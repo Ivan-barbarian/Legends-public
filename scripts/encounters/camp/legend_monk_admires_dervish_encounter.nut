@@ -39,6 +39,9 @@ this.legend_monk_admires_dervish_encounter <- ::inherit("scripts/encounters/enco
 	}
 
 	function isValid(_camp) {
+		if (::World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+			return false;
+
 		local brothers = ::World.getPlayerRoster().getAll();
 
 		local candidates_dervish = brothers.filter(@(idx, bro) bro.getBackground().getID() == "background.legend_dervish");
