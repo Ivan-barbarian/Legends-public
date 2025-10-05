@@ -114,6 +114,9 @@ this.legend_ardent_admirer_event <- this.inherit("scripts/events/event", {
 	}
 
 	function onUpdateScore() {
+		if (::Legends.S.oneOf(::World.Assets.getOrigin().getID(), "scenario.legend_risen_legion"))
+			return;
+
 		if (!::World.getTime().IsDaytime)
 			return;
 
