@@ -2,7 +2,7 @@ this.legion_origin_item_delivery_event <- this.inherit("scripts/events/event", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "event.legion_origin_item_delivery"; //—
+		this.m.ID = "event.legion_origin_item_delivery";
 		this.m.Title = "Along the way...";
 		this.m.Cooldown = 45.0 * this.World.getTime().SecondsPerDay; //cart arrives, delives 3 items chosen from an array. reoccours.
 		this.m.Screens.push({
@@ -11,96 +11,50 @@ this.legion_origin_item_delivery_event <- this.inherit("scripts/events/event", {
 			Image = "",
 			List = [],
 			Characters = [],
-			Options = [
-				{
-					Text = "Strange, but welcome.",
-					function getResult( _event )
-					{
-						return 0;
-					}
-
-				}
-			],
+			Options = [{
+				Text = "Strange, but welcome.",
+				getResult = @(_event) 0
+			}],
 			function start( _event )
 			{
-				local item;
-				this.World.Assets.getStash().makeEmptySlots(3);
-				r = this.Math.rand(1, 7); //can add more
-
-				if (r == 1)
-				{
-					item1 = this.new("scripts/items/weapons/ancient/legend_broad_warscythe");
-					item2 = this.new("scripts/items/shields/ancient/auxiliary_shield");
-					item3 = this.new("scripts/items/weapons/ancient/ancient_sword");
-				}
-
-				else if (r == 2)
-				{
-					item1 = this.new("scripts/items/weapons/ancient/legend_broadhead_spear");
-					item2 = this.new("scripts/items/weapons/ancient/legend_military_crypt_cleaver");
-					item3 = this.new("scripts/items/weapons/ancient/falx");
-				}
-
-				else if (r == 3)
-				{
-					item1 = this.new("scripts/items/weapons/ancient/legend_decorated_crypt_cleaver");
-					item2 = this.new("scripts/items/weapons/ancient/legend_kopis");
-					item3 = this.new("scripts/items/weapons/ancient/ancient_spear");
-				}
-
-				else if (r == 4) //fucking Amazon can't deliver shit right god damn
-				{
-					item1 = this.new("items/weapons/ancient/broken_bladed_pike");
-					item2 = this.new("scripts/items/weapons/ancient/legend_broken_decorated_sword");
-					item3 = this.new("scripts/items/weapons/ancient/legend_broken_spatha");
-				}
-				else if (r == 5) 
-				{
-					item1 = this.new("scripts/items/weapons/ancient/legend_decorated_sword");
-					item2 = this.new("scripts/items/weapons/ancient/legend_sica");
-					item3 = this.new("scripts/items/shields/ancient/tower_shield");
-				}
-				else if (r == 6) 
-				{
-					item1 = this.new("scripts/items/weapons/ancient/legend_honed_warscythe");
-					item2 = this.new("scripts/items/weapons/ancient/legend_gladius");
-					item3 = this.new("scripts/items/weapons/ancient/bladed_pike");
-				}
-				else if (r == 7) 
-				{
-					item1 = this.new("scripts/items/weapons/ancient/legend_oxtongue_spear");
-					item2 = this.new("scripts/items/weapons/ancient/legend_spatha");
-					item3 = this.new("scripts/items/weapons/ancient/legend_military_rhomphaia");
-				}
-
-				this.World.Assets.getStash().add(item1);
-				this.List.push({
-					id = 10,
-					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
-				});
-				this.World.Assets.getStash().add(item2);
-				this.List.push({
-					id = 10,
-					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
-				});
-				this.World.Assets.getStash().add(item3);
-				this.List.push({
-					id = 10,
-					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
-				});
+				local items = [
+					::Const.World.Common.pickItem([
+						[1, "weapons/ancient/legend_broad_warscythe"],
+						[1, "weapons/ancient/legend_broadhead_spear"],
+						[1, "weapons/ancient/legend_decorated_crypt_cleaver"],
+						[1, "weapons/ancient/broken_bladed_pike"],
+						[1, "weapons/ancient/legend_decorated_sword"],
+						[1, "weapons/ancient/legend_honed_warscythe"],
+						[1, "weapons/ancient/legend_oxtongue_spear"]
+					], "scripts/items/"),
+					::Const.World.Common.pickItem([
+						[1, "shields/ancient/auxiliary_shield"],
+						[1, "weapons/ancient/legend_military_crypt_cleaver"],
+						[1, "weapons/ancient/legend_kopis"],
+						[1, "weapons/ancient/legend_broken_decorated_sword"],
+						[1, "weapons/ancient/legend_sica"],
+						[1, "weapons/ancient/legend_gladius"],
+						[1, "weapons/ancient/legend_spatha"]
+					], "scripts/items/"),
+					::Const.World.Common.pickItem([
+						[1, "weapons/ancient/ancient_sword"],
+						[1, "weapons/ancient/falx"],
+						[1, "weapons/ancient/ancient_spear"],
+						[1, "weapons/ancient/legend_broken_spatha"],
+						[1, "shields/ancient/tower_shield"],
+						[1, "weapons/ancient/bladed_pike"],
+						[1, "weapons/ancient/legend_military_rhomphaia"]
+					], "scripts/items/")
+				];
+				this.List.extend(::Legends.EventList.addItems(items, ::World.Assets.getStash()));
 			}
 		});
 	}
 
 	function onUpdateScore()
 	{
-		if (this.World.Assets.getOrigin().getID() != "scenario.legend_risen_legion")
-		{
+		if (!::Legends.S.oneOf(::World.Assets.getOrigin().getID(), "scenario.legend_risen_legion"))
 			return;
-		}
 
 		this.m.Score = 5;
 	}
