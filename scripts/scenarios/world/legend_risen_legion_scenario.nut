@@ -94,13 +94,6 @@ this.legend_risen_legion_scenario <- this.inherit("scripts/scenarios/world/start
 
 
 		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);
-		this.World.Assets.getStash().add(this.new("scripts/items/loot/ancient_gold_coins_item"));
-		this.World.Assets.getStash().add(this.new("scripts/items/tents/legend_tent_train"));
-		this.World.Assets.getStash().add(this.new("scripts/items/tents/legend_tent_repair"));
-		this.World.Assets.getStash().add(this.new("scripts/items/tents/legend_tent_scout"));
-		this.World.Assets.getStash().add(this.new("scripts/items/tents/legend_tent_heal"));
-		this.World.Assets.getStash().add(this.new("scripts/items/tents/legend_tent_scrap"));
-		this.World.Assets.getStash().add(this.new("scripts/items/tents/legend_tent_fletcher"));
 		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() + 9);
 
 	}
@@ -226,14 +219,14 @@ this.legend_risen_legion_scenario <- this.inherit("scripts/scenarios/world/start
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_risen_legion_intro");
 		}, null);
-		this.World.Flags.set("HasLegendCampGathering", true);
-		this.World.Flags.set("HasLegendCampCrafting", true);
-		this.World.Flags.set("HasLegendCampFletching", true);
-		this.World.Flags.set("HasLegendCampHealing", true);
-		this.World.Flags.set("HasLegendCampHunting", true);
-		this.World.Flags.set("HasLegendCampScouting", true);
-		this.World.Flags.set("HasLegendCampScraping", true);
-		this.World.Flags.set("HasLegendCampTraining", true);
+		this.World.Flags.set("HasLegendCampGathering", false);
+		this.World.Flags.set("HasLegendCampCrafting", false);
+		this.World.Flags.set("HasLegendCampFletching", false);
+		this.World.Flags.set("HasLegendCampHealing", false);
+		this.World.Flags.set("HasLegendCampHunting", false);
+		this.World.Flags.set("HasLegendCampScouting", false);
+		this.World.Flags.set("HasLegendCampScraping", false);
+		this.World.Flags.set("HasLegendCampTraining", false);
 	}
 
 	function onUpdateHiringRoster( _roster )

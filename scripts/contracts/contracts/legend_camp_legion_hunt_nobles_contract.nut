@@ -12,7 +12,7 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DifficultyMult = ::Math.rand(95, 125) * 0.01;
 		this.m.DescriptionTemplates = [
-			"A Noble house patrol is too close to discovering us.",
+			"A Noble house patrol is too close to discovering a nearby camp of ours.",
 			"Cause infighting between the Noble houses by murdering one of their patrols.",
 		];
 	}
@@ -26,17 +26,45 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 		return true;
 	}
 
-	function start() 
+	function start() //payment & rewards
 	{
-		this.m.Payment.Pool = 800 * this.getPaymentMult() * ::Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
-
-		if (::Math.rand(1, 100) <= 10) {
-			this.m.Payment.Completion = 0.9;
-			this.m.Payment.Advance = 0.1;
-		} else {
-			this.m.Payment.Completion = 1.0;
-		}
-
+		this.m.Payment.Pool = 350 * this.getPaymentMult() * ::Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
+        this.m.Payment.ItemPool = [ //quantity based on reward payout -> it will pick a reward, substract the value from the pool based on the rewardd's item value and roll another one until the reward pool is empty.
+        	//100 = less rare
+        	[80, "supplies/medicine_item"], 
+        	[80, "supplies/armor_parts_item"], 
+			[70, "weapons/ancient/legend_broken_decorated_sword"], 
+			[70, "weapons/ancient/legend_broken_spatha"], 
+        	[50, "weapons/ancient/legend_sica"],
+        	[50, "weapons/ancient/legend_gladius"],
+        	[50, "weapons/ancient/legend_spatha"],
+        	[50, "weapons/ancient/legend_decorated_sword"],   
+			[50, "weapons/ancient/legend_broadhead_spear"],
+			[50, "weapons/ancient/legend_oxtongue_spear"],
+            [30, "weapons/ancient/legend_decorated_rhomphaia"],
+            [30, "weapons/ancient/legend_kopis"],
+            [30, "tools/reinforced_throwing_net"],
+            [20, "weapons/legend_drum"],
+            [20, "weapons/ancient/legend_honed_warscythe"],
+            [20, "weapons/ancient/legend_broad_warscythe"],
+            [20, "weapons/ancient/legend_military_crypt_cleaver"],
+            [20, "weapons/ancient/legend_military_rhomphaia"],
+            [20, "ammo/large_quiver_of_bolts"],
+            [20, "ammo/legend_large_broad_head_bolts"],
+            [20, "ammo/legend_large_broad_head_arrows"],
+            [20, "ammo/legend_large_armor_piercing_bolts"],
+            [20, "ammo/legend_large_armor_piercing_arrows"],
+            [10, "tents/legend_tent_train"],
+            [10, "tents/legend_tent_repair"],
+            [10, "tents/legend_tent_scout"],
+            [10, "tents/legend_tent_heal"],
+            [10, "tents/legend_tent_scrap"],
+            [10, "tents/legend_tent_fletcher"],
+            [5, "misc/legend_map_named_item"],
+            [5, "misc/legend_ancient_scroll_item"],
+            [2, "misc/legend_map_legendary_item"],
+            [1, "tents/legend_tent_enchant"]
+        ];
 		this.contract.start();
 	}
 
@@ -51,7 +79,8 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 					"Do not leave any survivors"
 				];
 
-				if (::Math.rand(1, 100) <= ::Const.Contracts.Settings.IntroChance) {
+				if (::Math.rand(1, 100) <= ::Const.Contracts.Settings.IntroChance) 
+				{
 					this.Contract.setScreen("Intro");
 				} 
 
@@ -63,9 +92,7 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 
 			function end() 
 			{
-				this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
 				local r = ::Math.rand(1, 100);
-
 				this.Flags.set("StartTime", this.Time.getVirtualTimeF());
 				this.Contract.spawnEnemies();
 				this.Contract.setScreen("Overview");
@@ -186,7 +213,7 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 
 	function createScreens() 
 	{
-		this.importScreens(this.Const.Contracts.NegotiationDefault); //for legion, may be better to create new negotiation templates as a hook in 'intro templates'?
+		this.importScreens(::Const.Contracts.NegotiationItemsOnly); //for legion, may be better to create new negotiation templates as a hook in 'intro templates'?
 		this.importScreens(this.Const.Contracts.Overview);
 
 		this.m.Screens.push({
@@ -288,12 +315,12 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 				Text = "A successful hunt.",
 				function getResult() {
 					this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
-					this.World.Assets.addMoney(this.Contract.m.Payment.getOnCompletion());
+					this.List.extend(::Legends.EventList.addItems(this.Contract.m.Payment.Items, ::World.Assets.getStash()));
 					this.World.Contracts.finishActiveContract();
 					return 0;
 				}
 			}],
-			function start() {
+			function start() { //to do
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
