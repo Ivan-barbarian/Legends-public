@@ -794,6 +794,7 @@
   <sprite id="shield_kite_105" offsetY="35" ic="FF2D3B4A" width="130" height="142" img="icons\shield_kite_105.png"  left="4" right="62" top="-70" bottom="22"/>
   <sprite id="shield_kite_105_damaged" offsetY="35" ic="FF253243" width="130" height="142" img="icons\shield_kite_105_damaged.png"  left="7" right="55" top="-70" bottom="22"/>
   <sprite id="shield_kite_105_destroyed" offsetX="-18" offsetY="30" f="640A" ic="FF253243" width="98" height="61" img="icons\shield_kite_105_destroyed.png" left="-49" right="47" top="-30" bottom="22"/>
+  <sprite id="shield_kite_106" offsetY="35" ic="FF2D3B4A" width="130" height="142" img="icons\shield_kite_106.png"  left="4" right="62" top="-70" bottom="22"/>
   <sprite id="shield_kite_106_damaged" offsetY="35" ic="FF253243" width="130" height="142" img="icons\shield_kite_106_damaged.png"  left="7" right="55" top="-70" bottom="22"/>
   <sprite id="shield_kite_106_destroyed" offsetX="-18" offsetY="30" f="640A" ic="FF253243" width="98" height="61" img="icons\shield_kite_106_destroyed.png" left="-49" right="47" top="-30" bottom="22"/>
   <sprite id="shield_metal_round_03_named_03_damaged" offsetY="35" ic="FF363F3E" width="130" height="142" img="icons\shield_metal_round_03_named_03_damaged.png" left="3" right="59" top="-60" bottom="8" />
