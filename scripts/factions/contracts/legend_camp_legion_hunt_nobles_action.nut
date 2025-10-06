@@ -10,7 +10,6 @@ this.legend_camp_legion_hunt_nobles_action <- this.inherit("scripts/factions/fac
 	}
 
 	function onUpdate(_faction) {
-		::logInfo("update yeah");
 		if (!::Legends.S.oneOf(::World.Assets.getOrigin().getID(), "scenario.legend_risen_legion"))
 			return;
 
@@ -24,7 +23,6 @@ this.legend_camp_legion_hunt_nobles_action <- this.inherit("scripts/factions/fac
 			return;
 
 		this.m.Score = 1;
-		::logInfo("update score 1");
 	}
 
 	function onClear() {
