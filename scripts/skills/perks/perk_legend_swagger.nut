@@ -15,7 +15,6 @@ this.perk_legend_swagger <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip ()
 	{
-		local bonus = this.getBonus();
 		return [
 			{
 				id = 1,
@@ -31,13 +30,13 @@ this.perk_legend_swagger <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/armor_body.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "[/color] armor condition added at start of combat"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.getBonus(::Const.ItemSlot.Body) + "[/color] armor condition added at start of combat"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/armor_head.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "[/color] helmet condition added at start of combat"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor(this.getBonus(this.Const.ItemSlot.Head) / 2) + "[/color] helmet condition added at start of combat"
 			}
 		];
 	}
@@ -81,14 +80,12 @@ this.perk_legend_swagger <- this.inherit("scripts/skills/skill", {
 		if (head != null)
 			headvalue = headvalue + head.getValue();
 
-		local fat = actor.getItems().getStaminaModifier(
-			[
+		local fat = actor.getItems().getStaminaModifier([
 				::Const.ItemSlot.Body,
 				::Const.ItemSlot.Head,
-			]
-		);
+		]);
 
-		local gearvalue = bodyvalue + headvalue; 
-		return gearvalue * 0.002 * (1.0 + 0.01 * fat); // 
+		local gearvalue = bodyvalue + headvalue;
+		return gearvalue * 0.002 * (1.0 + 0.01 * fat); //
 	}
 });
