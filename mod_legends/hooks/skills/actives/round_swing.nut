@@ -20,7 +20,7 @@
 			if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInAxes)
 			{
 				_properties.MeleeSkill -= 10;
-				_properties.HitChanceBonus += 5;
+				this.m.HitChanceBonus += 5;
 			}
 			else
 			{
