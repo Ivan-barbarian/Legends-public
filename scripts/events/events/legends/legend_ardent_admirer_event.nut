@@ -22,7 +22,10 @@ this.legend_ardent_admirer_event <- this.inherit("scripts/events/event", {
 			}],
 			function start(_event) {
 				local roster = ::World.getTemporaryRoster();
-				_event.m.Fan = roster.create("scripts/entity/tactical/employer/legend_adoring_fan");
+				_event.m.Fan = roster.create(::Legends.S.oneOf(::World.Assets.getOrigin().getID(), "scenario.legend_risen_legion") ?
+					"scripts/entity/tactical/employer/legend_legion_adoring_fan":
+					"scripts/entity/tactical/employer/legend_adoring_fan"
+				);
 				_event.m.Fan.assignRandomEquipment();
 				this.Characters.push(_event.m.Fan.getImagePath());
 
@@ -70,8 +73,10 @@ this.legend_ardent_admirer_event <- this.inherit("scripts/events/event", {
 			function start(_event) {
 				this.Characters.push(_event.m.Fan.getImagePath());
 				this.List.extend(::Legends.EventList.addItems([
-					::new("scripts/items/weapons/dagger"),
-					::new("scripts/items/legend_armor/cloth/legend_tunic")
+					::Legends.S.oneOf(::World.Assets.getOrigin().getID(), "scenario.legend_risen_legion") ?
+						::Const.World.Common.pickArmor([[1, ::Legends.Armor.Ancient.ancient_breastplate]]):
+						::new("scripts/items/legend_armor/cloth/legend_tunic"),
+					::new("scripts/items/weapons/dagger")
 				], ::World.Assets.getStash()));
 				this.List.push(::Legends.EventList.changeMoney(69));
 				foreach (bro in ::World.getPlayerRoster().getAll()) {
@@ -114,9 +119,6 @@ this.legend_ardent_admirer_event <- this.inherit("scripts/events/event", {
 	}
 
 	function onUpdateScore() {
-		if (::Legends.S.oneOf(::World.Assets.getOrigin().getID(), "scenario.legend_risen_legion"))
-			return;
-
 		if (!::World.getTime().IsDaytime)
 			return;
 
@@ -137,7 +139,7 @@ this.legend_ardent_admirer_event <- this.inherit("scripts/events/event", {
 			this.m.Gunner = candidates_gunner[::Math.rand(0, candidates_gunner.len() - 1)];
 		}
 
-		this.m.Score = 50;
+		this.m.Score = 9999;
 	}
 
 	function onPrepareVariables( _vars )
