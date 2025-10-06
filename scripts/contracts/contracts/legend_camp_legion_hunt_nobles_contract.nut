@@ -406,8 +406,9 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 		]);
 		local nearTile = this.getTileToSpawnLocation(playerTile, 4, 8);
 
-		local party;
-		party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.NobleHouse).spawnEntity(tile, "Patrol", false, ::Const.Const.World.Spawn.Noble, ::Math.rand(135, 150) * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
+		local faction = ::World.FactionManager.getFactionOfType(this.Const.FactionType.NobleHouse);
+
+		local party = faction.spawnEntity(tile, "Patrol", false, ::Const.World.Spawn.Noble, ::Math.rand(135, 150) * this.getDifficultyMult() * this.getScaledDifficultyMult(), this.getMinibossModifier());
 
 		party.setDescription("A large force hunting you down.");
 		party.setMovementSpeed(::Const.World.MovementSettings.Speed * 1.5);
