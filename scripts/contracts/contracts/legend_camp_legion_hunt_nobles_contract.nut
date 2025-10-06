@@ -63,10 +63,7 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
             [5, "misc/legend_map_named_item"],
             [5, "misc/legend_ancient_scroll_item"],
             [2, "misc/legend_map_legendary_item"],
-            [1, "tents/legend_tent_enchant"],
-            [1, "runes/legend_rune_safety"],
-            [1, "runes/legend_rune_endurance"],
-            [1, "runes/legend_rune_luck"]
+            [1, "tents/legend_tent_enchant"]
         ];
 		this.contract.start();
 	}
