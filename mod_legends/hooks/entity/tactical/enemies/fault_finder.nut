@@ -1,4 +1,16 @@
 ::mods_hookExactClass("entity/tactical/enemies/fault_finder", function(o) {
+	local onInit = o.onInit;
+	o.onInit = function ()
+	{
+		onInit();
+		if (::Legends.isLegendaryDifficulty()) {
+			::Legends.Perks.grant(this, ::Legends.Perk.Nimble);
+			::Legends.Perks.grant(this, ::Legends.Perk.Dodge);
+			::Legends.Perks.grant(this, ::Legends.Perk.LegendPerfectFit);
+		}
+	}
+
+
 	o.assignRandomEquipment = function ()
 	{
 		local weapons =	[
