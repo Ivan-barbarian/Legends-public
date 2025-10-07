@@ -376,7 +376,6 @@ this.legend_camp_legion_hunt_nobles_contract <- this.inherit("scripts/contracts/
 
 		::Const.World.Common.addFootprintsFromTo(nearTile, party.getTile(), ::Const.GenericFootprints, 0.85);
 		this.m.Target = this.WeakTableRef(party);
-		party.getSprite("body").setBrush(party.getSprite("body").getBrush().Name + "_" + faction.getBannerString());
 
 		local c = party.getController();
 		c.getBehavior(this.Const.World.AI.Behavior.ID.Flee).setEnabled(false);
