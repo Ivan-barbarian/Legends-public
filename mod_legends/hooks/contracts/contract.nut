@@ -514,9 +514,10 @@
 	o.onDeserialize = function(_in)
 	{
 		onDeserialize( _in );
+
+		this.m.Payment.Items = [];
 		while (_in.readBool()) {
-			local script = this.IO.scriptFilenameByHash(_in.readI32());
-			local item = ::new(script);
+			local item = ::new(::IO.scriptFilenameByHash(_in.readI32()));
 			item.onDeserialize(_in);
 			this.m.Payment.Items.push(item);
 		}
