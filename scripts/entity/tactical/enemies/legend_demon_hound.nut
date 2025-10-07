@@ -649,5 +649,14 @@ this.legend_demon_hound <- this.inherit("scripts/entity/tactical/actor", {
 		}
 	}
 
-});
+	function onFactionChanged() {
+		this.actor.onFactionChanged();
+		local flip = isAlliedWithPlayer();
+		getSprite("body").setHorizontalFlipping(flip);
+		getSprite("head").setHorizontalFlipping(flip);
+		getSprite("injury").setHorizontalFlipping(flip);
+		getSprite("blur_1").setHorizontalFlipping(flip);
+		getSprite("blur_2").setHorizontalFlipping(flip);
+	}
 
+});
