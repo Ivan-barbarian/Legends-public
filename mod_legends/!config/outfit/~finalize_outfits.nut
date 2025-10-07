@@ -16,8 +16,9 @@
 
 /**
 * Picks one from the list of items
-* @param _list in form of weighted list [[1, "relative/patch/to/script"]]
-* or a function that returns item [[1, function () { return ::new("patch/to/script"); }]
+* @param _list in form of weighted list     [[1, "relative/patch/to/script"]]
+* or nested with lambdas:                   [[1, @() [[1, "relative/patch/to/script"]]]]
+* or a function that returns item           [[1, @() ::new("patch/to/script")]
 * @param _script base path to script or a function that returns item object
 */
 ::Const.World.Common.pickItem <- function (_list, _script = "")
@@ -34,8 +35,12 @@
 		return null;
 	selected = selected[0];
 
-	if (typeof(selected[1]) == "function")
-		return this.pickItem(selected[1](), _script);
+	if (typeof(selected[1]) == "function") {
+		local result = selected[1]();
+		if (typeof(result) == "array")
+			return this.pickItem(result, _script);
+		return result;
+	}
 
 	if (_script == "")
 		return selected[1];
