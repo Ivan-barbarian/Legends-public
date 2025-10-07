@@ -955,10 +955,11 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 		local staminaMult = 1.0;
 
-		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.Brawny))
-		{
-			staminaMult = 0.70;
-		}
+		// if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.Brawny))
+		// {
+		// 	staminaMult = 0.70;
+		// }
+		// 19.2 changes to Brawny
 
 		_properties.Armor[this.Const.BodyPart.Head] += this.getArmor();
 		_properties.ArmorMax[this.Const.BodyPart.Head] += this.getArmorMax();
