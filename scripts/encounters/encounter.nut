@@ -259,6 +259,7 @@ this.encounter <- {
 
     function getUIContent()
     {
+	    local type = this.getType(); // this is for error catching only, not used
         local result = [];
         result.push({
             id = 1,
@@ -270,6 +271,7 @@ this.encounter <- {
 
     function getUIList()
     {
+	    local type = this.getType(); // this is for error catching only, not used
         local ret = [];
 
         if (this.m.ActiveScreen.List.len() != 0)
@@ -286,25 +288,26 @@ this.encounter <- {
 
     function getUIImage()
     {
+	    local type = this.getType(); // this is for error catching only, not used
         return this.m.ActiveScreen.Image;
     }
 
     function getUICharacterImage( _index = 0 )
     {
+	    local type = this.getType(); // this is for error catching only, not used
         if (("Characters" in this.m.ActiveScreen) && this.m.ActiveScreen.Characters.len() > _index)
-        {
             return {
                 Image = this.m.ActiveScreen.Characters[_index],
                 IsProcedural = true
             };
-        }
-        else if (("Banner" in this.m.ActiveScreen) && _index > 0)
-        {
+
+        if (("Banner" in this.m.ActiveScreen) && _index > 0)
             return {
                 Image = this.m.ActiveScreen.Banner,
                 IsProcedural = false
             };
-        }
+
+	    return null;
     }
 
     function getUIMiddleOverlay()
