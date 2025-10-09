@@ -1242,5 +1242,13 @@ traitDefs.push({
 	Name = "Flesh Golem Racial",
 });
 
+::Legends.Trait.RacialGrandDiviner <- null;
+traitDefs.push({
+	ID = "racial.grand_diviner",
+	Script = "scripts/skills/racial/grand_diviner_racial",
+	Const = "RacialGrandDiviner",
+	Name = "Diviner\'s Fury",
+});
+
 
 ::Legends.Traits.addTraitDefObjects(traitDefs);

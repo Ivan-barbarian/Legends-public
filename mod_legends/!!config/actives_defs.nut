@@ -3214,4 +3214,20 @@ activesDefs.push({
 	Name = "Corpse Hurl",
 });
 
+::Legends.Active.FleshPull <- null;
+activesDefs.push({
+	ID = "actives.flesh_pull",
+	Script = "scripts/skills/actives/flesh_pull_skill",
+	Const = "FleshPull",
+	Name = "Flesh Pull",
+});
+
+::Legends.Active.CorpseExplosion <- null;
+activesDefs.push({
+	ID = "actives.corpse_explosion",
+	Script = "scripts/skills/actives/corpse_explosion_skill",
+	Const = "CorpseExplosion",
+	Name = "Corpse Explosion",
+});
+
 ::Legends.Actives.addActiveDefObjects(activesDefs);
