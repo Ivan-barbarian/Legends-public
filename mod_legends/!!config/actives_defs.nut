@@ -3182,4 +3182,36 @@ activesDefs.push({
 	Name = "Enraged Hyena Bite",
 });
 
+::Legends.Active.GreaterFleshGolemAttack <- null;
+activesDefs.push({
+	ID = "actives.greater_flesh_golem_attack",
+	Script = "scripts/skills/actives/greater_flesh_golem_attack_skill",
+	Const = "GreaterFleshGolemAttack",
+	Name = "Clout",
+});
+
+::Legends.Active.Flurry <- null;
+activesDefs.push({
+	ID = "actives.flurry_skill",
+	Script = "scripts/skills/actives/flurry_skill",
+	Const = "Flurry",
+	Name = "Flurry",
+});
+
+::Legends.Active.Spike <- null;
+activesDefs.push({
+	ID = "actives.spike_skill",
+	Script = "scripts/skills/actives/spike_skill",
+	Const = "Spike",
+	Name = "Spike",
+});
+
+::Legends.Active.CorpseHurl <- null;
+activesDefs.push({
+	ID = "actives.corpse_hurl_skill",
+	Script = "scripts/skills/actives/corpse_hurl_skill",
+	Const = "CorpseHurl",
+	Name = "Corpse Hurl",
+});
+
 ::Legends.Actives.addActiveDefObjects(activesDefs);

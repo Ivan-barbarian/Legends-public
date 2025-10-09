@@ -1234,5 +1234,13 @@ traitDefs.push({
 	Name = "Blind Rage",
 });
 
+::Legends.Trait.RacialFleshGolem <- null;
+traitDefs.push({
+	ID = "racial.flesh_golem",
+	Script = "scripts/skills/racial/flesh_golem_racial",
+	Const = "RacialFleshGolem",
+	Name = "Flesh Golem Racial",
+});
+
 
 ::Legends.Traits.addTraitDefObjects(traitDefs);
