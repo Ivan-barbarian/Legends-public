@@ -20,6 +20,23 @@ if (!("Perks" in ::Const))
 	]
 };
 
+::Const.Perks.TailorClassTree <- {
+ID = "TailorClassTree",
+	Name = "Trendy",
+	Descriptions = [
+		"tailoring"
+	],
+	Tree = [
+		[],
+		[],
+		[],
+		[],
+		[],
+		[::Legends.Perk.LegendFashionable],
+		[]
+	]
+};
+
 ::Const.Perks.HealerClassTree <- {
 	ID = "HealerClassTree",
 	Name = "Healing",

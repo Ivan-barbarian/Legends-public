@@ -54,7 +54,9 @@ if (!("Perks" in ::Const))
 			::Legends.Perk.Pathfinder
 		],
 		[],
-		[],
+		[
+			::Legends.Perk.LegendAthlete
+		],
 		[],
 		[
 			::Legends.Perk.LegendTacticalManeuvers 
@@ -622,7 +624,9 @@ if (!("Perks" in ::Const))
 			::Legends.Perk.Colossus
 		],
 		[],
-		[],
+		[
+			::Legends.Perk.LegendOnslaught
+		],
 		[],
 		[
 			::Legends.Perk.LegendSecondWind
