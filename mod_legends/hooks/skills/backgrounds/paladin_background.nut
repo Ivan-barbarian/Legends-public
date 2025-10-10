@@ -94,22 +94,17 @@
 
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.TwoHandedTree,
-				this.Const.Perks.AxeTree,
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.ShieldTree,
 				this.Const.Perks.MaceTree,
-				this.Const.Perks.FlailTree,
 				this.Const.Perks.HammerTree,
-				this.Const.Perks.CrossbowTree
+				this.Const.Perks.SwordTree
 			],
 			Defense = [
-				this.Const.Perks.HeavyArmorTree,
-				this.Const.Perks.LightArmorTree
+				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [
 				this.Const.Perks.TrainedTree,
-				this.Const.Perks.ViciousTree,
 				this.Const.Perks.LargeTree,
 				this.Const.Perks.MartyrTree,
 				this.Const.Perks.FitTree
