@@ -46,7 +46,7 @@
 	o.onBeforeDamageReceived = function( _attacker, _skill, _hitInfo, _properties )
 	{
 		onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties );
-		if (this.getSkills().hasPerk(::Legends.Perk.Relentless))
+		if (this.getContainer().hasPerk(::Legends.Perk.Relentless))
 			_properties.DamageReceivedArmorMult *= (1 - (1 - this.getChance()) / 3);
 	}
 
