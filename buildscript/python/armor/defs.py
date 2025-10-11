@@ -760,7 +760,7 @@ class Defs:
  "desc" :  "A cloak made of rough chain and the fur of a beast",
  "adesc" : "Includes a fur cloak"
 },
-{"name": "legend_armor_cloak_common",           "layer": "cloak", "min": 0, "max": 0, "value" : 100, "con" : 10, "stam" : -1, "bravery" : 1, "impactSound" : "leather", "invSound" : "cloth", "brush" : "cloak", "variants" : [8,9,10,11,12,13,14,21,22,23,32,33,34],
+{"name": "legend_armor_cloak_common",           "layer": "cloak", "min": 0, "max": 0, "value" : 100, "con" : 10, "stam" : -1, "bravery" : 1, "impactSound" : "leather", "invSound" : "cloth", "brush" : "cloak", "variants" : [9,10,11,12,13,14,21,22,23,32,33,34],
  "title" :  "Simple Cloak",
  "desc" :  "A rustic cloak made of strong warm wool, provides some small protection, from the weather if nothing else.",
  "adesc" : "Has a stout wool cloak"
