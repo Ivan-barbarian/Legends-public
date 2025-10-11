@@ -2833,8 +2833,8 @@ perkDefObjects.push({
 	Script = "scripts/skills/perks/perk_legend_onslaught",
 	Name = ::Const.Strings.PerkName.LegendOnslaught,
 	Tooltip = ::Const.Strings.PerkDescription.LegendOnslaught,
-	Icon = "ui/perks/perk_26.png",
-	IconDisabled = "ui/perks/perk_26_sw.png",
+	Icon = "ui/perks/onslaught_circle.png",
+	IconDisabled = "ui/perks/onslaught_circle_bw.png",
 	Const = "LegendOnslaught"
 });
 

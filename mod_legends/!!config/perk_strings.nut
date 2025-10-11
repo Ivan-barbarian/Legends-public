@@ -80,7 +80,7 @@
 ::Const.Strings.PerkName.LegendAlert <- "Alert";
 ::Const.Strings.PerkName.LegendBloodbath <- "Bloodbath";
 ::Const.Strings.PerkName.LegendFreedomOfMovement <- "Freedom of Movement";
-::Const.Strings.PerkName.LegendOnslaught <- "Relentless Onslaught";
+::Const.Strings.PerkName.LegendOnslaught <- "Onslaught";
 ::Const.Strings.PerkName.LegendBackToBasics <- "Back to Basics";
 ::Const.Strings.PerkName.LegendPushTheAdvantage <- "Push The Advantage";
 ::Const.Strings.PerkName.LegendMindOverBody <- "Mind over Body";

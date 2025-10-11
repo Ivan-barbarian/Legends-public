@@ -12,6 +12,7 @@
 			this.m.Icon = "skills/active_128.png";
 			this.m.IconDisabled = "skills/active_128_sw.png";
 			this.m.Overlay = "active_128";
+			this.m.ActionPointCost = 6;
 			this.m.DirectDamageMult = 0.4;
 			this.m.FatigueCost = 15;
 		}
