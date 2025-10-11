@@ -76,15 +76,18 @@ this.legend_launch_daze_bomb_skill <- this.inherit("scripts/skills/actives/throw
 
 	function isHidden()
 	{
-		if (!_properties.IsSpecializedInSlings)
+		local actor = this.getContainer().getActor();
+		if (actor == null)
+			return true;
+		if (actor.getCurrentProperties() == null)
+			return true;
+		if (!actor.getCurrentProperties().IsSpecializedInSlings)
 			return true;
 		if (this.m.Item != null && !this.m.Item.isNull() && this.m.Item.getAmmo() != 0)
-		{
 			return false;
-		}
-
 		return this.skill.isHidden();
 	}
+
 
 	function getAmmo()
 	{

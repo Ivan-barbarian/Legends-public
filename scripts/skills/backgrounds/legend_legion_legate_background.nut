@@ -11,65 +11,7 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 		// this.m.BadEnding = ""; //to do
 		this.m.HiringCost = 0;
 		this.m.DailyCost = 0;
-		this.m.Excluded = [ //can roll; brute, clubfooted, clumsy, fragile, huge, hesitant, strong, sure footing, survivor, tough, bright, lucky, shortsighted, aggressive, martial, predictable, lumbering, quick, swift, team player, hate nobles, frail, etc (see commented out below)
-			::Legends.Traits.getID(::Legends.Trait.Ailing), //only including naturally occouring or obtainable traits.
-			::Legends.Traits.getID(::Legends.Trait.Asthmatic),
-			::Legends.Traits.getID(::Legends.Trait.Bleeder),
-			// ::Legends.Traits.getID(::Legends.Trait.Bloodthirsty),
-			::Legends.Traits.getID(::Legends.Trait.Brave),
-			::Legends.Traits.getID(::Legends.Trait.Tiny),
-			::Legends.Traits.getID(::Legends.Trait.Gluttonous),
-			// ::Legends.Traits.getID(::Legends.Trait.Cocky),
-			::Legends.Traits.getID(::Legends.Trait.Craven),
-			::Legends.Traits.getID(::Legends.Trait.Dastard),
-			::Legends.Traits.getID(::Legends.Trait.Deathwish),
-			::Legends.Traits.getID(::Legends.Trait.Determined),
-			// ::Legends.Traits.getID(::Legends.Trait.Dexterous),
-			::Legends.Traits.getID(::Legends.Trait.Disloyal),
-			::Legends.Traits.getID(::Legends.Trait.Drunkard),
-			// ::Legends.Traits.getID(::Legends.Trait.Dumb),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
-			::Legends.Traits.getID(::Legends.Trait.Fat),
-			::Legends.Traits.getID(::Legends.Trait.FearUndead),
-			::Legends.Traits.getID(::Legends.Trait.FearGreenskins),
-			::Legends.Traits.getID(::Legends.Trait.FearBeasts),
-			::Legends.Traits.getID(::Legends.Trait.Fearless),
-			// ::Legends.Traits.getID(::Legends.Trait.EagleEyes),
-			::Legends.Traits.getID(::Legends.Trait.Greedy),
-			::Legends.Traits.getID(::Legends.Trait.HateUndead),
-			// ::Legends.Traits.getID(::Legends.Trait.HateBeasts),
-			// ::Legends.Traits.getID(::Legends.Trait.HateGreenskins),
-			// ::Legends.Traits.getID(::Legends.Trait.Impatient),
-			::Legends.Traits.getID(::Legends.Trait.Insecure),
-			::Legends.Traits.getID(::Legends.Trait.IronLungs),
-			// ::Legends.Traits.getID(::Legends.Trait.IronJaw),
-			::Legends.Traits.getID(::Legends.Trait.Irrational),
-			::Legends.Traits.getID(::Legends.Trait.Loyal),
-			::Legends.Traits.getID(::Legends.Trait.NightOwl),
-			::Legends.Traits.getID(::Legends.Trait.NightBlind),
-			::Legends.Traits.getID(::Legends.Trait.Optimist),
-			// ::Legends.Traits.getID(::Legends.Trait.Paranoid),
-			::Legends.Traits.getID(::Legends.Trait.Pessimist),
-			::Legends.Traits.getID(::Legends.Trait.Spartan),
-			::Legends.Traits.getID(::Legends.Trait.Superstitious),
-			::Legends.Traits.getID(::Legends.Trait.Weasel),
-
-			//legend traits
-			// ::Legends.Traits.getID(::Legends.Trait.LegendAmbitious),
-			::Legends.Traits.getID(::Legends.Trait.LegendFearNobles),
-			// ::Legends.Traits.getID(::Legends.Trait.LegendHateNobles),
-			// ::Legends.Traits.getID(::Legends.Trait.LegendFrail),
-			//::Legends.Traits.getID(::Legends.Trait.LegendCannibalistic),
-			// ::Legends.Traits.getID(::Legends.Trait.LegendSteadyHands),
-			// ::Legends.Traits.getID(::Legends.Trait.LegendPragmatic),
-			// ::Legends.Traits.getID(::Legends.Trait.LegendUnpredictable),
-			::Legends.Traits.getID(::Legends.Trait.LegendSlack),
-			// ::Legends.Traits.getID(::Legends.Trait.LegendSureshot),
-			::Legends.Traits.getID(::Legends.Trait.LegendDoubleTongued),
-			::Legends.Traits.getID(::Legends.Trait.LegendGiftOfPeople),
-			::Legends.Traits.getID(::Legends.Trait.LegendSeductive),
-			// ::Legends.Traits.getID(::Legends.Trait.LegendTalented),
-		];
+		this.m.Excluded = ::Legends.Legion.exludedTraits();
 
 		this.m.ExcludedTalents = [
 			// this.Const.Attributes.RangedSkill,
@@ -171,7 +113,7 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Beards = null;
-		this.m.BeardChance = 1;
+		this.m.BeardChance = 0;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
@@ -221,40 +163,14 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 
 	function onAdded()
 	{
-		if (this.m.IsNew)
-		{
-			this.character_background.onAdded();
+		this.character_background.onAdded();
+		if (this.m.IsNew) {
 			::Legends.Perks.grant(this, ::Legends.Active.LegendCommandLegion);
 			::Legends.Traits.grant(this, ::Legends.Trait.LegendFleshless);
 		}
 
 		local actor = this.getContainer().getActor();
-		actor.m.ExcludedInjuries = [ //all injuries associated with stamina regen, health or resolve
-		//perma injuries must be managed in actor.nut, NOT here!
-		//	"injury.traumatized",
-		//	"injury.brain_damage",
-		//	"injury.missing_nose",
-		//	"injury.weakened_heart",
-		//	"injury.collapsed_lung_part",
-		//temp
-			"injury.cut_artery",
-			"injury.cut_throat",
-			"injury.deep_abdominal_cut",
-			"injury.deep_chest_cut",
-			"injury.exposed_ribs",
-			"injury.grazed_kidney",
-			"injury.grazed_neck",
-			"injury.infected_wound",
-			"injury.sickness",
-			"injury.stabbed_guts",
-			"injury.broken_nose",
-			"injury.crushed_windpipe",
-			"injury.fractured_ribs",
-			"injury.inhaled_flames",
-			"injury.pierced_chest",
-			"injury.pierced_lung",
-			"injury.pierced_side"
-		];
+		actor.m.ExcludedInjuries = ::Legends.Legion.ExludedInjures;
 	}
 
 	function adjustHiringCostBasedOnEquipment() //reduces cost for equipment worn on skeletons to zero for recruiting purposes.
@@ -266,34 +182,22 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		local r;
-		r = this.Math.rand(1, 4);
 
-		if (r == 1)
-		{
-			items.equip(this.new("scripts/items/weapons/ancient/crypt_cleaver"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/weapons/ancient/warscythe"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/weapons/ancient/legend_gladius"));
-		}
-		else if (r == 4)
-		{
-			items.equip(this.new("scripts/items/weapons/ancient/legend_kopis"));
-		}
+		items.equip(::Const.World.Common.pickItem([
+			[1, "weapons/ancient/crypt_cleaver"],
+			[1, "weapons/ancient/warscythe"],
+			[1, "weapons/ancient/legend_gladius"],
+			[1, "weapons/ancient/legend_kopis"]
+		], "scripts/items/"));
 
-		items.equip(this.Const.World.Common.pickArmor([
+		items.equip(::Const.World.Common.pickArmor([
 			[2, ::Legends.Armor.Ancient.ancient_plated_scale_hauberk],
 			[1, ::Legends.Armor.Ancient.ancient_scale_coat],
 			[2, ::Legends.Armor.Ancient.ancient_plate_harness],
 			[1, ::Legends.Armor.Ancient.ancient_plated_mail_hauberk]
 		]));
 
-		items.equip(this.Const.World.Common.pickHelmet([
+		items.equip(::Const.World.Common.pickHelmet([
 			[2, ::Legends.Helmet.Ancient.ancient_honorguard_helmet],
 			[1, ::Legends.Helmet.Ancient.legend_ancient_legionary_helmet_restored]
 		]));

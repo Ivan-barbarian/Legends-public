@@ -181,16 +181,16 @@
 	local daysToScale = this.World.getTime().Days - this.getDaysToScaleDifficulty();
 	if (daysToScale > 0) {
 		local bonus = this.Math.floor(daysToScale / 20.0);
-		b.MeleeSkill += bonus;
-		b.RangedSkill += bonus;
-		b.MeleeDefense += this.Math.floor(bonus / 2);
-		b.RangedDefense += this.Math.floor(bonus / 2);
-		b.Hitpoints += this.Math.floor(bonus * 2);
-		b.Initiative += this.Math.floor(bonus / 2);
-		b.Stamina += bonus;
+		_properties.MeleeSkill += bonus;
+		_properties.RangedSkill += bonus;
+		_properties.MeleeDefense += this.Math.floor(bonus / 2);
+		_properties.RangedDefense += this.Math.floor(bonus / 2);
+		_properties.Hitpoints += this.Math.floor(bonus * 2);
+		_properties.Initiative += this.Math.floor(bonus / 2);
+		_properties.Stamina += bonus;
 		//	b.XP += this.Math.floor(bonus * 4);
-		b.Bravery += bonus;
-		b.FatigueRecoveryRate += this.Math.floor(bonus / 4);
+		_properties.Bravery += bonus;
+		_properties.FatigueRecoveryRate += this.Math.floor(bonus / 4);
 	}
 }
 
@@ -210,4 +210,29 @@
 			return true;
 	}
 	return false;
+}
+
+::Legends.S.hasItemFlag <- function (_item, _flag) {
+	if (_item == null)
+		return false;
+	return _item.getFlags().has(_flag);
+}
+
+// it's intended to use with .pop() when filling, so the sort is opposite of what it would normally be
+::Legends.S.getEmptySlotsInFormation <- function () {
+	local formation = ::World.getPlayerRoster().getAll().filter(@(_, _bro) !_bro.isInReserves()).map(@(_bro) _bro.getPlaceInFormation());
+	local ret = [];
+	for(local i = 0; i < 27; i++) {
+		if (formation.find(i) == null)
+			ret.push(i);
+	}
+	ret.sort(function (a, b) {
+		local rowA = a / 9, rowB = b / 9, colA = a % 9, colB = b % 9;
+		if (rowA != rowB) // prefer further rows
+			return rowA - rowB;
+		local distA = ::Math.abs(colA - 4);
+		local distB = ::Math.abs(colB - 4);
+		return distB - distA; // prefer closer to center of row
+	});
+	return ret;
 }

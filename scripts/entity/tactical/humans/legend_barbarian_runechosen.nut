@@ -101,6 +101,11 @@ this.legend_barbarian_runechosen <- this.inherit("scripts/entity/tactical/human"
 		}
 	}
 
+	function generateName()
+	{
+		return this.Const.Strings.BarbarianNames[this.Math.rand(0, this.Const.Strings.BarbarianNames.len() - 1)] + " " + this.Const.Strings.BarbarianTitles[this.Math.rand(0, this.Const.Strings.BarbarianTitles.len() - 1)];
+	}
+
 	function assignRandomEquipment()
 	{
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Mainhand))
@@ -162,18 +167,11 @@ this.legend_barbarian_runechosen <- this.inherit("scripts/entity/tactical/human"
 			this.m.Items.equip(this.Const.World.Common.pickHelmet(helmet));
 		}
 		local selected = ::Legends.Runes[this.Math.rand(0, ::Legends.Runes.len() - 1)];
-	}
 
-	function makeMiniboss()
-	{
-		assignRune(); // make miniboss is always called so hopefully this works
-		if (!this.actor.makeMiniboss())
-		{
-			return false;
-		}
-
-		this.getSprite("miniboss").setBrush("bust_miniboss");
-		local weapons = this.Const.Items.NamedBarbarianWeapons;
+		local weapons = [
+			"weapons/named/legend_named_rusty_serrated_axe",
+			"weapons/named/legend_named_rusty_greatsword"
+		];
 		local armor = this.Const.Items.NamedBarbarianArmors;
 		local helmets = this.Const.Items.NamedBarbarianHelmets;
 		local r = this.Math.rand(1, 3);
@@ -193,6 +191,17 @@ this.legend_barbarian_runechosen <- this.inherit("scripts/entity/tactical/human"
 			this.m.Items.equip(this.Const.World.Common.pickHelmet(weightName));
 		}
 
+		assignRune();
+	}
+
+	function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
+		{
+			return false;
+		}
+
+		this.getSprite("miniboss").setBrush("bust_miniboss");
 		::Legends.Perks.grant(this, ::Legends.Perk.Fearsome);
 		return true;
 	}

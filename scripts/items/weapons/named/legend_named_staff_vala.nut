@@ -30,6 +30,7 @@ this.legend_named_staff_vala <- this.inherit("scripts/items/weapons/named/named_
 		this.m.ArmorDamageMult = 0.7;
 		this.m.DirectDamageMult = 0.4;
 		this.m.DirectDamageAdd = 0.1;
+		this.m.Flags.add("vala_staff");
 	}
 
 	function onEquip()

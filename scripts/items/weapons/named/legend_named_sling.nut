@@ -16,7 +16,7 @@ this.legend_named_sling <- this.inherit("scripts/items/weapons/named/named_weapo
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_1h_sling_named_01";
-		this.m.Value = 200;
+		this.m.Value = 2900;
 		this.m.StaminaModifier = -4;
 		this.m.RangeMin = 2;
 		this.m.RangeMax = 6;
@@ -27,7 +27,8 @@ this.legend_named_sling <- this.inherit("scripts/items/weapons/named/named_weapo
 		this.m.DirectDamageMult = 0.4;
 		this.m.RegularDamage = 30;
 		this.m.RegularDamageMax = 50;
-		this.m.DamageDirectAdd = 0.1;
+		this.m.DirectDamageAdd = 0.1;
+		this.randomizeValues();
 	}
 
 

@@ -62,7 +62,7 @@ this.legend_named_goblin_crossbow <- this.inherit("scripts/items/weapons/named/n
 		result.push({
 			id = 9,
 			type = "text",
-			icon = "ui/tooltips/special.png",
+			icon = "ui/icons/special.png",
 			text = "[color=" + this.Const.UI.Color.NegativeValue + "]Must be reloaded before firing again[/color]"
 		});
 
@@ -123,4 +123,3 @@ this.legend_named_goblin_crossbow <- this.inherit("scripts/items/weapons/named/n
 	}
 
 });
-

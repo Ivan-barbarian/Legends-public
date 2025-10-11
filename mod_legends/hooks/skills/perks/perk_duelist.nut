@@ -43,6 +43,19 @@
 	// 	return tooltip;
 	// }
 
+	o.onAdded <- function ()
+	{
+		if (!this.m.Container.hasActive(::Legends.Active.LegendFlourish))
+		{
+			::Legends.Actives.grant(this, ::Legends.Active.LegendFlourish);
+		}
+	}
+
+	o.onRemoved <- function ()
+	{
+		::Legends.Actives.remove(this, ::Legends.Active.LegendFlourish);
+	}
+
 	o.isValid <- function ( _mainhand, _offhand )
 	{
 		if (_mainhand == null && _offhand == null)

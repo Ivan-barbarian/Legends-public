@@ -4,6 +4,7 @@
 	o.create = function()
 	{
 		create();
+		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 13;
 	}
 

@@ -182,7 +182,7 @@ class VersionExtractor:
 
         with open(register_file, 'r') as f:
             content = f.read()
-            match = re.search(r'Version = "([0-9]+\.[0-9]+\.[0-9]+)"', content)
+            match = re.search(r'Version = "([0-9]+\.[0-9]+\.[0-9]+(?:-[^"]+)?)"', content)
             if match:
                 return match.group(1)
             else:
@@ -196,7 +196,7 @@ class VersionExtractor:
 
         with open(register_file, 'r') as f:
             content = f.read()
-            match = re.search(r'mod_legends_assets\(>=([0-9]+\.[0-9]+\.[0-9]+)\)', content)
+            match = re.search(r'mod_legends_assets\(>=([0-9]+\.[0-9]+\.[0-9]+(?:-[^)]+)?)\)', content)
             if match:
                 return match.group(1)
             else:

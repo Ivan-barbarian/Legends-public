@@ -61,18 +61,22 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 	function isAbleToUseScroll( _actor )
 	{
 		local effect = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendIrritable);
+		local injury = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendHeadache);
+		local effect = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendIrritable);
+		local injury = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendHeadache);
+		if (injury != null)
+			return "Failed to use this item as the user will be recovering from the last reading for another [color=" + ::Const.UI.Color.NegativeValue + "]" + injury.m.HealingTimeMin + "-" + injury.m.HealingTimeMax +"[/color] days.";
 		if (effect != null)
-			return "Failed to use this item as the user will be recovering from the last reading for another [color=" + ::Const.UI.Color.NegativeValue + "]" + effect.m.HealingTimeMin + "-" + effect.m.HealingTimeMax +"[/color] days.";
+			return "Failed to use this item as the user will be recovering from the last reading for another [color=" + ::Const.UI.Color.NegativeValue + "]" + effect.m.HealingTime + "-" + effect.m.HealingTime +"[/color] days.";
 
 		return true;
 	}
 
 	function applySideEffect( _actor )
 	{
-		::Legends.Effects.grant(_actor, ::Legends.Effect.LegendIrritable);
-		local effect = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendIrritable);
-		if (effect != null)
-			effect.addHealingTime(30);
+		::Legends.Effects.grant(_actor, ::Legends.Effect.LegendHeadache, function (_effect) {
+			_effect.m.IrritableHealingTime = 30;
+		}.bindenv(this));
 	}
 
 	function applyScrollEffect( _result = null, _actor = null )

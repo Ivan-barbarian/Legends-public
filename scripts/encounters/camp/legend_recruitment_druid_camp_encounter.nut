@@ -3,10 +3,10 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
 		Druid = null
     },
     function create() {
+	    this.encounter.create();
         this.m.Type = "encounter.legend_recruitment_druid_camp";
-        this.m.Name = "A burning forest";
+        this.m.Name = ::Const.Strings.randomCampEncounterName();
 		this.m.Cooldown = 60 * ::World.getTime().SecondsPerDay;
-	    this.createScreens();
 	}
 
     function createScreens() {
@@ -86,15 +86,20 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
 	}
 
 	function isVisible() {
+		local currentTile = this.World.State.getPlayer().getTile();
 		local towns = this.World.EntityManager.getSettlements();
-		foreach(t in towns){
-			if (t.getTile().getDistanceTo(currentTile) <= 7)
+		foreach (t in towns) {
+			if (t.getTile().getDistanceTo(currentTile) <= 7) {
 				return false; //if too close to town, hide
+			}
 		}
 		return true;
 	}
 
 	function isValid(_camp) {
+		if (::World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+			return false;
+
 		if (::World.getPlayerRoster().getSize() >= ::World.Assets.getBrothersMax())
 			return false;
 
@@ -109,6 +114,12 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
 		local totalbrothers = 0;
 		local brotherlevels = 0;
 
+		local towns = this.World.EntityManager.getSettlements();
+		foreach(t in towns){
+			if (t.getTile().getDistanceTo(currentTile) <= 7)
+				return false //if too close to town, disable
+		}
+
 		foreach (bro in ::World.getPlayerRoster().getAll()) {
 			if ((bro.getBackground().getID() == "background.legend_druid") || (bro.getBackground().getID() == "background.legend_commander_druid"))
 				return false;
@@ -120,7 +131,7 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
 		if (totalbrothers < 1 || brotherlevels < 30)
 			return false;
 
-		return !this.isOnCooldown();
+		return !isOnCooldown();
 	}
 
 	function onClear() {

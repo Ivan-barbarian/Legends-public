@@ -81,7 +81,7 @@
 	Hitpoints = 80,
 	Bravery = 30,
 	Stamina = 120,
-	MeleeSkill = 20,
+	MeleeSkill = 40,
 	RangedSkill = 0,
 	MeleeDefense = 0, //inbuilt dodge compensates for this
 	RangedDefense = 40,

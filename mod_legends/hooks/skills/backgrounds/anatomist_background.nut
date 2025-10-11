@@ -139,7 +139,7 @@
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
-		this.m.BeardChance = 1;
+		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.FemaleSkinny;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.GoodEnding = "Out of all the women you came to know in the %companyname%, it was %name% the anatomist who is perhaps the most difficult to forget. An unending stream of letters only helps ensure you never will. You skim over her latest, one-sided correspondence: \"Captain! I\'ve managed to...\" skimming, skimming, \"...the greatest invention! The most...\" skimming, skimming. \"I\'m going to be famous! My brain will be studied for its weight is surely...\" Nothing new, it seems, though you are glad she\'s still in good health, albeit perhaps more so in body than mind.";

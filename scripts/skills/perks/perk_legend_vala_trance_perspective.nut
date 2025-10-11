@@ -34,39 +34,22 @@ this.perk_legend_vala_trance_perspective <- this.inherit("scripts/skills/skill",
 		local actor = this.getContainer().getActor();
 
 		if (!this.Tactical.isActive())
-		{
 			return false;
-		}
 
 		if (actor.getTile().hasZoneOfControlOtherThan(actor.getAlliedFactions()))
-		{
 			return false;
-		}
 
 		if (!this.skill.isUsable())
-		{
 			return false;
-		}
 
 		if (this.m.TranceIsActive)
-		{
 			return false;
-		}
 
 		if (actor.getSkills().hasEffect(::Legends.Effect.LegendValaCurrentlyChanting) || actor.getSkills().hasEffect(::Legends.Effect.LegendValaInTrance))
-		{
 			return false;
-		}
 
-		if (actor.getMainhandItem() == null)
-		{
+		if (!::Legends.S.hasItemFlag(actor.getMainhandItem(), "vala_staff"))
 			return false;
-		}
-
-		if (actor.getMainhandItem().getID() != "weapon.legend_staff_vala")
-		{
-			return false;
-		}
 
 		return true;
 	}
@@ -89,7 +72,7 @@ this.perk_legend_vala_trance_perspective <- this.inherit("scripts/skills/skill",
 			text = "Enter a trance and bla bla bla."
 		});
 
-		if (actor.getMainhandItem() == null || (actor.getMainhandItem() != null && actor.getMainhandItem().getID() != "weapon.legend_staff_vala"))
+		if (!::Legends.S.hasItemFlag(actor.getMainhandItem(), "vala_staff"))
 		{
 			ret.push({
 				id = 9,

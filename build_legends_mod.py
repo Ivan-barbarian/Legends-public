@@ -10,6 +10,7 @@ import shutil
 import argparse
 from pathlib import Path
 import platform
+from buildscript.lib import VersionExtractor, BuildError
 
 
 def load_config():
@@ -34,11 +35,6 @@ def load_config():
 
     return config
 
-
-class LegendsModBuildError(Exception):
-    """Custom exception for legends mod build errors"""
-
-    pass
 
 
 class LegendsModBuilder:
@@ -67,6 +63,7 @@ class LegendsModBuilder:
         self.repo_dir = repo_dir
         self.build_dir = Path(build_dir)
         self.current_dir = Path.cwd()
+        self.version_extractor = VersionExtractor(self.current_dir)
 
         print(f"Battle Brothers directory: {self.bb_dir}")
         print(f"Repository directory: {self.repo_dir}")
@@ -111,47 +108,10 @@ class LegendsModBuilder:
         except Exception as e:
             print(f"Warning: cleanup error {e}")
 
-    def extract_version(self):
-        """Extract current version from register_legends.nut"""
-        register_file = self.current_dir / "scripts" / "!mods_preload" / "register_legends.nut"
-        if not register_file.exists():
-            raise LegendsModBuildError("Could not find register_legends.nut to extract version")
-
-        with open(register_file, "r") as f:
-            content = f.read()
-            # Look for Version = "X.Y.Z" pattern
-            import re
-
-            match = re.search(r'Version = "([0-9]+\.[0-9]+\.[0-9]+)"', content)
-            if match:
-                return match.group(1)
-            else:
-                raise LegendsModBuildError("Could not extract version from register_legends.nut")
-
-    def get_legends_assets_version(self):
-        """Extract legends assets version from register_legends.nut"""
-        register_file = self.current_dir / "scripts" / "!mods_preload" / "register_legends.nut"
-        if not register_file.exists():
-            raise LegendsModBuildError(
-                "Could not find register_legends.nut to extract assets version"
-            )
-
-        with open(register_file, "r") as f:
-            content = f.read()
-            # Look for mod_legends_assets(>=X.Y.Z) pattern
-            import re
-
-            match = re.search(r"mod_legends_assets\(>=([0-9]+\.[0-9]+\.[0-9]+)\)", content)
-            if match:
-                return match.group(1)
-            else:
-                raise LegendsModBuildError(
-                    "Could not extract assets version from register_legends.nut"
-                )
 
     def build_assets_script(self):
         """Build asset mod script dynamically"""
-        assets_version = self.get_legends_assets_version()
+        assets_version = self.version_extractor.get_legends_assets_version()
         script_content = f"""::LegendsAssets <- {{
     ID = "mod_legends_assets",
     Version = "{assets_version}",
@@ -162,12 +122,12 @@ class LegendsModBuilder:
 
     def artifact_name_mod(self):
         """Generate mod artifact name"""
-        version = self.extract_version()
+        version = self.version_extractor.extract_version()
         return f"mod_legends-{version}.zip"
 
     def artifact_name_assets(self):
         """Generate assets artifact name"""
-        assets_version = self.get_legends_assets_version()
+        assets_version = self.version_extractor.get_legends_assets_version()
         return f"mod_legends-assets-{assets_version}.zip"
 
     def copy_dead_assets(self):
@@ -321,7 +281,7 @@ class LegendsModBuilder:
 
             print("Legends mod build completed successfully!")
 
-        except LegendsModBuildError as e:
+        except BuildError as e:
             print(f"Legends mod build failed: {e}")
             sys.exit(1)
         except Exception as e:

@@ -76,6 +76,9 @@
 		if (_skill != this)
 			return;
 
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
+			return;
+
 		_properties.RangedSkill += this.m.AdditionalAccuracy;
 		_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;
 		if (_properties.IsSharpshooter)

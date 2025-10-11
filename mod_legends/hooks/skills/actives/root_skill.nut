@@ -103,7 +103,7 @@
 			::Legends.Effects.grant(target, ::Legends.Effect.Rooted, function(_effect) {
 				_effect.setDamage(10, 20);
 			}.bindenv(this));
-			::Legends.Actives.grant(this, ::Legends.Active.BreakFree, function (_skill) {
+			::Legends.Actives.grant(target, ::Legends.Active.BreakFree, function (_skill) {
 				_skill.setDecal("roots_destroyed");
 				_skill.m.Icon = "skills/active_75.png";
 				_skill.m.IconDisabled = "skills/active_75_sw.png";

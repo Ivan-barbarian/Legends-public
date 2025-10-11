@@ -837,7 +837,8 @@
         Sling = this.Const.Perks.SlingTree,
         Spear = this.Const.Perks.SpearTree,
         Sword = this.Const.Perks.SwordTree,
-        Throwing = this.Const.Perks.ThrowingTree
+        Throwing = this.Const.Perks.ThrowingTree,
+        Musical = this.Const.Perks.BardMagicTree
     }
     foreach (weapon, tree in weaponToPerkMap)
     {

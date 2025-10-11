@@ -595,7 +595,7 @@
 	o.kill = function (_killer = null, _skill = null, _fatalityType = this.Const.FatalityType.None, _silent = false) {
 		if (!this.isHiddenToPlayer() && this.m.HitInfo)
 			this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this) + "\'s " + this.Const.Strings.BodyPartName[this.m.HitInfo.BodyPart] + " is hit for [b]" + this.Math.floor(this.m.HitInfo.DamageInflictedHitpoints) + "[/b] damage");
-		
+
 		this.m.HitInfo = null; // yeet hit info that was saved earlier
 		if (this.getFlags().has("tail")) // ignore killer when is tail
 			kill(null, _skill, _fatalityType, _silent);
@@ -634,22 +634,6 @@
 			this.getFlags().remove("DropNet");
    			this.getFlags().remove("IsReinforcedNet");
     		this.getFlags().remove("IsByNetCasting");
-		}
-	}
-
-	// todo same as vanilla, i've added it because vanilla line numbers are off, trying to catch turn_sequence_bar bug - chopeks
-	o.updateVisibilityForFaction = function()
-	{
-		if (!this.isAlive())
-			return;
-
-		if (this.m.CurrentProperties == null)
-			::logInfo("wtf, this.m.CurrentProperties == null?");
-
-		this.updateVisibility(this.getTile(), this.m.CurrentProperties.getVision(), this.getFaction());
-
-		if (this.getFaction() == this.Const.Faction.PlayerAnimals) {
-			this.updateVisibility(this.getTile(), this.m.CurrentProperties.getVision(), this.Const.Faction.Player);
 		}
 	}
 });

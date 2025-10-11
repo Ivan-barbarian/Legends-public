@@ -100,16 +100,6 @@
 		_properties.DamageArmorMult = 0.5;
 
 		local actor = this.getContainer().getActor();
-		if (this.m.Container.hasEffect(::Legends.Effect.Disarmed) || ::Legends.Perks.has(this, ::Legends.Perk.LegendAmbidextrous))
-		{
-			local mhand = actor.getMainhandItem();
-
-			if (mhand != null)
-			{
-				_properties.DamageRegularMin -= mhand.m.RegularDamage;
-				_properties.DamageRegularMax -= mhand.m.RegularDamageMax;
-			}
-		}
 		_properties.FatigueDealtPerHitMult += 1.0; // Increase fatigue damage from 5 to 10
 
 		if (::Legends.Perks.has(this, ::Legends.Perk.LegendAmbidextrous))

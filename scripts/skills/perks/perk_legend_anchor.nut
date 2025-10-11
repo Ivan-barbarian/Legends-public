@@ -6,7 +6,7 @@ this.perk_legend_anchor <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		::Const.Perks.setup(this.m, ::Legends.Perk.LegendAnchor);
-		this.m.IconMini = "perk_anchor";
+		this.m.IconMini = "perk_anchor_mini";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
@@ -81,4 +81,3 @@ this.perk_legend_anchor <- this.inherit("scripts/skills/skill", {
 	}
 
 });
-

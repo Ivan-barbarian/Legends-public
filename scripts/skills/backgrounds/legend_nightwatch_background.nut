@@ -86,7 +86,7 @@ this.legend_nightwatch_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
-		this.m.BeardChance = 1;
+		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.GoodEnding = "%name% found themselves quite comfortable within the darkness, mingling with the company and learning many valuable skills. After they retired from service, they joined with a group of beast hunters that sought to hunt down the horrors of the night. Last you heard, they have been doing quite well for themselves. Able to spot and expell an alp from a village without breaking a sweat.";

@@ -271,9 +271,9 @@ for (local i = -1; i < ::Const.EntityIcon.len(); i++) {
 ::Const.EntityType.LegendGoblinTribeDefender <-
 	::Const.EntityType.addNew("goblin_tribe_defender_orientation", "Goblin Tribe Defender", "Goblin Tribe Defenders", ::Const.FactionType.Goblins);
 ::Const.EntityType.LegendGoblinDirewolfRider <-
-	::Const.EntityType.addNew("goblin_direwolf_orientation", "Direwolf Rider", "Direwolf Riders", this.Const.FactionType.Goblins);
+	::Const.EntityType.addNew("goblin_direwolf_rider_orientation", "Direwolf Rider", "Direwolf Riders", this.Const.FactionType.Goblins);
 ::Const.EntityType.LegendGoblinWhiteDirewolfRider <-
-	::Const.EntityType.addNew("goblin_whitedirewolf_orientation", "White Direwolf Rider", "White Direwolf Riders", this.Const.FactionType.Goblins);
+	::Const.EntityType.addNew("goblin_whitedirewolf_rider_orientation", "White Direwolf Rider", "White Direwolf Riders", this.Const.FactionType.Goblins);
 ::Const.EntityType.LegendGoblinWitchDoctor <-
 	::Const.EntityType.addNew("goblin_witchdoctor_orientation", "Goblin Witchdoctor", "Goblin Witchdoctors", this.Const.FactionType.Goblins);
 ::Const.EntityType.LegendGoblinPlunderer <-

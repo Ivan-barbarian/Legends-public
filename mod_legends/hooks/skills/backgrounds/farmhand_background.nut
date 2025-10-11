@@ -72,7 +72,7 @@
 			Class = [
 				this.Const.Perks.PitchforkClassTree
 			],
-			Profession = [], 
+			Profession = [],
 			Magic = []
 		}
 	}
@@ -96,7 +96,7 @@
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
-		this.m.BeardChance = 1;
+		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.GoodEnding = "The former farmhand, %name%, retired from the %companyname%. The money she made was put toward purchasing a bit of land. she spends the rest of her days happily farming and starting a family with way too many children.";

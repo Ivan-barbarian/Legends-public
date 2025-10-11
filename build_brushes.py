@@ -225,7 +225,7 @@ class BrushBuilder:
             "world_tiles",
             "legend_horses",
             "legend_detail",
-            "legend_terrain",
+            "terrain",
             "legend_ui",
             "legend_objects",
             "legend_effects",

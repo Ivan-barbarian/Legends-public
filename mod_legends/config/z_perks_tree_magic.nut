@@ -11,15 +11,27 @@ if (!("Perks" in ::Const))
 	],
 	Tree = [
 		[
-		::Legends.Perk.LegendCheerOn,
-		::Legends.Perk.LegendSpecialistMusician
+			::Legends.Perk.LegendCheerOn,
+			::Legends.Perk.LegendSpecialistMusician
 		],
-		[::Legends.Perk.LegendDaze],
-		[],
-		[::Legends.Perk.LegendEntice],
-		[::Legends.Perk.LegendPush],
-		[::Legends.Perk.LegendMinnesanger],
-		[::Legends.Perk.LegendMeistersanger]
+		[
+			::Legends.Perk.LegendDaze
+		],
+		[
+			::Legends.Perk.LegendEntice
+		],
+		[
+			::Legends.Perk.LegendMasteryMusic
+		],
+		[
+			::Legends.Perk.LegendPush
+		],
+		[
+			::Legends.Perk.LegendMinnesanger
+		],
+		[
+			::Legends.Perk.LegendMeistersanger
+		]
 	]
 };
 

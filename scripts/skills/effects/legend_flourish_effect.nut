@@ -63,7 +63,7 @@ this.legend_flourish_effect <- this.inherit("scripts/skills/skill", {
 		if(_targetEntity.getMoraleState() == Const.MoraleState.Ignore || !_targetEntity.getCurrentProperties().IsAffectedByLosingHitpoints)
 			return;
 		local actor = this.getContainer().getActor();
-		local bonus = this.getIniDifference(actor, _targetEntity)
+		local bonus = this.getIniDifference(actor, _targetEntity);
 
 		if (bonus == 0)
 			return;
@@ -85,7 +85,7 @@ this.legend_flourish_effect <- this.inherit("scripts/skills/skill", {
 
 		if(_damageInflictedHitpoints >= 1 && _damageInflictedHitpoints < Const.Morale.OnHitMinDamage)
 		{
-			local threatOnHit = actor.getCurrentProperties().ThreatOnHit
+			local threatOnHit = actor.getCurrentProperties().ThreatOnHit;
 			threatOnHit += this.Math.min(20, Math.max(0, (bonus - 10) * 0.2));
 			_targetEntity.checkMorale(-1, Const.Morale.OnHitBaseDifficulty * (1.0 - (_targetEntity.getHitpoints() / _targetEntity.getHitpointsMax())) - threatOnHit);
 		}
@@ -96,9 +96,9 @@ this.legend_flourish_effect <- this.inherit("scripts/skills/skill", {
 		if (_targetEntity == null || !_targetEntity.isAlive())
 			return;
 
-		local bonus = getIniDifference(this.getContainer().getActor(), _targetEntity)
+		local bonus = getIniDifference(this.getContainer().getActor(), _targetEntity);
 		if (bonus == 0)
-			return
+			return;
 
 		local r = this.Math.rand(1, 100);
 		local chance = this.Math.min(100, this.Math.floor(bonus * 0.5));
@@ -145,7 +145,7 @@ this.legend_flourish_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 	function onTurnStart()
-	{	
+	{
 		if (this.m.IsRemoved)
 			this.removeSelf();
 	}

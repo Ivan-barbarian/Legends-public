@@ -24,9 +24,9 @@ this.perk_legend_immovable_object <- this.inherit("scripts/skills/skill", {
 			]
 		);
 		fat *= -1;
-		local bonus = this.Math.abs(fat / 10);
-		_properties.Bravery += this.Math.floor(bonus);
-		_properties.DamageReceivedDirectMult += 0.01 * bonus;
+		local bonus = fat / 10;
+		_properties.MeleeDefense += this.Math.floor(bonus);
+		_properties.DamageReceivedDirectMult *= 1.0 - 0.01 * bonus;
 		if (fat > 50)
 			this.m.SteelBrow = true;
 		else

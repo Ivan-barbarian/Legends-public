@@ -76,11 +76,6 @@ this.legend_backswing_effect <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-	function onAdded()
-	{
-		this.m.TimeAdded = this.Time.getVirtualTimeF();
-	}
-
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_targetEntity == null || !_targetEntity.isAttackable())

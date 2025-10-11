@@ -532,15 +532,9 @@ this.legend_swordmaster_fav_enemy_event <- this.inherit("scripts/events/event", 
 	function onDetermineStartScreen()
 	{
 		local currentTile = this.World.State.getPlayer().getTile();
-
 		if (currentTile.SquareCoords.Y > this.World.getMapSize().Y * 0.7)
-		{
 			return "A2";
-		}
-		else
-		{
-			return "A2";
-		}
+		return "A2";
 	}
 
 	function onClear()

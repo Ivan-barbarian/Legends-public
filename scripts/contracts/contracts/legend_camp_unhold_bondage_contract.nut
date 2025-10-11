@@ -5,7 +5,7 @@ this.legend_camp_unhold_bondage_contract <- this.inherit("scripts/contracts/lege
 	},
 
 	function create() {
-		this.contract.create();
+		this.legend_camp_contract.create();
 		this.m.Type = "contract.legend_camp_unhold_bondage_contract";
 		this.m.Name = "Capture Unhold";
 		this.m.EmployerFaction = ::Legends.CampContracts.EmployerFaction.Barbarians;
@@ -162,7 +162,7 @@ this.legend_camp_unhold_bondage_contract <- this.inherit("scripts/contracts/lege
 	}
 
 	function createScreens() {
-		this.importScreens(::Const.Contracts.NegotiationItemsOnly);
+		this.importScreens(::Const.Contracts.NegotiationItemsOnly());
 		this.importScreens(::Const.Contracts.Overview);
 
 		this.m.Screens.push({
@@ -269,7 +269,6 @@ this.legend_camp_unhold_bondage_contract <- this.inherit("scripts/contracts/lege
 			}],
 			function start() {
 				this.List.extend(::Legends.EventList.addItems(this.Contract.m.Payment.Items, ::World.Assets.getStash()));
-				this.Contract.m.SituationID = this.Contract.resolveSituation(this.Contract.m.SituationID, this.Contract.m.Home, this.List);
 			}
 		});
 

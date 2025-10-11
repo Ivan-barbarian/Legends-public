@@ -13,10 +13,10 @@ if (!("Perks" in ::Const))
 		[::Legends.Perk.LegendMedIngredients],
 		[],
 		[],
-		[::Legends.Perk.LegendSpecBandage],
 		[],
+		[::Legends.Perk.LegendMedPackages],
 		[],
-		[::Legends.Perk.LegendFieldTriage]
+		[]
 	]
 };
 

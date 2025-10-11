@@ -5,7 +5,6 @@ this.legend_camp_contract <- ::inherit("scripts/contracts/contract", {
 
 	function create() {
 		this.contract.create();
-		this.m.IsDone = false;
 	}
 
 	function start() {
@@ -163,6 +162,8 @@ this.legend_camp_contract <- ::inherit("scripts/contracts/contract", {
 			this.m.Screens.extend(::Legends.CampContracts.IntroBandits);
 		} else if (this.m.EmployerFaction == ::Legends.CampContracts.EmployerFaction.Necromancers) {
 			this.m.Screens.extend(::Legends.CampContracts.IntroNecromancers);
+		} else if (this.m.EmployerFaction == ::Legends.CampContracts.EmployerFaction.Legion) {
+			this.m.Screens.extend(::Legends.CampContracts.IntroLegion);
 		}
 	}
 

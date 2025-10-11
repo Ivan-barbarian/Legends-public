@@ -48,7 +48,8 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 				this.Const.Perks.AxeTree,
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.ShieldTree,
-				this.Const.Perks.ThrowingTree
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.OneHandedTree,
 			],
 			Defense = [	
 				this.Const.Perks.HeavyArmorTree,

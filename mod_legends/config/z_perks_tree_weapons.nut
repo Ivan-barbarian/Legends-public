@@ -888,6 +888,7 @@ if (!("Perks" in ::Const))
 		::Const.Perks.HammerTree,
 		::Const.Perks.AxeTree,
 		::Const.Perks.CleaverTree,
+		::Const.Perks.OneHandedTree,
 		::Const.Perks.TwoHandedTree,
 		::Const.Perks.SwordTree,
 		::Const.Perks.DaggerTree,

@@ -71,7 +71,7 @@
 			],
 			Enemy = [],
 			Class = [],
-			Profession = [], 
+			Profession = [],
 			Magic = []
 		}
 	}
@@ -95,7 +95,7 @@
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
-		this.m.BeardChance = 1;
+		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.GoodEnding = "While at a jousting tournament, a young girl was using an oddly shaped, yet perfectly crafted bow. Her aiming hand was shaky, yet the arrows did not wobble upon being loosed. After she won the competition, you inquired about where the girl had gotten such an incredible bow. She stated that a bowyer by the name of %name% had given it to her. Apparently, she\'s known for making the finest bows in all the land!";

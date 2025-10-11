@@ -37,7 +37,7 @@
 		::Legends.Actives.grant(this.weapon, ::Legends.Active.LegendSkewer, function (_skill)
 		{
 			_skill.m.Icon = "skills/skewer_general.png";
-			_skill.m.IconDisabled = "skills/skewer_general_sw.png";
+			_skill.m.IconDisabled = "skills/skewer_general_bw.png";
 			_skill.m.Overlay = "skewer_general";
 		}.bindenv(this));
 	}

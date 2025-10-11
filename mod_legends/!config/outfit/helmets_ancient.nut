@@ -23,7 +23,7 @@
 	Script = "",
 	Sets = [{
 		Hoods = [
-			[1, "hood/legend_helmet_mummy_bandage"]
+			[1, "hood/legend_mummy_bandage"]
 		],
 		Helms = [
 		],
@@ -41,7 +41,7 @@
 	Script = "",
 	Sets = [{
 		Hoods = [
-			[1, "hood/legend_helmet_mummy_bandage"]
+			[1, "hood/legend_mummy_bandage"]
 		],
 		Helms = [
 		],
@@ -61,7 +61,7 @@
 	Script = "",
 	Sets = [{
 		Hoods = [
-			[1, "hood/legend_helmet_mummy_bandage"]
+			[1, "hood/legend_mummy_bandage"]
 		],
 		Helms = [
 		],
@@ -80,7 +80,7 @@
 	Script = "",
 	Sets = [{
 		Hoods = [
-			[1, "hood/legend_helmet_mummy_bandage"]
+			[1, "hood/legend_mummy_bandage"]
 		],
 		Helms = [
 		],

@@ -3,9 +3,9 @@ this.legend_minstrel_performs_at_tavern_encounter <- this.inherit("scripts/encou
 		Minstrel = null
     },
     function create() {
-        this.createScreens();
+	    this.encounter.create();
         this.m.Type = "encounter.legend_minstrel_performs_at_tavern";
-        this.m.Name = "Minstrel wants to perform.";
+        this.m.Name = ::Const.Strings.randomCityEncounterName();
         this.m.Cooldown = 30 * ::World.getTime().SecondsPerDay;
     }
 
@@ -106,6 +106,9 @@ this.legend_minstrel_performs_at_tavern_encounter <- this.inherit("scripts/encou
     }
 
     function isValid(_settlement) {
+	    if (::World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+		    return false;
+
 		if (!_settlement.hasBuilding("building.tavern"))
 			return false;
 

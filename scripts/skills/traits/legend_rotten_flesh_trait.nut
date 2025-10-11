@@ -292,14 +292,22 @@ this.legend_rotten_flesh_trait <- this.inherit("scripts/skills/traits/character_
 		];
 	}
 
-	function onRemoved()
-	{
+	function onRemoved() {
 		local actor = this.getContainer().getActor();
 		actor.m.BloodType = this.Const.BloodType.Red;
 		actor.m.MoraleState = this.Const.MoraleState.Steady;
 		actor.getFlags().remove("undead");
 		actor.getFlags().remove("zombie");
 		actor.getFlags().remove("zombie_minion");
+		// Clear excluded injuries list
+		actor.m.ExcludedInjuries = [];
+		// Restore appearance
+		local background = actor.getBackground();
+		if (background != null) {
+			background.setAppearance();
+		}
+		actor.getItems().updateAppearance();
+		actor.setDirty(true);
 	}
 
 	function onSerialize( _out )
@@ -315,4 +323,3 @@ this.legend_rotten_flesh_trait <- this.inherit("scripts/skills/traits/character_
 	}
 
 });
-

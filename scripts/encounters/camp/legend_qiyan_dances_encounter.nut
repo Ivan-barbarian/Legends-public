@@ -3,10 +3,10 @@ this.legend_qiyan_dances_encounter <- this.inherit("scripts/encounters/encounter
 		Qiyan = null
 	},
 	function create() {
-		this.m.ID = "encounter.legend_qiyan_dances";
+		this.encounter.create();
+		this.m.Type = "encounter.legend_qiyan_dances";
 		this.m.Name = ::Const.Strings.randomCampEncounterName();
 		this.m.Cooldown = 25.0 * ::World.getTime().SecondsPerDay;
-		this.createScreens();
 	}
 
 	function createScreens() {
@@ -30,7 +30,7 @@ this.legend_qiyan_dances_encounter <- this.inherit("scripts/encounters/encounter
 				]);
 
 				foreach (bro in ::World.getPlayerRoster().getAll()) {
-					if (_event.m.Quian.getID() == bro.getID())
+					if (_event.m.Qiyan.getID() == bro.getID())
 						continue;
 					if (::Math.rand(1, 100) <= 50) {
 						local entry = ::Legends.EventList.changeMood(bro, 1.0, "Amazed by the qiyan\'s mesmerising performance!");
@@ -43,6 +43,9 @@ this.legend_qiyan_dances_encounter <- this.inherit("scripts/encounters/encounter
 	}
 
 	function isValid(_camp) {
+		if (::World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+			return false;
+
 		local roster = ::World.getPlayerRoster().getAll();
 		if (roster.len() < 3)
 			return false;

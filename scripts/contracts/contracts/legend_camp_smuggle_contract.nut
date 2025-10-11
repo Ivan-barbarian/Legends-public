@@ -6,7 +6,7 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 		PursuitParty = null
 	},
 	function create() {
-		this.contract.create();
+		this.legend_camp_contract.create();
 		this.m.Type = "contract.legend_camp_smuggle_contract";
 		this.m.Name = "Smuggle item";
 		this.m.EmployerFaction = ::Legends.CampContracts.EmployerFaction.Bandits;

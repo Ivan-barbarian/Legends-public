@@ -591,3 +591,44 @@
 		}
 	]
 }
+
+::Const.World.Spawn.LegendEnragedHyena <- {
+	Name = "LegendEnragedHyena",
+	IsDynamic = true,
+	MovementSpeedMult = 1.0,
+	VisibilityMult = 1.0,
+	VisionMult = 1.0,
+	Body = "figure_hyena_01",
+	MaxR = 800,
+	Fixed = [
+		{
+			Type = this.Const.World.Spawn.Troops.LegendEnragedHyena,
+			Cost = 200,
+			Weight = 0
+		}
+	],
+	Troops = [
+		{
+			Weight = 90
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendEnragedHyena,
+					Cost = 200
+				}
+			]
+		},
+		{
+			Weight = 10
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.Hyena,
+					Cost = 15
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.HyenaHIGH,
+					Cost = 20
+				}
+			]
+		}
+	]
+}

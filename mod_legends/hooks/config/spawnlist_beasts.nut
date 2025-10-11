@@ -680,7 +680,17 @@
 	MaxR = 650,
 	Troops = [
 		{
-			Weight = 100,
+			Weight = 20,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendEnragedHyena,
+					MinR = 800,
+					Cost = 200
+				}
+			]
+		},
+		{
+			Weight = 80,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Hyena,
@@ -690,11 +700,6 @@
 					Type = this.Const.World.Spawn.Troops.HyenaHIGH,
 					MinR = 400,
 					Cost = 20
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.LegendEnragedHyena,
-					MinR = 500,
-					Cost = 25
 				}
 			]
 		}

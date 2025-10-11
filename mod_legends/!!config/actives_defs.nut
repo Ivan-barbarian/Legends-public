@@ -2633,7 +2633,7 @@ activesDefs.push({
 ::Legends.Active.LegendWindUp <- null;
 activesDefs.push({
 	ID = "actives.legend_wind_up",
-	Script = "scripts/skills/actives/legend_wind_up",
+	Script = "scripts/skills/actives/legend_wind_up_skill",
 	Const = "LegendWindUp",
 	Name = "Wind Up",
 });
@@ -2934,14 +2934,6 @@ activesDefs.push({
 	Name = "Transform into Wolf",
 });
 
-::Legends.Active.LegendTumble <- null;
-activesDefs.push({
-	ID = "actives.legend_tumble",
-	Script = "scripts/skills/actives/legend_tumble_skill",
-	Const = "LegendTumble",
-	Name = "Tumble",
-});
-
 ::Legends.Active.LegendUnarmedLunge <- null;
 activesDefs.push({
 	ID = "actives.legend_unarmed_lunge",
@@ -3137,7 +3129,7 @@ activesDefs.push({
 ::Legends.Active.LegendUnleashSighthound <- null;
 activesDefs.push({
 	ID = "actives.legend_unleash_sighthound",
-	Script = "scripts/skills/actives/legend_unleash_sighthound",
+	Script = "scripts/skills/actives/legend_unleash_sighthound_skill",
 	Const = "LegendUnleashSighthound",
 	Name = "Legend Unleash Sighthound",
 });
@@ -3188,6 +3180,54 @@ activesDefs.push({
 	Script = "scripts/skills/actives/legend_enraged_hyena_bite_skill",
 	Const = "LegendEnragedHyenaBite",
 	Name = "Enraged Hyena Bite",
+});
+
+::Legends.Active.GreaterFleshGolemAttack <- null;
+activesDefs.push({
+	ID = "actives.greater_flesh_golem_attack",
+	Script = "scripts/skills/actives/greater_flesh_golem_attack_skill",
+	Const = "GreaterFleshGolemAttack",
+	Name = "Clout",
+});
+
+::Legends.Active.Flurry <- null;
+activesDefs.push({
+	ID = "actives.flurry_skill",
+	Script = "scripts/skills/actives/flurry_skill",
+	Const = "Flurry",
+	Name = "Flurry",
+});
+
+::Legends.Active.Spike <- null;
+activesDefs.push({
+	ID = "actives.spike_skill",
+	Script = "scripts/skills/actives/spike_skill",
+	Const = "Spike",
+	Name = "Spike",
+});
+
+::Legends.Active.CorpseHurl <- null;
+activesDefs.push({
+	ID = "actives.corpse_hurl_skill",
+	Script = "scripts/skills/actives/corpse_hurl_skill",
+	Const = "CorpseHurl",
+	Name = "Corpse Hurl",
+});
+
+::Legends.Active.FleshPull <- null;
+activesDefs.push({
+	ID = "actives.flesh_pull",
+	Script = "scripts/skills/actives/flesh_pull_skill",
+	Const = "FleshPull",
+	Name = "Flesh Pull",
+});
+
+::Legends.Active.CorpseExplosion <- null;
+activesDefs.push({
+	ID = "actives.corpse_explosion",
+	Script = "scripts/skills/actives/corpse_explosion_skill",
+	Const = "CorpseExplosion",
+	Name = "Corpse Explosion",
 });
 
 ::Legends.Actives.addActiveDefObjects(activesDefs);

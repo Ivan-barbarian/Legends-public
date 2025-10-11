@@ -50,7 +50,7 @@
 		local original = this.m.BusinessReputationRate;
 		if (::World.Retinue.hasFollower("follower.minstrel"))
 			this.m.BusinessReputationRate *= 1.25; // should be taken into account (blacksmith influence)
-		addBusinessReputation(_f)
+		addBusinessReputation(_f);
 		this.m.BusinessReputationRate = original;
 	}
 
@@ -613,7 +613,7 @@
 			 local items = this.m.Stash.getItems();
 			 local stashmaxrepairpotential = this.Math.ceil(roster.len() * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()] * this.m.RepairSpeedMult * this.Const.World.Assets.ArmorPerHour); //otherwise fixed version will be too good
 			 if (::World.Retinue.hasFollower("follower.blacksmith"))
-				stashmaxrepairpotential *= 1.33 // should be taken into account (blacksmith influence)
+				stashmaxrepairpotential *= 1.33; // should be taken into account (blacksmith influence)
 			 foreach( item in items )
 			 {
 				if (this.isCamping()) //disable in camp, otherwise mess

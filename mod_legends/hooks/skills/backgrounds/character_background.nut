@@ -1471,7 +1471,7 @@
 			hair.setBrush("hair_" + hairColor + "_" + this.Const.Hair.Zombie[this.Math.rand(0, this.Const.Hair.Zombie.len() - 1)]);
 			hair.varyColor(0.02, 0.02, 0.02);
 
-			if (this.Math.rand(1, 100) <= this.m.BeardChance)
+			if (this.m.Beards != null && this.Math.rand(1, 100) <= this.m.BeardChance)
 			{
 				local beard = actor.getSprite("beard");
 				beard.setBrush("beard_" + hairColor + "_" + this.Const.Beards.Zombie[this.Math.rand(0, this.Const.Beards.Zombie.len() - 1)]);
@@ -1506,7 +1506,7 @@
 			hair.setBrush("hair_" + hairColor + "_" + this.Const.Hair.ZombieOnly[this.Math.rand(0, this.Const.Hair.ZombieOnly.len() - 1)]);
 			hair.varyColor(0.02, 0.02, 0.02);
 
-			if (this.Math.rand(1, 100) <= this.m.BeardChance)
+			if (this.m.Beards != null && this.Math.rand(1, 100) <= this.m.BeardChance)
 			{
 				local beard = actor.getSprite("beard");
 				beard.setBrush("beard_" + hairColor + "_" + this.Const.Beards.ZombieOnly[this.Math.rand(0, this.Const.Beards.ZombieOnly.len() - 1)]);

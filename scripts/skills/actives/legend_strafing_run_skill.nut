@@ -4,9 +4,9 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 	{
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendStrafingRun);
 		this.m.Description = "Quickly reposition and fire if your crossbow is loaded. Can only fire at a target that is at most 4 tiles away from the reposition location";
-		this.m.Icon = "skills/active_52.png";
-		this.m.IconDisabled = "skills/active_52_sw.png";
-		this.m.Overlay = "active_52";
+		this.m.Icon = "ui/perks/perk_sprint.png";
+		this.m.IconDisabled = "ui/perks/perk_sprint_sw.png";
+		this.m.Overlay = "perk_37_active";
 		this.m.SoundOnUse = [];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OtherTargeted;
@@ -59,7 +59,7 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 
 		if (!this.getItem().isLoaded())
 		{
-			tooltip.push({
+			ret.push({
 				id = 9,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
@@ -163,7 +163,7 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		this.Tactical.getNavigator().teleport(_user, _targetTile, this.onTeleportDone, tag, false, 2.0);
+		this.Tactical.getNavigator().teleport(_user, _targetTile, this.onTeleportDone.bindenv(this), tag, false, 2.0);
 		return true;
 	}
 
@@ -338,7 +338,7 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		if (closest != null)
-			return skill.attackEntity(_entity, closest);
+			return skill.onUse(_entity, closest.getTile());
 	}
 
 });

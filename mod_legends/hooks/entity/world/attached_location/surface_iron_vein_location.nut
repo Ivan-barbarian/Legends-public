@@ -40,7 +40,7 @@
 			_list.push({
 				R = 97,
 				P = 1.0,
-				S = "trade/pov_silver_ingots_item"
+				S = "trade/legend_silver_ingots_item"
 			});
 		}
 	}

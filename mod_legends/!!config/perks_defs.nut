@@ -4377,7 +4377,8 @@ perkDefObjects.push({
 	Tooltip = ::Const.Strings.PerkDescription.LegendSwagger,
 	Icon = "ui/perks/meek.png",
 	IconDisabled = "ui/perks/meek_bw.png",
-	Const = "LegendSwagger"
+	Const = "LegendSwagger",
+	HasUnactivatedPerkTooltipHints = true
 });
 
 ::Legends.Perk.LegendKeenEyesight <- null;

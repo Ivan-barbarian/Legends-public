@@ -1,5 +1,7 @@
 this.legend_pry_armor_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		IsPolearm = false,
+	},
 	function create()
 	{
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendPryArmor);
@@ -42,6 +44,15 @@ this.legend_pry_armor_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.getDefaultTooltip();
+		if (this.m.MaxRange == 2)
+		{
+			ret.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/vision.png",
+				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]2" + "[/color] tiles"
+			});
+		}
 		ret.extend([
 			{
 				id = 6,
@@ -80,6 +91,11 @@ this.legend_pry_armor_skill <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			_properties.DamageTotalMult *= 0.1;
+			if (_targetEntity != null && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInHammers && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
+			{
+				_properties.MeleeSkill -= 15;
+				this.m.HitChanceBonus -= -15;
+			}
 		}
 	}
 

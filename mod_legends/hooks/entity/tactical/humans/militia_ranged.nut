@@ -18,8 +18,7 @@
 
 	o.assignRandomEquipment = function ()
 	{
-		local r;
-		r = this.Math.rand(1, 2)
+		local r = this.Math.rand(1, 2);
 		if (r == 1)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/short_bow"));

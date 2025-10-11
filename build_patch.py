@@ -11,6 +11,7 @@ import shutil
 import argparse
 import platform
 from pathlib import Path
+from buildscript.lib import VersionExtractor, BuildError
 
 
 def load_config():
@@ -36,10 +37,6 @@ def load_config():
     return config
 
 
-class PatchBuildError(Exception):
-    """Custom exception for patch build errors"""
-
-    pass
 
 
 class PatchBuilder:
@@ -66,9 +63,10 @@ class PatchBuilder:
 
         self.bb_dir = Path(bb_dir)
         self.build_dir = Path(build_dir)
+        self.version_extractor = VersionExtractor(self.current_dir)
 
         # Get latest tag for assets version
-        self.latest_tag = self.get_legends_assets_version()
+        self.latest_tag = self.version_extractor.get_legends_assets_version()
 
         # Get commit hash if source not provided
         if source is None:
@@ -78,7 +76,7 @@ class PatchBuilder:
         print(f"Source: {self.source}")
         print(f"Build directory: {self.build_dir}")
         print(f"Battle Brothers directory: {self.bb_dir}")
-        print(f"Latest tag: {self.latest_tag}")
+        print(f"Latest asset tag: {self.latest_tag}")
 
     def handle_exit(self, result, context=""):
         """Handle subprocess exit codes"""
@@ -87,24 +85,7 @@ class PatchBuilder:
             print(error_msg)
             if result.stderr:
                 print(f"Error output: {result.stderr}")
-            raise PatchBuildError(error_msg)
-
-    def get_legends_assets_version(self):
-        """Extract legends assets version from register_legends.nut"""
-        register_file = self.current_dir / "scripts" / "!mods_preload" / "register_legends.nut"
-        if not register_file.exists():
-            raise PatchBuildError("Could not find register_legends.nut to extract assets version")
-
-        with open(register_file, "r") as f:
-            content = f.read()
-            # Look for mod_legends_assets(>=X.Y.Z) pattern
-            import re
-
-            match = re.search(r"mod_legends_assets\(>=([0-9]+\.[0-9]+\.[0-9]+)\)", content)
-            if match:
-                return match.group(1)
-            else:
-                raise PatchBuildError("Could not extract assets version from register_legends.nut")
+            raise BuildError(error_msg)
 
     def get_commit_hash(self, tag):
         """Get commit hash for a given tag"""
@@ -123,26 +104,10 @@ class PatchBuilder:
             print("Warning: git not found")
             return ""
 
-    def extract_version(self):
-        """Extract current version from register_legends.nut"""
-        register_file = self.current_dir / "scripts" / "!mods_preload" / "register_legends.nut"
-        if not register_file.exists():
-            raise PatchBuildError("Could not find register_legends.nut to extract version")
-
-        with open(register_file, "r") as f:
-            content = f.read()
-            # Look for Version = "X.Y.Z" pattern
-            import re
-
-            match = re.search(r'Version = "([0-9]+\.[0-9]+\.[0-9]+)"', content)
-            if match:
-                return match.group(1)
-            else:
-                raise PatchBuildError("Could not extract version from register_legends.nut")
 
     def artifact_name_mod(self):
         """Generate mod artifact name"""
-        version = self.extract_version()
+        version = self.version_extractor.extract_version()
         return f"mod_legends-{version}.zip"
 
     def build_helmets(self):
@@ -372,7 +337,7 @@ class PatchBuilder:
 
             print(f"Patch build completed successfully! Created: {final_zip_path}")
 
-        except PatchBuildError as e:
+        except BuildError as e:
             print(f"Patch build failed: {e}")
             sys.exit(1)
         except Exception as e:

@@ -12,19 +12,7 @@ this.perk_legend_rebound <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		local actor = this.getContainer().getActor();
-		local maxFat = actor.getFatigueMax();
-		local currentFat = actor.getFatigue();
-		local ratio = currentFat / maxFat;
-
-		if (ratio > 0.9)
-		{
-			_properties.FatigueRecoveryRate += 5;
-		}
-		else if (ratio > 0.75 && actor.getSkills().hasPerk(::Legends.Perk.LegendRecuperation))
-		{
-			_properties.FatigueRecoveryRate += 5;
-		}
+		_properties.FatigueRecoveryRate += this.Math.ceil(0.1 * this.getContainer().getActor().getFatigue());
 	}
 
 });

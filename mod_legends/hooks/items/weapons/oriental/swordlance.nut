@@ -5,17 +5,14 @@
 		create();
 		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver | this.Const.Items.WeaponType.Polearm;
 		this.m.Value = 1700;
-		this.m.Variant = this.Math.rand(0, 2);
-		this.updateVariant();
+		this.setVariant(this.Math.rand(0, 2));
 	}
 
 	o.updateVariant <- function() {
-		if (this.m.Variant == 0) {
-			return;
-		}
-		this.m.Icon = "weapons/melee/swordlance_01_" + this.m.Variant + "_70x70.png";
-		this.m.IconLarge = "weapons/melee/swordlance_01_" + this.m.Variant + ".png";
-		this.m.ArmamentIcon = "icon_swordlance_01_" + this.m.Variant;
+		local v = this.getVariant() == 0 ? "" : "_" + this.getVariant();
+		this.m.Icon = "weapons/melee/swordlance_01" + v + "_70x70.png";
+		this.m.IconLarge = "weapons/melee/swordlance_01" + v + ".png";
+		this.m.ArmamentIcon = "icon_swordlance_01" + v;
 	}
 
 	o.addSkill <- function( _skill )

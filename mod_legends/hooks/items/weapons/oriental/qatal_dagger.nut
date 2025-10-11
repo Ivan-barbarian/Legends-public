@@ -4,17 +4,19 @@
 	o.create = function() {
 		create();
 		this.m.Value = 750;
-		this.m.Variant = this.Math.rand(0, 2);
-		this.updateVariant();
+		this.setVariant(this.Math.rand(0, 2));
 	}
 
 	o.updateVariant <- function() {
-		if (this.m.Variant == 0) {
-			return;
+		if (this.getVariant() == 0) {
+			this.m.Icon = "weapons/melee/qatal_dagger_01_70x70.png";
+			this.m.IconLarge = "weapons/melee/qatal_dagger_01.png";
+			this.m.ArmamentIcon = "icon_qatal_dagger";
+		} else {
+			this.m.Icon = "weapons/melee/qatal_dagger_01_" + this.getVariant() + "_70x70.png";
+			this.m.IconLarge = "weapons/melee/qatal_dagger_01_" + this.getVariant() + ".png";
+			this.m.ArmamentIcon = "icon_qatal_dagger_01_" + this.getVariant();
 		}
-		this.m.Icon = "weapons/melee/qatal_dagger_01_" + this.m.Variant + "_70x70.png";
-		this.m.IconLarge = "weapons/melee/qatal_dagger_01_" + this.m.Variant + ".png";
-		this.m.ArmamentIcon = "icon_qatal_dagger_01_" + this.m.Variant;
 	}
 
 	o.addSkill <- function( _skill )

@@ -3,8 +3,8 @@ this.legend_belly_dancer_encounter <- this.inherit("scripts/encounters/encounter
 		Dude = null
     },
     function create() {
-        this.createScreens();
-        this.m.Type = "encounter.legend_belly_dancer_encounter";
+	    this.encounter.create();
+	    this.m.Type = "encounter.legend_belly_dancer_encounter";
         this.m.Name = ::Const.Strings.randomCityEncounterName();
 		this.m.Cooldown = 99999.0 * ::World.getTime().SecondsPerDay;
 	}
@@ -222,6 +222,9 @@ this.legend_belly_dancer_encounter <- this.inherit("scripts/encounters/encounter
     }
 
     function isValid(_settlement) {
+	    if (::World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+		    return false;
+
 	    if (!_settlement.isSouthern())
 		    return false;
 

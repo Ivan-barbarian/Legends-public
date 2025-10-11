@@ -114,7 +114,7 @@
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
-		this.m.BeardChance = 1;
+		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.BackgroundDescription = "Hedge Knights are competitive individuals that excel in fighting head to head with brute strength and heavy armor, but less so in cooperating with others or in swiftness.";

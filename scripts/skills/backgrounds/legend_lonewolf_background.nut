@@ -96,7 +96,8 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.AxeTree,
 				this.Const.Perks.HammerTree,
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.FistsTree
+				this.Const.Perks.FistsTree,
+				this.Const.Perks.OneHandedTree
 			],
 			Defense = [
 				this.Const.Perks.HeavyArmorTree

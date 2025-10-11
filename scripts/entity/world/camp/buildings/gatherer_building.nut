@@ -81,7 +81,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function getUpgraded()
 	{
-		return this.Stash.hasItem("tent.gather_tent");
+		return this.Stash.hasItem(::Legends.Camp.Tent.Gather);
 	}
 
 	function getLevel()

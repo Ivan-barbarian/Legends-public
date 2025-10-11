@@ -3,6 +3,7 @@ this.legend_skin_armor <- this.inherit("scripts/items/legend_armor/legend_named_
 	function create()
 	{
 		this.legend_named_armor_upgrade.create();
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
 		this.m.ID = "legend_armor.body.legend_skin_armor";
 		this.m.Description = "This disgusting design is made by nailing metal pieces to layers of flesh taken from skin ghouls. It smells awful, is quite heavy, and feels as if it is healing itself on to your body.";
 		this.m.ArmorDescription = "This disgusting design is made by nailing metal pieces to layers of flesh taken from skin ghouls. It smells awful, is quite heavy, and feels as if it is healing itself on to your body.";
@@ -13,7 +14,6 @@ this.legend_skin_armor <- this.inherit("scripts/items/legend_armor/legend_named_
 			"Ghoulish bastion",
 			"Flayed Bulwark"
 		];
-		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
 		this.m.Variants = [1, 2];
 		this.m.Variant = 1;
 		this.updateVariant();

@@ -1280,6 +1280,12 @@
 
 	o.showCombatDialog = function ( _isPlayerInitiated = true, _isCombatantsVisible = true, _allowFormationPicking = true, _properties = null, _pos = null )
 	{
+		// fix guest roster positions before every battle
+		local freeSlots = ::Legends.S.getEmptySlotsInFormation();
+		foreach(bro in ::World.getGuestRoster().getAll()) {
+			bro.setPlaceInFormation(freeSlots.pop());
+		}
+
 		local entities = [];
 		local allyBanners = [];
 		local enemyBanners = [];

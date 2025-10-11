@@ -1,4 +1,10 @@
 <brush name="gfx/legend_ui.png" version="17" b1="2" b5="0">
+	<sprite id="effect_sanctify_01" ic="FFEFEEEF" img="effects\effect_sanctify_01.png" left="-15" right="16" />
+	<sprite id="effect_sanctify_02" ic="FFEFEEEF" img="effects\effect_sanctify_02.png" left="-15" right="16" />
+	<sprite id="effect_sanctify_03" ic="FFEFEEEF" img="effects\effect_sanctify_03.png" left="-15" right="16" />
+	<sprite id="effect_transform_01" width="80" height="80" img="effects\effect_transform_01.png" left="-39" right="37" top="-34" bottom="36" />
+	<sprite id="effect_transform_02" width="80" height="80" img="effects\effect_transform_02.png" left="-39" right="37" top="-34" bottom="36" />
+	<sprite id="effect_transform_03" width="80" height="80" img="effects\effect_transform_03.png" left="-39" right="37" top="-34" bottom="36" />
 	<sprite id="band_of_brothers_mini" ic="FF4C4B4D" img="skills\mini\band_of_brothers_mini.png" />
 	<sprite id="drums_of_war_mini" offsetY="35" ic="FF374B50" img="skills/mini/drums_of_war_mini.png" />
 	<sprite id="martial_march_mini" offsetY="35" ic="FF374B50" img="skills/mini/martial_march_mini.png" />
@@ -206,6 +212,7 @@
 	<sprite id="greenwood_schrat_small_orientation"  ic="FF22200A" img="orientation\greenwood_schrat_small_orientation.png" />
 	<sprite id="hexen_leader_orientation"  ic="FF22200A" img="orientation\hexen_leader_orientation.png" />
 	<sprite id="redback_spider_orientation"  ic="FF22200A" img="orientation\redback_spider_orientation.png" />
+	<sprite id="spider_cluster_orientation"  ic="FF22200A" img="orientation\spider_cluster_orientation.png" />
 	<sprite id="rock_unhold_orientation"  ic="FF22200A" img="orientation\rock_unhold_orientation.png" />
 	<sprite id="skin_ghoul_orientation"  ic="FF22200A" img="orientation\skin_ghoul_orientation.png" />
 	<sprite id="stollwurm_orientation"  ic="FF22200A" img="orientation\stollwurm_orientation.png" />
@@ -248,7 +255,7 @@
 	<sprite id="goblin_plunderer_orientation" ic="FF22200A" img="orientation\goblin_plunderer_orientation.png" />
 	<sprite id="goblin_witchdoctor_orientation" ic="FF22200A" img="orientation\goblin_witchdoctor_orientation.png" />
 	<sprite id="goblin_tribe_defender_orientation" ic="FF22200A" img="orientation\goblin_tribe_defender_orientation.png" />
-	<sprite id="goblin_direwolf_rider" ic="FF22200A" img="orientation\goblin_direwolf_rider_orientation.png" />
-	<sprite id="goblin_whitedirewolf_rider" ic="FF22200A" img="orientation\goblin_whitedirewolf_rider_orientation.png" />
+	<sprite id="goblin_direwolf_rider_orientation" ic="FF22200A" img="orientation\goblin_direwolf_rider_orientation.png" />
+	<sprite id="goblin_whitedirewolf_rider_orientation" ic="FF22200A" img="orientation\goblin_whitedirewolf_rider_orientation.png" />
 	<sprite id="enraged_hyena_orientation" ic="FF22200A" img="orientation\enraged_hyena_orientation.png" />
 </brush>

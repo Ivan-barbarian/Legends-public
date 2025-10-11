@@ -57,7 +57,7 @@
 			Weapon = [
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.SlingTree,
-				this.Const.Perks.PolearmTree
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.FistsTree
 			],
 			Defense = [
@@ -73,7 +73,7 @@
 				this.Const.Perks.NoblesTree
 			],
 			Class = [],
-			Profession = [], 
+			Profession = [],
 			Magic = []
 		}
 	}

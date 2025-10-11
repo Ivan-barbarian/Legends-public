@@ -50,7 +50,7 @@ this.legend_military_goedendag <- this.inherit("scripts/items/weapons/weapon", {
 			_skill.setFatigueCost(_skill.getFatigueCostRaw() + 5);
 		}.bindenv(this));
 		::Legends.Actives.grant(this, ::Legends.Active.SplitShield, function (_skill) {
-			_skill.setFatigueCost(skill.getFatigueCostRaw() + 5);
+			_skill.setFatigueCost(_skill.getFatigueCostRaw() + 5);
 		}.bindenv(this));
 	}
 

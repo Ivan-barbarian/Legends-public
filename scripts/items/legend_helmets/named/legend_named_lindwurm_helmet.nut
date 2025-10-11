@@ -13,7 +13,7 @@ this.legend_named_lindwurm_helmet <- this.inherit("scripts/items/legend_helmets/
 			"Wurmscale Helmet",
 			"Lindwurm Mask"
 		];
-		this.m.Description = "This helmet must have once belonged to a daring and skilled hunter for it is covered in the scales of a dreaded Lindwurm. Not only do the scales deflect blows and hits, but they also remain unscathed by the acidic Lindwurm blood.";
+		this.m.Description = "Covered in the scales of the dreaded Lindwurm, not only does this helmet deflect blows and hits, but they also remain unscathed by the acidic Lindwurm blood.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variants = [1];
         this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
@@ -28,7 +28,7 @@ this.legend_named_lindwurm_helmet <- this.inherit("scripts/items/legend_helmets/
 		this.m.IsLowerVanity = false;
 		this.m.HideHair = false;
 		this.m.HideBeard = true;
-        this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Cultist;
+        this.m.ItemType = this.m.ItemType;
         this.randomizeValues();
 	}
 

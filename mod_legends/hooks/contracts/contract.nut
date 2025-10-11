@@ -5,8 +5,10 @@
 	o.m.Category <- "";
 	o.m.Description <- "";
 	o.m.DescriptionTemplates <- [];
-	o.m.Payment.Items <- [];
-	o.m.Payment.ItemPool <- []; // weighted list
+	// Variables for item payment
+	o.m.Payment.Items <- []; // stores negotiated item payment based contracts
+	o.m.Payment.ItemPool <- []; // weighted list of available items
+	o.m.Payment.IsSingleItem <- false; // option used to roll just single item from the list, normally money pool is used to buy items
 
 	o.create = function()
 	{
@@ -468,20 +470,30 @@
 	local getUIBulletpoints = o.getUIBulletpoints;
 	o.getUIBulletpoints = function (_objectives = true, _payment = true) {
 		local ret = getUIBulletpoints(_objectives, _payment);
-		foreach (entry in ret) {
-			if (!("title" in entry))
-				continue;
-			if (entry.title != "Payment")
-				continue;
-			if (this.m.Payment.Pool == 0)
-				entry.items = []; // this will fix dummy 100 coins minimum if there's no money in the pool
-			if (this.m.Payment.Items.len() > 0) {
-				foreach (item in ::Legends.EventList.addItems(this.m.Payment.Items)) {
-					entry.items.push({
-						icon = item.icon,
-						text = item.text + " on completion"
-					});
+		if (_payment) {
+			foreach (entry in ret) {
+				if (!("title" in entry))
+					continue;
+				if (entry.title != "Payment")
+					continue;
+				if (this.m.Payment.Pool == 0)
+					entry.items = []; // this will fix dummy 100 coins minimum if there's no money in the pool
+				if (this.m.Payment.Items.len() > 0) {
+					entry.items.extend(::Legends.EventList.addItems(this.m.Payment.Items).map(@(_item) {
+						icon = _item.icon,
+						text = _item.text + " on completion"
+					}));
 				}
+			}
+			if (ret.map(@(_e) _e.title).find("Payment") == null) {
+				ret.push({
+					title = "Payment",
+					items = ::Legends.EventList.addItems(this.m.Payment.Items).map(@(_item) {
+						icon = _item.icon,
+						text = _item.text + " on completion"
+					}),
+					fixed = true
+				});
 			}
 		}
 		return ret;
@@ -502,8 +514,10 @@
 	o.onDeserialize = function(_in)
 	{
 		onDeserialize( _in );
+
+		this.m.Payment.Items = [];
 		while (_in.readBool()) {
-			local item = ::new(this.IO.scriptFilenameByHash(_in.readI32()));
+			local item = ::new(::IO.scriptFilenameByHash(_in.readI32()));
 			item.onDeserialize(_in);
 			this.m.Payment.Items.push(item);
 		}

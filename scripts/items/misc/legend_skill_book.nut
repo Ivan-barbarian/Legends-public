@@ -92,8 +92,11 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 	function isAbleToUseScroll( _actor )
 	{
 		local effect = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendIrritable);
+		local injury = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendHeadache);
+		if (injury != null)
+			return "Failed to use this item as the user will be recovering from the last reading for another [color=" + ::Const.UI.Color.NegativeValue + "]" + injury.m.HealingTimeMin + "-" + injury.m.HealingTimeMax +"[/color] days.";
 		if (effect != null)
-			return "Failed to use this item as the user will be recovering from the last reading for another [color=" + ::Const.UI.Color.NegativeValue + "]" + effect.m.HealingTimeMin + "-" + effect.m.HealingTimeMax +"[/color] days.";
+			return "Failed to use this item as the user will be recovering from the last reading for another [color=" + ::Const.UI.Color.NegativeValue + "]" + effect.m.HealingTime + "-" + effect.m.HealingTime +"[/color] days.";
 
 		if (_actor.getFlags().getAsInt("LegendsSkillBookCount") <= 1)
 			return true;
@@ -130,11 +133,9 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 		::Sound.play("sounds/scribble.wav", ::Const.Sound.Volume.Inventory);
 
 		_actor.getFlags().increment("LegendsScrollCount");
-
-		::Legends.Effects.grant(_actor, ::Legends.Effect.LegendIrritable);
-		local effect = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendIrritable);
-		if (effect != null)
-			effect.addHealingTime(this.m.Cooldown);
+		::Legends.Effects.grant(_actor, ::Legends.Effect.LegendHeadache, function (_effect) {
+			_effect.m.IrritableHealingTime = this.m.Cooldown;
+		}.bindenv(this));
 
 		return true;
 	}

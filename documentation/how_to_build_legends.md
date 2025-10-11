@@ -148,7 +148,7 @@ these should all be phased out and bigrated into the defintions as they are turn
 - offsets, width, heigh, left and right all define the image size and offsets. There is an image guide on the discord for these
 - img is the actual image of the helmet which needs to be in the unpacked directory
 
-checkForIcon function verifies that each item defined above has a icon and inventory image file saved into gfx/ui/items/legend_helmets.
+checkForIcon function verifies that each item defined above has an icon and inventory image file saved into gfx/ui/items/legend_helmets.
 
 makeSheet function creates the .XML files which store the metadata for the brush files Battle Brothers uses to store spritesheets.
 

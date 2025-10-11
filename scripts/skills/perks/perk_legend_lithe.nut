@@ -22,6 +22,7 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local bonus = this.getBonus();
+		local bonusWithoutDura = this.getBonus();
 		local tooltip = this.skill.getTooltip();
 
 		if (bonus > this.m.BonusMin)
@@ -29,8 +30,14 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 			tooltip.push({
 				id = 6,
 				type = "text",
+				icon = "ui/icons/.png",
+				text = "Only receive [color=" + this.Const.UI.Color.PositiveValue + "]" + (100 - bonus) + "%[/color] of any damage to Armor from attacks"
+			});
+			tooltip.push({
+				id = 7,
+				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Only receive [color=" + this.Const.UI.Color.PositiveValue + "]" + (100 - bonus) + "%[/color] of any damage to Hitpoints and Armor from attacks"
+				text = "Only receive [color=" + this.Const.UI.Color.PositiveValue + "]" + (100 - bonusWithoutDura) + "%[/color] of any damage to Hitpoints from attacks"
 			});
 			return tooltip;
 		}
@@ -71,7 +78,7 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 		return mult;
 	}
 
-	function getBonus()
+	function getBonus(_useDurability = true)
 	{
 		local actor = this.getContainer().getActor();
 
@@ -88,7 +95,8 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 		local maxArmorDurability = actor.getArmorMax(this.Const.BodyPart.Head) + actor.getArmorMax(this.Const.BodyPart.Body);
 
 		local bonus = this.Math.maxf(this.m.BonusMin, this.Math.minf(this.m.BonusMax, this.m.BonusMax * armorFatMult));
-		bonus *= 0.5 * totalArmorDurability/(maxArmorDurability * 1.0) + 0.5;
+		if (_useDurability)
+			bonus *= 0.5 * totalArmorDurability/(maxArmorDurability * 1.0) + 0.5;
 
 		return this.Math.floor(bonus);
 	}
@@ -96,12 +104,11 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 	function onBeforeDamageReceived ( _attacker, _skill, _hitInfo, _properties )
 	{
 		if (_attacker == null || _attacker.getID() == this.getContainer().getActor().getID() || _skill == null || !_skill.isAttack())
-		{
 			return;
-		}
 
-		local bonus = this.getBonus();
+		local bonus = this.getBonus(true);
+		local bonusWithoutDura = this.getBonus(false);
 		_properties.DamageReceivedArmorMult *= 1.0 - bonus * 0.01;
-		_properties.DamageReceivedRegularMult *= 1.0 - bonus * 0.01;
+		_properties.DamageReceivedRegularMult *= 1.0 - bonusWithoutDura * 0.01;
 	}
 });

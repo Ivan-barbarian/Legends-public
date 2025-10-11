@@ -170,7 +170,15 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 	function getStaminaModifier()
 	{
-		return this.getAddedValue("getStaminaModifier", this.m.StaminaModifier);
+		local upgradeMultiplier = 1;
+		foreach( i, upgrade in this.m.Upgrades )
+		{
+			if (upgrade != null && upgrade.m.FatiguePenaltyMultiplier != null)
+			{
+				upgradeMultiplier *= 0.01 * (100 + upgrade.m.FatiguePenaltyMultiplier);
+			}
+		}			
+		return this.Math.floor(upgradeMultiplier * this.getAddedValue("getStaminaModifier", this.m.StaminaModifier));
 	}
 
 	function getValue()
@@ -886,10 +894,11 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 		local staminaMult = 1.0;
 
-		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.Brawny))
-		{
-			staminaMult = 0.70;
-		}
+		// if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.Brawny))
+		// {
+		// 	staminaMult = 0.70;
+		// }
+		// 19.2 changes to Brawny
 
 		_properties.Armor[this.Const.BodyPart.Body] += this.getArmor();
 		_properties.ArmorMax[this.Const.BodyPart.Body] += this.getArmorMax();

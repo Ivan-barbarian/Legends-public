@@ -299,6 +299,9 @@ if (!("LegendMod" in ::Const))
 	case ::Const.EntityType.Spider :
 		return 8;
 
+	case ::Const.EntityType.LegendSpiderCluster :
+		return 8;
+
 	// case ::Const.EntityType.SpiderBodyguard :
 	// 	return 8;
 

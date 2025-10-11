@@ -4,6 +4,7 @@ this.perk_legend_specialist_selfdefense <- this.inherit("scripts/skills/legend_s
 			"weapon.legend_staff",
 			"weapon.legend_tipstaff",
 			"weapon.legend_staff_vala",
+			"weapon.legend_named_staff_vala",
 			"weapon.legend_staff_gnarled"
 		],
 		ApplicableWeaponTypes = [
@@ -45,6 +46,5 @@ this.perk_legend_specialist_selfdefense <- this.inherit("scripts/skills/legend_s
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		this.legend_specialist_abstract.onAnySkillUsed(_skill, _targetEntity, _properties);
-
 	}
 });

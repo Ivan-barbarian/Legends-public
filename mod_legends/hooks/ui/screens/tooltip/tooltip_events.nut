@@ -1149,7 +1149,7 @@
 
 		case "assets.Supplies":
 			local desc = "Assorted tools and supplies to keep your weapons, armor, helmets, and shields in good condition. Running out of supplies may result in weapons breaking during combat and will leave your armor damaged and useless. More tools can be purchased in town or salvaged from equipment while camping.";
-			desc += "\nItems can be repaired while camping or out in the open. However, in that case, only one item can be repaired at a time per bro."
+			desc += "\nItems can be repaired while camping or out in the open. However, in that case, only one item can be repaired at a time per bro.";
 			desc += "\nYou can carry [color=" + this.Const.UI.Color.PositiveValue + "]" + this.World.Assets.getMaxArmorParts() + "[/color] units at most.";
 			desc += "\nTool efficiency when repairing damaged items may be increased by recruiting specialized backgrounds. Tool efficiency is capped at [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color].";
 			local ret = [

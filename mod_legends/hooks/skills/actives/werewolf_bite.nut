@@ -44,18 +44,14 @@
 		];
 	}
 
-	o.onAnySkillUsed <- function ( _skill, _targetEntity, _properties )
+	o.onUpdate = function (_properties)
 	{
-		if (_skill == this)
+		if (isUsable())
 		{
-			_properties.DamageRegularMin += 20;
-			_properties.DamageRegularMax += 40;
-			_properties.DamageArmorMult *= 0.7;
+			_properties.DamageRegularMin += 30;
+			_properties.DamageRegularMax += 50;
+			_properties.DamageArmorMult	*= 0.7;
 		}
-	}
-
-	o.onUpdate = function( _properties )
-	{
 	}
 
 	local onUse = o.onUse;

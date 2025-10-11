@@ -3,7 +3,7 @@ this.legend_recruitment_vala_encounter <- this.inherit("scripts/encounters/encou
 		Vala = null
     },
     function create() {
-        this.createScreens();
+	    this.encounter.create();
         this.m.Type = "encounter.legend_recruitment_vala_encounter";
         this.m.Name = "Mysterious woman";
 		this.m.Cooldown = 60 * ::World.getTime().SecondsPerDay;
@@ -47,6 +47,9 @@ this.legend_recruitment_vala_encounter <- this.inherit("scripts/encounters/encou
     }
 
     function isValid(_settlement) {
+	    if (::World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+		    return false;
+
 		if (_settlement.isIsolatedFromRoads())
 			return false;
 

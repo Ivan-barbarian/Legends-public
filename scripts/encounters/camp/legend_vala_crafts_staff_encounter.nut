@@ -6,10 +6,10 @@ this.legend_vala_crafts_staff_encounter <- this.inherit("scripts/encounters/enco
     },
 
     function create() {
+	    this.encounter.create();
         this.m.Type = "encounter.legend_vala_crafts_staff";
-        this.m.Name = "Vala crafts staff";
+        this.m.Name = ::Const.Strings.randomCampEncounterName();
 		this.m.Cooldown = 60 * ::World.getTime().SecondsPerDay;
-	    this.createScreens();
 	}
 
     function createScreens() {
@@ -48,7 +48,7 @@ this.legend_vala_crafts_staff_encounter <- this.inherit("scripts/encounters/enco
 					}
 				}
 
-				local item = this.new("scripts/items/weapons/legend_named_staff_vala");
+				local item = this.new("scripts/items/weapons/named/legend_named_staff_vala");
 				item.m.Name = _event.m.Vala.getNameOnly() + "\'s " + item.m.Name;
 				this.World.Assets.getStash().add(item);
 				this.List.push({
@@ -111,6 +111,9 @@ this.legend_vala_crafts_staff_encounter <- this.inherit("scripts/encounters/enco
 	}
 
 	function isValid(_camp) {
+		if (::World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+			return false;
+
 		if (::World.getPlayerRoster().getSize() < 3)
 			return false;
 

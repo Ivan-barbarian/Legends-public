@@ -6,7 +6,7 @@ this.legend_named_goblin_staff <- this.inherit("scripts/items/weapons/named/name
 		this.m.Variants = [1, 2];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() -1)];
 		this.updateVariant();
-		this.m.ID = "weapon.legend_named_staff_vala";
+		this.m.ID = "weapon.legend_named_goblin_staff";
 		this.m.Name = "Adorned Gnarly Staff";
 		this.m.Description = "A gnarly staff carved from old and hard wood, decorated with a menacing skull, feathers and small bones. The runes on the head are intricate and tell a story that only the goblins can read.";
 		this.m.WeaponType = this.Const.Items.WeaponType.Staff | this.Const.Items.WeaponType.MagicStaff | this.Const.Items.WeaponType.Polearm;
