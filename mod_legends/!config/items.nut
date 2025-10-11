@@ -169,7 +169,7 @@ foreach (i in garbage)
 ::Const.Items.NamedWeapons.extend(::Const.Items.NamedRangedWeapons);
 
 ::Const.Items.NamedSouthernWeapons.extend([
-	"weapons/named/named_heavy_southern_mace"
+	"weapons/named/legend_named_heavy_southern_mace"
 ]);
 
 ::Const.Items.NamedUndeadWeapons.extend([
