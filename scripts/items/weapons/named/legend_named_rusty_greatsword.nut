@@ -38,8 +38,8 @@ this.legend_named_rusty_greatsword <- this.inherit("scripts/items/weapons/named/
 	function updateVariant()
 	{
 		this.m.IconLarge = "weapons/melee/legend_named_rusty_greatsword_0" + this.m.Variant + ".png";
-		this.m.Icon = "weapons/melee/legend_named_rusty_greatsword" + this.m.Variant + "_70x70.png";
-		this.m.ArmamentIcon = "icon_legend_named_rusty_greatsword" + this.m.Variant;
+		this.m.Icon = "weapons/melee/legend_named_rusty_greatsword_0" + this.m.Variant + "_70x70.png";
+		this.m.ArmamentIcon = "icon_legend_named_rusty_greatsword_0" + this.m.Variant;
 	}
 
 	function onEquip()
