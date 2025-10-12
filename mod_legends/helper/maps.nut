@@ -28,7 +28,7 @@
 		::World.Assets.getStash().remove(map);
 }
 ::Legends.Maps.removeNamed <- function(_target) {
-	foreach(map in ::Legends.Maps.getAll().filter(@(idx, item) item.m.ID == ::Legends.Maps.Type.Named && item.m.Target == _target))
+	foreach(map in ::Legends.Maps.getAll().filter(@(idx, item) item.m.ID == ::Legends.Maps.Type.Named && !::Legends.S.isNull(item.m.Target) && item.m.Target.getID() == _target))
 		::World.Assets.getStash().remove(map);
 }
 
