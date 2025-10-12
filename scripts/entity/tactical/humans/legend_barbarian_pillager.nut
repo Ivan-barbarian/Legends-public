@@ -93,7 +93,7 @@ this.legend_barbarian_pillager <- this.inherit("scripts/entity/tactical/human", 
 			"scripts/items/weapons/barbarians/heavy_javelin",
 			"scripts/items/weapons/barbarians/legend_barbarian_sling",
 			"scripts/items/weapons/barbarians/legend_barbarian_sling",
-			"scripts/items/weapons/throwing_spear",
+			"scripts/items/weapons/javelin",
 			"scripts/items/weapons/throwing_axe"
 		];
 
