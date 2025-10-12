@@ -12,7 +12,7 @@
 		if (this.getVariant() == 0) {
 			this.m.Icon = "weapons/melee/two_handed_saif_70x70.png";
 			this.m.IconLarge = "weapons/melee/two_handed_saif.png";
-			this.m.ArmamentIcon = "icon_two_handed_saif";
+			this.m.ArmamentIcon = "icon_two_handed_saif_01";
 		} else {
 			this.m.Icon = "weapons/melee/two_handed_saif_01_" + this.getVariant() + "_70x70.png";
 			this.m.IconLarge = "weapons/melee/two_handed_saif_01_" + this.getVariant() + ".png";
