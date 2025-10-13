@@ -21,7 +21,7 @@
 				id = 7,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Additionally if your target is dazed or parried hitchance is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color], if they are stunned or netted you gain [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color], if they are grappled, sleeping, or fleeing you gain [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color]"
+				text = "Additionally if your target is dazed or parried hitchance is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color], if they are stunned or rooted you gain [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color], if they are grappled, sleeping, or fleeing you gain [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color]"
 			},
 			{
 				id = 8,
@@ -69,7 +69,7 @@
 		{
 			mod += 50;
 		}
-		if (_targetEntity.getSkills().hasEffect(::Legends.Effect.Net))
+		if (_targetEntity.getCurrentProperties().IsRooted)
 		{
 			mod += 25;
 		}
