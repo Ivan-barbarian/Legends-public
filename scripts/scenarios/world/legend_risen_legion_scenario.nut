@@ -12,6 +12,27 @@ this.legend_risen_legion_scenario <- this.inherit("scripts/scenarios/world/start
 		this.m.RosterTierMax = this.Const.Roster.getTierForSize(27);
 	}
 
+	function onInit()
+	{
+		this.starting_scenario.onInit();
+		this.m.ExcludedAmbitions = [
+			"ambition.allied_civilians",
+			"ambition.allied_nobles",
+			"ambition.defeat_civilwar",
+			"ambition.defeat_holywar",
+			"ambition.defeat_undead",
+			"ambition.defeat_undead_location",
+			"ambition.fulfill_x_southern_contracts",
+			"ambition.have_all_provisions", // extremely hard to do
+			"ambition.legend_have_all_camp_activities",
+			"ambition.make_nobles_aware",
+			"ambition.trade",
+			"ambition.visit_settlements",
+			"ambition.win_x_arena_fights"
+		];
+	}
+
+
 	function onSpawnAssets()
 	{
 		local roster = this.World.getPlayerRoster();
@@ -260,11 +281,6 @@ this.legend_risen_legion_scenario <- this.inherit("scripts/scenarios/world/start
 			::Legends.Traits.grant(bro, ::Legends.Trait.RacialSkeleton);
 			::Legends.Traits.grant(bro, ::Legends.Trait.LegendFleshless);
 		}
-	}
-
-	function onInit()
-	{
-		this.starting_scenario.onInit();
 	}
 
 });

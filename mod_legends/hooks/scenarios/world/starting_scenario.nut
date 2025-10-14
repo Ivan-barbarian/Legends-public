@@ -12,6 +12,7 @@
 	//Something defined here won't have relations normalized over time in faction_manager
 	//I think this would be better if we instead automatically set the size to be faction_manager's update()
 	//Useful for when you set the relations and want them to be permanent e.g. legion scenario
+	o.m.ExcludedAmbitions <- []; // set in onInit, it's not serialized and doesn't need to be
 
 	o.isDroppedAsLoot = function (_item)
 	{
@@ -155,5 +156,9 @@
 	o.setCurrentSettlement <- function ( _settlement )
 	{
 		this.m.CurrentSettlement = ::MSU.asWeakTableRef(_settlement);
+	}
+
+	o.getExcludedAmbitions <- function () {
+		return this.m.ExcludedAmbitions;
 	}
 });
