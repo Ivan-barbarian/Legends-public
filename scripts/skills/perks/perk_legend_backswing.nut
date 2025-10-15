@@ -1,6 +1,6 @@
 this.perk_legend_backswing <- this.inherit("scripts/skills/skill", {
 	m = {
-		TimeAdded = 0
+		IsEffectActive = false,
 		Skills = [
 			::Legends.Actives.getID(::Legends.Active.Swing),
 			::Legends.Actives.getID(::Legends.Active.Thresh),
@@ -18,54 +18,64 @@ this.perk_legend_backswing <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function isHidden()
+	{
+		return !this.m.IsEffectActive;
+	}
+	
+	function getDescription()
+	{
+		return "Use your built up inertia to wreak havoc on the next swing.";
+	}
 
 	function onAfterUpdate(_properties)
 	{
-		local skills = this.getContainer().getAllSkillsOfType(this.Const.SkillType.Active);
+		if (!this.m.IsEffectActive)
+			return;
+			
+		local skills = this.getContainer().getAllSkillsOfType(::Const.SkillType.Active);
 		foreach (skill in skills)
 		{
 			if (this.m.Skills.find(skill.getID()) != null)
 			{
-				skill.m.FatigueCostMult *= 0.5;
+				skill.m.FatigueCost *= 0.5;
 				skill.m.ActionPointCost /= 2;
 			}
 		}
 	}
-
-	function onAdded()
+	
+	function onAnySkillExecuted( _skill, _targetTile, _targetEntity, _forFree )
 	{
-		this.m.TimeAdded = this.Time.getVirtualTimeF();
+		if (_skill == null || this.m.Skills.find(_skill.getID()) == null)
+				return;
+		
+		this.m.IsEffectActive = !this.m.IsEffectActive;
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
-	{
-		if (_targetEntity == null || !_targetEntity.isAttackable())
+	{			
+		if (_skill == null || this.m.Skills.find(_skill.getID()) == null || !this.m.IsEffectActive)
 			return;
-
-		if (!this.m.IsGarbage && this.m.TimeAdded + 0.1 < this.Time.getVirtualTimeF() && !_targetEntity.isAlliedWith(this.getContainer().getActor()))
-		{
-			if (_skill == null || this.m.Skills.find(_skill.getID()) == null || !this.isBackswing())
-				return;
-			if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.Swing))
-				_properties.DamageTotalMult *= 0.75;
-			else
-				_properties.DamageTotalMult *= 0.5;
-			this.removeSelf();
-		}
+		
+		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.Swing))
+			_properties.DamageTotalMult *= 0.75;
+		else
+			_properties.DamageTotalMult *= 0.5;
 	}
 
 	function onTurnEnd()
 	{
-		this.removeSelf();
+		this.m.IsEffectActive = false;
 	}
 
 	function onWaitTurn()
 	{
-		this.removeSelf();
+		this.m.IsEffectActive = false;
 	}
 
 	function onMovementFinished()
 	{
-		this.removeSelf();
+		this.m.IsEffectActive = false;
 	}
 });
