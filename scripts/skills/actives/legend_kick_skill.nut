@@ -1,7 +1,8 @@
 this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		DazeChance = 25,
-		HasLeg = false
+		HasLeg = false,
+		FatigueDamage = 5
 	},
 	function create()
 	{
