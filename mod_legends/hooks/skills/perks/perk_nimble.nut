@@ -5,7 +5,7 @@
 	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
-		local fm = this.Math.floor((1 - this.getChance() / 3) * 100);
+		local fm = this.Math.floor((1 - this.getChance()) * 33);
 		local tooltip = getTooltip();
 
 		if (fm < 100 && this.getContainer().hasPerk(::Legends.Perk.Relentless))
