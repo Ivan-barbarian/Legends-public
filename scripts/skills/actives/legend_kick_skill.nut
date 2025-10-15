@@ -119,7 +119,6 @@ this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local target = _targetTile.getEntity();
-		local hasFistMastery = _user.getSkills().hasPerk(::Legends.Perk.LegendSpecUnarmed);
 		local skills = target.getSkills();
 
 		if (this.m.SoundOnUse.len() != 0)
@@ -127,11 +126,12 @@ this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 			this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 		}
 
-		local success = attackEntity(_user, target);
+		local success = this.attackEntity(_user, target);
 
 		if (!success || !_user.isAlive() || _user.isDying()) return false;
 
 		if (!target.isAlive() || target.isDying()) return success;
+		this.applyFatigueDamage(target, this.m.FatigueDamage);
 
 		// Remove enemy stances
 		::Const.Tactical.Common.removeStances(target);
@@ -150,6 +150,7 @@ this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInFists ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		this.m.DazeChance = _properties.IsSpecializedInFists ? 50 : 25;
+		this.m.FatigueDamage = _properties.IsSpecializedInFists ? 10 : 5;
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
@@ -157,7 +158,6 @@ this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			_properties.MeleeSkill += 25;
-			_properties.FatigueDealtPerHitMult += 1.0;
 			_properties.DamageRegularMin = 0;
 			_properties.DamageRegularMax = 0;
 			_properties.DamageArmorMult = 0.0;
@@ -174,8 +174,6 @@ this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 				_properties.DamageRegularMin = 10;
 				_properties.DamageRegularMax = 15;
 				_properties.DamageArmorMult = 0.6;
-
-				_properties.FatigueDealtPerHitMult += 1.0; // Increase fatigue damage from 5 to 10
 			}
 		}
 	}
