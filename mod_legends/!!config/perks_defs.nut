@@ -4494,7 +4494,7 @@ perkDefObjects.push({
 ::Legends.Perk.LegendPatientHunter <- null;
 perkDefObjects.push({
 	ID = "perk.legend_patient_hunter",
-	Script = "scripts/skills/perks/perk_legend_first_blood",
+	Script = "scripts/skills/perks/perk_legend_patient_hunter",
 	Name = ::Const.Strings.PerkName.LegendPatientHunter,
 	Tooltip = ::Const.Strings.PerkDescription.LegendPatientHunter,
 	Icon = "ui/perks/patient_hunter.png",
