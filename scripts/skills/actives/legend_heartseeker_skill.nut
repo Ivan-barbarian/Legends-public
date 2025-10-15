@@ -32,7 +32,7 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
 		this.m.HitChanceBonus = 0;
-		this.m.DirectDamageMult = 0.45;
+		this.m.DirectDamageMult = 0.55;
 		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
@@ -44,7 +44,7 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.FatigueCost = 25;
 			this.m.ActionPointCost = 7;
-			this.m.DirectDamageMult = 0.5;
+			this.m.DirectDamageMult = 0.6;
 		}
 		if (this.m.IsTwoHanded)
 		{
@@ -101,10 +101,6 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			_properties.ThresholdToInflictInjuryMult *= 0.5;
-			if (!this.m.IsPolearm && _properties.IsSpecializedInSpears)
-			{
-				_properties.DamageDirectAdd += 0.2;
-			}
 		}
 	}
 
