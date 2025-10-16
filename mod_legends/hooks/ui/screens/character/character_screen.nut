@@ -1,5 +1,22 @@
 ::mods_hookExactClass("ui/screens/character/character_screen", function(o) {
 
+	o.onApplyArmorFilter <- function( _filter ) { // used by armor filter
+		m.InventoryFilter = ::Const.Items.ItemFilter.Armor;
+		::Sound.play("sounds/coins_02.wav", ::Const.Sound.Volume.Actor);
+
+		if (m.JSDataSourceHandle == null)
+			return;
+
+		if (_filter.Armor.len() == ::Const.Items.ArmorUpgrades.COUNT + 1 && _filter.Helmet.len() == ::Const.Items.HelmetUpgrades.COUNT) {
+			::UIDataHelper.m.ArmorFilter = null;
+			loadStashList();
+		}
+		else {
+			::UIDataHelper.m.ArmorFilter = _filter;
+        	m.JSDataSourceHandle.asyncCall("loadStashList", ::UIDataHelper.filterArmorFromStashToUIData());
+		}
+	}
+
 	o.show = function ()
 	{
 		this.setRosterLimit();
