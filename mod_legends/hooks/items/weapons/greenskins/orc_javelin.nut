@@ -11,10 +11,15 @@
 	}
 
 	o.updateVariant <- function() {
-		local v = this.getVariant() == 0 ? "" : "_" + this.getVariant();
-		this.m.Icon = "weapons/ranged/orc_javelins_01" + v + "_70x70.png";
-		this.m.IconLarge = "weapons/ranged/orc_javelins_01" + v + ".png";
-		this.m.ArmamentIcon = "icon_orc_javelin_01" + v;
+		if (this.getVariant() == 0) {
+			this.m.Icon = "weapons/ranged/orc_javelins_70x70.png";
+			this.m.IconLarge = "weapons/ranged/orc_javelins.png";
+			this.m.ArmamentIcon = "icon_javelin_01"; // this shit is so ass
+		} else {
+			this.m.Icon = "weapons/ranged/orc_javelins_01_" + this.getVariant() + "_70x70.png";
+			this.m.IconLarge = "weapons/ranged/orc_javelins_01_" + this.getVariant() + ".png";
+			this.m.ArmamentIcon = "icon_orc_javelin_01_" + this.getVariant();
+		}
 	}
 
 	local setAmmo = o.setAmmo;
