@@ -20,14 +20,10 @@ this._legend_tips_encounter <- this.inherit("scripts/encounters/encounter", {
             Text = text,
             Image = "",
             List = [],
-            Options = [
-            {
+            Options = [{
                 Text = "Nice",
-                function getResult(_event) {
-                    return 0;
-                }
-            }
-            ],
+                getResult = @(_event) 0
+            }],
             function start(_event) {}
         }]);
     }

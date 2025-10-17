@@ -19,8 +19,43 @@ this.legend_camp_legion_defend_cemetery_contract <- ::inherit("scripts/contracts
 		this.m.Payment.ItemPool = [
 			[25, "supplies/medicine_item"],
 			[25, "supplies/armor_parts_item"],
-			[15, "tools/reinforced_throwing_net"]
+			[15, "tools/reinforced_throwing_net"],
+			[15, @() [
+				[70, "weapons/ancient/legend_broken_decorated_sword"],
+				[70, "weapons/ancient/legend_broken_spatha"],
+				[50, "weapons/ancient/legend_sica"],
+				[50, "weapons/ancient/legend_gladius"],
+				[50, "weapons/ancient/legend_spatha"],
+				[50, "weapons/ancient/legend_decorated_sword"],
+				[50, "weapons/ancient/legend_broadhead_spear"],
+				[50, "weapons/ancient/legend_oxtongue_spear"],
+				[30, "weapons/ancient/legend_decorated_rhomphaia"],
+				[30, "weapons/ancient/legend_kopis"],
+				[20, "weapons/ancient/legend_honed_warscythe"],
+				[20, "weapons/ancient/legend_broad_warscythe"],
+				[20, "weapons/ancient/legend_military_crypt_cleaver"],
+				[20, "weapons/ancient/legend_military_rhomphaia"],
+				[20, "weapons/legend_drum"],
+			]],
+			[5, @() [
+				[20, "ammo/large_quiver_of_bolts"],
+				[20, "ammo/legend_large_broad_head_bolts"],
+				[20, "ammo/legend_large_broad_head_arrows"],
+				[20, "ammo/legend_large_armor_piercing_bolts"],
+				[20, "ammo/legend_large_armor_piercing_arrows"],
+			]],
+			[5, "misc/legend_map_named_item"],
+			[5, "misc/legend_ancient_scroll_item"],
+			[2, "misc/legend_map_legendary_item"],
 		];
+
+		// optionally, offer just tent, starts at 50% chance, lowers with each tent you have
+		local stash = ::World.Assets.getStash();
+		local missingTents = ::Legends.Camp.Tents.filter(@(_, _tent) !stash.hasItem(_tent.ID));
+		if (missingTents.len() > 0 && ::Math.rand(0, ::Legends.Camp.Tents.len() * 2) < missingTents.len()) {
+			this.m.Payment.IsSingleItem = true;
+			this.m.Payment.Items = [::Const.World.Common.pickItem(missingTents.map(@(_def) [_def.ID == ::Legends.Camp.Tent.Enchant ? 1 : 10, _def.Script]), "scripts/items/")];
+		}
 	}
 
 	function setDestination(_d) {

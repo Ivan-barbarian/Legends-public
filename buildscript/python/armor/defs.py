@@ -760,7 +760,7 @@ class Defs:
  "desc" :  "A cloak made of rough chain and the fur of a beast",
  "adesc" : "Includes a fur cloak"
 },
-{"name": "legend_armor_cloak_common",           "layer": "cloak", "min": 0, "max": 0, "value" : 100, "con" : 10, "stam" : -1, "bravery" : 1, "impactSound" : "leather", "invSound" : "cloth", "brush" : "cloak", "variants" : [8,9,10,11,12,13,14,21,22,23,32,33,34],
+{"name": "legend_armor_cloak_common",           "layer": "cloak", "min": 0, "max": 0, "value" : 100, "con" : 10, "stam" : -1, "bravery" : 1, "impactSound" : "leather", "invSound" : "cloth", "brush" : "cloak", "variants" : [9,10,11,12,13,14,21,22,23,32,33,34],
  "title" :  "Simple Cloak",
  "desc" :  "A rustic cloak made of strong warm wool, provides some small protection, from the weather if nothing else.",
  "adesc" : "Has a stout wool cloak"
@@ -784,11 +784,6 @@ class Defs:
  "title" :  "Anatomist Hood",
  "desc" :  "A dark hood for those who work with filth",
  "adesc" : "Has a dark hood for working with entrails"
-},
-{"name": "relic_hood",           "layer": "cloak", "min": 1, "max": 10, "value" : 800, "con" : 35, "stam" : -4, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "relic_hood",
- "title" :  "Relic Hood",
- "desc" :  "A hood and belts adorned with a holy relic",
- "adesc" : "Has a hood and belts adorned with a holy relic"
 },
 {"name": "legend_armor_cloak_heavy",           "layer": "cloak", "min": 0, "max": 0, "value" : 500, "con" : 30, "stam" : -4, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "cloak", "variants" : [3,8,15,16,17,18,19,20,24,26,27,28,29,30,31,35,37],
  "title" :  "Heavy Cloak",

@@ -16,7 +16,7 @@ this.legend_military_crypt_cleaver <- this.inherit("scripts/items/weapons/weapon
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_legend_military_crypt_cleaver";
+		this.m.ArmamentIcon = "icon_legend_military_crypt_cleaver_01";
 		this.m.Value = 2800;
 		this.m.ShieldDamage = 18;
 		this.m.Condition = 75.0;

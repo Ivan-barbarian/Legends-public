@@ -14,7 +14,7 @@ this.perk_legend_himshaw <- this.inherit("scripts/skills/skill", {
 
 	function onCombatFinished()
 	{
-		if (repair(20))
+		if (repair(0.2))
 			this.m.RepairedToday = true;
 	}
 
@@ -28,7 +28,7 @@ this.perk_legend_himshaw <- this.inherit("scripts/skills/skill", {
 		if (body)
 		{
 			bodyMissing = body.getArmorMax() - body.getArmor();
-			bodyAdded = this.Math.min(bodyMissing, this.Math.min(0, this.Math.floor(body.getArmorMax() * _toRepair * 0.1)));
+			bodyAdded = this.Math.min(bodyMissing, this.Math.max(0, this.Math.floor(body.getArmorMax() * _toRepair)));
 
 			if (bodyAdded > 0)
 			{
@@ -42,7 +42,7 @@ this.perk_legend_himshaw <- this.inherit("scripts/skills/skill", {
 		if (body)
 		{
 			bodyMissing = body.getArmorMax() - body.getArmor();
-			bodyAdded = this.Math.min(bodyMissing, this.Math.min(0, this.Math.floor(body.getArmorMax() * _toRepair * 0.1)));
+			bodyAdded = this.Math.min(bodyMissing, this.Math.max(0, this.Math.floor(body.getArmorMax() * _toRepair)));
 
 			if (bodyAdded > 0)
 			{
@@ -58,7 +58,7 @@ this.perk_legend_himshaw <- this.inherit("scripts/skills/skill", {
 
 	function onNewDay()
 	{
-		repair(10);
+		repair(0.1);
 		this.m.RepairedToday = false;
 	}
 

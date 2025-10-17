@@ -70,7 +70,7 @@
 	Strength = 85,
 	Cost = 90,
 	Row = 1,
-	Script = "scripts/entity/tactical/enemies/legend_white_goblin_direwolf_rider",
+	Script = "scripts/entity/tactical/enemies/legend_goblin_white_direwolf_rider",
 	NameList = this.Const.Strings.GoblinNames,
 	TitleList = this.Const.Strings.GoblinTitles
 };

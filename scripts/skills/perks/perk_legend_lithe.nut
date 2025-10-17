@@ -21,16 +21,15 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local bonus = this.getBonus();
-		local bonusWithoutDura = this.getBonus();
+		local bonus = this.getBonus(true);
+		local bonusWithoutDura = this.getBonus(false);
 		local tooltip = this.skill.getTooltip();
 
-		if (bonus > this.m.BonusMin)
-		{
+		if (bonus > this.m.BonusMin) {
 			tooltip.push({
 				id = 6,
 				type = "text",
-				icon = "ui/icons/.png",
+				icon = "ui/icons/armor_body.png",
 				text = "Only receive [color=" + this.Const.UI.Color.PositiveValue + "]" + (100 - bonus) + "%[/color] of any damage to Armor from attacks"
 			});
 			tooltip.push({
@@ -42,15 +41,13 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 			return tooltip;
 		}
 
-		if (this.getContainer().getActor().getBodyItem() == null)
-		{
+		if (this.getContainer().getActor().getBodyItem() == null) {
 			tooltip.push({
 				id = 6,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
 				text = "This character is not wearing any body armor and hence receives no bonus damage reduction"
 			});
-			return tooltip;
 		}
 
 		return tooltip;

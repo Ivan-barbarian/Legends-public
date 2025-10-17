@@ -3,8 +3,8 @@
 	local create = o.create;
 	o.create = function() {
 		create();
-		this.m.RangeMax = 5;
-		this.m.RangeIdeal = 5;
+		this.m.RangeMax = 6;
+		this.m.RangeIdeal = 6;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.TwoHanded;
 		this.setVariant(this.Math.rand(0, 2));
 	}
@@ -14,6 +14,20 @@
 		this.m.Icon = "weapons/ranged/crossbow_03" + v + "_70x70.png";
 		this.m.IconLarge = "weapons/ranged/crossbow_03" + v + ".png";
 		this.m.ArmamentIcon = "icon_crossbow_03" + v;
+	}
+
+	o.addSkill <- function( _skill )
+	{
+		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.ShootStake))
+		{
+			::Legends.Actives.grant(this.weapon, ::Legends.Active.ShootStake, function (_skill)
+			{
+				_skill.m.Name = "Shoot Heavy Bolt";
+			}.bindenv(this));
+			return;
+		}
+
+		weapon.addSkill(_skill);
 	}
 
 	local onEquip = o.onEquip;

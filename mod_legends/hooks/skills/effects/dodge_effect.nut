@@ -42,10 +42,9 @@
 		_properties.RangedDefense += this.getBonus();
 	}
 
-	o.getBonus <- function()
-	{
+	o.getBonus <- function() {
 		local actor = this.getContainer().getActor();
-		local baseBonus = this.Math.floor(this.Math.min(50, 100 - actor.getHitpointsMax()) * 0.30);
-		return this.Math.floor(actor.getInitiative() * (baseBonus * 0.01 + 0.15));
+		local bonus = this.Math.max(1.0, this.Math.min(2.0, 2.0 - (actor.getHitpointsMax() - 50) / 50.0));
+		return this.Math.floor(actor.getInitiative() * bonus * 0.15);
 	}
 });

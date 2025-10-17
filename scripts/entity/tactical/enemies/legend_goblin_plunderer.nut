@@ -44,7 +44,7 @@ this.legend_goblin_plunderer <- this.inherit("scripts/entity/tactical/enemies/go
 		{
 			local item = this.Const.World.Common.pickArmor([
 				[2, ::Legends.Armor.Greenskin.goblin_medium_armor],
-				[1, ::Legends.Armor.Greenskin.goblin_light_helmet]
+				[1, ::Legends.Armor.Greenskin.goblin_light_armor]
 			]);
 			this.m.Items.equip(item);
 		}

@@ -12,9 +12,9 @@
 
 	o.updateVariant <- function() {
 		if (this.getVariant() == 0) {
-			this.m.Icon = "weapons/ranged/orc_javelins.png";
-			this.m.IconLarge = "weapons/ranged/orc_javelins_70x70.png";
-			this.m.ArmamentIcon = "icon_javelin_01";
+			this.m.Icon = "weapons/ranged/orc_javelins_70x70.png";
+			this.m.IconLarge = "weapons/ranged/orc_javelins.png";
+			this.m.ArmamentIcon = "icon_javelin_01"; // this shit is so ass
 		} else {
 			this.m.Icon = "weapons/ranged/orc_javelins_01_" + this.getVariant() + "_70x70.png";
 			this.m.IconLarge = "weapons/ranged/orc_javelins_01_" + this.getVariant() + ".png";

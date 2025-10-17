@@ -95,6 +95,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
+		local weightName;
 		local shields = clone this.Const.Items.NamedShields;
 		shields.extend([
 			"shields/named/named_bandit_kite_shield",
@@ -108,11 +109,11 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 			::MSU.Array.remove(namedWeaponArray, "weapons/named/legend_named_parrying_dagger");
 			::MSU.Array.remove(namedWeaponArray, "weapons/named/legend_named_shovel");
 			::MSU.Array.remove(namedWeaponArray, "weapons/named/legend_named_sickle");
-			this.getItems().equip(::Const.World.Common.pickItem(namedWeaponArray, "scripts/items/"));
+			this.getItems().equip(this.Const.World.Common.pickItem(namedWeaponArray.map(@(_it) [1, _it]), "scripts/items/"));
 		}
 		else
 		{
-			this.getItems().equip(::Const.World.Common.pickItem(shields, "scripts/items/"));
+			this.getItems().equip(this.Const.World.Common.pickItem(shields.map(@(_it) [1, _it]), "scripts/items/"));
 		}
 
 		if (this.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
@@ -139,7 +140,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 					"weapons/legend_battle_glaive"
 				]);
 			}
-			this.getItems().equip(::Const.World.Common.pickItem(weapons, "scripts/items/"));
+			this.getItems().equip(this.Const.World.Common.pickItem(weapons.map(@(_it) [1, _it]), "scripts/items/"));
 		}
 
 		if (this.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
@@ -154,14 +155,14 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 		if (this.Math.rand(1, 100) > 50)
 		{
 			local named = this.Const.Items.NamedArmors;
-			local weightName = this.Const.World.Common.convNameToList(named);
+			weightName = this.Const.World.Common.convNameToList(named);
 			this.getItems().equip(this.Const.World.Common.pickArmor(weightName));
 
 		}
 		else
 		{
 			local named = this.Const.Items.NamedHelmets;
-			local weightName = this.Const.World.Common.convNameToList(named);
+			weightName = this.Const.World.Common.convNameToList(named);
 			this.getItems().equip(this.Const.World.Common.pickHelmet(weightName));
 		}
 

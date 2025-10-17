@@ -62,6 +62,8 @@ this.legend_shoot_precise_stone_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ProjectileType = this.Const.ProjectileType.Stone;
 		this.m.ProjectileTimeScale = 1.2;
 		this.m.IsProjectileRotated = true;
+		this.m.ChanceDecapitate = 0;
+		this.m.ChanceDisembowel = 0;
 		this.m.ChanceSmash = 25;
 	}
 
@@ -100,7 +102,7 @@ this.legend_shoot_precise_stone_skill <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		return this.skill.isUsable() && (!this.Tactical.isActive() || !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()));
+		return !this.Tactical.isActive() || (this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()));
 	}
 
 	function onAfterUpdate( _properties )

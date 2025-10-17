@@ -3160,7 +3160,19 @@
 					id = 2,
 					type = "description",
 					text = "Show only armor, helmets and shields."
-				}
+				},
+				{
+					id = 3,
+					type = "hint",
+					icon = "ui/icons/mouse_left_button.png",
+					text = "Toggle this filter"
+				},
+				{
+					id = 4,
+					type = "hint",
+					icon = "ui/icons/mouse_right_button.png",
+					text = "Show advanced filter settings"
+				},
 			];
 
 		case "character-screen.right-panel-header-module.FilterMiscButton":

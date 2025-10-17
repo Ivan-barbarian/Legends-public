@@ -388,7 +388,7 @@ ID = "TailorClassTree",
 		[::Legends.Perk.LegendHairSplitter],
 		[::Legends.Perk.LegendTacticalManeuvers],
 		[::Legends.Perk.LegendTwirl],
-		[::Legends.Perk.Footwork],
+		[],
 		[::Legends.Perk.LegendBackflip],
 		[::Legends.Perk.LegendTumble]
 	]

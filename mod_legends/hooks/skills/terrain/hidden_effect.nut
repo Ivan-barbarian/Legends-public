@@ -199,8 +199,9 @@
 			}
 		}
 
-		if (actor.getSkills().hasPerk(::Legends.Perk.LegendPatientHunter) && !::Legends.Effects.has(actor, ::Legends.Effect.LegendPatientHunter))
-			::Legends.Effects.grant(_entity, ::Legends.Effect.LegendPatientHunter);
+		local patientHunter = ::Legends.Perks.get(actor, ::Legends.Perk.LegendPatientHunter);
+		if (patientHunter != null)
+			patientHunter.activate();
 
 		//actor.setBrushAlpha(10);
 		//actor.getSprite("hair").Visible = false;

@@ -82,7 +82,10 @@ this.legend_named_goblin_crossbow <- this.inherit("scripts/items/weapons/named/n
 	function onEquip()
 	{
 		this.named_weapon.onEquip();
-		::Legends.Actives.grant(this, ::Legends.Active.ShootStake);
+		::Legends.Actives.grant(this, ::Legends.Active.ShootStake, function(_skill)
+		{
+			_skill.m.Name = "Shoot Stake";
+		});
 		if (!this.m.IsLoaded)
 		{
 			::Legends.Actives.grant(this, ::Legends.Active.ReloadBolt);

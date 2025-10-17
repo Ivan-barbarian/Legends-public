@@ -15,7 +15,7 @@ this.legend_goblin_berserker <- this.inherit("scripts/entity/tactical/enemies/go
 		this.goblin_fighter.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(::Const.Tactical.Actor.LegendGoblinBerserker);
-		::Legends.Perks.remove(this, ::Legends.Perk.Footwork);
+		::Legends.Actives.remove(this, ::Legends.Active.Footwork);
 		::Legends.Perks.grant(this, ::Legends.Perk.Backstabber);
 		::Legends.Perks.grant(this, ::Legends.Perk.CripplingStrikes);
 		::Legends.Perks.grant(this, ::Legends.Perk.Nimble);

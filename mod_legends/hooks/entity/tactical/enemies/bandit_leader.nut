@@ -214,7 +214,7 @@
 			::MSU.Array.remove(namedWeaponArray, "weapons/named/legend_named_shovel");
 			::MSU.Array.remove(namedWeaponArray, "weapons/named/legend_named_sickle");
 			::MSU.Array.remove(namedWeaponArray, "weapons/named/named_battle_whip");
-			this.m.Items.equip(this.new("scripts/items/" + ::MSU.Array.rand(namedWeaponArray)));
+			this.getItems().equip(this.Const.World.Common.pickItem(namedWeaponArray.map(@(_it) [1, _it]), "scripts/items/"));
 		}
 		else if (r < 60)
 		{

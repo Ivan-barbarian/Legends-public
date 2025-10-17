@@ -82,10 +82,5 @@ this.legend_second_wind_effect <- this.inherit("scripts/skills/skill", {
 			actor.playSound(this.Const.Sound.ActorEvent.Fatigue, this.Const.Sound.Volume.Actor * actor.getSoundVolume(this.Const.Sound.ActorEvent.Fatigue));
 		}
 	}
-
-	function onCombatFinished()
-	{
-		this.removeSelf();
-	}
 });
 

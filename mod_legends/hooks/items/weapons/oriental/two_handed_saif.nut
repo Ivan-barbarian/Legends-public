@@ -19,5 +19,4 @@
 			this.m.ArmamentIcon = "icon_two_handed_saif_01_" + this.getVariant();
 		}
 	}
-
 });

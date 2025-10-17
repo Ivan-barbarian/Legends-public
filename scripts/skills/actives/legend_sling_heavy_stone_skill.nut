@@ -64,7 +64,7 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsProjectileRotated = true;
 		this.m.ChanceDecapitate = 0;
 		this.m.ChanceDisembowel = 0;
-		this.m.ChanceSmash = 25;
+		this.m.ChanceSmash = 50;
 	}
 
 	function getTooltip()
@@ -123,8 +123,6 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 		if (_properties.IsSpecializedInSlings)
 		{
 			this.m.MaxRange = this.m.Item.getRangeMax() + 1;
-			this.m.AdditionalAccuracy += 5;
-			this.m.AdditionalHitChance += 2;
 			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
 		}
 	}
@@ -164,6 +162,14 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
+			if (_properties.IsSpecializedInSlings)
+			{
+				this.m.AdditionalAccuracy += 5;
+				this.m.AdditionalHitChance += 2;
+			}
+			if (_properties.IsSharpshooter)
+				_properties.DamageDirectMult += 0.05;
+
 			_properties.RangedSkill += this.m.AdditionalAccuracy;
 			_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;
 			_properties.FatigueDealtPerHitMult += 3.0;

@@ -132,20 +132,13 @@
 	return true;
 }
 
-::Legends.S.getClosestSettlement <- function () {
-	local towns = this.World.EntityManager.getSettlements();
-	local nearestTown;
-	local nearestDist = 9999;
-	foreach (t in towns)
-	{
-		local d = t.getTile().getDistanceTo(::World.State.getPlayer().getTile());
-		if (d < nearestDist && t.isAlliedWithPlayer() && ::World.FactionManager.getFaction(t.getFaction()).getContracts().len() != 0)
-		{
-			nearestTown = t;
-			nearestDist = d;
-		}
-	}
-	return nearestTown;
+::Legends.S.getClosestSettlement <- function (_predicate = @(_, _town) true) {
+	local towns = this.World.EntityManager.getSettlements().filter(_predicate);
+	if (towns.len() == 0)
+		return null;
+	local playerTile = ::World.State.getPlayer().getTile();
+	towns.sort(@(a, b) playerTile.getDistanceTo(b.getTile()) <=> playerTile.getDistanceTo(a.getTile()));
+	return towns.top();
 }
 
 ::Legends.S.skillEntityAliveCheck <- function (_entity, _otherEntity = null) {

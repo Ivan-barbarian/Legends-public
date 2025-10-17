@@ -8,7 +8,7 @@ this.legend_pry_armor_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Tear a weak spot in your opponent\'s armor to reveal a weakspot. Will apply Compromised Armor on every successful hit.";
 		this.m.KilledString = "Torn Apart";
 		this.m.Icon = "skills/legend_active_pry_armor_warhammer.png";
-		this.m.IconDisabled = "skills/active_legend_pry_armor_warhammer_bw.png";
+		this.m.IconDisabled = "skills/legend_active_pry_armor_warhammer_bw.png";
 		this.m.Overlay = "active_legend_pry_armor_warhammer";
 		this.m.SoundOnUse = [
 			"sounds/combat/crush_armor_01.wav",

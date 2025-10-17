@@ -1,4 +1,3 @@
-
 ::Legends.Legion <- {};
 
 // can roll; brute, clubfooted, clumsy, fragile, huge, hesitant, strong, sure footing, survivor, tiny, tough, bright, lucky,

@@ -90,7 +90,8 @@
 	"mod_make_lindwurms_great_again",
 	"mod_MINA", // More Indefinite Numeral Adjectives - a similar feature is implemented in legends
 	"mod_tooltip_extension", // Rygar's perk tooltip
-	"mod_turn_it_in"
+	"mod_turn_it_in",
+	"mod_find_legendary_maps"
 ];
 
 //region HardIncompat

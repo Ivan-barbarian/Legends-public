@@ -157,7 +157,6 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		}
 		else if (_layerID == "body")
 		{
-			::logInfo("ethnicity = " + ethnicity);
 			if (isFemale)
 			{
 				if (ethnicity == 1)

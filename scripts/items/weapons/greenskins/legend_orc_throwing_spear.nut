@@ -47,8 +47,11 @@ this.legend_orc_throwing_spear <- this.inherit("scripts/items/weapons/weapon", {
 		return result;
 	}
 
-	function getAmountString()
-	{
+	function isAmountShown() {
+		return true;
+	}
+
+	function getAmountString() {
 		return this.m.Ammo + "/" + this.m.AmmoMax;
 	}
 

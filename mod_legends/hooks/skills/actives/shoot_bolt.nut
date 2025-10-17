@@ -62,6 +62,9 @@
 	{
 		if (_skill == this)
 		{
+			if (::Legends.S.skillEntityAliveCheck(_targetEntity))
+				return;
+
 			_properties.RangedSkill += this.m.AdditionalAccuracy;
 			_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;
 
@@ -70,7 +73,7 @@
 				_properties.DamageDirectMult += 0.05;
 			}
 
-			if (_skill == this && this.getContainer().hasPerk(::Legends.Perk.LegendBallistics))
+			if (_skill == this && this.getContainer().hasPerk(::Legends.Perk.LegendBallistics) && _targetEntity != null)
 			{
 				local distance = this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile());
 				_properties.DamageDirectAdd += 0.25 - (distance * 0.05)

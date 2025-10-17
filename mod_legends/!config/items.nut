@@ -151,7 +151,6 @@ foreach (i in garbage)
 	"weapons/named/legend_named_ranged_flail",
 	"weapons/named/legend_named_infantry_axe",
 	"weapons/named/legend_named_warhammer",
-	"weapons/named/legend_named_gladius",
 	"weapons/named/legend_named_military_goedendag",
 	"weapons/named/legend_named_military_warscythe",
 	"weapons/named/legend_named_parrying_dagger",
@@ -169,11 +168,12 @@ foreach (i in garbage)
 ::Const.Items.NamedWeapons.extend(::Const.Items.NamedRangedWeapons);
 
 ::Const.Items.NamedSouthernWeapons.extend([
-	"weapons/named/named_heavy_southern_mace"
+	"weapons/named/legend_named_heavy_southern_mace"
 ]);
 
 ::Const.Items.NamedUndeadWeapons.extend([
-	"weapons/named/legend_named_great_khopesh"
+	"weapons/named/legend_named_great_khopesh",
+	"weapons/named/legend_named_gladius",
 ]);
 
 ::Const.Items.ArmorUpgrades <- {

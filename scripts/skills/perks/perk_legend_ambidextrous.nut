@@ -89,12 +89,17 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 	{
 		if (!_skill.m.IsAttack)
 			return; // Don't execute a follow up attack if the first skill is not an attack
+
 		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.HandToHand) && this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Mainhand) != null)
 			return;// or if you are using hand to hand while the mainhand is holding a weapon
+
 
 		local actor = this.getContainer().getActor();
 		if (::Legends.S.skillEntityAliveCheck(actor, _targetEntity))
 			return;
+
+		if (actor.getTile().getDistanceTo(_targetEntity.getTile()) > 1)
+			return; // no gomu gomu h2h attacks
 
 		local items = actor.getItems();
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);

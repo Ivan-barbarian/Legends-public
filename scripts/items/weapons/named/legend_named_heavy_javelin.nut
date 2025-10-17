@@ -14,9 +14,7 @@ this.legend_named_heavy_javelin <- inherit("scripts/items/weapons/named/named_we
 	{
 		this.named_weapon.create();
 		this.m.ID = "weapon.legend_named_heavy_javelin";
-		this.m.Variant = 1;
 		this.m.Variants = [1];
-		this.updateVariant();
 		this.m.PrefixList = this.Const.Strings.BarbarianPrefix;
 		this.m.SuffixList = this.Const.Strings.BarbarianPrefix;
 		this.m.NameList = this.Const.Strings.JavelinNames;
@@ -40,6 +38,7 @@ this.legend_named_heavy_javelin <- inherit("scripts/items/weapons/named/named_we
 		this.m.ShieldDamage = 0;
 		this.m.IsDroppedAsLoot = true;
 		this.m.AdditionalAccuracy = -5;
+		this.setVariant(this.m.Variants[::Math.rand(0, this.m.Variants.len() - 1)]);
 		this.randomizeValues();
 	}
 
@@ -51,7 +50,7 @@ this.legend_named_heavy_javelin <- inherit("scripts/items/weapons/named/named_we
 			this.m.Icon = "weapons/ranged/javelins_heavy_01_named_0" + this.m.Variant + "_70x70.png";
 			this.m.ArmamentIcon = "icon_named_javelins_heavy_0" + this.m.Variant;
 			this.m.ShowArmamentIcon = true;
-		} 
+		}
 		else
 		{
 			this.m.IconLarge = "weapons/ranged/javelins_01_bag.png";

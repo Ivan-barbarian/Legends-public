@@ -23,7 +23,7 @@
 
 	o.applyDamage <- function ()
 	{
-		if (this.m.DamageMin == 0 || this.DamageMax == 0)
+		if (this.m.DamageMin == 0 || this.m.DamageMax == 0)
 			return;
 
 		local actor = this.getContainer().getActor();
