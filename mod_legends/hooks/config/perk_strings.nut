@@ -200,11 +200,9 @@ Master polearms and keeping the enemy at bay.
 [color=%passive%][u]Passive:[/u][/color]
 • Skills build up [color=%negative%]25%[/color] less Fatigue.
 
-• Polearm skills have their Action Point cost reduced to [color=%negative%]5[/color].
+• Polearm skills have their Action Point cost reduced by [color=%negative%]1[/color] and no longer have a penalty for attacking targets directly adjacent.
 
 • Increases [color=%status%]Daze[/color] chance when using [color=%skill%]Staff Daze[/color] to [color=%positive%]100%[/color] and increase the range of [color=%skill%]Leap[/color] by [color=%positive%]1[/color] when using a staff.
-
-• Polearms no longer have a penalty for attacking targets directly adjacent.
 ");
 ::Const.Perks.PerkDefObjects[::Legends.Perk.SpecPolearm].Tooltip = ::Const.Strings.PerkDescription.SpecPolearm;
 ::Const.Strings.PerkDescription.SpecHammer <- ::Legends.tooltip(@"
