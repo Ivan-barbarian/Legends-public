@@ -11,7 +11,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 		this.m.GoodEnding = "After leaving %companyname%, %name% was never heard from again. %name%\'s calling card has been found near a few accidents, so you believe the assassin is doing well.";
 		this.m.BadEnding = "After leaving %companyname%, %name% was never heard from again. There are rumours that a rival assassin was hunting %name%, but no one has heard anything from either of them.";
 		this.m.Icon = "ui/backgrounds/background_53.png";
-		this.m.HiringCost = 9999999;
+		this.m.HiringCost = 10000;
 		this.m.DailyCost = 0;
 		this.m.Excluded = [
 			::Legends.Traits.getID(::Legends.Trait.Weasel),
@@ -65,90 +65,58 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 		this.m.BackgroundType = this.Const.BackgroundType.Outlaw | this.Const.BackgroundType.Combat | this.Const.BackgroundType.Untalented;
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
-		this.m.CustomPerkTree = [
-			[
-				::Legends.Perk.Pathfinder,
-				::Legends.Perk.CripplingStrikes,
-				::Legends.Perk.Adrenaline,
-				::Legends.Perk.Recover,
-				::Legends.Perk.FastAdaption,
-				::Legends.Perk.LegendBackToBasics,
-				::Legends.Perk.Colossus,
-				::Legends.Perk.BagsAndBelts,
-				::Legends.Perk.LegendKnifeplay,
-				::Legends.Perk.LegendAlert
+		this.m.PerkTreeDynamic = {
+			Weapon = [
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.FlailTree,
+				this.Const.Perks.BowTree,
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.CrossbowTree,
+				this.Const.Perks.OneHandedTree
 			],
-			[
-				::Legends.Perk.Backstabber,
-				::Legends.Perk.LegendAthlete,
-				::Legends.Perk.DevastatingStrikes,
-				::Legends.Perk.QuickHands,
-				::Legends.Perk.Dodge,
-				::Legends.Perk.CoupDeGrace,
-				::Legends.Perk.Bullseye,
-				::Legends.Perk.HoldOut,
-				::Legends.Perk.LegendOpportunist,
-				::Legends.Perk.LegendFavouredEnemyCaravan
+			Defense = [
+				this.Const.Perks.LightArmorTree,
+				this.Const.Perks.MediumArmorTree
 			],
-			[
-				::Legends.Perk.LegendBoondockBlade,
-				::Legends.Perk.LegendHairSplitter,
-				::Legends.Perk.LegendEscapeArtist,
-				::Legends.Perk.LegendTrueBeliever,
-				::Legends.Perk.Anticipation,
-				::Legends.Perk.Rotation,
-				::Legends.Perk.LegendFeint,
-				::Legends.Perk.LegendDebilitate,
-				::Legends.Perk.LegendOnslaught,
-				::Legends.Perk.LegendPrepared,
-				::Legends.Perk.LegendFavouredEnemyBandit
+			Traits = [
+				this.Const.Perks.DeviousTree,
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.FitTree,
+				this.Const.Perks.CalmTree,
+				this.Const.Perks.MartyrTree,
+				this.Const.Perks.LargeTree
+
 			],
-			[
-				::Legends.Perk.SpecDagger,
-				::Legends.Perk.SpecSword,
-				::Legends.Perk.SpecPolearm,
-				::Legends.Perk.SpecBow,
-				::Legends.Perk.SpecThrowing,
-				::Legends.Perk.SpecCrossbow,
-				::Legends.Perk.LegendSpecPoison,
-				::Legends.Perk.LegendLurker,
-				::Legends.Perk.LegendFavouredEnemyMercenary
+			Enemy = [
+				this.Const.Perks.NoblesTree,
+				this.Const.Perks.MercenaryTree,
+				this.Const.Perks.BanditTree,
+				this.Const.Perks.CaravanTree
+
 			],
-			[
-				::Legends.Perk.LegendPushTheAdvantage,
-				::Legends.Perk.LegendDoubleStrike,
-				::Legends.Perk.LegendEvasion,
-				::Legends.Perk.LegendHeightenedReflexes,
-				::Legends.Perk.LoneWolf,
-				::Legends.Perk.Overwhelm,
-				::Legends.Perk.LegendVengeance,
-				::Legends.Perk.LegendLithe,
-				::Legends.Perk.LegendFavouredEnemyNoble
+			Class = [
+				this.Const.Perks.JugglerClassTree,
+				this.Const.Perks.PoisonClassTree
 			],
-			[
-				::Legends.Perk.LegendLeap,
-				::Legends.Perk.LegendWindReader,
-				::Legends.Perk.Berserk,
-				::Legends.Perk.LegendBalance,
-				::Legends.Perk.LegendClarity,
-				::Legends.Perk.HeadHunter,
-				::Legends.Perk.Nimble,
-				::Legends.Perk.LegendPerfectFit,
-				::Legends.Perk.LegendNightRaider,
-				::Legends.Perk.LegendSecondWind
-			],
-			[
-				::Legends.Perk.LegendTumble,
-				::Legends.Perk.LegendPointBlank,
-				::Legends.Perk.KillingFrenzy,
-				::Legends.Perk.Duelist,
-				::Legends.Perk.LegendRebound,
-				::Legends.Perk.BattleFlow,
-				::Legends.Perk.LegendPerfectFocus,
-				::Legends.Perk.LegendFreedomOfMovement,
-				::Legends.Perk.LegendAssassinate,
-				::Legends.Perk.LegendFavouredEnemySwordmaster
+			Profession = [],
+			Magic = [
+				this.Const.Perks.AssassinMagicTree,
+				this.Const.Perks.AssassinLeftoverTree
 			]
+
+
+		};
+		this.m.CustomPerkTree = [
+			[],
+			[],
+			[],
+			[],
+			[],
+			[],
+			[]
 		];
 	}
 
