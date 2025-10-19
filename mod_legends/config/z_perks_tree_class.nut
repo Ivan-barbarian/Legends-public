@@ -3,6 +3,23 @@ if (!("Perks" in ::Const))
 	::Const.Perks <- {};
 }
 
+::Const.Perks.PoisonClassTree <- {
+	ID = "PoisonClassTree",
+	Name = "Poison",
+	Descriptions = [
+		"poisons"
+	],
+	Tree = [
+		[],
+		[],
+		[],
+		[::Legends.Perk.LegendSpecPoison],
+		[],
+		[],
+		[]
+	]
+};
+
 ::Const.Perks.BeastClassTree <- {
 	ID = "BeastClassTree",
 	Name = "Nets",
