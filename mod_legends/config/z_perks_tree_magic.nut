@@ -245,6 +245,36 @@ if (!("Perks" in ::Const))
 	]
 };
 
+::Const.Perks.AssassinLeftoverTree <- {
+	ID = "AssassinLeftoverTree",
+	Name = "Cutthroat"
+	Descriptions = [
+		"Sneaky"
+	],
+	Tree = [
+		[
+			::Legends.Perk.Pathfinder,
+			::Legends.Perk.BagsAndBelts,
+			::Legends.Perk.DevastatingStrikes
+		],
+		[],
+		[
+			::Legends.Perk.HoldOut,
+			::Legends.Perk.LegendFavouredEnemyBandit
+		],
+		[],
+		[],
+		[
+			::Legends.Perk.LegendWindReader,
+			::Legends.Perk.LegendFavouredEnemyMercenary
+		],
+		[
+			::Legends.Perk.KillingFrenzy,
+			::Legends.Perk.LegendFavouredEnemySwordmaster
+		]
+	]
+};
+
 ::Const.Perks.BasicNecroMagicTree <- {
 	ID = "BasicNecroMagicTree",
 	Name = "Necromancy",
