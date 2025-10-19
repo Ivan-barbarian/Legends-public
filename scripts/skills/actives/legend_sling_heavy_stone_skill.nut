@@ -79,7 +79,7 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 			icon = "ui/icons/special.png",
 			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + fatPerHit + "[/color] extra fatigue"
 		});
-		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInStaffStun)
+		if (this.getContainer().hasPerk(::Legends.Perk.LegendBarrage))
 		{
 			ret.push({
 				id = 7,

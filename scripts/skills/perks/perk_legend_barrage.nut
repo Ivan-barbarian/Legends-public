@@ -34,7 +34,7 @@ this.perk_legend_barrage <- this.inherit("scripts/skills/skill", {
 
 		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.LegendSlingHeavyStone) && headshot && !_targetEntity.getCurrentProperties().IsImmuneToStun)
 		{
-			this.grantEffect(::Legends.Effect.LegendBaffled, "stunned", _targetEntity, user)
+			this.grantEffect(::Legends.Effect.Stunned, "stunned", _targetEntity, user)
 		}
 
 		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.FireHandgonne) && headshot)
