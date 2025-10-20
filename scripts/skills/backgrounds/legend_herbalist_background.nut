@@ -96,7 +96,8 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 					],
 			Class = [
 				this.Const.Perks.SickleClassTree,
-				this.Const.Perks.PoisonClassTree
+				this.Const.Perks.PoisonClassTree,
+				this.Const.Perks.HealerClassTree
 			],
 			Profession = [
 				this.Const.Perks.HealerProfessionTree,

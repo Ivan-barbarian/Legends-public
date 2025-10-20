@@ -111,7 +111,8 @@
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.SickleClassTree
+				this.Const.Perks.SickleClassTree,
+				this.Const.Perks.HealerClassTree
 
 			],
 			Profession = [

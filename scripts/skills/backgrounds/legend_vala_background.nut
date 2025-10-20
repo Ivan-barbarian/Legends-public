@@ -59,7 +59,8 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.StaffClassTree
+				this.Const.Perks.StaffClassTree,
+				this.Const.Perks.HealerClassTree	
 			],
 			Profession = [
 				this.Const.Perks.HealerProfessionTree,
