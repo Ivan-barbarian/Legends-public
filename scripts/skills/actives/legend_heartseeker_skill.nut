@@ -10,7 +10,7 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 		this.m.KilledString = "Pierced";
 		this.m.Icon = "skills/active_legend_heartseeker.png";
 		this.m.IconDisabled = "skills/active_legend_heartseeker_bw.png";
-		this.m.Overlay = "active_heartseeker";
+		this.m.Overlay = "active_legend_heartseeker";
 		this.m.SoundOnUse = [
 			"sounds/combat/impale_01.wav",
 			"sounds/combat/impale_02.wav",

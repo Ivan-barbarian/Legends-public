@@ -28,7 +28,7 @@
 
 		local actor = this.getContainer().getActor();
 		local hp = actor.getHitpoints();
-
+		local damage = this.Math.rand(this.m.DamageMin, this.m.DamageMax);
 		local hitInfo = clone this.Const.Tactical.HitInfo;
 		hitInfo.DamageRegular = damage;
 		hitInfo.DamageArmor = damage;

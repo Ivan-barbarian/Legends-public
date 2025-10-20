@@ -7,10 +7,15 @@
 	}
 
 	o.updateVariant <- function() {
-		local v = this.getVariant() == 0 ? "" : "_" + this.getVariant();
-		this.m.Icon = "weapons/melee/orc_club_01" + v + "_70x70.png";
-		this.m.IconLarge = "weapons/melee/orc_club_01" + v + ".png";
-		this.m.ArmamentIcon = "icon_orc_weapon_06" + v;
+		if (this.getVariant() == 0) {
+			this.m.IconLarge = "weapons/melee/orc_club_01_140x70.png";
+			this.m.Icon = "weapons/melee/orc_club_01_70x70.png";
+			this.m.ArmamentIcon = "icon_orc_weapon_06";
+		} else {
+			this.m.Icon = "weapons/melee/orc_club_01_" + this.getVariant() + "_70x70.png";
+			this.m.IconLarge = "weapons/melee/orc_club_01_" + this.getVariant() + ".png";
+			this.m.ArmamentIcon = "icon_orc_weapon_06_" + this.getVariant();
+		}
 	}
 
 });

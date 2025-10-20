@@ -189,8 +189,8 @@ this.legend_white_warwolf <- this.inherit("scripts/entity/tactical/actor", {
 
 	function setVariant(_v, _c, _s, _hp = 1.0)
 	{
-		m.Items.getAppearance().Body = "bust_direwolf_white_tame_0" + _v;
-		m.Items.getAppearance().Armor = "bust_wolf_02_armor_01";
+		this.m.Items.getAppearance().Body = "bust_direwolf_white_tame_0" + _v;
+		this.m.Items.getAppearance().Armor = "bust_wolf_02_armor_01";
 
 		local body = getSprite("body");
 		body.setBrush("bust_wolf_0" + _v + "_body");
@@ -202,16 +202,16 @@ this.legend_white_warwolf <- this.inherit("scripts/entity/tactical/actor", {
 		head.Color = _c;
 		head.Saturation = _s;
 
-		getSprite("armor").Visible = true;
+		this.getSprite("armor").Visible = true;
 
 		if(_hp != 1.0)
 		{
-			m.Hitpoints = getHitpointsMax() * _hp;
-			onUpdateInjuryLayer();
+			this.m.Hitpoints = this.getHitpointsMax() * _hp;
+			this.onUpdateInjuryLayer();
 		}
 		else
 		{
-			setDirty(true);
+			this.setDirty(true);
 		}
 	}
 

@@ -5,7 +5,7 @@
 	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
-		local fm = this.Math.floor((1 - this.getChance()) * 33);
+		local fm = this.Math.ceil(this.getArmorReductionMult() * 100);
 		local tooltip = getTooltip();
 
 		if (fm < 100 && this.getContainer().hasPerk(::Legends.Perk.Relentless))
@@ -42,19 +42,21 @@
 		return ret;
 	}
 
+	o.getArmorReductionMult <- @() (1 - (1 - this.getChance()) / 3);
+
 	local onBeforeDamageReceived = o.onBeforeDamageReceived;
 	o.onBeforeDamageReceived = function( _attacker, _skill, _hitInfo, _properties )
 	{
 		onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties );
 		if (this.getContainer().hasPerk(::Legends.Perk.Relentless))
-			_properties.DamageReceivedArmorMult *= (1 - (1 - this.getChance()) / 3);
+			_properties.DamageReceivedArmorMult *= this.getArmorReductionMult();
 	}
 
 	// local onBeforeDamageReceived = o.onBeforeDamageReceived;
 	// o.onBeforeDamageReceived = @( __original ) function( _attacker, _skill, _hitInfo, _properties )
 	// {
 	// 	onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties );
-		
+
 	// 	_properties.DamageReceivedArmorMult *= (1 - (1 - this.getChance()) / 6);
 	// }
 });

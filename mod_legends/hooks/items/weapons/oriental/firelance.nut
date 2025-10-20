@@ -17,7 +17,7 @@
 		local v = this.getVariant() == 0 ? "" : "_" + this.getVariant();
 		this.m.Icon = "weapons/ranged/firelance_02" + v + "_70x70.png";
 		this.m.IconLarge = "weapons/ranged/firelance_02" + v + ".png";
-		this.m.ArmamentIcon = "icon_firelance_02" + v;
+		this.m.ArmamentIcon = "icon_firelance_02" + v + "_empty";
 	}
 
 	local setAmmo = o.setAmmo;

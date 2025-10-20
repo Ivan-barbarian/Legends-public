@@ -80,9 +80,12 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.BowTree,
 				this.Const.Perks.SlingTree,
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.DaggerTree
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.AxeTree,
+				this.Const.Perks.OneHandedTree
 			],
 			Defense = [
+				this.Const.Perks.ClothArmorTree,
 				this.Const.Perks.LightArmorTree,
 				this.Const.Perks.MediumArmorTree
 			],
@@ -103,8 +106,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 			Class = [
 				this.Const.Perks.BeastClassTree,
 				this.Const.Perks.HoundmasterClassTree,
-				this.Const.Perks.ShortbowClassTree,
-				this.Const.Perks.JugglerClassTree
+				this.Const.Perks.SharpshooterClassTree,
 			],
 			Profession = [],
 			Magic = [
@@ -113,6 +115,24 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.ArcherCommandTree
 			]
 		};
+
+		this.m.CustomPerkTree = [
+			[
+				::Legends.Perk.LegendTacticalManeuvers
+			],
+			[],
+			[
+				::Legends.Perk.LegendHairSplitter
+			],
+			[],
+			[],
+			[],
+			[],
+			[],
+			[],
+			[],
+			[]
+		];
 	}
 
 	//Default Male

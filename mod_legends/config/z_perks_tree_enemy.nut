@@ -11,12 +11,12 @@ if (!("Perks" in ::Const))
 	Tree = [
 		[],
 		[],
-		[
-		::Legends.Perk.LegendFavouredEnemyGhoul,
-		::Legends.Perk.LegendFavouredEnemyDirewolf,
-		::Legends.Perk.LegendFavouredEnemySpider
-		],
 		[],
+		[
+			::Legends.Perk.LegendFavouredEnemyGhoul,
+			::Legends.Perk.LegendFavouredEnemyDirewolf,
+			::Legends.Perk.LegendFavouredEnemySpider
+		],
 		[],
 		[::Legends.Perk.LegendFavouredEnemyLindwurm],
 		[]
@@ -415,7 +415,7 @@ if (!("Perks" in ::Const))
 		[],
 		[],
 		[],
-		[::Legends.Perk.Footwork],
+		[],
 		[::Legends.Perk.LegendFavouredEnemyArcher],
 		[]
 	]

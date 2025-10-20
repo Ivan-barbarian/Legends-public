@@ -207,40 +207,52 @@
 
 		if (this.m.Settlement.getSize() >= 2)
 		{
-			list.push({
+			list.extend([
+			{
 				R = 50,
 				P = 1.0,
 				S = "misc/legend_weapon_skill_book_item"
-			});
-			list.push({
+			},
+			{
 				R = 50,
 				P = 1.0,
 				S = "misc/legend_profession_skill_book_item"
-			});
-			list.push({
+			},
+			{
 				R = 50,
 				P = 1.0,
 				S = "misc/legend_class_skill_book_item"
-			});
+			},
+			{
+				R = 50,
+				P = 1.0,
+				S = "misc/legend_armor_skill_book_item"
+			}]);
 		}
 
 		if (this.m.Settlement.getSize() >= 3)
 		{
-			list.push({
+			list.extend([
+			{
 				R = 50,
 				P = 1.0,
 				S = "misc/legend_weapon_skill_book_item"
-			});
-			list.push({
+			},
+			{
 				R = 50,
 				P = 1.0,
 				S = "misc/legend_profession_skill_book_item"
-			});
-			list.push({
+			},
+			{
 				R = 50,
 				P = 1.0,
 				S = "misc/legend_class_skill_book_item"
-			});
+			},
+			{
+				R = 50,
+				P = 1.0,
+				S = "misc/legend_armor_skill_book_item"
+			}]);
 		}
 
 		if (this.m.Settlement.getSize() >= 2 && this.m.Settlement.hasAttachedLocation("attached_location.fishing_huts"))

@@ -168,9 +168,10 @@ if (!("Perks" in ::Const))
 		"hunting big game"
 	],
 	Tree = [
-		[],
 		[
-			::Legends.Perk.LegendSummonHound,
+			::Legends.Perk.LegendSummonHound
+		],
+		[
 			::Legends.Perk.LegendNightvision
 		],
 		[
@@ -217,7 +218,7 @@ if (!("Perks" in ::Const))
 
 ::Const.Perks.MasterArcherTree <- {
 	ID = "MasterArcherTree",
-	Name = "MasterArcher",
+	Name = "Deadeye",
 	Descriptions = [
 		"archery"
 	],
@@ -240,6 +241,36 @@ if (!("Perks" in ::Const))
 		[
 			::Legends.Perk.KillingFrenzy,
 			::Legends.Perk.LegendPerfectFocus
+		]
+	]
+};
+
+::Const.Perks.AssassinLeftoverTree <- {
+	ID = "AssassinLeftoverTree",
+	Name = "Cutthroat"
+	Descriptions = [
+		"Sneaky"
+	],
+	Tree = [
+		[
+			::Legends.Perk.Pathfinder,
+			::Legends.Perk.BagsAndBelts,
+			::Legends.Perk.DevastatingStrikes
+		],
+		[],
+		[
+			::Legends.Perk.HoldOut,
+			::Legends.Perk.LegendFavouredEnemyBandit
+		],
+		[],
+		[],
+		[
+			::Legends.Perk.LegendWindReader,
+			::Legends.Perk.LegendFavouredEnemyMercenary
+		],
+		[
+			::Legends.Perk.KillingFrenzy,
+			::Legends.Perk.LegendFavouredEnemySwordmaster
 		]
 	]
 };

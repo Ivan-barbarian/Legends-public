@@ -52,6 +52,12 @@
 	"bust_head_southern_female_08",
 	"bust_head_southern_female_09",
 	"bust_head_southern_female_10",
+	"bust_head_african_female_01",
+	"bust_head_african_female_02",
+	"bust_head_african_female_03",
+	"bust_head_african_female_04",
+	"bust_head_african_female_05",
+	"bust_head_african_female_06"
 ];
 
 ::Const.Faces.AllWhiteHuman <- [
@@ -272,6 +278,8 @@
 	"30",
 	"31",
 	"32",
+	"33",
+	"34",
 	"southern_01",
 	"southern_02",
 	"southern_03",
@@ -306,6 +314,8 @@
 	"30",
 	"31",
 	"32",
+	"33",
+	"34",
 ];
 
 ::Const.Hair.Horse <- [
@@ -504,6 +514,8 @@
 	"30",
 	"31",
 	"32",
+	"33",
+	"34",
 ];
 
 ::Const.HairColors.African <- [
@@ -543,16 +555,12 @@
 ];
 
 ::Const.Faces.AfricanFemale <- [
-	"bust_head_southern_female_01",
-	"bust_head_southern_female_02",
-	"bust_head_southern_female_03",
-	"bust_head_southern_female_04",
-	"bust_head_southern_female_05",
-	"bust_head_southern_female_06",
-	"bust_head_southern_female_07",
-	"bust_head_southern_female_08",
-	"bust_head_southern_female_09",
-	"bust_head_southern_female_10"
+	"bust_head_african_female_01",
+	"bust_head_african_female_02",
+	"bust_head_african_female_03",
+	"bust_head_african_female_04",
+	"bust_head_african_female_05",
+	"bust_head_african_female_06"
 ];
 
 ::Const.Faces.AfricanMale <- [
