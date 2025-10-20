@@ -288,6 +288,7 @@
 
 	o.setRuneVariant <- function (_rune) {
 		this.getFlags().set("LegendsRuneVariant", _rune);
+		this.updateRuneSigilToken()
 	}
 
 	o.getRuneVariant <- function ()	{
