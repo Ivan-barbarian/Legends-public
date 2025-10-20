@@ -6,7 +6,7 @@ this.legend_goblin_white_direwolf_rider <- this.inherit("scripts/entity/tactical
 		AssignAIAgent = "scripts/ai/tactical/agents/goblin_wolfrider_agent",
 		AssignEntityType = this.Const.EntityType.LegendGoblinWhiteDirewolfRider,
 		AssignActor = this.Const.Tactical.Actor.LegendGoblinWhiteDirewolfRider,
-		WolfScript = "scripts/entity/tactical/enemies/legend_white_warwolf",
+		WolfScript = "scripts/entity/tactical/legend_white_warwolf",
 		GoblinScript = "scripts/entity/tactical/enemies/legend_goblin_harrier"
 	},
 	function create()
