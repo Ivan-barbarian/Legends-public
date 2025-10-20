@@ -2,7 +2,7 @@
 {
 	o.m.HasMoved <- false;
 
-	function onUpdate ( _properties )
+	o.onUpdate = function ( _properties )
 	{
 		local actor = this.getContainer().getActor();				
 		if (this.m.HasMoved == false && this.getContainer().getActor().m.IsMoving)
