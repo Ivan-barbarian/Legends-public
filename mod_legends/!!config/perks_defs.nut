@@ -3533,17 +3533,6 @@ perkDefObjects.push({
 	Const = "LegendWindReader"
 });
 
-::Legends.Perk.LegendChoke <- null;
-perkDefObjects.push({
-	ID = "perk.legend_choke",
-	Script = "scripts/skills/perks/perk_legend_choke",
-	Name = ::Const.Strings.PerkName.LegendChoke,
-	Tooltip = ::Const.Strings.PerkDescription.LegendChoke,
-	Icon = "ui/perks/choke_circle.png",
-	IconDisabled = "ui/perks/choke_circle_bw.png",
-	Const = "LegendChoke"
-});
-
 ::Legends.Perk.LegendPaymaster <- null;
 perkDefObjects.push({
 	ID = "perk.legend_barter_paymaster",
