@@ -8,6 +8,7 @@
 		this.m.Categories = "Throwing Weapon/Axe, One-Handed";
 		this.m.WeaponType = this.Const.Items.WeaponType.Throwing | this.Const.Items.WeaponType.Axe;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.OneHanded;
+		this.m.ArmorDamageMult = 1.3;
 		this.m.Ammo = 6;
 		this.m.AmmoMax = 6;
 		this.updateVariant();

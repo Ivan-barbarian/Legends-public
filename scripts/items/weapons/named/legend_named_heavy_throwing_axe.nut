@@ -36,7 +36,7 @@ this.legend_named_heavy_throwing_axe <- inherit("scripts/items/weapons/named/nam
 		this.m.StaminaModifier = -6;
 		this.m.RegularDamage = 30;
 		this.m.RegularDamageMax = 50;
-		this.m.ArmorDamageMult = 1.15;
+		this.m.ArmorDamageMult = 1.4;
 		this.m.DirectDamageMult = 0.25;
 		this.m.ShieldDamage = 0;
 		this.m.ChanceToHitHead = 5;
