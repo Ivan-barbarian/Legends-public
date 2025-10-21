@@ -172,17 +172,17 @@
 
 	o.getEligibleItems <- function () {
 		return ::World.Assets.getStash().getItems().filter(function (_, _item) {
-			if (item == null)
+			if (_item == null)
 				return false;
-			if (item.isNamed() || item.isIndestructible()) //rap I love you but i do not like how sadistic you can be.
+			if (_item.isNamed() || item.isIndestructible()) //rap I love you but i do not like how sadistic you can be.
 				return false;
-			if (item.isItemType(this.Const.Items.ItemType.Weapon))
+			if (_item.isItemType(::Const.Items.ItemType.Weapon))
 				return true;
-			if (item.isItemType(this.Const.Items.ItemType.Shield))
+			if (_item.isItemType(::Const.Items.ItemType.Shield))
 				return true;
-			if (item.isItemType(this.Const.Items.ItemType.Armor))
+			if (_item.isItemType(::Const.Items.ItemType.Armor))
 				return true;
-			if (item.isItemType(this.Const.Items.ItemType.Helmet))
+			if (_item.isItemType(::Const.Items.ItemType.Helmet))
 				return true;
 		});
 	}
