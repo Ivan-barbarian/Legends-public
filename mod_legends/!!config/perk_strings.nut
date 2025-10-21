@@ -3344,7 +3344,7 @@ Use your athletic skill to leap high and far.
 
 • Fatigue cost is increased by the weight of your armor.
 
-• Costs [color=%negative%]4[/color] AP and [color=%negative%]15[/color] Fatigue.
+• Costs [color=%negative%]6[/color] AP and [color=%negative%]15[/color] Fatigue.
 ");
 
 ::Const.Strings.PerkDescription.LegendTumble <- ::Legends.tooltip(@"
