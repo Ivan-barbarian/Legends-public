@@ -77,7 +77,7 @@ this.legend_named_flamberge <- this.inherit("scripts/items/weapons/named/named_w
 				this.Sound.play(this.m.SoundsB[this.Math.rand(0, this.m.SoundsB.len() - 1)], this.Const.Sound.Volume.Skill, actor.getPos());
 			}
 		}
-		else if (!_target.getCurrentProperties().IsImmuneToBleeding && hp - _target.getHitpoints() >= this.Const.Combat.MinDamageToApplyBleeding )
+		else if (!_target.getCurrentProperties().IsImmuneToBleeding)
 		{
 			::Legends.Effects.grant(_target, ::Legends.Effect.Bleeding, function(_effect) {
 				if (actor.getFaction() == this.Const.Faction.Player )
