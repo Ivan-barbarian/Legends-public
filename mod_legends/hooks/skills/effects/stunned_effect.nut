@@ -8,6 +8,40 @@
 		}
 	}
 
+	function getTooltip()
+	{
+		return [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/melee_defense.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] Melee Defense"
+			},
+			{
+				id = 12,
+				type = "text",
+				icon = "ui/icons/ranged_defense.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] Ranged Defense"
+			},
+			{
+				id = 12,
+				type = "text",
+				icon = "ui/icons/initiative.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] Initiative"
+			}
+		];
+	}
+
 	o.onAdded = function ()
 	{
 		// Legends Steel Brow Stun -> Daze logic here
@@ -15,7 +49,6 @@
 		local otherSkill = ::Legends.Perks.get(this, ::Legends.Perk.LegendImmovableObject);
 		if (skill != null || (otherSkill != null && otherSkill.m.SteelBrow))
 		{
-			skill = skill != null ? skill : otherSkill;
 			if (this.getContainer().getActor().getTile().IsVisibleForPlayer)
 			{
 				this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " resists the Stun with " + skill.getName() + " and is Dazed instead.");
@@ -50,7 +83,15 @@
 		}
 		else
 		{
-			this.m.IsGarbage = true;
+			this.m.IsGarbage = true; //yeah tell me about it.
 		}
+	}
+
+	function onUpdate( _properties )
+	{
+		local actor = this.getContainer().getActor();
+		_properties.MeleeDefenseMult *= 0.75;
+		_properties.RangedDefenseMult *= 0.75;
+		_properties.InitiativeMult *= 0.75;
 	}
 });
