@@ -32,7 +32,7 @@ this.legend_redback_dagger <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 26;
 		this.m.RegularDamageMax = 52;
 		this.m.ArmorDamageMult = 0.7;
-		this.m.DirectDamageMult = 0.36;
+		this.m.DirectDamageMult = 0.2;
 	}
 
 	function getTooltip()

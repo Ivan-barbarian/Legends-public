@@ -37,7 +37,7 @@ this.legend_hidden_kobold_effect <- this.inherit("scripts/skills/skill", {
 				}
 			]);
 
-			if (actor.getSkills().hasSkill("background.legend_assassin") || actor.getSkills().hasSkill("background.assassin") || actor.getSkills().hasSkill("background.assassin_southern"))
+			if (actor.getSkills().hasSkill("background.assassin") || actor.getSkills().hasSkill("background.assassin_southern"))
 			{
 					{
 						id = 13,
@@ -47,7 +47,7 @@ this.legend_hidden_kobold_effect <- this.inherit("scripts/skills/skill", {
 					}
 			}
 
-			if (actor.getSkills().hasSkill("bbackground.legend_commander_assassin"))
+			if (actor.getSkills().hasSkill("background.legend_commander_assassin"))
 			{
 					{
 						id = 13,
@@ -154,11 +154,11 @@ this.legend_hidden_kobold_effect <- this.inherit("scripts/skills/skill", {
 			_properties.DamageRegularMin *= 1.5;
 			_properties.DamageRegularMax *= 1.5;
 
-			if (actor.getSkills().hasSkill("background.legend_assassin") || actor.getSkills().hasSkill("background.assassin") || actor.getSkills().hasSkill("background.assassin_southern"))
+			if (actor.getSkills().hasSkill("background.assassin") || actor.getSkills().hasSkill("background.assassin_southern"))
 			{
 			_properties.DamageRegularMax *= 1.5;
 			}
-			if (actor.getSkills().hasSkill("bbackground.legend_commander_assassin"))
+			if (actor.getSkills().hasSkill("background.legend_commander_assassin"))
 			{
 			_properties.DamageRegularMax *= 2.0;
 			}

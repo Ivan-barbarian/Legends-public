@@ -46,8 +46,8 @@
 	{
 		// Legends Steel Brow Stun -> Daze logic here
 		local skill = ::Legends.Perks.get(this, ::Legends.Perk.SteelBrow);
-
-		if (skill != null)
+		local otherSkill = ::Legends.Perks.get(this, ::Legends.Perk.LegendImmovableObject);
+		if (skill != null || (otherSkill != null && otherSkill.m.SteelBrow))
 		{
 			if (this.getContainer().getActor().getTile().IsVisibleForPlayer)
 			{

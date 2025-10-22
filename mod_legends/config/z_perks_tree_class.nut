@@ -3,6 +3,23 @@ if (!("Perks" in ::Const))
 	::Const.Perks <- {};
 }
 
+::Const.Perks.PoisonClassTree <- {
+	ID = "PoisonClassTree",
+	Name = "Poison",
+	Descriptions = [
+		"poisons"
+	],
+	Tree = [
+		[],
+		[],
+		[],
+		[::Legends.Perk.LegendSpecPoison],
+		[],
+		[],
+		[]
+	]
+};
+
 ::Const.Perks.BeastClassTree <- {
 	ID = "BeastClassTree",
 	Name = "Nets",
@@ -20,6 +37,23 @@ if (!("Perks" in ::Const))
 	]
 };
 
+::Const.Perks.TailorClassTree <- {
+ID = "TailorClassTree",
+	Name = "Trendy",
+	Descriptions = [
+		"tailoring"
+	],
+	Tree = [
+		[],
+		[],
+		[],
+		[],
+		[],
+		[::Legends.Perk.LegendFashionable],
+		[]
+	]
+};
+
 ::Const.Perks.HealerClassTree <- {
 	ID = "HealerClassTree",
 	Name = "Healing",
@@ -27,7 +61,7 @@ if (!("Perks" in ::Const))
 		"healing"
 	],
 	Tree = [
-		[::Legends.Perk.LegendMedIngredients],
+		[],
 		[],
 		[],
 		[::Legends.Perk.LegendSpecBandage],
@@ -113,6 +147,23 @@ if (!("Perks" in ::Const))
 	],
 	Tree = [
 		[::Legends.Perk.LegendSpecialistMilitia],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[]
+	]
+};
+
+::Const.Perks.ConArtistTree <- {
+	ID = "ConArtistTree",
+	Name = "Con Artist",
+	Descriptions = [
+		"sleight of hand"
+	],
+	Tree = [
+		[::Legends.Perk.LegendSleightOfHand],
 		[],
 		[],
 		[],
@@ -352,9 +403,9 @@ if (!("Perks" in ::Const))
 	Tree = [
 		[::Legends.Perk.LegendLeap],
 		[::Legends.Perk.LegendHairSplitter],
-		[::Legends.Perk.Rotation],
+		[::Legends.Perk.LegendTacticalManeuvers],
 		[::Legends.Perk.LegendTwirl],
-		[::Legends.Perk.Footwork],
+		[],
 		[::Legends.Perk.LegendBackflip],
 		[::Legends.Perk.LegendTumble]
 	]
@@ -466,12 +517,14 @@ if (!("Perks" in ::Const))
 		::Const.Perks.InventorClassTree,
 		::Const.Perks.SickleClassTree,
 		::Const.Perks.ScytheClassTree,
-		::Const.Perks.SharpshooterClassTree
+		::Const.Perks.SharpshooterClassTree,
 		::Const.Perks.ShovelClassTree,
 		::Const.Perks.SlingClassTree,
-		::Const.Perks.SpearfisherClassTree
+		::Const.Perks.SpearfisherClassTree,
 		::Const.Perks.StaffClassTree,
-		::Const.Perks.RaiderClassTree
+		::Const.Perks.RaiderClassTree,
+		::Const.Perks.PoisonClassTree,
+		::Const.Perks.TailorClassTree
 	],
 	function getRandom(_exclude)
 	{

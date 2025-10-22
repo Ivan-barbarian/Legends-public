@@ -316,7 +316,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 
 					foreach( bro in bros )
 					{
-						if (bro.getBackground().getID() == "background.thief" || bro.getBackground().getID() == "background.sellsword" || bro.getBackground().getID() == "background.legend_trader_commander" || bro.getBackground().getID() == "background.legend_assassin_commander" || bro.getBackground().getID() == "background.legend_assassin" || bro.getSkills().hasPerk(::Legends.Perk.LegendBribe))
+						if (bro.getBackground().getID() == "background.thief" || bro.getBackground().getID() == "background.sellsword" || bro.getBackground().getID() == "background.legend_commander_trader" || bro.getBackground().getID() == "background.legend_commander_assassin" || bro.getBackground().getID() == "background.assassin" || bro.getSkills().hasPerk(::Legends.Perk.LegendBribe))
 						{
 							candidates.push(bro);
 						}
@@ -920,7 +920,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		{
 			this.m.Location2 = this.WeakTableRef(this.World.getEntityByID(location2));
 		}
-		this.m.IsRandomlyAdded = _out.readBool();
+		this.m.IsRandomlyAdded = _in.readBool();
 		this.contract.onDeserialize(_in);
 	}
 

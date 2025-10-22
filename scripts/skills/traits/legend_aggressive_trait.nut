@@ -20,7 +20,7 @@ this.legend_aggressive_trait <- this.inherit("scripts/skills/traits/character_tr
 			::Legends.Traits.getID(::Legends.Trait.Craven),
 			::Legends.Traits.getID(::Legends.Trait.Hesistant),
 			::Legends.Traits.getID(::Legends.Trait.Dastard),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.FearBeasts),
 			::Legends.Traits.getID(::Legends.Trait.FearUndead),
 			::Legends.Traits.getID(::Legends.Trait.FearGreenskins),
@@ -81,4 +81,3 @@ this.legend_aggressive_trait <- this.inherit("scripts/skills/traits/character_tr
 	}
 
 });
-

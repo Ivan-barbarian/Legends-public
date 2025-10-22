@@ -1317,6 +1317,22 @@ effectsDefs.push({
 	Const = "LegendSummonedWolfEffect"
 });
 
+::Legends.Effect.LegendSummonedSighthoundEffect <- null;
+effectsDefs.push({
+	ID = "effects.legend_summoned_sighthound_effect",
+	Script = "scripts/skills/effects/legend_summoned_sighthound_effect",
+	Name = "Summoned a Sighthound",
+	Const = "LegendSummonedSighthoundEffect"
+});
+
+::Legends.Effect.LegendSummonedHoundEffect <- null;
+effectsDefs.push({
+	ID = "effects.legend_summoned_hound_effect",
+	Script = "scripts/skills/effects/legend_summoned_hound_effect",
+	Name = "Summoned a Hound",
+	Const = "LegendSummonedHoundEffect"
+});
+
 ::Legends.Effect.LegendBerserkerRage <- null;
 effectsDefs.push({
 	ID = "effects.legend_berserker_rage",
@@ -1971,6 +1987,78 @@ effectsDefs.push({
 	Script = "scripts/skills/effects/legend_prepare_bullet_effect",
 	Const = "LegendPrepareBullet",
 	Name = "Prepare Bullet",
+});
+
+::Legends.Effect.LegendCommanded <- null;
+effectsDefs.push({
+	ID = "effects.legend_commanded",
+	Script = "scripts/skills/effects/legend_commanded_effect",
+	Const = "LegendCommanded",
+	Name = "Commanded",
+});
+
+::Legends.Effect.LegendRamHammer <- null;
+effectsDefs.push({
+	ID = "effects.legend_ram_hammer",
+	Script = "scripts/skills/effects/legend_ram_hammer_effect",
+	Const = "LegendRamHammer",
+	Name = "Ram Hammer",
+});
+
+::Legends.Effect.LegendCompromisedArmor <- null;
+effectsDefs.push({
+	ID = "effects.legend_compromised_armor",
+	Script = "scripts/skills/effects/legend_compromised_armor_effect",
+	Const = "LegendCompromisedArmor",
+	Name = "Compromised Armor",
+});
+
+::Legends.Effect.LegendFlourish <- null;
+effectsDefs.push({
+	ID = "effects.legend_flourish",
+	Script = "scripts/skills/effects/legend_flourish_effect",
+	Const = "LegendFlourish",
+	Name = "Flourish",
+});
+
+::Legends.Effect.LegendFreedomOfMovement <- null;
+effectsDefs.push({
+	ID = "effects.legend_freedom_of_movement",
+	Script = "scripts/skills/effects/legend_freedom_of_movement_effect",
+	Const = "LegendFreedomOfMovement",
+	Name = "Freedom of Movement",
+});
+
+::Legends.Effect.LegendEnragedHyenaBite <- null;
+effectsDefs.push({
+	ID = "effects.legend_enraged_hyena_bite",
+	Script = "scripts/skills/effects/legend_enraged_hyena_bite_effect",
+	Const = "LegendEnragedHyenaBite",
+	Name = "Locked in Jaws",
+});
+
+::Legends.Effect.LegendEnragedHyenaGrip <- null;
+effectsDefs.push({
+	ID = "effects.legend_enraged_hyena_grip",
+	Script = "scripts/skills/effects/legend_enraged_hyena_grip_effect",
+	Const = "LegendEnragedHyenaGrip",
+	Name = "Predatory Grip",
+});
+
+::Legends.Effect.LegendPatientHunter <- null;
+effectsDefs.push({
+	ID = "effects.legend_patient_hunter",
+	Script = "scripts/skills/effects/legend_patient_hunter_effect",
+	Const = "LegendPatientHunter",
+	Name = "Patient Hunter",
+});
+
+::Legends.Effect.LegendArmorTracking <- null;
+effectsDefs.push({
+	ID = "effects.legend_armor_tracking",
+	Script = "scripts/skills/effects/legend_armor_tracking_effect",
+	Const = "LegendArmorTracking",
+	Name = "LegendArmorTracking",
 });
 
 ::Legends.Effects.addEffectDefObjects(effectsDefs);

@@ -468,8 +468,7 @@
 			[1, "hood/legend_helmet_southern_chain_hood"] //90, -6, 0
 		],
 		Helms = [
-			[1, "helm/legend_helmet_kettle_helm_named"], //140, -7, -2
-			[1, "helm/legend_helmet_fluted_kettle_helm_named"]
+			[1, "helm/legend_helmet_kettle_helm_named"], //130, -7, -2
 		],
 		Tops = [
 		],
@@ -662,7 +661,7 @@
 			[3, "top/legend_helmet_faceplate_full_breaths"],
 			[2, "top/legend_helmet_faceplate_flat"],
 			[2, "top/legend_helmet_faceplate_curved"],
-			[2, "top/legend_helmet_faceplate_curved"],
+			[2, "top/legend_helmet_faceplate_sharp"],
 			[1, "top/legend_helmet_faceplate_gold"],
 			[3, "top/legend_helmet_southern_faceplate"],
 			[1, "top/legend_helmet_facemask"],

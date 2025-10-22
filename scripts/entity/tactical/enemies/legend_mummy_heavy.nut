@@ -55,6 +55,7 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 			[1, "weapons/ancient/bladed_pike"],
 			[1, "weapons/ancient/legend_great_khopesh"],
 			[1, "weapons/ancient/rhomphaia"],
+			[1, "weapons/ancient/legend_royal_lance"],
 		], "scripts/items/"));
 
 		this.getItems().equip(::Const.World.Common.pickArmor([
@@ -80,7 +81,8 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 			[1, "weapons/named/named_khopesh"],
 			[1, "weapons/named/legend_named_great_khopesh"],
 			[1, "weapons/named/named_warscythe"],
-			[1, "weapons/named/named_bladed_pike"]
+			[1, "weapons/named/named_bladed_pike"],
+			[1, "weapons/named/legend_named_royal_lance"]
 		], "scripts/items/"));
 
 		::Legends.Perks.grant(this, ::Legends.Perk.LegendForcefulSwing);

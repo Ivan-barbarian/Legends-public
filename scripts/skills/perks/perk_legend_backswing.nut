@@ -1,6 +1,6 @@
 this.perk_legend_backswing <- this.inherit("scripts/skills/skill", {
 	m = {
-		IsBackswing = false,
+		IsEffectActive = false,
 		Skills = [
 			::Legends.Actives.getID(::Legends.Active.Swing),
 			::Legends.Actives.getID(::Legends.Active.Thresh),
@@ -12,75 +12,70 @@ this.perk_legend_backswing <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		::Const.Perks.setup(this.m, ::Legends.Perk.LegendBackswing);
-		this.m.Type = this.Const.SkillType.Perk;
-		this.m.Order = this.Const.SkillOrder.Perk;
+		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
+		this.m.Order = this.Const.SkillOrder.Perk | this.Const.SkillOrder.Any;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
-
-	function toggleBackswing()
+	
+	function isHidden()
 	{
-		this.m.IsBackswing = this.setBackswing(!this.m.IsBackswing);
+		return !this.m.IsEffectActive;
 	}
-
-	function setBackswing(_bool)
+	
+	function getDescription()
 	{
-		this.m.IsBackswing = _bool;
-	}
-
-	function isBackswing()
-	{
-		this.m.IsBackswing;
-	}
-
-	function onAnySkillExecuted( _skill, _targetTile, _targetEntity, _forFree )
-	{
-		if (_skill == null)
-			return;
-
-		if (this.m.Skills.find(_skill.getID()) == null)
-			toggleBackswing();
+		return "Use your built up inertia to wreak havoc on the next swing.";
 	}
 
 	function onAfterUpdate(_properties)
 	{
-		if (!this.isBackswing())
+		if (!this.m.IsEffectActive)
 			return;
-		local skills = this.getContainer().getAllSkillsOfType(this.Const.SkillType.Active);
+			
+		local skills = this.getContainer().getAllSkillsOfType(::Const.SkillType.Active);
 		foreach (skill in skills)
 		{
 			if (this.m.Skills.find(skill.getID()) != null)
 			{
-				skill.m.FatigueCostMult *= 0.5;
+				skill.m.FatigueCost *= 0.5;
 				skill.m.ActionPointCost /= 2;
 			}
 		}
 	}
-
-	function onAnySkillUsed (_skill, _targetEntity, _properties)
+	
+	function onAnySkillExecuted( _skill, _targetTile, _targetEntity, _forFree )
 	{
-		if (_skill != null && this.m.Skills.find(_skill.getID()) != null && this.isBackswing())
+		if (_skill == null || this.m.Skills.find(_skill.getID()) == null)
+				return;
+		
+		this.m.IsEffectActive = !this.m.IsEffectActive;
+	}
+
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{			
+		if (_skill == null || this.m.Skills.find(_skill.getID()) == null || !this.m.IsEffectActive)
+			return;
+		
+		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.Swing))
+			_properties.DamageTotalMult *= 0.75;
+		else
 			_properties.DamageTotalMult *= 0.5;
 	}
 
 	function onTurnEnd()
 	{
-		this.setBackswing(false);
+		this.m.IsEffectActive = false;
 	}
 
 	function onWaitTurn()
 	{
-		this.setBackswing(false);
+		this.m.IsEffectActive = false;
 	}
 
 	function onMovementFinished()
 	{
-		this.setBackswing(false);
-	}
-
-	function onCombatFinished()
-	{
-		this.setBackswing(false);
+		this.m.IsEffectActive = false;
 	}
 });

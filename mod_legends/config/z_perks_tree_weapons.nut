@@ -353,8 +353,8 @@ if (!("Perks" in ::Const))
 	},
 	Tree = [
 		[],
-		[], //[::Legends.Perk.Versatility],
-		[],
+		[], 
+		[::Legends.Perk.LegendVersatile],
 		[],
 		[::Legends.Perk.LegendPushTheAdvantage],
 		[::Legends.Perk.Duelist],
@@ -404,7 +404,7 @@ if (!("Perks" in ::Const))
 	},
 	Tree = [
 		[],
-		[],
+		[::Legends.Perk.LegendFeint],
 		[],
 		[::Legends.Perk.SpecSword],
 		[],
@@ -504,7 +504,7 @@ if (!("Perks" in ::Const))
 		]
 	},
 	Tree = [
-		[],
+		[::Legends.Perk.LegendSpecStaffStun],
 		[::Legends.Perk.CoupDeGrace],
 		[],
 		[::Legends.Perk.SpecPolearm],
@@ -559,7 +559,7 @@ if (!("Perks" in ::Const))
 		[::Legends.Perk.LegendSpecSpearWall],
 		[],
 		[::Legends.Perk.SpecSpear],
-		[::Legends.Perk.LegendRunThemThrough],
+		[],
 		[::Legends.Perk.LegendThrustMaster],
 		[]
 	]
@@ -657,11 +657,11 @@ if (!("Perks" in ::Const))
 		]
 	},
 	Tree = [
-		[::Legends.Perk.LegendLookout],//::Legends.Perk.BowRange
-		[::Legends.Perk.Bullseye],
+		[],
+		[::Legends.Perk.Bullseye, ::Legends.Perk.LegendAnchor],
 		[],
 		[::Legends.Perk.SpecBow],
-		[::Legends.Perk.LegendWindReader],
+		[::Legends.Perk.LegendKeenEyesight, ::Legends.Perk.LegendPatientHunter],
 		[],
 		[]
 	]
@@ -712,9 +712,9 @@ if (!("Perks" in ::Const))
 		[::Legends.Perk.QuickHands],
 		[],
 		[::Legends.Perk.SpecThrowing],
+		[::Legends.Perk.LegendFirstBlood],
 		[],
-		[],
-		[::Legends.Perk.LegendCloseCombatArcher]
+		[::Legends.Perk.LegendPointBlank]
 	]
 };
 
@@ -760,62 +760,11 @@ if (!("Perks" in ::Const))
 	},
 	Tree = [
 		[],
-		[::Legends.Perk.LegendSlingerSpins],
+		[::Legends.Perk.LegendLookout],
 		[],
 		[::Legends.Perk.LegendMasterySlings],
 		[],
-		[::Legends.Perk.LegendBarrage],
-		[]
-	]
-};
-
-::Const.Perks.StaffTree <- {
-	ID = "Staff",
-	Name = "Staff"
-	Descriptions = [
-		"staves"
-	],
-	Attributes = {
-		Hitpoints = [
-			0,
-			0
-		],
-		Bravery = [
-			0,
-			0
-		],
-		Stamina = [
-			0,
-			0
-		],
-		MeleeSkill = [
-			0,
-			0
-		],
-		RangedSkill = [
-			0,
-			0
-		],
-		MeleeDefense = [
-			0,
-			0
-		],
-		RangedDefense = [
-			0,
-			0
-		],
-		Initiative = [
-			0,
-			0
-		]
-	},
-	Tree = [
-		[],
-		[],
-		[],
-		[::Legends.Perk.LegendMasteryStaves],
-		[::Legends.Perk.LegendSpecStaffStun],
-		[::Legends.Perk.LegendStaffBlock],
+		[::Legends.Perk.LegendBarrage, ::Legends.Perk.LegendWindReader],
 		[]
 	]
 };
@@ -912,12 +861,21 @@ if (!("Perks" in ::Const))
 		]
 	},
 	Tree = [
-		[::Legends.Perk.LegendAmbidextrous],
-		[::Legends.Perk.LegendChoke],
-		[::Legends.Perk.LegendGrapple],
-		[::Legends.Perk.LegendSpecUnarmed],
+		[
+			::Legends.Perk.LegendAmbidextrous,
+			::Legends.Perk.LegendPugilist
+		],
+		[
+			::Legends.Perk.LegendGrappler
+		],
 		[],
-		[::Legends.Perk.LegendUnarmedTraining],
+		[
+			::Legends.Perk.LegendSpecUnarmed
+		],
+		[],
+		[
+			::Legends.Perk.LegendPummelIntoSubmission
+		],
 		[]
 	]
 };
@@ -930,6 +888,7 @@ if (!("Perks" in ::Const))
 		::Const.Perks.HammerTree,
 		::Const.Perks.AxeTree,
 		::Const.Perks.CleaverTree,
+		::Const.Perks.OneHandedTree,
 		::Const.Perks.TwoHandedTree,
 		::Const.Perks.SwordTree,
 		::Const.Perks.DaggerTree,
@@ -939,8 +898,7 @@ if (!("Perks" in ::Const))
 		::Const.Perks.BowTree,
 		::Const.Perks.ThrowingTree,
 		::Const.Perks.SlingTree,
-		::Const.Perks.ShieldTree,
-		::Const.Perks.StaffTree
+		::Const.Perks.ShieldTree
 	],
 	function getRandom(_exclude)
 	{
@@ -973,8 +931,7 @@ if (!("Perks" in ::Const))
 		::Const.Perks.DaggerTree,
 		::Const.Perks.PolearmTree,
 		::Const.Perks.SpearTree,
-		::Const.Perks.ShieldTree,
-		::Const.Perks.StaffTree
+		::Const.Perks.ShieldTree
 	],
 	function getRandom(_exclude)
 	{

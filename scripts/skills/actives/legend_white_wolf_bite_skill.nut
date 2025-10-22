@@ -1,5 +1,12 @@
 this.legend_white_wolf_bite_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		IsRestrained = false,
+		IsSpent = false
+	},
+	function setRestrained( _f )
+	{
+		this.m.IsRestrained = _f;
+	}
 	function create()
 	{
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendWhiteWolfBite);
@@ -35,16 +42,33 @@ this.legend_white_wolf_bite_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ChanceSmash = 0;
 	}
 
-	function onUpdate( _properties )
+	function isUsable()
 	{
-		_properties.DamageRegularMin += 45;
-		_properties.DamageRegularMax += 75;
-		_properties.DamageArmorMult *= 0.8;
+		return this.skill.isUsable() && !this.m.IsSpent;
+	}
+
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_skill == this)
+		{
+			_properties.DamageRegularMin += 45;
+			_properties.DamageRegularMax += 75;
+			_properties.DamageArmorMult *= 0.8;
+		}
 	}
 
 	function onUse( _user, _targetTile )
 	{
+		if (this.m.IsRestrained)
+		{
+			this.m.IsSpent = true;
+		}
 		return this.attackEntity(_user, _targetTile.getEntity());
+	}
+
+	function onTurnStart()
+	{
+		this.m.IsSpent = false;
 	}
 
 });

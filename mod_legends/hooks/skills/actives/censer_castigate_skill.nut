@@ -35,6 +35,13 @@
 		return ret;
 	}
 
+	local onAfterUpdate = o.onAfterUpdate;
+	o.onAfterUpdate = function ( _properties )
+	{
+		onAfterUpdate(_properties);
+		this.m.ActionPointCost = _properties.IsSpecializedInPolearms ? 5 : 6;
+	}
+
 	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties )
 	{
 		if (_skill == this)

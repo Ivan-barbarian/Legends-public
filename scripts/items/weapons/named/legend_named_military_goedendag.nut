@@ -59,16 +59,7 @@ this.legend_named_military_goedendag <- this.inherit("scripts/items/weapons/name
 	{
 		this.named_weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.Thrust, function (_skill) {
-			_skill.m.Icon = "skills/active_128.png";
-			_skill.m.IconDisabled = "skills/active_128_sw.png";
-			_skill.m.Overlay = "active_128";
-			_skill.setFatigueCost(15);
-			_skill.m.ActionPointCost = 6;
-		}.bindenv(this));
-		::Legends.Actives.grant(this, ::Legends.Active.Cudgel, function (_skill) {
-			_skill.m.Icon = "skills/active_131.png";
-			_skill.m.IconDisabled = "skills/active_131_sw.png";
-			_skill.m.Overlay = "active_131";
+			_skill.m.IsGoedendagThrust = true;
 		}.bindenv(this));
 		::Legends.Actives.grant(this, ::Legends.Active.StrikeDown, function (_skill) {
 			_skill.m.Icon = "skills/active_132.png";

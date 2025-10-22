@@ -14,9 +14,10 @@
 ::Const.AI.Agent.ID.BasiliskDrone <- "agent.basilisk_drone";
 ::Const.AI.Agent.ID.BasiliskDroneAggressive <- "agent.basilisk_drone_aggressive";
 ::Const.AI.Agent.ID.LegendBasiliskSentry <- "agent.legend_basilisk_sentry";
-::Const.AI.Agent.ID.KoboldWolfrider <- "agent.kobold_wolfrider";
+// ::Const.AI.Agent.ID.KoboldWolfrider <- "agent.kobold_wolfrider";
 ::Const.AI.Agent.ID.LegendMummyQueen <- "agent.legend_mummy_queen";
 ::Const.AI.Agent.ID.LegendMinstrel <- "agent.minstrel";
+::Const.AI.Agent.ID.LegendEnragedHyena <- "agent.legend_enraged_hyena";
 
 local count = ::Const.AI.Behavior.ID.COUNT;
 ::Const.AI.Behavior.ID.Howl <- count++;

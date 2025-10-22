@@ -49,7 +49,7 @@ this.legend_staff_riposte_skill <- this.inherit("scripts/skills/skill", {
 			}
 		];
 
-		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInStaves)
+		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms)
 		{
 			ret.push({
 				id = 4,
@@ -64,7 +64,7 @@ this.legend_staff_riposte_skill <- this.inherit("scripts/skills/skill", {
 
 	function isHidden()
 	{
-		if (this.getContainer().hasPerk(::Legends.Perk.LegendStaffBlock))
+		if (this.getContainer().hasPerk(::Legends.Perk.ReachAdvantage))
 			return false;
 		return this.skill.isHidden();
 	}
@@ -76,7 +76,7 @@ this.legend_staff_riposte_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.FatigueCostMult = _properties.IsSpecializedInPolearms ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )

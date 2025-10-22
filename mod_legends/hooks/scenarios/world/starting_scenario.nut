@@ -12,20 +12,22 @@
 	//Something defined here won't have relations normalized over time in faction_manager
 	//I think this would be better if we instead automatically set the size to be faction_manager's update()
 	//Useful for when you set the relations and want them to be permanent e.g. legion scenario
+	o.m.ExcludedAmbitions <- []; // set in onInit, it's not serialized and doesn't need to be
 
 	o.isDroppedAsLoot = function (_item)
 	{
-		local chanceIsLucky = 0;
-		local brothers = ::World.getPlayerRoster().getAll();
-		foreach (bro in brothers)
-		{
-			if (bro.getSkills().hasPerk(::Legends.Perk.LegendScholar))
-				chanceIsLucky += 10;
+		// local chanceIsLucky = 0;
+		// local brothers = ::World.getPlayerRoster().getAll();
+		// foreach (bro in brothers)
+		// {
+		// 	if (bro.getSkills().hasPerk(::Legends.Perk.LegendScholar))
+		// 		chanceIsLucky += 10;
 
-			if (bro.getSkills().hasPerk(::Legends.Perk.LegendFavouredEnemyCaravan))
-				chanceIsLucky += 5;
-		}
-		return ::Math.rand(1, 100) < chanceIsLucky;
+		// 	if (bro.getSkills().hasPerk(::Legends.Perk.LegendFavouredEnemyCaravan))
+		// 		chanceIsLucky += 5;
+		// }
+		// return ::Math.rand(1, 100) < chanceIsLucky;
+		return false; // produces too many errors with unlayered items
 	}
 
 	local getDifficultyForUI = o.getDifficultyForUI;
@@ -154,5 +156,9 @@
 	o.setCurrentSettlement <- function ( _settlement )
 	{
 		this.m.CurrentSettlement = ::MSU.asWeakTableRef(_settlement);
+	}
+
+	o.getExcludedAmbitions <- function () {
+		return this.m.ExcludedAmbitions;
 	}
 });

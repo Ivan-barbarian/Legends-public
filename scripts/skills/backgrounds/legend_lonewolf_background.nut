@@ -27,7 +27,7 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 			::Legends.Traits.getID(::Legends.Trait.Tiny),
 			::Legends.Traits.getID(::Legends.Trait.Fragile),
 			::Legends.Traits.getID(::Legends.Trait.Clumsy),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
 			::Legends.Traits.getID(::Legends.Trait.Bleeder),
 			::Legends.Traits.getID(::Legends.Trait.Dastard),
@@ -55,13 +55,13 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Ethnicity = this.Math.rand(0, 2);
 		if (this.m.Ethnicity == 0)
 		{
-			this.m.Bodies = this.Const.Bodies.Muscular;		
+			this.m.Bodies = this.Const.Bodies.Muscular;
 			this.m.Faces = this.Const.Faces.AllWhiteMale;
 			this.m.Hairs = this.Const.Hair.CommonMale;
 			this.m.HairColors = this.Const.HairColors.All;
 			this.m.Beards = this.Const.Beards.All;
 			this.m.BeardChance = 60;
-		}	
+		}
 		else if (this.m.Ethnicity == 1)
 		{
 			this.m.Bodies = this.Const.Bodies.Gladiator;
@@ -86,7 +86,7 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 		}
 
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[3];
-		
+
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.TwoHandedTree,
@@ -96,7 +96,8 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.AxeTree,
 				this.Const.Perks.HammerTree,
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.FistsTree
+				this.Const.Perks.FistsTree,
+				this.Const.Perks.OneHandedTree
 			],
 			Defense = [
 				this.Const.Perks.HeavyArmorTree
@@ -134,7 +135,7 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 			this.m.HairColors = this.Const.HairColors.All;
 			this.m.Bodies = this.Const.Bodies.AllFemale;
 			this.m.Names = this.Const.Strings.CharacterNamesFemale;
-		}	
+		}
 		else if (this.m.Ethnicity == 1)
 		{
 			this.m.Faces = this.Const.Faces.SouthernFemale;
@@ -293,4 +294,3 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 		// // items.equip(this.Const.World.Common.pickHelmet(helm));
 	}
 });
-

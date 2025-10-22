@@ -217,5 +217,4 @@
 		this.m.SpawnListener = null;
 		return entity;
 	}
-
 });

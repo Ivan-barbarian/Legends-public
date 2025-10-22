@@ -23,7 +23,7 @@ this.legend_guildmaster_background <- this.inherit("scripts/skills/backgrounds/c
 			::Legends.Traits.getID(::Legends.Trait.ShortSighted),
 			::Legends.Traits.getID(::Legends.Trait.Fat),
 			::Legends.Traits.getID(::Legends.Trait.Gluttonous),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
 			::Legends.Traits.getID(::Legends.Trait.Hesistant),
 			::Legends.Traits.getID(::Legends.Trait.Dastard),
@@ -78,7 +78,8 @@ this.legend_guildmaster_background <- this.inherit("scripts/skills/backgrounds/c
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.AxeTree,
-				this.Const.Perks.CrossbowTree
+				this.Const.Perks.CrossbowTree,
+				this.Const.Perks.OneHandedTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree,
@@ -258,4 +259,3 @@ this.legend_guildmaster_background <- this.inherit("scripts/skills/backgrounds/c
 		]));
 	}
 });
-

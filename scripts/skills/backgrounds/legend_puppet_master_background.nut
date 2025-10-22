@@ -132,7 +132,7 @@ this.legend_puppet_master_background <- this.inherit("scripts/skills/backgrounds
 			[
 				::Legends.Perk.Fearsome,
 				::Legends.Perk.LegendPerfectFocus,
-				::Legends.Perk.LegendFullForce,
+				::Legends.Perk.LegendImmovableObject,
 				::Legends.Perk.BattleFlow,
 				::Legends.Perk.LegendMiasma,
 				::Legends.Perk.LegendInTheZone,

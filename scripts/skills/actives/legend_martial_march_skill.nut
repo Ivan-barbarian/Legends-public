@@ -1,9 +1,10 @@
 this.legend_martial_march_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		AffectedActors = []
+	},
 	function create()
 	{
-		this.m.ID = "actives.legend_martial_march";
-		this.m.Name = "Martial March";
+		::Legends.Actives.onCreate(this, ::Legends.Active.LegendMartialMarch);
 		this.m.Description = "A good marching melody uplifts the company, granting them temporary AP. Targets can only be inspired once per turn.";
 		this.m.Icon = "skills/martial_march_square.png";
 		this.m.IconDisabled = "skills/martial_march_square_bw.png";
@@ -82,7 +83,7 @@ this.legend_martial_march_skill <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		this.m.FatigueCostMult = 1.0;
-		if (this.getContainer().hasPerk(::Legends.Perk.LegendMinnesanger))
+		if (_properties.IsSpecializedInMusic)
 		{
 			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
 			this.m.ActionPointCost -= 1;
@@ -96,24 +97,33 @@ this.legend_martial_march_skill <- this.inherit("scripts/skills/skill", {
 
 		foreach( a in actors )
 		{
-			if (a.getID() == _user.getID())
-			{
-				continue;
-			}
-
-			if (myTile.getDistanceTo(a.getTile()) > 8)
-			{
-				continue;
-			}
-
 			if (a.getFaction() == _user.getFaction())
 			{
 				::Legends.Effects.grant(a, ::Legends.Effect.LegendMartialMarch);
 			}
+			this.m.AffectedActors.push(a.weakref());
 		}
-
-		::Legends.Effects.grant(_user, ::Legends.Effect.LegendMartialMarch);
 		return true;
+	}
+
+	function onTurnStart()
+	{
+		foreach(actor in this.m.AffectedActors)
+		{
+			if (actor == null)
+				continue;
+			if ("isNull" in actor && actor.isNull())
+				continue;
+			if (::Legends.S.skillEntityAliveCheck(actor))
+				continue;
+			::Legends.Effects.remove(actor.getSkills(), ::Legends.Effect.LegendDrumsOfWar);
+		}
+		this.m.AffectedActors = [];
+	}
+
+	function onCombatFinished()
+	{
+		this.m.AffectedActors = [];
 	}
 
 });

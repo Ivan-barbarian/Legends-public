@@ -630,10 +630,10 @@ if (!("Spawn" in ::Const.World))
 					Type = this.Const.World.Spawn.Troops.Hyena,
 					Cost = 15
 				},
-		 		{
-		 			Type = this.Const.World.Spawn.Troops.KoboldFighter,
-		 			Cost = 15
-		 		},
+		 		// {
+		 		// 	Type = this.Const.World.Spawn.Troops.KoboldFighter,
+		 		// 	Cost = 15
+		 		// },
 				{
 					Type = this.Const.World.Spawn.Troops.Direwolf,
 					Cost = 20
@@ -642,6 +642,11 @@ if (!("Spawn" in ::Const.World))
 					Type = this.Const.World.Spawn.Troops.HyenaHIGH,
 					MinR = 400,
 					Cost = 20
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendEnragedHyena,
+					MinR = 500,
+					Cost = 25
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.DirewolfHIGH,

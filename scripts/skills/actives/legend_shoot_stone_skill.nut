@@ -62,6 +62,8 @@ this.legend_shoot_stone_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ProjectileType = this.Const.ProjectileType.Stone;
 		this.m.ProjectileTimeScale = 1.2;
 		this.m.IsProjectileRotated = true;
+		this.m.ChanceDecapitate = 0;
+		this.m.ChanceDisembowel = 0;
 		this.m.ChanceSmash = 25;
 	}
 
@@ -100,7 +102,7 @@ this.legend_shoot_stone_skill <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		return this.skill.isUsable() && (!this.Tactical.isActive() || !this.getContainer().getActor().isEngagedInMelee());
+		return !this.Tactical.isActive() || (this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()));
 	}
 
 	function onAfterUpdate( _properties )
@@ -160,21 +162,28 @@ this.legend_shoot_stone_skill <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if (_skill == this && _targetEntity.isAlive() && !_targetEntity.isDying() && !_targetEntity.getCurrentProperties().IsImmuneToDaze)
+		if (_skill != this)
+			return;
+
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
+			return;
+
+		if (_targetEntity.getCurrentProperties().IsImmuneToDaze)
+			return;
+
+		local targetTile = _targetEntity.getTile();
+		local user = this.getContainer().getActor();
+
+		if (_bodyPart == this.Const.BodyPart.Head)
 		{
-			local targetTile = _targetEntity.getTile();
-			local user = this.getContainer().getActor();
+			::Legends.Effects.grant(_targetEntity, ::Legends.Effect.LegendBaffled);
 
-			if (_bodyPart == this.Const.BodyPart.Head)
+			if (!user.isHiddenToPlayer() && targetTile.IsVisibleForPlayer)
 			{
-				::Legends.Effects.grant(_targetEntity, ::Legends.Effect.LegendBaffled);
-
-				if (!user.isHiddenToPlayer() && targetTile.IsVisibleForPlayer)
-				{
-					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " struck a hit that leaves " + this.Const.UI.getColorizedEntityName(_targetEntity) + " confused");
-				}
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " struck a hit that leaves " + this.Const.UI.getColorizedEntityName(_targetEntity) + " confused");
 			}
 		}
+
 	}
 
 });

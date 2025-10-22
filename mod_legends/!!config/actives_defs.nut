@@ -2630,11 +2630,11 @@ activesDefs.push({
 	Name = "Prepare to Graze",
 });
 
-::Legends.Active.LegendPrepareKnockdown <- null;
+::Legends.Active.LegendWindUp <- null;
 activesDefs.push({
-	ID = "actives.legend_prepare_knockdown",
-	Script = "scripts/skills/actives/legend_prepare_knockback_skill",
-	Const = "LegendPrepareKnockdown",
+	ID = "actives.legend_wind_up",
+	Script = "scripts/skills/actives/legend_wind_up_skill",
+	Const = "LegendWindUp",
 	Name = "Wind Up",
 });
 
@@ -2838,12 +2838,12 @@ activesDefs.push({
 	Name = "Summon Medium Xbow Zombie",
 });
 
-::Legends.Active.LegendSprint <- null;
+::Legends.Active.LegendStrafingRun <- null;
 activesDefs.push({
 	ID = "actives.legend_sprint",
-	Script = "scripts/skills/actives/legend_sprint_skill",
-	Const = "LegendSprint",
-	Name = "Sprint",
+	Script = "scripts/skills/actives/legend_strafing_run_skill",
+	Const = "LegendStrafingRun",
+	Name = "Strafing Run",
 });
 
 ::Legends.Active.LegendStaffwall <- null;
@@ -3116,6 +3116,118 @@ activesDefs.push({
 	Script = "scripts/skills/actives/censer_strike",
 	Const = "CenserStrike",
 	Name = "Censer Strike",
+});
+
+::Legends.Active.LegendSighthoundBite <- null;
+activesDefs.push({
+	ID = "actives.legend_sighthound_bite",
+	Script = "scripts/skills/actives/legend_sighthound_bite_skill",
+	Const = "LegendSighthoundBite",
+	Name = "Sighthound Bite",
+});
+
+::Legends.Active.LegendUnleashSighthound <- null;
+activesDefs.push({
+	ID = "actives.legend_unleash_sighthound",
+	Script = "scripts/skills/actives/legend_unleash_sighthound_skill",
+	Const = "LegendUnleashSighthound",
+	Name = "Legend Unleash Sighthound",
+});
+
+::Legends.Active.LegendCommandLegion <- null;
+activesDefs.push({
+	ID = "actives.legend_command_legion",
+	Script = "scripts/skills/actives/legend_command_legion_skill",
+	Const = "CommandLegionary",
+	Name = "Command Legionary",
+});
+
+::Legends.Active.LegendHeartseeker <- null;
+activesDefs.push({
+	ID = "actives.legend_heartseeker",
+	Script = "scripts/skills/actives/legend_heartseeker_skill",
+	Const = "LegendHeartseeker",
+	Name = "Heartseeker",
+});
+
+::Legends.Active.LegendWarforkDisarm <- null;
+activesDefs.push({
+	ID = "actives.legend_warfork_disarm",
+	Script = "scripts/skills/actives/legend_warfork_disarm_skill",
+	Const = "LegendWarforkDisarm",
+	Name = "Disarm",
+});
+
+::Legends.Active.LegendPryArmor <- null;
+activesDefs.push({
+	ID = "actives.legend_pry_armor",
+	Script = "scripts/skills/actives/legend_pry_armor_skill",
+	Const = "LegendPryArmor",
+	Name = "Pry Armor",
+});
+
+::Legends.Active.LegendFlourish <- null;
+activesDefs.push({
+	ID = "actives.legend_flourish",
+	Script = "scripts/skills/actives/legend_flourish_skill",
+	Const = "LegendFlourish",
+	Name = "Flourish",
+});
+
+::Legends.Active.LegendEnragedHyenaBite <- null;
+activesDefs.push({
+	ID = "actives.legend_enraged_hyena_bite",
+	Script = "scripts/skills/actives/legend_enraged_hyena_bite_skill",
+	Const = "LegendEnragedHyenaBite",
+	Name = "Enraged Hyena Bite",
+});
+
+::Legends.Active.GreaterFleshGolemAttack <- null;
+activesDefs.push({
+	ID = "actives.greater_flesh_golem_attack",
+	Script = "scripts/skills/actives/greater_flesh_golem_attack_skill",
+	Const = "GreaterFleshGolemAttack",
+	Name = "Clout",
+});
+
+::Legends.Active.Flurry <- null;
+activesDefs.push({
+	ID = "actives.flurry_skill",
+	Script = "scripts/skills/actives/flurry_skill",
+	Const = "Flurry",
+	Name = "Flurry",
+});
+
+::Legends.Active.Spike <- null;
+activesDefs.push({
+	ID = "actives.spike_skill",
+	Script = "scripts/skills/actives/spike_skill",
+	Const = "Spike",
+	Name = "Spike",
+});
+
+::Legends.Active.CorpseHurl <- null;
+activesDefs.push({
+	ID = "actives.corpse_hurl_skill",
+	Script = "scripts/skills/actives/corpse_hurl_skill",
+	Const = "CorpseHurl",
+	Name = "Corpse Hurl",
+});
+
+::Legends.Active.FleshPull <- null;
+activesDefs.push({
+	ID = "actives.flesh_pull",
+	Script = "scripts/skills/actives/flesh_pull_skill",
+	Const = "FleshPull",
+	Name = "Flesh Pull",
+});
+
+::Legends.Active.CorpseExplosion <- null;
+activesDefs.push({
+	ID = "actives.corpse_explosion",
+	Script = "scripts/skills/actives/corpse_explosion_skill",
+	Const = "CorpseExplosion",
+	Name = "Corpse Explosion",
 });
 
 ::Legends.Actives.addActiveDefObjects(activesDefs);

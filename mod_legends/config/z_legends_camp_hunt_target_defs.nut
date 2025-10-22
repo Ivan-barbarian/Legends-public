@@ -20,7 +20,6 @@
 ::Const.HuntingLoot.RequiredBackgrounds["background.ratcatcher"] <- "Ratcatcher";
 ::Const.HuntingLoot.RequiredBackgrounds["background.shepherd"] <- "Shepherd";
 ::Const.HuntingLoot.RequiredBackgrounds["background.wildman"] <- "Wildman";
-// ::Const.HuntingLoot.RequiredBackgrounds["background.wildwoman"] <- "Wildwoman";
 ::Const.HuntingLoot.RequiredBackgrounds["background.witchhunter"] <- "Witch Hunter";
 // Foragers
 ::Const.HuntingLoot.RequiredBackgrounds["background.anatomist"] <- "Anatomist";
@@ -32,7 +31,6 @@
 ::Const.HuntingLoot.RequiredBackgrounds["background.legend_herbalist"] <- "Herbalist / Apothecary";
 ::Const.HuntingLoot.RequiredBackgrounds["background.miller"] <- "Miller";
 ::Const.HuntingLoot.RequiredBackgrounds["background.monk"] <- "Monk";
-// ::Const.HuntingLoot.RequiredBackgrounds["background.legend_nun"] <- "Nun";
 ::Const.HuntingLoot.RequiredBackgrounds["background.vagabond"] <- "Vagabond";
 
 // These backgrounds will contribute to Hunt Level (and hence Hunt Tier)
@@ -49,8 +47,7 @@
 	"background.nomad",
 	"background.poacher",
 	"background.ratcatcher",
-	"background.wildman",
-	// "background.wildwoman",
+	"background.wildman"
 ];
 
 // Cook Backgrounds. No BackgroundType defined at this time
@@ -58,7 +55,7 @@
 	"background.miller",
 	"background.butcher",
 	"background.servant",
-	"background.cannibal",
+	"background.legend_cannibal",
 ];
 
 // Define the various targets that can be hunted / looted
@@ -149,8 +146,7 @@
 			"background.hunter",
 			"background.legend_ranger",
 			"background.legend_commander_ranger",
-			"background.wildman",
-			// "background.wildwoman"
+			"background.wildman"
 		]
 	},
 
@@ -175,8 +171,7 @@
 			"background.poacher",
 			"background.legend_ranger",
 			"background.legend_commander_ranger",
-			"background.wildman",
-			// "background.wildwoman"
+			"background.wildman"
 		]
 	},
 
@@ -207,8 +202,7 @@
 		],
 		Backgrounds = [
 			"background.fisherman",
-			"background.wildman",
-			// "background.wildwoman"
+			"background.wildman"
 		]
 	},
 
@@ -229,8 +223,7 @@
 			"background.poacher",
 			"background.legend_ranger",
 			"background.legend_commander_ranger",
-			"background.wildman",
-			// "background.wildwoman"
+			"background.wildman"
 		]
 	},
 
@@ -254,8 +247,7 @@
 			"background.hunter",
 			"background.legend_ranger",
 			"background.legend_commander_ranger",
-			"background.wildman",
-			// "background.wildwoman"
+			"background.wildman"
 		]
 	},
 
@@ -272,8 +264,7 @@
 		],
 		Backgrounds = [
 			"background.fisherman",
-			"background.wildman",
-			// "background.wildwoman"
+			"background.wildman"
 		]
 	},
 
@@ -310,14 +301,13 @@
 		Loot = [
 			[4,"scripts/items/loot/goblin_carved_ivory_iconographs_item"],
 			[3,"scripts/items/loot/goblin_minted_coins_item"],
-			[2,"scripts/items/loot/goblin_rank_insignia"]
+			[2,"scripts/items/loot/goblin_rank_insignia_item"]
 		],
 		Backgrounds = [
 			"background.legend_cannibal",
 			"background.legend_ranger",
 			"background.legend_commander_ranger",
-			"background.wildman",
-			// "background.wildwoman"
+			"background.wildman"
 		]
 	},
 
@@ -479,7 +469,7 @@
 			[3,"scripts/items/misc/unhold_bones_item"],
 			[3,"scripts/items/misc/unhold_heart_item"],
 			[4,"scripts/items/misc/unhold_hide_item"],
-			[3,"scripts/items/misc/frost_unhold_fur"]
+			[3,"scripts/items/misc/frost_unhold_fur_item"]
 		],
 		Backgrounds = [
 			"background.barbarian",

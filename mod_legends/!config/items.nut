@@ -53,7 +53,6 @@
 	"legend_helmets/helm/legend_helmet_barbute_two_piece_named",
 	"legend_helmets/helm/legend_helmet_bascinet_named",
 	"legend_helmets/helm/legend_helmet_kettle_helm_named",
-	"legend_helmets/helm/legend_helmet_fluted_kettle_helm_named",
 	"legend_helmets/helm/legend_helmet_wallace_sallet_named",
 	"legend_helmets/helm/legend_helmet_deep_sallet_named",
 	"legend_helmets/helm/legend_helmet_stag_helm",
@@ -126,9 +125,21 @@ foreach (i in garbage)
 	"weapons/named/legend_named_orc_flail_2h"
 ]);
 
+::Const.Items.NamedBarbarianWeapons.extend([
+	"weapons/named/legend_named_rusty_serrated_axe",
+	"weapons/named/legend_named_rusty_greatsword"
+]);
+
+::Const.Items.NamedGoblinWeapons.extend([
+	"weapons/named/legend_named_goblin_axe_2h",
+	"weapons/named/legend_named_goblin_notched_blade",
+	"weapons/named/legend_named_goblin_crossbow",
+	"weapons/named/legend_named_goblin_gruesome_falchion"
+]);
+
 ::Const.Items.NamedMeleeWeapons.extend([
 	"weapons/named/named_fencing_sword",
-	"weapons/named/legend_named_longsword",
+	"weapons/named/legend_named_flamberge",
 	"weapons/named/legend_named_longsword",
 	"weapons/named/legend_named_estoc",
 	"weapons/named/legend_named_glaive",
@@ -137,10 +148,9 @@ foreach (i in garbage)
 	"weapons/named/legend_named_blacksmith_hammer",
 	"weapons/named/legend_named_sickle",
 	"weapons/named/legend_named_shovel",
-	"weapons/named/legend_named_flail",
+	"weapons/named/legend_named_ranged_flail",
 	"weapons/named/legend_named_infantry_axe",
 	"weapons/named/legend_named_warhammer",
-	"weapons/named/legend_named_gladius",
 	"weapons/named/legend_named_military_goedendag",
 	"weapons/named/legend_named_military_warscythe",
 	"weapons/named/legend_named_parrying_dagger",
@@ -148,17 +158,22 @@ foreach (i in garbage)
 ]);
 
 ::Const.Items.NamedRangedWeapons.extend([
-	"weapons/named/legend_named_northern_sling"
+	"weapons/named/legend_named_northern_sling",
+	"weapons/named/legend_named_nomad_sling",
+	"weapons/named/legend_named_sling",
+	"weapons/named/legend_named_heavy_javelin",
+	"weapons/named/legend_named_heavy_throwing_axe"
 ]);
 ::Const.Items.NamedWeapons <- clone ::Const.Items.NamedMeleeWeapons;
 ::Const.Items.NamedWeapons.extend(::Const.Items.NamedRangedWeapons);
 
 ::Const.Items.NamedSouthernWeapons.extend([
-	"weapons/named/named_heavy_southern_mace"
+	"weapons/named/legend_named_heavy_southern_mace"
 ]);
 
 ::Const.Items.NamedUndeadWeapons.extend([
-	"weapons/named/legend_named_great_khopesh"
+	"weapons/named/legend_named_great_khopesh",
+	"weapons/named/legend_named_gladius",
 ]);
 
 ::Const.Items.ArmorUpgrades <- {

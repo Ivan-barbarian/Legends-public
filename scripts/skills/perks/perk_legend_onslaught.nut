@@ -1,7 +1,5 @@
 this.perk_legend_onslaught <- this.inherit("scripts/skills/skill", {
-	m = {
-		TilesUsed = []
-	},
+	m = {},
 	function create()
 	{
 		::Const.Perks.setup(this.m, ::Legends.Perk.LegendOnslaught);
@@ -22,29 +20,36 @@ this.perk_legend_onslaught <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
+	function getBonus()
+	{
+		local fat = this.getContainer().getActor().getItems().getStaminaModifier([
+			::Const.ItemSlot.Body,
+			::Const.ItemSlot.Head,
+			::Const.ItemSlot.Bag,
+			::Const.ItemSlot.Offhand,
+			::Const.ItemSlot.Accessory,
+			::Const.ItemSlot.Mainhand
+		]);
+		fat *= -1;
+		return ::Math.min(30, fat * 0.30);		
+	}
+
 	function onUpdate( _properties )
 	{
-		_properties.FatigueToInitiativeRate *= 0.5;
-		_properties.InitiativeAfterWaitMult = 1.0;
+		local bonus = this.getBonus();
+		_properties.MeleeDamageMult *= 1 + bonus * 0.01;
 	}
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		this.m.TilesUsed = [];
-		if (!_targetEntity.isAlive() || _targetEntity.isDying())
-		{
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
 			return false;
-		}
 
 		if (_targetEntity.getCurrentProperties().IsImmuneToStun)
-		{
 			return false;
-		}
 
 		if (_targetEntity.isNonCombatant())
-		{
 			return false;
-		}
 
 		local user = this.getContainer().getActor();
 		local ourInit =  user.getInitiative();
@@ -52,27 +57,20 @@ this.perk_legend_onslaught <- this.inherit("scripts/skills/skill", {
 
 
 		if (ourInit <= targetInit)
-		{
 			return false;
-		}
 
 
 		if ( this.Math.rand(1, 100) > 50)
-		{
 			return false;
-		}
 
-		if (!_targetEntity.getSkills().hasEffect(::Legends.Effect.Stunned))
-		{
+		if (!_targetEntity.getSkills().hasEffect(::Legends.Effect.LegendBaffled)) {
 			::Legends.Effects.grant(_targetEntity, ::Legends.Effect.LegendBaffled);
 
-			if (!user.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer)
-			{
+			if (!user.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer) {
 				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " battered " + this.Const.UI.getColorizedEntityName(_targetEntity) + " leaving them baffled");
 			}
 		}
 
 		return true;
-
 	}
 });

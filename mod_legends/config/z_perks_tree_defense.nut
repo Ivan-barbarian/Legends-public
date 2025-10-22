@@ -57,7 +57,7 @@ if (!("Perks" in ::Const))
 			::Legends.Perk.Dodge
 		],
 		[
-			::Legends.Perk.LegendOnslaught,
+			::Legends.Perk.Relentless,
 			::Legends.Perk.SteelBrow
 		],
 		[],
@@ -78,16 +78,15 @@ if (!("Perks" in ::Const))
 	Tree = [
 		[],
 		[
-			::Legends.Perk.LegendHimshaw
+			::Legends.Perk.LegendHimshaw,
+			::Legends.Perk.LegendRecuperation
 		],
 		[
 			::Legends.Perk.LegendEvasion
 		],
 		[],
 		[],
-		[
-			::Legends.Perk.LegendFashionable
-		],
+		[],
 		[
 			::Legends.Perk.LegendFreedomOfMovement
 		]

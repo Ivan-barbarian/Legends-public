@@ -15,31 +15,16 @@ this.legend_RSW_poison <- this.inherit("scripts/skills/skill", {
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 		if (this.getItem() == null)
-		{
 			return;
-		}
 
-		local actor = this.getContainer().getActor();
-
-		if (!actor.isAlive() || actor.isDying())
-		{
+		if (::Legends.S.skillEntityAliveCheck(this.getContainer().getActor(), _targetEntity))
 			return;
-		}
-
-		if (!_targetEntity.isAlive() || _targetEntity.isDying())
-		{
-			return;
-		}
 
 		if (_targetEntity.getFlags().has("undead"))
-		{
 			return;
-		}
 
 		if (_targetEntity.getCurrentProperties().IsImmuneToPoison || _targetEntity.getHitpoints() <= 0)
-		{
 			return;
-		}
 
 		if (!_targetEntity.isHiddenToPlayer())
 		{

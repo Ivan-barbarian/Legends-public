@@ -11,15 +11,44 @@ if (!("Perks" in ::Const))
 	],
 	Tree = [
 		[
-		::Legends.Perk.LegendCheerOn,
-		::Legends.Perk.LegendSpecialistMusician
+			::Legends.Perk.LegendCheerOn,
+			::Legends.Perk.LegendSpecialistMusician
 		],
-		[::Legends.Perk.LegendDaze],
+		[
+			::Legends.Perk.LegendDaze
+		],
+		[
+			::Legends.Perk.LegendEntice
+		],
+		[
+			::Legends.Perk.LegendMasteryMusic
+		],
+		[
+			::Legends.Perk.LegendPush
+		],
+		[
+			::Legends.Perk.LegendMinnesanger
+		],
+		[
+			::Legends.Perk.LegendMeistersanger
+		]
+	]
+};
+
+::Const.Perks.StavesMagicTree <- {
+	ID = "StavesMagicTree",
+	Name = "Staves",
+	Descriptions = [
+		"staves"
+	],
+	Tree = [
+		[::Legends.Perk.LegendSpecialistSelfdefense],
 		[],
-		[::Legends.Perk.LegendEntice],
-		[::Legends.Perk.LegendPush],
-		[::Legends.Perk.LegendMinnesanger],
-		[::Legends.Perk.LegendMeistersanger]
+		[],
+		[::Legends.Perk.LegendMasteryStaves],
+		[],
+		[],
+		[]
 	]
 };
 
@@ -87,13 +116,13 @@ if (!("Perks" in ::Const))
 		"runes"
 	],
 	Tree = [
-		[], // [::Legends.Perk.LegendValaInscribeShield], todo, removed ? - chopeks
 		[],
-		[], // [::Legends.Perk.LegendValaInscribeHelmet], todo, removed ? - chopeks
-	[], // [::Legends.Perk.LegendValaInscriptionMastery], todo, removed ? - chopeks
-		[], // [::Legends.Perk.LegendValaInscribeArmor],  todo, removed ? - chopeks
 		[],
-		[], // [::Legends.Perk.LegendValaInscribeWeapon]  todo, removed ? - chopeks
+		[],
+		[],
+		[],
+		[],
+		[],
 	]
 };
 
@@ -136,16 +165,113 @@ if (!("Perks" in ::Const))
 	ID = "RangerHuntMagicTree",
 	Name = "Ranger",
 	Descriptions = [
-		"hunting"
+		"hunting big game"
+	],
+	Tree = [
+		[
+			::Legends.Perk.LegendSummonHound
+		],
+		[
+			::Legends.Perk.LegendNightvision
+		],
+		[
+			::Legends.Perk.LegendSummonFalcon,
+			::Legends.Perk.DevastatingStrikes
+		],
+		[
+			::Legends.Perk.LegendSpecPoison
+		],
+		[
+			::Legends.Perk.LegendSummonWolf
+		],
+		[],
+		[
+			::Legends.Perk.LegendBigGameHunter,
+		]
+	]
+};
+
+::Const.Perks.ArcherCommandTree <- {
+	ID = "ArcherCommandTree",
+	Name = "ArcherCommand",
+	Descriptions = [
+		"archer command"
 	],
 	Tree = [
 		[],
 		[],
+		[
+			::Legends.Perk.LegendAmmoBinding
+		],
+		[
+			::Legends.Perk.LegendIncoming
+		],
+		[
+			::Legends.Perk.LegendAmmoBundles
+		],
+		[
+			::Legends.Perk.LegendCoordinatedVolleys
+		],
+		[]
+	]
+};
+
+::Const.Perks.MasterArcherTree <- {
+	ID = "MasterArcherTree",
+	Name = "Deadeye",
+	Descriptions = [
+		"archery"
+	],
+	Tree = [
+		[
+			::Legends.Perk.LegendBlendIn,
+			::Legends.Perk.CoupDeGrace
+		],
+		[
+			::Legends.Perk.BagsAndBelts,
+		],
 		[],
-		[::Legends.Perk.LegendSpecPoison],
+		[
+			::Legends.Perk.LegendCascade
+		],
 		[],
-		[::Legends.Perk.LegendFavouredEnemyArcher],
-		[::Legends.Perk.LegendBigGameHunter]
+		[
+			::Legends.Perk.LegendEvasion
+		],
+		[
+			::Legends.Perk.KillingFrenzy,
+			::Legends.Perk.LegendPerfectFocus
+		]
+	]
+};
+
+::Const.Perks.AssassinLeftoverTree <- {
+	ID = "AssassinLeftoverTree",
+	Name = "Cutthroat"
+	Descriptions = [
+		"Sneaky"
+	],
+	Tree = [
+		[
+			::Legends.Perk.Pathfinder,
+			::Legends.Perk.BagsAndBelts,
+			::Legends.Perk.DevastatingStrikes
+		],
+		[],
+		[
+			::Legends.Perk.HoldOut,
+			::Legends.Perk.LegendFavouredEnemyBandit
+		],
+		[],
+		[],
+		[
+			::Legends.Perk.LegendWindReader,
+			::Legends.Perk.LegendFavouredEnemyMercenary
+		],
+		[
+			::Legends.Perk.KillingFrenzy,
+			::Legends.Perk.LegendFavouredEnemySwordmaster
+		]
 	]
 };
 
@@ -563,7 +689,8 @@ if (!("Perks" in ::Const))
 		// ::Const.Perks.TherianthropyMagicTree,
 		::Const.Perks.PhilosophyMagicTree,
 		::Const.Perks.AssassinMagicTree,
-		::Const.Perks.BardMagicTree
+		::Const.Perks.BardMagicTree,
+		::Const.Perks.StavesMagicTree
 
 	],
 	function getRandom(_exclude)

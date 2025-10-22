@@ -87,6 +87,10 @@ this.legend_redback_spider_poison_effect <- this.inherit("scripts/skills/skill",
 			this.m.LastRoundApplied = this.Time.getRound();
 			this.spawnIcon("status_effect_54", this.getContainer().getActor().getTile());
 
+			if (actor.getCurrentProperties().IsImmuneToPoison) {
+				return;
+			}
+
 			if (this.m.SoundOnUse.len() != 0)
 			{
 				this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 1.0, actor.getPos());
@@ -135,4 +139,3 @@ this.legend_redback_spider_poison_effect <- this.inherit("scripts/skills/skill",
 	}
 
 });
-

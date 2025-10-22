@@ -13,8 +13,8 @@ this.legend_named_shamshir_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Order = this.Const.SkillOrder.Item;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
-        this.m.IsWeaponSkill = true;
-        this.m.IsHidden = true;
+		this.m.IsWeaponSkill = true;
+		this.m.IsHidden = true;
 	}
 
 	function getTooltip()
@@ -43,11 +43,4 @@ this.legend_named_shamshir_effect <- this.inherit("scripts/skills/skill", {
 		if (_skill.m.IsWeaponSkill)
 			_properties.ThresholdToInflictInjuryMult *= 1 - (this.m.Bonus * 0.01);
 	}
-
-    function onBeforeTargetHit( _skill, _targetEntity, _hitInfo )
-	{
-        if ( _skill.m.IsWeaponSkill == false ) { return; }
-        _hitInfo.InjuryThresholdMult *= 1 - (this.m.Bonus * 0.01);
-	}
-
 });

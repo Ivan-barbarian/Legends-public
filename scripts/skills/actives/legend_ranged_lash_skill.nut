@@ -31,7 +31,7 @@ this.legend_ranged_lash_skill <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.HitChanceBonus = 0;
 		this.m.DirectDamageMult = 0.3;
-		this.m.ActionPointCost = 4;
+		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 2;
@@ -60,6 +60,7 @@ this.legend_ranged_lash_skill <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInFlails ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.ActionPointCost = _properties.IsSpecializedInPolearms ? 5 : 6;
 		this.m.IsShieldRelevant = !_properties.IsSpecializedInFlails;
 	}
 

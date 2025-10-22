@@ -13,17 +13,15 @@ this.perk_legend_vala_threads <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if (!_targetEntity.isAlive())
-		{
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
 			return;
-		}
 
-		if (this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() != "weapon.legend_staff_vala")
-		{
-			return true;
-		}
+		local actor = this.getContainer().getActor();
 
-		local expertise = this.getContainer().getActor().getBravery();
+		if (!::Legends.S.hasItemFlag(actor.getMainhandItem(), "vala_staff"))
+			return;
+
+		local expertise = actor.getBravery();
 		local minimumHitChance = ::Legends.Mod.ModSettings.getSetting("MinimumChanceToHit").getValue();
 		local maximumHitChance = ::Legends.Mod.ModSettings.getSetting("MaximumChanceToHit").getValue();
 		expertise = this.Math.max(minimumHitChance, this.Math.min(maximumHitChance, expertise));

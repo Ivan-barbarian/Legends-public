@@ -3,7 +3,15 @@
 	{
 		_properties.FatigueLossOnAnyAttackMult *= 0.1;
 
-		local fat = this.getContainer.getActor().getItems().getStaminaModifier(
+		local container = this.getContainer();
+		if (container == null) {
+			return;
+		}
+		local actor = container.getActor();
+		if (actor == null) {
+			return;
+		}
+		local fat = actor.getItems().getStaminaModifier(
 			[
 				::Const.ItemSlot.Body,
 				::Const.ItemSlot.Head,

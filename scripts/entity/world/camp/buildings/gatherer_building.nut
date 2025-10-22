@@ -81,7 +81,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function getUpgraded()
 	{
-		return this.Stash.hasItem("tent.gather_tent");
+		return this.Stash.hasItem(::Legends.Camp.Tent.Gather);
 	}
 
 	function getLevel()
@@ -404,7 +404,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				case "background.legend_herbalist":
 				case "background.legend_alchemist":
 				case "background.legend_druid":
-				case "background.legend_druid_commander":
+				case "background.legend_commander_druid":
 					map.Apothecary += bro.getLevel();
 			}
 

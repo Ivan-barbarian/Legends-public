@@ -28,6 +28,16 @@
 			});
 		}
 
+		if (this.getContainer().hasPerk(::Legends.Perk.LegendBallistics))
+		{
+			tooltip.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/direct_damage.png",
+				text = "Up to [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] of any damage ignores armor depending on the distance to the target, with the highest bonus in melee and lowest at maximum range"
+			});
+		}
+
 		if (!this.getItem().isLoaded())
 		{
 			tooltip.push({
@@ -52,6 +62,9 @@
 	{
 		if (_skill == this)
 		{
+			if (::Legends.S.skillEntityAliveCheck(_targetEntity))
+				return;
+
 			_properties.RangedSkill += this.m.AdditionalAccuracy;
 			_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;
 
@@ -59,8 +72,12 @@
 			{
 				_properties.DamageDirectMult += 0.05;
 			}
+
+			if (_skill == this && this.getContainer().hasPerk(::Legends.Perk.LegendBallistics) && _targetEntity != null)
+			{
+				local distance = this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile());
+				_properties.DamageDirectAdd += 0.25 - (distance * 0.05)
+			}
 		}
 	}
-
-
 });

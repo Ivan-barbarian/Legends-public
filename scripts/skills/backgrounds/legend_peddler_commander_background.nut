@@ -93,7 +93,7 @@ this.legend_peddler_commander_background <- this.inherit("scripts/skills/backgro
 			];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.StaffTree,
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.SlingTree,
 				this.Const.Perks.CrossbowTree,
@@ -223,7 +223,7 @@ this.legend_peddler_commander_background <- this.inherit("scripts/skills/backgro
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/weapons/legend_sling"));
+			items.equip(this.new("scripts/items/weapons/legend_dilapitated_sling"));
 		}
 		else if (r == 1)
 		{

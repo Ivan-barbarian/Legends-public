@@ -39,6 +39,16 @@
 		}
 
 		this.updateSprites();
+
+		if (this.m.IsActive) {
+			this.m.HousesType = this.getHousesType();
+			foreach (h in this.m.HousesTiles) {
+				local tile = this.World.getTileSquare(h.X, h.Y);
+				tile.clear(this.Const.World.DetailType.Houses);
+				local d = tile.spawnDetail("world_houses_0" + this.m.HousesType + "_0" + h.V, this.Const.World.ZLevel.Object - 3, this.Const.World.DetailType.Houses);
+				d.Scale = 0.85;
+			}
+		}
 	}
 
 	o.changeSupportedOrAbandonedAttachedLocations <- function ()
@@ -345,7 +355,7 @@
 
 		result.Encounters <- [];
 		foreach(encounter in this.m.SettlementEncounters) {
-			if (encounter != null) {
+			if (encounter != null && encounter.isVisible()) {
 				result.Encounters.push({
 					Icon = encounter.m.Icon,
 					Type = encounter.getType(),
@@ -546,6 +556,8 @@
 	local updateRoster = o.updateRoster;
 	o.updateRoster = function ( _force = false )
 	{
+		local originalRosterMin = ::World.Assets.m.RosterSizeAdditionalMin;
+		local originalRosterMax = ::World.Assets.m.RosterSizeAdditionalMax;
 		if (_force || m.LastRosterUpdate == 0 || ((::Time.getVirtualTimeF() - m.LastRosterUpdate) / ::World.getTime().SecondsPerDay) >= 2) {
 			m.DraftList = getDraftList(); // apply the draftlist
 			::World.getTemporaryRoster().clear(); // using this to store the stabled
@@ -561,8 +573,16 @@
 
 				bro.getFlags().set("Legend_onGenerateBroPass", true);
 			}
+			if (::World.Retinue.hasFollower("follower.recruiter"))
+			{
+				::World.Assets.m.RosterSizeAdditionalMin += 2;
+				::World.Assets.m.RosterSizeAdditionalMax += 4;
+			}
 
 			updateRoster(_force); // run the original function
+
+			::World.Assets.m.RosterSizeAdditionalMin = originalRosterMin;
+			::World.Assets.m.RosterSizeAdditionalMax = originalRosterMax;
 
 			foreach (bro in roster.getAll())
 			{
@@ -725,6 +745,7 @@
 	o.onInit = function ()
 	{
 		this.m.HousesMax = getHousesMax();
+		this.m.HousesType = getHousesType();
 		this.m.Sprite = getSpriteName();
 		onInit();
 		this.updateSurroundingTileData();
@@ -1071,21 +1092,6 @@
 			this.getSprite("location_banner").Visible = true;
 			this.getLabel("name").Visible = true;
 			this.getSprite("body").setBrush(this.getSpriteName());
-
-			foreach( h in this.m.HousesTiles )
-			{
-				continue;
-				local tile = this.World.getTileSquare(h.X, h.Y);
-				tile.clear(this.Const.World.DetailType.Houses);
-				local d = tile.spawnDetail("world_houses_0" + this.getHousesType() + "_0" + h.V, this.Const.World.ZLevel.Object - 3, this.Const.World.DetailType.Houses);
-
-				if (d == null)
-				{
-					continue;
-				}
-
-				d.Scale = 0.85;
-			}
 		}
 		else
 		{
@@ -1102,10 +1108,9 @@
 
 			foreach( h in this.m.HousesTiles )
 			{
-				continue;
 				local tile = this.World.getTileSquare(h.X, h.Y);
 				tile.clear(this.Const.World.DetailType.Houses | this.Const.World.DetailType.Lighting);
-				local d = tile.spawnDetail("world_houses_0" + this.getHousesType() + "_0" + h.V + "_ruins", this.Const.World.ZLevel.Object - 3, this.Const.World.DetailType.Houses);
+				local d = tile.spawnDetail("world_houses_0" + this.m.HousesType + "_0" + h.V + "_ruins", this.Const.World.ZLevel.Object - 3, this.Const.World.DetailType.Houses);
 				d.Scale = 0.85;
 				this.spawnFireAndSmoke(tile.Pos);
 			}
@@ -1134,6 +1139,9 @@
 	o.onEnter = function () {
 		local ret = onEnter();
 		this.updateEncounters();
+		if (this.hasBuilding("building.arena")) {
+			this.getBuilding("building.arena").refreshTooltip();
+		}
 		return ret;
 	}
 
@@ -1151,7 +1159,6 @@
 //				::logInfo("encounter became non valid " + e.getType());
 				::MSU.Array.removeByValue(this.m.SettlementEncounters, e);
 			}
-//			::logInfo("cooldown still on, skipping the creation");
 			return;
 		}
 
@@ -1162,7 +1169,7 @@
 			}
 		}
 
-		local count = this.Math.rand(3, 5);
+		local count = this.Math.rand(::Legends.Encounters.SettlementMin, ::Legends.Encounters.SettlementMax);
 		while(list.len() > count) {
 			local r = this.Math.rand(0, list.len() - 1);
 			list.remove(r);
@@ -1171,7 +1178,7 @@
 		foreach (e in list) {
 			this.m.SettlementEncounters.push(e);
 		}
-		this.m.SettlementEncountersCooldownUntil = this.Time.getVirtualTimeF() + (5 * this.World.getTime().SecondsPerDay);
+		this.m.SettlementEncountersCooldownUntil = this.Time.getVirtualTimeF() + (::Legends.Encounters.SettlementCooldown * this.World.getTime().SecondsPerDay);
 	}
 
 	local onSerialize = o.onSerialize;

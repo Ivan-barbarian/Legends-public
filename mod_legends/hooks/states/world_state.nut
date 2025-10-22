@@ -187,6 +187,8 @@
 		{
 			party.getFlags().set("IsCaravan", true); // reverse the change
 		}
+
+		::Legends.Maps.cleanUp();
 	}
 
 	o.getLocalCombatProperties = function ( _pos, _ignoreNoEnemies = false )
@@ -1249,8 +1251,41 @@
 		}
 	}
 
+	/**
+	 * Adds convenience method to world state to mimic original
+	 * Shows event dialog while in camp
+	 */
+	o.showEventScreenFromCamp <- function ( _event, _isContract = false, _playSound = true )
+	{
+		if (!this.m.EventScreen.isVisible() && !this.m.EventScreen.isAnimating())
+		{
+			if (_playSound && this.Const.Events.GlobalSound != "")
+			{
+				this.Sound.play(this.Const.Events.GlobalSound, 1.0);
+			}
+
+			this.m.CampScreen.hide();
+			this.m.EventScreen.setIsContract(_isContract);
+			this.m.EventScreen.show(_event);
+			this.m.MenuStack.push(function () {
+				this.m.EventScreen.hide();
+				this.m.EventScreen.setIsContract(false);
+				this.m.CampScreen.show();
+				this.m.WorldTownScreen.refresh();
+			}, function () {
+				return false;
+			});
+		}
+	}
+
 	o.showCombatDialog = function ( _isPlayerInitiated = true, _isCombatantsVisible = true, _allowFormationPicking = true, _properties = null, _pos = null )
 	{
+		// fix guest roster positions before every battle
+		local freeSlots = ::Legends.S.getEmptySlotsInFormation();
+		foreach(bro in ::World.getGuestRoster().getAll()) {
+			bro.setPlaceInFormation(freeSlots.pop());
+		}
+
 		local entities = [];
 		local allyBanners = [];
 		local enemyBanners = [];

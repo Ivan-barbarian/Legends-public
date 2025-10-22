@@ -22,7 +22,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 			::Legends.Traits.getID(::Legends.Trait.Asthmatic),
 			::Legends.Traits.getID(::Legends.Trait.Greedy),
 			::Legends.Traits.getID(::Legends.Trait.Fragile),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
 			::Legends.Traits.getID(::Legends.Trait.Bleeder),
 			::Legends.Traits.getID(::Legends.Trait.Bright),
@@ -88,7 +88,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 			Weapon = [
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.FistsTree,
-				this.Const.Perks.StaffTree,
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
@@ -110,7 +110,8 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.HerbalistProfessionTree
 			]
 			Magic = [
-				this.Const.Perks.DruidMagicTree
+				this.Const.Perks.DruidMagicTree,
+				this.Const.Perks.StavesMagicTree
 			]
 		}
 	}

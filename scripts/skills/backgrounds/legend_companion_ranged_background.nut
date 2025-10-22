@@ -16,7 +16,7 @@ this.legend_companion_ranged_background <- this.inherit("scripts/skills/backgrou
 			::Legends.Traits.getID(::Legends.Trait.Craven),
 			::Legends.Traits.getID(::Legends.Trait.Dastard),
 			::Legends.Traits.getID(::Legends.Trait.Disloyal),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Fat),
 			::Legends.Traits.getID(::Legends.Trait.FearUndead),
 			::Legends.Traits.getID(::Legends.Trait.FearGreenskins),
@@ -240,7 +240,7 @@ this.legend_companion_ranged_background <- this.inherit("scripts/skills/backgrou
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/weapons/legend_sling"));
+			items.equip(this.new("scripts/items/weapons/legend_dilapitated_sling"));
 			items.addToBag(this.new("scripts/items/weapons/boar_spear"));
 		}
 		else if (r == 2)
@@ -285,7 +285,7 @@ this.legend_companion_ranged_background <- this.inherit("scripts/skills/backgrou
 		}
 		else if (r == 9)
 		{
-			items.equip(this.new("scripts/items/weapons/legend_sling"));
+			items.equip(this.new("scripts/items/weapons/legend_dilapitated_sling"));
 			items.equip(this.new("scripts/items/shields/legend_tower_shield"));
 			items.addToBag(this.new("scripts/items/weapons/falchion"));
 		}
@@ -329,4 +329,3 @@ this.legend_companion_ranged_background <- this.inherit("scripts/skills/backgrou
 	}
 
 });
-

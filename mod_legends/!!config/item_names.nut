@@ -76,6 +76,28 @@
 	"Grimguard"
 ];
 
+::Const.Strings.ThrowingAxeNames <- [
+	"Spinning Death",
+	"Splitters",
+	"Whirlwind",
+	"Skullbiter",
+	"Grim Orbit",
+	"Hatchetfall",
+	"Reaper's Reach",
+	"Shatterfang",
+	"Carver's Joy",
+	"Flying Vengeance",
+	"Cleaverang",
+	"Fleshpeelers",
+	"Bloodsails",
+	"Skyfangs",
+	"Widow's Kiss",
+	"Vulture's Cry",
+	"Razor Orbit",
+	"Hatchetsong",
+	"Flysplitters"
+];
+
 ::Const.Strings.WarbearNames <- [
 	"Kiska",
 	"Malishka",

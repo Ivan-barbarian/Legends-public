@@ -708,14 +708,23 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 			{
 				R = 80,
 				P = 3.0,
-				S = "accessory/legend_cestus_item"
+				S = "accessory/gloves/legend_cestus_item"
 			},
 			{
 				R = 80,
 				P = 3.0,
-				S = "accessory/legend_spiked_gauntlets_item"
+				S = "accessory/gloves/legend_spiked_gauntlets_item"
+			},
+			{
+				R = 5,
+				P = 40.0,
+				S = "misc/legend_map_legendary_item"
+			},
+			{
+				R = 5,
+				P = 4.0,
+				S = "misc/legend_map_named_item"
 			}
-
 		];
 
 		foreach( i in this.Const.Items.NamedMeleeWeapons )

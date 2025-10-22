@@ -313,7 +313,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 
 	function getUpgraded()
 	{
-		return this.Stash.hasItem("tent.enchant_tent");
+		return this.Stash.hasItem(::Legends.Camp.Tent.Enchant);
 	}
 
 	function getLevel()

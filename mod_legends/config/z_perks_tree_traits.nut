@@ -54,12 +54,10 @@ if (!("Perks" in ::Const))
 			::Legends.Perk.Pathfinder
 		],
 		[],
-		[
-			::Legends.Perk.LegendAthlete
-		],
+		[],
 		[],
 		[
-			::Legends.Perk.Footwork
+			::Legends.Perk.LegendTacticalManeuvers 
 		],
 		[],
 		[
@@ -115,7 +113,8 @@ if (!("Perks" in ::Const))
 	},
 	Tree = [
 		[
-			::Legends.Perk.NineLives
+			::Legends.Perk.NineLives,
+			::Legends.Perk.LegendRecuperation
 		],
 		[],
 		[
@@ -433,15 +432,14 @@ if (!("Perks" in ::Const))
 	},
 	Tree = [
 		[
-			::Legends.Perk.Student
-		],
-		[
-			::Legends.Perk.Gifted,
+			::Legends.Perk.Student,
+			::Legends.Perk.Gifted
 		],
 		[],
 		[],
+		[],
 		[
-			::Legends.Perk.LegendAdaptive
+			::Legends.Perk.LegendPromisedPotential,
 		],
 		[
 			::Legends.Perk.LegendMindOverBody
@@ -625,7 +623,9 @@ if (!("Perks" in ::Const))
 			::Legends.Perk.Colossus
 		],
 		[],
-		[],
+		[
+			::Legends.Perk.LegendOnslaught
+		],
 		[],
 		[
 			::Legends.Perk.LegendSecondWind
@@ -748,9 +748,7 @@ if (!("Perks" in ::Const))
 		]
 	},
 	Tree = [
-		[
-			::Legends.Perk.LegendRecuperation
-		],
+		[],
 		[
 			::Legends.Perk.FortifiedMind
 		],
@@ -813,10 +811,11 @@ if (!("Perks" in ::Const))
 	Tree = [
 		[
 			::Legends.Perk.Recover,
-			::Legends.Perk.LegendRecuperation
 		],
 		[],
-		[],
+		[
+			::Legends.Perk.LegendAthlete
+		],
 		[],
 		[],
 		[
@@ -879,7 +878,7 @@ if (!("Perks" in ::Const))
 		],
 		[],
 		[
-			::Legends.Perk.Rotation
+			::Legends.Perk.LegendTacticalManeuvers
 		],
 		[],
 		[

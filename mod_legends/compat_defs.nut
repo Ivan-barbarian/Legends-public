@@ -81,6 +81,7 @@
 
 /** Just a list of integrated mods, to prevent loading them again */
 ::Legends.Compat.Integrated <- [
+	"mod_quickly_swap_items",
 	"mod_legends_compat",
 	"mod_buyback",
 	"mod_events_delayed_fix",
@@ -89,7 +90,8 @@
 	"mod_make_lindwurms_great_again",
 	"mod_MINA", // More Indefinite Numeral Adjectives - a similar feature is implemented in legends
 	"mod_tooltip_extension", // Rygar's perk tooltip
-	"mod_turn_it_in"
+	"mod_turn_it_in",
+	"mod_find_legendary_maps"
 ];
 
 //region HardIncompat
@@ -97,8 +99,8 @@
 ::Legends.Compat.HardIncompat.add("mod_AC", "1.30.33"); // Accessory Companions
 ::Legends.Compat.HardIncompat.add("mod_allCripplesBecomeTheKingsGuard", "1.0");
 ::Legends.Compat.HardIncompat.add("and_justice_for_all", "1.4.0");
-::Legends.Compat.HardIncompat.add("mod_autopilot", "23");
-::Legends.Compat.HardIncompat.add("mod_auto_level", "1.1.1");
+::Legends.Compat.HardIncompat.add("mod_autopilot", "23", "Instead use Hackflow's Autopilot New mod");
+::Legends.Compat.HardIncompat.add("mod_auto_level", "1.1.1", "Instead use Hackflow's Bro Studio for something similar");
 ::Legends.Compat.HardIncompat.add("mod_avatar", "1.0.2");
 ::Legends.Compat.HardIncompat.add("mod_avgmax", "1.0"); // Average bro max stats
 ::Legends.Compat.HardIncompat.add("mod_backgrounds_attribute_ranges", "2.0.0");
@@ -107,6 +109,7 @@
 ::Legends.Compat.HardIncompat.add("mod_background_perks", "2.6"); // Starting Perks by Background Hackflow
 ::Legends.Compat.HardIncompat.add("mod_balanced_tryout", "1.0"); // Balanced Tryouts
 ::Legends.Compat.HardIncompat.add("battle_fatigue", "0.5.0");
+::Legends.Compat.HardIncompat.add("mod_best"); // overhaul conflicts
 ::Legends.Compat.HardIncompat.add("mod_better_bros", "1.1.0");
 ::Legends.Compat.HardIncompat.add("mod_brawny_nimble", "1.0.1");
 ::Legends.Compat.HardIncompat.add("mod_brigandMercenary", "2.34");
@@ -135,9 +138,10 @@
 ::Legends.Compat.HardIncompat.add("mod_faster", null, "Use Swifter instead, found on Nexus");
 ::Legends.Compat.HardIncompat.add("mod_fastest", null, "Use Swifter instead, found on Nexus");
 ::Legends.Compat.HardIncompat.add("mod_legends_favoured_enemy_refund", "2.0.1");
-::Legends.Compat.SoftIncompat.add("mod_fun_facts", "0.5.0"); // Seen some reports causing hard crashes with this mod.
+::Legends.Compat.SoftIncompat.add("mod_fun_facts", "0.5.0"); // Seen some reports causing hard crashes with this mod. But new comments suggest issues might be fixed need more feedback vs Legends play
 ::Legends.Compat.HardIncompat.add("graven_passive_shield_damage_bonus", "1.0");
 ::Legends.Compat.HardIncompat.add("graven_plentiful_paints", "1.1");
+::Legends.Compat.HardIncompat.add("mod_graze_and_crit");
 ::Legends.Compat.HardIncompat.add("mod_hackflows_perks", "1.4");
 ::Legends.Compat.HardIncompat.add("mod_hardened"); // Darx's RF submod
 ::Legends.Compat.HardIncompat.add("mod_healable_injury", "1.0");
@@ -149,6 +153,7 @@
 ::Legends.Compat.HardIncompat.add("mod_items_recipes", "2.0.0");
 ::Legends.Compat.HardIncompat.add("mod_jin", "1.0"); // Jurchen mod
 ::Legends.Compat.HardIncompat.add("mod_lifetime_stats", "1");
+::Legends.Compat.HardIncompat.add("mod_lima_tactics"); // overhauls mods don't mix
 ::Legends.Compat.HardIncompat.add("lng_combat_tweak", "1.0");
 ::Legends.Compat.HardIncompat.add("mod_lessgr", "1.3");
 ::Legends.Compat.HardIncompat.add("mod_legendary_kriegsgeist_boss_location", "1.0.5"); // SSU has more updated version of this now
@@ -158,7 +163,7 @@
 ::Legends.Compat.HardIncompat.add("mod_more_champions_x10");
 ::Legends.Compat.HardIncompat.add("mod_more_champions_x25");
 ::Legends.Compat.HardIncompat.add("mod_more_followers", "1.1");
-::Legends.Compat.HardIncompat.add("mod_moreRecruits", "2");
+::Legends.Compat.HardIncompat.add("mod_moreRecruits", "2", "For more recruits a safe alternative seems to be Necro's World Editor");
 ::Legends.Compat.HardIncompat.add("mod_more_weapon_skins", "0.8.0"); // Many of Karl's skins are being integ into Legends
 ::Legends.Compat.HardIncompat.add("mod_namedShieldsInShops", "1.0");
 ::Legends.Compat.HardIncompat.add("mod_necro", "0.3.0"); // Hackflow's Proper Necromancer
@@ -191,7 +196,7 @@
 ::Legends.Compat.HardIncompat.add("mod_rpgr_raids", "4.0.1");
 ::Legends.Compat.HardIncompat.add("mod_save", "1.0.0"); // Enhanced Autosave
 //::Legends.Compat.HardIncompat.add("mod_sellswords", "8.2.9"); // SSU, now Legends V19+ compatible
-::Legends.Compat.HardIncompat.add("mod_smart_recruiter_legends", "1.0");
+::Legends.Compat.HardIncompat.add("mod_smart_recruiter_legends", "1.0", "Use Clever Recruiter instead, found on Nexus");
 ::Legends.Compat.HardIncompat.add("mod_solostart", "1.0");
 ::Legends.Compat.HardIncompat.add("mod_southernNomad", "1.0");
 ::Legends.Compat.HardIncompat.add("mod_standout_enemies", "1.2");
@@ -217,16 +222,17 @@
 ::Legends.Compat.HardIncompat.add("mod_new_named_weapons", "1.0"); // Zythaer's Better Weapons
 ::Legends.Compat.HardIncompat.add("mod_xpInReserve", "1.0"); // XP in Reserve
 ::Legends.Compat.HardIncompat.add("sato_corpse_loot_fix"); // Sato's Corpse Loot Fix
+::Legends.Compat.HardIncompat.add("mod_career_stats", "1.0.2"); // I've seen this mod being the issue in logs as cause of errors
 //endregion
 
 //region SoftIncompat
+::Legends.Compat.SoftIncompat.add("advanced_grader"); // Needs to be updated with Legends specific things to work with Legends
 ::Legends.Compat.SoftIncompat.add("mod_BLPT", "0.1.2"); // Darx's Bad Luck Protection
 ::Legends.Compat.SoftIncompat.add("mod_bro_storage", "1.0.2");
 ::Legends.Compat.SoftIncompat.add("mod_camps_and_artifacts", "3.4");
-::Legends.Compat.SoftIncompat.add("mod_career_stats", "1.0.2");
 ::Legends.Compat.SoftIncompat.add("mod_cultists", "1.04"); // Davkul Rising
-::Legends.Compat.SoftIncompat.add("mod_fantasybro", "1.0"); // Yorik's "Legends patches are poorly built"
-::Legends.Compat.SoftIncompat.add("mod_find_legendary_locations", "1", "Use Chopek's Find Legendary Maps instead, at Nexus or Legends Discord (#submod_files/Find Legendary Maps)");
+::Legends.Compat.SoftIncompat.add("mod_fantasybro", "1.0"); // Yorik's "Legends patches are poorly built, yes even into FB V5"
+::Legends.Compat.SoftIncompat.add("mod_find_legendary_locations", "1", "Legends has maps, that do the same");
 ::Legends.Compat.SoftIncompat.add("mod_necropolis", "1.0");
 ::Legends.Compat.SoftIncompat.add("mod_PLHO", "0.1.1"); // Darx's Player Hideout
 ::Legends.Compat.SoftIncompat.add("mod_retinue_ups", "1.2.1"); // Hackflow's Retinue Promotions
@@ -236,8 +242,7 @@
 //endregion
 
 //region IncompatButPatched
-::Legends.Compat.IncompatButPatched.add("mod_breditor", "on Legends Discord (#submod_files/Breaky's Battle Brothers Bargain Bin (BBBBB))");
-::Legends.Compat.IncompatButPatched.add("mod_quickly_swap_items", "on Legends Discord (#submod_files/Breaky's Battle Brothers Bargain Bin (BBBBB))");
+::Legends.Compat.IncompatButPatched.add("mod_breditor", "on Legends Discord (pinned message in #battle_brothers_chat), replace one from nexus. If you have it already, ignore this message.");
 //endregion
 
 //region OtherVersionCompat

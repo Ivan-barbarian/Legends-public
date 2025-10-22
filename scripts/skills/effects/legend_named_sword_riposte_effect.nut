@@ -44,7 +44,7 @@ this.legend_named_sword_riposte_effect <- this.inherit("scripts/skills/skill", {
         if ( this.getContainer().hasEffect(::Legends.Effect.Riposte) ) { return; }
 
         ::Legends.Effects.grant(this, ::Legends.Effect.Riposte);
-        
+
         if (!this.getContainer().getActor().isHiddenToPlayer())
         {
             this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " automatically used Riposte");
@@ -53,21 +53,13 @@ this.legend_named_sword_riposte_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if ( _skill == null || _skill.m.IsWeaponSkill == false ) { return; } 
-		
-		local actor = this.getContainer().getActor();
+		if ( _skill == null || _skill.m.IsWeaponSkill == false ) { return; }
 
-		if (!actor.isAlive() || actor.isDying())
-		{
+		if (::Legends.S.skillEntityAliveCheck(this.getContainer().getActor(), _targetEntity))
 			return;
-		}
 
-		if (!_targetEntity.isAlive() || _targetEntity.isDying())
-		{
-			return;
-		}
-
-        if ( ::Math.rand(0, 100) > this.m.Bonus ) { return; }
+        if (::Math.rand(0, 100) > this.m.Bonus)
+	        return;
 
         ::Legends.Effects.grant(_targetEntity, ::Legends.Effect.LegendParried);
 	}

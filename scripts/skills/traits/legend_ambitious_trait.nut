@@ -20,7 +20,7 @@ this.legend_ambitious_trait <- this.inherit("scripts/skills/traits/character_tra
 			::Legends.Traits.getID(::Legends.Trait.Craven),
 			::Legends.Traits.getID(::Legends.Trait.Hesistant),
 			::Legends.Traits.getID(::Legends.Trait.Dastard),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Paranoid),
 			::Legends.Traits.getID(::Legends.Trait.FearBeasts),
 			::Legends.Traits.getID(::Legends.Trait.FearUndead),
@@ -74,4 +74,3 @@ this.legend_ambitious_trait <- this.inherit("scripts/skills/traits/character_tra
 	}
 
 });
-

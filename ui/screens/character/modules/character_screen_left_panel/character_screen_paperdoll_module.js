@@ -126,11 +126,6 @@ CharacterScreenPaperdollModule.prototype.createDIV = function (_parentDiv) {
 	var accessoryToggleLayout = $('<div class="l-button accessory-toggle"/>');
 	leftEquipmentColumn.append(accessoryToggleLayout);
 	this.mAccessoryToggleButton = accessoryToggleLayout.createTextButton("1", function (_button, _event) {
-		if (_button.hasClass('armor_button_invisible')) {
-			_button.removeClass('armor_button_invisible');
-		} else {
-			_button.addClass('armor_button_invisible');
-		}
 		self.mDataSource.notifyBackendToggleUpgradeVisible(CharacterScreenIdentifier.ItemSlot.Accessory, 0);
 	}, "display-block", 11);
 	this.mAccessoryToggleButton.data('tooltip', 'Toggle accessory visibility');
@@ -1469,6 +1464,11 @@ CharacterScreenPaperdollModule.prototype.setupAccessoryToggleButton = function (
 		if (_accessoryData.showOnCharacter !== null && _accessoryData.showOnCharacter !== false) {
 			this.mAccessoryToggleButton.show();
 			this.mAccessoryToggleButton.enableButton(!this.mIsUpgradeButtonsLocked);
+			if (_accessoryData.accessoryVisible !== undefined && _accessoryData.accessoryVisible === false) {
+				this.mAccessoryToggleButton.addClass('armor_button_invisible');
+			} else {
+				this.mAccessoryToggleButton.removeClass('armor_button_invisible');
+			}
 			this.mAccessoryToggleButton.bindTooltip({
 				contentType: 'ui-item',
 				entityId: _brotherId,

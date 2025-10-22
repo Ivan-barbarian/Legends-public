@@ -209,6 +209,13 @@
 		this.updateStrength();
 	}
 
+	local onCombatLost = o.onCombatLost;
+	o.onCombatLost = function() {
+		::Legends.Maps.cleanUpOnLocationDestroyed(this);
+		onCombatLost();
+	}
+
+
 	local setResources = o.setResources;
 	o.setResources <- function (_v) {
 		setResources(::Math.max(0, ::Math.round(_v)));

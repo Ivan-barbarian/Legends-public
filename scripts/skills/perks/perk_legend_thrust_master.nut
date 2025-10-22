@@ -10,7 +10,7 @@ this.perk_legend_thrust_master <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onBeforeTargetHit( _skill, _targetEntity, _hitInfo )
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (!_skill.isAttack())
 			return;
@@ -21,14 +21,12 @@ this.perk_legend_thrust_master <- this.inherit("scripts/skills/skill", {
 		if (!_skill.m.IsWeaponSkill)
 			return;
 
-		if (_skill.getItem() == null || _skill.getItem().isWeaponType(this.Const.WeaponType.Dagger))
+		if (!_skill.getDamageType().contains(::Const.Damage.DamageType.Piercing))
 			return;
 
-		if (_hitInfo.DamageType == ::Const.Damage.DamageType.Piercing)
-		{
-			_properties.DamageTotalMult *= 1.15;
-		}
+		if (_skill.getItem() == null || _skill.getItem().isWeaponType(::Const.Items.WeaponType.Dagger))
+			return;
+
+		_properties.DamageTotalMult *= 1.15;
 	}
-
 });
-

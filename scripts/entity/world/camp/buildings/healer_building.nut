@@ -148,7 +148,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 	function getUpgraded()
 	{
-		return this.Stash.hasItem("tent.healer_tent");
+		return this.Stash.hasItem(::Legends.Camp.Tent.Healer);
 	}
 
 	function getLevel()
@@ -262,7 +262,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 		foreach (b in this.m.InjuriesHealed)
 		{
-			if (b == null)
+			if (b == null || !("getID" in b))
 				continue;
 			local ID = b.getID();
 			if (b.getIcon() != null && b.getName() != null)

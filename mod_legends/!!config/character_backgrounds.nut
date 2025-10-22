@@ -19,33 +19,28 @@
 	"legend_blacksmith_background",
 	"raider_background"
 ];
-::Const.CharacterUndeadBackgrounds <- [
-	"disowned_noble_background",
-	// "female_disowned_noble_background",
-	"adventurous_noble_background",
-	// "female_adventurous_noble_background",
-	"retired_soldier_background",
-	"swordmaster_background",
-	"sellsword_background",
-	"hedge_knight_background",
-	"militia_background",
-	"bastard_background",
-	"hunter_background",
-	"beast_hunter_background",
-	"legend_noble_ranged",
-	"legend_noble_2h",
-	"legend_noble_shield",
-	"assassin_background",
-	"brawler_background",
-	"legend_blacksmith_background",
-	"raider_background",
-	"legend_warlock_background",
-	"legend_ancient_summoner_background",
-	"legend_spiritualist_background",
-	"legend_runesmith_background",
-	"legend_enchanter_background",
-	"legend_entrancer_background",
-	"legend_necrosavant_background"
+::Const.CharacterLegionBackgrounds <- [ //all
+	"legend_legion_slave_background",
+	"legend_legion_auxiliary_background",
+	"legend_legion_legionary_background",
+	"legend_legion_gladiator_background",
+	"legend_legion_honour_guard_background",
+	"legend_legion_centurion_background",
+	"legend_legion_prefect_background",
+	"legend_legion_legate_background"
+];
+::Const.CharacterLegionBackgroundsLOW <- [
+	"legend_legion_slave_background",
+	"legend_legion_auxiliary_background",
+	"legend_legion_legionary_background"
+];
+::Const.CharacterLegionBackgroundsHIGH <- [
+	"legend_legion_legionary_background",
+	"legend_legion_gladiator_background", 
+	"legend_legion_honour_guard_background",
+	"legend_legion_centurion_background",
+	"legend_legion_prefect_background",
+	"legend_legion_legate_background"
 ];
 ::Const.CharacterBackgroundsAnimated <- [
 	"adventurous_noble_background",

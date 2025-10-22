@@ -34,7 +34,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 			::Legends.Traits.getID(::Legends.Trait.Asthmatic),
 			::Legends.Traits.getID(::Legends.Trait.Greedy),
 			::Legends.Traits.getID(::Legends.Trait.Fragile),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
 			::Legends.Traits.getID(::Legends.Trait.Bleeder),
 			::Legends.Traits.getID(::Legends.Trait.Bright),
@@ -299,7 +299,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/accessory/legend_hand_wraps_item"));
+			items.equip(this.new("scripts/items/accessory/gloves/legend_hand_wraps_item"));
 		}
 		else if (r == 1)
 		{

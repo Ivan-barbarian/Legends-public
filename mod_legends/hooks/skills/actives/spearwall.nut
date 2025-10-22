@@ -1,5 +1,11 @@
 ::mods_hookExactClass("skills/actives/spearwall", function(o)
 {
+	local getDescription = o.getDescription;
+	o.getDescription = function ()
+	{
+		return getDescription() + " Attacks from this ability are considered attacks of opportunity."
+	}
+
 	local getTooltip = o.getTooltip;
 	o.getTooltip = function()
 	{

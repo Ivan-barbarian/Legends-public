@@ -87,12 +87,20 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillExecuted( _skill, _targetTile, _targetEntity, _forFree )
 	{
-		if (!_skill.m.IsAttack || (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.HandToHand) && this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Mainhand) != null))
-		{
-			// Don't execute a follow up attack if the first skill is not an attack, or if you are using hand to hand while the mainhand is holding a weapon
-			return;
-		}
+		if (!_skill.m.IsAttack)
+			return; // Don't execute a follow up attack if the first skill is not an attack
+
+		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.HandToHand) && this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Mainhand) != null)
+			return;// or if you are using hand to hand while the mainhand is holding a weapon
+
+
 		local actor = this.getContainer().getActor();
+		if (::Legends.S.skillEntityAliveCheck(actor, _targetEntity))
+			return;
+
+		if (actor.getTile().getDistanceTo(_targetEntity.getTile()) > 1)
+			return; // no gomu gomu h2h attacks
+
 		local items = actor.getItems();
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 
@@ -100,8 +108,6 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 		{
 			if (!_forFree)
 			{
-				if (!actor.isAlive() || actor.isDying())
-					return;
 				if (_targetTile == null || actor.getTile() == null) // Is this necessary?
 					return;
 
@@ -116,6 +122,8 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 
 	function executeFollowUpAttack( _info )
 	{
+		if (::Legends.S.skillEntityAliveCheck(_info.TargetTile.getEntity()))
+			return;
 		if (!::MSU.isNull(_info.Skill))
 			_info.Skill.useForFree(_info.TargetTile);
 	}

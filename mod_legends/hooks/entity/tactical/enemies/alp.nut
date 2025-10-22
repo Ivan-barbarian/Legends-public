@@ -15,11 +15,12 @@
 		for(local i = 0; i < rolls; i++)
 		{
 			this.m.OnDeathLootTable.push([1, function () {
-				local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
-				token.setRuneVariant(this.m.DroppableRunes[this.Math.rand(0, this.m.DroppableRunes.len() - 1)]);
-				token.setRuneBonus(true);
-				token.updateRuneSigilToken();
-				return token;
+				local selected = this.m.DroppableRunes[this.Math.rand(0, this.m.DroppableRunes.len() - 1)];
+				local rune = ::new(::Legends.Runes.get(selected).Script);
+				rune.setRuneVariant(selected);
+				rune.setRuneBonus(true);
+				rune.updateRuneSigilToken();
+				return rune;
 			}.bindenv(this)]);
 		}
 	}
@@ -125,7 +126,7 @@
 
 		local deathLoot = this.getItems().getDroppableLoot(_killer);
 		local tileLoot = this.getLootForTile(_killer, deathLoot);
-		local corpse = this.generateCorpse(_tile, _fatalityType);
+		local corpse = this.generateCorpse(_tile, _fatalityType, _killer);
 		this.dropLoot(_tile, tileLoot, !flip);
 
 		if (_tile == null)
@@ -139,18 +140,6 @@
 		}
 
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
-	}
-
-	o.generateCorpse = function (_tile, _fatalityType)
-	{
-		local corpse = clone this.Const.Corpse;
-		corpse.CorpseName = "An " + this.getName();
-		corpse.Value = 2.0;
-		corpse.Items = this.getItems();
-		corpse.IsResurrectable = false;
-		corpse.IsHeadAttached = _fatalityType != this.Const.FatalityType.Decapitated;
-		corpse.Tile = _tile;
-		return corpse;
 	}
 
 	local onInit = o.onInit;

@@ -430,24 +430,6 @@
 };
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Southern.legend_headress_coin);
 
-::Legends.Helmet.Southern.legend_southern_veil_coin <- {
-	ID = "legend_southern_veil_coin",
-	Script = "",
-	Sets = [{
-		Hoods = [
-			[1, "hood/legend_helmet_southern_headband_coin"]
-		],
-		Helms = [
-		],
-		Tops = [
-			[1, "top/legend_helmet_southern_veil_coin"]
-		],
-		Vanity = [
-		]
-	}]
-};
-::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Southern.legend_southern_veil_coin);
-
 ::Legends.Helmet.Southern.legend_southern_veil <- {
 	ID = "legend_southern_veil",
 	Script = "",
@@ -497,7 +479,6 @@
 		],
 		Tops = [
 			[2, "top/legend_helmet_southern_veil"],
-			[1, "top/legend_helmet_southern_veil_coin"],
 			[1, ""]
 		],
 		Vanity = [

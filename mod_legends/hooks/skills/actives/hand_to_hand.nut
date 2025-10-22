@@ -23,6 +23,17 @@
 			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + fatPerHit + "[/color] extra fatigue on hit"
 		});
 
+		local grappler = ::Legends.Perks.get(this, ::Legends.Perk.LegendGrappler);
+		if (grappler != null)
+		{
+			tooltip.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Each attack has a " + grappler.m.GrappleChance + "% chance to apply Grappled"
+			});
+		}
+
 		return tooltip;
 	}
 
@@ -32,7 +43,7 @@
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 		local main = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
 
-		if (this.m.Container.hasPerk(::Legends.Perk.LegendAmbidextrous) && off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand) && this.skill.isUsable)
+		if (::Legends.Perks.has(this, ::Legends.Perk.LegendAmbidextrous) && off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand) && this.skill.isUsable)
 		{
 			return true;
 		}
@@ -45,7 +56,7 @@
 		local items = this.getContainer().getActor().getItems();
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 		local main = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (this.m.Container.hasPerk(::Legends.Perk.LegendAmbidextrous) && off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand)) // if ambidextrous && offhand free, then NOT hidden
+		if (::Legends.Perks.has(this, ::Legends.Perk.LegendAmbidextrous) && off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand)) // if ambidextrous && offhand free, then NOT hidden
 		{
 			return false;
 		}
@@ -58,12 +69,12 @@
 		if(_properties.IsSpecializedInFists)
 		{
 			this.m.FatigueCostMult = _properties.IsSpecializedInFists ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-			if (this.m.Container.hasPerk(::Legends.Perk.LegendAmbidextrous)) //ambidextrous & specialzed
+			if (::Legends.Perks.has(this, ::Legends.Perk.LegendAmbidextrous)) //ambidextrous & specialzed
 			{
 				this.m.ActionPointCost = 3;
 			}
 		}
-		if (this.m.Container.hasPerk(::Legends.Perk.LegendAmbidextrous))
+		if (::Legends.Perks.has(this, ::Legends.Perk.LegendAmbidextrous))
 		{
 			// If ambidextrous & you have a mainhand use that as your AOO.
 			if (this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null)
@@ -84,24 +95,14 @@
 			return;
 		}
 
-		local actor = this.getContainer().getActor();
-		_properties.DamageRegularMin += 5;
-		_properties.DamageRegularMax += 10;
+		_properties.DamageRegularMin = 5;
+		_properties.DamageRegularMax = 10;
 		_properties.DamageArmorMult = 0.5;
 
-		if (this.m.Container.hasEffect(::Legends.Effect.Disarmed) || this.m.Container.hasPerk(::Legends.Perk.LegendAmbidextrous))
-		{
-			local mhand = actor.getMainhandItem();
-
-			if (mhand != null)
-			{
-				_properties.DamageRegularMin -= mhand.m.RegularDamage;
-				_properties.DamageRegularMax -= mhand.m.RegularDamageMax;
-			}
-		}
+		local actor = this.getContainer().getActor();
 		_properties.FatigueDealtPerHitMult += 1.0; // Increase fatigue damage from 5 to 10
 
-		if (this.m.Container.hasPerk(::Legends.Perk.LegendAmbidextrous))
+		if (::Legends.Perks.has(this, ::Legends.Perk.LegendAmbidextrous))
 		{
 			if (actor.getMainhandItem() != null)
 			{
@@ -114,39 +115,12 @@
 			_properties.FatigueDealtPerHitMult += 1.0; // If you have mastery, increase from 10 to 15 fat damage.
 		}
 
-		local items = actor.getItems().getAllItems();
-		local hasCestus = false;
-		local hasWraps = false;
-		local hasGauntlets = false;
-		foreach (item in items)
+		local accessory = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
+		if (accessory != null && accessory.isItemType(this.Const.Items.ItemType.Brawler))
 		{
-			if (item.getID() == "accessory.legend_hand_wraps")
-				hasWraps = true;
-			if (item.getID() == "accessory.legend_cestus")
-				hasCestus = true;
-			if (item.getID() == "accessory.legend_spiked_gauntlets")
-				hasGauntlets = true;
-		}
-
-		if (_skill != this)
-			return;
-
-		if (hasGauntlets)
-		{
-			_properties.DamageRegularMin += 6;
-			_properties.DamageRegularMax += 12;
-			_properties.DamageArmorMult += 0.3;
-		}
-		else if (hasCestus)
-		{
-			_properties.DamageRegularMin += 6;
-			_properties.DamageRegularMax += 12;
-			_properties.DamageArmorMult *= 1.1;
-		}
-		else if (hasWraps)
-		{
-			_properties.DamageRegularMin += 2;
-			_properties.DamageRegularMax += 6;
+			_properties.DamageRegularMin += accessory.m.RegularDamage;
+			_properties.DamageRegularMax += accessory.m.RegularDamageMax;
+			_properties.DamageArmorMult += accessory.m.ArmorDamageMult;
 		}
 	}
 

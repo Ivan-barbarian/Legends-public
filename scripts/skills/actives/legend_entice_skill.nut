@@ -106,8 +106,8 @@ this.legend_entice_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-		this.m.ActionPointCost = _properties.IsSpecializedInStaves ? 5 : 6;
+		this.m.FatigueCostMult = _properties.IsSpecializedInMusic ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.ActionPointCost = _properties.IsSpecializedInMusic ? 5 : 6;
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )

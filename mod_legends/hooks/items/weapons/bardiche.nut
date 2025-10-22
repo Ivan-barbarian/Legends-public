@@ -4,15 +4,14 @@
 	{
 		create();
 		this.m.IsAoE = true;
-		this.m.Variant = this.Math.rand(1, 2);
-		this.updateVariant();
+		this.setVariant(this.Math.rand(0, 2));
 	}
 
-	o.updateVariant <- function ()
-	{
-		this.m.IconLarge = "weapons/melee/bardiche_0" + this.m.Variant + ".png";
-		this.m.Icon = "weapons/melee/bardiche_0" + this.m.Variant + "_70x70.png";
-		this.m.ArmamentIcon = "icon_bardiche_0" + this.m.Variant;
+	o.updateVariant <- function() {
+		local v = this.getVariant() == 0 ? "" : "_" + this.getVariant();
+		this.m.Icon = "weapons/melee/bardiche_01" + v + "_70x70.png";
+		this.m.IconLarge = "weapons/melee/bardiche_01" + v + ".png";
+		this.m.ArmamentIcon = "icon_bardiche_01" + v;
 	}
 
 	o.addSkill <- function( _skill )

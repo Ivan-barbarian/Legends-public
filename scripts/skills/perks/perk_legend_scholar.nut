@@ -10,6 +10,14 @@ this.perk_legend_scholar <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	// this perk is handled in starting scenario
+	function onAdded()
+	{
+		::World.Statistics.getFlags().set("HasScholar", true);
+	}
+
+	function onRemoved()
+	{
+		::World.Statistics.getFlags().remove("HasScholar");
+	}
 
 });

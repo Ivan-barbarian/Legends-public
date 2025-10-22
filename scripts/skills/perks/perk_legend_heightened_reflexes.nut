@@ -3,54 +3,23 @@ this.perk_legend_heightened_reflexes <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		::Const.Perks.setup(this.m, ::Legends.Perk.LegendHeightenedReflexes);
-		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
+		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
 
-	function getBonus()
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		if (this.getContainer() == null)
-		{
-			return 3;
-		}
+		local item = _skill.getItem();
 
-		local actor = this.getContainer().getActor();
+		if (item == null)
+			return;
+		if (item.isItemType(this.Const.Items.ItemType.Defensive) && !item.isItemType(this.Const.Items.ItemType.Weapon))
+			return;
 
-		if (actor == null)
-		{
-			return 3;
-		}
-
-		local rdef = actor.getBaseProperties().RangedDefense;
-		local bonus = rdef ;
-		return this.Math.max(3, this.Math.floor(bonus));
+		_properties.DamageTotalMult *= 1.0 + this.Math.floor(this.getContainer().getActor().getInitiative() * 0.15) * 0.01;
 	}
-
-	function getTooltip()
-	{
-		local bonus = this.getBonus();
-		local tooltip = this.skill.getTooltip();
-
-			tooltip.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "You are gaining [color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "[/color] initiative due to heightened reflexes"
-			});
-
-
-		return tooltip;
-	}
-
-	function onUpdate( _properties )
-	{
-		local bonus = this.getBonus();
-		_properties.Initiative += bonus;
-	}
-
-
 });
 

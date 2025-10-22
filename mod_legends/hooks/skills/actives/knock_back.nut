@@ -7,6 +7,7 @@
 	o.create = function()
 	{
 		create();
+		this.m.HitChanceBonus = 25;
 		this.m.FatigueCost = 15;
 	}
 
@@ -113,9 +114,18 @@
 		}
 	}
 
-	o.onAnySkillUsed <- function ( _skill, _targetEntity, _properties )
-	{
-		if (_skill == this && this.getContainer().hasPerk(::Legends.Perk.ShieldBash))
+	local onAnySkillUsed = o.onAnySkillUsed;
+	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties )
+	{	
+		onAnySkillUsed( _skill, _targetEntity, _properties );
+
+		if (_skill != this)
+			return;
+
+		if (_properties.IsSpecializedInShields)
+			this.m.HitChanceBonus += 15;
+
+		if (this.getContainer().hasPerk(::Legends.Perk.ShieldBash))
 		{
 			local item = this.getContainer().getActor().getOffhandItem();
 			local shieldBonus = this.Math.min(10, item == null ? 0 : this.Math.floor(item.m.ConditionMax * 0.05));

@@ -67,6 +67,7 @@ this.legend_ranged_flail_skill <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInFlails ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.ActionPointCost = _properties.IsSpecializedInPolearms ? 4 : 5;
 	}
 
 	function onUse( _user, _targetTile )

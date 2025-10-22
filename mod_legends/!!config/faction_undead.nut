@@ -31,8 +31,8 @@
 	FatigueEffectMult = 0.0,
 	MoraleEffectMult = 0.0,
 	Armor = [
-		35,
-		0
+		75,
+		40
 	]
 };
 

@@ -31,29 +31,16 @@ this.perk_legend_vala_chant_senses <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 
 		if (!this.skill.isUsable())
-		{
 			return false;
-		}
 
 		if (this.m.ChantIsActive)
-		{
 			return false;
-		}
 
 		if (actor.getSkills().hasEffect(::Legends.Effect.LegendValaCurrentlyChanting))
-		{
 			return false;
-		}
 
-		if (actor.getMainhandItem() == null)
-		{
+		if (!::Legends.S.hasItemFlag(actor.getMainhandItem(), "vala_staff"))
 			return false;
-		}
-
-		if (actor.getMainhandItem().getID() != "weapon.legend_staff_vala")
-		{
-			return false;
-		}
 
 		return true;
 	}
@@ -69,7 +56,7 @@ this.perk_legend_vala_chant_senses <- this.inherit("scripts/skills/skill", {
 			text = "Until the start of her next turn all allies within 3 tiles of the Vala receive a bonus to their melee and ranged defenses. Being closer to the Vala increases the bonus amount"
 		});
 
-		if (actor.getMainhandItem() == null || actor.getMainhandItem() != "weapon.legend_staff_vala")
+		if (!::Legends.S.hasItemFlag(actor.getMainhandItem(), "vala_staff"))
 		{
 			ret.push({
 				id = 9,

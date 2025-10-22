@@ -49,7 +49,7 @@ this.legend_warlock_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.StaffTree,
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.CleaverTree
 			],
@@ -66,7 +66,8 @@ this.legend_warlock_background <- this.inherit("scripts/skills/backgrounds/chara
 			Class = [],
 			Profession = [],
 			Magic = [
-				this.Const.Perks.WarlockMagicTree
+				this.Const.Perks.WarlockMagicTree,
+				this.Const.Perks.StavesMagicTree
 			]
 		}
 	}

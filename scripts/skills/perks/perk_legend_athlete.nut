@@ -10,21 +10,9 @@ this.perk_legend_athlete <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onAdded()
+	function onUpdate(_properties)
 	{
-		if (!this.m.Container.hasActive(::Legends.Active.LegendClimb))
-		{
-			::Legends.Actives.grant(this, ::Legends.Active.LegendClimb);
-		}
-		if (!this.m.Container.hasActive(::Legends.Active.LegendSprint))
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_sprint_skill_5"));
-		}
-	}
-
-	function onRemoved()
-	{
-		::Legends.Actives.remove(this, ::Legends.Active.LegendClimb);
+		_properties.FatigueEffectMult *= 1.0 - 0.002 * this.getContainer().getActor().getFatigueMax();
 	}
 
 });

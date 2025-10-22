@@ -25,7 +25,7 @@
 			::Legends.Traits.getID(::Legends.Trait.Brave),
 			::Legends.Traits.getID(::Legends.Trait.Determined),
 			::Legends.Traits.getID(::Legends.Trait.Deathwish),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
 			::Legends.Traits.getID(::Legends.Trait.Fearless),
 			::Legends.Traits.getID(::Legends.Trait.Optimist),
@@ -74,7 +74,8 @@
 				this.Const.Perks.NoblesTree,
 				this.Const.Perks.MercenaryTree
 			],
-			Profession = [], 
+			Profession = [],
+			Class = [],
 			Magic = [
 				this.Const.Perks.AssassinMagicTree
 			]

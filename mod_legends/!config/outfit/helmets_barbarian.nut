@@ -35,6 +35,7 @@
 		],
 		Vanity = [
 			[1, "vanity/legend_helmet_bear_head"], //10
+			[1, "vanity/legend_helmet_wolf_helm"],
 		]
 	}]
 };

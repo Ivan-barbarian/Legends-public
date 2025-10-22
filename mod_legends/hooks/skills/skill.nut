@@ -38,6 +38,18 @@
 		return this.buildTextFromTemplate(this.m.Description, vars);
 	}
 
+	local getFatigueCost = o.getFatigueCost;
+	o.getFatigueCost = function()
+	{
+		local item = this.getItem();
+		if (this.m.Container != null && this.m.IsWeaponSkill && item != null)
+		{
+			local containerProperties = this.m.Container.getActor().getCurrentProperties();
+			this.m.FatigueCostMult = ::Math.minf(this.m.FatigueCostMult, (item.isItemType(::Const.Items.ItemType.Weapon) && ::Legends.S.isCharacterWeaponSpecialized(containerProperties, this.getItem())) ? this.Const.Combat.WeaponSpecFatigueMult : 1.0);
+		}
+		return getFatigueCost();
+	}
+
 	o.getActionPointCost = function()
 	{
 		if (this.m.Container.getActor().getCurrentProperties().IsSkillUseFree)
@@ -184,7 +196,7 @@
 				id = 7,
 				type = "text",
 				icon = "ui/icons/chance_to_hit_head.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.min(100, p.HitChance[this.Const.BodyPart.Head]) + "%[/color] chance to hit the head"
+				text = "Has a combined total [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.min(100, p.HitChance[this.Const.BodyPart.Head]) + "%[/color] chance to hit the head"
 			});
 		}
 
@@ -1399,7 +1411,7 @@
 			}
 		}
 
-		if (isHit && this.Math.rand(1, 100) <= _targetEntity.getCurrentProperties().RerollDefenseChance)
+		if (isHit && this.Math.rand(1, 100) <= defenderProperties.RerollDefenseChance)
 		{
 			r = this.Math.rand(1, 100);
 			isHit = r <= toHit;
@@ -1610,7 +1622,7 @@
 		hitInfo.DamageRegular = damageRegular * damageMult;
 		hitInfo.DamageArmor = damageArmor * damageMult;
 		hitInfo.DamageDirect = damageDirect;
-		hitInfo.DamageFatigue = this.Const.Combat.FatigueReceivedPerHit * _info.Properties.FatigueDealtPerHitMult;
+		hitInfo.DamageFatigue = this.Const.Combat.FatigueReceivedPerHit * _info.Properties.FatigueDealtPerHitMult + _info.Properties.FatigueDealtAsPercentOfMaxFatigue * _info.TargetEntity.getFatigueMax();
 		hitInfo.DamageMinimum = _info.Properties.DamageMinimum;
 		hitInfo.BodyPart = bodyPart;
 		hitInfo.BodyDamageMult = bodyPartDamageMult;

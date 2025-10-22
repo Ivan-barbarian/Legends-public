@@ -56,7 +56,12 @@
 				{
 				R = 15,
 				P = 1.0,
-				S = "weapons/legend_sling"
+				S = "weapons/legend_dilapitated_sling"
+			},
+			{
+				R = 40,
+				P = 1.0,
+				S = "weapons/legend_sturdy_sling"
 			},
 			{
 				R = 30,
@@ -186,7 +191,7 @@
 			{
 				R = 60,
 				P = 1.0,
-				S = "accessory/legend_hand_wraps_item"
+				S = "accessory/gloves/legend_hand_wraps_item"
 			},
 			{
 				R = 90,
@@ -200,18 +205,54 @@
 			}
 		];
 
+		if (this.m.Settlement.getSize() >= 2)
+		{
+			list.extend([
+			{
+				R = 50,
+				P = 1.0,
+				S = "misc/legend_weapon_skill_book_item"
+			},
+			{
+				R = 50,
+				P = 1.0,
+				S = "misc/legend_profession_skill_book_item"
+			},
+			{
+				R = 50,
+				P = 1.0,
+				S = "misc/legend_class_skill_book_item"
+			},
+			{
+				R = 50,
+				P = 1.0,
+				S = "misc/legend_armor_skill_book_item"
+			}]);
+		}
+
 		if (this.m.Settlement.getSize() >= 3)
 		{
-			list.push({
+			list.extend([
+			{
 				R = 50,
 				P = 1.0,
-				S = "supplies/medicine_item"
-			});
-			list.push({
+				S = "misc/legend_weapon_skill_book_item"
+			},
+			{
 				R = 50,
 				P = 1.0,
-				S = "supplies/armor_parts_item"
-			});
+				S = "misc/legend_profession_skill_book_item"
+			},
+			{
+				R = 50,
+				P = 1.0,
+				S = "misc/legend_class_skill_book_item"
+			},
+			{
+				R = 50,
+				P = 1.0,
+				S = "misc/legend_armor_skill_book_item"
+			}]);
 		}
 
 		if (this.m.Settlement.getSize() >= 2 && this.m.Settlement.hasAttachedLocation("attached_location.fishing_huts"))

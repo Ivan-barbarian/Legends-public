@@ -66,55 +66,54 @@ this.legend_donkey_background <- this.inherit("scripts/skills/backgrounds/charac
 		];
 		this.m.CustomPerkTree = [
 			[
-				::Legends.Perk.Colossus,
-				::Legends.Perk.NineLives,
-				::Legends.Perk.Pathfinder,
-				::Legends.Perk.Steadfast,
-				::Legends.Perk.BagsAndBelts,
-				::Legends.Perk.Recover
+				this.Legends.Perk.Colossus,
+				this.Legends.Perk.NineLives,
+				this.Legends.Perk.Pathfinder,
+				this.Legends.Perk.Steadfast,
+				this.Legends.Perk.BagsAndBelts,
+				this.Legends.Perk.Recover
 			],
 			[
-				::Legends.Perk.Dodge,
-				::Legends.Perk.HoldOut,
-				// ::Legends.Perk.LegendComposure,
-				::Legends.Perk.LegendAlert,
-				::Legends.Perk.LegendOnslaught,
-				::Legends.Perk.SteelBrow
+				this.Legends.Perk.Dodge,
+				this.Legends.Perk.HoldOut,
+				// this.Legends.Perk.LegendComposure,
+				this.Legends.Perk.LegendAlert,
+				this.Legends.Perk.LegendOnslaught,
+				this.Legends.Perk.SteelBrow
 			],
 			[
-				::Legends.Perk.Anticipation,
-				::Legends.Perk.Rotation,
-				::Legends.Perk.LegendPeaceful,
-				::Legends.Perk.Taunt,
-				::Legends.Perk.LegendSprint
+				this.Legends.Perk.Anticipation,
+				this.Legends.Perk.Rotation,
+				this.Legends.Perk.LegendPeaceful,
+				this.Legends.Perk.Taunt,
+				// this.Legends.Perk.LegendSprint
 			],
 			[
-				::Legends.Perk.LegendEfficientPacking,
-				::Legends.Perk.LegendAmmoBinding,
-				::Legends.Perk.LegendMedPackages,
-				::Legends.Perk.LegendToolsDrawers
-
+				this.Legends.Perk.LegendEfficientPacking,
+				this.Legends.Perk.LegendAmmoBinding,
+				this.Legends.Perk.LegendMedPackages,
+				this.Legends.Perk.LegendToolsDrawers
 			],
 			[
-				::Legends.Perk.LoneWolf,
-				::Legends.Perk.Footwork,
-				::Legends.Perk.LegendLastStand,
-				::Legends.Perk.LegendBlendIn,
-				::Legends.Perk.Underdog
+				this.Legends.Perk.LoneWolf,
+				this.Legends.Perk.Footwork,
+				this.Legends.Perk.LegendLastStand,
+				this.Legends.Perk.LegendBlendIn,
+				this.Legends.Perk.Underdog
 			],
 			[
-				::Legends.Perk.Nimble,
-				::Legends.Perk.LegendRebound,
-				::Legends.Perk.LegendPacifist,
-				::Legends.Perk.LegendSkillfulStacking,
-				::Legends.Perk.LegendMuscularity,
+				this.Legends.Perk.Nimble,
+				this.Legends.Perk.LegendRebound,
+				this.Legends.Perk.LegendPacifist,
+				this.Legends.Perk.LegendSkillfulStacking,
+				this.Legends.Perk.LegendMuscularity,
 			],
 			[
-				::Legends.Perk.Fearsome,
-				// ::Legends.Perk.Stalwart,
-				::Legends.Perk.LegendAmmoBundles,
-				::Legends.Perk.LegendMedIngredients,
-				::Legends.Perk.LegendToolsSpares,
+				this.Legends.Perk.Fearsome,
+				// this.Legends.Perk.Stalwart,
+				this.Legends.Perk.LegendAmmoBundles,
+				this.Legends.Perk.LegendMedIngredients,
+				this.Legends.Perk.LegendToolsSpares,
 			],
 			[],
 			[],
@@ -149,7 +148,7 @@ this.legend_donkey_background <- this.inherit("scripts/skills/backgrounds/charac
 
 	function onBuildDescription()
 	{
-		return "{  %name% was raised to pull plows on a farm. |  %name% was reared by a traveling merchant. | A donkey's life is tough %name% has been used for many things. | Though the work is dangerous, being a caravan donkey allowed %name% to see the world. | When her former owner died, %name% was put up for sale. | Hardy and resolute, %name% was the pick of the bunch. | Sold from owner to owner %name% has worked for more caravans than most traders.} {But the trader she worked for turned out to be abusive, nary a whip away from being a slave driver. A farmer bought %name% to free her, but eventually the cost got too great and she was sold again. | One day, goods went missing and she was blamed for it, promptly ending her time with the caravan. | But a caravan needs protection for a reason, and an ambush by brigands proved why. %name% barely made it out alive. | Years on the road went without a hitch until a new caravan master died on the road and %name% was left tied to a wagon without food until rescued. | Caravans are frequently attacked, and in one battle as the caravan hands fell %name% ran into the night. | Sadly, with the expanding war the caravan\'s profits were marginal. %name% was let go as the merchants retired their wagons. | After seeing the foul work of beasts on a their caravan, it didn\'t take long for %name% to find a new owner. | But war deprived the caravan of stock and soon its driver took to selling the donkeys.  %name% was among the last to be sold. | Sadly, her caravan began to sell human chattel. While the profits were enormous, it garnered the attention of a local militia - and their pitchforks. One ambush later and %name% was running for her life.} {Now %name% is being sold by a farmer for being too stubborn  | A donkey like %name% is no stranger to danger, making her a good fit for any mercenary group. | With her caravan days behind her, working for a sellsword was just another avenue for oats. | In %name%\'s mind, being a mercenary is a lot like being a caravanner. Just more carrots. | Well versed to traveling, %name% seems like a natural fit to the tasks already befit for a mercenary. | Years of road travel have molded %name% into quite the durable figure. Any group of mercenaries could use more donkeys like her.}";
+		return "{%name% was raised to pull plows on a farm. |  %name% was reared by a traveling merchant. | A donkey's life is tough %name% has been used for many things. | Though the work is dangerous, being a caravan donkey allowed %name% to see the world. | When her former owner died, %name% was put up for sale. | Hardy and resolute, %name% was the pick of the bunch. | Sold from owner to owner %name% has worked for more caravans than most traders.} {But the trader she worked for turned out to be abusive, nary a whip away from being a slave driver. A farmer bought %name% to free her, but eventually the cost got too great and she was sold again. | One day, goods went missing and she was blamed for it, promptly ending her time with the caravan. | But a caravan needs protection for a reason, and an ambush by brigands proved why. %name% barely made it out alive. | Years on the road went without a hitch until a new caravan master died on the road and %name% was left tied to a wagon without food until rescued. | Caravans are frequently attacked, and in one battle as the caravan hands fell %name% ran into the night. | Sadly, with the expanding war the caravan\'s profits were marginal. %name% was let go as the merchants retired their wagons. | After seeing the foul work of beasts on a their caravan, it didn\'t take long for %name% to find a new owner. | But war deprived the caravan of stock and soon its driver took to selling the donkeys.  %name% was among the last to be sold. | Sadly, her caravan began to sell human chattel. While the profits were enormous, it garnered the attention of a local militia - and their pitchforks. One ambush later and %name% was running for her life.} {Now %name% is being sold by a farmer for being too stubborn  | A donkey like %name% is no stranger to danger, making her a good fit for any mercenary group. | With her caravan days behind her, working for a sellsword was just another avenue for oats. | In %name%\'s mind, being a mercenary is a lot like being a caravanner. Just more carrots. | Well versed to traveling, %name% seems like a natural fit to the tasks already befit for a mercenary. | Years of road travel have molded %name% into quite the durable figure. Any group of mercenaries could use more donkeys like her.}";
 	}
 
 	function onChangeAttributes()
@@ -190,6 +189,20 @@ this.legend_donkey_background <- this.inherit("scripts/skills/backgrounds/charac
 		};
 		return c;
 	}
+
+	function onUpdate(_properties)
+	{
+		if (::World.Statistics.getFlags().get("HasVeterinarian"))
+		{
+			_properties.HitpointsMult *= 1.25;
+		}
+	}
+
+	function getModifier()
+	{
+		return ::World.Statistics.getFlags().get("HasVeterinarian") ? 12 : 0;
+	}
+
 	function onAdded()
 	{
 		if (m.IsNew)

@@ -311,8 +311,8 @@ local VanillaTree = [
 		[::Const.Perks.ClubClassTree, ::Const.Perks.MaceTree],
 		[::Const.Perks.InquisitionClassTree, ::Const.Perks.CrossbowTree],
 		[::Const.Perks.LongswordClassTree, ::Const.Perks.SwordTree],
-		[::Const.Perks.InventorClassTree,::Const.Perks.CrossbowTree],
-		[::Const.Perks.StaffClassTree,::Const.Perks.StaffTree],
+		[::Const.Perks.InventorClassTree, ::Const.Perks.CrossbowTree],
+		[::Const.Perks.StaffClassTree, ::Const.Perks.PolearmTree],
 		[::Const.Perks.SlingClassTree, ::Const.Perks.SlingTree]
 	];
 
@@ -502,6 +502,11 @@ local VanillaTree = [
 					{
 						continue
 					}
+					if (i >= _tree.len()) {
+						for (local j = _tree.len(); j <= i; j++) {
+							_tree.push([]);
+						}
+					}
 					_tree[i].push(p);
 				}
 			}
@@ -512,4 +517,3 @@ local VanillaTree = [
 }
 
 ::Const.Perks.PerksTreeTemplate <- ::Const.Perks.BuildCustomPerkTree(VanillaTree)
-

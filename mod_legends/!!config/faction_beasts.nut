@@ -75,6 +75,25 @@
 		240
 	]
 };
+::Const.Tactical.Actor.LegendSpiderCluster <- {
+	XP = 50,
+	ActionPoints = 12,
+	Hitpoints = 80,
+	Bravery = 30,
+	Stamina = 120,
+	MeleeSkill = 40,
+	RangedSkill = 0,
+	MeleeDefense = 0, //inbuilt dodge compensates for this
+	RangedDefense = 40,
+	Initiative = 200,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 5,
+	Armor = [
+		0,
+		0
+	]
+};
 ::Const.Tactical.Actor.LegendRockUnhold <- {
 	XP = 1100,
 	ActionPoints = 12,
@@ -315,3 +334,23 @@
 		0
 	]
 }
+
+::Const.Tactical.Actor.LegendEnragedHyena <- {
+	XP = 400,
+	ActionPoints = 14,
+	Hitpoints = 240,
+	Bravery = 80,
+	Stamina = 200,
+	MeleeSkill = 95,
+	RangedSkill = 0,
+	MeleeDefense = 20,
+	RangedDefense = 20,
+	Initiative = 160,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 25,
+	Armor = [
+		80,
+		80
+	]
+};

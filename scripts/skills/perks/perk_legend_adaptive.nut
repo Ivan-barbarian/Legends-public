@@ -268,7 +268,7 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 	            return this.Const.Perks.LongswordClassTree;
 
 	    //Slings
-	        case _item.getID() == "weapon.legend_sling":
+	        case _item.getID() == "weapon.legend_dilapitated_sling":
 	            return this.Const.Perks.SlingClassTree;
 
 	    //Staves
@@ -311,7 +311,6 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 					Sling = this.Const.Perks.SlingTree,
 					Spear = this.Const.Perks.SpearTree,
 					Sword = this.Const.Perks.SwordTree,
-					Staff = this.Const.Perks.StaffTree,
 					Throwing = this.Const.Perks.ThrowingTree
 				}
 				foreach (weapon, tree in weaponToPerkMap)

@@ -13,7 +13,8 @@ class Defs:
         {"name": "nach_helm", "min" : 1, "max" : 1, "layer": "vanity"},
         {"name": "mountain_helm", "min" : 1, "max" : 2, "layer": "vanity"},
         {"name": "demon_alp_helm", "min" : 1, "max" : 1, "layer": "vanity"},
-        {"name": "legend_jewelry", "min" : 1, "max" : 1, "layer": "vanity"}
+        {"name": "legend_jewelry", "min" : 1, "max" : 1, "layer": "vanity"},
+        {"name": "wild_helmet", "min" : 1, "max" : 1, "layer": "helm"}
     ]
 
     layers = [
@@ -63,7 +64,7 @@ class Defs:
  "title" :  "Leather Hood",
  "desc" :  "A closed leather cap that protects the head and neck. Padded for extra protection."
  },
-{"name" : "beak_hood"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 150, "con" : 65, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "false",
+{"name" : "beak_hood"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 150, "con" : 65, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "true",
  "title" :  "Beaked Hood",
  "desc" :  "A thick leather hood with a distinctive, bird-like mask. The beak acts as a ventilator, containing sweet-smelling herbs to ward away sickness and disease."
  },
@@ -151,10 +152,10 @@ class Defs:
  "title" :  "Southern Coin Headband",
  "desc" :  "A southern headband of coins strung together."
  },
-{"name" : "mummy_bandage"                     , "layer" : "hood", "min" : 1, "max" : 2, "base" : True, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "true",
- "title" :  "Ancient Southern Facemask",
- "desc" :  "Wrappings from a long dead embalmed corpse."
- },
+# {"name" : "mummy_bandage"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "true",
+#  "title" :  "Ancient Southern Facemask",
+#  "desc" :  "Wrappings from a long dead embalmed corpse."
+#  },
 
 
 
@@ -341,13 +342,9 @@ class Defs:
  "title" :  "Kettle Hat",
  "desc" :  "A full-metal helmet with a very wide rim."
  },
-{"name" : "kettle_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3500, "con" : 130, "stam" : -9, "vis" : -2, "hair" : "true", "beard" : "false", "named" : True, "rmaxViz" : 1, "rminViz" : 2, "rmaxStam" : 7, "rminStam" : 9, "rminCond" : 130, "rmaxCond" : 155, "names" : Names,
+{"name" : "kettle_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 2, "value" : 3500, "con" : 130, "stam" : -9, "vis" : -2, "hair" : "true", "beard" : "false", "named" : True, "rmaxViz" : 1, "rminViz" : 2, "rmaxStam" : 7, "rminStam" : 9, "rminCond" : 130, "rmaxCond" : 155, "names" : Names,
  "title" :  "Kettle Helm",
  "desc" :  "An exceptional and sturdy kettle helm. Blackened and polished, it has a gilded point."
- },
-{"name" : "fluted_kettle_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3500, "con" : 130, "stam" : -9, "vis" : -2, "hair" : "true", "beard" : "false", "named" : True, "rmaxViz" : 1, "rminViz" : 2, "rmaxStam" : 7, "rminStam" : 9, "rminCond" : 130, "rmaxCond" : 155, "names" : Names,
- "title" :  "Kettle Helm",
- "desc" :  "An exceptional and sturdy kettle helm. Masterfully crafted, it has flutes which converge at the top point."
  },
 {"name" : "enclave_kettle"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1250, "con" : 145, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "false",
  "title" :  "Kettle Sallet",
@@ -429,7 +426,7 @@ class Defs:
  "title" :  "Great Helm",
  "desc" :  "A closed metal helm with breathing holes. Great in the way of protection but hard to breathe in and limiting the field of view."
  },
-{"name" : "legend_armet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1750, "con" : 155, "stam" : -11, "vis" : -2, "hair" : "true", "beard" : "true",
+{"name" : "legend_armet"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 1750, "con" : 155, "stam" : -11, "vis" : -2, "hair" : "true", "beard" : "true",
  "title" :  "Armet",
  "desc" :  "A finely crafted close helm of outstanding workmanship."
  },
@@ -595,10 +592,6 @@ class Defs:
  "title" :  "Ancient Mask",
  "desc" :  "A masked helm of an ancient honor guard."
  },
-{"name" : "vampire_crown"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",
- "title" :  "Ancient Crown",
- "desc" :  "A crown of ancient design, relic of a bygone era in a far away land."
- },
 {"name" : "ancient_crown"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 200, "con" : 20, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "false",
  "title" :  "Ancient Diadem",
  "desc" :  "An ancient crown from ages past."
@@ -727,16 +720,10 @@ class Defs:
  "title" :  "Southern Bearded Faceplate",
  "desc" :  "A faceplate in the southern bearded style."
  },
-{"name" : "mummy_mask"                     , "layer" : "top", "min" : 1, "max" : 2, "value" : 450, "con" : 40, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true",
+{"name" : "mummy_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 40, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true",
  "title" :  "Ancient Southern Facemask",
  "desc" :  "A facemask from a long dead civilisation."
  },
-
-{"name" : "mummy_beard"                     , "layer" : "top", "min" : 1, "max" : 3, "value" : 200, "con" : 15, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "true",
- "title" :  "Ancient Southern Beard",
- "desc" :  "A beard cover from a long dead civilisation."
- },
-
 {"name" : "faceplate_full_breaths"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 300, "con" : 35, "stam" : -2, "vis" : -1, "hair" : "false", "beard" : "true",
  "title" :  "Breathed Faceplate",
  "desc" :  "A faceplate filled with breathes for easy breathing and increased sight."
@@ -1060,23 +1047,14 @@ class Defs:
  "title" :  "Southern Veil",
  "desc" :  "A thin wispy southern veil."
  },
-
-{"name" : "southern_veil_coin"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 30, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",
- "title" :  "Southern Coin Veil",
- "desc" :  "A southern veil made of coins threaded togther."
- },
 {"name" : "southern_earings"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 20, "con" : 2, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",
  "title" :  "Southern Earings",
  "desc" :  "Delicate southern metal earings."
  },
-
-
-
 {"name" : "southern_headress_coin"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 50, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",
  "title" :  "Southern Coin Headress",
  "desc" :  "A southern headress of coins strung together."
  },
-
 
 # {"name" : "lindwurm_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
 #  "title" :  "Lindwurm Helm", \
@@ -1160,5 +1138,27 @@ class Defs:
 {"name" : "goblin_tail"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 1, "value" : 20, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",
  "title" :  "Goblin Tail",
  "desc" :  "A knotted tail of hair used as decoration by an goblin."
- }
+ },
+
+{"name" : "diviner_wraps"                  , "layer" : "hood", "min" : 1, "max" : 5, "base" : True, "value" : 100, "con" : 50, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "true",
+  "title" :  "Diviner's Wraps",
+  "desc" :  "The headwear of The Diviner, despite not having any way to see through the fabric, once it sits on your face you can see through it as if it was never there at all."
+},
+{"name" : "diviner_top"                  , "layer" : "helm", "min" : 1, "max" : 2, "value" : 5000, "con" : 65, "stam" : -3, "vis" : 5, "hair" : "true", "beard" : "false",
+  "title" :  "Diviner's Crown",
+  "desc" :  "The crown of The Diviner. Upon placing it on your head it was as if your mind expanded out from your body"
+},
+{"name" : "fleshcultist_book"                  , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 100, "con" : 15, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",
+  "title" :  "Fleshcultist Book",
+  "desc" :  "An old book strapped to the head that once belonged to a twisted flesh cultist, every page of the book is blank."
+},
+{"name" : "fleshcultist_mask"                  , "layer" : "top", "min" : 1, "max" : 2, "value" : 100, "con" : 15, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "true",
+  "title" :  "Fleshcultist Mask",
+  "desc" :  "A tattered mask that once belonged to a twisted flesh cultist."
+},
+{"name" : "fleshcultist_straps"                  , "layer" : "vanity", "min" : 1, "max" : 2, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",
+  "title" :  "Fleshcultist Straps",
+  "desc" :  "A spattering of supple leather straps that once belonged to a twisted flesh cultist."
+},
+
 ]

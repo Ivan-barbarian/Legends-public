@@ -68,7 +68,9 @@
 				this.Const.Perks.ViciousTree
 			],
 			Enemy = [],
-			Class = [],
+			Class = [
+				this.Const.Perks.TailorClassTree
+			],
 			Profession = [
 				this.Const.Perks.RepairProfessionTree
 			], 

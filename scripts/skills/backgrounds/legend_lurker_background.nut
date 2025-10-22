@@ -35,7 +35,7 @@ this.legend_lurker_background <- this.inherit("scripts/skills/backgrounds/charac
 			::Legends.Traits.getID(::Legends.Trait.Bright),
 			::Legends.Traits.getID(::Legends.Trait.Greedy),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed)
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted)
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.MeleeSkill
@@ -244,7 +244,7 @@ this.legend_lurker_background <- this.inherit("scripts/skills/backgrounds/charac
 			}
 			else if (r <= 80)
 			{
-				items.equip(this.new("scripts/items/weapons/legend_sling"));
+				items.equip(this.new("scripts/items/weapons/legend_dilapitated_sling"));
 			}
 			else
 			{
@@ -296,4 +296,3 @@ this.legend_lurker_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.getContainer().getActor().getFlags().add("cultist");
 	}
 });
-

@@ -48,7 +48,7 @@ this.legend_horse_courser <- this.inherit("scripts/skills/backgrounds/legend_hor
 			[
 				::Legends.Perk.Anticipation,
 				::Legends.Perk.Steadfast,
-				::Legends.Perk.LegendSprint,
+				// ::Legends.Perk.LegendSprint,
 				::Legends.Perk.LegendOnslaught,
 				::Legends.Perk.LegendHorseCollection,
 				::Legends.Perk.LegendBackToBasics,
@@ -61,7 +61,7 @@ this.legend_horse_courser <- this.inherit("scripts/skills/backgrounds/legend_hor
 				::Legends.Perk.LegendMedPackages,
 				::Legends.Perk.LegendToolsDrawers,
 				::Legends.Perk.LegendHorseImpulsion,
-				::Legends.Perk.LegendHorseHippology
+				::Legends.Perk.LegendHippology
 			],
 			[
 				::Legends.Perk.LoneWolf,

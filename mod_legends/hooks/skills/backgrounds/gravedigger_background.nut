@@ -19,7 +19,7 @@
 			::Legends.Traits.getID(::Legends.Trait.Swift),
 			::Legends.Traits.getID(::Legends.Trait.Cocky),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Dexterous),
 			::Legends.Traits.getID(::Legends.Trait.Quick),
 			::Legends.Traits.getID(::Legends.Trait.IronLungs),
@@ -57,7 +57,7 @@
 			Class = [
 				this.Const.Perks.ShovelClassTree
 			],
-			Profession = [], 
+			Profession = [],
 			Magic = []
 		}
 	}

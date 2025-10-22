@@ -113,7 +113,9 @@ this.legend_accessory_dog <- this.inherit("scripts/items/accessory/accessory", {
 			local entity = this.Tactical.spawnEntity(this.getScript(), _onTile.Coords.X, _onTile.Coords.Y);
 			entity.setItem(this);
 			entity.setName(this.getName());
-			entity.setVariant(this.getVariant());
+			if ("setVariant" in entity) { // white wolf has no variant
+				entity.setVariant(this.getVariant());
+			}
 
 			if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.LegendDogWhisperer))
 			{

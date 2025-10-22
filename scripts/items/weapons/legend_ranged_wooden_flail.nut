@@ -26,8 +26,8 @@ this.legend_ranged_wooden_flail <- this.inherit("scripts/items/weapons/weapon", 
 		this.m.RangeMin = 1;
 		this.m.RangeMax = 2;
 		this.m.RangeIdeal = 2;
-		this.m.RegularDamage = 20;
-		this.m.RegularDamageMax = 50;
+		this.m.RegularDamage = 25;
+		this.m.RegularDamageMax = 55;
 		this.m.ArmorDamageMult = 0.5;
 		this.m.DirectDamageMult = 0.3;
 		this.m.ChanceToHitHead = 10;

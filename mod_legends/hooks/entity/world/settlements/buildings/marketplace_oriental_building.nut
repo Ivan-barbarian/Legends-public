@@ -194,11 +194,6 @@
 				S = "helmets/legend_southern_veil"
 			},
 			{
-				R = 80,
-				P = 1.0,
-				S = "helmets/legend_southern_veil_coin"
-			},
-			{
 				R = 70,
 				P = 1.0,
 				S = "helmets/legend_headress_coin"
@@ -206,7 +201,7 @@
 			{
 				R = 60,
 				P = 1.0,
-				S = "accessory/legend_hand_wraps_item"
+				S = "accessory/gloves/legend_hand_wraps_item"
 			},
 			{
 				R = 90,
@@ -222,6 +217,11 @@
 				R = 50,
 				P = 1.0,
 				S = "weapons/warfork"
+			},
+			{
+				R = 60,
+				P = 1.0,
+				S = "accessory/legend_sighthound_item"
 			}
 		];
 

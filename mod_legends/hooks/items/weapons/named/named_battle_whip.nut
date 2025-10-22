@@ -7,7 +7,7 @@
 	o.create = function ()
 	{
 		create();
-		this.m.Categories = "Cleaver, Whip, One-Handed";
+		this.m.Categories = "Cleaver/Whip, One-Handed";
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Cultist;
 	}
 

@@ -696,11 +696,12 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 
 				// Add 2 poachers to the guest roster
 				local numPoachers = 2;
+				local freeSlots = ::Legends.S.getEmptySlotsInFormation();
 				for( local i = 0; i != numPoachers; i = ++i )
 				{
 					local poacher = this.World.getGuestRoster().create("scripts/entity/tactical/humans/legend_poacher_guest"); // Test character based off of legend_peasant_poacher stats & perks
 					poacher.setFaction(1);
-					poacher.setPlaceInFormation(19 + i);
+					poacher.setPlaceInFormation(freeSlots.pop());
 					poacher.assignRandomEquipment();
 					this.Flags.set("Poacher" + i, poacher.getID());
 				}
@@ -865,11 +866,12 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 
 				// Add 2 poachers to the guest roster
 				local numPoachers = 2;
+				local freeSlots = ::Legends.S.getEmptySlotsInFormation();
 				for( local i = 0; i != numPoachers; i = ++i )
 				{
 					local poacher = this.World.getGuestRoster().create("scripts/entity/tactical/humans/legend_poacher_guest"); // Test character based off of legend_peasant_poacher stats & perks
 					poacher.setFaction(1);
-					poacher.setPlaceInFormation(19 + i);
+					poacher.setPlaceInFormation(freeSlots.pop());
 					poacher.assignRandomEquipment();
 					this.Flags.set("Poacher" + i, poacher.getID());
 				}

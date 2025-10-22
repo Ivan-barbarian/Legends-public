@@ -1,0 +1,193 @@
+this.legend_legion_prefect_background <- this.inherit("scripts/skills/backgrounds/character_background", {
+	m = {},
+	function create()
+	{
+		this.character_background.create();
+		this.m.ID = "background.legend_legion_prefect";
+		this.m.Name = "Prefect";
+		this.m.Icon = "ui/backgrounds/background_puppet.png"; //to do
+		this.m.BackgroundDescription = "An official or administrator with some standing to someone who\'s name and title is unknown to you.";
+		// this.m.GoodEnding = ""; //to do
+		// this.m.BadEnding = ""; //to do
+		this.m.HiringCost = 0;
+		this.m.DailyCost = 0;
+		this.m.Excluded = ::Legends.Legion.exludedTraits();
+
+		this.m.ExcludedTalents = [
+			//this.Const.Attributes.Hitpoints,
+			this.Const.Attributes.Bravery,
+			this.Const.Attributes.Fatigue
+		];
+
+		//apperance
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
+		this.m.Hairs = this.Const.Hair.CommonMale;
+		this.m.HairColors = this.Const.HairColors.All;
+		this.m.Beards = this.Const.Beards.All;
+		this.m.Bodies = this.Const.Bodies.Muscular;
+		//---
+		this.m.BackgroundType = this.Const.BackgroundType.Untalented;
+		this.m.Names = this.Const.Strings.AncientDeadNames;
+		this.m.LastNames = this.Const.Strings.AncientDeadTitles;
+		this.m.Level = this.Math.rand(1, 3);
+		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
+		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
+		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
+		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[3]; // 5, 8, 13, 21, 34, 55
+		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[2]; // 0.0, 0.05, 0.10, 0.20
+		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2]; // 0.0, 0.10, 0.30, 0.50, 1.0
+		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[2]; // 0.0, 0.10, 0.30, 0.50
+		this.m.Modifiers.Terrain = [
+				0.0, // ?
+				0.0, //ocean
+				0.0, //plains
+				0.0, //swamp
+				0.0, //hills
+				0.0, //forest
+				0.0, //forest
+				0.0, //forest_leaves
+				0.0, //autumn_forest
+				0.0, //mountains
+				0.0, // ?
+				0.0, //farmland
+				0.0, //snow
+				0.0, //badlands
+				0.0, //highlands
+				0.0, //stepps
+				0.0, //ocean
+				0.0, //desert
+				0.0 //oasis
+			];
+		this.m.PerkTreeDynamic = {
+			Weapon = [
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.SpearTree,
+				this.Const.Perks.SlingTree,
+				this.Const.Perks.TwoHandedTree,
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.CleaverTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree,
+				this.Const.Perks.ClothArmorTree
+			],
+			Traits = [
+				this.Const.Perks.CalmTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.OrganisedTree,
+				this.Const.Perks.InspirationalTree,
+				this.Const.Perks.IntelligentTree
+			],
+			Enemy = [],
+			Class = [
+				this.Const.Perks.ScytheClassTree
+			],
+			Profession = [],
+			Magic = []
+		}
+	}
+
+	//Default Male
+	function setGender(_gender = -1)
+	{
+		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
+
+		if (_gender != 1) return;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.Names = this.Const.Strings.AncientDeadNamesFemale;
+		this.m.LastNames = this.Const.Strings.AncientDeadTitles;
+		this.m.HairColors = this.Const.HairColors.All;
+		this.m.Bodies = this.Const.Bodies.Muscular;
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
+	}
+
+	function onBuildDescription() //to do
+	{
+		return "{ TODO | TODO }";
+	}
+
+	function onChangeAttributes() //uses Character_background.nut template (Skeleton)
+	{
+		local c = {
+			Hitpoints = [
+				5,
+				10
+			],
+			Bravery = [ //not needed except for resisting charm and sleep
+				20,
+				25
+			],
+			Stamina = [ //not needed except for equipment weight
+				20,
+				25
+			],
+			MeleeSkill = [
+				8,
+				10
+			],
+			RangedSkill = [
+				4,
+				7
+			],
+			MeleeDefense = [
+				5,
+				8
+			],
+			RangedDefense = [
+				3,
+				6
+			],
+			Initiative = [
+				10,
+				15
+			]
+		};
+		return c;
+	}
+
+	function onAdded()
+	{
+		this.character_background.onAdded();
+		if (this.m.IsNew) {
+			::Legends.Traits.grant(this, ::Legends.Trait.LegendFleshless);
+		}
+
+		local actor = this.getContainer().getActor();
+		actor.m.ExcludedInjuries = ::Legends.Legion.ExludedInjures;
+		actor.getFlags().add("legion_can_command");  //justfies if this background is subject to the legion command skill
+	}
+
+	function adjustHiringCostBasedOnEquipment() //reduces cost for equipment worn on skeletons to zero for recruiting purposes.
+	{
+		local actor = this.getContainer().getActor();
+		actor.m.HiringCost = this.Math.floor(this.m.HiringCost + 500 * this.Math.pow(this.m.Level - 1, 1.5));
+	}
+
+	function onAddEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+
+		items.equip(::Const.World.Common.pickItem([
+			[1, "weapons/ancient/bladed_pike"],
+			[1, "weapons/ancient/legend_gladius"],
+			[1, "weapons/ancient/legend_kopis"],
+			[1, "weapons/ancient/warscythe"]
+		], "scripts/items/"));
+
+		items.equip(::Const.World.Common.pickArmor([
+			[2, ::Legends.Armor.Ancient.ancient_plated_scale_hauberk],
+			[1, ::Legends.Armor.Ancient.ancient_scale_coat],
+			[2, ::Legends.Armor.Ancient.ancient_plate_harness],
+			[1, ::Legends.Armor.Ancient.ancient_plated_mail_hauberk]
+		]));
+
+		items.equip(::Const.World.Common.pickHelmet([
+			[1, ::Legends.Helmet.None]
+		]));
+	}
+});

@@ -21,7 +21,7 @@
 			::Legends.Traits.getID(::Legends.Trait.Clumsy),
 			::Legends.Traits.getID(::Legends.Trait.Fat),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Bright),
 			::Legends.Traits.getID(::Legends.Trait.Bleeder),
 			::Legends.Traits.getID(::Legends.Trait.Fragile),
@@ -83,8 +83,12 @@
 				this.Const.Perks.FitTree
 			],
 			Enemy = [],
-			Class = [this.Const.Perks.WoodaxeClassTree],
-			Profession = [], 
+			Class = [
+				this.Const.Perks.WoodaxeClassTree
+			],
+			Profession = [
+				this.Const.Perks.WoodworkingProfessionTree
+			],
 			Magic = []
 		}
 	}

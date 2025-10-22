@@ -62,19 +62,24 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function isArmorNamed()
 	{
-		if (this.isNamed()) {
+		if (this.isNamed())
 			return true;
-		}
-
-		foreach (u in this.m.Upgrades)
-		{
+		foreach (u in this.m.Upgrades) {
 			if (u != null && u.isNamed())
-			{
 				return true;
-			}
 		}
-
 		return false;
+	}
+
+	function isArmorLegendary()
+	{
+		if (this.isItemType(::Const.Items.ItemType.Legendary))
+			return true;
+		foreach (u in this.m.Upgrades) {
+			if (u != null && u.isItemType(::Const.Items.ItemType.Legendary))
+				return true;
+		}
+		return false
 	}
 
 	function isBought()
@@ -92,10 +97,10 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function getIcon()
 	{
+		if (this.isArmorLegendary())
+			return "layers/legendary_icon_glow.png";
 		if (this.isArmorNamed())
-		{
 			return "layers/named_icon_glow.png";
-		}
 		return this.m.Icon;
 	}
 
@@ -128,10 +133,8 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function getIconLarge()
 	{
-		if (this.isArmorNamed()) {
-			return "layers/named_icon_glow.png"
-		}
-
+		if (this.isArmorNamed())
+			return this.getIcon();
 		return this.m.IconLarge != "" ? this.m.IconLarge : null;
 	}
 
@@ -498,6 +501,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		if (this.m.Upgrades[slot] != null)
 		{
 			oldItem = this.removeUpgrade(slot);
+			if (oldItem == null) return false;
 		}
 
 		this.m.Upgrades[slot] = _upgrade;
@@ -951,10 +955,11 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 		local staminaMult = 1.0;
 
-		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.Brawny))
-		{
-			staminaMult = 0.70;
-		}
+		// if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.Brawny))
+		// {
+		// 	staminaMult = 0.70;
+		// }
+		// 19.2 changes to Brawny
 
 		_properties.Armor[this.Const.BodyPart.Head] += this.getArmor();
 		_properties.ArmorMax[this.Const.BodyPart.Head] += this.getArmorMax();

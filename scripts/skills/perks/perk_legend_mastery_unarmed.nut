@@ -17,15 +17,15 @@ this.perk_legend_mastery_unarmed <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.getContainer().hasActive(::Legends.Active.LegendKick) && this.getContainer().getActor().isPlayerControlled())
+		if (!this.getContainer().hasActive(::Legends.Active.LegendTackle) && this.getContainer().getActor().isPlayerControlled())
 		{
-			::Legends.Actives.grant(this, ::Legends.Active.LegendKick);
+			::Legends.Actives.grant(this, ::Legends.Active.LegendTackle);
 		}
 	}
 
 	function onRemoved()
 	{
-		::Legends.Actives.remove(this, ::Legends.Active.LegendKick);
+		::Legends.Actives.remove(this, ::Legends.Active.LegendTackle);
 	}
 
 });

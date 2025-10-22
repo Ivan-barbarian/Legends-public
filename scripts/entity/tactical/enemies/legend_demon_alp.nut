@@ -78,11 +78,12 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 
 		this.m.OnDeathLootTable.extend([
 			[50,  function () {
-				local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
-				token.setRuneVariant(this.m.DroppableRunes[this.Math.rand(0, this.m.DroppableRunes.len() - 1)]);
-				token.setRuneBonus(true);
-				token.updateRuneSigilToken();
-				return token;
+				local selected = this.m.DroppableRunes[this.Math.rand(0, this.m.DroppableRunes.len() - 1)];
+				local rune = ::new(::Legends.Runes.get(selected).Script);
+				rune.setRuneVariant(selected);
+				rune.setRuneBonus(true);
+				rune.updateRuneSigilToken();
+				return rune;
 			}.bindenv(this)]
 		]);
 
@@ -211,7 +212,7 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 
 		local deathLoot = this.getItems().getDroppableLoot(_killer);
 		local tileLoot = this.getLootForTile(_killer, deathLoot);
-		local corpse = this.generateCorpse(_tile, _fatalityType);
+		local corpse = this.generateCorpse(_tile, _fatalityType, _killer);
 		this.dropLoot(_tile, tileLoot, !flip);
 
 		if (_tile == null) {
@@ -224,12 +225,13 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
 
-	function generateCorpse( _tile, _fatalityType )
+	function generateCorpse( _tile, _fatalityType, _killer )
 	{
 		local corpse = clone this.Const.Corpse;
 		corpse.CorpseName = "An " + this.getName();
 		corpse.Tile = _tile;
 		corpse.Value = 2.0;
+		corpse.Items = this.getItems().prepareItemsForCorpse(_killer);
 		corpse.IsResurrectable = false;
 		corpse.IsHeadAttached = _fatalityType != this.Const.FatalityType.Decapitated;
 		return corpse;
@@ -258,8 +260,8 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 		b.setValues(this.Const.Tactical.Actor.LegendDemonAlp);
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
+		b.IsImmuneToBleeding = true;
 		b.IsImmuneToDisarm = true;
-		b.IsImmuneToRoot = true;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;
@@ -270,12 +272,10 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 		body.setBrush("bust_demonalp_body_01");
 		body.varySaturation(0.2);
 		local head = this.addSprite("head");
-		head.setBrush("demon_alp_head");
-		//head.setBrush("bust_demonalp_head_0" + this.Math.rand(1, 3));
+		head.setBrush("bust_demonalp_head_0" + this.Math.rand(1, 3));
 		head.Saturation = body.Saturation;
 		local injury = this.addSprite("injury");
-		injury.setBrush("demon_alp_wounds");
-		//injury.setBrush("bust_demonalp_01_injured");
+		injury.setBrush("bust_demonalp_01_injured");
 		injury.Visible = false;
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.55;
@@ -289,6 +289,8 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 		::Legends.Perks.grant(this, ::Legends.Perk.Underdog);
 		::Legends.Perks.grant(this, ::Legends.Perk.Footwork);
 		::Legends.Perks.grant(this, ::Legends.Perk.Anticipation);
+		::Legends.Perks.grant(this, ::Legends.Perk.Stalwart);
+		::Legends.Perks.grant(this, ::Legends.Perk.LegendPoisonImmunity);
 
 		if (::Legends.isLegendaryDifficulty())
 		{

@@ -32,7 +32,7 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.Bodies = this.Const.Bodies.NorthernFemale;
 		this.m.Ethnicity = 0;
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Female | this.Const.BackgroundType.Crusader;
@@ -48,7 +48,8 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 				this.Const.Perks.AxeTree,
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.ShieldTree,
-				this.Const.Perks.ThrowingTree
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.OneHandedTree,
 			],
 			Defense = [	
 				this.Const.Perks.HeavyArmorTree,

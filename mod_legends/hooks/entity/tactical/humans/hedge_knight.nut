@@ -68,6 +68,7 @@
 				[5, ::Legends.Helmet.Standard.legend_helm_snub],
 				[5, ::Legends.Helmet.Standard.legend_helm_short],
 				[5, ::Legends.Helmet.Standard.legend_helm_curved],
+				[5, ::Legends.Helmet.Standard.legend_helm_sharp],
 				//[2, ::Legends.Helmet.Standard.wallace_sallet],
 				//[2, ::Legends.Helmet.Standard.deep_sallet],
 				//[2, ::Legends.Helmet.Standard.italo_norman_helm],
@@ -121,6 +122,7 @@
 				[5, ::Legends.Helmet.Standard.legend_helm_snub],
 				[5, ::Legends.Helmet.Standard.legend_helm_short],
 				[5, ::Legends.Helmet.Standard.legend_helm_curved],
+				[5, ::Legends.Helmet.Standard.legend_helm_sharp],
 				//[2, ::Legends.Helmet.Standard.wallace_sallet],
 				//[2, ::Legends.Helmet.Standard.deep_sallet],
 				//[2, ::Legends.Helmet.Standard.italo_norman_helm],
@@ -152,6 +154,7 @@
 		local weapons = [
 			"weapons/named/named_greataxe",
 			"weapons/named/named_greatsword",
+			"weapons/named/legend_named_flamberge",
 			"weapons/named/named_bardiche",
 			"weapons/named/named_two_handed_hammer",
 			"weapons/named/named_two_handed_mace",

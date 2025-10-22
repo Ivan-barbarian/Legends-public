@@ -153,11 +153,11 @@ traitDefs.push({
 	Random = true
 });
 
-::Legends.Trait.Fainthearthed <- null;
+::Legends.Trait.Fainthearted <- null;
 traitDefs.push({
 	ID = "trait.fainthearted",
 	Script = "scripts/skills/traits/fainthearted_trait",
-	Const = "Fainthearthed",
+	Const = "Fainthearted",
 	Random = true
 });
 
@@ -1210,6 +1210,14 @@ traitDefs.push({
 	Name = "Redback Poison",
 });
 
+::Legends.Trait.RacialLegendClusterSpider <- null;
+traitDefs.push({
+	ID = "racial.legend_cluster_spider",
+	Script = "scripts/skills/racial/legend_cluster_spider_racial",
+	Const = "RacialLegendClusterSpider",
+	Name = "Cluster",
+});
+
 ::Legends.Trait.RacialLegendRockUnhold <- null;
 traitDefs.push({
 	ID = "racial.legend_rock_unhold",
@@ -1226,5 +1234,22 @@ traitDefs.push({
 	Name = "Blind Rage",
 });
 
+::Legends.Trait.RacialFleshGolem <- null;
+traitDefs.push({
+	ID = "racial.flesh_golem",
+	Script = "scripts/skills/racial/flesh_golem_racial",
+	Const = "RacialFleshGolem",
+	Name = "Flesh Golem Racial",
+});
+
+::Legends.Trait.RacialGrandDiviner <- null;
+traitDefs.push({
+	ID = "racial.grand_diviner",
+	Script = "scripts/skills/racial/grand_diviner_racial",
+	Const = "RacialGrandDiviner",
+	Name = "Diviner\'s Fury",
+});
+
 
 ::Legends.Traits.addTraitDefObjects(traitDefs);
+::Const.CharacterTraits = ::Const.CharacterTraits.filter(@(idx, trait) trait[0] != "trait.legend_frail");

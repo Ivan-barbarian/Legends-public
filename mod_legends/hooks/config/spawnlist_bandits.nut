@@ -345,13 +345,13 @@
 					Type = this.Const.World.Spawn.Troops.BanditLeader,
 					Cost = 40,
 					Roll = true
+				},
+				{
+					MinR = 600,
+					Type = this.Const.World.Spawn.Troops.BanditWarlord,
+					Cost = 125,
+					Roll = true
 				}
-				// {
-				// 	MinR = 600,
-				// 	Type = this.Const.World.Spawn.Troops.BanditWarlord,
-				// 	Cost = 125,
-				// 	Roll = true
-				// }
 			]
 		},
 		{

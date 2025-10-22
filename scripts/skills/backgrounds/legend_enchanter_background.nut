@@ -18,7 +18,7 @@ this.legend_enchanter_background <- this.inherit("scripts/skills/backgrounds/cha
 			::Legends.Traits.getID(::Legends.Trait.Loyal),
 			::Legends.Traits.getID(::Legends.Trait.Hesistant),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Brute),
 			::Legends.Traits.getID(::Legends.Trait.Bloodthirsty)
 		];
@@ -59,7 +59,7 @@ this.legend_enchanter_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.StaffTree,
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.SpearTree
 			],
@@ -76,7 +76,8 @@ this.legend_enchanter_background <- this.inherit("scripts/skills/backgrounds/cha
 			Class = [],
 			Profession = [],
 			Magic = [
-				this.Const.Perks.ValaChantMagicTree
+				this.Const.Perks.ValaChantMagicTree,
+				this.Const.Perks.StavesMagicTree
 			]
 		}
 	}
@@ -102,4 +103,3 @@ this.legend_enchanter_background <- this.inherit("scripts/skills/backgrounds/cha
 
 	}
 });
-

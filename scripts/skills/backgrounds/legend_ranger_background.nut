@@ -7,8 +7,8 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Name = "Ranger";
 		this.m.Icon = "ui/backgrounds/ranger_01.png";
 		this.m.BackgroundDescription = "Rangers are expert trackers and marksman, used to hunting prey of any kind";
-		this.m.GoodEnding = "While the %companyname% continued on with great success, %name% the ranger eventually saw fit to leave it all behind. He returned to the forests and fields, hunting deer and small game. He rarely showed the grim reality of hunting humans, but you have to imagine he\'d just rather stop doing it. As far as you know, he\'s doing well for himself these days. He purchased a bit of land and helps guide nobles on pricy hunting trips.";
-		this.m.BadEnding = "With the decline of the %companyname% readily obvious, %name% the ranger departed from the company and returned to game hunting. Unfortunately, a hunting trip with a nobleman went awry when the lord was gored through both cheeks by a boar. The hunter, feeling he\'d be blamed, shot by the nobleman and his guard and fled through the forests on his own. He has not been seen since.";
+		this.m.GoodEnding = "While the %companyname% continued on with great success, %name% the ranger eventually saw fit to leave it all behind. %They% returned to the forests and fields, hunting deer and small game. %They% rarely showed the grim reality of hunting humans, but you have to imagine %they%\'d just rather stop doing it. As far as you know, %they%\'s doing well for %themselves% these days. %They% purchased a bit of land and helps guide nobles on pricy hunting trips.";
+		this.m.BadEnding = "With the decline of the %companyname% readily obvious, %name% the ranger departed from the company and returned to game hunting. Unfortunately, a hunting trip with a nobleman went awry when the lord was gored through both cheeks by a boar. The hunter, feeling %they%\'d be blamed, shot the nobleman and his guard and fled through the forests on %their% own. %They% has not been seen since.";
 		this.m.HiringCost = 2500;
 		this.m.DailyCost = 35;
 		this.m.Excluded = [
@@ -76,100 +76,41 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 			0.0, //desert
 			0.0 //oasis
 		];
-		this.m.CustomPerkTree = [
-			[
-				::Legends.Perk.CripplingStrikes,
-				::Legends.Perk.FastAdaption,
-				::Legends.Perk.BagsAndBelts,
-				::Legends.Perk.Student,
-				::Legends.Perk.Recover,
-				::Legends.Perk.Pathfinder,
-				::Legends.Perk.LegendLookout,
-				::Legends.Perk.LegendSummonHound,
-				::Legends.Perk.LegendBackToBasics,
-				::Legends.Perk.LegendAlert
+		this.m.PerkTreeDynamic = {
+			Weapon = [
+				this.Const.Perks.CrossbowTree,
+				this.Const.Perks.BowTree,
+				this.Const.Perks.SlingTree,
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.DaggerTree
 			],
-			[
-				::Legends.Perk.CoupDeGrace,
-				::Legends.Perk.Bullseye,
-				::Legends.Perk.Dodge,
-				::Legends.Perk.QuickHands,
-				::Legends.Perk.Gifted,
-				::Legends.Perk.LegendNightvision,
-				::Legends.Perk.LegendDebilitate,
-				::Legends.Perk.LegendAthlete,
-				::Legends.Perk.LegendFavouredEnemyDirewolf,
-				::Legends.Perk.LegendFavouredEnemySpider,
+			Defense = [
+				this.Const.Perks.LightArmorTree,
+				this.Const.Perks.MediumArmorTree
 			],
-			[
-				::Legends.Perk.Backstabber,
-				::Legends.Perk.Anticipation,
-				::Legends.Perk.Rotation,
-				::Legends.Perk.LegendFeint,
-				::Legends.Perk.LegendOnslaught,
-				::Legends.Perk.LegendDoubleStrike,
-				::Legends.Perk.LegendSummonFalcon,
-				::Legends.Perk.LegendAmmoBinding,
-				::Legends.Perk.LegendFavouredEnemyDirewolf,
-				::Legends.Perk.DevastatingStrikes
+			Traits = [
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.FitTree,
+				this.Const.Perks.AgileTree
 			],
-			[
-				::Legends.Perk.SpecAxe,
-				::Legends.Perk.SpecSword,
-				::Legends.Perk.SpecDagger,
-				::Legends.Perk.SpecCrossbow,
-				::Legends.Perk.SpecBow,
-				::Legends.Perk.LegendMasterySlings,
-				::Legends.Perk.LegendMasteryNets,
-				::Legends.Perk.LegendSpecPoison,
-				::Legends.Perk.SpecThrowing
+			Enemy = [
+				this.Const.Perks.BeastsTree,
+				this.Const.Perks.UnholdTree,
+				this.Const.Perks.SchratTree,
+				this.Const.Perks.ArchersTree
 			],
-			[
-				::Legends.Perk.Overwhelm,
-				::Legends.Perk.LoneWolf,
-				::Legends.Perk.Footwork,
-				::Legends.Perk.LegendCloseCombatArcher,
-				::Legends.Perk.LegendBallistics,
-				::Legends.Perk.LegendIncoming,
-				::Legends.Perk.LegendSummonWolf,
-				::Legends.Perk.LegendHeightenedReflexes,
-				::Legends.Perk.LegendLithe,
-				::Legends.Perk.LegendAmmoBundles,
-				::Legends.Perk.LegendFavouredEnemyOrk,
-				::Legends.Perk.LegendFavouredEnemyGoblin
+			Class = [
+				this.Const.Perks.BeastClassTree,
+				this.Const.Perks.SharpshooterClassTree
 			],
-			[
-				::Legends.Perk.Berserk,
-				::Legends.Perk.HeadHunter,
-				::Legends.Perk.Nimble,
-				::Legends.Perk.LegendRebound,
-				::Legends.Perk.LegendWindReader,
-				::Legends.Perk.LegendCascade,
-				::Legends.Perk.LegendCoordinatedVolleys,
-				::Legends.Perk.LegendPiercingShot,
-				::Legends.Perk.LegendPerfectFit,
-				::Legends.Perk.LegendSecondWind,
-				::Legends.Perk.LegendBlendIn,
-				::Legends.Perk.LegendFavouredEnemySchrat,
-				::Legends.Perk.LegendFavouredEnemyArcher
-			],
-			[
-				::Legends.Perk.KillingFrenzy,
-				::Legends.Perk.LegendPerfectFocus,
-				::Legends.Perk.BattleFlow,
-				::Legends.Perk.LegendEvasion,
-				::Legends.Perk.LegendBalance,
-				::Legends.Perk.LegendBigGameHunter,
-				::Legends.Perk.LegendFavouredEnemyUnhold,
-				::Legends.Perk.LegendFavouredEnemyLindwurm,
-				::Legends.Perk.LegendFreedomOfMovement,
-				::Legends.Perk.LegendFavouredEnemyUnhold,
-			],
-			[],
-			[],
-			[],
-			[]
-		];
+			Profession = [],
+			Magic = [
+				this.Const.Perks.RangerHuntMagicTree,
+				this.Const.Perks.MasterArcherTree
+			]
+		};
 	}
 
 	//Default Male
@@ -185,8 +126,6 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
-		this.m.GoodEnding = "While the %companyname% continued on with great success, %name% the ranger eventually saw fit to leave it all behind. She returned to the forests and fields, hunting deer and small game. She rarely showed the grim reality of hunting humans, but you have to imagine she\'d just rather stop doing it. As far as you know, she\'s doing well for herself these days. She purchased a bit of land and helps guide nobles on pricy hunting trips.";
-		this.m.BadEnding = "With the decline of the %companyname% readily obvious, %name% the ranger departed from the company and returned to game hunting. Unfortunately, a hunting trip with a nobleman went awry when the lord was gored through both cheeks by a boar. The hunter, feeling he\'d be blamed, shot by the nobleman and his guard and fled through the forests on her own. She has not been seen since.";
 
 	}
 

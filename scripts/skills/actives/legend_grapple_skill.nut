@@ -33,7 +33,8 @@ this.legend_grapple_skill <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.DirectDamageMult = 0.4;
 		this.m.ActionPointCost = 5; // Increased from 4. Can only be used once per turn
-		this.m.FatigueCost = 20; // Increased from 10
+		this.m.FatigueCost = 20;
+		this.m.HitChanceBonus = -20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 		this.m.ChanceDecapitate = 0;
@@ -63,11 +64,21 @@ this.legend_grapple_skill <- this.inherit("scripts/skills/skill", {
 		];
 
 		ret.push({
-				id = 5,
+			id = 5,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to grapple on a hit"
+		});
+
+		if (!::Legends.Perks.has(this, ::Legends.Perk.LegendGrappler))
+		{
+			ret.push({
+				id = 6,
 				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to grapple on a hit"
+				icon = "ui/icons/hitchance.png",
+				text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]-20%[/color] chance to hit"
 			});
+		}
 		if (this.m.Container.getActor().getCurrentProperties().IsSpecializedInFists)
 		{
 			ret.push({
@@ -148,10 +159,18 @@ this.legend_grapple_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
+			_properties.MeleeSkill -= 20;
 			_properties.DamageTotalMult = 0;
 			if (_properties.IsSpecializedInFists)
 			{
 				_properties.MeleeSkill += 10;
+				this.m.HitChanceBonus += 10;
+			}
+
+			if (::Legends.Perks.has(this, ::Legends.Perk.LegendGrappler))
+			{
+				_properties.MeleeSkill += 20;
+				this.m.HitChanceBonus += 20;
 			}
 		}
 	}

@@ -43,7 +43,6 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
-
 		this.m.Level = 3;
 		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Untalented | this.Const.BackgroundType.ExpertHunter;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
@@ -75,102 +74,65 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 			0.0, //desert
 			0.0 //oasis
 		];
+		this.m.PerkTreeDynamic = {
+			Weapon = [
+				this.Const.Perks.CrossbowTree,
+				this.Const.Perks.BowTree,
+				this.Const.Perks.SlingTree,
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.AxeTree,
+				this.Const.Perks.OneHandedTree
+			],
+			Defense = [
+				this.Const.Perks.ClothArmorTree,
+				this.Const.Perks.LightArmorTree,
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.FitTree,
+				this.Const.Perks.AgileTree,
+				this.Const.Perks.LargeTree
+			],
+			Enemy = [
+				this.Const.Perks.BeastsTree,
+				this.Const.Perks.OrcsTree,
+				this.Const.Perks.SchratTree,
+				this.Const.Perks.ArchersTree
+			],
+			Class = [
+				this.Const.Perks.BeastClassTree,
+				this.Const.Perks.HoundmasterClassTree,
+				this.Const.Perks.SharpshooterClassTree,
+			],
+			Profession = [],
+			Magic = [
+				this.Const.Perks.RangerHuntMagicTree,
+				this.Const.Perks.MasterArcherTree,
+				this.Const.Perks.ArcherCommandTree
+			]
+		};
+
 		this.m.CustomPerkTree = [
 			[
-				::Legends.Perk.LegendSummonHound,
-				::Legends.Perk.LegendSpecialistPoacher,
-				::Legends.Perk.CripplingStrikes,
-				::Legends.Perk.BagsAndBelts,
-				::Legends.Perk.Recover,
-				::Legends.Perk.Pathfinder,
-				::Legends.Perk.LegendLookout,
-				::Legends.Perk.LegendBackToBasics,
-				::Legends.Perk.LegendAlert
+				::Legends.Perk.LegendTacticalManeuvers
 			],
+			[],
 			[
-				::Legends.Perk.Bullseye,
-				::Legends.Perk.LegendHairSplitter,
-				::Legends.Perk.LegendDogWhisperer,
-				::Legends.Perk.LegendNetRepair,
-				::Legends.Perk.LegendDebilitate,
-				::Legends.Perk.LegendAthlete,
-				::Legends.Perk.Dodge,
-				::Legends.Perk.QuickHands,
-				::Legends.Perk.CoupDeGrace,
-				::Legends.Perk.LegendNightvision,
-				::Legends.Perk.LegendFavouredEnemyDirewolf,
-				::Legends.Perk.LegendFavouredEnemySpider
-
+				::Legends.Perk.LegendHairSplitter
 			],
-			[
-				::Legends.Perk.LegendNetCasting,
-				::Legends.Perk.LegendDogBreeder,
-				::Legends.Perk.LegendSummonFalcon,
-				::Legends.Perk.Backstabber,
-				::Legends.Perk.Anticipation,
-				::Legends.Perk.Rotation,
-				::Legends.Perk.LegendDoubleStrike,
-				::Legends.Perk.LegendAmmoBinding,
-				::Legends.Perk.DevastatingStrikes,
-				::Legends.Perk.LegendOnslaught
-			],
-			[
-				::Legends.Perk.SpecCrossbow,
-				::Legends.Perk.SpecBow,
-				::Legends.Perk.LegendMasteryNets,
-				::Legends.Perk.LegendPackleader,
-				::Legends.Perk.SpecAxe,
-				::Legends.Perk.SpecSword,
-				::Legends.Perk.SpecDagger,
-				::Legends.Perk.SpecThrowing,
-				::Legends.Perk.LegendMasterySlings,
-				::Legends.Perk.LegendSpecPoison,
-				::Legends.Perk.SpecThrowing
-			],
-			[
-				::Legends.Perk.LegendCloseCombatArcher,
-				::Legends.Perk.LegendDogMaster,
-				::Legends.Perk.Overwhelm,
-				::Legends.Perk.LoneWolf,
-				::Legends.Perk.LegendEvasion,
-				::Legends.Perk.LegendBallistics,
-				::Legends.Perk.LegendHeightenedReflexes,
-				::Legends.Perk.LegendIncoming,
-				::Legends.Perk.LegendAmmoBundles,
-				::Legends.Perk.LegendLithe,
-				::Legends.Perk.LegendFavouredEnemyOrk,
-				::Legends.Perk.LegendFavouredEnemyGoblin,
-			],
-			[
-				::Legends.Perk.Berserk,
-				::Legends.Perk.HeadHunter,
-				::Legends.Perk.Nimble,
-				::Legends.Perk.LegendRebound,
-				::Legends.Perk.LegendCoordinatedVolleys,
-				::Legends.Perk.LegendCascade,
-				::Legends.Perk.LegendWindReader,
-				::Legends.Perk.LegendPerfectFit,
-				::Legends.Perk.LegendPiercingShot,
-				::Legends.Perk.LegendSecondWind,
-				::Legends.Perk.LegendBlendIn,
-				::Legends.Perk.LegendFavouredEnemySchrat,
-				::Legends.Perk.LegendFavouredEnemyArcher
-			],
-			[
-				::Legends.Perk.LegendBigGameHunter,
-				::Legends.Perk.KillingFrenzy,
-				::Legends.Perk.LegendPerfectFocus,
-				::Legends.Perk.LegendFavouredEnemyUnhold,
-				::Legends.Perk.LegendFavouredEnemyLindwurm,
-				::Legends.Perk.LegendBalance,
-				::Legends.Perk.LegendFreedomOfMovement
-			],
+			[],
+			[],
+			[],
+			[],
 			[],
 			[],
 			[],
 			[]
 		];
-
 	}
 
 	//Default Male
@@ -278,7 +240,9 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, ::Legends.Armor.Standard.legend_ranger_armor]
+			[1, ::Legends.Armor.Standard.ragged_surcoat],
+			[1, ::Legends.Armor.Standard.thick_tunic],
+			[1, ::Legends.Armor.Standard.leather_tunic]
 		]));
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, ::Legends.Helmet.Standard.hood]

@@ -102,6 +102,7 @@
 				[5, ::Legends.Helmet.Standard.legend_helm_wings],
 				[5, ::Legends.Helmet.Standard.legend_helm_short],
 				[5, ::Legends.Helmet.Standard.legend_helm_curved],
+				[5, ::Legends.Helmet.Standard.legend_helm_sharp],
 				[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_great_helm_01],
 				[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_great_bascinet_01],
 				[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_great_bascinet_02],
@@ -124,6 +125,7 @@
 		local weapons = [
 			"weapons/named/named_axe",
 			"weapons/named/named_greatsword",
+			"weapons/named/legend_named_flamberge",
 			"weapons/named/named_mace",
 			"weapons/named/named_sword",
 			"weapons/named/legend_named_longsword"

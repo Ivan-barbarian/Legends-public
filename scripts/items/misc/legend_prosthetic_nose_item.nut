@@ -70,7 +70,7 @@ this.legend_prosthetic_nose_item <- this.inherit("scripts/items/item", {
 				id = 65,
 				type = "text",
 				icon = "ui/icons/warning.png",
-				text = "Can only be used if this character has a missing hand"
+				text = "Can only be used if this character has a missing nose"
 			}
 		]);
 

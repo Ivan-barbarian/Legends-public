@@ -33,7 +33,7 @@
 			::Legends.Traits.getID(::Legends.Trait.Disloyal),
 			::Legends.Traits.getID(::Legends.Trait.LegendDoubleTongued),
 			::Legends.Traits.getID(::Legends.Trait.Drunkard),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.FearBeasts),
 			::Legends.Traits.getID(::Legends.Trait.FearGreenskins),
 			::Legends.Traits.getID(::Legends.Trait.FearUndead),
@@ -94,22 +94,17 @@
 
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.TwoHandedTree,
-				this.Const.Perks.AxeTree,
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.ShieldTree,
 				this.Const.Perks.MaceTree,
-				this.Const.Perks.FlailTree,
 				this.Const.Perks.HammerTree,
-				this.Const.Perks.CrossbowTree
+				this.Const.Perks.SwordTree
 			],
 			Defense = [
-				this.Const.Perks.HeavyArmorTree,
-				this.Const.Perks.LightArmorTree
+				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [
 				this.Const.Perks.TrainedTree,
-				this.Const.Perks.ViciousTree,
 				this.Const.Perks.LargeTree,
 				this.Const.Perks.MartyrTree,
 				this.Const.Perks.FitTree
@@ -119,7 +114,7 @@
 				this.Const.Perks.SkeletonTree
 			],
 			Class = [],
-			Profession = [], 
+			Profession = [],
 			Magic = []
 		}
 	}
@@ -139,7 +134,7 @@
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
-		this.m.BeardChance = 1;
+		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.FemaleMuscular;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.BackgroundDescription = "Oathtakers are brave warriors sworn to uphold a strict code, and are no strangers to combat.";
@@ -297,4 +292,3 @@
 	}
 
 });
-

@@ -1,6 +1,7 @@
 ::mods_hookExactClass("items/accessory/accessory", function(o) {
 	o.m.StashModifier <- 0;
 	o.m.InventorySound <- "sounds/combat/armor_leather_impact_03.wav";
+	o.m.AccessoryVisible <- true;
 
 	o.getStashModifier <- function ()
 	{
@@ -46,6 +47,7 @@
 			this.World.State.getPlayer().calculateStashModifier()
 		}
 
+		this.setAccessoryVisible(this.m.AccessoryVisible);
 	}
 
 	o.playInventorySound <- function ( _eventType )
@@ -77,6 +79,40 @@
 		{
 			_properties.Stamina += getStaminaModifier();
 		}
+	}
+
+	o.toggleAccessoryVisible <- function() {
+		this.setAccessoryVisible(!this.isAccessoryVisible());
+		return this.isAccessoryVisible();
+	}
+
+	o.setAccessoryVisible <- function(_v) {
+		this.m.AccessoryVisible = _v;
+		if (this.m.ShowOnCharacter) {
+			local app = this.getContainer().getAppearance();
+			if (_v) {
+				app.Accessory = this.m.Sprite;
+			} else {
+				app.Accessory = "";
+			}
+			this.getContainer().updateAppearance();
+		}
+	}
+
+	o.isAccessoryVisible <- function() {
+		return this.m.AccessoryVisible;
+	}
+
+	local onSerialize = o.onSerialize;
+	o.onSerialize = function(_out) {
+		onSerialize(_out);
+		_out.writeBool(this.m.AccessoryVisible);
+	}
+
+	local onDeserialize = o.onDeserialize;
+	o.onDeserialize = function(_in) {
+		onDeserialize(_in);
+		this.m.AccessoryVisible = _in.readBool();
 	}
 
 });

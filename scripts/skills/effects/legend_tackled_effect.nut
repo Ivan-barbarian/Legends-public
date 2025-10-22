@@ -79,8 +79,8 @@ this.legend_tackled_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local actor = this.getContainer().getActor();
-		_properties.MeleeDefense *=0.5;
-		_properties.Initiative *=0.3;
+		_properties.MeleeDefense *= 0.5;
+		_properties.Initiative *= 0.3;
 		_properties.DamageReceivedTotalMult *= 1.25;
 
 		if (!actor.hasSprite("status_stunned") && !this.getContainer().hasEffect(::Legends.Effect.Stunned))

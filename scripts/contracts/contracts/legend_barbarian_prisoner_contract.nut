@@ -536,7 +536,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 
 							foreach( bro in bros )
 							{
-								if (bro.getBackground().getID() == "background.legend_berserker" || bro.getBackground().getID() == "background.legend_berserker_commander")
+								if (bro.getBackground().getID() == "background.legend_berserker" || bro.getBackground().getID() == "background.legend_commander_berserker")
 								{
 									candidates.push(bro);
 								}
@@ -841,9 +841,8 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 			this.m.Flags.set("Distance", 0);
 		}
 
-		this.m.IsRandomlyAdded = _out.readBool();
+		this.m.IsRandomlyAdded = _in.readBool();
 		this.contract.onDeserialize(_in);
 	}
 
 });
-

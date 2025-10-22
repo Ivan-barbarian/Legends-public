@@ -479,7 +479,7 @@ this.legend_mummy <- this.inherit("scripts/entity/tactical/actor", {
 		}
 
 		local face = this.addSprite("face");
-		face.setBrush("mummy_head_0" + this.Math.rand(1, 9));
+		face.setBrush("mummy_head_0" + this.Math.rand(1, 4));
 		local hair = this.addSprite("hair");
 		hair.setHorizontalFlipping(true);
 		hair.Color = beard.Color;

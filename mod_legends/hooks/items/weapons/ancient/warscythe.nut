@@ -12,7 +12,10 @@
 	{
 		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.Strike))
 		{
-			::Legends.Actives.grant(this.weapon, ::Legends.Active.LegendScytheCleave);
+			::Legends.Actives.grant(this.weapon, ::Legends.Active.Cleave, function (_skill)
+			{
+				_skill.m.IsScytheCleave = true;
+			}.bindenv(this));
 			return;
 		}
 

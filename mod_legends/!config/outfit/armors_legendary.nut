@@ -175,3 +175,16 @@
 };
 ::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Legendary.lindwurm_armor);
 
+::Legends.Armor.Legendary.grand_diviner_robes <- {
+	ID = "golems/grand_diviner_robes",
+	Script = "",
+	Sets = [{
+		Cloth = [[1, "cloth/legend_fleshcultist_tunic", 1]],
+		Chain = [[1, ""]],
+		Plate = [[1, "plate/legend_diviner_jacket_named", 1]],
+		Cloak = [[1, ""]],
+		Tabard = [[1, "tabard/legend_diviner_tabard"]],
+		Attachments = [[1, ""]],
+	}]
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Legendary.grand_diviner_robes);

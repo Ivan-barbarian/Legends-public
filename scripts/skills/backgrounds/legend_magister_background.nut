@@ -33,7 +33,7 @@ this.legend_magister_background <- this.inherit("scripts/skills/backgrounds/char
 			::Legends.Traits.getID(::Legends.Trait.Bright),
 			::Legends.Traits.getID(::Legends.Trait.Greedy),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed)
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted)
 		];
 		this.m.Titles = [
 			"the Cultist",
@@ -70,7 +70,7 @@ this.legend_magister_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.FlailTree,
 				this.Const.Perks.SlingTree,
 				this.Const.Perks.SwordTree,
-				this.Const.Perks.StaffTree
+				this.Const.Perks.PolearmTree
 			],
 			Defense = [
 				this.Const.Perks.ClothArmorTree
@@ -271,4 +271,3 @@ this.legend_magister_background <- this.inherit("scripts/skills/backgrounds/char
 		this.getContainer().getActor().getFlags().add("cultist");
 	}
 });
-

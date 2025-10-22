@@ -71,7 +71,7 @@ this.legend_drums_of_war_skill <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		this.m.FatigueCostMult = 1.0;
-		if (this.getContainer().hasPerk(::Legends.Perk.LegendMinnesanger))
+		if (_properties.IsSpecializedInMusic)
 		{
 			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
 			this.m.ActionPointCost -= 1;
@@ -113,15 +113,6 @@ this.legend_drums_of_war_skill <- this.inherit("scripts/skills/skill", {
 
 		foreach( a in actors )
 		{
-			if (a.getID() == _user.getID())
-				continue;
-
-			if (myTile.getDistanceTo(a.getTile()) > 8)
-				continue;
-
-			if (a.getFaction() != _user.getFaction())
-				continue;
-
 			if (a.getSkills().hasEffect(::Legends.Effect.LegendDrumsOfWar))
 				continue;
 
@@ -131,9 +122,6 @@ this.legend_drums_of_war_skill <- this.inherit("scripts/skills/skill", {
 			this.m.AffectedActors.push(a.weakref());
 		}
 
-		::Legends.Effects.grant(_user, ::Legends.Effect.LegendDrumsOfWar, function(_effect) {
-			_effect.setEffect(this.getBonus());
-		}.bindenv(this));
 		return true;
 	}
 
@@ -141,11 +129,7 @@ this.legend_drums_of_war_skill <- this.inherit("scripts/skills/skill", {
 	{
 		foreach(actor in this.m.AffectedActors)
 		{
-			if (actor == null)
-				continue;
-			if ("isNull" in actor && actor.isNull())
-				continue;
-			if (!actor.isAlive())
+			if (::Legends.S.skillEntityAliveCheck(actor))
 				continue;
 			::Legends.Effects.remove(actor.getSkills(), ::Legends.Effect.LegendDrumsOfWar);
 		}

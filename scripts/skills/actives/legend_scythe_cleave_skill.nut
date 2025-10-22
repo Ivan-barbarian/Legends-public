@@ -119,7 +119,7 @@ this.legend_scythe_cleave_skill <- this.inherit("scripts/skills/skill", {
 		{
 			if (!target.isAlive() || target.isDying())
 			{
-				if (this.isKindOf(target, "lindwurm_tail") || !target.getCurrentProperties().IsImmuneToBleeding)
+				if (target.getFlags().has("tail") || !target.getCurrentProperties().IsImmuneToBleeding)
 				{
 					this.Sound.play(this.m.SoundsA[this.Math.rand(0, this.m.SoundsA.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 				}

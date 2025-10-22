@@ -95,7 +95,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 		if (_damageHitpoints >= actor.getHitpoints())
 			return;
 
-		if (!actor.isAlive() || actor.isDying())
+		if (::Legends.S.skillEntityAliveCheck(actor))
 			return;
 
 		if (!this.checkEntities() || !this.isInRange())
@@ -143,7 +143,8 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 		this.m.isPerformingPayback = true;
 		if (_attackinfo.User.isAlive() && _attackinfo.TargetTile.getEntity().isAlive())
 		{
-			return _attackinfo.Skill.attackEntity(_attackinfo.User, _attackinfo.TargetTile.getEntity());
+			_attackinfo.Skill.attackEntity(_attackinfo.User, _attackinfo.TargetTile.getEntity());
+			this.getContainer().getActor().setDirty(true);
 		}
 		this.m.isPerformingPayback = false;
 	}

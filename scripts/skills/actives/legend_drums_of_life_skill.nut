@@ -51,7 +51,7 @@ this.legend_drums_of_life_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Restores [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getBonus() + "[/color] hitpoints to all allied units within 8 tiles"
+				text = "Restores [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getBonus() + "[/color] hitpoints to all allied units"
 			}
 		];
 
@@ -71,7 +71,7 @@ this.legend_drums_of_life_skill <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		this.m.FatigueCostMult = 1.0;
-		if (this.getContainer().hasPerk(::Legends.Perk.LegendMinnesanger))
+		if (_properties.IsSpecializedInMusic)
 		{
 			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
 			this.m.ActionPointCost -= 1;
@@ -113,15 +113,6 @@ this.legend_drums_of_life_skill <- this.inherit("scripts/skills/skill", {
 
 		foreach( a in actors )
 		{
-			if (a.getID() == _user.getID())
-				continue;
-
-			if (myTile.getDistanceTo(a.getTile()) > 8)
-				continue;
-
-			if (a.getFaction() != _user.getFaction())
-				continue;
-
 			if (a.getSkills().hasEffect(::Legends.Effect.LegendDrumsOfLife))
 				continue;
 
@@ -141,11 +132,7 @@ this.legend_drums_of_life_skill <- this.inherit("scripts/skills/skill", {
 	{
 		foreach(actor in this.m.AffectedActors)
 		{
-			if (actor == null)
-				continue;
-			if ("isNull" in actor && actor.isNull())
-				continue;
-			if (!actor.isAlive())
+			if (::Legends.S.skillEntityAliveCheck(actor))
 				continue;
 			::Legends.Effects.remove(actor.getSkills(), ::Legends.Effect.LegendDrumsOfLife);
 		}

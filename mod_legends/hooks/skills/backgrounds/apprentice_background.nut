@@ -52,7 +52,8 @@
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.HammerTree,
 				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.AxeTree
+				this.Const.Perks.AxeTree,
+				this.Const.Perks.OneHandedTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree

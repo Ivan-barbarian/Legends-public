@@ -182,6 +182,7 @@
 ::Const.CharacterProperties.IsSpecializedInFists <- false;
 ::Const.CharacterProperties.IsSpecializedInSlings <- false;
 ::Const.CharacterProperties.IsSpecializedInStaves <- false;
+::Const.CharacterProperties.IsSpecializedInMusic <- false;
 ::Const.CharacterProperties.IsSpecializedInStaffStun <- false;
 ::Const.CharacterProperties.IsSpecializedInSummons <- false;
 ::Const.CharacterProperties.DamageInitiativeMin <- 0;
@@ -189,6 +190,7 @@
 ::Const.CharacterProperties.DamageInitiativeCutoff <- 100;
 ::Const.CharacterProperties.FlatOnKillOtherActorModifier <- 0;
 ::Const.CharacterProperties.PercentOnKillOtherActorModifier <- 1.0;
+::Const.CharacterProperties.FatigueDealtAsPercentOfMaxFatigue <- 0.0;
 
 ::Const.CharacterProperties.getInitiativeMinDamage <- function ()
 {

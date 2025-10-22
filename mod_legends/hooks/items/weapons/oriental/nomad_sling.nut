@@ -10,19 +10,28 @@
 		this.m.RangeMin = 2;
 		this.m.RangeMax = 8;
 		this.m.RangeIdeal = 8;
-		this.m.RegularDamage = 30;
-		this.m.RegularDamageMax = 40;
-		this.m.ArmorDamageMult = 1.0;
+		this.m.RegularDamage = 45;
+		this.m.RegularDamageMax = 70;
+		this.m.ArmorDamageMult = 1.5;
 		this.m.DirectDamageMult = 0.7;
 		this.m.StaminaModifier = -10;
 		this.m.Condition = 80.0;
 		this.m.ConditionMax = 80.0;
+		this.setVariant(this.Math.rand(0, 2));
+	}
+
+	o.updateVariant <- function() {
+		local v = this.getVariant() == 0 ? "" : "_" + this.getVariant();
+		this.m.Icon = "weapons/ranged/warriors_sling_01" + v + "_70x70.png";
+		this.m.IconLarge = "weapons/ranged/warriors_sling_01" + v + ".png";
+		this.m.ArmamentIcon = "icon_sling_02" + v;
 	}
 
 	o.onEquip = function()
 	{
 		this.weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.LegendSlingHeavyStone);
+		// ::Legends.Actives.grant(this, ::Legends.Active.LegendSlingCenterMass);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendSlingstaffBash);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendLaunchAcidFlask);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendLaunchDazeBomb);

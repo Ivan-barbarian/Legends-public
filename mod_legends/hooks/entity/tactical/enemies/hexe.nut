@@ -14,8 +14,12 @@
 			local rune = ::new(::Legends.Runes.get(selected).Script);
 			rune.setRuneVariant(selected);
 			rune.setRuneBonus(true);
+			rune.updateRuneSigilToken();
 			return rune;
 		}.bindenv(this)]);
+		local rolls = ::Legends.S.extraLootChance(1);
+		for(local i = 0; i < rolls; i++)
+			this.m.OnDeathLootTable.push([0.5, "scripts/items/misc/legend_ancient_scroll_item"]);
 	}
 
 	local onInit = o.onInit;

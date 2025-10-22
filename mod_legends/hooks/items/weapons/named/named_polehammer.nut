@@ -7,7 +7,9 @@
 	o.create = function ()
 	{
 		create();
-		this.m.Variants = [1,2];
+		this.m.Variants = [1, 2, 3];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
+		this.updateVariant();
 	}
 
 	o.getTooltip <- function ()
@@ -29,6 +31,14 @@
 	o.onEquip = function ()
 	{
 		onEquip();
+		::Legends.Actives.grant(this, ::Legends.Active.LegendPryArmor, function (_skill) {
+			_skill.m.FatigueCost = 35;
+			_skill.m.ActionPointCost = 6;
+			_skill.m.MaxRange = 2;
+			_skill.m.Icon = "skills/legend_active_pry_armor_polehammer.png";
+			_skill.m.IconDisabled = "skills/legend_active_pry_armor_polehammer_bw.png";
+			_skill.m.Overlay = "active_legend_pry_armor_polehammer";
+		});
 		::Legends.Actives.grant(this, ::Legends.Active.Impale, function (_skill) {
 			_skill.m.Icon = "skills/legend_halberd_impale.png";
 			_skill.m.IconDisabled = "skills/legend_halberd_impale_bw.png";

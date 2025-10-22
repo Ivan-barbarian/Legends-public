@@ -25,7 +25,7 @@ this.legend_super_sleep_skill <- this.inherit("scripts/skills/actives/sleep_skil
 			targets.push(tile.getEntity());
 		}
 
-		if (_targetTile.IsOccupiedByActor && !tile.getEntity().isAlliedWith(_user))
+		if (_targetTile.IsOccupiedByActor && !_targetTile.getEntity().isAlliedWith(_user))
 			targets.push(_targetTile.getEntity());
 
 		local myTile = _user.getTile();

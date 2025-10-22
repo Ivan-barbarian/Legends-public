@@ -31,7 +31,7 @@
 			::Legends.Traits.getID(::Legends.Trait.Hesistant),
 			::Legends.Traits.getID(::Legends.Trait.Greedy),
 			::Legends.Traits.getID(::Legends.Trait.Fragile),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Dumb),
 			::Legends.Traits.getID(::Legends.Trait.LegendPredictable)
 		];
@@ -62,9 +62,9 @@
 			Weapon = [
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.PolearmTree,
 				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.ThrowingTree
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.OneHandedTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree,
@@ -82,7 +82,7 @@
 				this.Const.Perks.MercenaryTree
 			],
 			Class = [],
-			Profession = [], 
+			Profession = [],
 			Magic = [
 				this.Const.Perks.AssassinMagicTree
 			]
@@ -121,7 +121,7 @@
 
 	o.onBuildDescription <- function ()
 	{
-		return "{%name% likes %their% hoods and loose robes, as %they% walks you can make out a barely audible jingle under %their% coat. | %name% occasionally ducks into alleyways, bushes and dark doorways to exchange items with another figure in a flurry of hands as a predator would stash a fresh kill.} {Although shockingly average, %they% is much quieter than the other recruits you have had the displeasure of meeting. | %name% naturally gravitates to dark corners as rats would to grain and insists that %they% is very famous in certain circles, however %they% quickly changes the subject when you ask %them% for details.} {%They% is often lost in the maddening throng of the towns and hamlets dotted around the countryside - never have you met such an average looking mercenary who also doesn’t hesitate to slit the throat of the nearest man if it would so benefit %them%, even if %they% does grumble when travelling during daylight.}";
+		return "{%name% likes %their% hoods and loose robes, as %they% walks you can make out a barely audible jingle under %their% coat. | %name% occasionally ducks into alleyways, bushes and dark doorways to exchange items with another figure in a flurry of hands as a predator would stash a fresh kill.} {Although shockingly average, %they% is much quieter than the other recruits you have had the displeasure of meeting. | %name% naturally gravitates to dark corners as rats would to grain and insists that %they% is very famous in certain circles, however %they% quickly changes the subject when you ask %them% for details.} {%They% is often lost in the maddening throng of the towns and hamlets dotted around the countryside - never have you met such an average looking mercenary who also doesn\'t hesitate to slit the throat of the nearest man if it would so benefit %them%, even if %they% does grumble when travelling during daylight.}";
 	}
 
 	o.onChangeAttributes = function ()

@@ -1,5 +1,6 @@
 ::mods_registerJS("legends_assets.js");
 ::mods_registerJS("legends/hooks/!container.js");
+::mods_registerJS("legends/hooks/xbbcode.js");
 ::mods_registerJS("legends/hooks/character_screen.js");
 ::mods_registerCSS("legends/hooks/character_screen.css");
 ::mods_registerJS("legends/hooks/screens/loading/loading_screen.js");
@@ -64,3 +65,9 @@
 
 ::mods_registerJS("legends/hooks/encounters.js");
 ::mods_registerCSS("legends/hooks/encounters.css");
+
+// please make sure these two to be last
+::mods_registerJS("legends/hooks/armor_filter.js");
+::mods_registerCSS("legends/hooks/armor_filter.css");
+//---------------------------------------------------
+

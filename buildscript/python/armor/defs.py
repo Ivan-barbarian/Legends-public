@@ -13,6 +13,7 @@ class Defs:
         {"name": "tabard_named", "min" : 1, "max" : 26, "layer": "tabard"},
         {"name": "mountain_armor", "min" : 1, "max" : 2, "layer": "plate"},
         {"name": "skin_armor", "min" : 1, "max" : 2, "layer": "plate"},
+        {"name": "wild_scale", "min" : 1, "max" : 1, "layer" : "chain"}
     ]
 
     layers = [
@@ -92,6 +93,21 @@ class Defs:
  "desc" :  "A rugged, large robe made of simple cloth usually worn by monks and similar individuals who don\'t care for fashion.",
  "adesc" :""
 },
+{"name": "legend_vala_dress",                                  "layer": "cloth", "min": 1, "max": 1, "value" : 0, "con" : 40, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth",
+ "title" :  "Vala\'s Dress",
+ "desc" :  "A strong leather dress worn by a vala on her travels.",
+ "adesc" :""
+},
+{"name": "legend_vala_robe",                                  "layer": "cloth", "min": 1, "max": 1, "value" : 0, "con" : 60, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth",
+ "title" :  "Vala\'s Cloak",
+ "desc" :  "A rugged cloak for a vala\'s journeys through the lands.",
+ "adesc" :""
+},
+{"name": "legend_armor_rabble_fur",                            "layer": "cloth", "min": 1, "max": 1, "value" : 100, "con" : 5, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "rabble_fur",
+ "title" :  "Fur Armor",
+ "desc" :  "Matted fur and torn cloth, barely clothes",
+ "adesc" :""
+},
 {"name": "legend_robes_magic",                            "layer": "cloth", "min": 1, "max": 7, "value" : 100, "con" : 5, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "magic_robe",
  "title" :  "Magician\'s Robe",
  "desc" :  "A soft shiny robe worn by practictioners of the arcane arts",
@@ -158,8 +174,8 @@ class Defs:
  "adesc" :""
 },
 {"name": "legend_tunic_collar_deep",                                  "layer": "cloth", "min": 1, "max": 1, "value" : 25, "con" : 20, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth",
- "title" :  "Deep Collar Linen Tunic",
- "desc" :  "A simple cloth tunic. Fashionable but offering little in protection.",
+ "title" : "Deep Collar Linen Tunic",
+ "desc" : "A simple cloth tunic. Fashionable but offering little in protection.",
  "adesc" :""
 },
 {"name": "legend_dark_tunic",                             "layer": "cloth", "min": 1, "max": 3, "value" : 50, "con" : 35, "stam" : -4, "impactSound" : "leather", "invSound" : "cloth",
@@ -176,7 +192,7 @@ class Defs:
  "title" :  "Noble Tunic",
  "desc" :  "A fine linen tunic of exquisite material, embroided with pleasing patterns. Fashionable but offering little in protection.",
  "adesc" :"",
-    "named" : True, "rminStam" : 0, "rmaxStam": 2, "rminCond" : 46, "rmaxCond" : 56,  "names" : ['Heraldic Tunic', "Splendor", "Grandiosity", "Pageantry", "Swank", "Duty", "Honor", "Noble"]
+ "named" : True, "rminStam" : 0, "rmaxStam": 2, "rminCond" : 46, "rmaxCond" : 56,  "names" : ['Heraldic Tunic', "Splendor", "Grandiosity", "Pageantry", "Swank", "Duty", "Honor", "Noble"]
 },
 
 {"name": "legend_southern_robe",                 "layer": "cloth", "min": 1, "max": 6, "value" : 35, "con" : 25, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", "brush" : "southern_robe",
@@ -208,6 +224,11 @@ class Defs:
  "title" :  "Southern Noble Surcoat",
  "desc" :  "A studded and heavy padded coat that offers decent protection.",
  "adesc" : ""
+},
+{"name": "legend_fleshcultist_tunic",           "layer": "cloth", "min": 1, "max": 4, "value" : 350, "con" : 55, "stam" : -4, "impactSound" : "leather", "invSound" : "cloth", "brush" : "fleshcultist_tunic",
+ "title" :  "Fleshcultist Tunic",
+ "desc" :  "An elaborate leather tunic",
+ "adesc" : "Has an elaborate leather tunic"
 },
 
 # {"name": "legend_southern_cloth_sash",           "layer": "cloth", "min": 0, "max": 0, "value" : 30, "con" : 20, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth", "vanilla" : "body_southern", "variants" : [12,18,19], \
@@ -269,11 +290,6 @@ class Defs:
  "desc" :  "A basic mail shirt. Offers decent and affordable protection against slashing and piercing attacks.",
  "adesc" : "Includes a basic mail shirt that offers good protection against slashing and piercing attacks."
 },
-{"name": "wild_scale",                              "layer": "chain", "min": 1, "max": 1, "value" : 2000, "con" : 60, "stam" : -6, "impactSound" : "chain", "invSound" : "leather",
- "title" :  "Wild Scale",
- "desc" :  "A well crafted scale mail shirt",
- "adesc" : "Includes a basic mail shirt that offers good protection against slashing and piercing attacks."
-},
 {"name": "legend_armor_mail_shirt_simple",                "layer": "chain", "min": 1, "max": 1, "value" : 250, "con" : 25, "stam" : -3, "impactSound" : "chain", "invSound" : "leather",
  "title" :  "Simple Mail Shirt",
  "desc" :  "A simple mail shirt. Offers decent and affordable protection against slashing and piercing attacks.",
@@ -313,6 +329,12 @@ class Defs:
  "title" :  "Light Mail",
  "desc" :  "A shorter and lighter chainmail that offers good protection and is fatiguing to wear.",
  "adesc" : "Includes a shorter and lighter chainmail that offers good protection but is fatiguing to wear."
+},
+{"name": "legend_noble_mail",                  "layer": "chain", "min": 1, "max": 14, "value" : 1300, "con" : 60, "stam" : -7, "impactSound" : "chain", "invSound" : "leather", "brush" : "legend_heavy_mail",
+ "title" :  "Noble Mail",
+ "desc" :  "A wonderful long leather coat sewn over a light chain provides excellent protection for the vitals, while not weighing you down.",
+ "adesc" : "Includes a wonderful long leather coat sewn over a light chain provides excellent protection for the vitals, while not weighing you down.",
+ "named" : True, "rminStam" : 5, "rmaxStam": 7, "rminCond" : 70, "rmaxCond" : 90,  "names" : ['Heraldic Mail', "Splendor", "Grandiosity", "Pageantry", "Swank", "Full Mail", "Mail Hauberk", "Chainmail", "Surcoat", "Duty", "Honor", "Noble Mail"]
 },
 
 
@@ -433,11 +455,6 @@ class Defs:
 {"name": "legend_armor_leather_riveted",                  "layer": "plate", "min": 1, "max": 9, "value" : 900, "con" : 95, "stam" : -13, "impactSound" : "chain", "invSound" : "leather",
  "title" :  "Sellsword\'s Leather Armor",
  "desc" :  "A long leather armor coat reinforced with metal plates.",
- "adesc" : "Includes a long leather coat reinforced with metal plates that offers good protection but is very fatiguing to wear."
-},
-{"name": "legend_heavy_mail",                  "layer": "plate", "min": 1, "max": 14, "value" : 1300, "con" : 105, "stam" : -14, "impactSound" : "chain", "invSound" : "leather",
- "title" :  "Heavy Mail",
- "desc" :  "A long armor coat reinforced with studded metal plates and covered in colorful cloth.",
  "adesc" : "Includes a long leather coat reinforced with metal plates that offers good protection but is very fatiguing to wear."
 },
 {"name": "legend_armor_leather_riveted_light",            "layer": "plate", "min": 1, "max": 1, "value" : 700, "con" : 80, "stam" : -11, "impactSound" : "chain", "invSound" : "leather",
@@ -711,8 +728,17 @@ class Defs:
  "desc" :  "A heavy lamellar plated harness",
  "adesc" : "Has a heavy lamellar plated harness"
 },
-
-
+{"name": "legend_diviner_jacket_named",           "itemType" : "this.Const.Items.ItemType.Cultist", "layer": "plate", "min": 1, "max": 2, "value" : 3000, "con" : 40, "stam" : -3, "impactSound" : "leather", "invSound" : "cloth", "brush" : "diviner_jacket",
+ "title" :  "Diviner Jacket",
+ "desc" :  "An embellished jacket previously worn by the Diviner. You\'d expect the stench of rotting flesh to cling to it, but it remains pristine",
+ "adesc" : "Has an embellished jacket previously worn by the Diviner. You\'d expect the stench of rotting flesh to cling to it, but it remains pristine",
+ "named" : True, "rminStam" : 2, "rmaxStam": 4, "rminCond" : 35, "rmaxCond" : 60, "names" : ["Heretic\'s Wrap", "Beholder\'s vestments", "Jacket of the Augur", "Empyrian Coat", "Attestor\'s Skin", "Goreflesh Mantle"]
+},
+{"name": "legend_fleshcultist_jacket",           "itemType" : "this.Const.Items.ItemType.Cultist", "layer": "plate", "min": 1, "max": 2, "value" : 350, "con" : 30, "stam" : -3, "impactSound" : "leather", "invSound" : "cloth", "brush" : "fleshcultist_jacket",
+ "title" :  "Faultfinder Jacket",
+ "desc" :  "A heavy linen jacket worn by fault finders.",
+ "adesc" : "Has a heavy linen jacket worn by fault finders."
+},
 
 {"name": "legend_shoulder_cloth",           "layer": "cloak", "min": 1, "max": 12, "value" : 50, "con" : 5, "stam" : 0, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "shoulder_cloth",
  "title" :  "Shoulder Cloth",
@@ -734,7 +760,7 @@ class Defs:
  "desc" :  "A cloak made of rough chain and the fur of a beast",
  "adesc" : "Includes a fur cloak"
 },
-{"name": "legend_armor_cloak_common",           "layer": "cloak", "min": 0, "max": 0, "value" : 100, "con" : 10, "stam" : -1, "bravery" : 1, "impactSound" : "leather", "invSound" : "cloth", "brush" : "cloak", "variants" : [8,9,10,11,12,13,14,21,22,23,32,33,34],
+{"name": "legend_armor_cloak_common",           "layer": "cloak", "min": 0, "max": 0, "value" : 100, "con" : 10, "stam" : -1, "bravery" : 1, "impactSound" : "leather", "invSound" : "cloth", "brush" : "cloak", "variants" : [9,10,11,12,13,14,21,22,23,32,33,34],
  "title" :  "Simple Cloak",
  "desc" :  "A rustic cloak made of strong warm wool, provides some small protection, from the weather if nothing else.",
  "adesc" : "Has a stout wool cloak"
@@ -758,11 +784,6 @@ class Defs:
  "title" :  "Anatomist Hood",
  "desc" :  "A dark hood for those who work with filth",
  "adesc" : "Has a dark hood for working with entrails"
-},
-{"name": "relic_hood",           "layer": "cloak", "min": 1, "max": 10, "value" : 800, "con" : 35, "stam" : -4, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "relic_hood",
- "title" :  "Relic Hood",
- "desc" :  "A hood and belts adorned with a holy relic",
- "adesc" : "Has a hood and belts adorned with a holy relic"
 },
 {"name": "legend_armor_cloak_heavy",           "layer": "cloak", "min": 0, "max": 0, "value" : 500, "con" : 30, "stam" : -4, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "cloak", "variants" : [3,8,15,16,17,18,19,20,24,26,27,28,29,30,31,35,37],
  "title" :  "Heavy Cloak",
@@ -873,6 +894,15 @@ class Defs:
  "title" :  "Southern Tabard",
  "desc" :  "A flowing cloth covering for armor, to show your allegiance. Offers minimal protection and small boost to morale.",
  "adesc" : "Has a flowing cloth tabard"
-}
-
+},
+{"name": "legend_diviner_tabard",           "layer": "tabard", "min": 1, "max": 2, "value" : 200, "con" : 10, "stam" : 0, "bravery" : 3, "impactSound" : "leather", "invSound" : "cloth", "brush" : "diviner_tabard",
+ "title" :  "Diviner\'s Sash",
+ "desc" :  "A decorated sash and belt previouly worn by the Diviner",
+ "adesc" : "Has a decorated sash and belt previouly worn by the Diviner"
+},
+{"name": "legend_fleshcultist_tabard",           "layer": "tabard", "min": 1, "max": 2, "value" : 200, "con" : 5, "stam" : 0, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "fleshcultist_tabard",
+  "title" :  "",
+  "desc" :  "A linen sash and belt previously worn by followers of the Diviner",
+  "adesc" : "Has a linen sash and belt previously worn by followers of the Diviner"
+ }
 ]

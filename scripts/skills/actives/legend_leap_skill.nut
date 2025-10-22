@@ -35,7 +35,7 @@ this.legend_leap_skill <- this.inherit("scripts/skills/skill", {
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		if (item != null)
 		{
-			if (item.isWeaponType(this.Const.Items.WeaponType.Staff) && actor.getCurrentProperties().IsSpecializedInStaves)
+			if (item.isWeaponType(this.Const.Items.WeaponType.Staff) && actor.getCurrentProperties().IsSpecializedInPolearms)
 			{
 				ret.push({
 					id = 6,
@@ -88,9 +88,9 @@ this.legend_leap_skill <- this.inherit("scripts/skills/skill", {
 		local bonus = 0;
 		if (item != null)
 		{
-			if (item.isWeaponType(this.Const.Items.WeaponType.Staff) && actor.getCurrentProperties().IsSpecializedInStaves)
+			if (item.isWeaponType(this.Const.Items.WeaponType.Staff) && actor.getCurrentProperties().IsSpecializedInPolearms)
 			{
-			bonus += 1;
+				bonus += 1;
 			}
 		}
 

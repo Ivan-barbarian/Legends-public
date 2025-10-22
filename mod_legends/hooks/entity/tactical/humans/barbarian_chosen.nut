@@ -16,14 +16,6 @@
 		}
 	}
 
-	o.getLootForTile <- function (_killer, _loot) {
-		if (!(_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals))
-			return getLootForTile(_killer, _loot);
-		if (this.getSkills().hasSkill("injury_permanent.legend_ursathropy_injury"))
-			_loot.push(::new("scripts/items/misc/legend_werehand_item"));
-		return this.human.getLootForTile(_killer, _loot);
-	}
-
 	o.assignRandomEquipment = function ()
 	{
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Mainhand))
@@ -81,7 +73,7 @@
 				[1, ::Legends.Helmet.Standard.barbarian_chosen_helmet_02],
 			];
 			this.m.Items.equip(this.Const.World.Common.pickHelmet(helmet));
-		}
+		}		
 	}
 
 	o.makeMiniboss = function ()
@@ -92,9 +84,30 @@
 		}
 
 		this.getSprite("miniboss").setBrush("bust_miniboss");
-		local weapons = this.Const.Items.NamedBarbarianWeapons;
-		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
-		::Legends.Perks.grant(this, ::Legends.Perk.Fearsome);
+		local weapons = clone ::Const.Items.NamedBarbarianWeapons;
+		local armor = ::Const.Items.NamedBarbarianArmors;
+		local helmets = ::Const.Items.NamedBarbarianHelmets;
+		local r = this.Math.rand(1, 3);
+
+		if (r == 1)
+		{
+			if (this.Math.rand(1, 100) < 90) // basically low chance to spawn with these cause they're better than the rest of the barb gear
+			{
+				::MSU.Array.remove(weapons, "weapons/named/legend_named_rusty_greatsword");
+				::MSU.Array.remove(weapons, "weapons/named/legend_named_rusty_serrated_axe");
+			}
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		}
+		else if (r == 2)
+		{
+			local weightName = this.Const.World.Common.convNameToList(armor);
+			this.m.Items.equip(this.Const.World.Common.pickArmor(weightName));
+		}
+		else
+		{
+			local weightName = this.Const.World.Common.convNameToList(helmets);
+			this.m.Items.equip(this.Const.World.Common.pickHelmet(weightName));
+		}
 		return true;
 	}
 });

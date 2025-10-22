@@ -1,10 +1,9 @@
 ::mods_hookExactClass("skills/traits/addict_trait", function(o)
-{	
+{
 	local create = o.create;
 	o.create = function ()
 	{
 		create();
-		this.m.Description = "This character is always pale and sickly, which makes them particularly susceptible to poisons.";
 	}
 
 	o.getTooltip = function ()

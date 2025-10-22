@@ -7,8 +7,8 @@ this.legend_blowgun <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_blowgun";
 		this.m.Name = "Blowgun";
 		this.m.Description = "A hollowed out reed used to shoot (toxic) darts. ";
-		this.m.IconLarge = "weapons/ranged/blowgun_01.png";
-		this.m.Icon = "weapons/ranged/blowgun_01_70x70.png";
+		this.m.IconLarge = "weapons/ranged/bow_01.png";
+		this.m.Icon = "weapons/ranged/bow_01_70x70.png";
 		this.m.WeaponType = this.Const.Items.WeaponType.Crossbow;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
@@ -17,7 +17,7 @@ this.legend_blowgun <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_legend_blowgun_01";
+		this.m.ArmamentIcon = "icon_hunting_bow";
 		this.m.Value = 30;
 		this.m.RangeMin = 1;
 		this.m.RangeMax = 5;

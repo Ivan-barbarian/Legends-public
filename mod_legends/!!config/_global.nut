@@ -134,6 +134,8 @@ for (local i = -1; i < ::Const.EntityIcon.len(); i++) {
 	::Const.EntityType.addNew("rock_unhold_orientation", "Rock Unhold", "Rock Unholds", this.Const.FactionType.Beasts);
 ::Const.EntityType.LegendRedbackSpider <-
 	::Const.EntityType.addNew("redback_spider_orientation", "Redback Spider", "Redback Spiders", this.Const.FactionType.Beasts);
+::Const.EntityType.LegendSpiderCluster <-
+	::Const.EntityType.addNew("spider_cluster_orientation", "Webknecht Cluster", "Webknecht Clusters", this.Const.FactionType.Beasts);
 ::Const.EntityType.LegendDemonAlp <-
 	::Const.EntityType.addNew("demonalp_orientation", "Demon Alp", "Demon Alps", this.Const.FactionType.Beasts);
 ::Const.EntityType.LegendHexeLeader <-
@@ -206,10 +208,10 @@ for (local i = -1; i < ::Const.EntityIcon.len(); i++) {
 	::Const.EntityType.addNew("mummy_heavy_orientation", "Embalmed Noble", "Embalmed Nobles", this.Const.FactionType.Undead);
 ::Const.EntityType.LegendMummyQueen <-
 	::Const.EntityType.addNew("mummy_queen_orientation", "Embalmed Queen", "Embalmed Queens", this.Const.FactionType.Undead);
-::Const.EntityType.KoboldFighter <-
-	::Const.EntityType.addNew("kobold_fighter_orientation", "Kobold Fighter", "Kobold Fighters", this.Const.FactionType.Goblins);
-::Const.EntityType.KoboldWolfrider <-
-	::Const.EntityType.addNew("kobold_wolfrider_orientation", "Kobold Wolfrider", "Kobold Wolfriders", this.Const.FactionType.Goblins);
+// ::Const.EntityType.KoboldFighter <-
+// 	::Const.EntityType.addNew("kobold_fighter_orientation", "Kobold Fighter", "Kobold Fighters", this.Const.FactionType.Goblins);
+// ::Const.EntityType.KoboldWolfrider <-
+// 	::Const.EntityType.addNew("kobold_wolfrider_orientation", "Kobold Wolfrider", "Kobold Wolfriders", this.Const.FactionType.Goblins);
 ::Const.EntityType.LegendMummyPriest <-
 	::Const.EntityType.addNew("mummy_priest_orientation", "Embalmed Priest", "Embalmed Priests", this.Const.FactionType.Undead);
 ::Const.EntityType.FreeCompanySpearman <-
@@ -256,3 +258,29 @@ for (local i = -1; i < ::Const.EntityIcon.len(); i++) {
 	::Const.EntityType.addNew("arbalester_orientation", "Sureshot", "Sureshots");
 ::Const.EntityType.LegendBasiliskSentry <-
 	::Const.EntityType.addNew("basilisk_drone_orientation", "Basilisk Sentries", "Basilisk Sentries", this.Const.FactionType.Beasts);
+::Const.EntityType.LegendSighthound <-
+	::Const.EntityType.addNew("dawg_orientation", "Sighthound", "Sighthounds");
+::Const.EntityType.LegendArmoredSighthound <-
+	::Const.EntityType.addNew("dawg_orientation", "Armored Sighthound", "Armored Sighthound");
+::Const.EntityType.LegendEnragedHyena <-
+	::Const.EntityType.addNew("enraged_hyena_orientation", "Enraged Hyena", "Enraged Hyenas", this.Const.FactionType.Beasts);
+::Const.EntityType.LegendGoblinHarrier <-
+	::Const.EntityType.addNew("goblin_harrier_orientation", "Goblin Harrier", "Goblin Harriers", this.Const.FactionType.Goblins);
+::Const.EntityType.LegendGoblinBerserker <-
+	::Const.EntityType.addNew("goblin_berserker_orientation", "Goblin Berserker", "Goblin Berserkers", ::Const.FactionType.Goblins);
+::Const.EntityType.LegendGoblinTribeDefender <-
+	::Const.EntityType.addNew("goblin_tribe_defender_orientation", "Goblin Tribe Defender", "Goblin Tribe Defenders", ::Const.FactionType.Goblins);
+::Const.EntityType.LegendGoblinDirewolfRider <-
+	::Const.EntityType.addNew("goblin_direwolf_rider_orientation", "Direwolf Rider", "Direwolf Riders", this.Const.FactionType.Goblins);
+::Const.EntityType.LegendGoblinWhiteDirewolfRider <-
+	::Const.EntityType.addNew("goblin_white_direwolf_rider_orientation", "White Direwolf Rider", "White Direwolf Riders", this.Const.FactionType.Goblins);
+::Const.EntityType.LegendGoblinWitchDoctor <-
+	::Const.EntityType.addNew("goblin_witchdoctor_orientation", "Goblin Witchdoctor", "Goblin Witchdoctors", this.Const.FactionType.Goblins);
+::Const.EntityType.LegendGoblinPlunderer <-
+	::Const.EntityType.addNew("goblin_plunderer_orientation", "Goblin Plunderer", "Goblin Plunderers", this.Const.FactionType.Goblins);
+::Const.EntityType.LegendBarbarianPillager <-
+	::Const.EntityType.addNew("barbarian_pillager_orientation", "Barbarian Pillager", "Barbarian Pillagers", this.Const.FactionType.Barbarians);
+::Const.EntityType.LegendBarbarianMarauder <-
+	::Const.EntityType.addNew("barbarian_marauder_orientation", "Barbarian Marauder", "Barbarian Marauders", this.Const.FactionType.Barbarians);
+::Const.EntityType.LegendBarbarianRunechosen <-
+	::Const.EntityType.addNew("barbarian_runechosen_orientation", "Barbarian Runechosen", "Barbarian Runechosen", this.Const.FactionType.Barbarians);

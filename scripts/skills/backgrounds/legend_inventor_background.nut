@@ -45,7 +45,7 @@ this.legend_inventor_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.HammerTree,
-				this.Const.Perks.StaffTree,
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.CrossbowTree
 			],

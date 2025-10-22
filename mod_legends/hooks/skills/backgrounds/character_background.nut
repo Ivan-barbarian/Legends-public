@@ -107,12 +107,12 @@
 			if (!_type) return
 			this.m.BackgroundType = this.m.BackgroundType == this.Const.BackgroundType.None ? _constType : this.m.BackgroundType | _constType
 		}
-		addToBackgroundType(this.m.IsScenarioOnly, this.Const.BackgroundType.Scenario);
-		addToBackgroundType(this.m.IsUntalented, this.Const.BackgroundType.Untalented);
-		addToBackgroundType(this.m.IsOffendedByViolence, this.Const.BackgroundType.OffendedByViolence);
-		addToBackgroundType(this.m.IsCombatBackground, this.Const.BackgroundType.Combat);
-		addToBackgroundType(this.m.IsNoble, this.Const.BackgroundType.Noble);
-		addToBackgroundType(this.m.IsLowborn, this.Const.BackgroundType.Lowborn);
+		addToBackgroundType(this.m.IsScenarioOnly, ::Const.BackgroundType.Scenario);
+		addToBackgroundType(this.m.IsUntalented, ::Const.BackgroundType.Untalented);
+		addToBackgroundType(this.m.IsOffendedByViolence, ::Const.BackgroundType.OffendedByViolence);
+		addToBackgroundType(this.m.IsCombatBackground, ::Const.BackgroundType.Combat);
+		addToBackgroundType(this.m.IsNoble, ::Const.BackgroundType.Noble);
+		addToBackgroundType(this.m.IsLowborn, ::Const.BackgroundType.Lowborn);
 	}
 
 	o.isBackgroundType <- function ( _type )
@@ -142,6 +142,31 @@
 		{
 			this.logError(_type + " is not contained in " + this.getID());
 		}
+	}
+
+	local isUntalented = o.isUntalented;
+	o.isUntalented = function () {
+		return isUntalented() || this.isBackgroundType(::Const.BackgroundType.Untalented);
+	}
+
+	local isOffendedByViolence = o.isOffendedByViolence;
+	o.isOffendedByViolence = function () {
+		return isOffendedByViolence() || this.isBackgroundType(::Const.BackgroundType.OffendedByViolence);
+	}
+
+	local isCombatBackground = o.isCombatBackground;
+	o.isCombatBackground = function () {
+		return isCombatBackground() || this.isBackgroundType(::Const.BackgroundType.Combat);
+	}
+
+	local isNoble = o.isNoble;
+	o.isNoble = function () {
+		return isNoble() || this.isBackgroundType(::Const.BackgroundType.Noble);
+	}
+
+	local isLowborn = o.isLowborn;
+	o.isLowborn = function () {
+		return isLowborn() || this.isBackgroundType(::Const.BackgroundType.Lowborn);
 	}
 
 	o.getModifiers <- function() {
@@ -844,28 +869,64 @@
 		return this.m.PerkTreeMap[id];
 	}
 
-	o.addPerk <- function ( _perk, _row = 0, _isRefundable = true )
-	{
-		local perkDefObject = clone this.Const.Perks.PerkDefObjects[_perk];
-		//Dont add dupes
-		if (this.m.PerkTreeMap == null || perkDefObject.ID in this.m.PerkTreeMap)
-		{
-			return false;
-		}
+    o.addPerk <- function ( _perk, _preferredRow = 0, _isRefundable = true )
+    {
+        local perkDefObject = clone this.Const.Perks.PerkDefObjects[_perk];
 
-		perkDefObject.Row <- _row;
-		perkDefObject.Unlocks <- _row;
-		perkDefObject.IsRefundable <- _isRefundable;
+        // Don't add duplicates
+        if (this.m.PerkTreeMap == null || perkDefObject.ID in this.m.PerkTreeMap)
+        {
+            return false;
+        }
 
-		for (local i = this.getPerkTree().len(); i < _row + 1; i = ++i)
-		{
-			this.getPerkTree().push([]);
-		}
-		this.getPerkTree()[_row].push(perkDefObject);
-		this.m.CustomPerkTree[_row].push(_perk);
-		this.m.PerkTreeMap[perkDefObject.ID] <- perkDefObject;
-		return true;
-	}
+        // Attempt to find a valid row
+        local finalRow = _preferredRow;
+        local foundRow = false;
+
+        for (local i = 0; i <= 6; i++)
+        {
+            local tryRow = (_preferredRow + i) % 7;
+
+            // Ensure row exists
+            while (this.getPerkTree().len() <= tryRow)
+            {
+                this.getPerkTree().push([]);
+            }
+
+            if (this.getPerkTree()[tryRow].len() < 13)
+            {
+                finalRow = tryRow;
+                foundRow = true;
+                break;
+            }
+        }
+
+        if (!foundRow)
+        {
+            // All rows are full, fallback to preferredRow
+            finalRow = _preferredRow;
+        }
+
+        perkDefObject.Row <- finalRow;
+        perkDefObject.Unlocks <- finalRow;
+        perkDefObject.IsRefundable <- _isRefundable;
+
+        // Extend perk tree if not enough rows exist
+        while (this.getPerkTree().len() <= finalRow)
+        {
+            this.getPerkTree().push([]);
+        }
+        while (this.m.CustomPerkTree.len() <= finalRow)
+        {
+            this.m.CustomPerkTree.push([]);
+        }
+
+        this.getPerkTree()[finalRow].push(perkDefObject);
+        this.m.CustomPerkTree[finalRow].push(_perk);
+        this.m.PerkTreeMap[perkDefObject.ID] <- perkDefObject;
+
+        return true;
+    }
 
 	o.addPerkGroup <- function (_Tree) {
 		foreach(index, arrAdd in _Tree)
@@ -1081,8 +1142,8 @@
 					100
 				],
 				Stamina = [
-					100,
-					100
+					40,
+					40
 				],
 				MeleeSkill = [
 					50,
@@ -1138,8 +1199,8 @@
 					0
 				],
 				Initiative = [
-					85,
-					85
+					100,
+					100
 				]
 			};
 		}
@@ -1410,7 +1471,7 @@
 			hair.setBrush("hair_" + hairColor + "_" + this.Const.Hair.Zombie[this.Math.rand(0, this.Const.Hair.Zombie.len() - 1)]);
 			hair.varyColor(0.02, 0.02, 0.02);
 
-			if (this.Math.rand(1, 100) <= this.m.BeardChance)
+			if (this.m.Beards != null && this.Math.rand(1, 100) <= this.m.BeardChance)
 			{
 				local beard = actor.getSprite("beard");
 				beard.setBrush("beard_" + hairColor + "_" + this.Const.Beards.Zombie[this.Math.rand(0, this.Const.Beards.Zombie.len() - 1)]);
@@ -1445,7 +1506,7 @@
 			hair.setBrush("hair_" + hairColor + "_" + this.Const.Hair.ZombieOnly[this.Math.rand(0, this.Const.Hair.ZombieOnly.len() - 1)]);
 			hair.varyColor(0.02, 0.02, 0.02);
 
-			if (this.Math.rand(1, 100) <= this.m.BeardChance)
+			if (this.m.Beards != null && this.Math.rand(1, 100) <= this.m.BeardChance)
 			{
 				local beard = actor.getSprite("beard");
 				beard.setBrush("beard_" + hairColor + "_" + this.Const.Beards.ZombieOnly[this.Math.rand(0, this.Const.Beards.ZombieOnly.len() - 1)]);
@@ -1833,7 +1894,7 @@
 		}
 	}
 
-	// little hack to remove it from onDeserialize() - chopeks
+	// little hack to remove it from onDeserialize()
 	local adjustHiringCostBasedOnEquipment = o.adjustHiringCostBasedOnEquipment;
 	o.adjustHiringCostBasedOnEquipment = function () {};
 

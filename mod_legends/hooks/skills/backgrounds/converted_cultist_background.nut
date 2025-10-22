@@ -22,7 +22,7 @@
 			::Legends.Traits.getID(::Legends.Trait.Bright),
 			::Legends.Traits.getID(::Legends.Trait.Greedy),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed)
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted)
 		];
 		this.m.Titles = [
 			"the Cultist",
@@ -55,7 +55,7 @@
 			Class = [
 				this.Const.Perks.NinetailsClassTree
 			],
-			Profession = [], 
+			Profession = [],
 			Magic = []
 		}
 		this.m.Bodies = this.Const.Bodies.Skinny;
@@ -88,4 +88,3 @@
 	}
 
 });
-

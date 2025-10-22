@@ -233,6 +233,7 @@ this.legends_snow_village <- this.inherit("scripts/entity/world/settlements/lege
 			this.m.DraftLists[2].push("beast_hunter_background");
 		}
 
+		this.m.Culture = this.Const.World.Culture.Northern;
 		this.m.Rumors = this.Const.Strings.RumorsSnowSettlement;
 	}
 

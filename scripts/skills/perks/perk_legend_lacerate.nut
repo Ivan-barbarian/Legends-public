@@ -17,20 +17,14 @@ this.perk_legend_lacerate <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if (!_targetEntity.isAlive() || _targetEntity.isDying())
-		{
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
 			return false;
-		}
 
 		if (_targetEntity.getCurrentProperties().IsImmuneToBleeding)
-		{
 			return false;
-		}
 
 		if (_targetEntity.isNonCombatant())
-		{
 			return false;
-		}
 
 		local user = _skill.getContainer().getActor();
 		::Legends.Effects.grant(_targetEntity, ::Legends.Effect.LegendGrazedEffect);

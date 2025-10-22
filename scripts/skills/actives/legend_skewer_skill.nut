@@ -1,7 +1,6 @@
 this.legend_skewer_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		IsSpearSkewer = false,
-		IsSecondAttack = false
 	},
 	function create()
 	{
@@ -26,7 +25,7 @@ this.legend_skewer_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
-		this.m.IsTargetingActor = true;
+		this.m.IsTargetingActor = false;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
 		this.m.IsIgnoredAsAOO = true;
@@ -70,14 +69,18 @@ this.legend_skewer_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectSplit);
-		local ret = this.attackEntity(_user, _targetTile.getEntity());
 
-		if (!_user.isAlive() || _user.isDying())
-		{
+		local ret = false;
+		if (::Legends.S.skillEntityAliveCheck(_user)) {
 			return ret;
 		}
 
 		local ownTile = _user.getTile();
+		if (_targetTile.IsOccupiedByActor && _targetTile.getEntity().isAttackable() && this.Math.abs(_targetTile.Level - ownTile.Level) <= 1)
+		{
+			ret = this.attackEntity(_user, _targetTile.getEntity());
+		}
+
 		local dir = ownTile.getDirectionTo(_targetTile);
 
 		if (_targetTile.hasNextTile(dir))
@@ -86,9 +89,7 @@ this.legend_skewer_skill <- this.inherit("scripts/skills/skill", {
 
 			if (forwardTile.IsOccupiedByActor && forwardTile.getEntity().isAttackable() && this.Math.abs(forwardTile.Level - ownTile.Level) <= 1)
 			{
-				this.m.IsSecondAttack = true;
 				ret = this.attackEntity(_user, forwardTile.getEntity()) || ret;
-				this.m.IsSecondAttack = false;
 			}
 		}
 

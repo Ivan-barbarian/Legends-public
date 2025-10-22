@@ -52,7 +52,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.StaffTree,
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.CrossbowTree
 			],
@@ -73,7 +73,8 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 			Magic = [
 				this.Const.Perks.PremonitionMagicTree,
 				this.Const.Perks.PhilosophyMagicTree,
-				this.Const.Perks.InventorMagicTree
+				this.Const.Perks.InventorMagicTree,
+				this.Const.Perks.StavesMagicTree
 			]
 		}
 	}

@@ -16,6 +16,7 @@
 
 		this.addSpecialEvent("event.legends.retinue_brother_lost");
 		this.addSpecialEvent("event.helped_caravan");
+		this.addSpecialEvent("event.legend_legendary_locations_check");
 		this.m.LastEventTime = this.Time.getVirtualTimeF();
 	}
 

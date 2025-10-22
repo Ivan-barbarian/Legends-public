@@ -35,3 +35,21 @@
 	"The Bloodhound Gang"
 ]);
 ::Const.Strings.FreeCompanyNames <- clone ::Const.Strings.MercenaryCompanyNames;
+::Const.Strings.CityEncounterNames <- [
+	"While at %settlement%...",
+	"Strolling through %settlement%.",
+	"Something\'s up at %settlement%."
+];
+::Const.Strings.CampEncounterNames <- [
+	"During camp..."
+];
+
+::Const.Strings.randomCityEncounterName <- function ()
+{
+	return ::Const.Strings.CityEncounterNames[this.Math.rand(0, ::Const.Strings.CityEncounterNames.len() - 1)];
+}
+
+::Const.Strings.randomCampEncounterName <- function ()
+{
+	return ::Const.Strings.CampEncounterNames[this.Math.rand(0, ::Const.Strings.CampEncounterNames.len() - 1)];
+}

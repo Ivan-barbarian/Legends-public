@@ -79,7 +79,7 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 
 	function getUpgraded()
 	{
-		return this.Stash.hasItem("tent.scout_tent");
+		return this.Stash.hasItem(::Legends.Camp.Tent.Scout);
 	}
 
 	function getLevel()

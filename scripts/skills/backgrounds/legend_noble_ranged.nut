@@ -32,7 +32,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 			::Legends.Traits.getID(::Legends.Trait.Disloyal),
 			::Legends.Traits.getID(::Legends.Trait.Drunkard),
 			::Legends.Traits.getID(::Legends.Trait.Clumsy),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
 			::Legends.Traits.getID(::Legends.Trait.Dastard),
 			::Legends.Traits.getID(::Legends.Trait.Insecure),

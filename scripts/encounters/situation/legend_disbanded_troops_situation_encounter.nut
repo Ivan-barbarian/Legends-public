@@ -3,9 +3,9 @@ this.legend_disbanded_troops_situation_encounter <- this.inherit("scripts/encoun
 
     },
     function create() {
-        this.createScreens();
-        this.m.Type = "legend_disbanded_troops_situation_encounter";
-        this.m.Name = "Disbanded Troops";
+	    this.encounter.create();
+        this.m.Type = "encounter.legend_disbanded_troops_situation";
+        this.m.Name = ::Const.Strings.randomCityEncounterName();
     }
 
     function createScreens() {
@@ -17,7 +17,7 @@ this.legend_disbanded_troops_situation_encounter <- this.inherit("scripts/encoun
             List = [],
             Options = [
                 {
-                    Text = "One man\'s refuse is another\'s treasure",
+                    Text = "One man\'s refuse is another\'s treasure.",
                     function getResult(_event) {
                         return 0;
                     }
@@ -28,8 +28,12 @@ this.legend_disbanded_troops_situation_encounter <- this.inherit("scripts/encoun
     }
 
     function isValid(_settlement) {
+	    if (::World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+		    return false;
+
         if (!_settlement.hasSituation("situation.disbanded_troops"))
             return false;
-        return !isOnCooldown();
+
+        return !this.isOnCooldown();
     }
 })

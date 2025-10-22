@@ -14,7 +14,17 @@ this.perk_legend_recuperation <- this.inherit("scripts/skills/skill", {
 	function onUpdate(_properties)
 	{
 		_properties.AdditionalHealingDays -= 1;
-		_properties.FatigueRecoveryRate += 3;
+	}
+
+	function onCombatFinished()
+	{
+		local actor = this.getContainer().getActor();
+		if (actor.isAlive() && actor.getHitpointsPct() < 1.0)
+		{
+			local hp = ::Math.floor((actor.getHitpointsMax() - actor.getHitpoints()) * 0.3);
+			actor.setHitpoints(this.Math.min(actor.getHitpointsMax(), hp + actor.getHitpoints()));
+			actor.setDirty(true);
+		}
 	}
 });
 

@@ -1,7 +1,7 @@
 ::mods_hookExactClass("skills/actives/recover_skill", function(o)
 {
 	o.m.CurrentSkillCount <- 0;
-	o.m.FatPerAP <- 0.055;
+	o.m.FatPerAP <- 0.08;
 	o.m.UsedAP <- 0;
 
 	o.getTooltip = function ()

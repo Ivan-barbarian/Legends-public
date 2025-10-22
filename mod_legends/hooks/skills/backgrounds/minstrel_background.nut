@@ -26,7 +26,7 @@
 			::Legends.Traits.getID(::Legends.Trait.Insecure),
 			::Legends.Traits.getID(::Legends.Trait.Bloodthirsty),
 			::Legends.Traits.getID(::Legends.Trait.Asthmatic),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.NightBlind),
 			::Legends.Traits.getID(::Legends.Trait.LegendPragmatic),
 			::Legends.Traits.getID(::Legends.Trait.Spartan),
@@ -55,7 +55,7 @@
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.MaceTree,
-				this.Const.Perks.StaffTree,
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.CrossbowTree,
 				this.Const.Perks.DaggerTree
@@ -75,7 +75,7 @@
 			Class = [
 				this.Const.Perks.JugglerClassTree
 			],
-			Profession = [], 
+			Profession = [],
 			Magic = [
 				this.Const.Perks.BardMagicTree,
 			]

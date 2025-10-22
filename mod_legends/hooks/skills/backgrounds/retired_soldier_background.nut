@@ -20,7 +20,7 @@
 			::Legends.Traits.getID(::Legends.Trait.Clumsy),
 			::Legends.Traits.getID(::Legends.Trait.Tiny),
 			::Legends.Traits.getID(::Legends.Trait.Insecure),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
 			::Legends.Traits.getID(::Legends.Trait.Bleeder),
 			::Legends.Traits.getID(::Legends.Trait.Dastard),
@@ -59,7 +59,8 @@
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.AxeTree,
 				this.Const.Perks.ShieldTree,
-				this.Const.Perks.ThrowingTree
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.OneHandedTree,
 			],
 			Defense = [
 				this.Const.Perks.HeavyArmorTree,
@@ -78,7 +79,9 @@
 			Class = [
 				this.Const.Perks.LongswordClassTree
 			],
-			Profession = [], 
+			Profession = [
+				this.Const.Perks.FencingTeacherProfessionTree
+			],
 			Magic = []
 		}
 	}
@@ -181,4 +184,3 @@
 	}
 
 });
-

@@ -23,7 +23,7 @@ this.legend_swordstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -14;
 		this.m.RangeMin = 1;
 		this.m.RangeMax = 2;
-		this.m.RangeIdeal = 2;
+		this.m.RangeIdeal = 1;
 		this.m.RegularDamage = 50;
 		this.m.RegularDamageMax = 70;
 		this.m.ArmorDamageMult = 1.0;
@@ -35,10 +35,12 @@ this.legend_swordstaff <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.Slash, function (_skill) {
-			_skill.m.IsStaffSlash = true;
+			_skill.m.IsGreatSlash = true;
 		}.bindenv(this));
-		::Legends.Actives.grant(this, ::Legends.Active.Swing);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendSkewer);
+		::Legends.Actives.grant(this, ::Legends.Active.Strike, function (_skill) {
+			_skill.m.IsStaffStrike = true;
+		}.bindenv(this));
 	}
 
 });

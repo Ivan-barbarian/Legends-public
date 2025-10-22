@@ -90,66 +90,30 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 			::Legends.Traits.grant(this, ::Legends.Trait.Fearless);
 		}
 
-		if (!this.Tactical.State.isScenarioMode())
-		{
-			local dateToSkip = 0;
-
-			switch(this.World.Assets.getCombatDifficulty())
-			{
-			case this.Const.Difficulty.Easy:
-				dateToSkip = 240;
-				break;
-
-			case this.Const.Difficulty.Normal:
-				dateToSkip = 180;
-				break;
-
-			case this.Const.Difficulty.Hard:
-				dateToSkip = 120;
-				break;
-
-			case this.Const.Difficulty.Legendary:
-				dateToSkip = 60;
-				break;
-			}
-
-			if (this.World.getTime().Days >= dateToSkip)
-			{
-				local bonus = this.Math.min(1, this.Math.floor((this.World.getTime().Days - dateToSkip) / 20.0));
-				local b = this.m.BaseProperties;
-				b.MeleeSkill += bonus;
-				b.RangedSkill += bonus;
-				b.MeleeDefense += this.Math.floor(bonus / 2);
-				b.RangedDefense += this.Math.floor(bonus / 2);
-				b.Hitpoints += this.Math.floor(bonus * 2);
-				b.Initiative += this.Math.floor(bonus / 2);
-				b.Stamina += bonus;
-				b.Bravery += bonus;
-				b.FatigueRecoveryRate += this.Math.floor(bonus / 4);
-			}
-		}
+		::Legends.S.scaleBaseProperties(b);
 	}
 
 	function assignRandomEquipment()
 	{
+		local weightName;
 		local shields = clone this.Const.Items.NamedShields;
 		shields.extend([
 			"shields/named/named_bandit_kite_shield",
 			"shields/named/named_bandit_heater_shield"
 		]);
-		local r = this.Math.rand(1,100);
-		if (r > 50)
+		local r = this.Math.rand(1, 100);
+		if (r > 25)
 		{
 			local namedWeaponArray = clone ::Const.Items.NamedMeleeWeapons;
 			::MSU.Array.remove(namedWeaponArray, "weapons/named/named_dagger");
 			::MSU.Array.remove(namedWeaponArray, "weapons/named/legend_named_parrying_dagger");
 			::MSU.Array.remove(namedWeaponArray, "weapons/named/legend_named_shovel");
 			::MSU.Array.remove(namedWeaponArray, "weapons/named/legend_named_sickle");
-			this.getItems().equip(::Const.World.Common.pickItem(namedWeaponArray, "scripts/items/"));
+			this.getItems().equip(this.Const.World.Common.pickItem(namedWeaponArray.map(@(_it) [1, _it]), "scripts/items/"));
 		}
 		else
 		{
-			this.getItems().equip(::Const.World.Common.pickItem(shields, "scripts/items/"));
+			this.getItems().equip(this.Const.World.Common.pickItem(shields.map(@(_it) [1, _it]), "scripts/items/"));
 		}
 
 		if (this.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
@@ -176,7 +140,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 					"weapons/legend_battle_glaive"
 				]);
 			}
-			this.getItems().equip(::Const.World.Common.pickItem(weapons, "scripts/items/"));
+			this.getItems().equip(this.Const.World.Common.pickItem(weapons.map(@(_it) [1, _it]), "scripts/items/"));
 		}
 
 		if (this.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
@@ -191,14 +155,14 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 		if (this.Math.rand(1, 100) > 50)
 		{
 			local named = this.Const.Items.NamedArmors;
-			local weightName = this.Const.World.Common.convNameToList(named);
+			weightName = this.Const.World.Common.convNameToList(named);
 			this.getItems().equip(this.Const.World.Common.pickArmor(weightName));
 
 		}
 		else
 		{
 			local named = this.Const.Items.NamedHelmets;
-			local weightName = this.Const.World.Common.convNameToList(named);
+			weightName = this.Const.World.Common.convNameToList(named);
 			this.getItems().equip(this.Const.World.Common.pickHelmet(weightName));
 		}
 
@@ -242,4 +206,3 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
-

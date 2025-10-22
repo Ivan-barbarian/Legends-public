@@ -20,7 +20,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 		this.m.IsSpecial = true;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_173.png[/img]{As the sand swallows your feet you scramble to the zenith of the next sand dune, the crest gives way to more of the same — the sands part between the hypnotising peaks between the valleys, occasionally sprinkled with columns, collapsed entrances and skeletons human and animal alike. Further afield you see the apex of a more rigid structure, the faded motifs strike you first, a small smatter of colour in an otherwise desolate landscape.\n\n As you wade closer the colours become more vivid; teals, maroons and jaundiced yellows all wax and wane in stripes, seemingly telling a tale nobody living can still recant. The air is warm, but stale — time seems to have affected this place differently than anywhere else you have seen so far. \n\n Small pots and urns make mickles around the entryways and columns, this place is a shining beacon for graverobbers but remains untouched and orderly.}",
+			Text = "[img]gfx/ui/events/event_173.png[/img]{As the sand swallows your feet you scramble to the zenith of the next sand dune, the crest gives way to more of the same — the sands part between the hypnotising peaks between the valleys, occasionally sprinkled with columns, collapsed entrances and skeletons — human and animal alike. Further afield you see the triangular tip of a rigid structure, the shape tickles the back of your mind in a way you can\'t describe.\n\n As you wade closer the aspect persists. At a closer distance you can see layers to it, as if continuously rebuilt or made from other materials and unphased by the passing of time. A sense of dread washes over you and the company. The entrance is small, but welcomes a king.\n\n Against your better judgement you make your way in.\n\n The air inside is warm, but stale. Time has not just wound backwards, but stopped entirely. Small pots and urns make mickles around the entryways and columns — a shining beacon for graverobbers, yet remaining tall, proud and untouched by all, until now.}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -54,7 +54,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_89.png[/img]{As you slowly pace inside the main monolith the temperature dramatically drops to a more comfortable level. The shade makes your skin writhe with comfort from the heat outside. \n\n The room is mostly blank, the only distinguishing feature aside from the inscribed walls are stone caskets of varying quality — some depict great battles, a figure whipping servants and others who are partaking in a form of ritual that has been purposely defaced with a weapon or chisel. Others remain blank — either not important enough to be worth more time of the craftsmen or simply unfinished. }",
+			Text = "[img]gfx/ui/events/event_89.png[/img]{As you slowly make pace into the monolith, the temperature dramatically drops to a more comfortable level, the shade causing your skin writhe with comfort from the heat outside. \n\n The room is mostly blank, the only distinguishing feature aside from the inscribed walls are stone caskets of varying quality — some depict great battles, a figure whipping servants and others who are partaking in a form of ritual that has been purposely defaced. Others remain blank — either not important enough to be worth more time of the craftsmen or simply unfinished.}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -264,6 +264,8 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				::Legends.Maps.markVisited(::Legends.Map.AncientMastaba);
+				::Legends.Maps.cleanUp();
 			}
 
 		});

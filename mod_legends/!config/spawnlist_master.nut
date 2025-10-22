@@ -20,6 +20,90 @@
 	Script = "scripts/entity/tactical/enemies/legend_orc_behemoth"
 };
 
+::Const.World.Spawn.Troops.LegendGoblinPlunderer <- {
+	ID = this.Const.EntityType.LegendGoblinPlunderer,
+	Variant = 1,
+	Strength = 50,
+	Cost = 45,
+	Row = 0,
+	Script = "scripts/entity/tactical/enemies/legend_goblin_plunderer",
+	NameList = this.Const.Strings.GoblinNames,
+	TitleList = this.Const.Strings.GoblinTitles
+};
+
+::Const.World.Spawn.Troops.LegendGoblinHarrier <- {
+	ID = this.Const.EntityType.LegendGoblinHarrier,
+	Variant = 1,
+	Strength = 75,
+	Cost = 70,
+	Row = 0,
+	Script = "scripts/entity/tactical/enemies/legend_goblin_harrier",
+	NameList = this.Const.Strings.GoblinNames,
+	TitleList = this.Const.Strings.GoblinTitles
+};
+
+::Const.World.Spawn.Troops.LegendGoblinWitchDoctor <- {
+	ID = this.Const.EntityType.LegendGoblinWitchDoctor,
+	Variant = 1,
+	Strength = 70,
+	Cost = 70,
+	Row = 2,
+	Script = "scripts/entity/tactical/enemies/legend_goblin_witch_doctor",
+	NameList = this.Const.Strings.GoblinNames,
+	TitleList = this.Const.Strings.GoblinTitles
+};
+
+::Const.World.Spawn.Troops.LegendGoblinDirewolfRider <- {
+	ID = this.Const.EntityType.LegendGoblinDirewolfRider,
+	Variant = 1,
+	Strength = 80,
+	Cost = 75,
+	Row = 1,
+	Script = "scripts/entity/tactical/enemies/legend_goblin_direwolf_rider",
+	NameList = this.Const.Strings.GoblinNames,
+	TitleList = this.Const.Strings.GoblinTitles
+};
+
+::Const.World.Spawn.Troops.LegendGoblinWhiteDirewolfRider <- {
+	ID = this.Const.EntityType.LegendGoblinWhiteDirewolfRider,
+	Variant = 1,
+	Strength = 85,
+	Cost = 90,
+	Row = 1,
+	Script = "scripts/entity/tactical/enemies/legend_goblin_white_direwolf_rider",
+	NameList = this.Const.Strings.GoblinNames,
+	TitleList = this.Const.Strings.GoblinTitles
+};
+
+::Const.World.Spawn.Troops.LegendBarbarianPillager <- {
+	ID = this.Const.EntityType.LegendBarbarianPillager,
+	Variant = 0,
+	Strength = 25,
+	Cost = 25,
+	Row = 1,
+	Script = "scripts/entity/tactical/humans/legend_barbarian_pillager"
+};
+
+::Const.World.Spawn.Troops.LegendBarbarianMarauder <- {
+	ID = this.Const.EntityType.LegendBarbarianMarauder,
+	Variant = 0,
+	Strength = 35,
+	Cost = 35,
+	Row = 1,
+	Script = "scripts/entity/tactical/humans/legend_barbarian_marauder"
+};
+
+::Const.World.Spawn.Troops.LegendBarbarianRunechosen <- {
+	ID = this.Const.EntityType.LegendBarbarianRunechosen,
+	Variant = 1,
+	Strength = 60,
+	Cost = 60,
+	Row = 1,
+	Script = "scripts/entity/tactical/humans/legend_barbarian_runechosen",
+	NameList = this.Const.Strings.BarbarianNames,
+	TitleList = this.Const.Strings.BarbarianTitles
+};
+
 ::Const.World.Spawn.Troops.Wolf <- {
 	ID = this.Const.EntityType.Wolf,
 	Variant = 0,
@@ -56,11 +140,9 @@
 	Script = "scripts/entity/tactical/enemies/legend_greenwood_schrat"
 };
 
-::Const.World.Spawn.Troops.Schrat.Variant = 1;
-
 ::Const.World.Spawn.Troops.SchratSmall <- {
 	ID = this.Const.EntityType.SchratSmall,
-	Variant = 1,
+	Variant = 0,
 	Strength = 70,
 	Cost = 70,
 	Row = -1,
@@ -427,23 +509,23 @@
 	TitleList = this.Const.Strings.LegendManhunterVeteranTitles
 };
 
-::Const.World.Spawn.Troops.KoboldFighter <- {
-	ID = this.Const.EntityType.KoboldFighter,
-	Variant = 0,
-	Strength = 5,
-	Cost = 5,
-	Row = 0,
-	Script = "scripts/entity/tactical/enemies/legend_kobold_fighter"
-};
+// ::Const.World.Spawn.Troops.KoboldFighter <- {
+// 	ID = this.Const.EntityType.KoboldFighter,
+// 	Variant = 0,
+// 	Strength = 5,
+// 	Cost = 5,
+// 	Row = 0,
+// 	Script = "scripts/entity/tactical/enemies/legend_kobold_fighter"
+// };
 
-::Const.World.Spawn.Troops.KoboldWolfrider <- {
-	ID = this.Const.EntityType.KoboldWolfrider,
-	Variant = 0,
-	Strength = 20,
-	Cost = 20,
-	Row = 1,
-	Script = "scripts/entity/tactical/enemies/legend_kobold_wolfrider"
-};
+// ::Const.World.Spawn.Troops.KoboldWolfrider <- {
+// 	ID = this.Const.EntityType.KoboldWolfrider,
+// 	Variant = 0,
+// 	Strength = 20,
+// 	Cost = 20,
+// 	Row = 1,
+// 	Script = "scripts/entity/tactical/enemies/legend_kobold_wolfrider"
+// };
 
 ::Const.World.Spawn.Troops.LegendMummyLight <- {
 	ID = this.Const.EntityType.LegendMummyLight,
@@ -766,6 +848,55 @@
 	Cost = 35,
 	Row = 2,
 	Script = "scripts/entity/tactical/enemies/legend_basilisk_sentry"
+};
+
+::Const.World.Spawn.Troops.LegendSighthound <- {
+	ID = this.Const.EntityType.LegendSighthound,
+	Variant = 0,
+	Strength = 10,
+	Cost = 10,
+	Row = 0,
+	Script = "scripts/entity/tactical/legend_sighthound"
+};
+
+::Const.World.Spawn.Troops.LegendArmoredSighthound <- {
+	ID = this.Const.EntityType.LegendSighthound,
+	Variant = 0,
+	Strength = 10,
+	Cost = 10,
+	Row = 0,
+	Script = "scripts/entity/tactical/legend_armored_sighthound"
+};
+
+::Const.World.Spawn.Troops.LegendEnragedHyena <- {
+	ID = this.Const.EntityType.LegendEnragedHyena,
+	Variant = 0,
+	Strength = 25,
+	Cost = 25,
+	Row = -1,
+	Script = "scripts/entity/tactical/legend_enraged_hyena"
+};
+
+::Const.World.Spawn.Troops.LegendGoblinBerserker <- {
+	ID = ::Const.EntityType.LegendGoblinBerserker,
+	Variant = 2,
+	Strength = 50,
+	Cost = 50,
+	Row = -1,
+	NameList = ::Const.Strings.GoblinNames,
+	TitleList = ::Const.Strings.GoblinTitles,
+	Script = "scripts/entity/tactical/enemies/legend_goblin_berserker"
+};
+
+::Const.World.Spawn.Troops.LegendGoblinTribeDefender <- {
+	ID = ::Const.EntityType.LegendGoblinTribeDefender,
+	Variant = 1,
+	Strength = 40,
+	Cost = 40,
+	Row = 1,
+	NameList = ::Const.Strings.GoblinNames,
+	TitleList = ::Const.Strings.GoblinTitles,
+	Script = "scripts/entity/tactical/enemies/legend_goblin_tribe_defender"
 };
 
 ::Const.World.Spawn.CaravanFort <-

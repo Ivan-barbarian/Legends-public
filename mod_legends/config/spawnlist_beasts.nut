@@ -51,6 +51,11 @@
 					Type = this.Const.World.Spawn.Troops.HyenaHIGH,
 					MinR = 400,
 					Cost = 20
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendEnragedHyena,
+					MinR = 500,
+					Cost = 25
 				}
 			]
 		},
@@ -81,6 +86,29 @@
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
+				},
+				{
+					MinR = 600,
+					Type = this.Const.World.Spawn.Troops.Swordmaster,
+					Cost = 40,
+					Roll = true
+				},
+				{
+					MinR = 600,
+					Type = this.Const.World.Spawn.Troops.HedgeKnight,
+					Cost = 40,
+					Roll = true
+				},
+				{
+					MinR = 400,
+					Type = this.Const.World.Spawn.Troops.BanditVeteran,
+					Cost = 30
+				},
+				{
+					MinR = 600,
+					Type = this.Const.World.Spawn.Troops.BanditWarlord,
+					Cost = 125,
+					Roll = true
 				}
 			]
 		},
@@ -558,6 +586,47 @@
 					Type = this.Const.World.Spawn.Troops.LegendBasiliskSentry,
 					MinR = 200,
 					Cost = 40
+				}
+			]
+		}
+	]
+}
+
+::Const.World.Spawn.LegendEnragedHyena <- {
+	Name = "LegendEnragedHyena",
+	IsDynamic = true,
+	MovementSpeedMult = 1.0,
+	VisibilityMult = 1.0,
+	VisionMult = 1.0,
+	Body = "figure_hyena_01",
+	MaxR = 800,
+	Fixed = [
+		{
+			Type = this.Const.World.Spawn.Troops.LegendEnragedHyena,
+			Cost = 200,
+			Weight = 0
+		}
+	],
+	Troops = [
+		{
+			Weight = 90
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendEnragedHyena,
+					Cost = 200
+				}
+			]
+		},
+		{
+			Weight = 10
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.Hyena,
+					Cost = 15
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.HyenaHIGH,
+					Cost = 20
 				}
 			]
 		}

@@ -3,9 +3,9 @@ this.legend_recruitment_vala_encounter <- this.inherit("scripts/encounters/encou
 		Vala = null
     },
     function create() {
-        this.createScreens();
+	    this.encounter.create();
         this.m.Type = "encounter.legend_recruitment_vala_encounter";
-        this.m.Name = "Mysterious woman";
+        this.m.Name = ::Const.Strings.randomCityEncounterName();
 		this.m.Cooldown = 60 * ::World.getTime().SecondsPerDay;
 	}
 
@@ -47,6 +47,9 @@ this.legend_recruitment_vala_encounter <- this.inherit("scripts/encounters/encou
     }
 
     function isValid(_settlement) {
+	    if (::World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+		    return false;
+
 		if (_settlement.isIsolatedFromRoads())
 			return false;
 
@@ -63,8 +66,6 @@ this.legend_recruitment_vala_encounter <- this.inherit("scripts/encounters/encou
 		foreach (bro in ::World.getPlayerRoster().getAll()) {
 			if (bro.getBackground().getID() == "background.legend_vala")
 				return false;
-			if (bro.getBackground().getID() == "background.legend_commander_vala")
-				return false;
 			totalbrothers += 1;
 			brotherlevels += bro.getLevel();
 		}
@@ -72,7 +73,7 @@ this.legend_recruitment_vala_encounter <- this.inherit("scripts/encounters/encou
 		if (totalbrothers < 1 || brotherlevels < 30)
 			return false;
 
-	    return !isOnCooldown();
+	    return !this.isOnCooldown();
     }
 
 	function onClear() {

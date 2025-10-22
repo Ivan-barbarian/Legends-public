@@ -20,7 +20,7 @@
 			::Legends.Traits.getID(::Legends.Trait.Irrational),
 			::Legends.Traits.getID(::Legends.Trait.Disloyal),
 			::Legends.Traits.getID(::Legends.Trait.Fat),
-			::Legends.Traits.getID(::Legends.Trait.Fainthearthed),
+			::Legends.Traits.getID(::Legends.Trait.Fainthearted),
 			::Legends.Traits.getID(::Legends.Trait.Craven),
 			::Legends.Traits.getID(::Legends.Trait.Dastard),
 			::Legends.Traits.getID(::Legends.Trait.Fragile),
@@ -54,7 +54,8 @@
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.HammerTree,
-				this.Const.Perks.CrossbowTree
+				this.Const.Perks.CrossbowTree,
+				this.Const.Perks.OneHandedTree
 			],
 			Defense = [
 				this.Const.Perks.HeavyArmorTree,
@@ -67,7 +68,7 @@
 			],
 			Enemy = [],
 			Class = [],
-			Profession = [], 
+			Profession = [],
 			Magic = []
 		}
 	}
@@ -196,4 +197,3 @@
 	}
 
 });
-

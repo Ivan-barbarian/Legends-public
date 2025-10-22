@@ -457,9 +457,8 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )
 	{
-		if (_tile != null)
-		{
-			local flip = this.Math.rand(0, 100) < 50;
+		local flip = this.Math.rand(0, 100) < 50;
+		if (_tile != null) {
 			local decal;
 			this.m.IsCorpseFlipped = flip;
 			local body = this.getSprite("body");
@@ -470,7 +469,10 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 			this.spawnTerrainDropdownEffect(_tile);
 		}
 
-		local corpse = this.generateCorpse(_tile, _fatalityType);
+		local tileLoot = this.getLootForTile(_killer, []);
+		this.dropLoot(_tile, tileLoot, !flip);
+		local corpse = this.generateCorpse(_tile, _fatalityType, _killer);
+
 		if (_tile == null) {
 			this.Tactical.Entities.addUnplacedCorpse(corpse);
 		} else {
@@ -481,12 +483,13 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
 
-	function generateCorpse( _tile, _fatalityType )
+	function generateCorpse( _tile, _fatalityType, _killer )
 	{
 		local corpse = clone this.Const.Corpse;
 		corpse.CorpseName = "A Stollwurm";
 		corpse.IsHeadAttached = true;
-		corpse.Tile = _tile;
+		if (_tile != null)
+			corpse.Tile = _tile;
 		return corpse;
 	}
 
@@ -495,12 +498,10 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Body.checkMorale(_change, _difficulty, _type, _showIconBeforeMoraleIcon, _noNewLine);
 	}
 
-	function kill( _killer = null, _skill = null, _fatalityType = this.Const.FatalityType.None, _silent = false )
-	{
+	function kill( _killer = null, _skill = null, _fatalityType = this.Const.FatalityType.None, _silent = false ) {
 		this.actor.kill(_killer, _skill, _fatalityType, _silent);
 
-		if (this.m.Body != null && !this.m.Body.isNull() && this.m.Body.isAlive() && !this.m.Body.isDying())
-		{
+		if (!::Legends.S.skillEntityAliveCheck(this.m.Body)) {
 			this.m.Body.kill(_killer, _skill, _fatalityType, _silent);
 			this.m.Body = null;
 		}
@@ -577,42 +578,9 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 			::Legends.Perks.grant(this, ::Legends.Perk.KillingFrenzy);
 			::Legends.Traits.grant(this, ::Legends.Trait.Fearless);
 		}
-		if (!this.Tactical.State.isScenarioMode())
-		{
-			local dateToSkip = 0;
-			switch (this.World.Assets.getCombatDifficulty())
-			{
-				case this.Const.Difficulty.Easy:
-					dateToSkip = 250;
-					break;
-				case this.Const.Difficulty.Normal:
-					dateToSkip = 200;
-					break;
-				case this.Const.Difficulty.Hard:
-					dateToSkip = 150;
-					break;
-				case this.Const.Difficulty.Legendary:
-					dateToSkip = 100;
-					break;
-			}
 
-			if (this.World.getTime().Days >= dateToSkip)
-			{
-				local bonus = this.Math.min(1, this.Math.floor( (this.World.getTime().Days - dateToSkip) / 20.0));
-				b.MeleeSkill += bonus;
-				b.RangedSkill += bonus;
-				b.MeleeDefense += this.Math.floor(bonus / 2);
-				b.RangedDefense += this.Math.floor(bonus / 2);
-				b.Hitpoints += this.Math.floor(bonus * 2);
-				b.Initiative += this.Math.floor(bonus / 2);
-				b.Stamina += bonus;
-			//	b.XP += this.Math.floor(bonus * 4);
-				b.Bravery += bonus;
-				b.FatigueRecoveryRate += this.Math.floor(bonus / 4);
-			}
-		}
+		::Legends.S.scaleBaseProperties(b);
 	}
 
 
 });
-
