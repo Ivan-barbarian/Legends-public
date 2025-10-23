@@ -1144,7 +1144,7 @@ class Defs:
   "title" :  "Diviner's Wraps",
   "desc" :  "The headwear of The Diviner, despite not having any way to see through the fabric, once it sits on your face you can see through it as if it was never there at all."
 },
-{"name" : "diviner_top"                  , "layer" : "helm", "min" : 1, "max" : 2, "value" : 5000, "con" : 65, "stam" : -3, "vis" : 5, "hair" : "true", "beard" : "false",
+{"name" : "diviner_top"                  , "layer" : "helm", "min" : 1, "max" : 2, "value" : 5000, "con" : 65, "stam" : -3, "vis" : -5, "hair" : "true", "beard" : "false",
   "title" :  "Diviner's Crown",
   "desc" :  "The crown of The Diviner. Upon placing it on your head it was as if your mind expanded out from your body"
 },
