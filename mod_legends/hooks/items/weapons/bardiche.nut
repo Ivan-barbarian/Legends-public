@@ -21,7 +21,10 @@
 			::Legends.Actives.grant(this.weapon, ::Legends.Active.Swing, function (_skill) {
 				_skill.setApplyAxeMastery(true);
 			}.bindenv(this));
-			::Legends.Actives.grant(this.weapon, ::Legends.Active.SplitShield);
+			::Legends.Actives.grant(this.weapon, ::Legends.Active.SplitShield, function (_skill) {
+				_skill.setApplyAxeMastery(true);
+				_skill.setFatigueCost(skillToAdd.getFatigueCostRaw() + 5);
+			}.bindenv(this));
 			return;
 		}
 
