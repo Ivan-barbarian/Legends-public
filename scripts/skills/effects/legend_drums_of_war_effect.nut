@@ -27,5 +27,35 @@ this.legend_drums_of_war_effect <- this.inherit("scripts/skills/skill", {
 		if (actor.isPlacedOnMap())
 			this.spawnIcon(this.m.Overlay, actor.getTile());
 	}
+
+
+	function onTurnStart() {
+		if (::Legends.S.isNull(this.m.Caster))
+			return;
+		this.removeEffectFromAffected();
+	}
+
+	function onDeath(_fatalityType) {
+		if (::Legends.S.isNull(this.m.Caster))
+			return;
+		this.removeEffectFromAffected();
+	}
+
+	function onCombatFinished() {
+		this.m.Caster = null;
+		this.m.AffectedActors = [];
+		this.removeSelf();
+	}
+
+	function removeEffectFromAffected() {
+		foreach(actor in this.m.AffectedActors) {
+			if (::Legends.S.skillEntityAliveCheck(actor))
+				continue;
+			::Legends.Effects.remove(actor.getSkills(), ::Legends.Effect.LegendDrumsOfWar);
+		}
+		this.m.AffectedActors = [];
+		this.m.Caster = null;
+		this.removeSelf();
+	}
 });
 

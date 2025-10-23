@@ -1,7 +1,5 @@
 this.legend_drums_of_life_skill <- this.inherit("scripts/skills/skill", {
-	m = {
-		AffectedActors = []
-	},
+	m = {},
 	function create()
 	{
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendDrumsOfLife);
@@ -105,43 +103,35 @@ this.legend_drums_of_life_skill <- this.inherit("scripts/skills/skill", {
 			!tile.hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
 	}
 
-	function onUse( _user, _targetTile )
-	{
+	function onUse( _user, _targetTile ) {
 		local myTile = _user.getTile();
-		local actors = this.Tactical.Entities.getInstancesOfFaction(_user.getFaction());
+		local actors = ::Tactical.Entities.getInstancesOfFaction(_user.getFaction());
 
+		local affectedActors = [];
 		foreach( a in actors )
 		{
+			if (_user.getID() == a.getID())
+				continue;
+
 			if (a.getSkills().hasEffect(::Legends.Effect.LegendDrumsOfLife))
+				continue;
+
+			if (a.getTile().getDistanceTo(myTile) > 8)
 				continue;
 
 			::Legends.Effects.grant(a, ::Legends.Effect.LegendDrumsOfLife, function(_effect) {
 				_effect.setEffect(this.getBonus());
 			}.bindenv(this));
-			this.m.AffectedActors.push(a.weakref());
+
+			affectedActors.push(a.weakref());
 		}
 
 		::Legends.Effects.grant(_user, ::Legends.Effect.LegendDrumsOfLife, function(_effect) {
 			_effect.setEffect(this.getBonus());
+			_effect.m.Caster = _user.weakref();
+			_effect.m.AffectedActors = affectedActors;
 		}.bindenv(this));
 		return true;
 	}
-
-	function onTurnStart()
-	{
-		foreach(actor in this.m.AffectedActors)
-		{
-			if (::Legends.S.skillEntityAliveCheck(actor))
-				continue;
-			::Legends.Effects.remove(actor.getSkills(), ::Legends.Effect.LegendDrumsOfLife);
-		}
-		this.m.AffectedActors = [];
-	}
-
-	function onCombatFinished()
-	{
-		this.m.AffectedActors = [];
-	}
-
 });
 
