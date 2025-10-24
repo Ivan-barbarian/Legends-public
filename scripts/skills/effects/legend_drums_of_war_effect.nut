@@ -1,6 +1,8 @@
 this.legend_drums_of_war_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		Effect = 0
+		Effect = 0,
+		AffectedActors = [],
+		Caster = null
 	},
 
 	function setEffect( _e )
