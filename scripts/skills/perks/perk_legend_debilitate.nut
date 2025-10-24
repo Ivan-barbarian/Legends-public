@@ -18,6 +18,11 @@ this.perk_legend_debilitate <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function onRemoved()
+	{
+		::Legends.Actives.remove(this, ::Legends.Active.Debilitate);
+	}
+
 
 });
 
