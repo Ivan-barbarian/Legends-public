@@ -15,15 +15,6 @@ this.legend_barbarian_runechosen <- this.inherit("scripts/entity/tactical/human"
 		this.m.AIAgent.setActor(this);
 	}
 
-	function assignRune()
-	{
-		local selected = this.m.ChosenRunes[this.Math.rand(0, this.m.ChosenRunes.len() - 1)];
-		local rune = ::new(::Legends.Runes.get(selected).Script);
-		rune.setRuneVariant(selected);
-		rune.setRuneBonus(true);
-		rune.onUse(this, null);
-	}
-
 	function onInit()
 	{
 		this.human.onInit();
@@ -199,7 +190,7 @@ this.legend_barbarian_runechosen <- this.inherit("scripts/entity/tactical/human"
 		local rune = ::new(::Legends.Runes.get(selected).Script);
 		rune.setRuneVariant(selected);
 		rune.setRuneBonus(true);
-		rune.onUse(this, null);
+		rune.onUse(this, null, false);
 	}
 
 	function makeMiniboss()
