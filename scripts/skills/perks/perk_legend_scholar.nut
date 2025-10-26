@@ -10,14 +10,16 @@ this.perk_legend_scholar <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onAdded()
-	{
-		::World.Statistics.getFlags().set("HasScholar", true);
+	function onAdded() {
+		::World.Assets.m.HasScholars++;
 	}
 
-	function onRemoved()
-	{
-		::World.Statistics.getFlags().remove("HasScholar");
+	function onRemoved() {
+		::World.Assets.m.HasScholars--;
+	}
+
+	function onDeath(_fatalityType) {
+		::World.Assets.m.HasScholars--;
 	}
 
 });

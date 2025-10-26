@@ -60,7 +60,7 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 				text = "Will apply a " + this.m.Cooldown + " day cooldown until you can read again."
 			}
 		];
-		if (this.m.HasToBeIdentified && ::World.Statistics.getFlags().get("HasScholar") || !this.m.HasToBeIdentified)
+		if (this.m.HasToBeIdentified && ::World.Assets.m.HasScholars > 0 || !this.m.HasToBeIdentified)
 		{
 			result.push({
 				id = 10,
@@ -92,7 +92,7 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 
 	function getName()
 	{
-		if (this.m.HasToBeIdentified && ::World.Statistics.getFlags().get("HasScholar") || !this.m.HasToBeIdentified)
+		if (this.m.HasToBeIdentified && ::World.Assets.m.HasScholars > 0 || !this.m.HasToBeIdentified)
 			return this.m.BookName + " " + this.m.PerkGroupSelection;
 		else
 			return this.m.BookName + " " + "Unidentified";
