@@ -11,7 +11,7 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 		this.m.BadEnding = "";
 		this.m.HiringCost = 0;
 		this.m.DailyCost = 0;
-		this.m.Excluded = ::Legends.Legion.exludedTraits();
+		this.m.Excluded = ::Legends.Legion.excludedTraits();
 
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Hitpoints,
