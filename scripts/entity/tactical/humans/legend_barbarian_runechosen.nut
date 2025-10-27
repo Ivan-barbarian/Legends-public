@@ -13,6 +13,11 @@ this.legend_barbarian_runechosen <- this.inherit("scripts/entity/tactical/human"
 		this.m.SoundPitch = 0.95;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/barbarian_melee_agent");
 		this.m.AIAgent.setActor(this);
+		this.m.OnDeathLootTable.extend([
+			[5, "scripts/items/misc/legend_masterwork_fabric"],
+			[5, "scripts/items/misc/legend_masterwork_metal"],
+			[5, "scripts/items/misc/legend_masterwork_tools"]
+		]);
 	}
 
 	function onInit()
