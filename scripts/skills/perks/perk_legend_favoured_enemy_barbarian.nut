@@ -4,6 +4,7 @@ this.perk_legend_favoured_enemy_barbarian <- this.inherit("scripts/skills/legend
 	{
 		this.legend_favoured_enemy_skill.create();
 		::Legends.Perks.onCreate(this, ::Legends.Perk.LegendFavouredEnemyBarbarian);
+		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.ValidTypes = this.Const.LegendMod.FavoriteBarbarian;
 	}
 
