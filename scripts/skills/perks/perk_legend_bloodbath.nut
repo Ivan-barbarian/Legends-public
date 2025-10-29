@@ -53,12 +53,15 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 			return 0;
 
 		local myself = this.getContainer().getActor();
-		local myTile = actor.getTile();
+		local myTile = myself.getTile();
 
-		return ::Tactical.Entities.getAllInstancesAsArray()
+		local bonus = ::Tactical.Entities.getAllInstancesAsArray()
 			.filter(@(_, _actor) !::Legends.S.skillEntityAliveCheck(_actor) && !_actor.isAlliedWith(myself))
 			.map(@(_actor) myTile.getDistanceTo(_actor.getTile()) > 1 ? 1 : 2)
 			.reduce(@(a, b) a + b);
+		if (bonus == null)
+			return 0;
+		return bonus;
 	}
 
 	function onUpdate( _properties )
