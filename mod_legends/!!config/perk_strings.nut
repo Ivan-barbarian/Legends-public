@@ -2621,8 +2621,6 @@ Master the martial arts of unarmed combat.
 • [color=%skill%]Tackle[/color] gains [color=%positive%]+10%[/color] chance to hit.
 
 [color=%active%][u]Active:[/u][/color]
-
-[color=%active%][u]Active:[/u][/color]
 • Unlocks the [color=%skill%]Tackle[/color] skill which on a hit knocks over your opponent.
 
 • [color=%status%]Knocked Over[/color] enemies have their Melee Defense reduced by [color=%negative%]-50%[/color], their Initiative reduced by [color=%negative%]-70%[/color], and increases damage they take by [color=%positive%]25%[/color].
