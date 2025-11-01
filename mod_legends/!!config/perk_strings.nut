@@ -1870,7 +1870,7 @@ Even the fiercest battles can't keep you down.
 [color=%active%][u]Active:[/u][/color]
 • Unlocks the [color=%skill%]Second Wind[/color] skill with the same effects as the passive.
 
-• Costs [color=%negative%]4[/color] AP and [color=%negative%]0[/color] Fatigue. Can only be used when accumulated fatigue is more than 50% of maximum.
+• Costs [color=%negative%]4[/color] AP and [color=%negative%]0[/color] Fatigue. Can only be used once per combat when accumulated fatigue is more than 50% of maximum. If the passive effect activates the active can't be used.
 ");
 
 ::Const.Strings.PerkDescription.LegendMarkTarget <- ::Legends.tooltip(@"
@@ -2700,7 +2700,7 @@ Some folks take joy in the simple pleasures of destroying shields.
 Use your size and strength to dominate the battlefield, combining the best of both worlds in offense and defense.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Effectiveness vs Armor is increased by [color=%positive%]+30%[/color] for any weapon used.
+• Effectiveness vs Armor is increased by [color=%positive%]30%[/color] for any weapon used.
 
 [color=%active%][u]Active:[/u][/color]
 • Unlocks the [color=%skill%]Wind Up[/color] skill which allows you to knock back and [color=%status%]Baffle[/color] an opponent on your next swing.

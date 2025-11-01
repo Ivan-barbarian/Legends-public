@@ -495,6 +495,8 @@ By watching your opponent's aim, you have more time to react.
 • When being attacked with ranged weapons, gain [color=%positive%]1 + 10% [/color] of your base Ranged Defense as additional Ranged Defense per tile that the attacker is away.
 
 • Always gain at least [color=%positive%]+10[/color] to Ranged Defense when attacked from range.
+
+• If you're armed with a ranged weapon and a ranged attack misses you, gain a chance to fire back at your attacker. The chance is based on Ranged Defense.
 ");
 ::Const.Perks.PerkDefObjects[::Legends.Perk.Anticipation].Tooltip = ::Const.Strings.PerkDescription.Anticipation;
 ::Const.Strings.PerkDescription.HoldOut <- ::Legends.tooltip(@"
