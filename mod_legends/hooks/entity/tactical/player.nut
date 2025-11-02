@@ -1608,9 +1608,19 @@
 		return mod;
 	}
 
-	// Means repair speed, most backgrounds have 5 or 8
 	o.getArmorPartsModifier <- function () {
-		return this.getBackground().getModifiers().ArmorParts;
+		local mod = this.getBackground().getModifiers().ArmorParts;
+		local skills = [
+			::Legends.Perk.LegendToolsDrawers,
+			::Legends.Perk.LegendToolsSpares
+		];
+		foreach (s in skills) {
+			local skill = ::Legends.Perks.get(this, s);
+			if (skill != null) {
+				mod += skill.getModifier();
+			}
+		}
+		return mod;
 	}
 
 	// Means repair efficiency
