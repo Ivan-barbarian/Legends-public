@@ -109,16 +109,16 @@
 	o.assignRandomEquipment = function ()
 	{
 		local weapons = [
-			"orc_axe",
-			"orc_cleaver",
-			"orc_flail_2h",
-			"orc_axe_2h",
-			"legend_limb_lopper",
-			"legend_man_mangler",
-			"legend_bough",
-			"legend_skullbreaker"
+			"weapons/greenskins/orc_axe",
+			"weapons/greenskins/orc_cleaver",
+			"weapons/greenskins/orc_flail_2h",
+			"weapons/greenskins/orc_axe_2h",
+			"weapons/greenskins/legend_limb_lopper",
+			"weapons/greenskins/legend_man_mangler",
+			"weapons/greenskins/legend_bough",
+			"weapons/greenskins/legend_skullbreaker"
 		];
-		this.m.Items.equip(this.new("scripts/items/greenskins/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
 		local item = this.Const.World.Common.pickArmor([
 			[1, ::Legends.Armor.Greenskin.orc_berserker_light_armor],
