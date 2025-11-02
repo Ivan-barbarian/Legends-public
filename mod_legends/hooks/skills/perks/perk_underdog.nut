@@ -86,7 +86,11 @@
 			}
 			else if (_skill.isRanged())
 			{
-				_skill.m.AdditionalAccuracy += bonus;
+				if ("AdditionalAccuracy" in _skill.m) {
+					_skill.m.AdditionalAccuracy += bonus;
+				} else {
+					::logError("AdditionalAccuracy not found in skill")
+				}
 			}
 		}
 	}
