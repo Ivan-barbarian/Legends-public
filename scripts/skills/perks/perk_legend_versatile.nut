@@ -8,7 +8,7 @@ this.perk_legend_versatile <- this.inherit("scripts/skills/skill", {
 		::Legends.Perks.onCreate(this, ::Legends.Perk.LegendVersatile);
 	}
 
-	function onTurnEnd()
+	function onCombatFinished()
 	{
 		this.m.MeleeBonus = false;
 		this.m.RangedBonus = false;
@@ -20,7 +20,7 @@ this.perk_legend_versatile <- this.inherit("scripts/skills/skill", {
 			_properties.MeleeDamageMult *= 1.5;
 
 		if (this.m.RangedBonus)
-			_properties.MeleeDamageMult *= 1.5;
+			_properties.RangedDamageMult *= 1.5;
 	}
 
 	function onAnySkillExecuted( _skill, _targetTile, _targetEntity, _forFree )
@@ -28,16 +28,15 @@ this.perk_legend_versatile <- this.inherit("scripts/skills/skill", {
 		if (_skill == null)
 			return;
 
-		if (_skill.isRanged() && !this.m.MeleeBonus)
+		if (!_skill.isAttack())
+			return;
+
+		if (_skill.isRanged()) {
 			this.m.MeleeBonus = true;
-
-		if (!_skill.isRanged() && !this.m.RangedBonus)
-			this.m.RangedBonus = true;
-
-		if (_skill.isRanged() && this.m.RangedBonus)
 			this.m.RangedBonus = false;
-
-		if (!_skill.isRanged() && this.m.MeleeBonus)
+		} else {
 			this.m.MeleeBonus = false;
+			this.m.RangedBonus = true;
+		}
 	}
 });
