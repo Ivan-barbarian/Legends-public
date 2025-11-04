@@ -1,6 +1,6 @@
 ::Legends.Necromancer <- {};
 //can roll; brute, clubfooted, clumsy, Iron Jaw, fragile, huge, hesitant, strong, sure footing, survivor, tiny, tough, gluttonous, lucky, shortsighted, aggressive, martial, predictable, lumbering.
-::Legends.Necromancer.exludedTraits <- @() [ //only including naturally occouring or obtainable traits.
+::Legends.Necromancer.excludedTraits <- @() [ //only including naturally occouring or obtainable traits.
 	::Legends.Traits.getID(::Legends.Trait.Ailing), 
 	::Legends.Traits.getID(::Legends.Trait.Asthmatic),
 	::Legends.Traits.getID(::Legends.Trait.Bleeder),

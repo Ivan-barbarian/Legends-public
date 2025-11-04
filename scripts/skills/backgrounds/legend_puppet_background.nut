@@ -11,7 +11,7 @@ this.legend_puppet_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.BadEnding = "There is no beginning or end for %name%. Like any feral animal %they% simply wander around - occasionally following hordes of like minded dead, being adopted by a new master and slain, only to get back up again and wander some more. %name% repeats this cycle until one day the blow will be fatal. Is this a curse of a blessing? To cheat death is such a manner many would kill for. But %name% does not care. There is only hunger.";
 		this.m.HiringCost = 0;
 		this.m.DailyCost = 0;
-		this.m.Excluded = ::Legends.Necromancer.exludedTraits();
+		this.m.Excluded = ::Legends.Necromancer.excludedTraits();
 		/*this.m.ExcludedTalents = [ //talentless
 			this.Const.Attributes.Hitpoints
 			this.Const.Attributes.Fatigue

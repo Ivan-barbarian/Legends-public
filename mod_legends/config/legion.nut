@@ -2,7 +2,7 @@
 
 // can roll; brute, clubfooted, clumsy, fragile, huge, hesitant, strong, sure footing, survivor, tiny, tough, bright, lucky,
 // shortsighted, aggressive, martial, predictable, lumbering, quick, swift, team player, hate nobles, frail, etc (see commented out below)
-::Legends.Legion.exludedTraits <- @() [
+::Legends.Legion.excludedTraits <- @() [
 	::Legends.Traits.getID(::Legends.Trait.Ailing), //only including naturally occouring or obtainable traits.
 	::Legends.Traits.getID(::Legends.Trait.Asthmatic),
 	::Legends.Traits.getID(::Legends.Trait.Bleeder),
