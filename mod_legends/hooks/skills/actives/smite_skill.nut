@@ -18,19 +18,13 @@
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
 		local success = this.attackEntity(_user, _targetTile.getEntity());
 
-		if (::Legends.S.skillEntityAliveCheck(_user))
+		if (::Legends.S.skillEntityAliveCheck(_user, target))
 			return success;
 
-		if (::Legends.S.skillEntityAliveCheck(target))
-			return success;
-
-		if (success && target.isAlive())
-		{
-			::Legends.Effects.grant(target, ::Legends.Effect.Staggered);
-
-			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
-			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " struck a blow that leaves " + this.Const.UI.getColorizedEntityName(_targetEntity) + " staggered");
+		if (success) {
+			local stagger = ::Legends.Effects.grant(target, ::Legends.Effect.Staggered);
+			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer) {
+				this.Tactical.EventLog.log(stagger.getLogEntryOnAdded(this.Const.UI.getColorizedEntityName(_user), this.Const.UI.getColorizedEntityName(target)));
 			}
 		}
 
