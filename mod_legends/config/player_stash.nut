@@ -1,12 +1,14 @@
 ::Legends.Stash <- {
 	Flags = {
 		StartingSize = "LegendStartingStash",
-		CartUpgrades = "LegendUpgradesStash"
+		CartUpgrades = "LegendUpgradesStash",
+		CaravanHandEvent = "LegendCaravanHandStash",
 	}
 };
 
 ::Legends.Stash.setStartingSize <- function (_size) {
 	::World.Flags.set(::Legends.Stash.Flags.CartUpgrades, 0);
+	::World.Flags.set(::Legends.Stash.Flags.CaravanHandEvent, 0);
 	::World.Flags.set(::Legends.Stash.Flags.StartingSize, _size);
 }
 
@@ -25,6 +27,7 @@
 		size += bro.getStashModifier();
 	}
 	size += ::World.Retinue.hasFollower("follower.quartermaster") ? 27 : 0;
+	size += ::World.Flags.getAsInt(::Legends.Stash.Flags.CaravanHandEvent);
 	size += ::World.Flags.getAsInt(::Legends.Stash.Flags.CartUpgrades) * 27;
 	return size;
 }
