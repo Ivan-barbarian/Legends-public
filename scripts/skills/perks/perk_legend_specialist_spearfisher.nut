@@ -2,7 +2,8 @@ this.perk_legend_specialist_spearfisher <- this.inherit("scripts/skills/legend_s
 	m = {
 		FreeNet = false,
 		SpecialistWeaponIds = [
-			"weapon.javelin"
+			"weapon.javelin",
+			"weapon.named_javelin"
 		],
 		ApplicableWeaponTypes = [
 			this.Const.Items.WeaponType.Throwing
@@ -25,7 +26,7 @@ this.perk_legend_specialist_spearfisher <- this.inherit("scripts/skills/legend_s
 		if (_skill == null)
 			return;
 
-		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.ThrowNet) && this.m.FreeNet)
+		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.ThrowNet))
 		{
 			this.m.FreeNet = false;
 			return;
@@ -51,13 +52,9 @@ this.perk_legend_specialist_spearfisher <- this.inherit("scripts/skills/legend_s
 	{
 		if (!this.m.FreeNet)
 			return;
-		local skills = this.getContainer().getAllSkillsOfType(this.Const.SkillType.Active);
-		foreach (skill in skills)
-		{
-			if (skill.getID() == ::Legends.Actives.getID(::Legends.Active.ThrowNet))
-			{
-				skill.m.ActionPointCost = 0;
-			}
+		local skill = ::Legends.Actives.get(this, ::Legends.Active.ThrowNet);
+		if (skill != null) {
+			skill.m.ActionPointCost = 0;
 		}
 	}
 });
