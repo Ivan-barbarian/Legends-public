@@ -169,6 +169,11 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 	function getCost(_injury)
 	{
+		local debugScriptName = ::IO.scriptFilenameByHash(_injury.ClassNameHash);
+		if (!::MSU.isKindOf(_injury, "injury")) {
+			::logInfo("injury is instance? " + typeof _injury == "instance");
+			::logInfo("supposed injury script: " + ::IO.scriptFilenameByHash(_injury.ClassNameHash));
+		}
 		local cost = _injury.getCost();
 		if (this.getUpgraded())
 			cost = this.Math.floor(cost * 0.75);
