@@ -8,12 +8,6 @@
 		local tooltip = this.getRangedTooltip(this.getDefaultTooltip());
 
 		tooltip.push({
-			id = 6,
-			type = "text",
-			icon = "ui/icons/hitchance.png",
-			text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+40%[/color] chance to hit"
-		});
-		tooltip.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
