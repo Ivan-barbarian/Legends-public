@@ -20,7 +20,8 @@
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + fatPerHit + "[/color] extra fatigue on hit"
+			text = "Inflicts [color=%damage%]%fat%[/color] extra fatigue on hit",
+			param = [["fat", fatPerHit]]
 		});
 
 		local grappler = ::Legends.Perks.get(this, ::Legends.Perk.LegendGrappler);
@@ -30,7 +31,8 @@
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Each attack has a " + grappler.m.GrappleChance + "% chance to apply Grappled"
+				text = "Each attack has a %chance%% chance to apply Grappled",
+				param = [["fat", grappler.m.GrappleChance]]
 			});
 		}
 

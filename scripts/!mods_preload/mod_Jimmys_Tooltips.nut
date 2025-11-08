@@ -40,7 +40,7 @@
 		function patchTooltip (_tooltip) {
 			foreach (entry in _tooltip) {
 				if ("text" in entry)
-					entry.text = ::Legends.tooltip(entry.text);
+					entry.text = ::Legends.tooltip(entry.text, "param" in entry ? entry.param : []);
 			}
 			return _tooltip;
 		}
