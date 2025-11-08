@@ -20,8 +20,8 @@
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Inflicts [color=%damage%]%fat%[/color] extra fatigue on hit",
-			param = [["fat", fatPerHit]]
+			text = "Inflicts [color=%damage%]%fatDmf%[/color] extra fatigue on hit",
+			param = [["fatDmf", fatPerHit]]
 		});
 
 		local grappler = ::Legends.Perks.get(this, ::Legends.Perk.LegendGrappler);
