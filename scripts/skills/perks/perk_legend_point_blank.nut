@@ -6,6 +6,11 @@ this.perk_legend_point_blank <- this.inherit("scripts/skills/skill", {
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 	}
 
+	function getDescription()
+	{
+		return "Don't fire until you see the whites of their eyes!";
+	}
+
 	function getTooltip ()
 	{
 		local tooltip = this.skill.getTooltip();
