@@ -10,21 +10,25 @@
 
 	o.getDescription = function()
 	{
-		return "Having just landed a hit, this character is ready to perform a powerful follow-up strike! The next attack will inflict [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] damage to a single target decrease fatigue cost by [color=" + this.Const.UI.Color.NegativeValue + "]20%[/color]. If the attack misses, the effect is wasted.";
+		return "Having just landed a hit, this character is ready to perform a powerful follow-up strike! The next attack will inflict [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] damage to a single target and refund [color=" + this.Const.UI.Color.NegativeValue + "]20%[/color] of the fatigue cost. If the attack misses, the effect is wasted, but the fatigue cost will be refunded.";
 	}
 
 	o.onAdded = function()
 	{
 	}
 
-	o.onAnySkillUsed = function( _skill, _targetEntity, _properties )
+	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties )
 	{
-	}
+		if (_targetEntity == null || !_targetEntity.isAttackable())
+			return;
 
-	o.onUpdate <- function( _properties )
-	{
-		_properties.DamageTotalMult *= 1.25;
-		_properties.FatigueEffectMult *= 0.8;
+		if (!this.m.IsGarbage && this.m.TimeAdded + 0.1 < this.Time.getVirtualTimeF() && !_targetEntity.isAlliedWith(this.getContainer().getActor()))
+		{
+			local actor = this.getContainer().getActor();
+			actor.setFatigue(this.Math.max(0, actor.getFatigue() - this.Math.floor(_skill.getFatigueCost() * 0.2)));
+			_properties.DamageTotalMult *= 1.25;
+			this.removeSelf();
+		}
 	}
 	
 	o.onTurnEnd <- function()
