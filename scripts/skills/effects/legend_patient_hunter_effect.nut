@@ -45,6 +45,8 @@ this.legend_patient_hunter_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTurnEnd()
 	{
-		this.removeSelf();
+		this.m.ApBonus = this.Math.min(3, this.getContainer().getActor().getActionPoints());
+		if (this.m.ApBonus == 0)
+			this.removeSelf();
 	}
 });
