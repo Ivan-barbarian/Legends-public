@@ -48,7 +48,7 @@
 		{
 			actor.getSkills().add(::new("scripts/skills/terrain/hidden_effect"));		
 			_properties.RangedSkillMult *= 0.5;
-			_properties.RangedDamageMult *= 0.5;
+			_properties.DamageReceivedRangedMult *= 0.5;
 			_properties.Vision -= 10;
 			
 		}
