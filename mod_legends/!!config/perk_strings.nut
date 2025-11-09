@@ -8,7 +8,9 @@ local colors = [
 	["perk",  ::Const.UI.Color.Perk],
 	["positive", ::Const.UI.Color.PositiveValue],
 	["negative", ::Const.UI.Color.NegativeValue],
-	["damage", ::Const.UI.Color.DamageValue]
+	["positiveEvent", ::Const.UI.Color.PositiveEventValue],
+	["negativeEvent", ::Const.UI.Color.NegativeEventValue],
+	["damage", ::Const.UI.Color.DamageValue],
 ];
 
 ::Legends.tooltip <- function (_text, _vars = [])  {
