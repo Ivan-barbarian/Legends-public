@@ -453,7 +453,7 @@
 
 	o.calculateStashModifier <- function (_resize = true)
 	{
-		if (_resize || ::World.State.m.AppropriateTimeToRecalc == 1) {	//Leonion's fix
+		if (_resize && ::World.State.m.AppropriateTimeToRecalc == 1) {	//Leonion's fix
 			::Legends.Stash.resize();
 		}
 		return ::Legends.Stash.getSize();
