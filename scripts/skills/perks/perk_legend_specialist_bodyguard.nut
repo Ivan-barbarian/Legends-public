@@ -30,19 +30,19 @@ this.perk_legend_specialist_bodyguard <- this.inherit("scripts/skills/legend_spe
 	// 		id = 7,
 	// 		type = "text",
 	// 		icon = "ui/icons/hitchance.png",
-	// 		text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.calculateSpecialistBonus(this.m.BonusMelee, _item) + "[/color] chance to hit"
+	// 		text = "[color=%positive%]+" + this.calculateSpecialistBonus(this.m.BonusMelee, _item) + "[/color] chance to hit"
 	// 	},
 	// 	{
 	// 		id = 8,
 	// 		type = "text",
 	// 		icon = "ui/icons/special.png",
-	// 		text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.calculateSpecialistBonus(20, _item) + "%[/color] Riposte Damage"
+	// 		text = "[color=%positive%]+" + this.calculateSpecialistBonus(20, _item) + "%[/color] Riposte Damage"
 	// 	},
 	// 	{
 	// 		id = 9,
 	// 		type = "text",
 	// 		icon = "ui/icons/special.png",
-	// 		text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.calculateSpecialistBonus(10, _item) + "%[/color] Area of Effect attacks"
+	// 		text = "[color=%positive%]+" + this.calculateSpecialistBonus(10, _item) + "%[/color] Area of Effect attacks"
 	// 	}]);
 	// 	if (::Legends.S.isCharacterWeaponSpecialized(properties, _item))
 	// 	{
@@ -50,7 +50,7 @@ this.perk_legend_specialist_bodyguard <- this.inherit("scripts/skills/legend_spe
 	// 			id = 7,
 	// 			type = "text",
 	// 			icon = "ui/icons/damage_dealt.png",
-	// 			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.calculateSpecialistBonus(this.m.BonusDamage, _item) + "%[/color] Damage"
+	// 			text = "[color=%positive%]+" + this.calculateSpecialistBonus(this.m.BonusDamage, _item) + "%[/color] Damage"
 	// 		});
 	// 	}
 	// 	return tooltip;

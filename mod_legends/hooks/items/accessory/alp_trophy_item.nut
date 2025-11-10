@@ -27,13 +27,13 @@
 				id = 67,
 				type = "text",
 				icon = "ui/icons/xp_received.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] Experience Gain"
+				text = "[color=%positive%]5%[/color] Experience Gain"
 			},
 			{
 				id = 69,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Mitigates [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] of night penalties."
+				text = "Mitigates [color=%positive%]25%[/color] of night penalties."
 			}
 		];
 	}

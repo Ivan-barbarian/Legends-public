@@ -263,7 +263,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 				id = 16,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee Skill from being in a necromancer\'s employ"
+				text = "[color=%positive%]+10[/color] Melee Skill from being in a necromancer\'s employ"
 			});
 		}
 	}

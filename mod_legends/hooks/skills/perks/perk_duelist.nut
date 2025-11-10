@@ -29,7 +29,7 @@
 	// 			id = 6,
 	// 			type = "text",
 	// 			icon = "ui/tooltips/warning.png",
-	// 			text = "[color=" + this.Const.UI.Color.NegativeValue + "]You do not have the right equipment to receive Duelist's effect[/color]"
+	// 			text = "[color=%negative%]You do not have the right equipment to receive Duelist's effect[/color]"
 	// 		});
 	// 		return tooltip;
 	// 	}
@@ -37,7 +37,7 @@
 	// 		id = 6,
 	// 		type = "text",
 	// 		icon = "ui/icons/direct_damage.png",
-	// 		text = "[color=" + this.Const.UI.Color.PositiveValue + "]"+ bonus + "%[/color] of any damage ignores armor"
+	// 		text = "[color=%positive%]"+ bonus + "%[/color] of any damage ignores armor"
 	// 	});
 
 	// 	return tooltip;

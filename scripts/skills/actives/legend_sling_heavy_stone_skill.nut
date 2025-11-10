@@ -77,7 +77,7 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + fatPerHit + "[/color] extra fatigue"
+			text = "Inflicts [color=%damage%]" + fatPerHit + "[/color] extra fatigue"
 		});
 		if (this.getContainer().hasPerk(::Legends.Perk.LegendBarrage))
 		{
@@ -85,7 +85,7 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]100%[/color] chance to stun and daze target on a hit to the head if not immune and always staggers the target"
+				text = "Has a [color=%negative%]100%[/color] chance to stun and daze target on a hit to the head if not immune and always staggers the target"
 			});
 		}
 		else
@@ -94,7 +94,7 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]100%[/color] chance to daze a target on a hit to the head and always staggers the target"
+				text = "Has a [color=%negative%]100%[/color] chance to daze a target on a hit to the head and always staggers the target"
 			});
 		}
 
@@ -104,7 +104,7 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 				id = 9,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Can not be used because this character is engaged in melee[/color]"
+				text = "[color=%negative%]Can not be used because this character is engaged in melee[/color]"
 			});
 		}
 

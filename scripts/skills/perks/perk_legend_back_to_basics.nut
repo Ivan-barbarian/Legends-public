@@ -19,7 +19,7 @@ this.perk_legend_back_to_basics <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "Gaining an additional [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.BasicsStacks * 5 + "[/color] melee defense."
+				text = "Gaining an additional [color=%positive%]" + this.m.BasicsStacks * 5 + "[/color] melee defense."
 			});
 		}
 		if (this.getContainer().getActor().getMoraleState() == this.Const.MoraleState.Fleeing)

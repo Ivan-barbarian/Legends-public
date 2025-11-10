@@ -32,13 +32,13 @@ this.legend_launch_holy_water_skill <- this.inherit("scripts/skills/actives/thro
 			id = 6,
 			type = "text",
 			icon = "ui/icons/regular_damage.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]20[/color] damage to hitpoints for [color=" + this.Const.UI.Color.DamageValue + "]3[/color] turns, all of which ignores armor"
+			text = "Inflicts [color=%damage%]20[/color] damage to hitpoints for [color=%damage%]3[/color] turns, all of which ignores armor"
 		},
 		{
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Has a [color=" + this.Const.UI.Color.DamageValue + "]33%[/color] chance to hit bystanders at the same or lower height level as well."
+			text = "Has a [color=%damage%]33%[/color] chance to hit bystanders at the same or lower height level as well."
 		},
 		{
 			id = 6,
@@ -65,7 +65,7 @@ this.legend_launch_holy_water_skill <- this.inherit("scripts/skills/actives/thro
 				id = 8,
 				type = "text",
 				icon = "ui/icons/ammo.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]" + ammo + "[/color] use left"
+				text = "Has [color=%positive%]" + ammo + "[/color] use left"
 			});
 		}
 		else
@@ -74,7 +74,7 @@ this.legend_launch_holy_water_skill <- this.inherit("scripts/skills/actives/thro
 				id = 8,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]No ammo left in backpack[/color]"
+				text = "[color=%negative%]No ammo left in backpack[/color]"
 			});
 		}
 

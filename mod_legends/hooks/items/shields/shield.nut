@@ -40,7 +40,7 @@
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Reduces any ranged damage taken by [color=" + ::Const.UI.Color.NegativeValue + "]-" + 2 * this.m.RangedDefense + "%[/color]"
+				text = "Reduces any ranged damage taken by [color=%negative%]-" + 2 * this.m.RangedDefense + "%[/color]"
 			});
 		}
 		if (this.isRuned())
@@ -50,6 +50,12 @@
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = this.getRuneSigilTooltip()
+			});
+			result.push({
+				id = 21,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "When scrapped, rune will be refunded"
 			});
 		}
 

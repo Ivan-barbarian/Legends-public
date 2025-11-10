@@ -25,15 +25,15 @@ this.legend_ancient_scroll_item <- ::inherit("scripts/items/misc/legend_skill_bo
 		local effect = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendIrritable);
 		local injury = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendHeadache);
 		if (injury != null)
-			return "Failed to use this item as the user will be recovering from the last reading for another [color=" + ::Const.UI.Color.NegativeValue + "]" + injury.m.HealingTimeMin + "-" + injury.m.HealingTimeMax +"[/color] days.";
+			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + injury.m.HealingTimeMin + "-" + injury.m.HealingTimeMax +"[/color] days.";
 		if (effect != null)
-			return "Failed to use this item as the user will be recovering from the last reading for another [color=" + ::Const.UI.Color.NegativeValue + "]" + effect.m.HealingTime + "-" + effect.m.HealingTime +"[/color] days.";
+			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + effect.m.HealingTime + "-" + effect.m.HealingTime +"[/color] days.";
 
 		if (_actor.getSkills().hasTrait(::Legends.Trait.Dumb))
-			return "Failed to use this item as the user has [color=" + ::Const.UI.Color.NegativeValue + "]Dumb[/color] trait.";
+			return "Failed to use this item as the user has [color=%negative%]Dumb[/color] trait.";
 
 		if (_actor.getSkills().hasSkill("injury.brain_damage"))
-			return "Failed to use this item as the user has [color=" + ::Const.UI.Color.NegativeValue + "]Brain Damage[/color] injury.";
+			return "Failed to use this item as the user has [color=%negative%]Brain Damage[/color] injury.";
 
 		if (_actor.getFlags().getAsInt("LegendsScrollCount") <= 0)
 			return true;

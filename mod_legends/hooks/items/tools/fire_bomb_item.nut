@@ -65,13 +65,13 @@
 			id = 7,
 			type = "text",
 			icon = "ui/icons/vision.png",
-			text = "Range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.RangeMax + "[/color] tiles"
+			text = "Range of [color=%positive%]" + this.m.RangeMax + "[/color] tiles"
 		},
 		{
 			id = 5,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Will set [color=" + this.Const.UI.Color.DamageValue + "]7[/color] tiles ablaze with burning fire for 2 rounds"
+			text = "Will set [color=%damage%]7[/color] tiles ablaze with burning fire for 2 rounds"
 		}]);
 
 		if (!this.World.Retinue.hasFollower("follower.alchemist"))

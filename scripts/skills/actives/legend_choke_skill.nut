@@ -48,13 +48,13 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] damage to Choked, Tackled or Grappled enemies"
+				text = "[color=%positive%]+50%[/color] damage to Choked, Tackled or Grappled enemies"
 			},
 			{
 				id = 9,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Adds the Choked effect which reduces enemy fatigue recovery by [color=" + this.Const.UI.Color.NegativeValue + "]15[/color]"
+				text = "Adds the Choked effect which reduces enemy fatigue recovery by [color=%negative%]15[/color]"
 			}
 		]);
 		return tooltip;
@@ -86,7 +86,7 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 				this.logInfo(bonus);
 				_tooltip.push({
 					icon = "ui/tooltips/positive.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color] damage due to the difference in fatigue"
+					text = "[color=%positive%]" + bonus + "%[/color] damage due to the difference in fatigue"
 				});
 			}
 		}

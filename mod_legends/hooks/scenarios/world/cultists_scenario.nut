@@ -169,7 +169,7 @@
 				id = 16,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee Skill from being a cultist in a cultist mercenary company"
+				text = "[color=%positive%]+10[/color] Melee Skill from being a cultist in a cultist mercenary company"
 			});
 		}
 
@@ -180,7 +180,7 @@
 				id = 16,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee Skill from being a cultist in a cultist mercenary company and will never be offered up to be sacrificed"
+				text = "[color=%positive%]+10[/color] Melee Skill from being a cultist in a cultist mercenary company and will never be offered up to be sacrificed"
 			});
 		}
 	}

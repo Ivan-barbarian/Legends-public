@@ -49,7 +49,7 @@ this.legend_drums_of_life_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Restores [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getBonus() + "[/color] hitpoints to all allied units"
+				text = "Restores [color=%positive%]" + this.getBonus() + "[/color] hitpoints to all allied units"
 			}
 		];
 
@@ -59,7 +59,7 @@ this.legend_drums_of_life_skill <- this.inherit("scripts/skills/skill", {
 				id = 5,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Can not be used because this character is engaged in melee[/color]"
+				text = "[color=%negative%]Can not be used because this character is engaged in melee[/color]"
 			});
 		}
 

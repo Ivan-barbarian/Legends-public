@@ -3,7 +3,7 @@ this.legend_flourish_skill <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendFlourish);
-		this.m.Description = "Prepare to show your enemies a dazzling display of swordmanship. Increase fatigue costs by [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] and [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] of the difference between you and your target\'s current initiative as armor penetration. Lasts until the start of your next turn.";
+		this.m.Description = "Prepare to show your enemies a dazzling display of swordmanship. Increase fatigue costs by [color=%positive%]50%[/color] and [color=%positive%]25%[/color] of the difference between you and your target\'s current initiative as armor penetration. Lasts until the start of your next turn.";
 		this.m.Icon = "ui/perks/perk_41_active.png";
 		this.m.IconDisabled = "ui/perks/perk_41_active_sw.png";
 		this.m.Overlay = "perk_41_active";

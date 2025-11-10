@@ -2,7 +2,7 @@
 
 	o.m.PossibleEffects <- ["scripts/skills/effects/legend_named_hammer_stun_effect"];
 	o.m.EffectBounds <- [ [3, 7] ];
-	
+
 	o.randomizeValues <- function ()
 	{
 		this.m.StaminaModifier = -17;
@@ -21,7 +21,7 @@
 				id = 12,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.EffectChanceOrBonus + "%[/color] Stun Chance"
+				text = "[color=%positive%]+" + this.m.EffectChanceOrBonus + "%[/color] Stun Chance"
 			});
 		}
 		return result;

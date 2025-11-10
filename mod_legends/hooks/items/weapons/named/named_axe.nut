@@ -20,7 +20,7 @@
 				id = 12,
 				type = "text",
 				icon = "ui/icons/armor_head.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.EffectChanceOrBonus + "%[/color] Damage to Head"
+				text = "[color=%positive%]+" + this.m.EffectChanceOrBonus + "%[/color] Damage to Head"
 			});
 		}
 		return result;

@@ -1,5 +1,5 @@
 ::mods_hookExactClass("skills/traits/fat_trait", function(o)
-{	
+{
 	local onAdded = o.onAdded;
 	o.onAdded = function ()
 	{
@@ -18,7 +18,7 @@
 			id = 11,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Builds up [color=" + this.Const.UI.Color.NegativeValue + "]2[/color] more fatigue for each tile travelled"
+			text = "Builds up [color=%negative%]2[/color] more fatigue for each tile travelled"
 		});
 
 		return ret;

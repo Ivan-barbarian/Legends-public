@@ -11,4 +11,22 @@
 
 		onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor );
 	}
+
+	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties )
+	{
+		if (this.m.Stacks != 0 && _skill.isAttack())
+		{	
+			local bonus = this.m.Stacks * 10;
+			_properties.MeleeSkill += bonus;
+			_properties.RangedSkill += bonus;
+			if (!_skill.isRanged())
+			{
+				_skill.m.HitChanceBonus += bonus;
+			}
+			else if (_skill.isRanged())
+			{
+				_skill.m.AdditionalAccuracy += bonus;
+			}
+		}
+	}
 });

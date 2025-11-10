@@ -28,7 +28,7 @@
 				id = 12,
 				type = "text",
 				icon = "ui/icons/armor_head.png",
-				text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]100%[/color] chance to daze a target on a hit to the head"
+				text = "Has a [color=%negative%]100%[/color] chance to daze a target on a hit to the head"
 			});
 		}
 		return result;

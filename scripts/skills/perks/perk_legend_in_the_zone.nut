@@ -23,7 +23,7 @@ this.perk_legend_in_the_zone <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "+[color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color] Melee Skill"
+				text = "+[color=%positive%]" + bonus + "%[/color] Melee Skill"
 			});
 
 			if (!actor.isPlacedOnMap() || ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1, true).len() > 0)
@@ -35,7 +35,7 @@ this.perk_legend_in_the_zone <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "+[color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color] Melee Damage"
+				text = "+[color=%positive%]" + bonus + "%[/color] Melee Damage"
 			});
 		}
 
@@ -45,7 +45,7 @@ this.perk_legend_in_the_zone <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/warning.png",
-				text = "The Melee Damage bonus will be [color=" + this.Const.UI.Color.NegativeValue + "]halved[/color] when not engaged in melee"
+				text = "The Melee Damage bonus will be [color=%negative%]halved[/color] when not engaged in melee"
 			});
 		}
 		else if (::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1, true) == 0)
@@ -54,7 +54,7 @@ this.perk_legend_in_the_zone <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/warning.png",
-				text = "Melee Damage bonus [color=" + this.Const.UI.Color.NegativeValue + "]halved[/color] due to not being engaged in melee"
+				text = "Melee Damage bonus [color=%negative%]halved[/color] due to not being engaged in melee"
 			});
 		}
 

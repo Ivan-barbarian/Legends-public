@@ -43,13 +43,13 @@ this.perk_legend_blend_in <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "hint",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Melee Defense."
+				text = "[color=%positive%]+3[/color] Melee Defense."
 			},
 			{
 				id = 7,
 				type = "hint",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Ranged Defense."
+				text = "[color=%positive%]+5[/color] Ranged Defense."
 			},
 			{
 				id = 6,

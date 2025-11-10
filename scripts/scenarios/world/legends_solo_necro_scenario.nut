@@ -309,7 +309,7 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 				id = 16,
 				type = "text",
 				icon = "ui/icons/health.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] Hitpoints due to being under the control of a powerful necromancer"
+				text = "[color=%positive%]+12[/color] Hitpoints due to being under the control of a powerful necromancer"
 			});
 		}
 	}

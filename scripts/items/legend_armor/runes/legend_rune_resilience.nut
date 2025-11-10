@@ -28,7 +28,7 @@ this.legend_rune_resilience <- this.inherit("scripts/items/legend_armor/legend_a
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "This item has the power of the rune sigil of Resilience:\n[color=" + this.Const.UI.Color.PositiveValue + "]Immune[/color] to stuns, knockbacks and grabs."
+			text = "This item has the power of the rune sigil of Resilience:\n[color=%positive%]Immune[/color] to stuns, knockbacks and grabs."
 		});
 		return result;
 	}
@@ -39,7 +39,7 @@ this.legend_rune_resilience <- this.inherit("scripts/items/legend_armor/legend_a
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "This item has the power of the rune sigil of Resilience:\n[color=" + this.Const.UI.Color.PositiveValue + "]Immune[/color] to stuns, knockbacks and grabs."
+			text = "This item has the power of the rune sigil of Resilience:\n[color=%positive%]Immune[/color] to stuns, knockbacks and grabs."
 		});
 	}
 

@@ -62,11 +62,12 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 		];
 		if (this.m.HasToBeIdentified && ::World.Assets.m.HasScholars > 0 || !this.m.HasToBeIdentified)
 		{
+			local selection = this.m.PerkGroupSelection;
 			result.push({
 				id = 10,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = format("Reading this will allow the user to learn [color=%s]%s[/color] perk group. Following perks will be added if not already in the tree:", ::Const.UI.Color.NegativeValue, this.m.PerkGroupSelection),
+				text = "Reading this will allow the user to learn [color=%negative%]" + selection + "[/color] perk group. Following perks will be added if not already in the tree:"
 			});
 
 			local tree = ::MSU.deepClone(this.m.PerkGroups.filter(function (_, _it) { return _it.Name == this.m.PerkGroupSelection; }.bindenv(this)).top().Tree);
@@ -103,9 +104,9 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 		local effect = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendIrritable);
 		local injury = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendHeadache);
 		if (injury != null)
-			return "Failed to use this item as the user will be recovering from the last reading for another [color=" + ::Const.UI.Color.NegativeValue + "]" + injury.m.HealingTimeMin + "-" + injury.m.HealingTimeMax +"[/color] days.";
+			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + injury.m.HealingTimeMin + "-" + injury.m.HealingTimeMax +"[/color] days.";
 		if (effect != null)
-			return "Failed to use this item as the user will be recovering from the last reading for another [color=" + ::Const.UI.Color.NegativeValue + "]" + effect.m.HealingTime + "-" + effect.m.HealingTime +"[/color] days.";
+			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + effect.m.HealingTime + "-" + effect.m.HealingTime +"[/color] days.";
 
 		if (!_actor.getFlags().has("LegendsSkillBookCount"))
 			return true;

@@ -27,7 +27,7 @@ this.legend_armor_chain_and_mail_upgrade <- this.inherit("scripts/items/legend_a
 			id = 10,
 			type = "text",
 			icon = "ui/icons/bravery.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Resolve"
+			text = "[color=%positive%]+3[/color] Resolve"
 		});
 		result.push({
 			id = 10,
@@ -36,7 +36,7 @@ this.legend_armor_chain_and_mail_upgrade <- this.inherit("scripts/items/legend_a
 			text = "Doubles enemy desire to attack you in battle"
 		});
 		return result;
-	}		
+	}
 	function onUpdateProperties( _properties )
 	{
 		this.legend_armor_upgrade.onUpdateProperties(_properties);

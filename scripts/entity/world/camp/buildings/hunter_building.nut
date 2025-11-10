@@ -193,7 +193,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				id = 5,
 				type = "text",
 				icon = "ui/buttons/asset_food_up.png",
-				text = "Successful hunt will take approximately [color=" + this.Const.UI.Color.PositiveValue + "]" + ::Math.floor(estimateHuntTime) + "[/color] hours.",
+				text = "Successful hunt will take approximately [color=%positive%]" + ::Math.floor(estimateHuntTime) + "[/color] hours.",
 			}
 		];
 		local id = 6;
@@ -203,7 +203,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				id = id,
 				type = "hint",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + (bro[0] / 100.0) * 100.0 + "%[/color] " + bro[1] + " (" + bro[2] + ")"
+				text = "[color=%positive%]" + (bro[0] / 100.0) * 100.0 + "%[/color] " + bro[1] + " (" + bro[2] + ")"
 			});
 			++id;
 		}
@@ -628,7 +628,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 					{
 						bgNames.push(::Const.HuntingLoot.RequiredBackgrounds[b]);
 					}
-					requirements.push("<span style=\"color:" + ::Const.UI.Color.NegativeValue + "; display: inline-block; padding-left: 2rem;\">Requires " + ::Const.LegendMod.Language.arrayToText(bgNames,"or",false) + "</span>");
+					requirements.push("<span style=\"color:%negative%; display: inline-block; padding-left: 2rem;\">Requires " + ::Const.LegendMod.Language.arrayToText(bgNames,"or",false) + "</span>");
 				}
 
 				if (failed)
@@ -650,7 +650,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				if (!::Const.HuntingLoot.hasSufficientHuntLevelForTier(target,huntLevel))
 				{
 					failed = true;
-					requirements.push("<span style=\"color:" + ::Const.UI.Color.NegativeValue + "; padding-left: 2rem;\">Requires Hunt Tier " + target.Tier + "</span>");
+					requirements.push("<span style=\"color:%negative%; padding-left: 2rem;\">Requires Hunt Tier " + target.Tier + "</span>");
 				}
 
 				// Show required backgrounds if none of the currently assigned characters qualify
@@ -662,7 +662,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 					{
 						bgNames.push(::Const.HuntingLoot.RequiredBackgrounds[b]);
 					}
-					requirements.push("<span style=\"color:" + ::Const.UI.Color.NegativeValue + "; display: inline-block; padding-left: 2rem;\">Requires " + ::Const.LegendMod.Language.arrayToText(bgNames,"or",false) + "</span>");
+					requirements.push("<span style=\"color:%negative%; display: inline-block; padding-left: 2rem;\">Requires " + ::Const.LegendMod.Language.arrayToText(bgNames,"or",false) + "</span>");
 				}
 
 				// Strikethrough the target if the hunting party does not qualify
@@ -694,7 +694,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		}
 		else
 		{
-			ret.push("<span style=\"color:" + ::Const.UI.Color.NegativeValue + ";\"><u>No Expert Hunters</u></span>");
+			ret.push("<span style=\"color:%negative%;\"><u>No Expert Hunters</u></span>");
 		}
 
 
@@ -709,7 +709,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		}
 		else
 		{
-			ret.push("<span style=\"color:" + ::Const.UI.Color.NegativeValue + ";\"><u>No Cooks</u></span>");
+			ret.push("<span style=\"color:%negative%;\"><u>No Cooks</u></span>");
 		}
 
 		// Brewers
@@ -723,7 +723,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		}
 		else
 		{
-			ret.push("<span style=\"color:" + ::Const.UI.Color.NegativeValue + ";\"><u>No Brewers</u></span>");
+			ret.push("<span style=\"color:%negative%;\"><u>No Brewers</u></span>");
 		}
 
 		ret.push("<u>Hunting points contributions per hour</u>");

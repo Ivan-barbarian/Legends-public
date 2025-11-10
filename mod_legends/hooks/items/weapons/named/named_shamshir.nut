@@ -21,7 +21,7 @@
 				id = 12,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Lowered Injury Threshold by [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.EffectChanceOrBonus + "%[/color]"
+				text = "Lowered Injury Threshold by [color=%positive%]" + this.m.EffectChanceOrBonus + "%[/color]"
 			});
 		}
 		return result;

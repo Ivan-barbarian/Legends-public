@@ -27,13 +27,13 @@ this.legend_hidden_kobold_effect <- this.inherit("scripts/skills/skill", {
 					id = 11,
 					type = "text",
 					icon = "ui/icons/regular_damage.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] Minimum Damage from the Assassinate perk"
+					text = "[color=%positive%]+50%[/color] Minimum Damage from the Assassinate perk"
 				},
 				{
 					id = 12,
 					type = "text",
 					icon = "ui/icons/regular_damage.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] Maximum Damage from the Assassinate perk"
+					text = "[color=%positive%]+50%[/color] Maximum Damage from the Assassinate perk"
 				}
 			]);
 
@@ -43,7 +43,7 @@ this.legend_hidden_kobold_effect <- this.inherit("scripts/skills/skill", {
 						id = 13,
 						type = "text",
 						icon = "ui/icons/regular_damage.png",
-						text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] Maximum Damage from being an assassin"
+						text = "[color=%positive%]+50%[/color] Maximum Damage from being an assassin"
 					}
 			}
 
@@ -53,7 +53,7 @@ this.legend_hidden_kobold_effect <- this.inherit("scripts/skills/skill", {
 						id = 13,
 						type = "text",
 						icon = "ui/icons/regular_damage.png",
-						text = "[color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] Maximum Damage from being an assassin"
+						text = "[color=%positive%]+100%[/color] Maximum Damage from being an assassin"
 					}
 			}
 		}

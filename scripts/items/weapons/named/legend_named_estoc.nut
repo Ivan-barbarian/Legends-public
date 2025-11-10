@@ -41,7 +41,7 @@ this.legend_named_estoc <- this.inherit("scripts/items/weapons/named/named_weapo
 				id = 12,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.EffectChanceOrBonus + "[/color] Melee Defense"
+				text = "[color=%positive%]+" + this.m.EffectChanceOrBonus + "[/color] Melee Defense"
 			});
 		}
 		return result;

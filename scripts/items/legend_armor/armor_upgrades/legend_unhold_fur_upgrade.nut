@@ -28,7 +28,7 @@ this.legend_unhold_fur_upgrade <- this.inherit("scripts/items/legend_armor/legen
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces any ranged damage to the body by [color=" + this.Const.UI.Color.NegativeValue + "]-20%[/color]"
+			text = "Reduces any ranged damage to the body by [color=%negative%]-20%[/color]"
 		});
 		return result;
 	}
@@ -39,7 +39,7 @@ this.legend_unhold_fur_upgrade <- this.inherit("scripts/items/legend_armor/legen
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces any ranged damage to the body by [color=" + this.Const.UI.Color.NegativeValue + "]-20%[/color]"
+			text = "Reduces any ranged damage to the body by [color=%negative%]-20%[/color]"
 		});
 	}
 

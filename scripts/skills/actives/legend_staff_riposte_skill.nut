@@ -55,7 +55,7 @@ this.legend_staff_riposte_skill <- this.inherit("scripts/skills/skill", {
 				id = 4,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] chance to hit"
+				text = "Has [color=%negative%]-10%[/color] chance to hit"
 			});
 		}
 

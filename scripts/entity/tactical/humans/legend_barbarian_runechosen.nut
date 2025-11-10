@@ -132,7 +132,7 @@ this.legend_barbarian_runechosen <- this.inherit("scripts/entity/tactical/human"
 				::Legends.Rune.LegendRshLuck
 			];
 		}
-		
+
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Mainhand))
 		{
 			local weapons = [
@@ -168,7 +168,6 @@ this.legend_barbarian_runechosen <- this.inherit("scripts/entity/tactical/human"
 			{
 				this.m.Items.equip(item);
 			}
-			return;
 		}
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
@@ -194,7 +193,8 @@ this.legend_barbarian_runechosen <- this.inherit("scripts/entity/tactical/human"
 		local selected = runeSelection[this.Math.rand(0, runeSelection.len() - 1)];
 		local rune = ::new(::Legends.Runes.get(selected).Script);
 		rune.setRuneVariant(selected);
-		rune.setRuneBonus(true);
+		rune.setRuneBonus(this.m.IsMiniboss);
+		rune.updateRuneSigilToken();
 		rune.onUse(this, null, false);
 	}
 

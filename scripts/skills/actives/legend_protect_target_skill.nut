@@ -67,7 +67,7 @@ this.legend_protect_target_skill <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]This character does not have any unleashed pets[/color]"
+				text = "[color=%negative%]This character does not have any unleashed pets[/color]"
 			});
 		}
 

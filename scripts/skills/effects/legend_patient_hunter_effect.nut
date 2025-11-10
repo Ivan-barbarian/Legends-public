@@ -32,7 +32,7 @@ this.legend_patient_hunter_effect <- this.inherit("scripts/skills/skill", {
 				id = 12,
 				type = "text",
 				icon = "ui/icons/action_points.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.ApBonus + "[/color] Action Points until the end of your turn"
+				text = "[color=%positive%]+" + this.m.ApBonus + "[/color] Action Points until the end of your turn"
 			}
 		];
 		return ret;
@@ -45,6 +45,8 @@ this.legend_patient_hunter_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTurnEnd()
 	{
-		this.removeSelf();
+		this.m.ApBonus = this.Math.min(3, this.getContainer().getActor().getActionPoints());
+		if (this.m.ApBonus == 0)
+			this.removeSelf();
 	}
 });

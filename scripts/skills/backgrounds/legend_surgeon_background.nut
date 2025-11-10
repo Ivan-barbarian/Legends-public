@@ -141,7 +141,7 @@ this.legend_surgeon_background <- this.inherit("scripts/skills/backgrounds/chara
 				id = 13,
 				type = "text",
 				icon = "ui/icons/xp_received.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Experience Gain"
+				text = "[color=%positive%]+10%[/color] Experience Gain"
 			}
 		);
 		return ret;

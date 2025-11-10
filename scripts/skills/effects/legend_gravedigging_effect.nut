@@ -31,19 +31,19 @@ this.legend_gravedigging_effect <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/initiative.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "[/color] Initiative"
+				text = "[color=%positive%]+" + bonus + "[/color] Initiative"
 			},
 			{
 				id = 12,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "[/color] Damage"
+				text = "[color=%positive%]+" + bonus + "[/color] Damage"
 			},
 			{
 				id = 13,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "[/color] Resolve"
+				text = "[color=%positive%]+" + bonus + "[/color] Resolve"
 			}
 		];
 	}

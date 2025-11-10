@@ -26,13 +26,13 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/armor_body.png",
-				text = "Only receive [color=" + this.Const.UI.Color.PositiveValue + "]" + (100 - bonus) + "%[/color] of any damage to Armor from attacks"
+				text = "Only receive [color=%positive%]" + (100 - bonus) + "%[/color] of any damage to Armor from attacks"
 			});
 			tooltip.push({
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Only receive [color=" + this.Const.UI.Color.PositiveValue + "]" + (100 - bonusWithoutDura) + "%[/color] of any damage to Hitpoints from attacks"
+				text = "Only receive [color=%positive%]" + (100 - bonusWithoutDura) + "%[/color] of any damage to Hitpoints from attacks"
 			});
 			return tooltip;
 		}

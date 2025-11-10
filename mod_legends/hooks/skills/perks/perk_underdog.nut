@@ -19,7 +19,7 @@
 
 	o.getDescription <- function ()
 	{
-		return "This character is used to getting underestimated so it\'s just a matter before they strike back. Gains an additional [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.Stacks * 5 + "%[/color] chance to hit on the next attack.";
+		return "This character is used to getting underestimated so it\'s just a matter before they strike back. Gains an additional [color=%positive%]+" + this.m.Stacks * 5 + "%[/color] chance to hit on the next attack.";
 	}
 
 	o.onTargetHit <- function ( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )

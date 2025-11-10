@@ -102,7 +102,7 @@
 				id = 14,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] Resolve at morale checks against fear, panic or mind control effects. Also knows how to craft wooden stakes for use against vampires."
+				text = "[color=%positive%]+20[/color] Resolve at morale checks against fear, panic or mind control effects. Also knows how to craft wooden stakes for use against vampires."
 			}
 		);
 		return ret;

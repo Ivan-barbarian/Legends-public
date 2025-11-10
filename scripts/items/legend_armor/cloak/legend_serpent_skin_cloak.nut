@@ -32,7 +32,7 @@ this.legend_serpent_skin_cloak <- this.inherit("scripts/items/legend_armor/legen
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces damage from fire and firearms by [color=" + this.Const.UI.Color.NegativeValue + "]-33%[/color]"
+			text = "Reduces damage from fire and firearms by [color=%negative%]-33%[/color]"
 		});
 		return result;
 	}
@@ -43,7 +43,7 @@ this.legend_serpent_skin_cloak <- this.inherit("scripts/items/legend_armor/legen
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces damage from fire and firearms by [color=" + this.Const.UI.Color.NegativeValue + "]-33%[/color]"
+			text = "Reduces damage from fire and firearms by [color=%negative%]-33%[/color]"
 		});
 	}
 

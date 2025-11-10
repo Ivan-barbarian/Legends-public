@@ -67,6 +67,12 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		];
 	}
 
+	function isHidden() {
+		if (::Legends.Mod.ModSettings.getSetting("SkipCamp").getValue())
+			return false;
+		return !::World.Flags.get("HasLegendCampHealing");
+	}
+
 	function getRate()
 	{
 		local heal = 1.1;
@@ -107,25 +113,25 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				id = 3,
 				type = "text",
 				icon = "ui/icons/plus.png",
-				text = "There are [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Queue.len() + "[/color] injuries queued to be treated."
+				text = "There are [color=%positive%]" + this.m.Queue.len() + "[/color] injuries queued to be treated."
 			},
 			{
 				id = 4,
 				type = "text",
 				icon = "ui/buttons/icon_time.png",
-				text = "It will take [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getRequiredTime() + "[/color] hours to treat all queued injuries."
+				text = "It will take [color=%positive%]" + this.getRequiredTime() + "[/color] hours to treat all queued injuries."
 			},
 			{
 				id = 5,
 				type = "text",
 				icon = "ui/buttons/icon_time.png",
-				text = "It will take [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.ceil(this.m.PointsNeeded / this.getRate()) + "[/color] hours to heal all healthpoints."
+				text = "It will take [color=%positive%]" + this.Math.ceil(this.m.PointsNeeded / this.getRate()) + "[/color] hours to heal all healthpoints."
 			},
 			{
 				id = 6,
 				type = "text",
 				icon = "ui/buttons/asset_medicine_up.png",
-				text = "Total healing modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Rate * 100.0 + "%[/color]."
+				text = "Total healing modifier is [color=%positive%]" + this.m.Rate * 100.0 + "%[/color]."
 			}
 		];
 		local id = 7;
@@ -135,7 +141,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				id = id++,
 				type = "hint",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] * 100.0 + "%[/color] " + bro[1] + " (" + bro[2] + ")"
+				text = "[color=%positive%]" + bro[0] * 100.0 + "%[/color] " + bro[1] + " (" + bro[2] + ")"
 			});
 		}
 		return ret;
@@ -169,6 +175,11 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 	function getCost(_injury)
 	{
+		local debugScriptName = ::IO.scriptFilenameByHash(_injury.ClassNameHash);
+		if (!::MSU.isKindOf(_injury, "injury")) {
+			::logInfo("injury is instance? " + typeof _injury == "instance");
+			::logInfo("supposed injury script: " + ::IO.scriptFilenameByHash(_injury.ClassNameHash));
+		}
 		local cost = _injury.getCost();
 		if (this.getUpgraded())
 			cost = this.Math.floor(cost * 0.75);

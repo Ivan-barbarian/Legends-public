@@ -60,7 +60,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 			Enemy = [],
 			Class = [
 				this.Const.Perks.StaffClassTree,
-				this.Const.Perks.HealerClassTree	
+				this.Const.Perks.HealerClassTree
 			],
 			Profession = [
 				this.Const.Perks.HealerProfessionTree,
@@ -111,7 +111,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 			id = 14,
 			type = "text",
 			icon = "ui/icons/xp_received.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] Experience Gain"
+			text = "[color=%positive%]+15%[/color] Experience Gain"
 		}]);
 		if (this.getContainer().getActor().getLevel() >= 12)
 		{
@@ -119,7 +119,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 				id = 13,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "The Vala has become a master of the intricate and lost art of inscribing signs and sigils. Increases the speed at which she can craft runes by [color=" + this.Const.UI.Color.PositiveValue + "]30%[/color]"
+				text = "The Vala has become a master of the intricate and lost art of inscribing signs and sigils. Increases the speed at which she can craft runes by [color=%positive%]30%[/color]"
 			});
 		}
 

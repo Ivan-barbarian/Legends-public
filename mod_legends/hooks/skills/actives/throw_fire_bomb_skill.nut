@@ -18,7 +18,7 @@
 				id = 8,
 				type = "text",
 				icon = "ui/icons/ammo.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]" + ammo + "[/color] use left"
+				text = "Has [color=%positive%]" + ammo + "[/color] use left"
 			});
 		}
 		else
@@ -27,7 +27,7 @@
 				id = 8,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Has been used[/color]"
+				text = "[color=%negative%]Has been used[/color]"
 			});
 		}
 
@@ -68,7 +68,7 @@
 		}
 
 		this.consumeAmmo();
-		
+
 		this.Time.scheduleEvent(this.TimeUnit.Real, 250, this.onApply.bindenv(this), {
 			Skill = this,
 			User = _user,

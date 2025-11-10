@@ -154,7 +154,6 @@ foreach (i in garbage)
 	"weapons/named/legend_named_military_goedendag",
 	"weapons/named/legend_named_military_warscythe",
 	"weapons/named/legend_named_parrying_dagger",
-	"weapons/named/legend_named_royal_lance"
 ]);
 
 ::Const.Items.NamedRangedWeapons.extend([
@@ -174,6 +173,7 @@ foreach (i in garbage)
 ::Const.Items.NamedUndeadWeapons.extend([
 	"weapons/named/legend_named_great_khopesh",
 	"weapons/named/legend_named_gladius",
+	"weapons/named/legend_named_royal_lance"
 ]);
 
 ::Const.Items.ArmorUpgrades <- {

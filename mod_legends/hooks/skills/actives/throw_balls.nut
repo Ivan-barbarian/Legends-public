@@ -21,7 +21,7 @@
 				id = 8,
 				type = "text",
 				icon = "ui/icons/ammo.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]" + ammo + "[/color] spiked balls left"
+				text = "Has [color=%positive%]" + ammo + "[/color] spiked balls left"
 			});
 		}
 		else
@@ -30,7 +30,7 @@
 				id = 8,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]No spiked balls left[/color]"
+				text = "[color=%negative%]No spiked balls left[/color]"
 			});
 		}
 
@@ -40,7 +40,7 @@
 				id = 9,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Can not be used because this character is engaged in melee[/color]"
+				text = "[color=%negative%]Can not be used because this character is engaged in melee[/color]"
 			});
 		}
 

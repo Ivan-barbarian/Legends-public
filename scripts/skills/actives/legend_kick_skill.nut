@@ -51,7 +51,7 @@ this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 			// 		id = 6,
 			// 		type = "text",
 			// 		icon = "ui/icons/hitchance.png",
-			// 		text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+40%[/color] chance to hit"
+			// 		text = "Has [color=%positive%]+40%[/color] chance to hit"
 			// 	});
 			// }
 			// New
@@ -59,13 +59,13 @@ this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to stagger on a hit"
+				text = "Has a [color=%positive%]100%[/color] chance to stagger on a hit"
 			});
 			ret.push({
 				id = 8,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to daze on a hit"
+				text = "Has a [color=%positive%]50%[/color] chance to daze on a hit"
 			});
 		}
 		else
@@ -76,7 +76,7 @@ this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 			// 		id = 6,
 			// 		type = "text",
 			// 		icon = "ui/icons/hitchance.png",
-			// 		text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] chance to hit"
+			// 		text = "Has [color=%positive%]+25%[/color] chance to hit"
 			// 	});
 			// }
 			// New
@@ -84,20 +84,20 @@ this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to stagger on a hit"
+				text = "Has a [color=%positive%]100%[/color] chance to stagger on a hit"
 			});
 			ret.push({
 				id = 8,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] chance to daze on a hit"
+				text = "Has a [color=%positive%]25%[/color] chance to daze on a hit"
 			});
 		}
 		ret.push({
 			id = 9,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.m.FatigueDamage + "[/color] fatigue on hit"
+			text = "Inflicts [color=%damage%]" + this.m.FatigueDamage + "[/color] fatigue on hit"
 		});
 		return ret;
 	}

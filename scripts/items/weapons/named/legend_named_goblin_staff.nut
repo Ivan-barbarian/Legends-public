@@ -29,6 +29,7 @@ this.legend_named_goblin_staff <- this.inherit("scripts/items/weapons/named/name
 		this.m.RegularDamageMax = 60;
 		this.m.ArmorDamageMult = 0.7;
 		this.m.DirectDamageMult = 0.4;
+		this.randomizeValues();
 	}
 
 	function updateVariant()

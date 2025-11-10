@@ -28,10 +28,10 @@ this.legend_armor_sacred_shield_upgrade <- this.inherit("scripts/items/legend_ar
 			id = 14,
 			type = "text",
 			icon = "ui/icons/bravery.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Resolve"
+			text = "[color=%positive%]+5%[/color] Resolve"
 		});
 		return result;
-	}	
+	}
 	function onUpdateProperties( _properties )
 	{
 		this.legend_armor_upgrade.onUpdateProperties(_properties);

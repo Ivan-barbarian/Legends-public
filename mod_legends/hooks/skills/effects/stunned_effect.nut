@@ -25,19 +25,19 @@
 				id = 11,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] Melee Defense"
+				text = "[color=%negative%]-25%[/color] Melee Defense"
 			},
 			{
 				id = 12,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] Ranged Defense"
+				text = "[color=%negative%]-25%[/color] Ranged Defense"
 			},
 			{
 				id = 12,
 				type = "text",
 				icon = "ui/icons/initiative.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] Initiative"
+				text = "[color=%negative%]-25%[/color] Initiative"
 			}
 		];
 	}

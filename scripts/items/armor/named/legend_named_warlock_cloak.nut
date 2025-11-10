@@ -33,25 +33,25 @@ this.legend_named_warlock_cloak <- this.inherit("scripts/items/armor/named/named
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Grants [color=" + this.Const.UI.Color.PositiveValue + "] +10%[/color] Melee skill when at confident morale."
+			text = "Grants [color=%positive%] +10%[/color] Melee skill when at confident morale."
 		});
 		result.push({
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Grants [color=" + this.Const.UI.Color.PositiveValue + "] +10%[/color] Melee defense when at confident morale."
+			text = "Grants [color=%positive%] +10%[/color] Melee defense when at confident morale."
 		});
 		result.push({
 			id = 8,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Grants [color=" + this.Const.UI.Color.PositiveValue + "] +10%[/color] Ranged defense when at confident morale."
+			text = "Grants [color=%positive%] +10%[/color] Ranged defense when at confident morale."
 		});
 		result.push({
 			id = 9,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Increase max hitpoints by [color=" + this.Const.UI.Color.PositiveValue + "] +20[/color]."
+			text = "Increase max hitpoints by [color=%positive%] +20[/color]."
 		});
 		return result;
 	}

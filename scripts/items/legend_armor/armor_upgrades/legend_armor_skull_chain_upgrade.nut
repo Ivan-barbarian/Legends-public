@@ -23,22 +23,22 @@ this.legend_armor_skull_chain_upgrade <- this.inherit("scripts/items/legend_armo
 	}
 	function getTooltip()
 	{
-	
+
 		local result = this.legend_armor_upgrade.getTooltip();
 		result.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/chance_to_hit_head.png",
-			text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Chance To Hit Head"
+			text = "Has a [color=%positive%]+5%[/color] Chance To Hit Head"
 		});
 		result.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Builds up [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] more fatigue for each tile travelled"
+			text = "Builds up [color=%negative%]1[/color] more fatigue for each tile travelled"
 		});
 		return result;
-	}	
+	}
 	function onUpdateProperties( _properties )
 	{
 		this.legend_armor_upgrade.onUpdateProperties(_properties);

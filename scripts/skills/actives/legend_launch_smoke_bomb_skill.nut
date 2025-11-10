@@ -33,13 +33,13 @@ this.legend_launch_smoke_bomb_skill <- this.inherit("scripts/skills/actives/thro
 			id = 5,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Covers [color=" + this.Const.UI.Color.DamageValue + "]7[/color] tiles in smoke for one round, allowing anyone inside to move freely and ignore zones of control"
+			text = "Covers [color=%damage%]7[/color] tiles in smoke for one round, allowing anyone inside to move freely and ignore zones of control"
 		},
 		{
 			id = 5,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Increases Ranged Defense by [color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color], but lowers Ranged Skill by [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] for anyone inside"
+			text = "Increases Ranged Defense by [color=%positive%]+100%[/color], but lowers Ranged Skill by [color=%negative%]-50%[/color] for anyone inside"
 		},
 		{
 			id = 6,
@@ -66,7 +66,7 @@ this.legend_launch_smoke_bomb_skill <- this.inherit("scripts/skills/actives/thro
 				id = 8,
 				type = "text",
 				icon = "ui/icons/ammo.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]" + ammo + "[/color] use left"
+				text = "Has [color=%positive%]" + ammo + "[/color] use left"
 			});
 		}
 		else
@@ -75,7 +75,7 @@ this.legend_launch_smoke_bomb_skill <- this.inherit("scripts/skills/actives/thro
 				id = 8,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]No ammo left in backpack[/color]"
+				text = "[color=%negative%]No ammo left in backpack[/color]"
 			});
 		}
 

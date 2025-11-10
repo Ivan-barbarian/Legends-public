@@ -193,7 +193,7 @@
 					id = 3,
 					type = "headerText",
 					icon = "ui/icons/hitchance.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + _targetedWithSkill.getHitchance(this) + "%[/color] chance to hit",
+					text = "[color=%positive%]" + _targetedWithSkill.getHitchance(this) + "%[/color] chance to hit",
 					children = _targetedWithSkill.getHitFactors(tile)
 				});
 			}

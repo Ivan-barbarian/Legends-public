@@ -34,7 +34,7 @@ this.perk_legend_muscularity <- this.inherit("scripts/skills/skill", {
 				id = 3,
 				type = "hint",
 				icon = "ui/icons/damage_dealt.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.round(this.getBonus() * 100) + "%[/color] Damage based on current Hitpoints and Fatigue"
+				text = "[color=%positive%]" + this.Math.round(this.getBonus() * 100) + "%[/color] Damage based on current Hitpoints and Fatigue"
 			}
 		];
 	}

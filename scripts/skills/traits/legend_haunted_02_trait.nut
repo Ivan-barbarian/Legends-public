@@ -28,17 +28,17 @@ this.legend_haunted_02_trait <- this.inherit("scripts/skills/traits/character_tr
 				id = 10,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Resolve at morale checks against fear, panic or mind control effects"
+				text = "[color=%negative%]-6[/color] Resolve at morale checks against fear, panic or mind control effects"
 			},
 			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "Has either [color=" + this.Const.UI.Color.PositiveValue + "]+6[/color] or [color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Resolve randomly at every morale check"
+				text = "Has either [color=%positive%]+6[/color] or [color=%negative%]-6[/color] Resolve randomly at every morale check"
 			}
 
 		];
 	}
-	
+
 });
 

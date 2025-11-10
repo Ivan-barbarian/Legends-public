@@ -73,7 +73,7 @@
 		{
 			_tooltip.push({
 				icon = "ui/icons/damage_dealt.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] damage from " + this.m.Name
+				text = "[color=%positive%]+" + bonus + "%[/color] damage from " + this.m.Name
 			});
 
 		}

@@ -80,7 +80,7 @@ this.legend_RSS_radiance_effect <- this.inherit("scripts/skills/skill", {
 					id = 10,
 					type = "text",
 					icon = "ui/icons/special.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]-" + this.m.MalusOne + "%[/color] Melee skill.\n" + "[color=" + this.Const.UI.Color.PositiveValue + "]-" + this.m.MalusTwo + "%[/color] Melee defense."
+					text = "[color=%positive%]-" + this.m.MalusOne + "%[/color] Melee skill.\n" + "[color=%positive%]-" + this.m.MalusTwo + "%[/color] Melee defense."
 				}
 			];
 		}

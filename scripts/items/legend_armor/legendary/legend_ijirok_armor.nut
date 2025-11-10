@@ -37,7 +37,7 @@ this.legend_ijirok_armor <- this.inherit("scripts/items/legend_armor/legend_armo
 			id = 6,
 			type = "text",
 			icon = "ui/icons/health.png",
-			text = "Heals [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] hitpoints of the wearer each turn"
+			text = "Heals [color=%positive%]10[/color] hitpoints of the wearer each turn"
 		});
 		return result;
 	}
@@ -48,7 +48,7 @@ this.legend_ijirok_armor <- this.inherit("scripts/items/legend_armor/legend_armo
 			id = 6,
 			type = "text",
 			icon = "ui/icons/health.png",
-			text = "Heals [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] hitpoints of the wearer each turn"
+			text = "Heals [color=%positive%]10[/color] hitpoints of the wearer each turn"
 		});
 	}
 

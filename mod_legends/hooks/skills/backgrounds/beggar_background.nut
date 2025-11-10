@@ -72,7 +72,7 @@
 			],
 			Enemy = [],
 			Class = [],
-			Profession = [], 
+			Profession = [],
 			Magic = []
 		}
 	}
@@ -106,7 +106,7 @@
 				id = 13,
 				type = "text",
 				icon = "ui/icons/xp_received.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]50% less likely[/color] to be targeted by an enemy."
+				text = "[color=%positive%]50% less likely[/color] to be targeted by an enemy."
 			}
 		);
 		return ret;

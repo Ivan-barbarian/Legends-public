@@ -1,5 +1,5 @@
 ::mods_hookExactClass("skills/actives/cleave", function(o)
-{	
+{
 	o.m.IsHew <- false;
 	o.m.IsScytheCleave <- false;
 
@@ -38,13 +38,13 @@
 			id = 7,
 			type = "text",
 			icon = "ui/icons/vision.png",
-			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]2" + "[/color] tiles"
+			text = "Has a range of [color=%positive%]2" + "[/color] tiles"
 		});
 		ret.push({
 			id = 8,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Inflicts additional stacking [color=" + this.Const.UI.Color.DamageValue + "]" + dmg + "[/color] bleeding damage per turn, for 2 turns"
+			text = "Inflicts additional stacking [color=%damage%]" + dmg + "[/color] bleeding damage per turn, for 2 turns"
 		});
 		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms)
 		{
@@ -52,7 +52,7 @@
 				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] chance to hit targets directly adjacent because the weapon is too unwieldy"
+				text = "Has [color=%negative%]-15%[/color] chance to hit targets directly adjacent because the weapon is too unwieldy"
 			});
 		}
 		return ret;

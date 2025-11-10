@@ -6,6 +6,11 @@ this.perk_legend_point_blank <- this.inherit("scripts/skills/skill", {
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 	}
 
+	function getDescription()
+	{
+		return "Don't fire until you see the whites of their eyes!";
+	}
+
 	function getTooltip ()
 	{
 		local tooltip = this.skill.getTooltip();
@@ -17,7 +22,7 @@ this.perk_legend_point_blank <- this.inherit("scripts/skills/skill", {
 			id = 6,
 			type = "text",
 			icon = "ui/tooltips/warning.png",
-			text = "Reduces your maximum range of throwing weapons to [color=" + this.Const.UI.Color.NegativeValue + "]3[/color]"
+			text = "Reduces your maximum range of throwing weapons to [color=%negative%]3[/color]"
 		},
 		{
 			id = 6,
@@ -29,7 +34,7 @@ this.perk_legend_point_blank <- this.inherit("scripts/skills/skill", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/damage_dealt.png",
-			text = "Increases your damage done by [color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color] for ranged weapon attacks at a range of 4 tiles or less"
+			text = "Increases your damage done by [color=%positive%]" + bonus + "%[/color] for ranged weapon attacks at a range of 4 tiles or less"
 		}]);
 
 		return tooltip;

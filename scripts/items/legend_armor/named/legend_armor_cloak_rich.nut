@@ -61,7 +61,7 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + val + "%[/color]"
+			text = "Increase the Resolve of the wearer by [color=%positive%]+" + val + "%[/color]"
 		});
 		return result;
 	}
@@ -73,7 +73,7 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Increase the Resolve of the wearer by [color=" + this.Const.UI.Color.PositiveValue + "]+" + val + "%[/color]"
+			text = "Increase the Resolve of the wearer by [color=%positive%]+" + val + "%[/color]"
 		});
 	}
 

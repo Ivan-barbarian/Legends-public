@@ -20,7 +20,7 @@
 				id = 8,
 				type = "text",
 				icon = "ui/icons/shield_damage.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] bonus damage to shields from Double Grip"
+				text = "[color=%positive%]25%[/color] bonus damage to shields from Double Grip"
 			});
 		}
 		if (this.getContainer().hasPerk(::Legends.Perk.LegendSmashingShields))
@@ -29,7 +29,7 @@
 				id = 9,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Destroying the shield will refund [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] Action Points"
+				text = "Destroying the shield will refund [color=%positive%]4[/color] Action Points"
 			});
 			ret.push({
 				id = 10,
@@ -136,7 +136,7 @@
 	}
 
 	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties )
-	{	
+	{
 		if (_skill != this)
 			return;
 

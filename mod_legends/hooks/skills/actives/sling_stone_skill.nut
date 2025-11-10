@@ -20,7 +20,7 @@
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]100%[/color] chance to baffle a target on a hit to the head"
+				text = "Has a [color=%negative%]100%[/color] chance to baffle a target on a hit to the head"
 			});
 		}
 		else
@@ -30,13 +30,13 @@
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to debilitate a target on a hit to the head"
+				text = "Has a [color=%positive%]100%[/color] chance to debilitate a target on a hit to the head"
 			},
 			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to baffle a target on a hit to the body"
+				text = "Has a [color=%positive%]100%[/color] chance to baffle a target on a hit to the body"
 			},
 			{
 				id = 8,
@@ -51,7 +51,7 @@
 				id = 9,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Can not be used because this character is engaged in melee[/color]"
+				text = "[color=%negative%]Can not be used because this character is engaged in melee[/color]"
 			});
 		}
 

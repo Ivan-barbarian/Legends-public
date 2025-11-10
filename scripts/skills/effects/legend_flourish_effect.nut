@@ -38,19 +38,19 @@ this.legend_flourish_effect <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "Increases fatigue use of all skills by [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color]"
+				text = "Increases fatigue use of all skills by [color=%positive%]50%[/color]"
 			},
 			{
 				id = 8,
 				type = "text",
 				icon = "ui/icons/direct_damage.png",
-				text = "Chance on each attack to ignore armor completely, the chance is [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] of the Initiative difference between you and the target as long as you are faster"
+				text = "Chance on each attack to ignore armor completely, the chance is [color=%positive%]50%[/color] of the Initiative difference between you and the target as long as you are faster"
 			},
 			{
 				id = 9,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "As long as you are faster than the target, any attack that inflicts at least [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] point of damage to Hitpoints triggers a morale check for the opponent with a penalty equal to [color=" + this.Const.UI.Color.NegativeValue + "]20%[/color] of the Initiative difference between you and the target"
+				text = "As long as you are faster than the target, any attack that inflicts at least [color=%positive%]1[/color] point of damage to Hitpoints triggers a morale check for the opponent with a penalty equal to [color=%negative%]20%[/color] of the Initiative difference between you and the target"
 			}
 		];
 	}

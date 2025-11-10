@@ -34,7 +34,7 @@ this.legend_redback_cloak <- this.inherit("scripts/items/legend_armor/legend_arm
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces any ranged damage to the body by [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.RangedDamageModifier + "%[/color]"
+			text = "Reduces any ranged damage to the body by [color=%negative%]" + this.m.RangedDamageModifier + "%[/color]"
 		});
 		result.push({
 			id = 8,
@@ -51,7 +51,7 @@ this.legend_redback_cloak <- this.inherit("scripts/items/legend_armor/legend_arm
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces any ranged damage to the body by [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.RangedDamageModifier + "%[/color]"
+			text = "Reduces any ranged damage to the body by [color=%negative%]" + this.m.RangedDamageModifier + "%[/color]"
 		});
 		_result.push({
 			id = 8,

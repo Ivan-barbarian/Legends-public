@@ -28,7 +28,7 @@
 				id = 8,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Inflicts additional stacking [color=" + this.Const.UI.Color.DamageValue + "]5[/color] bleeding damage per turn, for 2 turns"
+				text = "Inflicts additional stacking [color=%damage%]5[/color] bleeding damage per turn, for 2 turns"
 			});
 		}
 

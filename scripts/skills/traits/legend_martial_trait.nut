@@ -37,7 +37,7 @@ this.legend_martial_trait <- this.inherit("scripts/skills/traits/character_trait
 				id = 11,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Melee Damage"
+				text = "[color=%positive%]+5%[/color] Melee Damage"
 			}
 		];
 	}

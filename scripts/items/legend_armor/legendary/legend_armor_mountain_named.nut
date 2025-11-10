@@ -40,7 +40,7 @@ this.legend_armor_mountain_named <- this.inherit("scripts/items/legend_armor/leg
 			id = 6,
 			type = "text",
 			icon = "ui/icons/health.png",
-			text = "Repairs [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] of its armor each turn"
+			text = "Repairs [color=%positive%]10%[/color] of its armor each turn"
 		});
 	}
 
@@ -51,7 +51,7 @@ this.legend_armor_mountain_named <- this.inherit("scripts/items/legend_armor/leg
 			id = 6,
 			type = "text",
 			icon = "ui/icons/health.png",
-			text = "Repairs [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] of its armor each turn"
+			text = "Repairs [color=%positive%]10%[/color] of its armor each turn"
 		});
 		return result;
 	}

@@ -34,6 +34,12 @@
 				icon = "ui/icons/special.png",
 				text = this.getRuneSigilTooltip()
 			});
+			result.push({
+				id = 21,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "When scrapped, rune will be refunded"
+			});
 		}
 
 		return result;

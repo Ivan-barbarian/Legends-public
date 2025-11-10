@@ -13,6 +13,6 @@
 	o.onPrepareVariables = function ( _vars )
 	{
 		onPrepareVariables(_vars);
-		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Witchunter.getGender(), "witchhunter");
+		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Witchhunter.getGender(), "witchhunter");
 	}
 })

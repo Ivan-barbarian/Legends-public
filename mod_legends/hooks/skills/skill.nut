@@ -99,13 +99,23 @@
 		local damage_armor_min = this.Math.floor(p.DamageRegularMin * p.DamageArmorMult * p.DamageTotalMult * (this.m.IsRanged ? p.RangedDamageMult : p.MeleeDamageMult) * p.DamageTooltipMinMult);
 		local damage_armor_max = this.Math.floor(p.DamageRegularMax * p.DamageArmorMult * p.DamageTotalMult * (this.m.IsRanged ? p.RangedDamageMult : p.MeleeDamageMult) * p.DamageTooltipMaxMult);
 
+		local damageParams = [
+			["regular_min", damage_regular_min],
+			["regular_max", damage_regular_max],
+			["direct_min", damage_direct_min],
+			["direct_max", damage_direct_max],
+			["armor_min", damage_armor_min],
+			["armor_max", damage_armor_max]
+		];
+
 		if (this.m.DirectDamageMult == 1.0)
 		{
 			ret.push({
 				id = 4,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_direct_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_direct_max + "[/color] damage that ignores armor"
+				text = "Inflicts [color=%damage%]%direct_min%[/color] - [color=%damage%]%direct_max%[/color] damage that ignores armor",
+				param = damageParams
 			});
 		}
 		else if (this.m.DirectDamageMult > 0.0)
@@ -114,7 +124,8 @@
 				id = 4,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_max + "[/color] damage to hitpoints, of which [color=" + this.Const.UI.Color.DamageValue + "]0[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_direct_max + "[/color] can ignore armor"
+				text = "Inflicts [color=%damage%]%regular_min%[/color] - [color=%damage%]%regular_max%[/color] damage to hitpoints, of which [color=%damage%]0[/color] - [color=%damage%]%direct_max%[/color] can ignore armor",
+				param = damageParams
 			});
 		}
 		else
@@ -123,7 +134,8 @@
 				id = 4,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_max + "[/color] damage to hitpoints"
+				text = "Inflicts [color=%damage%]%regular_min%[/color] - [color=%damage%]%regular_max%[/color] damage to hitpoints",
+				param = damageParams
 			});
 		}
 
@@ -133,25 +145,20 @@
 				id = 5,
 				type = "text",
 				icon = "ui/icons/armor_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_armor_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_armor_max + "[/color] damage to armor"
+				text = "Inflicts [color=%damage%]%armor_min%[/color] - [color=%damage%]%armor_max%[/color] damage to armor",
+				param = damageParams
 			});
 		}
 
-		local accuText = "";
 		if (this.m.HitChanceBonus != 0 && !this.m.IsRanged)
-		{
-			local color = this.m.HitChanceBonus > 0 ? ::Const.UI.Color.PositiveValue : ::Const.UI.Color.NegativeValue;
-			local sign = this.m.HitChanceBonus > 0 ? "+" : "";
-			accuText = "Has [color=" + color + "]" + sign + this.m.HitChanceBonus + "%[/color] chance to hit";
-		}
-
-		if (accuText.len() != 0)
 		{
 			ret.push({
 				id = 7,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = accuText
+				text = this.m.HitChanceBonus > 0 ?
+					"Has [color=%positive%]+" + this.m.HitChanceBonus + "%[/color] chance to hit" :
+					"Has [color=%negative%]-" + this.m.HitChanceBonus + "%[/color] chance to hit"
 			});
 		}
 
@@ -166,7 +173,7 @@
 				id = 10,
 				type = "text",
 				icon = "ui/icons/injury.png",
-				text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]" + this.Math.floor((1.0 - p.ThresholdToInflictInjuryMult) * 100) + "%[/color] lower threshold to inflict injuries"
+				text = "Has a [color=%negative%]" + this.Math.floor((1.0 - p.ThresholdToInflictInjuryMult) * 100) + "%[/color] lower threshold to inflict injuries"
 			});
 		}
 
@@ -186,7 +193,7 @@
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Always inflicts at least [color=" + this.Const.UI.Color.DamageValue + "]" + p.DamageMinimum + "[/color] damage to hitpoints, regardless of armor"
+				text = "Always inflicts at least [color=%damage%]" + p.DamageMinimum + "[/color] damage to hitpoints, regardless of armor"
 			});
 		}
 
@@ -196,7 +203,7 @@
 				id = 7,
 				type = "text",
 				icon = "ui/icons/chance_to_hit_head.png",
-				text = "Has a combined total [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.min(100, p.HitChance[this.Const.BodyPart.Head]) + "%[/color] chance to hit the head"
+				text = "Has a combined total [color=%positive%]" + this.Math.min(100, p.HitChance[this.Const.BodyPart.Head]) + "%[/color] chance to hit the head"
 			});
 		}
 
@@ -206,7 +213,7 @@
 				id = 9,
 				type = "hint",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Can not be used because this character has taken an oath precluding the use of ranged weapons or tools[/color]"
+				text = "[color=%negative%]Can not be used because this character has taken an oath precluding the use of ranged weapons or tools[/color]"
 			});
 		}
 		if (this.m.ChanceSmash > 0)
@@ -215,7 +222,7 @@
 				id = 10,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.min(100, this.m.ChanceSmash * p.FatalityChanceMult) + "%[/color] chance to smash the target on hits to the head that are killing blows"
+				text = "[color=%positive%]" + this.Math.min(100, this.m.ChanceSmash * p.FatalityChanceMult) + "%[/color] chance to smash the target on hits to the head that are killing blows"
 			});
 		}
 		if (this.m.ChanceDecapitate > 0)
@@ -224,7 +231,7 @@
 				id = 10,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.min(100, this.m.ChanceDecapitate * p.FatalityChanceMult) + "%[/color] chance to decapitate the target on hits to the head that are killing blows"
+				text = "[color=%positive%]" + this.Math.min(100, this.m.ChanceDecapitate * p.FatalityChanceMult) + "%[/color] chance to decapitate the target on hits to the head that are killing blows"
 			});
 		}
 		if (this.m.ChanceDisembowel > 0)
@@ -233,7 +240,7 @@
 				id = 10,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.min(100, this.m.ChanceDisembowel * p.FatalityChanceMult) + "%[/color] chance to disembowel the target on hits to the body that are killing blows"
+				text = "[color=%positive%]" + this.Math.min(100, this.m.ChanceDisembowel * p.FatalityChanceMult) + "%[/color] chance to disembowel the target on hits to the body that are killing blows"
 			});
 		}
 
@@ -513,16 +520,16 @@
 					text = "Resistance against ranged weapons"
 				});
 			}
-			else if (
-				this.getID() == ::Legends.Actives.getID(::Legends.Active.Puncture) ||
-				this.getID() == ::Legends.Actives.getID(::Legends.Active.Thrust) ||
-				this.getID() == ::Legends.Actives.getID(::Legends.Active.Stab) ||
-				this.getID() == ::Legends.Actives.getID(::Legends.Active.Deathblow) ||
-				this.getID() == ::Legends.Actives.getID(::Legends.Active.Impale) ||
-				this.getID() == ::Legends.Actives.getID(::Legends.Active.Rupture) ||
-				this.getID() == ::Legends.Actives.getID(::Legends.Active.Prong) ||
-				this.getID() == ::Legends.Actives.getID(::Legends.Active.Lunge)
-			)
+			else if (::Legends.S.oneOf(this.getID(),
+				::Legends.Actives.getID(::Legends.Active.Puncture),
+				::Legends.Actives.getID(::Legends.Active.Thrust),
+				::Legends.Actives.getID(::Legends.Active.Stab),
+				::Legends.Actives.getID(::Legends.Active.Deathblow),
+				::Legends.Actives.getID(::Legends.Active.Impale),
+				::Legends.Actives.getID(::Legends.Active.Rupture),
+				::Legends.Actives.getID(::Legends.Active.Prong),
+				::Legends.Actives.getID(::Legends.Active.Lunge)
+			))
 			{
 				ret.push({
 					icon = "ui/tooltips/negative.png",
@@ -589,7 +596,7 @@
 				return "";
 			}
 
-			return "[color=" + this.Const.UI.Color.PositiveValue + "]" + text + "[/color]";
+			return "[color=%positive%]" + text + "[/color]";
 		};
 		local red = function ( text )
 		{
@@ -598,7 +605,7 @@
 				return "";
 			}
 
-			return "[color=" + this.Const.UI.Color.NegativeValue + "]" + text + "[/color]";
+			return "[color=%negative%]" + text + "[/color]";
 		};
 		local isIn = function ( pattern, text )
 		{

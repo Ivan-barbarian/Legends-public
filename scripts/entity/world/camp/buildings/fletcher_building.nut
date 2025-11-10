@@ -76,7 +76,7 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				id = 5,
 				type = "text",
 				icon = "ui/buttons/asset_ammo_up.png",
-				text = "Produces [color=" + this.Const.UI.Color.PositiveValue + "]" + mod.Craft / 2.0 + "[/color] units of ammo per hour."
+				text = "Produces [color=%positive%]" + mod.Craft / 2.0 + "[/color] units of ammo per hour."
 			}
 		];
 		local id = 6;
@@ -86,7 +86,7 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				id = id,
 				type = "hint",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] / 2.0 + "[/color] units/hour " + bro[1] + " (" + bro[2] + ")"
+				text = "[color=%positive%]" + bro[0] / 2.0 + "[/color] units/hour " + bro[1] + " (" + bro[2] + ")"
 			});
 			++id;
 		}

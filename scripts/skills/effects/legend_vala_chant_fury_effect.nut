@@ -73,13 +73,13 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 				id = 10,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + regulardamage + "%[/color] damage inflicted"
+				text = "[color=%positive%]+" + regulardamage + "%[/color] damage inflicted"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + paybackchance + "%[/color] chance to retaliate against an attacker that hits you in melee range, for [color=" + this.Const.UI.Color.PositiveValue + "]" + paybackdamage + "%[/color] damage"
+				text = "[color=%positive%]" + paybackchance + "%[/color] chance to retaliate against an attacker that hits you in melee range, for [color=%positive%]" + paybackdamage + "%[/color] damage"
 			}
 		];
 	}

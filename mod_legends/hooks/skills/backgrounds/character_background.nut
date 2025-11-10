@@ -641,7 +641,7 @@
 				id = 10,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Gain a perk point every [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getContainer().getActor().getVeteranPerks() + "[/color] Levels"
+				text = "Gain a perk point every [color=%positive%]" + this.getContainer().getActor().getVeteranPerks() + "[/color] Levels"
 			});
 		}
 		if (this.getContainer() != null) ret.extend(this.getAttributesTooltip());
@@ -1774,7 +1774,7 @@
 
 		if (ret.len() == 0) return "";
 
-		return "[color=" + this.Const.UI.Color.NegativeValue + "]Background Type: " + ret.slice(0, ret.len() - 2) + "[/color]";
+		return "[color=%negative%]Background Type: " + ret.slice(0, ret.len() - 2) + "[/color]";
 	}
 
 	//0 = Male, 1 = Female, -1 = Either

@@ -33,19 +33,19 @@ this.legend_pugilist_trait <- this.inherit("scripts/skills/traits/character_trai
 				id = 12,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Melee Skill"
+				text = "[color=%positive%]+5%[/color] Melee Skill"
 			},
 			{
 				id = 13,
 				type = "text",
 				icon = "ui/icons/chance_to_hit_head.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Chance To Hit Head"
+				text = "[color=%positive%]+10%[/color] Chance To Hit Head"
 			},
 			{
 				id = 13,
 				type = "text",
 				icon = "ui/icons/xp_received.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] experience gain"
+				text = "[color=%negative%]-10%[/color] experience gain"
 			}
 		];
 	}

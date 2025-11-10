@@ -35,7 +35,7 @@ this.perk_legend_wind_reader <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "You are gaining [color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "[/color] ranged skill due to wind reading"
+				text = "You are gaining [color=%positive%]" + bonus + "[/color] ranged skill due to wind reading"
 			});
 
 

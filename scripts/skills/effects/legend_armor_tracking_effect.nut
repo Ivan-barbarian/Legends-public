@@ -29,25 +29,25 @@ this.legend_armor_tracking_effect <- this.inherit("scripts/skills/skill", {
 				id = 12,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] Fatigue Cost for [color=#400080]Round Swing[/color], [color=#400080]Swing[/color], [color=#400080]Thresh[/color], [color=#400080]Reap[/color], [color=#400080]Castigate[/color]"
+				text = "[color=%negative%]-50%[/color] Fatigue Cost for [color=#400080]Round Swing[/color], [color=#400080]Swing[/color], [color=#400080]Thresh[/color], [color=#400080]Reap[/color], [color=#400080]Castigate[/color]"
 			},
 			{
 				id = 13,
 				type = "text",
 				icon = "ui/icons/action_points.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] Action Point cost for [color=#400080]Round Swing[/color], [color=#400080]Swing[/color], [color=#400080]Thresh[/color], [color=#400080]Reap[/color], [color=#400080]Castigate[/color]"
+				text = "[color=%negative%]-50%[/color] Action Point cost for [color=#400080]Round Swing[/color], [color=#400080]Swing[/color], [color=#400080]Thresh[/color], [color=#400080]Reap[/color], [color=#400080]Castigate[/color]"
 			},
 			{
 				id = 14,
 				type = "text",
 				icon = "ui/icons/damage_dealt.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] Damage for [color=#400080]Round Swing[/color], [color=#400080]Thresh[/color], [color=#400080]Reap[/color], [color=#400080]Castigate[/color]"
+				text = "[color=%negative%]-50%[/color] Damage for [color=#400080]Round Swing[/color], [color=#400080]Thresh[/color], [color=#400080]Reap[/color], [color=#400080]Castigate[/color]"
 			},
 			{
 				id = 15,
 				type = "text",
 				icon = "ui/icons/damage_dealt.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] Damage for [color=#400080]Swing[/color]"
+				text = "[color=%negative%]-25%[/color] Damage for [color=#400080]Swing[/color]"
 			}
 		];
 		return ret;

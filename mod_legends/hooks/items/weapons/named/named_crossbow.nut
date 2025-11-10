@@ -17,7 +17,7 @@
 				id = 10,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Must be reloaded before firing again[/color]"
+				text = "[color=%negative%]Must be reloaded before firing again[/color]"
 			});
 		}
 

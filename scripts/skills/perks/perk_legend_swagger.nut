@@ -30,13 +30,13 @@ this.perk_legend_swagger <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/armor_body.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor(bonus) + "[/color] armor condition added at start of combat"
+				text = "[color=%positive%]+" + this.Math.floor(bonus) + "[/color] armor condition added at start of combat"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/armor_head.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor(bonus / 2) + "[/color] helmet condition added at start of combat"
+				text = "[color=%positive%]+" + this.Math.floor(bonus / 2) + "[/color] helmet condition added at start of combat"
 			}]);
 		}
 		else
@@ -62,13 +62,13 @@ this.perk_legend_swagger <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/armor_body.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor(bonus) + "[/color] armor condition added at start of combat"
+				text = "[color=%positive%]+" + this.Math.floor(bonus) + "[/color] armor condition added at start of combat"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/armor_head.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor(bonus / 2) + "[/color] helmet condition added at start of combat"
+				text = "[color=%positive%]+" + this.Math.floor(bonus / 2) + "[/color] helmet condition added at start of combat"
 			}]);
 		}
 		else

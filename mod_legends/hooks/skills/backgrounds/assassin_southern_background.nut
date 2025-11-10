@@ -135,7 +135,7 @@
 				id = 11,
 				type = "text",
 				icon = "ui/icons/chance_to_hit_head.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Chance To Hit Head"
+				text = "[color=%positive%]+10%[/color] Chance To Hit Head"
 			}
 		);
 		return ret;

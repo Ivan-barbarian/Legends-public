@@ -29,7 +29,7 @@
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.DazeChance + "%[/color] chance to Daze on a hit"
+				text = "Has a [color=%positive%]" + this.m.DazeChance + "%[/color] chance to Daze on a hit"
 			});
 		}
 		return ret;

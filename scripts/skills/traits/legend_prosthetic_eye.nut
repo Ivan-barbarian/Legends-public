@@ -33,13 +33,13 @@ this.legend_prosthetic_eye <- this.inherit("scripts/skills/traits/character_trai
 				id = 10,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] Ranged Skill"
+				text = "[color=%negative%]-50%[/color] Ranged Skill"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+7[/color] Resolve"
+				text = "[color=%positive%]+7[/color] Resolve"
 			}
 		];
 		if (!this.m.IsUpgraded)
@@ -48,7 +48,7 @@ this.legend_prosthetic_eye <- this.inherit("scripts/skills/traits/character_trai
 				id = 12,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-2[/color] Vision"
+				text = "[color=%negative%]-2[/color] Vision"
 			});
 		}
 		else
@@ -57,13 +57,13 @@ this.legend_prosthetic_eye <- this.inherit("scripts/skills/traits/character_trai
 				id = 12,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-1[/color] Vision"
+				text = "[color=%negative%]-1[/color] Vision"
 			},
 			{
 				id = 15,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-3[/color]"
+				text = "Reduces the Resolve of any opponent engaged in melee by [color=%negative%]-3[/color]"
 			}]);
 		}
 

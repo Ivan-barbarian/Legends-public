@@ -41,19 +41,19 @@ this.legend_peaceful_trait <- this.inherit("scripts/skills/traits/character_trai
 				id = 12,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]-5[/color] Melee and Ranged Skill"
+				text = "[color=%positive%]-5[/color] Melee and Ranged Skill"
 			},
 			{
 				id = 12,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Melee and Ranged Defense"
+				text = "[color=%positive%]+5%[/color] Melee and Ranged Defense"
 			},
 			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "Has  [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] resolve"
+				text = "Has  [color=%positive%]+10[/color] resolve"
 			},
 			{
 				id = 16,

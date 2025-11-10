@@ -26,7 +26,7 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/damage_dealt.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + (damageBonus * 100) + "%[/color] of equipped weapon's Maximum Damage as additional Maximum Damage"
+				text = "[color=%positive%]" + (damageBonus * 100) + "%[/color] of equipped weapon's Maximum Damage as additional Maximum Damage"
 			});
 		}
 
@@ -37,7 +37,7 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + resolveBonus + "[/color] Resolve due to missing health and wearing cultist items"
+				text = "[color=%positive%]+" + resolveBonus + "[/color] Resolve due to missing health and wearing cultist items"
 			});
 		}
 

@@ -22,7 +22,7 @@
 				id = 8,
 				type = "text",
 				icon = "ui/icons/ammo.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]" + ammo + "[/color] bolts left"
+				text = "Has [color=%positive%]" + ammo + "[/color] bolts left"
 			});
 		}
 		else
@@ -31,7 +31,7 @@
 				id = 8,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Needs a non-empty quiver of bolts equipped[/color]"
+				text = "[color=%negative%]Needs a non-empty quiver of bolts equipped[/color]"
 			});
 		}
 
@@ -41,7 +41,7 @@
 				id = 6,
 				type = "text",
 				icon = "ui/icons/direct_damage.png",
-				text = "Up to [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] of any damage ignores armor depending on the distance to the target, with the highest bonus in melee and lowest at maximum range"
+				text = "Up to [color=%positive%]+30%[/color] of any damage ignores armor depending on the distance to the target, with the highest bonus in melee and lowest at maximum range"
 			});
 		}
 
@@ -51,7 +51,7 @@
 				id = 9,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Must be reloaded before firing again[/color]"
+				text = "[color=%negative%]Must be reloaded before firing again[/color]"
 			});
 		}
 
@@ -74,7 +74,10 @@
 		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
 			return;
 
-		::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Staggered);
+		local actor = this.getContainer().getActor();
+		local stagger = ::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Staggered);
+		if (!actor.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer)
+			this.Tactical.EventLog.log(stagger.getLogEntryOnAdded(this.Const.UI.getColorizedEntityName(actor), this.Const.UI.getColorizedEntityName(_targetEntity)));
 		return onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor );
 	}
 

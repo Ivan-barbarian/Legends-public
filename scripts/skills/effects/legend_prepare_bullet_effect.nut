@@ -29,19 +29,19 @@ this.legend_prepare_bullet_effect <- this.inherit("scripts/skills/skill", {
 				id = 12,
 				type = "text",
 				icon = "ui/icons/damage_dealt.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.getBonus() + "[/color] Ranged Damage"
+				text = "[color=%positive%]+" + this.getBonus() + "[/color] Ranged Damage"
 			},
 			{
 				id = 12,
 				type = "text",
 				icon = "ui/icons/direct_damage.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + this.getBonus() + "%[/color] Armor Penetration"
+				text = "[color=%positive%]" + this.getBonus() + "%[/color] Armor Penetration"
 			},
 			{
 				id = 13,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] Sling Stone range"
+				text = "[color=%positive%]+1[/color] Sling Stone range"
 			},
 			{
 				id = 14,

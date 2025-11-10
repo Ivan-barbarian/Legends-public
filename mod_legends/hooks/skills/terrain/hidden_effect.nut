@@ -32,7 +32,7 @@
 					id = 11,
 					type = "text",
 					icon = "ui/icons/regular_damage.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] Minimum and Maximum Damage from the Assassinate perk"
+					text = "[color=%positive%]+50%[/color] Minimum and Maximum Damage from the Assassinate perk"
 				}
 			]);
 		}
@@ -43,7 +43,7 @@
 				id = 13,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] Maximum Damage from being an assassin"
+				text = "[color=%positive%]+50%[/color] Maximum Damage from being an assassin"
 			}
 		]);
 
@@ -53,7 +53,7 @@
 				id = 13,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+75%[/color] Maximum Damage from being an experienced assassin"
+				text = "[color=%positive%]+75%[/color] Maximum Damage from being an experienced assassin"
 			}
 		]);
 

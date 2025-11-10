@@ -21,7 +21,7 @@
 				id = 8,
 				type = "text",
 				icon = "ui/icons/ammo.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]" + ammo + "[/color] shots left"
+				text = "Has [color=%positive%]" + ammo + "[/color] shots left"
 			});
 		}
 		else
@@ -30,7 +30,7 @@
 				id = 8,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Needs a non-empty powder bag equipped[/color]"
+				text = "[color=%negative%]Needs a non-empty powder bag equipped[/color]"
 			});
 		}
 
@@ -40,7 +40,7 @@
 				id = 9,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Must be reloaded before firing again[/color]"
+				text = "[color=%negative%]Must be reloaded before firing again[/color]"
 			});
 		}
 
@@ -50,7 +50,7 @@
 				id = 9,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Can not be used because this character is engaged in melee[/color]"
+				text = "[color=%negative%]Can not be used because this character is engaged in melee[/color]"
 			});
 		}
 
@@ -61,7 +61,7 @@
 				id = 6,
 				type = "text",
 				icon = "ui/tooltips/positive.png",
-				text = "Max Range [color=" + this.Const.UI.Color.PositiveValue + "]+" + s.m.BonusRange + "[/color] from " + s.getName()
+				text = "Max Range [color=%positive%]+" + s.m.BonusRange + "[/color] from " + s.getName()
 			});
 		}
 
@@ -71,7 +71,7 @@
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]100%[/color] chance to Shellshock a target on a hit to the head"
+				text = "Has a [color=%negative%]100%[/color] chance to Shellshock a target on a hit to the head"
 			});
 		}
 

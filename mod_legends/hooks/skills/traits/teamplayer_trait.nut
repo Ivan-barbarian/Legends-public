@@ -1,5 +1,5 @@
 ::mods_hookExactClass("skills/traits/teamplayer_trait", function(o)
-{	
+{
 	local create = o.create;
 	o.create = function ()
 	{
@@ -19,14 +19,9 @@
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = format("[color=%s]%s[/color], [color=%s]%s[/color] and [color=%s]%s[/color] skills have [color=%s]%s[/color] chance to hit when targeting an allied character and will not apply negative effects or damage when used on an ally"
-				, this.Const.UI.Color.NegativeValue, "Knock Back"
-				, this.Const.UI.Color.NegativeValue, "Repel"
-				, this.Const.UI.Color.NegativeValue, "Hook"
-				, this.Const.UI.Color.PositiveValue, "100%"
-			)
+			text = "[color=%skill%]Knock Back[/color], [color=%skill%]Repel[/color] and [color=%skill%]Hook[/color] skills have [color=%positive%]100%[/color] chance to hit when targeting an allied character and will not apply negative effects or damage when used on an ally"
 		});
-		
+
 		return ret;
 	}
 });

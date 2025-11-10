@@ -14,7 +14,7 @@
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Only receive [color=" + this.Const.UI.Color.PositiveValue + "]" + fm + "%[/color] of any damage to armor from attacks"
+				text = "Only receive [color=%positive%]" + fm + "%[/color] of any damage to armor from attacks"
 			});
 		}
 

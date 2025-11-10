@@ -28,7 +28,7 @@ this.legend_goblin_tribe_defender <- this.inherit("scripts/entity/tactical/gobli
 		::Legends.Perks.grant(this, ::Legends.Perk.LegendBallistics);
 		if(::Legends.isLegendaryDifficulty())
 		{
-			::Legends.Perks.grant(this, ::Legends.Perk.Nimble);
+			::Legends.Perks.grant(this, ::Legends.Perk.BattleForged);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendClarity);
 		}
 		this.m.Skills.update();

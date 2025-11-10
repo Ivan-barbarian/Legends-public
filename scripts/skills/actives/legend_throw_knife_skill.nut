@@ -10,7 +10,7 @@ this.legend_throw_knife_skill <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendThrowKnife);
-		this.m.Description = "Throw a knife at an enemy. Costs " + this.m.AmmoPerUse + " ammo per use and has a [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] chance to hit the head as well as a high chance to Daze your target.\nCannot be used while engaged in melee.";
+		this.m.Description = "Throw a knife at an enemy. Costs " + this.m.AmmoPerUse + " ammo per use and has a [color=%positive%]+15%[/color] chance to hit the head as well as a high chance to Daze your target.\nCannot be used while engaged in melee.";
 		this.m.Icon = "skills/active_87.png"; //To do
 		this.m.IconDisabled = "skills/active_87_sw.png"; //to do
 		this.m.Overlay = "active_87"; //to do
@@ -58,13 +58,13 @@ this.legend_throw_knife_skill <- this.inherit("scripts/skills/skill", {
 			id = 5,
 			type = "text",
 			icon = "ui/tooltips/warning.png",
-			text = "You can use [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] times per battle and will consume [color=" + this.Const.UI.Color.NegativeValue + "]2[/color] ammo from your stash for each use"
+			text = "You can use [color=%positive%]3[/color] times per battle and will consume [color=%negative%]2[/color] ammo from your stash for each use"
 		});
 		ret.push({
 			id = 7,
 			type = "text",
 			icon = "ui/icons/asset_ammo.png",
-			text = "You have [color=" + this.Const.UI.Color.PositiveValue +"]" + this.getAmmo() + "[/color] ammo"
+			text = "You have [color=%positive%]" + this.getAmmo() + "[/color] ammo"
 		});
 
 		if (this.Tactical.isActive() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
@@ -73,7 +73,7 @@ this.legend_throw_knife_skill <- this.inherit("scripts/skills/skill", {
 				id = 9,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Cannot be used when this character is engaged in melee[/color]"
+				text = "[color=%negative%]Cannot be used when this character is engaged in melee[/color]"
 			});
 		}
 

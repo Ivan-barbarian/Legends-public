@@ -121,19 +121,19 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				id = 3,
 				type = "text",
 				icon = "ui/icons/plus.png",
-				text = "There are [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Queue.len() + "[/color] items in the crafting queue."
+				text = "There are [color=%positive%]" + this.m.Queue.len() + "[/color] items in the crafting queue."
 			},
 			{
 				id = 4,
 				type = "text",
 				icon = "ui/buttons/icon_time.png",
-				text = "It will take [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getRequiredTime() + "[/color] hours to craft all items."
+				text = "It will take [color=%positive%]" + this.getRequiredTime() + "[/color] hours to craft all items."
 			},
 			{
 				id = 5,
 				type = "text",
 				icon = "ui/icons/repair_item.png",
-				text = "Total crafting modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + mod.Craft + "[/color] units per hour."
+				text = "Total crafting modifier is [color=%positive%]" + mod.Craft + "[/color] units per hour."
 			}
 		];
 		local id = 6;
@@ -143,7 +143,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				id = id,
 				type = "hint",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + "[/color] units/hour " + bro[1] + " (" + bro[2] + ")"
+				text = "[color=%positive%]" + bro[0] + "[/color] units/hour " + bro[1] + " (" + bro[2] + ")"
 			});
 			++id;
 		}

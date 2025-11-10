@@ -177,7 +177,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			{
 				upgradeMultiplier *= 0.01 * (100 + upgrade.m.FatiguePenaltyMultiplier);
 			}
-		}			
+		}
 		return this.Math.floor(upgradeMultiplier * this.getAddedValue("getStaminaModifier", this.m.StaminaModifier));
 	}
 
@@ -621,15 +621,16 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			result.push({	// An empty line is put in to improve formatting
 				id = 10,
 				type = "text",
-				icon = "ui/icons/blank.png",
-				text = " "
+				text = "&nbsp;"
 			});
+
 			result.push({
 				id = 10,
 				type = "text",
-				icon = "ui/icons/armor_body.png",
-				text = "[u]" + this.getName() + "[/u]"
+				text = "[leg_img](gfx/ui/items/%icon%,height=28px,width=28px)[/leg_img] [b][u]%name%[/u][/b]",
+				param = [["name", this.getName()], ["icon", this.m.Icon]]
 			});
+
 			result.push({
 				id = 10,
 				type = "text",

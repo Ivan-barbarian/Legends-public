@@ -41,7 +41,7 @@ this.legend_named_military_goedendag <- this.inherit("scripts/items/weapons/name
 				id = 12,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.EffectChanceOrBonus + "%[/color] Stagger Chance"
+				text = "[color=%positive%]+" + this.m.EffectChanceOrBonus + "%[/color] Stagger Chance"
 			});
 		}
 		return result;

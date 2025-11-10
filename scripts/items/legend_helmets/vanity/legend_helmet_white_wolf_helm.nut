@@ -48,7 +48,7 @@ this.legend_helmet_white_wolf_helm <- this.inherit("scripts/items/legend_helmets
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-" + this.m.ThreatBonus + "[/color]"
+			text = "Reduces the Resolve of any opponent engaged in melee by [color=%negative%]-" + this.m.ThreatBonus + "[/color]"
 		});
 		return result;
 	}

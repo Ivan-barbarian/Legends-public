@@ -122,7 +122,7 @@
 				id = 15,
 				type = "text",
 				icon = "ui/icons/xp_received.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] Experience Gain"
+				text = "[color=%negative%]-15%[/color] Experience Gain"
 			}
 		);
 		return ret

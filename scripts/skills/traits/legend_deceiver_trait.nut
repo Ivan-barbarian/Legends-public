@@ -33,7 +33,7 @@ this.legend_deceiver_trait <- this.inherit("scripts/skills/traits/character_trai
 				id = 10,
 				type = "text",
 				icon = "ui/icons/asset_money.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+0.15%[/color] barter skill by lying to sales people"
+				text = "Has [color=%positive%]+0.15%[/color] barter skill by lying to sales people"
 			},
 			{
 				id = 2,
@@ -44,13 +44,13 @@ this.legend_deceiver_trait <- this.inherit("scripts/skills/traits/character_trai
 				id = 10,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] chance to have any attacker require two successful attack rolls in order to hit"
+				text = "Has a [color=%positive%]20%[/color] chance to have any attacker require two successful attack rolls in order to hit"
 			},
 			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/asset_money.png",
-				text = "Claims a [color=" + this.Const.UI.Color.NegativeValue + "]+50%[/color] daily wage by stealing from the company coffers"
+				text = "Claims a [color=%negative%]+50%[/color] daily wage by stealing from the company coffers"
 			}
 		];
 	}
@@ -60,7 +60,7 @@ this.legend_deceiver_trait <- this.inherit("scripts/skills/traits/character_trai
 		_properties.RerollDefenseChance += 20;
 		_properties.DailyWageMult *= 1.5;
 	}
-	
+
 	function onAdded()
 	{
 		if (this.World.State.getPlayer() == null)
@@ -70,7 +70,7 @@ this.legend_deceiver_trait <- this.inherit("scripts/skills/traits/character_trai
 
 		this.World.State.getPlayer().calculateBarterMult();
 	}
-	
+
 	function onRemoved()
 	{
 		if (this.World.State.getPlayer() == null)

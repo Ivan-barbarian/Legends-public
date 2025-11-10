@@ -35,7 +35,7 @@
 				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+40%[/color] chance to hit"
+				text = "Has [color=%positive%]+40%[/color] chance to hit"
 			});
 		}
 		else
@@ -44,7 +44,7 @@
 				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] chance to hit"
+				text = "Has [color=%positive%]+25%[/color] chance to hit"
 			});
 		}
 
@@ -54,7 +54,7 @@
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to stagger on a hit"
+				text = "Has a [color=%positive%]100%[/color] chance to stagger on a hit"
 			});
 		}
 		return ret;
@@ -100,7 +100,7 @@
 		onUse(_user, _targetTile); // let the onUse to handle the knock back
 		m.IsUsingHitchance = true;
 		m.SoundOnUse.extend(current);
-		return success; 
+		return success;
 	}
 
 	o.onAfterUpdate <- function ( _properties )
@@ -116,7 +116,7 @@
 
 	local onAnySkillUsed = o.onAnySkillUsed;
 	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties )
-	{	
+	{
 		onAnySkillUsed( _skill, _targetEntity, _properties );
 
 		if (_skill != this)

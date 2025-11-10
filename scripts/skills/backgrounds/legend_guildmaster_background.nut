@@ -135,7 +135,7 @@ this.legend_guildmaster_background <- this.inherit("scripts/skills/backgrounds/c
 				id = 13,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Provides [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] enchanting speed when assigned to the enchanter\'s tent."
+				text = "Provides [color=%positive%]+10%[/color] enchanting speed when assigned to the enchanter\'s tent."
 			}
 		);
 		return ret;

@@ -63,7 +63,7 @@ this.legend_named_goblin_crossbow <- this.inherit("scripts/items/weapons/named/n
 			id = 9,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]Must be reloaded before firing again[/color]"
+			text = "[color=%negative%]Must be reloaded before firing again[/color]"
 		});
 
 		if (!this.m.IsLoaded)
@@ -72,7 +72,7 @@ this.legend_named_goblin_crossbow <- this.inherit("scripts/items/weapons/named/n
 				id = 10,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Must be reloaded before firing again[/color]"
+				text = "[color=%negative%]Must be reloaded before firing again[/color]"
 			});
 		}
 

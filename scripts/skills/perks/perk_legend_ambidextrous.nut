@@ -68,13 +68,13 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 				id = 3,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] melee skill"
+				text = "[color=%positive%]+5[/color] melee skill"
 			});
 			ret.push({
 				id = 4,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] melee defense"
+				text = "[color=%positive%]+10[/color] melee defense"
 			});
 		}
 

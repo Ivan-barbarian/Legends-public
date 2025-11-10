@@ -50,7 +50,7 @@
 			],
 			Enemy = [],
 			Class = [],
-			Profession = [], 
+			Profession = [],
 			Magic = []
 		}
 		this.m.Bodies = this.Const.Bodies.Skinny;
@@ -69,7 +69,7 @@
 				id = 13,
 				type = "text",
 				icon = "ui/icons/xp_received.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Experience Gain"
+				text = "[color=%positive%]+5%[/color] Experience Gain"
 			}
 		);
 		return ret

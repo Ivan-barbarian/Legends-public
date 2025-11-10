@@ -32,7 +32,7 @@ this.legend_named_warlock_skull <- this.inherit("scripts/items/legend_helmets/le
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Whenever getting hurt would normally trigger a morale check, instead gain [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] morale"
+			text = "Whenever getting hurt would normally trigger a morale check, instead gain [color=%positive%]10[/color] morale"
 		});
 		return result;
 	}

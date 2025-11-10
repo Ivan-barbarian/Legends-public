@@ -28,7 +28,7 @@ this.legend_redback_cloak_upgrade <- this.inherit("scripts/items/armor_upgrades/
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces any ranged damage to the body by [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color]"
+			text = "Reduces any ranged damage to the body by [color=%negative%]-50%[/color]"
 		});
 		return result;
 	}
@@ -39,7 +39,7 @@ this.legend_redback_cloak_upgrade <- this.inherit("scripts/items/armor_upgrades/
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces any ranged damage to the body by [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color]"
+			text = "Reduces any ranged damage to the body by [color=%negative%]-50%[/color]"
 		});
 	}
 

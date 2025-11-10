@@ -84,7 +84,7 @@
 	}
 
 	o.makeUnholdNet <- function () {
-		this.m.Description = "Throw a net on [color=" + ::Const.UI.Color.NegativeValue + "]dazed[/color], [color=" + ::Const.UI.Color.NegativeValue + "]baffled[/color] or with less than 25% Healthpoints Unhold to disable them effectively.";
+		this.m.Description = "Throw a net on [color=%negative%]Dazed[/color], [color=%negative%]Baffled[/color] or with less than [color=%negative%]25%[/color] Healthpoints Unhold to disable them effectively.";
 		this.m.IsUnholdNet = true;
 	}
 

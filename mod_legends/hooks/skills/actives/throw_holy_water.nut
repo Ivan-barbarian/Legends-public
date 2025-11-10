@@ -1,4 +1,4 @@
-::mods_hookExactClass("skills/actives/throw_holy_water", function(o) 
+::mods_hookExactClass("skills/actives/throw_holy_water", function(o)
 {
 	o.m.Item <- null;
 	o.setItem <- function( _i )
@@ -18,7 +18,7 @@
 				id = 8,
 				type = "text",
 				icon = "ui/icons/ammo.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]" + ammo + "[/color] use left"
+				text = "Has [color=%positive%]" + ammo + "[/color] use left"
 			});
 		}
 		else
@@ -27,7 +27,7 @@
 				id = 8,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Has been used[/color]"
+				text = "[color=%negative%]Has been used[/color]"
 			});
 		}
 

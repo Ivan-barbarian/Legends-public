@@ -134,6 +134,8 @@
   <sprite id="icon_flail_two_handed_02_1" offsetY="35" ic="FF394046" width="150" height="160" img="icons\icon_flail_two_handed_02_1.png" left="-67" right="17" top="-54" bottom="46" />
   <sprite id="icon_flail_two_handed_02_2_bloodied" offsetY="35" ic="FF353B45" width="150" height="160" img="icons\icon_flail_two_handed_02_2_bloodied.png" left="-67" right="17" top="-54" bottom="46" />
   <sprite id="icon_flail_two_handed_02_2" offsetY="35" ic="FF394046" width="150" height="160" img="icons\icon_flail_two_handed_02_2.png" left="-67" right="17" top="-54" bottom="46" />
+  <sprite id="icon_flail_two_handed_02_named_03_bloodied" offsetY="35" ic="FF353949" width="130" height="142" img="icons\icon_flail_two_handed_02_named_03_bloodied.png" left="-65" right="17" top="-50" bottom="64" />
+  <sprite id="icon_flail_two_handed_02_named_03" offsetY="35" ic="FF3A3E4A" width="130" height="142" img="icons\icon_flail_two_handed_02_named_03.png" left="-65" right="17" top="-50" bottom="64" />
   <sprite id="icon_flail_two_handed_02_named_04_bloodied" offsetY="35" ic="FF353949" width="130" height="142" img="icons\icon_flail_two_handed_02_named_04_bloodied.png" left="-65" right="17" top="-50" bottom="64" />
   <sprite id="icon_flail_two_handed_02_named_04" offsetY="35" ic="FF3A3E4A" width="130" height="142" img="icons\icon_flail_two_handed_02_named_04.png" left="-65" right="17" top="-50" bottom="64" />
   <sprite id="icon_flail_two_handed_02_named_05_bloodied" offsetY="35" ic="FF353947" width="130" height="142" img="icons\icon_flail_two_handed_02_named_05_bloodied.png" left="-65" right="17" top="-59" bottom="55" />

@@ -42,13 +42,13 @@ this.legend_redback_dagger <- this.inherit("scripts/items/weapons/weapon", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Applies redback poison to the target on any successful attack, dealing [color=" + this.Const.UI.Color.DamageValue + "]55[/color] damage over [color=" + this.Const.UI.Color.DamageValue + "]10[/color] turns."
+			text = "Applies redback poison to the target on any successful attack, dealing [color=%damage%]55[/color] damage over [color=%damage%]10[/color] turns."
 		});
 		result.push({
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Puncture damage is increased by [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] vs rooted targets"
+			text = "Puncture damage is increased by [color=%positive%]33%[/color] vs rooted targets"
 		});
 		return result;
 	}

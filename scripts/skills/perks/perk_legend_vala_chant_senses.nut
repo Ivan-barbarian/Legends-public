@@ -60,7 +60,7 @@ this.perk_legend_vala_chant_senses <- this.inherit("scripts/skills/skill", {
 				id = 9,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Requires the Vala\'s staff.[/color]"
+				text = "[color=%negative%]Requires the Vala\'s staff.[/color]"
 			});
 		}
 
@@ -70,7 +70,7 @@ this.perk_legend_vala_chant_senses <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Already chanting.[/color]"
+				text = "[color=%negative%]Already chanting.[/color]"
 			});
 		}
 

@@ -53,7 +53,7 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Can not be used because this character is engaged in melee[/color]"
+				text = "[color=%negative%]Can not be used because this character is engaged in melee[/color]"
 			});
 		}
 
@@ -63,7 +63,7 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 				id = 9,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Must be reloaded else an attack won\'t be executed[/color]"
+				text = "[color=%negative%]Must be reloaded else an attack won\'t be executed[/color]"
 			});
 		}
 
@@ -71,7 +71,7 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 	function onAfterUpdate(_properties)
-	{		
+	{
 		this.m.FatigueCostMult = 1.0;
 		if (_properties.IsSpecializedInCrossbows)
 		{
@@ -326,7 +326,7 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 
 		if (potentialVictims.len() == 0)
 			return;
-		
+
 		local closest = null;
 		foreach (victim in potentialVictims)
 		{

@@ -276,14 +276,14 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		_result.push({	// An empty line is put in to improve formatting
 			id = 10,
 			type = "text",
-			icon = "ui/icons/blank.png",
-			text = " "
+			text = "&nbsp;"
 		});
+
 		_result.push({
 			id = 10,
 			type = "text",
-			icon = "ui/icons/armor_head.png",	// ui/icons/armor_body.png
-			text = "[u]" + this.getName() + "[/u]"
+			text = "[leg_img](gfx/ui/items/%icon%,height=28px,width=28px)[/leg_img] [b][u]%name%[/u][/b]",
+			param = [["name", this.getName()], ["icon", this.m.Icon]]
 		});
 
 		if ( ::Legends.Mod.ModSettings.getSetting("ShowExpandedArmorLayerTooltip").getValue() )

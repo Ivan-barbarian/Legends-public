@@ -6,7 +6,7 @@ this.legend_goblin_berserker <- this.inherit("scripts/entity/tactical/enemies/go
 		this.m.Type = ::Const.EntityType.LegendGoblinBerserker;
 		this.m.XP = ::Const.Tactical.Actor.LegendGoblinBerserker.XP;
 		this.goblin.create();
-		this.m.AIAgent = ::new("scripts/ai/tactical/agents/goblin_wolfrider_agent");
+		this.m.AIAgent = ::new("scripts/ai/tactical/agents/orc_berserker_agent");
 		this.m.AIAgent.setActor(this);
 	}
 

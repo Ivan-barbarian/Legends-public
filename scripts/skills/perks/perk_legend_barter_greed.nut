@@ -38,31 +38,31 @@ this.perk_legend_barter_greed <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.calculateBonus(this.m.OffensiveMult) + "[/color] Melee Skill"
+				text = "[color=%positive%]+" + this.calculateBonus(this.m.OffensiveMult) + "[/color] Melee Skill"
 			},
 			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.calculateBonus(this.m.OffensiveMult) + "[/color] Ranged Skill"
+				text = "[color=%positive%]+" + this.calculateBonus(this.m.OffensiveMult) + "[/color] Ranged Skill"
 			},
 			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.calculateBonus(this.m.DefensiveMult) + "[/color] Melee Defense"
+				text = "[color=%positive%]+" + this.calculateBonus(this.m.DefensiveMult) + "[/color] Melee Defense"
 			},
 			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.calculateBonus(this.m.DefensiveMult) + "[/color] Ranged Defense"
+				text = "[color=%positive%]+" + this.calculateBonus(this.m.DefensiveMult) + "[/color] Ranged Defense"
 			},
 			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.calculateBonus(this.m.ResolveMult) + "[/color] Resolve"
+				text = "[color=%positive%]+" + this.calculateBonus(this.m.ResolveMult) + "[/color] Resolve"
 			}
 		];
 	}

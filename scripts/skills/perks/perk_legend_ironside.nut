@@ -9,7 +9,7 @@ this.perk_legend_ironside <- this.inherit("scripts/skills/skill", {
 	function getDescription()
 	{
 		local bonus = this.getBonus() * 100;
-		return "This character gains [color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color] damage reduction because of adjacent opponents.";
+		return "This character gains [color=%positive%]" + bonus + "%[/color] damage reduction because of adjacent opponents.";
 	}
 
 	function isOpponent( _actor, _tag )

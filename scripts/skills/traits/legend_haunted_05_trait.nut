@@ -28,37 +28,37 @@ this.legend_haunted_05_trait <- this.inherit("scripts/skills/traits/character_tr
 				id = 10,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Resolve"
+				text = "[color=%negative%]-6[/color] Resolve"
 			},
 			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Resolve at morale checks against fear, panic or mind control effects"
+				text = "[color=%negative%]-6[/color] Resolve at morale checks against fear, panic or mind control effects"
 			},
 			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+6[/color] or [color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Resolve randomly at every morale check"
+				text = "Has [color=%positive%]+6[/color] or [color=%negative%]-6[/color] Resolve randomly at every morale check"
 			},
 			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Resolve when in battle with undead"
+				text = "[color=%negative%]-6[/color] Resolve when in battle with undead"
 			},
 			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Melee Skill when in battle with undead"
+				text = "[color=%negative%]-6[/color] Melee Skill when in battle with undead"
 			},
 			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Ranged Skill when in battle with undead"
+				text = "[color=%negative%]-6[/color] Ranged Skill when in battle with undead"
 			},
 			{
 				id = 10,
@@ -83,7 +83,7 @@ this.legend_haunted_05_trait <- this.inherit("scripts/skills/traits/character_tr
 			_properties.RangedSkillMult -= 6;
 		}
 	}
-	
+
 	function onCombatStarted()
 	{
 		local actor = this.getContainer().getActor();

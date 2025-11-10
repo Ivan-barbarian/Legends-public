@@ -42,19 +42,19 @@ this.legend_frail_trait <- this.inherit("scripts/skills/traits/character_trait",
 				id = 11,
 				type = "text",
 				icon = "ui/icons/health.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-3[/color] Hitpoints"
+				text = "[color=%negative%]-3[/color] Hitpoints"
 			},
 			{
 				id = 12,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-3[/color] Fatigue"
+				text = "[color=%negative%]-3[/color] Fatigue"
 			},
 			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] Experience Gain"
+				text = "[color=%negative%]-5%[/color] Experience Gain"
 			}
 		];
 	}

@@ -29,7 +29,7 @@
 				id = 12,
 				type = "text",
 				icon = "ui/icons/initiative.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.EffectChanceOrBonus+ "%[/color] Initiative"
+				text = "[color=%positive%]+" + this.m.EffectChanceOrBonus+ "%[/color] Initiative"
 			});
 		}
 		return result;

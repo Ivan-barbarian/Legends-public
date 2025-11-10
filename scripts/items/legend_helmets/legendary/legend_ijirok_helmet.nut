@@ -43,16 +43,16 @@ this.legend_ijirok_helmet <- this.inherit("scripts/items/legend_helmets/legend_h
 		this.onArmorTooltip(result);
 		return result;
 	}
-	
+
 	function onArmorTooltip( _result )
 	{
 		_result.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/health.png",
-			text = "Heals [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] hitpoints of the wearer each turn"
+			text = "Heals [color=%positive%]10[/color] hitpoints of the wearer each turn"
 		});
-	}	
+	}
 
 	function onCombatFinished()
 	{

@@ -25,7 +25,7 @@ this.legend_protective_runes_upgrade <- this.inherit("scripts/items/legend_armor
 			id = 14,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] Resolve at morale checks against fear, panic or mind control effects"
+			text = "[color=%positive%]+20[/color] Resolve at morale checks against fear, panic or mind control effects"
 		});
 		return result;
 	}
@@ -36,7 +36,7 @@ this.legend_protective_runes_upgrade <- this.inherit("scripts/items/legend_armor
 			id = 14,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] Resolve at morale checks against fear, panic or mind control effects"
+			text = "[color=%positive%]+20[/color] Resolve at morale checks against fear, panic or mind control effects"
 		});
 	}
 

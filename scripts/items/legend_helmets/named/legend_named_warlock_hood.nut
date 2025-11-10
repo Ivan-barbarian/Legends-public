@@ -38,7 +38,7 @@ this.legend_named_warlock_hood <- this.inherit("scripts/items/legend_helmets/leg
 			id = 6,
 			type = "text",
 			icon = "ui/icons/health.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] hitpoints"
+			text = "[color=%positive%]+10[/color] hitpoints"
 		});
 		return result;
 	}

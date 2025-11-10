@@ -23,7 +23,7 @@ this.legend_RSW_poison_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "This character has poison running through his veins. His vision is blurred, his speech slurred and it takes a great deal of effort for him to move in a coordinated fashion. The effect will slowly wear off over [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s).";
+		return "This character has poison running through his veins. His vision is blurred, his speech slurred and it takes a great deal of effort for him to move in a coordinated fashion. The effect will slowly wear off over [color=%negative%]" + this.m.TurnsLeft + "[/color] more turn(s).";
 	}
 
 	function getTooltip()
@@ -43,19 +43,19 @@ this.legend_RSW_poison_effect <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/action_points.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-" + 1 * this.m.TurnsLeft + "[/color] Action Points"
+				text = "[color=%negative%]-" + 1 * this.m.TurnsLeft + "[/color] Action Points"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-" + 1 * this.m.TurnsLeft + "[/color] Vision"
+				text = "[color=%negative%]-" + 1 * this.m.TurnsLeft + "[/color] Vision"
 			},
 			{
 				id = 12,
 				type = "text",
 				icon = "ui/icons/initiative.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-" + 10 * this.m.TurnsLeft + "[/color] Initiative"
+				text = "[color=%negative%]-" + 10 * this.m.TurnsLeft + "[/color] Initiative"
 			}
 		];
 	}

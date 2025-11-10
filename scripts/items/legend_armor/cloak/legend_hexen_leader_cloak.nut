@@ -35,7 +35,7 @@ this.legend_hexen_leader_cloak <- this.inherit("scripts/items/legend_armor/legen
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Increases resolve by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] and provides [color=" + this.Const.UI.Color.PositiveValue + "]+40[/color] resolve at morale checks against fear, panic or mind control effects"
+			text = "Increases resolve by [color=%positive%]+10%[/color] and provides [color=%positive%]+40[/color] resolve at morale checks against fear, panic or mind control effects"
 		});
 		return result;
 	}
@@ -46,7 +46,7 @@ this.legend_hexen_leader_cloak <- this.inherit("scripts/items/legend_armor/legen
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Increases resolve by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] and provides [color=" + this.Const.UI.Color.PositiveValue + "]+40[/color] resolve at morale checks against fear, panic or mind control effects"
+			text = "Increases resolve by [color=%positive%]+10%[/color] and provides [color=%positive%]+40[/color] resolve at morale checks against fear, panic or mind control effects"
 		});
 	}
 
@@ -64,7 +64,7 @@ this.legend_hexen_leader_cloak <- this.inherit("scripts/items/legend_armor/legen
 	// 		id = 7,
 	// 		type = "text",
 	// 		icon = "ui/icons/special.png",
-	// 		text = "Grants the perk [color=" + this.Const.UI.Color.PositiveValue + "]Fortified Mind[/color] to its user while equipped"
+	// 		text = "Grants the perk [color=%positive%]Fortified Mind[/color] to its user while equipped"
 	// 	});
 	// 	return result;
 	// }
@@ -75,7 +75,7 @@ this.legend_hexen_leader_cloak <- this.inherit("scripts/items/legend_armor/legen
 	// 		id = 7,
 	// 		type = "text",
 	// 		icon = "ui/icons/special.png",
-	// 		text = "Grants the perk [color=" + this.Const.UI.Color.PositiveValue + "]Fortified Mind[/color] to its user while equipped"
+	// 		text = "Grants the perk [color=%positive%]Fortified Mind[/color] to its user while equipped"
 	// 	});
 	// }
 

@@ -15,13 +15,13 @@
 				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Up to [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] scaling hit chance depending on the target\'s fatigue, with the maximum reached if they are exhausted."
+				text = "Up to [color=%positive%]+50%[/color] scaling hit chance depending on the target\'s fatigue, with the maximum reached if they are exhausted."
 			},
 			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Additionally if your target is dazed or parried hitchance is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color], if they are stunned or rooted you gain [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color], if they are grappled, sleeping, or fleeing you gain [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color]"
+				text = "Additionally if your target is dazed or parried hitchance is increased by [color=%positive%]+10%[/color], if they are stunned or rooted you gain [color=%positive%]+25%[/color], if they are grappled, sleeping, or fleeing you gain [color=%positive%]+50%[/color]"
 			}
 		]);
 		return tooltip;

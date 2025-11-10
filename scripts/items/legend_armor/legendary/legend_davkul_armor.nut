@@ -40,7 +40,7 @@ this.legend_davkul_armor <- this.inherit("scripts/items/legend_armor/legend_armo
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Regenerates itself by [color=" + this.Const.UI.Color.PositiveValue + "]90[/color] points of durability each turn."
+			text = "Regenerates itself by [color=%positive%]90[/color] points of durability each turn."
 		});
 		return result;
 	}
@@ -51,7 +51,7 @@ this.legend_davkul_armor <- this.inherit("scripts/items/legend_armor/legend_armo
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Regenerates itself by [color=" + this.Const.UI.Color.PositiveValue + "]90[/color] points of durability each turn."
+			text = "Regenerates itself by [color=%positive%]90[/color] points of durability each turn."
 		});
 	}
 

@@ -82,7 +82,7 @@ this.legend_taxidermist_background <- this.inherit("scripts/skills/backgrounds/c
 				id = 13,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] crafting rate in the crafting tent, [color=" + this.Const.UI.Color.PositiveValue + "]-10%[/color] medicine usage, [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] maximum medicine capacity,  [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] faster healing while in the heal tent. "
+				text = "[color=%positive%]+100%[/color] crafting rate in the crafting tent, [color=%positive%]-10%[/color] medicine usage, [color=%positive%]+10[/color] maximum medicine capacity,  [color=%positive%]+10%[/color] faster healing while in the heal tent. "
 			}
 		);
 		return ret;

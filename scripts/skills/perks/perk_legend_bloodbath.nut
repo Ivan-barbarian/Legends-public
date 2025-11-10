@@ -22,19 +22,19 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "Gain an additional [color=" + this.Const.UI.Color.PositiveValue + "]+" + count + "%[/color] Melee Skill"
+				text = "Gain an additional [color=%positive%]+" + count + "%[/color] Melee Skill"
 			},
 			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "Gain an additional [color=" + this.Const.UI.Color.PositiveValue + "]+" + count + "%[/color] Ranged Skill"
+				text = "Gain an additional [color=%positive%]+" + count + "%[/color] Ranged Skill"
 			},
 			{
 				id = 8,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.min(count, 5) + "%[/color] Fatigue Recovery per turn"
+				text = "[color=%positive%]+" + this.Math.min(count, 5) + "%[/color] Fatigue Recovery per turn"
 			}]);
 		}
 

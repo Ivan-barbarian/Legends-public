@@ -20,7 +20,7 @@
 				id = 12,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.EffectChanceOrBonus + "%[/color] to Bleed Target on Hit"
+				text = "[color=%positive%]+" + this.m.EffectChanceOrBonus + "%[/color] to Bleed Target on Hit"
 			});
 		}
 		if (this.m.PossibleEffectIdx == 1)
@@ -29,7 +29,7 @@
 				id = 12,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.EffectChanceOrBonus + "%[/color] to Feint Target on Hit"
+				text = "[color=%positive%]+" + this.m.EffectChanceOrBonus + "%[/color] to Feint Target on Hit"
 			});
 		}
 		return result;

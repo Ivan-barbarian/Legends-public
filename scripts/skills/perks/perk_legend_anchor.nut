@@ -23,7 +23,7 @@ this.perk_legend_anchor <- this.inherit("scripts/skills/skill", {
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + (this.m.Stacks * 5) + "[/color] Melee Skill, Ranged Skill and Melee Defense"
+			text = "[color=%positive%]+" + (this.m.Stacks * 5) + "[/color] Melee Skill, Ranged Skill and Melee Defense"
 		});
 		tooltip.push({
 			id = 11,

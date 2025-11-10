@@ -50,7 +50,7 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 			id = 6,
 			type = "text",
 			icon = "ui/buttons/asset_vision_up.png",
-			text = "Total patrol modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + mod.Craft * 100.0 + "%[/color]."
+			text = "Total patrol modifier is [color=%positive%]" + mod.Craft * 100.0 + "%[/color]."
 		}];
 		local id = 7;
 		foreach (bro in mod.Modifiers)
@@ -59,7 +59,7 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 				id = id,
 				type = "hint",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] * 100.0 + "%[/color] " + bro[1] + " (" + bro[2] + ")"
+				text = "[color=%positive%]" + bro[0] * 100.0 + "%[/color] " + bro[1] + " (" + bro[2] + ")"
 			});
 			++id;
 		}

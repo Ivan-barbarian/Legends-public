@@ -88,4 +88,50 @@
 			this.m.Items.equip(h);
 		}
 	}
+
+	o.makeMiniboss = function ()
+	{
+		if (!this.actor.makeMiniboss())
+		{
+			return false;
+		}
+
+		this.getSprite("miniboss").setBrush("bust_miniboss");
+		local weapons = [
+			"named_axe",
+			"named_cleaver",
+			"named_flail",
+			"named_greataxe",
+			"named_greatsword",
+			"named_mace",
+			"named_two_handed_hammer",
+			"legend_named_flamberge",
+			"legend_named_longsword",
+			"legend_named_glaive",
+			"legend_named_swordstaff",
+			"legend_named_halberd",
+			"legend_named_ranged_flail",
+			"legend_named_infantry_axe",
+			"legend_named_warhammer",
+			"legend_named_military_goedendag",
+			"legend_named_military_warscythe",
+			"named_two_handed_mace",
+			"named_two_handed_flail"
+		];
+
+		local shields = clone this.Const.Items.NamedUndeadShields;
+
+		if (this.Math.rand(1, 100) <= 80)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/named/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		}
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
+		}
+
+		::Legends.Perks.grant(this, ::Legends.Perk.HoldOut);
+		::Legends.Perks.grant(this, ::Legends.Perk.NineLives);
+		return true;
+	}
 });

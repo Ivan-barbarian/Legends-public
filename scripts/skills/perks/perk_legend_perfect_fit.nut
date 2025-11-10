@@ -60,13 +60,13 @@ this.perk_legend_perfect_fit <- this.inherit("scripts/skills/skill", {
 					id = 6,
 					type = "text",
 					icon = "ui/icons/initiative.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.getInitiativeBonus(bonus) + "%[/color] Initiative"
+					text = "[color=%positive%]+" + this.getInitiativeBonus(bonus) + "%[/color] Initiative"
 				},
 				{
 					id = 6,
 					type = "text",
 					icon = "ui/icons/fatigue.png",
-					text = "Fatigue cost of skills reduced by [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getFatCostReductionBonus(bonus) + "%[/color]"
+					text = "Fatigue cost of skills reduced by [color=%positive%]" + this.getFatCostReductionBonus(bonus) + "%[/color]"
 				}
 			]);
 		}
@@ -96,13 +96,13 @@ this.perk_legend_perfect_fit <- this.inherit("scripts/skills/skill", {
 					id = 6,
 					type = "text",
 					icon = "ui/icons/initiative.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.getInitiativeBonus(bonus) + "%[/color] Initiative"
+					text = "[color=%positive%]+" + this.getInitiativeBonus(bonus) + "%[/color] Initiative"
 				},
 				{
 					id = 6,
 					type = "text",
 					icon = "ui/icons/fatigue.png",
-					text = "Fatigue cost of skills reduced by [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getFatCostReductionBonus(bonus) + "%[/color]"
+					text = "Fatigue cost of skills reduced by [color=%positive%]" + this.getFatCostReductionBonus(bonus) + "%[/color]"
 				}
 			]);
 		}

@@ -8,13 +8,13 @@
 				id = 8,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] chance to stagger on a hit"
+				text = "Has a [color=%positive%]33%[/color] chance to stagger on a hit"
 			},
 			{
 				id = 9,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] chance to knock back on a hit"
+				text = "Has a [color=%positive%]33%[/color] chance to knock back on a hit"
 			},
 			{
 				id = 6,

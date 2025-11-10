@@ -15,7 +15,7 @@ this.legend_bleed_prepared_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "This character is preparing an attack to inflict heavy bleeding. The next hit doing at least [color=" + this.Const.UI.Color.NegativeValue + "]" + this.Const.Combat.MinDamageToApplyBleeding + "[/color] damage to hitpoints will cause the target to bleed for the next two turns.";
+		return "This character is preparing an attack to inflict heavy bleeding. The next hit doing at least [color=%negative%]" + this.Const.Combat.MinDamageToApplyBleeding + "[/color] damage to hitpoints will cause the target to bleed for the next two turns.";
 	}
 
 	function getTooltip()

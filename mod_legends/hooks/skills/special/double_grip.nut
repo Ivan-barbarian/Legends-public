@@ -11,9 +11,9 @@
 
 	local create = o.create;
 	o.create = function()
-	{	
+	{
 		create();
-		this.m.Description = "With the second hand free, this character can get a firm double grip on his weapon and inflicts additional damage and penetration. Armor penetration will scale by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] of Melee Skill and Hand Crossbows allow double gripping";
+		this.m.Description = "With the second hand free, this character can get a firm double grip on his weapon and inflicts additional damage and penetration. Armor penetration will scale by [color=%positive%]25%[/color] of Melee Skill and Hand Crossbows allow double gripping";
 	}
 
 	local getTooltip = o.getTooltip;
@@ -25,7 +25,7 @@
 			id = 6,
 			type = "text",
 			icon = "ui/icons/direct_damage.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]"+ bonus + "%[/color] of any damage ignores armor"
+			text = "[color=%positive%]"+ bonus + "%[/color] of any damage ignores armor"
 		});
 
 		return tooltip;

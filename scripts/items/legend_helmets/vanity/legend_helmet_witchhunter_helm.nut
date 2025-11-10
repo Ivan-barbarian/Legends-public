@@ -37,7 +37,7 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
 			id = 6,
 			type = "text",
 			icon = "ui/icons/bravery.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Resolve at morale checks against fear, panic or mind control effects"
+			text = "[color=%positive%]+5[/color] Resolve at morale checks against fear, panic or mind control effects"
 		});
 		return result;
 	}

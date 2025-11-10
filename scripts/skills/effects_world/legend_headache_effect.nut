@@ -1,6 +1,6 @@
 this.legend_headache_effect <- this.inherit("scripts/skills/injury/injury", {
 	m = {
-		IrritableHealingTime = 0	
+		IrritableHealingTime = 0
 	},
 	function create()
 	{
@@ -33,37 +33,37 @@ this.legend_headache_effect <- this.inherit("scripts/skills/injury/injury", {
 				id = 13,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] Resolve"
+				text = "[color=%negative%]-15%[/color] Resolve"
 			},
 			{
 				id = 13,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] Melee Skill"
+				text = "[color=%negative%]-15%[/color] Melee Skill"
 			},
 			{
 				id = 13,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] Ranged Skill"
+				text = "[color=%negative%]-15%[/color] Ranged Skill"
 			},
 			{
 				id = 13,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] Melee Defense"
+				text = "[color=%negative%]-15%[/color] Melee Defense"
 			},
 			{
 				id = 13,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] Ranged Defense"
+				text = "[color=%negative%]-15%[/color] Ranged Defense"
 			},
 			{
 				id = 13,
 				type = "text",
 				icon = "ui/icons/initiative.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] Initiative"
+				text = "[color=%negative%]-15%[/color] Initiative"
 			}
 		];
 		this.addTooltipHint(ret);
@@ -82,7 +82,7 @@ this.legend_headache_effect <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 	function onRemoved()
-	{	
+	{
 		this.injury.onRemoved();
 		local days = this.m.IrritableHealingTime;
 		if (::Legends.Traits.has(this, ::Legends.Trait.Dumb))

@@ -71,7 +71,7 @@
 			],
 			Enemy = [],
 			Class = [],
-			Profession = [], 
+			Profession = [],
 			Magic = [
 				// this.Const.Perks.CaptainMagicTree,
 				this.Const.Perks.PhilosophyMagicTree
@@ -87,7 +87,7 @@
 				id = 13,
 				type = "text",
 				icon = "ui/icons/xp_received.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] Experience Gain"
+				text = "[color=%positive%]+15%[/color] Experience Gain"
 			}
 		);
 		return ret;

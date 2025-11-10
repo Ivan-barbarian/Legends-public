@@ -41,7 +41,7 @@ this.legend_named_rusty_serrated_axe <- this.inherit("scripts/items/weapons/name
 			id = 6,
 			type = "text",
 			icon = "ui/icons/hitchance.png",
-			text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]33%[/color] lower threshold to inflict injuries"
+			text = "Has a [color=%negative%]33%[/color] lower threshold to inflict injuries"
 		});
 		return result;
 	}

@@ -45,7 +45,7 @@ this.legend_warfork_disarm_skill <- this.inherit("scripts/skills/skill", {
 			id = 7,
 			type = "text",
 			icon = "ui/icons/vision.png",
-			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]2" + "[/color] tiles"
+			text = "Has a range of [color=%positive%]2" + "[/color] tiles"
 		});
 
 		if (this.m.HitChanceBonus != 0)
@@ -54,7 +54,7 @@ this.legend_warfork_disarm_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.HitChanceBonus + "%[/color] chance to hit"
+				text = "Has [color=%negative%]" + this.m.HitChanceBonus + "%[/color] chance to hit"
 			});
 		}
 
@@ -62,7 +62,7 @@ this.legend_warfork_disarm_skill <- this.inherit("scripts/skills/skill", {
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to disarm on a hit"
+			text = "Has a [color=%positive%]100%[/color] chance to disarm on a hit"
 		});
 		return ret;
 	}

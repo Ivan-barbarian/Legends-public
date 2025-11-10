@@ -10,7 +10,7 @@
 
 	o.getDescription <- function()
 	{
-		return "This character is debilitated and will only do [color=" + this.Const.UI.Color.NegativeValue + "] 75% [/color] damage and take [color=" + this.Const.UI.Color.NegativeValue + "] 115% [/color] damage for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s).";
+		return "This character is debilitated and will only do [color=%negative%] 75% [/color] damage and take [color=%negative%] 115% [/color] damage for [color=%negative%]" + this.m.TurnsLeft + "[/color] more turn(s).";
 	}
 
 	o.onAdded <- function()

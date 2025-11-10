@@ -28,7 +28,7 @@ this.legend_haunted_06_trait <- this.inherit("scripts/skills/traits/character_tr
 				id = 10,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+6[/color] Resolve"
+				text = "[color=%positive%]+6[/color] Resolve"
 			},
 			{
 				id = 10,

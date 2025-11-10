@@ -131,7 +131,7 @@ this.legend_youngblood_background <- this.inherit("scripts/skills/backgrounds/ch
 				id = 14,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Resolve at morale checks against fear, panic or mind control effects and can craft wooden stakes for use against vampires"
+				text = "[color=%positive%]+10[/color] Resolve at morale checks against fear, panic or mind control effects and can craft wooden stakes for use against vampires"
 			}
 		);
 		ret.push(
@@ -139,7 +139,7 @@ this.legend_youngblood_background <- this.inherit("scripts/skills/backgrounds/ch
 				id = 14,
 				type = "text",
 				icon = "ui/icons/xp_received.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Experience Gain"
+				text = "[color=%positive%]+5%[/color] Experience Gain"
 			}
 		);
 		return ret;

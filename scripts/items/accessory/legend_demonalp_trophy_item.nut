@@ -43,19 +43,19 @@ this.legend_demonalp_trophy_item <- this.inherit("scripts/items/accessory/access
 				id = 67,
 				type = "text",
 				icon = "ui/icons/xp_received.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] Experience Gain"
+				text = "[color=%positive%]10%[/color] Experience Gain"
 			},
 			{
 				id = 68,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] Vision"
+				text = "[color=%positive%]+1[/color] Vision"
 			},
 			{
 				id = 69,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Mitigates [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] of night penalties."
+				text = "Mitigates [color=%positive%]50%[/color] of night penalties."
 			}
 		];
 	}

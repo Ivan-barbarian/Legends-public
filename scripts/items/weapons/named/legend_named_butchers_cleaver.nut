@@ -41,7 +41,7 @@ this.legend_named_butchers_cleaver <- this.inherit("scripts/items/weapons/named/
 				id = 12,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.EffectChanceOrBonus + "%[/color] Fatality Chance"
+				text = "[color=%positive%]+" + this.m.EffectChanceOrBonus + "%[/color] Fatality Chance"
 			});
 		}
 		return result;

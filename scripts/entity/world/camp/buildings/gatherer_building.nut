@@ -50,7 +50,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				id = 5,
 				type = "text",
 				icon = "ui/buttons/asset_medicine_up.png",
-				text = "Produces [color=" + this.Const.UI.Color.PositiveValue + "]" + mod.Craft / 3.0 + "[/color] units of medicine per hour."
+				text = "Produces [color=%positive%]" + mod.Craft / 3.0 + "[/color] units of medicine per hour."
 			}
 		];
 		local id = 6;
@@ -61,7 +61,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				id = id,
 				type = "hint",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] / 3.0 + "[/color] units/hour " + bro[1] + " (" + bro[2] + ")"
+				text = "[color=%positive%]" + bro[0] / 3.0 + "[/color] units/hour " + bro[1] + " (" + bro[2] + ")"
 			});
 			id = ++id;
 		}

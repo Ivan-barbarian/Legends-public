@@ -30,13 +30,13 @@ this.legend_diurnal_trait <- this.inherit("scripts/skills/traits/character_trait
 				id = 10,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] Vision during daytime"
+				text = "[color=%positive%]+1[/color] Vision during daytime"
 			},
 			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-1[/color] Vision during nighttime"
+				text = "[color=%negative%]-1[/color] Vision during nighttime"
 			}
 		];
 	}

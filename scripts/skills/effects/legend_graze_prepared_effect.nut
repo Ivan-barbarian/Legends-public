@@ -15,7 +15,7 @@ this.legend_graze_prepared_effect<- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "This character is preparing an attack to inflict slow bleeding by grazing the flesh. The next hit will infict [color=" + this.Const.UI.Color.NegativeValue + "]2[/color] bleed damage for the next five turns.";
+		return "This character is preparing an attack to inflict slow bleeding by grazing the flesh. The next hit will infict [color=%negative%]2[/color] bleed damage for the next five turns.";
 	}
 
 	function getTooltip()

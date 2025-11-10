@@ -32,25 +32,25 @@ this.legend_enraged_hyena_bite_effect <- this.inherit("scripts/skills/skill", {
 				id = 9,
 				type = "text",
 				icon = "ui/icons/action_points.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Unable to move[/color]"
+				text = "[color=%negative%]Unable to move[/color]"
 			},
 			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-45%[/color] Melee Defense"
+				text = "[color=%negative%]-45%[/color] Melee Defense"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-45%[/color] Ranged Defense"
+				text = "[color=%negative%]-45%[/color] Ranged Defense"
 			},
 			{
 				id = 12,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-45%[/color] Initiative"
+				text = "[color=%negative%]-45%[/color] Initiative"
 			},
 			{
 				id = 13,

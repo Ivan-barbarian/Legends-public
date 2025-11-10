@@ -27,32 +27,32 @@ this.legend_armor_spiked_collar_upgrade <- this.inherit("scripts/items/legend_ar
 			id = 14,
 			type = "text",
 			icon = "ui/icons/melee_defense.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Melee Defense"
+			text = "[color=%positive%]+3[/color] Melee Defense"
 		});
 		result.push({
 			id = 14,
 			type = "text",
 			icon = "ui/icons/initiative.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Initiative"
-		});		
+			text = "[color=%negative%]-6[/color] Initiative"
+		});
 		return result;
-	}	
+	}
 	function onArmorTooltip( _result )
 	{
 		_result.push({
 			id = 14,
 			type = "text",
 			icon = "ui/icons/melee_defense.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Melee Defense"
+			text = "[color=%positive%]+3[/color] Melee Defense"
 		});
 
 		_result.push({
 			id = 14,
 			type = "text",
 			icon = "ui/icons/initiative.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Initiative"
+			text = "[color=%negative%]-6[/color] Initiative"
 		});
-	}	
+	}
 	function onUpdateProperties( _properties )
 	{
 		this.legend_armor_upgrade.onUpdateProperties(_properties);

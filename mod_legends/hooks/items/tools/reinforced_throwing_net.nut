@@ -55,7 +55,7 @@
 				id = 10,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + ::Const.UI.Color.NegativeValue + "]Is broken and useless[/color]"
+				text = "[color=%negative%]Is broken and useless[/color]"
 			});
 		}
 		return result;

@@ -25,7 +25,7 @@ this.perk_legend_onslaught <- this.inherit("scripts/skills/skill", {
 			id = 10,
 			type = "text",
 			icon = "ui/icons/regular_damage.png",
-			text = "Current melee damage bonus is [color=" + this.Const.UI.Color.PositiveValue + "]+" + fat + "%" + "[/color]"
+			text = "Current melee damage bonus is [color=%positive%]+" + fat + "%" + "[/color]"
 
 		});
 

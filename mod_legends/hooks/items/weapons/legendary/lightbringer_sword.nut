@@ -12,7 +12,7 @@
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Any successful attack will spawn lightning, which inflicts an additional [color=" + this.Const.UI.Color.DamageValue + "]10[/color] - [color=" + this.Const.UI.Color.DamageValue + "]20[/color] damage that ignores armor and chains to up to three targets"
+			text = "Any successful attack will spawn lightning, which inflicts an additional [color=%damage%]10[/color] - [color=%damage%]20[/color] damage that ignores armor and chains to up to three targets"
 		});
 		return result;
 	}

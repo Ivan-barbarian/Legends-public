@@ -23,7 +23,7 @@
 				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] chance to hit"
+				text = "Has [color=%negative%]-5%[/color] chance to hit"
 			});
 		}
 		else
@@ -32,7 +32,7 @@
 				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit"
+				text = "Has [color=%positive%]+5%[/color] chance to hit"
 			});
 		}
 

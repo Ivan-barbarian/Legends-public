@@ -7,11 +7,11 @@
 	VisionMult = 1.0,
 	Body = "figure_hexe_01",
 	MinR = 100,
-	MaxR = 500,
 	Fixed = [
 		{
 			Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-			Cost = 300,
+			Cost = 50,
+			MaxCount = 2,
 			MinGuards = 2,
 			MaxGuards = 3,
 			MaxGuardsWeight = 50,
@@ -19,7 +19,7 @@
 			Guards = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRedbackSpiderBodyguard,
-					Cost = 250,
+					Cost = 200,
 					function Weight(scale) {
 						return 50;
 					}

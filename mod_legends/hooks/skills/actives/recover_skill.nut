@@ -26,7 +26,7 @@
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Current Fatigue is reduced by [color=" + ::Const.UI.Color.PositiveValue + "]" + getRecoveredFat(getActionPointCost()) + "%[/color] of maximum fatigue"
+				text = "Current Fatigue is reduced by [color=%positive%]" + getRecoveredFat(getActionPointCost()) + "%[/color] of maximum fatigue"
 			}
 		];
 
@@ -35,7 +35,7 @@
 				id = 7,
 				type = "text",
 				icon = "ui/icons/warning.png",
-				text = "[color=" + ::Const.UI.Color.NegativeValue + "]Must be the first skill to be used on this character\'s turn[/color]"
+				text = "[color=%negative%]Must be the first skill to be used on this character\'s turn[/color]"
 			});
 
 		return ret;

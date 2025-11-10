@@ -19,7 +19,7 @@
 			id = 12,
 			type = "text",
 			icon = "ui/icons/melee_defense.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] Melee Defense"
+			text = "[color=%negative%]-5%[/color] Melee Defense"
 		});
 
 		return ret;
