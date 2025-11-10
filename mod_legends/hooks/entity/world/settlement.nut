@@ -809,71 +809,18 @@
 		{
 			this.updateAchievement("MasterTrader", 1, 1);
 		}
-
-		if (::Legends.Mod.ModSettings.getSetting("SkipCamp").getValue())
-		{
-			return;
-		}
-
-		local eventID = "";
-
-		if (!this.World.Flags.get("HasLegendCampTraining") && this.hasBuilding("building.training_hall"))
-		{
-			eventID = "event.legend_camp_unlock_training";
-		}
-		else if (!this.World.Flags.get("HasLegendCampBarber") && this.hasBuilding("building.barber"))
-		{
-			eventID = "event.legend_camp_unlock_barber";
-		}
-		else if (!this.World.Flags.get("HasLegendCampCrafting") && (this.hasBuilding("building.taxidermist") || this.hasBuilding("building.taxidermist_oriental")))
-		{
-			eventID = "event.legend_camp_unlock_crafting";
-		}
-		else if (!this.World.Flags.get("HasLegendCampFletching") && (this.hasAttachedLocation("attached_location.fletchers_hut") || this.hasBuilding("building.weaponsmith") || this.hasBuilding("building.weaponsmith_oriental")))
-		{
-			eventID = "event.legend_camp_unlock_fletching";
-		}
-		else if (!this.World.Flags.get("HasLegendCampGathering") && (this.hasAttachedLocation("attached_location.gatherers_hut") || this.hasAttachedLocation("attached_location.herbalists_grove") || this.hasAttachedLocation("attached_location.plantation")))
-		{
-			eventID = "event.legend_camp_unlock_gather";
-		}
-		else if (!this.World.Flags.get("HasLegendCampHunting") && (this.hasAttachedLocation("attached_location.trapper") || this.hasAttachedLocation("attached_location.hunters_cabin")))
-		{
-			eventID = "event.legend_camp_unlock_hunt";
-		}
-		else if (!this.World.Flags.get("HasLegendCampScraping") && (this.hasAttachedLocation("attached_location.workshop") || this.hasBuilding("building.armorsmith") || this.hasBuilding("building.armorsmith_oriental")))
-		{
-			eventID = "event.legend_camp_unlock_scrap";
-		}
-		else if (!this.World.Flags.get("HasLegendCampPainter") && (this.hasAttachedLocation("attached_location.workshop") || this.hasBuilding("building.armorsmith") || this.hasBuilding("building.armorsmith_oriental"))) //PaintingTent
-		{
-			eventID = "event.legend_camp_unlock_painter";
-		}
-		else if (!this.World.Flags.get("HasLegendCampScouting") && (this.hasAttachedLocation("attached_location.wooden_watchtower") || this.hasAttachedLocation("attached_location.stone_watchtower") || this.hasAttachedLocation("attached_location.fortified_outpost")))
-		{
-			eventID = "event.legend_camp_unlock_scouting";
-		}
-
-		if (eventID == "")
-		{
-			return;
-		}
-
-		this.World.Camp.fireEvent(eventID, this.getName());
 	}
 
 	o.isBuilding <- function ()
 	{
 		foreach( s in this.getSituations() )
 		{
-			switch(s.getID())
-			{
-			case "situation.rebuilding_effort":
-			case "situation.legend_degrading_effort":
-			case "situation.legend_upgrading_effort":
-			case "situation.legend_upgrading_locations_effort":
-				return true;
-			}
+			if(::Legends.S.oneOf(s.getID(),
+				"situation.rebuilding_effort",
+				"situation.legend_degrading_effort",
+				"situation.legend_upgrading_effort",
+				"situation.legend_upgrading_locations_effort"
+			)) return true;
 		}
 
 		return false;

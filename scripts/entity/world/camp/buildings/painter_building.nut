@@ -87,9 +87,10 @@ this.painter_building <- this.inherit("scripts/entity/world/camp/camp_building",
 		return "empty";
 	}
 
-	function isHidden()
-	{
-		return false;
+	function isHidden() {
+		if (::Legends.Mod.ModSettings.getSetting("SkipCamp").getValue())
+			return false;
+		return !::World.Flags.get("HasLegendCampPainter");
 	}
 
 	function onClicked( _campScreen )

@@ -67,6 +67,12 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		];
 	}
 
+	function isHidden() {
+		if (::Legends.Mod.ModSettings.getSetting("SkipCamp").getValue())
+			return false;
+		return !::World.Flags.get("HasLegendCampHealing");
+	}
+
 	function getRate()
 	{
 		local heal = 1.1;

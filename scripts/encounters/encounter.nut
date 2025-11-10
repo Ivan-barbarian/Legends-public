@@ -133,7 +133,6 @@ this.encounter <- {
         }
 
         this.m.ActiveScreen = clone _screen;
-	    ::MSU.Log.printData(this.m.ActiveScreen, 5);
         this.m.ActiveScreen.Options = [];
 
         foreach( o in _screen.Options ) {
@@ -201,15 +200,15 @@ this.encounter <- {
         }
 
         local r = this.Math.rand(0, brothers.len() - 1);
-        brother1 = brothers[r].getName();
+        brother1 = brothers[r];
         brothers.remove(r);
 
         if (brothers.len() != 0)
-            brother2 = brothers[::Math.rand(0, brothers.len() - 1)].getName();
+            brother2 = brothers[::Math.rand(0, brothers.len() - 1)];
         else if (slaves.len() != 0)
-            brother2 = slaves[::Math.rand(0, slaves.len() - 1)].getName();
+            brother2 = slaves[::Math.rand(0, slaves.len() - 1)];
         else if (notnagel != null)
-			brother2 = notnagel.getName();
+			brother2 = notnagel;
 		else
 			brother2 = brother1;
 
@@ -221,10 +220,13 @@ this.encounter <- {
 			["companyname", ::World.Assets.getName()],
 			["randomname", ::Const.Strings.CharacterNames[::Math.rand(0, ::Const.Strings.CharacterNames.len() - 1)]],
 			["randomnoble", ::Const.Strings.KnightNames[::Math.rand(0, ::Const.Strings.KnightNames.len() - 1)]],
-			["randombrother", brother1],
-			["randombrother2", brother2],
+			["randombrother", brother1.getName()],
+			["randombrother2", brother2.getName()],
         	["settlement", nearestTown == null ? "" : nearestTown.getName()]
         ];
+
+	    ::Const.LegendMod.extendVarsWithPronouns(vars, brother1.getGender(), "randombrother");
+	    ::Const.LegendMod.extendVarsWithPronouns(vars, brother2.getGender(), "randombrother2");
 
 	    if (_full) {
 		    this.onPrepareVariables(vars);
