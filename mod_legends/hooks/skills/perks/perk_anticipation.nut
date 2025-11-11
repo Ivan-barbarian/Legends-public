@@ -44,10 +44,12 @@
 		if (skill == null)
 			return;
 		local chance = actor.getCurrentProperties().getRangedDefense();
-		if (skill.isUsable() && skill.onVerifyTarget(actor.getTile(), _attacker.getTile()) && isUsableOn(actor.getTile()) && this.Math.rand(1, 100) < chance)
+		local attackerTile = _attacker.getTile();
+		local myTile = actor.getTile();
+		if (skill.isUsable() && skill.onVerifyTarget(myTile, attackerTile) && skill.isUsableOn(attackerTile, myTile) && this.Math.rand(1, 100) < chance)
 		{
 			::Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(actor) + " has dodged the attack and preparing to counter.");
-			return skill.onUse(actor, _attacker.getTile());
+			return skill.onUse(actor, attackerTile);
 		}
 	}
 });
