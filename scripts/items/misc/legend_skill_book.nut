@@ -32,22 +32,22 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 			{
 				id = 1,
 				type = "title",
-				text = getName()
+				text = this.getName()
 			},
 			{
 				id = 2,
 				type = "description",
-				text = getDescription()
+				text = this.getDescription()
 			},
 			{
 				id = 66,
 				type = "text",
-				text = getValueString()
+				text = this.getValueString()
 			},
 			{
 				id = 3,
 				type = "image",
-				image = getIcon()
+				image = this.getIcon()
 			},
 			{
 				id = 65,
@@ -60,6 +60,7 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 				text = "Will apply a " + this.m.Cooldown + " day cooldown until you can read again."
 			}
 		];
+
 		if (this.m.HasToBeIdentified && ::World.Assets.m.HasScholars > 0 || !this.m.HasToBeIdentified)
 		{
 			local selection = this.m.PerkGroupSelection;
@@ -75,7 +76,7 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 				result.push({
 					id = 10,
 					type = "text",
-					text = ::Legends.tooltip("[leg_img](gfx/" + perk.Icon + ",height=20px,width=20px)[/leg_img] [color=%perk%]" + perk.Name + "[/color]"),
+					text = "[leg_img](gfx/" + perk.Icon + ",height=20px,width=20px)[/leg_img] [color=%perk%]" + perk.Name + "[/color]"
 				});
 			}
 		}

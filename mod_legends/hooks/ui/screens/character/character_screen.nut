@@ -794,7 +794,7 @@
 	o.getSelectedActor <- function () {
 		if (this.m.SelectedBrotherID == null)
 			return null;
-		local entity = ::Tactical.getEntityByID(_data);
+		local entity = ::Tactical.getEntityByID(this.m.SelectedBrotherID);
 		foreach (bro in ::World.getPlayerRoster().getAll()) {
 			if (bro.getID() == entity.getID())  {
 				return bro;
