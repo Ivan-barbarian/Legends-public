@@ -43,32 +43,43 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 
 	function getBleeders()
 	{
-		try {
-			if (!("Entities" in ::Tactical))
-				return 0;
-
-			if (::Tactical.Entities == null)
-				return 0;
-
-			if (!this.Tactical.isActive())
-				return 0;
-
-			local myself = this.getContainer().getActor();
-			local myTile = myself.getTile();
-			if (myTile == null)
-				return 0;
-
-			local bonus = ::Tactical.Entities.getAllInstancesAsArray()
-				.filter(@(_, _actor) !::Legends.S.skillEntityAliveCheck(_actor) && !_actor.isAlliedWith(myself) && _actor.getTile() != null && _actor.getSkills() != null)
-				.filter(@(_, _actor) _actor.getSkills().hasEffect(::Legends.Effect.Bleeding) || _actor.getSkills().hasEffect(::Legends.Effect.LegendGrazedEffect)  || _actor.getSkills().hasSkillOfType(::Const.SkillType.TemporaryInjury))
-				.map(@(_actor) myTile.getDistanceTo(_actor.getTile()) > 1 ? 1 : 2)
-				.reduce(@(a, b) a + b);
-			if (bonus == null)
-				return 0;
-			return bonus;
-		} catch (e) {
+		if (!("Entities" in ::Tactical))
 			return 0;
-		}
+
+		if (::Tactical.Entities == null)
+			return 0;
+
+		if (!this.Tactical.isActive())
+			return 0;
+
+		local myself = this.getContainer().getActor();
+		if (::Legends.S.skillEntityAliveCheck(myself))
+			return 0;
+
+		local myTile = myself.getTile();
+		if (myTile == null)
+			return 0;
+
+		local bonus = ::Tactical.Entities.getAllInstancesAsArray()
+			.filter(function (_, _actor) {
+				if (::Legends.S.skillEntityAliveCheck(_actor))
+					return false;
+				if (_actor.isAlliedWith(myself))
+					return false;
+				if (_actor.getTile() == null)
+					return false;
+				if (_actor.getSkills() == null)
+					return false;
+
+				return _actor.getSkills().hasEffect(::Legends.Effect.Bleeding) ||
+					_actor.getSkills().hasEffect(::Legends.Effect.LegendGrazedEffect) ||
+					_actor.getSkills().hasSkillOfType(::Const.SkillType.TemporaryInjury);
+			})
+			.map(@(_actor) _actor.getTile().getDistanceTo(myTile) > 1 ? 1 : 2)
+			.reduce(@(a, b) a + b);
+		if (bonus == null)
+			return 0;
+		return bonus;
 	}
 
 	function onUpdate( _properties )
