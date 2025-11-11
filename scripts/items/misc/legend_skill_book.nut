@@ -143,7 +143,8 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 		::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", format("The [color=%s]%s[/color] perk group has been added to this character.", ::Const.UI.Color.NegativeValue, this.m.PerkGroupSelection));
 		::Sound.play("sounds/scribble.wav", ::Const.Sound.Volume.Inventory);
 
-		_actor.getFlags().increment("LegendsScrollCount");
+		_actor.getFlags().increment("LegendsSkillBookCount");
+
 		::Legends.Effects.grant(_actor, ::Legends.Effect.LegendHeadache, function (_effect) {
 			_effect.m.IrritableHealingTime = this.m.Cooldown;
 		}.bindenv(this));
