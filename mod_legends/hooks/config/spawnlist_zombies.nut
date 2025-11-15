@@ -47,6 +47,16 @@ if (!("Spawn" in ::Const.World))
 					Cost = 40
 				}
 			]
+		},
+		{
+			Weight = 10,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieBetrayer,
+					MinR = 1200,
+					Cost = 65
+				}
+			]
 		}
 	]
 };
@@ -115,6 +125,16 @@ if (!("Spawn" in ::Const.World))
 			]
 		},
 		{
+			Weight = 10,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieBetrayer,
+					MinR = 1200,
+					Cost = 65
+				}
+			]
+		},
+		{
 			Weight = 20,
 			Types = [
 				{
@@ -125,6 +145,31 @@ if (!("Spawn" in ::Const.World))
 					Type = this.Const.World.Spawn.Troops.Ghoul,
 					MinR = 200,
 					Cost = 19
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.GhoulHIGH,
+					MinR = 600,
+					Cost = 50,
+				}
+			]
+		},
+		{
+			Weight = 20,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendSkinGhoulLOW,
+					MinR = 1000,
+					Cost = 50
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendSkinGhoulMED,
+					MinR = 1000,
+					Cost = 100
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
+					MinR = 1000,
+					Cost = 200,
 				}
 			]
 		}
@@ -172,6 +217,16 @@ if (!("Spawn" in ::Const.World))
 			]
 		},
 		{
+			Weight = 10,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieBetrayer,
+					MinR = 1200,
+					Cost = 65
+				}
+			]
+		},
+		{
 			Weight = 20,
 			Types = [
 				{
@@ -182,6 +237,31 @@ if (!("Spawn" in ::Const.World))
 					Type = this.Const.World.Spawn.Troops.Ghoul,
 					MinR = 200,
 					Cost = 19
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.GhoulHIGH,
+					MinR = 600,
+					Cost = 50,
+				}
+			]
+		},
+		{
+			Weight = 20,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendSkinGhoulLOW,
+					MinR = 1000,
+					Cost = 50
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendSkinGhoulMED,
+					MinR = 1000,
+					Cost = 100
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
+					MinR = 1000,
+					Cost = 200,
 				}
 			]
 		}
@@ -225,6 +305,16 @@ if (!("Spawn" in ::Const.World))
 					Type = this.Const.World.Spawn.Troops.ZombieKnight,
 					MinR = 400,
 					Cost = 30
+				}
+			]
+		},
+		{
+			Weight = 10,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieBetrayer,
+					MinR = 1200,
+					Cost = 65
 				}
 			]
 		},
@@ -297,6 +387,16 @@ if (!("Spawn" in ::Const.World))
 					Type = this.Const.World.Spawn.Troops.ZombieKnight,
 					MinR = 400,
 					Cost = 40
+				}
+			]
+		},
+		{
+			Weight = 10,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieBetrayer,
+					MinR = 1200,
+					Cost = 65
 				}
 			]
 		},
@@ -455,6 +555,16 @@ if (!("Spawn" in ::Const.World))
 			]
 		},
 		{
+			Weight = 10,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieBetrayer,
+					MinR = 1200,
+					Cost = 65
+				}
+			]
+		},
+		{
 			Weight = 5,
 			Types = [
 				{
@@ -594,6 +704,16 @@ if (!("Spawn" in ::Const.World))
 					Type = this.Const.World.Spawn.Troops.ZombieKnight,
 					MinR = 400,
 					Cost = 30
+				}
+			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieBetrayer,
+					MinR = 1200,
+					Cost = 65
 				}
 			]
 		},

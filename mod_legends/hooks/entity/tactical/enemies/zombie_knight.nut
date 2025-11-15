@@ -10,8 +10,11 @@
 		{
 			this.m.Hitpoints = b.Hitpoints * 1.5;
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendStrengthInNumbers);
+			::Legends.Perks.grant(this, ::Legends.Perk.Steadfast);
+			::Legends.Perks.grant(this, ::Legends.Perk.LegendImmovableObject);
 			::Legends.Perks.grant(this, ::Legends.Perk.Colossus);
 		}
+		::Legends.S.scaleBaseProperties(b);
 		::Legends.Perks.grant(this, ::Legends.Perk.LegendPoisonImmunity);
 		::Legends.Perks.grant(this, ::Legends.Perk.LegendStrengthInNumbers);
 	}
@@ -20,31 +23,28 @@
 	{
 		local r;
 
-		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
-		{
-			local weapons = [
-				"weapons/winged_mace",
-				"weapons/hand_axe",
-				"weapons/fighting_axe",
-				"weapons/morning_star",
-				"weapons/arming_sword",
-				"weapons/flail",
-				"weapons/military_cleaver"
-			];
+		local weapons = [
+			"weapons/winged_mace",
+			"weapons/hand_axe",
+			"weapons/fighting_axe",
+			"weapons/morning_star",
+			"weapons/arming_sword",
+			"weapons/flail",
+			"weapons/military_cleaver",
+			"weapons/longsword",
+			"weapons/greataxe",
+			"weapons/two_handed_flail",
+			"weapons/goedendag",
+			"weapons/legend_military_goedendag",
+			"weapons/legend_longsword",
+			"weapons/legend_reinforced_flail",
+			"weapons/legend_battle_glaive",
+			"weapons/legend_swordstaff",
+			"weapons/legend_military_warscythe",
+			"weapons/legend_infantry_axe"
+		];
 
-			if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand))
-			{
-				weapons.extend([
-					"weapons/longsword",
-					"weapons/legend_longsword",
-					"weapons/greataxe",
-					"weapons/legend_reinforced_flail",
-					"weapons/two_handed_flail"
-				]);
-			}
-
-			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
-		}
+		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
 		{
@@ -96,6 +96,11 @@
 			return false;
 		}
 
+		this.m.BaseProperties.Armor[this.Const.BodyPart.Head] += 50;
+		this.m.BaseProperties.ArmorMax[this.Const.BodyPart.Head] += 50;		
+		this.m.BaseProperties.Armor[this.Const.BodyPart.Body] += 100;
+		this.m.BaseProperties.ArmorMax[this.Const.BodyPart.Body] += 100;
+
 		this.getSprite("miniboss").setBrush("bust_miniboss");
 		local weapons = [
 			"named_axe",
@@ -132,6 +137,7 @@
 
 		::Legends.Perks.grant(this, ::Legends.Perk.HoldOut);
 		::Legends.Perks.grant(this, ::Legends.Perk.NineLives);
+		::Legends.Perks.grant(this, ::Legends.Perk.LegendMuscularity);
 		return true;
 	}
 });
