@@ -112,7 +112,8 @@ this.legend_wind_up_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		if (this.m.Item != null && !this.m.Item.isNull() && item.isWeaponType(this.Const.Items.WeaponType.Sling) && item.isItemType(this.Const.Items.ItemType.OneHanded))
+		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (item != null && !item.isNull() && item.isWeaponType(this.Const.Items.WeaponType.Sling) && item.isItemType(this.Const.Items.ItemType.OneHanded))
 		{
 			::Legends.Effects.grant(this, ::Legends.Effect.LegendPrepareBullet);
 		}
