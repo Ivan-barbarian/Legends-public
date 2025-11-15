@@ -302,7 +302,7 @@ Too fast for you!
 [color=%passive%][u]Passive:[/u][/color]
 • Gain [color=%positive%]15%[/color] of this character's current Initiative as a bonus to Melee and Ranged Defense.
 
-• Gain a further [color=%positive%]15%[/color] bonus if your Hitpoints are closer to 50
+• Gain a further [color=%positive%]15%[/color] bonus if your maximum Hitpoints are closer to 50. This additional bonus gradually drops as your maximum Hitpoints increase to 100.
 ";
 ::Const.Perks.PerkDefObjects[::Legends.Perk.Dodge].Tooltip = ::Const.Strings.PerkDescription.Dodge;
 ::Const.Strings.PerkDescription.Colossus <- @"
