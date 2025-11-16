@@ -67,6 +67,9 @@ this.legend_named_military_goedendag <- this.inherit("scripts/items/weapons/name
 			_skill.m.Overlay = "active_132";
 			_skill.setFatigueCost(_skill.getFatigueCostRaw() + 5);
 		}.bindenv(this));
+		::Legends.Actives.grant(this, ::Legends.Active.SplitShield, function (_skill) {
+			_skill.setFatigueCost(_skill.getFatigueCostRaw() + 5);
+		}.bindenv(this));
 	}
 
 });
