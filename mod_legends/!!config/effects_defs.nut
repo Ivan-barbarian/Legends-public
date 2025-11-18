@@ -1917,6 +1917,14 @@ effectsDefs.push({
 	Name = "Rune Sigil: Feeding",
 });
 
+::Legends.Effect.LegendRswBlazing <- null;
+effectsDefs.push({
+	ID = "special.legend_RSW_blazing",
+	Script = "scripts/skills/rune_sigils/legend_RSW_blazing",
+	Const = "LegendRswBlazing",
+	Name = "Rune Sigil: Blazing",
+});
+
 ::Legends.Effect.LegendRswPoison <- null;
 effectsDefs.push({
 	ID = "special.legend_RSW_poison",

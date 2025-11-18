@@ -181,6 +181,33 @@
 	}
 });
 
+::Legends.Rune.LegendRswBlazing <- ::Legends.Runes.add({
+	ItemType = ::Legends.Runes.Target.Weapon,
+	Name = "Weapon Rune Sigil: Blazing",
+	Description = "An inscribed rock that can be attached to a character\'s weapon.",
+	Icon = "rune_sigils/rune_stone_1.png",
+	IconLarge = "rune_sigils/rune_stone_1.png",
+	Effect = ::Legends.Effect.LegendRswBlazing,
+	Script = "scripts/items/rune_sigils/legend_vala_inscription_token",
+	setRuneBonus = function(_item, _bonus) {
+		if (_bonus) {
+			_item.setRuneBonus1(::Math.rand(3, 10));
+			_item.setRuneBonus2(::Math.rand(1, 3));
+		} else {
+			_item.setRuneBonus1(::Math.rand(3, 6));
+			_item.setRuneBonus2(::Math.rand(1, 2));
+		}
+	},
+	getTooltip = function(_item) {
+		return "This item has the power of the rune sigil of Blazing:\nOn hit sets tile on fire causing [color=%damage%]" + _item.getRuneBonus1() + "[/color] Damage for [color=%positive%]" + _item.getRuneBonus2() + "[/color] turns to anyone standing on it.";
+	}
+	getRuneTooltip = function (_item) {
+		local max1 = _item.isUpgraded() ? 9 : 6;
+		local max2 = _item.isUpgraded() ? 3 : 2;
+		return "This item has the power of the rune sigil of Blazing:\nOn hit sets tile on fire causing [color=%damage%]3[/color] to [color=%damage%]" + max1 + "[/color] for [color=%positive%]1[/color] to [color=%positive%]" + max2 + "[/color] turns to anyone standing on it.";
+	}
+});
+
 ::Legends.Rune.LegendRshClarity <- ::Legends.Runes.add({
 	ItemType = ::Legends.Runes.Target.Helmet,
 	Name = "Helmet Rune Sigil: Clarity",
