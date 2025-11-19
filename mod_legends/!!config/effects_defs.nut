@@ -1893,6 +1893,14 @@ effectsDefs.push({
 	Name = "Rune Sigil: Radiance",
 });
 
+::Legends.Effect.LegendRssDurability <- null;
+effectsDefs.push({
+	ID = "special.legend_RSS_durability",
+	Script = "scripts/skills/rune_sigils/legend_RSS_durability",
+	Const = "LegendRssDurability",
+	Name = "Rune Sigil: Durability",
+});
+
 ::Legends.Effect.LegendRswAccuracy <- null;
 effectsDefs.push({
 	ID = "special.legend_RSW_accuracy",

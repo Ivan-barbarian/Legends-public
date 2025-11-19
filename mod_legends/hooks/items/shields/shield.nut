@@ -78,7 +78,13 @@
 	{
 		local actor = this.getContainer().getActor();
 
-		applyShieldDamage ( _damage, _playHitSound = true );
+		if (::Legends.Effects.has(actor, ::Legends.Effect.LegendRssDurability)) {
+			if (::Math.rand(0, 100) > this.getRuneBonus2()) {
+				applyShieldDamage(_damage, _playHitSound);
+			}
+		} else {
+			applyShieldDamage(_damage, _playHitSound);
+		}
 
 		if (this.m.Condition == 0)
 		{
@@ -90,6 +96,20 @@
 				this.drop(actor.getTile());
 			}
 		}
+	}
+
+	o.updateRuneSigil <- function () {
+		if (this.isRuned()) {
+			local rune = ::Legends.Runes.get(this.getRuneVariant());
+			// remove extra durability when rune is replaced
+			if (rune.Effect == ::Legends.Effect.LegendRssDurability) {
+				local extraDurability = this.getFlags().getAsInt(rune.Flag);
+				this.m.Condition = ::Math.max(1, this.m.Condition - extraDurability);
+				this.m.ConditionMax -= extraDurability;
+				this.updateAppearance();
+			}
+		}
+		this.item.updateRuneSigil();
 	}
 
 	local onUpdateProperties = o.onUpdateProperties;

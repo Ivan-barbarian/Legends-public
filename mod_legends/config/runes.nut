@@ -2,10 +2,10 @@
 
 ::Legends.Runes <- {
 	Target = {
-		Shield = 64,
-		Weapon = 2048,
-		Helmet = 4096,
-		Armor = 8192
+		Shield = ::Const.Items.ItemType.Shield,
+		Weapon = ::Const.Items.ItemType.Weapon,
+		Helmet = ::Const.Items.ItemType.Helmet,
+		Armor = ::Const.Items.ItemType.Armor
 	}
 	Defs = {},
 	add = function(_def) {
