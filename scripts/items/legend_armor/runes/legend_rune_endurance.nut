@@ -23,28 +23,6 @@ this.legend_rune_endurance <- this.inherit("scripts/items/legend_armor/legend_ar
 		this.setRuneBonus(false); // false = unupgraded enchanter stats. true = upgraded enchanter stats
 	}
 
-	function getTooltip()
-	{
-		local result = this.legend_armor_upgrade.getTooltip();
-		result.push({
-			id = 7,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "This item has the power of the rune sigil of Endurance:\n[color=%positive%]+" + this.getRuneBonus1() + "[/color] Fatigue recovery per turn.\n[color=%positive%]-" + this.getRuneBonus2() + "%[/color] Fatigue cost and effects multiplier."
-		});
-		return result;
-	}
-
-	function onArmorTooltip( _result )
-	{
-		_result.push({
-			id = 7,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "This item has the power of the rune sigil of Endurance:\n[color=%positive%]+" + this.getRuneBonus1() + "[/color] Fatigue recovery per turn.\n[color=%positive%]-" + this.getRuneBonus2() + "%[/color] Fatigue cost and effects multiplier."
-		});
-	}
-
 	function onDamageReceived( _damage, _fatalityType, _attacker )
 	{
 		return _damage;

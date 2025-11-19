@@ -268,6 +268,16 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 			});
 		}
 
+		local rune = ::Legends.Runes.get(this.getRuneVariant());
+		if (rune != null) {
+			result.push({
+				id = 77,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = rune.getTooltip(this)
+			});
+		}
+
 		return result;
 	}
 
@@ -324,6 +334,17 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 				text = "Vision " + ::Legends.S.colorize("" + ::Legends.S.getSign(this.getVision()) + this.Math.abs(this.getVision()), this.getVision())
 			});
 		}
+
+		local rune = ::Legends.Runes.get(this.getRuneVariant());
+		if (rune != null) {
+			_result.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = rune.getTooltip(this)
+			});
+		}
+
 		this.onArmorTooltip(_result);
 	}
 

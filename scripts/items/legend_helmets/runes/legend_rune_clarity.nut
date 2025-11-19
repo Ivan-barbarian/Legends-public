@@ -22,26 +22,5 @@ this.legend_rune_clarity <- this.inherit("scripts/items/legend_helmets/legend_he
 	{
 	}
 
-	function getTooltip()
-	{
-		local result = this.legend_helmet_upgrade.getTooltip();
-		result.push({
-			id = 7,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "This item has the power of the rune sigil of Clarity:\n[color=%positive%]+" + this.getRuneBonus1() + "[/color] Vision.\n[color=%positive%]+" + this.getRuneBonus2() + "%[/color] Experience gain."
-		});
-		return result;
-	}
-
-	function onArmorTooltip( _result )
-	{
-		_result.push({
-			id = 7,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "This item has the power of the rune sigil of Clarity:\n[color=%positive%]+" + this.getRuneBonus1() + "[/color] Vision.\n[color=%positive%]+" + this.getRuneBonus2() + "%[/color] Experience gain."
-		});
-	}
 });
 
