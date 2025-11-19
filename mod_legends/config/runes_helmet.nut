@@ -118,3 +118,44 @@ This item has the power of the rune sigil of Luck:
 		]);
 	}
 });
+
+::Legends.Rune.LegendRshPatience <- ::Legends.Runes.add({
+	ItemType = ::Legends.Runes.Target.Helmet,
+	Name = "Helmet Rune Sigil: Patience",
+	Description = "An inscribed rock that can be attached to a character\'s helmet.",
+	Icon = "rune_sigils/rune_stone_2.png",
+	IconLarge = "rune_sigils/rune_stone_2.png",
+	Effect = ::Legends.Effect.LegendRshPatience,
+	Script = "scripts/items/legend_helmets/runes/legend_rune_patience",
+	Tooltip = @"
+This item has the power of the rune sigil of Patience:
+[color=%positive%]+%bonus1%%[/color] Initiative.
+[color=%positive%]+%bonus2%%[/color] Hit chance to next attack after you wait a turn.
+	",
+	RuneTooltip = @"
+This item has the power of the rune sigil of Patience:
+[color=%positive%]+3%[/color] to [color=%positive%]+%max1%%[/color] Initiative.
+[color=%positive%]+3%[/color] to [color=%positive%]+%max2%%[/color] Hit chance to next attack after you wait a turn.
+	",
+	setRuneBonus = function(_item, _bonus) {
+		if (_bonus) {
+			_item.setRuneBonus1(::Math.rand(3, 9));
+			_item.setRuneBonus2(::Math.rand(3, 9));
+		} else {
+			_item.setRuneBonus1(::Math.rand(3, 6));
+			_item.setRuneBonus2(::Math.rand(3, 6));
+		}
+	},
+	getTooltip = function(_item) {
+		return ::Legends.tooltip(this.Tooltip, [
+			["bonus1", _item.getRuneBonus1()],
+			["bonus2", _item.getRuneBonus2()]
+		]);
+	}
+	getRuneTooltip = function (_item) {
+		return ::Legends.tooltip(this.RuneTooltip, [
+			["max1", _item.isUpgraded() ? 9 : 6],
+			["max2", _item.isUpgraded() ? 9 : 6]
+		]);
+	}
+});

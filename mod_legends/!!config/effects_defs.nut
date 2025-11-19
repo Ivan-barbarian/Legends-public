@@ -1877,6 +1877,14 @@ effectsDefs.push({
 	Name = "Rune Sigil: Luck",
 });
 
+::Legends.Effect.LegendRshPatience <- null;
+effectsDefs.push({
+	ID = "special.Legend_Rsh_patience",
+	Script = "scripts/skills/rune_sigils/legend_RSH_patience",
+	Const = "LegendRshPatience",
+	Name = "Rune Sigil: Patience",
+});
+
 ::Legends.Effect.LegendRssDefense <- null;
 effectsDefs.push({
 	ID = "special.legend_RSS_defense",
