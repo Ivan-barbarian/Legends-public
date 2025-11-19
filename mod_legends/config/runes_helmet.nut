@@ -10,6 +10,16 @@
 	IconLarge = "rune_sigils/rune_stone_2.png",
 	Effect = ::Legends.Effect.LegendRshClarity,
 	Script = "scripts/items/legend_helmets/runes/legend_rune_clarity",
+	Tooltip = @"
+This item has the power of the rune sigil of Clarity:
+[color=%positive%]+%bonus1%[/color] Vision.
+[color=%positive%]+%bonus2%%[/color] Experience gain.
+	",
+	RuneTooltip = @"
+This item has the power of the rune sigil of Clarity:
+[color=%positive%]+0[/color] to [color=%positive%]+%max1%[/color] Vision.
+[color=%positive%]+3%[/color] to [color=%positive%]+%max2%%[/color] Experience gain.
+	",
 	setRuneBonus = function(_item, _bonus) {
 		if (_bonus) {
 			_item.setRuneBonus1(::Math.rand(0, 2));
@@ -20,12 +30,16 @@
 		}
 	},
 	getTooltip = function(_item) {
-		return "This item has the power of the rune sigil of Clarity:\n[color=%positive%]+" + _item.getRuneBonus1() + "[/color] Vision.\n[color=%positive%]+" + _item.getRuneBonus2() + "%[/color] Experience gain.";
+		return ::Legends.tooltip(this.Tooltip, [
+			["bonus1", _item.getRuneBonus1()],
+			["bonus2", _item.getRuneBonus2()]
+		]);
 	}
 	getRuneTooltip = function (_item) {
-		local max1 = _item.isUpgraded() ? 2 : 1;
-		local max2 = _item.isUpgraded() ? 9 : 6;
-		return "This item has the power of the rune sigil of Clarity:\n[color=%positive%]0 to +" + max1 + "[/color] Vision.\n[color=%positive%]+3% to +" + max2 + "%[/color] Experience gain.";
+		return ::Legends.tooltip(this.RuneTooltip, [
+			["max1", _item.isUpgraded() ? 2 : 1],
+			["max2", _item.isUpgraded() ? 9 : 6]
+		]);
 	}
 });
 
@@ -37,6 +51,16 @@
 	IconLarge = "rune_sigils/rune_stone_2.png",
 	Effect = ::Legends.Effect.LegendRshBravery,
 	Script = "scripts/items/legend_helmets/runes/legend_rune_bravery",
+	Tooltip = @"
+This item has the power of the rune sigil of Bravery:
+[color=%positive%]+%bonus1%%[/color] Resolve.
+[color=%positive%]+%bonus2%[/color] Resolve at all morale checks.
+	",
+	RuneTooltip = @"
+This item has the power of the rune sigil of Bravery:
+[color=%positive%]+0[/color] to [color=%positive%]+%max1%%[/color] Resolve.
+[color=%positive%]+1[/color] to [color=%positive%]+%max2%[/color] Resolve at all morale checks.
+	",
 	setRuneBonus = function(_item, _bonus) {
 		if (_bonus) {
 			_item.setRuneBonus1(::Math.rand(3, 9));
@@ -47,12 +71,16 @@
 		}
 	},
 	getTooltip = function(_item) {
-		return "This item has the power of the rune sigil of Bravery:\n[color=%positive%]+" + _item.getRuneBonus1() + "%[/color] Resolve.\n[color=%positive%]+" + _item.getRuneBonus2() + "[/color] Resolve at all morale checks.";
+		return ::Legends.tooltip(this.Tooltip, [
+			["bonus1", _item.getRuneBonus1()],
+			["bonus2", _item.getRuneBonus2()]
+		]);
 	}
 	getRuneTooltip = function (_item) {
-		local max1 = _item.isUpgraded() ? 9 : 6;
-		local max2 = _item.isUpgraded() ? 5 : 3;
-		return "This item has the power of the rune sigil of Bravery:\n[color=%positive%]+3% to +" + max1 + "%[/color] Resolve.\n [color=%positive%]+1 to +" + max2 + "[/color] Resolve at all morale checks.";
+		return ::Legends.tooltip(this.RuneTooltip, [
+			["max1", _item.isUpgraded() ? 9 : 6],
+			["max2", _item.isUpgraded() ? 5 : 3]
+		]);
 	}
 });
 
@@ -64,6 +92,14 @@
 	IconLarge = "rune_sigils/rune_stone_2.png",
 	Effect = ::Legends.Effect.LegendRshLuck,
 	Script = "scripts/items/legend_helmets/runes/legend_rune_luck",
+	Tooltip = @"
+This item has the power of the rune sigil of Luck:
+[color=%positive%]+%bonus1%%[/color] chance to have any attacker require two successful attack rolls in order to hit.
+	",
+	RuneTooltip = @"
+This item has the power of the rune sigil of Luck:
+[color=%positive%]+3%[/color] to [color=%positive%]+%max1%%[/color] chance to have any attacker require two successful attack rolls in order to hit..
+	",
 	setRuneBonus = function(_item, _bonus) {
 		if (_bonus) {
 			_item.setRuneBonus1(::Math.rand(3, 9));
@@ -72,10 +108,13 @@
 		}
 	},
 	getTooltip = function(_item) {
-		return "This item has the power of the rune sigil of Luck:\n[color=%positive%]+" + _item.getRuneBonus1() + "%[/color] chance to have any attacker require two successful attack rolls in order to hit.";
+		return ::Legends.tooltip(this.Tooltip, [
+			["bonus1", _item.getRuneBonus1()]
+		]);
 	}
 	getRuneTooltip = function (_item) {
-		local max1 = _item.isUpgraded() ? 9 : 6;
-		return "This item has the power of the rune sigil of Luck:\n[color=%positive%]+3% to +" + max1 + "%[/color] chance to have any attacker require two successful attack rolls in order to hit.";
+		return ::Legends.tooltip(this.RuneTooltip, [
+			["max1", _item.isUpgraded() ? 9 : 6]
+		]);
 	}
 });

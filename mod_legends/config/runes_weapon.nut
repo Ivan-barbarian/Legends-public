@@ -10,6 +10,16 @@
 	IconLarge = "rune_sigils/rune_stone_1.png",
 	Effect = ::Legends.Effect.LegendRswPower,
 	Script = "scripts/items/rune_sigils/legend_vala_inscription_token",
+	Tooltip = @"
+This item has the power of the rune sigil of Power:
+[color=%positive%]+%bonus1%%[/color] Damage inflicted.
+[color=%positive%]+%bonus2%[/color] Max damage.
+	",
+	RuneTooltip = @"
+This item has the power of the rune sigil of Power:
+[color=%positive%]+3%[/color] to [color=%positive%]+%max1%%[/color] Damage inflicted.
+[color=%positive%]+3[/color] to [color=%positive%]+%max2%[/color] Max damage.
+	",
 	setRuneBonus = function(_item, _bonus) {
 		if (_bonus) {
 			_item.setRuneBonus1(::Math.rand(3, 9));
@@ -20,12 +30,16 @@
 		}
 	},
 	getTooltip = function(_item) {
-		return "This item has the power of the rune sigil of Power:\n[color=%positive%]+" + _item.getRuneBonus1() + "%[/color] Damage inflicted.\n" + "[color=%positive%]+" + _item.getRuneBonus2() + "[/color] Max damage.";
-	},
+		return ::Legends.tooltip(this.Tooltip, [
+			["bonus1", _item.getRuneBonus1()],
+			["bonus2", _item.getRuneBonus2()]
+		]);
+	}
 	getRuneTooltip = function (_item) {
-		local max1 = _item.isUpgraded() ? 9 : 6;
-		local max2 = _item.isUpgraded() ? 9 : 6;
-		return "This item has the power of the rune sigil of Power:\n[color=%positive%]+3% to +" + max1 + "%[/color] total damage inflicted and [color=%positive%]+3 to +" + max2 + "[/color] maximum damage.";
+		return ::Legends.tooltip(this.RuneTooltip, [
+			["max1", _item.isUpgraded() ? 9 : 6],
+			["max2", _item.isUpgraded() ? 9 : 6]
+		]);
 	}
 });
 
@@ -37,6 +51,16 @@
 	IconLarge = "rune_sigils/rune_stone_1.png",
 	Effect = ::Legends.Effect.LegendRswAccuracy,
 	Script = "scripts/items/rune_sigils/legend_vala_inscription_token",
+	Tooltip = @"
+This item has the power of the rune sigil of Accuracy:
+[color=%positive%]+%bonus1%%[/color] Melee skill.
+[color=%positive%]+%bonus2%%[/color] Ranged skill.
+	",
+	RuneTooltip = @"
+This item has the power of the rune sigil of Accuracy:
+[color=%positive%]+3%[/color] to [color=%positive%]+%max1%%[/color] Melee skill.
+[color=%positive%]+3%[/color] to [color=%positive%]+%max2%%[/color] Ranged skill.
+	",
 	setRuneBonus = function(_item, _bonus) {
 		if (_bonus) {
 			_item.setRuneBonus1(::Math.rand(3, 9));
@@ -47,11 +71,16 @@
 		}
 	},
 	getTooltip = function(_item) {
-		return "This item has the power of the rune sigil of Accuracy:\n[color=%positive%]+" + _item.getRuneBonus1() + "%[/color] Melee skill.\n" + "[color=%positive%]+" + _item.getRuneBonus2() + "%[/color] Ranged skill.";
-	},
+		return ::Legends.tooltip(this.Tooltip, [
+			["bonus1", _item.getRuneBonus1()],
+			["bonus2", _item.getRuneBonus2()]
+		]);
+	}
 	getRuneTooltip = function (_item) {
-		local max1 = _item.isUpgraded() ? 9 : 6;
-		return "This item has the power of the rune sigil of Accuracy:\n[color=%positive%]+3% to +" + max1 + "%[/color] Melee skill.\n" + "[color=%positive%]+3% to +" + max1 + "%[/color] Ranged skill.";
+		return ::Legends.tooltip(this.RuneTooltip, [
+			["max1", _item.isUpgraded() ? 9 : 6],
+			["max2", _item.isUpgraded() ? 9 : 6]
+		]);
 	}
 });
 
@@ -63,6 +92,14 @@
 	IconLarge = "rune_sigils/rune_stone_1.png",
 	Effect = ::Legends.Effect.LegendRswFeeding,
 	Script = "scripts/items/rune_sigils/legend_vala_inscription_token",
+	Tooltip = @"
+This item has the power of the rune sigil of Feeding:
+[color=%positive%]%bonus1%%[/color] of inflicted health damage recovers fatigue.
+	",
+	RuneTooltip = @"
+This item has the power of the rune sigil of Feeding:
+[color=%positive%]2%[/color] to [color=%positive%]%max1%%[/color] of inflicted health damage recovers fatigue.
+	",
 	setRuneBonus = function(_item, _bonus) {
 		if (_bonus) {
 			_item.setRuneBonus1(::Math.rand(2, 6));
@@ -71,11 +108,14 @@
 		}
 	},
 	getTooltip = function(_item) {
-		return "This item has the power of the rune sigil of Feeding:\n[color=%positive%]" + _item.getRuneBonus1() + "%[/color] of inflicted health damage recovers fatigue.";
+		return ::Legends.tooltip(this.Tooltip, [
+			["bonus1", _item.getRuneBonus1()]
+		]);
 	}
 	getRuneTooltip = function (_item) {
-		local max1 = _item.isUpgraded() ? 6 : 4;
-		return "This item has the power of the rune sigil of Feeding:\n[color=%positive%]2% to " + max1 + "%[/color] of inflicted health damage recovers fatigue.";
+		return ::Legends.tooltip(this.RuneTooltip, [
+			["max1", _item.isUpgraded() ? 6 : 4]
+		]);
 	}
 });
 
@@ -87,6 +127,14 @@
 	IconLarge = "rune_sigils/rune_stone_1.png",
 	Effect = ::Legends.Effect.LegendRswPoison,
 	Script = "scripts/items/rune_sigils/legend_vala_inscription_token",
+	Tooltip = @"
+This item has the power of the rune sigil of Poison:
+[color=%positive%]%bonus1%[/color] turn(s) of poison applied, with a strength of [color=%damage%]%bonus2%[/color]. Lowers action points and initiative..
+	",
+	RuneTooltip = @"
+This item has the power of the rune sigil of Poison:
+[color=%positive%]1 to %max1%[/color] turn(s) of poison applied, with a strength of [color=%damage%]3 to %max2%[/color]. Lowers action points and initiative..
+	",
 	setRuneBonus = function(_item, _bonus) {
 		if (_bonus) {
 			_item.setRuneBonus1(::Math.rand(1, 3));
@@ -97,12 +145,16 @@
 		}
 	},
 	getTooltip = function(_item) {
-		return "This item has the power of the rune sigil of Poison:\n[color=%positive%]" + _item.getRuneBonus1() + "[/color] turn(s) of poison applied, with a strength of [color=%positive%]" + _item.getRuneBonus2() + "[/color]. Lowers action points and initiative.";
+		return ::Legends.tooltip(this.Tooltip, [
+			["bonus1", _item.getRuneBonus1()],
+			["bonus2", _item.getRuneBonus2()]
+		]);
 	}
 	getRuneTooltip = function (_item) {
-		local max1 = _item.isUpgraded() ? 3 : 2;
-		local max2 = _item.isUpgraded() ? 9 : 6;
-		return "This item has the power of the rune sigil of Poison:\n[color=%positive%]1 to " + max1 + "[/color] turn(s) of poison applied, with a strength of [color=%positive%]3 to " + max2 + "[/color]. Lowers action points and initiative.";
+		return ::Legends.tooltip(this.RuneTooltip, [
+			["max1", _item.isUpgraded() ? 3 : 2],
+			["max2", _item.isUpgraded() ? 9 : 6]
+		]);
 	}
 });
 
@@ -114,6 +166,14 @@
 	IconLarge = "rune_sigils/rune_stone_1.png",
 	Effect = ::Legends.Effect.LegendRswBleeding,
 	Script = "scripts/items/rune_sigils/legend_vala_inscription_token",
+	Tooltip = @"
+This item has the power of the rune sigil of Bleeding:
+[color=%damage%]%bonus1%[/color] bleed damage every turn for [color=%positive%]%bonus2%[/color] turn(s).
+	",
+	RuneTooltip = @"
+This item has the power of the rune sigil of Bleeding:
+[color=%damage%]3 to %max1%[/color] bleed damage every turn for [color=%positive%]1 to %max2%[/color] turn(s).
+	",
 	setRuneBonus = function(_item, _bonus) {
 		if (_bonus) {
 			_item.setRuneBonus1(::Math.rand(3, 9));
@@ -124,12 +184,16 @@
 		}
 	},
 	getTooltip = function(_item) {
-		return "This item has the power of the rune sigil of Bleeding:\n[color=%positive%]" + _item.getRuneBonus1() + "[/color] bleed damage every turn for [color=%positive%]" + _item.getRuneBonus2() + "[/color] turn(s).";
+		return ::Legends.tooltip(this.Tooltip, [
+			["bonus1", _item.getRuneBonus1()],
+			["bonus2", _item.getRuneBonus2()]
+		]);
 	}
 	getRuneTooltip = function (_item) {
-		local max1 = _item.isUpgraded() ? 9 : 6;
-		local max2 = _item.isUpgraded() ? 3 : 2;
-		return "This item has the power of the rune sigil of Bleeding:\n[color=%positive%]3 to " + max1 + "[/color] bleed damage every turn for [color=%positive%]1 to " + max2 + "[/color] turn(s).";
+		return ::Legends.tooltip(this.RuneTooltip, [
+			["max1", _item.isUpgraded() ? 9 : 6],
+			["max2", _item.isUpgraded() ? 3 : 2]
+		]);
 	}
 });
 
@@ -141,6 +205,14 @@
 	IconLarge = "rune_sigils/rune_stone_1.png",
 	Effect = ::Legends.Effect.LegendRswUnbreaking,
 	Script = "scripts/items/rune_sigils/legend_vala_inscription_token",
+	Tooltip = @"
+This item has the power of the rune sigil of Unbreaking:
+[color=%positive%]%bonus1%[/color] to [color=%positive%]%bonus2%[/color] durability restored on every kill.
+	",
+	RuneTooltip = @"
+This item has the power of the rune sigil of Unbreaking:
+[color=%positive%]1-%max1%[/color] to [color=%positive%]3-%max2%[/color] durability restored on every kill.
+	",
 	setRuneBonus = function(_item, _bonus) {
 		if (_bonus) {
 			_item.setRuneBonus1(::Math.rand(3, 9));
@@ -151,12 +223,16 @@
 		}
 	},
 	getTooltip = function(_item) {
-		return "This item has the power of the rune sigil of Unbreaking:\n[color=%positive%]" + _item.getRuneBonus1() + "[/color] to [color=%positive%]" + _item.getRuneBonus2() + "[/color] durability restored on every kill.";
+		return ::Legends.tooltip(this.Tooltip, [
+			["bonus1", _item.getRuneBonus1()],
+			["bonus2", _item.getRuneBonus2()]
+		]);
 	}
 	getRuneTooltip = function (_item) {
-		local max1 = _item.isUpgraded() ? 3 : 2;
-		local max2 = _item.isUpgraded() ? 9 : 6;
-		return "This item has the power of the rune sigil of Unbreaking:\n[color=%positive%]" + max1 + "[/color] to [color=%positive%]" + max2 + "[/color] durability restored on every kill.";
+		return ::Legends.tooltip(this.RuneTooltip, [
+			["max1", _item.isUpgraded() ? 3 : 2],
+			["max2", _item.isUpgraded() ? 9 : 6]
+		]);
 	}
 });
 
@@ -168,6 +244,14 @@
 	IconLarge = "rune_sigils/rune_stone_1.png",
 	Effect = ::Legends.Effect.LegendRswBlazing,
 	Script = "scripts/items/rune_sigils/legend_vala_inscription_token",
+	Tooltip = @"
+This item has the power of the rune sigil of Blazing:
+On hit sets tile on fire causing [color=%damage%]%bonus1%[/color] Damage for [color=%positive%]%bonus2%[/color] turn(s) to anyone standing on it.
+	",
+	RuneTooltip = @"
+This item has the power of the rune sigil of Blazing:
+On hit sets tile on fire causing [color=%damage%]3[/color] to [color=%damage%]%max1%[/color] Damage for [color=%positive%]%max2%[/color] turn(s) to anyone standing on it.
+	",
 	setRuneBonus = function(_item, _bonus) {
 		if (_bonus) {
 			_item.setRuneBonus1(::Math.rand(3, 10));
@@ -178,11 +262,15 @@
 		}
 	},
 	getTooltip = function(_item) {
-		return "This item has the power of the rune sigil of Blazing:\nOn hit sets tile on fire causing [color=%damage%]" + _item.getRuneBonus1() + "[/color] Damage for [color=%positive%]" + _item.getRuneBonus2() + "[/color] turns to anyone standing on it.";
+		return ::Legends.tooltip(this.Tooltip, [
+			["bonus1", _item.getRuneBonus1()],
+			["bonus2", _item.getRuneBonus2()]
+		]);
 	}
 	getRuneTooltip = function (_item) {
-		local max1 = _item.isUpgraded() ? 9 : 6;
-		local max2 = _item.isUpgraded() ? 3 : 2;
-		return "This item has the power of the rune sigil of Blazing:\nOn hit sets tile on fire causing [color=%damage%]3[/color] to [color=%damage%]" + max1 + "[/color] for [color=%positive%]1[/color] to [color=%positive%]" + max2 + "[/color] turns to anyone standing on it.";
+		return ::Legends.tooltip(this.RuneTooltip, [
+			["max1", _item.isUpgraded() ? 10 : 6],
+			["max2", _item.isUpgraded() ? 3 : 2]
+		]);
 	}
 });
