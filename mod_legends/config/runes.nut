@@ -14,6 +14,8 @@
 		return id;
 	}
 	get = function(_const) {
-		return ::Legends.Runes.Defs[_const];
+		if (_const in ::Legends.Runes.Defs)
+			return ::Legends.Runes.Defs[_const];
+		return null;
 	}
 };

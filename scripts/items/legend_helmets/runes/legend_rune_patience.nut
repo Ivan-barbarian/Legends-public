@@ -21,33 +21,5 @@ this.legend_rune_patience <- this.inherit("scripts/items/legend_helmets/legend_h
 	function updateVariant()
 	{
 	}
-
-	function getTooltip()
-	{
-		local rune = ::Legends.Runes.get(this.getRuneVariant());
-		local result = this.legend_helmet_upgrade.getTooltip();
-		if (rune != null) {
-			result.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = rune.getTooltip(this)
-			});
-		}
-		return result;
-	}
-
-	function onArmorTooltip( _result )
-	{
-		local rune = ::Legends.Runes.get(this.getRuneVariant());
-		if (rune != null) {
-			_result.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = rune.getTooltip(this)
-			});
-		}
-	}
 });
 

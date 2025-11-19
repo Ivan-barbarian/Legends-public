@@ -21,28 +21,6 @@ this.legend_rune_resilience <- this.inherit("scripts/items/legend_armor/legend_a
 		this.m.Value = 1200;
 	}
 
-	function getTooltip()
-	{
-		local result = this.legend_armor_upgrade.getTooltip();
-		result.push({
-			id = 7,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "This item has the power of the rune sigil of Resilience:\n[color=%positive%]Immune[/color] to stuns, knockbacks and grabs."
-		});
-		return result;
-	}
-
-	function onArmorTooltip( _result )
-	{
-		_result.push({
-			id = 7,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "This item has the power of the rune sigil of Resilience:\n[color=%positive%]Immune[/color] to stuns, knockbacks and grabs."
-		});
-	}
-
 	function onDamageReceived( _damage, _fatalityType, _attacker )
 	{
 		return _damage;

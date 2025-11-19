@@ -292,6 +292,16 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 			text = "Hold Left-Shift and Left-Click this layer square to toggle it hidden on this character (stats & other benefits will not be affected)."
 		});
 
+		local rune = ::Legends.Runes.get(this.getRuneVariant());
+		if (rune != null) {
+			result.push({
+				id = 77,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = rune.getTooltip(this)
+			});
+		}
+
 		return result;
 	}
 
@@ -328,6 +338,15 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 				});
 			}
 
+			local rune = ::Legends.Runes.get(this.getRuneVariant());
+			if (rune != null) {
+				_result.push({
+					id = 77,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = rune.getTooltip(this)
+				});
+			}
 		}
 		this.onArmorTooltip(_result);
 	}

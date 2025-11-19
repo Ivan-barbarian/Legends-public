@@ -23,28 +23,6 @@ this.legend_rune_safety <- this.inherit("scripts/items/legend_armor/legend_armor
 		this.setRuneBonus(false); // false = unupgraded enchanter stats. true = upgraded enchanter stats
 	}
 
-	function getTooltip()
-	{
-		local result = this.legend_armor_upgrade.getTooltip();
-		result.push({
-			id = 7,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "This item has the power of the rune sigil of Safety:\n[color=%positive%]+" + this.getRuneBonus1() + "%[/color] Hitpoints.\n[color=%positive%]-" + this.getRuneBonus2() + "%[/color] Damage received."
-		});
-		return result;
-	}
-
-	function onArmorTooltip( _result )
-	{
-		_result.push({
-			id = 7,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "This item has the power of the rune sigil of Safety:\n[color=%positive%]+" + this.getRuneBonus1() + "%[/color] Hitpoints.\n[color=%positive%]-" + this.getRuneBonus2() + "%[/color] Damage received."
-		});
-	}
-
 	function onDamageReceived( _damage, _fatalityType, _attacker )
 	{
 		return _damage;

@@ -21,27 +21,5 @@ this.legend_rune_luck <- this.inherit("scripts/items/legend_helmets/legend_helme
 	function updateVariant()
 	{
 	}
-
-	function getTooltip()
-	{
-		local result = this.legend_helmet_upgrade.getTooltip();
-		result.push({
-			id = 7,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "This item has the power of the rune sigil of Luck:\n[color=%positive%]+" + this.getRuneBonus1() + "%[/color] chance to have any attacker require two successful attack rolls in order to hit."
-		});
-		return result;
-	}
-
-	function onArmorTooltip( _result )
-	{
-		_result.push({
-			id = 7,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "This item has the power of the rune sigil of Luck:\n[color=%positive%]+" + this.getRuneBonus1() + "%[/color] chance to have any attacker require two successful attack rolls in order to hit."
-		});
-	}
 });
 
