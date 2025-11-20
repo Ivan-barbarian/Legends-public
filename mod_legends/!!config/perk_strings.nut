@@ -379,7 +379,7 @@ Hold your ground!
 Early bird gets the worm!
 
 [color=%passive%][u]Passive:[/u][/color]
-• Gain [color=%positive%]20%[/color] Damage and [color=%positive%]+50%[/color] Threshold to inflict injury on enemies with full hitpoints.
+• Gain [color=%positive%]20%[/color] Damage and Lowers the threshold to inflict [color=%status%]Injuries[/color] by [color=%negative%]50%[/color] for both melee and ranged attacks on enemies with full hitpoints.
 ";
 
 ::Const.Strings.PerkDescription.LegendBallistics <- @"
