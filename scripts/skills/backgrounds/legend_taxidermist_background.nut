@@ -42,31 +42,31 @@ this.legend_taxidermist_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[2];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.DaggerTree,
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.CleaverTree,
-				this.Const.Perks.ThrowingTree
+				::Const.Perks.DaggerTree,
+				::Const.Perks.SwordTree,
+				::Const.Perks.CleaverTree,
+				::Const.Perks.ThrowingTree
 			],
 			Defense = [
-				this.Const.Perks.ClothArmorTree,
-				this.Const.Perks.MediumArmorTree
+				::Const.Perks.ClothArmorTree,
+				::Const.Perks.MediumArmorTree
 			],
 			Traits = [
-				this.Const.Perks.OrganisedTree,
-				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.FastTree,
-				this.Const.Perks.ViciousTree
+				::Const.Perks.OrganisedTree,
+				::Const.Perks.IntelligentTree,
+				::Const.Perks.FastTree,
+				::Const.Perks.ViciousTree
 			],
 			Enemy = [
-				this.Const.Perks.BeastTree,
-				this.Const.Perks.OccultTree
+				::Const.Perks.BeastTree,
+				::Const.Perks.OccultTree
 			],
 			Profession = [
-				this.Const.Perks.WoodworkingProfessionTree,
-				this.Const.Perks.RepairProfessionTree
+				::Const.Perks.WoodworkingProfessionTree,
+				::Const.Perks.RepairProfessionTree
 			],
 			Class = [
-				this.Const.Perks.TailorClassTree
+				::Const.Perks.TailorClassTree
 			],
 			Magic = []
 		}

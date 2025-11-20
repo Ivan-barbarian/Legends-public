@@ -40,7 +40,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		::Legends.Traits.grant(bros[0], ::Legends.Trait.LegendNobleKiller);
 		::Legends.Effects.grant(bros[0], ::Legends.Effect.Drunk);
 		this.addScenarioPerk(bros[0].getBackground(), ::Legends.Perk.LegendTacticalManeuvers);
-		this.addScenarioPerk(bros[0].getBackground(), this.Const.Perks.PerkDefs.RallyTheTroops);
+		this.addScenarioPerk(bros[0].getBackground(), ::Const.Perks.PerkDefs.RallyTheTroops);
 
 		// End Noble Commander Create
 		// Noble Shield 1 Create

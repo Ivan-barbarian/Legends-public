@@ -78,35 +78,35 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 		];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.BowTree,
-				this.Const.Perks.SlingTree,
-				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.DaggerTree
+				::Const.Perks.CrossbowTree,
+				::Const.Perks.BowTree,
+				::Const.Perks.SlingTree,
+				::Const.Perks.ThrowingTree,
+				::Const.Perks.DaggerTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree,
-				this.Const.Perks.MediumArmorTree
+				::Const.Perks.LightArmorTree,
+				::Const.Perks.MediumArmorTree
 			],
 			Traits = [
-				this.Const.Perks.ViciousTree,
-				this.Const.Perks.FastTree,
-				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.FitTree,
-				this.Const.Perks.AgileTree
+				::Const.Perks.ViciousTree,
+				::Const.Perks.FastTree,
+				::Const.Perks.IntelligentTree,
+				::Const.Perks.FitTree,
+				::Const.Perks.AgileTree
 			],
 			Enemy = [
-				this.Const.Perks.BeastTree,
-				this.Const.Perks.OccultTree,
+				::Const.Perks.BeastTree,
+				::Const.Perks.OccultTree,
 			],
 			Class = [
-				this.Const.Perks.BeastClassTree,
-				this.Const.Perks.SharpshooterClassTree
+				::Const.Perks.BeastClassTree,
+				::Const.Perks.SharpshooterClassTree
 			],
 			Profession = [],
 			Magic = [
-				this.Const.Perks.RangerHuntMagicTree,
-				this.Const.Perks.MasterArcherTree
+				::Const.Perks.RangerHuntMagicTree,
+				::Const.Perks.MasterArcherTree
 			]
 		};
 	}

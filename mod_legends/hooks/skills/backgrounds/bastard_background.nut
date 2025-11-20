@@ -39,22 +39,22 @@
 		this.m.PerkTreeDynamicMins.Defense = 3;
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.AxeTree,
-				this.Const.Perks.ShieldTree,
-				this.Const.Perks.CrossbowTree
+				::Const.Perks.SwordTree,
+				::Const.Perks.AxeTree,
+				::Const.Perks.ShieldTree,
+				::Const.Perks.CrossbowTree
 			],
 			Defense = [
-				this.Const.Perks.HeavyArmorTree
+				::Const.Perks.HeavyArmorTree
 			],
 			Traits = [
-				this.Const.Perks.ViciousTree,
-				this.Const.Perks.IndestructibleTree,
-				this.Const.Perks.TrainedTree,
-				this.Const.Perks.LargeTree
+				::Const.Perks.ViciousTree,
+				::Const.Perks.IndestructibleTree,
+				::Const.Perks.TrainedTree,
+				::Const.Perks.LargeTree
 			],
 			Enemy = [
-				this.Const.Perks.CivilizationTree
+				::Const.Perks.CivilizationTree
 			],
 			Class = [],
 			Profession = [],

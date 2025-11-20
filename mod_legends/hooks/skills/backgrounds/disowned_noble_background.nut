@@ -40,22 +40,22 @@
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[2];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.DaggerTree,
-				this.Const.Perks.SpearTree,
-				this.Const.Perks.CrossbowTree
+				::Const.Perks.SwordTree,
+				::Const.Perks.DaggerTree,
+				::Const.Perks.SpearTree,
+				::Const.Perks.CrossbowTree
 			],
 			Defense = [
-				this.Const.Perks.HeavyArmorTree
+				::Const.Perks.HeavyArmorTree
 			],
 			Traits = [
-				this.Const.Perks.ViciousTree,
-				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.TrainedTree,
-				this.Const.Perks.MartyrTree
+				::Const.Perks.ViciousTree,
+				::Const.Perks.IntelligentTree,
+				::Const.Perks.TrainedTree,
+				::Const.Perks.MartyrTree
 			],
 			Enemy = [
-				this.Const.Perks.CivilizationTree
+				::Const.Perks.CivilizationTree
 			],
 			Class = [],
 			Profession = [],
@@ -85,22 +85,22 @@
 
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.DaggerTree,
-				this.Const.Perks.BowTree
+				::Const.Perks.CrossbowTree,
+				::Const.Perks.SwordTree,
+				::Const.Perks.DaggerTree,
+				::Const.Perks.BowTree
 			],
 			Defense = [
-				this.Const.Perks.HeavyArmorTree
+				::Const.Perks.HeavyArmorTree
 			],
 			Traits = [
-				this.Const.Perks.ViciousTree,
-				this.Const.Perks.FastTree,
-				this.Const.Perks.AgileTree,
-				this.Const.Perks.TrainedTree
+				::Const.Perks.ViciousTree,
+				::Const.Perks.FastTree,
+				::Const.Perks.AgileTree,
+				::Const.Perks.TrainedTree
 			],
 			Enemy = [
-				this.Const.Perks.OutlawTree
+				::Const.Perks.OutlawTree
 			],
 			Class = [],
 			Magic = []

@@ -46,29 +46,29 @@ this.legend_battle_sister_background <- this.inherit("scripts/skills/backgrounds
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.FlailTree,
-				this.Const.Perks.CleaverTree,
-				this.Const.Perks.AxeTree,
-				this.Const.Perks.MaceTree,
-				this.Const.Perks.ShieldTree,
-				this.Const.Perks.HammerTree
+				::Const.Perks.FlailTree,
+				::Const.Perks.CleaverTree,
+				::Const.Perks.AxeTree,
+				::Const.Perks.MaceTree,
+				::Const.Perks.ShieldTree,
+				::Const.Perks.HammerTree
 			],
 			Defense = [
-				this.Const.Perks.HeavyArmorTree
+				::Const.Perks.HeavyArmorTree
 			],
 			Traits = [
-				this.Const.Perks.MartyrTree,
-				this.Const.Perks.TrainedTree,
-				this.Const.Perks.IndestructibleTree,
-				this.Const.Perks.ViciousTree,
-				this.Const.Perks.FitTree,
-				this.Const.Perks.SturdyTree
+				::Const.Perks.MartyrTree,
+				::Const.Perks.TrainedTree,
+				::Const.Perks.IndestructibleTree,
+				::Const.Perks.ViciousTree,
+				::Const.Perks.FitTree,
+				::Const.Perks.SturdyTree
 			],
 			Enemy = [
-				this.Const.Perks.UndeadTree
+				::Const.Perks.UndeadTree
 			],
 			Class = [
-				this.Const.Perks.FaithClassTree
+				::Const.Perks.FaithClassTree
 			],
 			Profession = [],
 			Magic = []

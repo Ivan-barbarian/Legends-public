@@ -54,24 +54,24 @@
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.DaggerTree,
-				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.PolearmTree
+				::Const.Perks.DaggerTree,
+				::Const.Perks.ThrowingTree,
+				::Const.Perks.PolearmTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				::Const.Perks.LightArmorTree
 			],
 			Traits = [
-				this.Const.Perks.DeviousTree,
-				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.CalmTree,
-				this.Const.Perks.FastTree
+				::Const.Perks.DeviousTree,
+				::Const.Perks.IntelligentTree,
+				::Const.Perks.CalmTree,
+				::Const.Perks.FastTree
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.ConArtistTree
+				::Const.Perks.ConArtistTree
 			],
-			Profession = [], 
+			Profession = [],
 			Magic = []
 		}
 	}

@@ -44,34 +44,34 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Level = 2;
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.PolearmTree
+				::Const.Perks.PolearmTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree,
-				this.Const.Perks.ClothArmorTree
+				::Const.Perks.LightArmorTree,
+				::Const.Perks.ClothArmorTree
 			],
 			Traits = [
-				this.Const.Perks.SturdyTree,
-				this.Const.Perks.InspirationalTree,
-				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.CalmTree,
-				this.Const.Perks.IndestructibleTree
+				::Const.Perks.SturdyTree,
+				::Const.Perks.InspirationalTree,
+				::Const.Perks.IntelligentTree,
+				::Const.Perks.CalmTree,
+				::Const.Perks.IndestructibleTree
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.StaffClassTree,
-				this.Const.Perks.HealerClassTree
+				::Const.Perks.StaffClassTree,
+				::Const.Perks.HealerClassTree
 			],
 			Profession = [
-				this.Const.Perks.HealerProfessionTree,
-				this.Const.Perks.ChefProfessionTree,
-				this.Const.Perks.HerbalistProfessionTree
+				::Const.Perks.HealerProfessionTree,
+				::Const.Perks.ChefProfessionTree,
+				::Const.Perks.HerbalistProfessionTree
 			],
 			Magic = [
-				this.Const.Perks.ValaChantMagicTree,
-				this.Const.Perks.ValaTranceMagicTree,
-				this.Const.Perks.ValaSpiritMagicTree,
-				this.Const.Perks.StavesMagicTree
+				::Const.Perks.ValaChantMagicTree,
+				::Const.Perks.ValaTranceMagicTree,
+				::Const.Perks.ValaSpiritMagicTree,
+				::Const.Perks.StavesMagicTree
 			]
 		};
 		this.m.CustomPerkTree = [

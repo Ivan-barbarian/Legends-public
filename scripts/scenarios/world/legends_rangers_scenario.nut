@@ -44,8 +44,8 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		]);
 		bros[0].getBackground().m.RawDescription = "{%name% grew up in the rangers and was taught the ways of the forest by veteran foresters. Running through the woods for a lifetime has made %name% particularly good at tracking enemies, or tumbling into the homes of wild druids trying to escape from the modern world}";
 		::Legends.Traits.grant(bros[0], ::Legends.Trait.Player);
-		this.addScenarioPerk(bros[0].getBackground(), this.Const.Perks.PerkDefs.Pathfinder);
-		this.addScenarioPerk(bros[0].getBackground(), this.Const.Perks.PerkDefs.LegendTacticalManeuvers);
+		this.addScenarioPerk(bros[0].getBackground(), ::Const.Perks.PerkDefs.Pathfinder);
+		this.addScenarioPerk(bros[0].getBackground(), ::Const.Perks.PerkDefs.LegendTacticalManeuvers);
 		bros[0].improveMood(1.5, "Narrowly escaped a bear");
 		bros[0].addLightInjury();
 		bros[0].getFlags().set("IsPlayerCharacter", true);
@@ -58,8 +58,8 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		bros[1].getBackground().m.RawDescription = "{%name% was the bastard of a noblewoman who left them in a ditch at the edge of the forest to be taken by wolves. It worked, but instead left %name% being cared for by a wolfmother with no cubs of her own. When the she-wolf was slain by vengeful poachers %name% took it upon themselves to be as far away from society as possible. Right up until a certain ranger fell headfirst into their hovel}";
 
 		::Legends.Traits.grant(bros[1], ::Legends.Trait.Player);
-		this.addScenarioPerk(bros[1].getBackground(), this.Const.Perks.PerkDefs.Pathfinder);
-		this.addScenarioPerk(bros[1].getBackground(), this.Const.Perks.PerkDefs.LegendTacticalManeuvers);
+		this.addScenarioPerk(bros[1].getBackground(), ::Const.Perks.PerkDefs.Pathfinder);
+		this.addScenarioPerk(bros[1].getBackground(), ::Const.Perks.PerkDefs.LegendTacticalManeuvers);
 		bros[1].worsenMood(1.5, "Had my home destroyed by an idiot");
 		bros[1].getFlags().set("IsPlayerCharacter", true);
 		bros[1].setPlaceInFormation(4);
@@ -226,7 +226,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 
 	function onBuildPerkTree( _background )
 	{
-		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.Pathfinder, 0, _background.isBackgroundType(this.Const.BackgroundType.Druid) || _background.isBackgroundType(this.Const.BackgroundType.Ranger));
+		this.addScenarioPerk(_background, ::Const.Perks.PerkDefs.Pathfinder, 0, _background.isBackgroundType(this.Const.BackgroundType.Druid) || _background.isBackgroundType(this.Const.BackgroundType.Ranger));
 	}
 });
 

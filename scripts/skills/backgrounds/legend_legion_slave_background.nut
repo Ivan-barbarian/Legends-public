@@ -57,27 +57,27 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 			];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.DaggerTree,
-				this.Const.Perks.SpearTree,
-				this.Const.Perks.ShieldTree,
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.SlingTree,
-				this.Const.Perks.CleaverTree
+				::Const.Perks.DaggerTree,
+				::Const.Perks.SpearTree,
+				::Const.Perks.ShieldTree,
+				::Const.Perks.SwordTree,
+				::Const.Perks.ThrowingTree,
+				::Const.Perks.SlingTree,
+				::Const.Perks.CleaverTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree,
-				this.Const.Perks.ClothArmorTree
+				::Const.Perks.LightArmorTree,
+				::Const.Perks.ClothArmorTree
 			],
 			Traits = [
-				this.Const.Perks.TrainedTree,
-				this.Const.Perks.DeviousTree,
-				this.Const.Perks.ViciousTree
+				::Const.Perks.TrainedTree,
+				::Const.Perks.DeviousTree,
+				::Const.Perks.ViciousTree
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.BeastClassTree,
-				this.Const.Perks.SlingClassTree
+				::Const.Perks.BeastClassTree,
+				::Const.Perks.SlingClassTree
 			],
 			Profession = [],
 			Magic = []

@@ -53,27 +53,27 @@
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.DaggerTree,
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.SpearTree,
-				this.Const.Perks.ThrowingTree
+				::Const.Perks.DaggerTree,
+				::Const.Perks.SwordTree,
+				::Const.Perks.SpearTree,
+				::Const.Perks.ThrowingTree
 			],
 			Defense = [
-				this.Const.Perks.ClothArmorTree
+				::Const.Perks.ClothArmorTree
 			],
 			Traits = [
-				this.Const.Perks.CalmTree,
-				this.Const.Perks.OrganisedTree,
-				this.Const.Perks.FastTree,
-				this.Const.Perks.ViciousTree
+				::Const.Perks.CalmTree,
+				::Const.Perks.OrganisedTree,
+				::Const.Perks.FastTree,
+				::Const.Perks.ViciousTree
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.TailorClassTree
+				::Const.Perks.TailorClassTree
 			],
 			Profession = [
-				this.Const.Perks.RepairProfessionTree
-			], 
+				::Const.Perks.RepairProfessionTree
+			],
 			Magic = []
 		}
 	}

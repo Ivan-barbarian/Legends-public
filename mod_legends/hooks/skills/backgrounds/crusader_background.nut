@@ -70,33 +70,33 @@
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.ShieldTree,
-				this.Const.Perks.TwoHandedTree,
-				this.Const.Perks.FlailTree,
-				this.Const.Perks.HammerTree,
-				this.Const.Perks.MaceTree,
-				this.Const.Perks.CrossbowTree
+				::Const.Perks.SwordTree,
+				::Const.Perks.ShieldTree,
+				::Const.Perks.TwoHandedTree,
+				::Const.Perks.FlailTree,
+				::Const.Perks.HammerTree,
+				::Const.Perks.MaceTree,
+				::Const.Perks.CrossbowTree
 			],
 			Defense = [
-				this.Const.Perks.HeavyArmorTree
+				::Const.Perks.HeavyArmorTree
 			],
 			Traits = [
-				this.Const.Perks.TrainedTree,
-				this.Const.Perks.LargeTree,
-				this.Const.Perks.IndestructibleTree,
-				this.Const.Perks.MartyrTree,
-				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.InspirationalTree,
-				this.Const.Perks.FitTree
+				::Const.Perks.TrainedTree,
+				::Const.Perks.LargeTree,
+				::Const.Perks.IndestructibleTree,
+				::Const.Perks.MartyrTree,
+				::Const.Perks.IntelligentTree,
+				::Const.Perks.InspirationalTree,
+				::Const.Perks.FitTree
 			],
 			Enemy = [
-				this.Const.Perks.UndeadTree
+				::Const.Perks.UndeadTree
 			],
 			Class = [],
 			Profession = [],
 			Magic = [
-				this.Const.Perks.FaithClassTree
+				::Const.Perks.FaithClassTree
 			]
 		}
 	}

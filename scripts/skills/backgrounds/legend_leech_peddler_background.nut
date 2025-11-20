@@ -66,30 +66,30 @@ this.legend_leech_peddler_background <- this.inherit("scripts/skills/backgrounds
 			];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.PolearmTree,
-				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.CrossbowTree
+				::Const.Perks.SwordTree,
+				::Const.Perks.PolearmTree,
+				::Const.Perks.ThrowingTree,
+				::Const.Perks.CrossbowTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				::Const.Perks.LightArmorTree
 			],
 			Traits = [
-				this.Const.Perks.FitTree,
-				this.Const.Perks.OrganisedTree,
-				this.Const.Perks.AgileTree,
-				this.Const.Perks.CalmTree
+				::Const.Perks.FitTree,
+				::Const.Perks.OrganisedTree,
+				::Const.Perks.AgileTree,
+				::Const.Perks.CalmTree
 			],
 			Enemy = [
-				this.Const.Perks.BeastTree //lol, lmao.
+				::Const.Perks.BeastTree //lol, lmao.
 			],
 			Class = [
-				this.Const.Perks.SickleClassTree,
-				this.Const.Perks.HealerClassTree
+				::Const.Perks.SickleClassTree,
+				::Const.Perks.HealerClassTree
 			],
 			Profession = [
-				this.Const.Perks.HealerProfessionTree,
-				this.Const.Perks.HerbalistProfessionTree
+				::Const.Perks.HealerProfessionTree,
+				::Const.Perks.HerbalistProfessionTree
 			],
 			Magic = [
 			]

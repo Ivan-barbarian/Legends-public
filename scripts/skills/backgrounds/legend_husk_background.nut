@@ -71,28 +71,28 @@ this.legend_husk_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.CleaverTree,
-				this.Const.Perks.FlailTree,
+				::Const.Perks.CleaverTree,
+				::Const.Perks.FlailTree,
 				this.Const.Perk.MaceTree,
-				this.Const.Perks.AxeTree
+				::Const.Perks.AxeTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree,
-				this.Const.Perks.HeavyArmorTree
+				::Const.Perks.MediumArmorTree,
+				::Const.Perks.HeavyArmorTree
 			],
 			Traits = [
-				this.Const.Perks.MartyrTree,
-				this.Const.Perks.ViciousTree,
-				this.Const.Perks.FitTree,
-				this.Const.Perks.IndestructibleTree
+				::Const.Perks.MartyrTree,
+				::Const.Perks.ViciousTree,
+				::Const.Perks.FitTree,
+				::Const.Perks.IndestructibleTree
 			],
 			Enemy = [
-				this.Const.Perks.CivilizationTree,
-				this.Const.Perks.CivilizationTree
+				::Const.Perks.CivilizationTree,
+				::Const.Perks.CivilizationTree
 			],
 			Class = [
-				this.Const.Perks.BeastClassTree,
-				this.Const.Perks.NinetailsClassTree
+				::Const.Perks.BeastClassTree,
+				::Const.Perks.NinetailsClassTree
 			],
 			Profession = [],
 			Magic = []

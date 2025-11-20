@@ -23,9 +23,9 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		]); //skills on start
 		::Legends.Traits.grant(bro, ::Legends.Trait.Player);
 		::Legends.Traits.remove(bro, ::Legends.Trait.Loyal);
-		this.addScenarioPerk(bro.getBackground(), this.Const.Perks.PerkDefs.FortifiedMind);
-		this.addScenarioPerk(bro.getBackground(), this.Const.Perks.PerkDefs.LegendRebound);
-		this.addScenarioPerk(bro.getBackground(), this.Const.Perks.PerkDefs.LegendFavouredEnemyUndead);
+		this.addScenarioPerk(bro.getBackground(), ::Const.Perks.PerkDefs.FortifiedMind);
+		this.addScenarioPerk(bro.getBackground(), ::Const.Perks.PerkDefs.LegendRebound);
+		this.addScenarioPerk(bro.getBackground(), ::Const.Perks.PerkDefs.LegendFavouredEnemyUndead);
 		bro.m.PerkPointsSpent += 3;
 		bro.setPlaceInFormation(4);
 		bro.setVeteranPerks(2);
@@ -190,7 +190,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 
 	function onBuildPerkTree( _background )
 	{
-		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.FortifiedMind, 2, _background.isBackgroundType(this.Const.BackgroundType.Crusader));
+		this.addScenarioPerk(_background, ::Const.Perks.PerkDefs.FortifiedMind, 2, _background.isBackgroundType(this.Const.BackgroundType.Crusader));
 	}
 
 

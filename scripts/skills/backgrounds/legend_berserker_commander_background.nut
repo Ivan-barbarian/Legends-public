@@ -90,36 +90,36 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.MaceTree,
-				this.Const.Perks.FlailTree,
-				this.Const.Perks.HammerTree,
-				this.Const.Perks.AxeTree,
-				this.Const.Perks.CleaverTree,
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.TwoHandedTree,
-				this.Const.Perks.FistsTree
+				::Const.Perks.MaceTree,
+				::Const.Perks.FlailTree,
+				::Const.Perks.HammerTree,
+				::Const.Perks.AxeTree,
+				::Const.Perks.CleaverTree,
+				::Const.Perks.SwordTree,
+				::Const.Perks.ThrowingTree,
+				::Const.Perks.TwoHandedTree,
+				::Const.Perks.FistsTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree,
-				this.Const.Perks.HeavyArmorTree
+				::Const.Perks.LightArmorTree,
+				::Const.Perks.HeavyArmorTree
 			],
 			Traits = [
-				this.Const.Perks.SturdyTree,
-				this.Const.Perks.IndestructibleTree,
-				this.Const.Perks.ViciousTree,
-				this.Const.Perks.LargeTree,
-				this.Const.Perks.MartyrTree,
-				this.Const.Perks.AgileTree,
-				this.Const.Perks.FitTree
+				::Const.Perks.SturdyTree,
+				::Const.Perks.IndestructibleTree,
+				::Const.Perks.ViciousTree,
+				::Const.Perks.LargeTree,
+				::Const.Perks.MartyrTree,
+				::Const.Perks.AgileTree,
+				::Const.Perks.FitTree
 			],
 			Enemy = [
-				this.Const.Perks.OrcsTree,
-				this.Const.Perks.BeastTree
+				::Const.Perks.GreenskinTree,
+				::Const.Perks.BeastTree
 			],
 			Class = [],
 			Magic = [
-				this.Const.Perks.BerserkerMagicTree
+				::Const.Perks.BerserkerMagicTree
 			]
 		};
 		this.m.CustomPerkTree = [

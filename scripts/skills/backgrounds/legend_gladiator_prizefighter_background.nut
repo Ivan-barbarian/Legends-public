@@ -9,27 +9,27 @@ this.legend_gladiator_prizefighter_background <- this.inherit("scripts/skills/ba
 
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.MaceTree,
-				this.Const.Perks.DaggerTree,
-				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.FistsTree
+				::Const.Perks.SwordTree,
+				::Const.Perks.MaceTree,
+				::Const.Perks.DaggerTree,
+				::Const.Perks.ThrowingTree,
+				::Const.Perks.FistsTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree,
-				this.Const.Perks.MediumArmorTree
+				::Const.Perks.LightArmorTree,
+				::Const.Perks.MediumArmorTree
 			],
 			Traits = [
-				this.Const.Perks.ViciousTree,
-				this.Const.Perks.IndestructibleTree,
-				this.Const.Perks.AgileTree,
-				this.Const.Perks.LargeTree,
-				this.Const.Perks.FitTree,
-				this.Const.Perks.SturdyTree
+				::Const.Perks.ViciousTree,
+				::Const.Perks.IndestructibleTree,
+				::Const.Perks.AgileTree,
+				::Const.Perks.LargeTree,
+				::Const.Perks.FitTree,
+				::Const.Perks.SturdyTree
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.BeastClassTree
+				::Const.Perks.BeastClassTree
 			],
 			Profession = [],
 			Magic = []

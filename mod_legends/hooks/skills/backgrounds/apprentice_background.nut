@@ -49,20 +49,20 @@
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.HammerTree,
-				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.AxeTree,
-				this.Const.Perks.OneHandedTree
+				::Const.Perks.SwordTree,
+				::Const.Perks.HammerTree,
+				::Const.Perks.CrossbowTree,
+				::Const.Perks.AxeTree,
+				::Const.Perks.OneHandedTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree
+				::Const.Perks.MediumArmorTree
 			],
 			Traits = [
-				this.Const.Perks.IndestructibleTree,
-				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.TrainedTree,
-				this.Const.Perks.FastTree
+				::Const.Perks.IndestructibleTree,
+				::Const.Perks.IntelligentTree,
+				::Const.Perks.TrainedTree,
+				::Const.Perks.FastTree
 			],
 			Enemy = [],
 			Class = [],

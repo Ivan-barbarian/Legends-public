@@ -125,7 +125,7 @@
 
 		if (_addSkill && _background.getContainer() != null)
 		{
-			_background.getContainer().add(this.new(this.Const.Perks.PerkDefObjects[_perk].Script));
+			_background.getContainer().add(this.new(::Const.Perks.PerkDefObjects[_perk].Script));
 			isRefundable = false;
 		}
 

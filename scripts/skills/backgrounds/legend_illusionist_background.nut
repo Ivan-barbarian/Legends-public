@@ -51,29 +51,29 @@ this.legend_illusionist_background <- this.inherit("scripts/skills/backgrounds/c
 
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.DaggerTree,
-				this.Const.Perks.PolearmTree,
-				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.SpearTree
+				::Const.Perks.DaggerTree,
+				::Const.Perks.PolearmTree,
+				::Const.Perks.ThrowingTree,
+				::Const.Perks.SpearTree
 			],
 			Defense = [
-				this.Const.Perks.ClothArmorTree
+				::Const.Perks.ClothArmorTree
 			],
 			Traits = [
-				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.DeviousTree,
-				this.Const.Perks.FastTree,
-				this.Const.Perks.InspirationalTree
+				::Const.Perks.IntelligentTree,
+				::Const.Perks.DeviousTree,
+				::Const.Perks.FastTree,
+				::Const.Perks.InspirationalTree
 			],
 			Enemy = [
-				this.Const.Perks.OccultTree
+				::Const.Perks.OccultTree
 			],
 			Class = [],
 			Profession = [],
 			Magic = [
-				this.Const.Perks.IllusionistMagicTree,
-				this.Const.Perks.PremonitionMagicTree,
-				this.Const.Perks.StavesMagicTree
+				::Const.Perks.IllusionistMagicTree,
+				::Const.Perks.PremonitionMagicTree,
+				::Const.Perks.StavesMagicTree
 			]
 		}
 

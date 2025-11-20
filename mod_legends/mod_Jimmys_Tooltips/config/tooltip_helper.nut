@@ -172,7 +172,7 @@
 	patchedPerkIcons[this.Const.Strings.PerkName.BatteringRam] <- "ui/settlement_status/settlement_effect_13.png";
 	local getRealPerkIcon = function ( perk )
 	{
-		local realPerk = this.Const.Perks.findById(perk.getID());
+		local realPerk = ::Const.Perks.findById(perk.getID());
 
 		if (realPerk)
 		{

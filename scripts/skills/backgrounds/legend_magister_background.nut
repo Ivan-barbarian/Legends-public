@@ -66,31 +66,31 @@ this.legend_magister_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[2];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.CleaverTree,
-				this.Const.Perks.FlailTree,
-				this.Const.Perks.SlingTree,
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.PolearmTree
+				::Const.Perks.CleaverTree,
+				::Const.Perks.FlailTree,
+				::Const.Perks.SlingTree,
+				::Const.Perks.SwordTree,
+				::Const.Perks.PolearmTree
 			],
 			Defense = [
 				this.Const.Perk.ClothArmorTree
 			],
 			Traits = [
-				this.Const.Perks.CalmTree,
-				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.InspirationalTree
+				::Const.Perks.CalmTree,
+				::Const.Perks.IntelligentTree,
+				::Const.Perks.InspirationalTree
 			],
 			Enemy = [
-				this.Const.Perks.CivilizationTree,
-				this.Const.Perks.CivilizationTree
+				::Const.Perks.CivilizationTree,
+				::Const.Perks.CivilizationTree
 			],
 			Class = [
-				this.Const.Perks.NinetailsClassTree,
-				this.Const.Perks.SickleClassTree,
+				::Const.Perks.NinetailsClassTree,
+				::Const.Perks.SickleClassTree,
 			],
 			Profession = [
-				this.Const.Perks.HealerProfessionTree,
-				this.Const.Perks.HerbalistProfessionTree
+				::Const.Perks.HealerProfessionTree,
+				::Const.Perks.HerbalistProfessionTree
 			],
 			Magic = []
 		}

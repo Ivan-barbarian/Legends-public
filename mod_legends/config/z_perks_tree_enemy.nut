@@ -12,29 +12,10 @@ if (!("Perks" in ::Const))
 	Tree = [
 		[],
 		[],
-		[
-		::Legends.Perk.LegendFavouredEnemyBeast
-		],
+		[::Legends.Perk.LegendFavouredEnemyBeast],
 		[],
 		[],
 		[],
-		[]
-	]
-};
-
-::Const.Perks.MysticTree <- { // this may no longer be needed
-	ID = "MysticTree",
-	Name = "Mystics",
-	Descriptions = [
-		"mystics"
-	],
-	Tree = [
-		[],
-		[],
-		[],
-		[],
-		[],
-		[::Legends.Perk.LegendFavouredEnemyOccult],
 		[]
 	]
 };
@@ -120,9 +101,7 @@ if (!("Perks" in ::Const))
 		[],
 		[],
 		[],
-		[
-		 ::Legends.Perk.LegendFavouredEnemyOutlaw,
-		],
+		[::Legends.Perk.LegendFavouredEnemyOutlaw],
 		[],
 		[]
 	]

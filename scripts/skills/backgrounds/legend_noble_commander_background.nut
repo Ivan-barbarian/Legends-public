@@ -71,33 +71,33 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.DaggerTree,
-				this.Const.Perks.PolearmTree,
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.MaceTree,
-				this.Const.Perks.CrossbowTree
+				::Const.Perks.DaggerTree,
+				::Const.Perks.PolearmTree,
+				::Const.Perks.SwordTree,
+				::Const.Perks.MaceTree,
+				::Const.Perks.CrossbowTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree
+				::Const.Perks.MediumArmorTree
 			],
 			Traits = [
-				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.ViciousTree,
-				this.Const.Perks.CalmTree,
-				this.Const.Perks.TrainedTree,
-				this.Const.Perks.FitTree,
-				this.Const.Perks.InspirationalTree
+				::Const.Perks.IntelligentTree,
+				::Const.Perks.ViciousTree,
+				::Const.Perks.CalmTree,
+				::Const.Perks.TrainedTree,
+				::Const.Perks.FitTree,
+				::Const.Perks.InspirationalTree
 			],
 			Enemy = [
-				this.Const.Perks.OutlawTree,
-				this.Const.Perks.CivilizationTree
+				::Const.Perks.OutlawTree,
+				::Const.Perks.CivilizationTree
 			],
 			Class = [],
 			Profession = [
-				this.Const.Perks.BarterProfessionTree
+				::Const.Perks.BarterProfessionTree
 			],
 			Magic = [
-				this.Const.Perks.CaptainMagicTree
+				::Const.Perks.CaptainMagicTree
 			]
 		}
 	}

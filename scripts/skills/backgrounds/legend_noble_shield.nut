@@ -60,19 +60,19 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.PerkTreeDynamicMins.Defense = 3;
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.SpearTree,
-				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.ShieldTree,
-				this.Const.Perks.OneHandedTree
+				::Const.Perks.SpearTree,
+				::Const.Perks.ThrowingTree,
+				::Const.Perks.ShieldTree,
+				::Const.Perks.OneHandedTree
 			],
 			Defense = [
-				this.Const.Perks.HeavyArmorTree
+				::Const.Perks.HeavyArmorTree
 			],
 			Traits = [
-				this.Const.Perks.FastTree,
-				this.Const.Perks.TrainedTree,
-				this.Const.Perks.SturdyTree,
-				this.Const.Perks.IndestructibleTree
+				::Const.Perks.FastTree,
+				::Const.Perks.TrainedTree,
+				::Const.Perks.SturdyTree,
+				::Const.Perks.IndestructibleTree
 			],
 			Enemy = [],
 			Class = [],

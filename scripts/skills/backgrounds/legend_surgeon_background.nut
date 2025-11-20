@@ -80,28 +80,28 @@ this.legend_surgeon_background <- this.inherit("scripts/skills/backgrounds/chara
 
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.CleaverTree,
-				this.Const.Perks.SpearTree,
-				this.Const.Perks.DaggerTree,
-				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.SlingTree,
-				this.Const.Perks.ThrowingTree
+				::Const.Perks.CleaverTree,
+				::Const.Perks.SpearTree,
+				::Const.Perks.DaggerTree,
+				::Const.Perks.CrossbowTree,
+				::Const.Perks.SlingTree,
+				::Const.Perks.ThrowingTree
 			],
 			Defense = [
-				this.Const.Perks.ClothArmorTree
+				::Const.Perks.ClothArmorTree
 			],
 			Traits = [
-				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.CalmTree,
-				this.Const.Perks.FastTree,
-				this.Const.Perks.InspirationalTree
+				::Const.Perks.IntelligentTree,
+				::Const.Perks.CalmTree,
+				::Const.Perks.FastTree,
+				::Const.Perks.InspirationalTree
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.HealerClassTree
+				::Const.Perks.HealerClassTree
 			],
 			Profession = [
-				this.Const.Perks.HealerProfessionTree
+				::Const.Perks.HealerProfessionTree
 			],
 			Magic = []
 		}

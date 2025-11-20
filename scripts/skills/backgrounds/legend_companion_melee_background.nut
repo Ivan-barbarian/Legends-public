@@ -79,27 +79,27 @@ this.legend_companion_melee_background <- this.inherit("scripts/skills/backgroun
 
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.TwoHandedTree,
-				this.Const.Perks.PolearmTree,
-				this.Const.Perks.AxeTree,
-				this.Const.Perks.MaceTree,
-				this.Const.Perks.SpearTree,
-				this.Const.Perks.FlailTree,
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.HammerTree,
-				this.Const.Perks.ShieldTree
+				::Const.Perks.TwoHandedTree,
+				::Const.Perks.PolearmTree,
+				::Const.Perks.AxeTree,
+				::Const.Perks.MaceTree,
+				::Const.Perks.SpearTree,
+				::Const.Perks.FlailTree,
+				::Const.Perks.SwordTree,
+				::Const.Perks.HammerTree,
+				::Const.Perks.ShieldTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree,
-				this.Const.Perks.HeavyArmorTree
+				::Const.Perks.MediumArmorTree,
+				::Const.Perks.HeavyArmorTree
 			],
 			Traits = [
-				this.Const.Perks.TrainedTree,
-				this.Const.Perks.ViciousTree,
-				this.Const.Perks.LargeTree,
-				this.Const.Perks.IndestructibleTree,
-				this.Const.Perks.MartyrTree,
-				this.Const.Perks.FitTree
+				::Const.Perks.TrainedTree,
+				::Const.Perks.ViciousTree,
+				::Const.Perks.LargeTree,
+				::Const.Perks.IndestructibleTree,
+				::Const.Perks.MartyrTree,
+				::Const.Perks.FitTree
 			],
 			Enemy = [],
 			Class = [],

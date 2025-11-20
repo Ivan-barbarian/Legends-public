@@ -55,28 +55,28 @@
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.AxeTree,
-				this.Const.Perks.PolearmTree,
-				this.Const.Perks.TwoHandedTree,
-				this.Const.Perks.OneHandedTree,
-				this.Const.Perks.ThrowingTree
+				::Const.Perks.AxeTree,
+				::Const.Perks.PolearmTree,
+				::Const.Perks.TwoHandedTree,
+				::Const.Perks.OneHandedTree,
+				::Const.Perks.ThrowingTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree,
-				this.Const.Perks.HeavyArmorTree
+				::Const.Perks.MediumArmorTree,
+				::Const.Perks.HeavyArmorTree
 			],
 			Traits = [
-				this.Const.Perks.FitTree,
-				this.Const.Perks.LargeTree,
-				this.Const.Perks.TrainedTree,
-				this.Const.Perks.ViciousTree
+				::Const.Perks.FitTree,
+				::Const.Perks.LargeTree,
+				::Const.Perks.TrainedTree,
+				::Const.Perks.ViciousTree
 			],
 			Enemy = [
-				this.Const.Perks.CivilizationTree,
-				this.Const.Perks.OutlawTree
+				::Const.Perks.CivilizationTree,
+				::Const.Perks.OutlawTree
 			],
 			Class = [
-				this.Const.Perks.RaiderClassTree
+				::Const.Perks.RaiderClassTree
 			],
 			Profession = [],
 			Magic = []

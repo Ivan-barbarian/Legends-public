@@ -86,33 +86,33 @@ this.legend_bounty_hunter_background <- this.inherit("scripts/skills/backgrounds
 		];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.MaceTree,
-				this.Const.Perks.DaggerTree,
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.AxeTree,
-				this.Const.Perks.CleaverTree,
-				this.Const.Perks.PolearmTree,
-				this.Const.Perks.ThrowingTree
+				::Const.Perks.MaceTree,
+				::Const.Perks.DaggerTree,
+				::Const.Perks.SwordTree,
+				::Const.Perks.AxeTree,
+				::Const.Perks.CleaverTree,
+				::Const.Perks.PolearmTree,
+				::Const.Perks.ThrowingTree
 			],
 			Defense = [
-				this.Const.Perks.HeavyArmorTree,
-				this.Const.Perks.MediumArmorTree
+				::Const.Perks.HeavyArmorTree,
+				::Const.Perks.MediumArmorTree
 			],
 			Traits = [
-				this.Const.Perks.ViciousTree,
-				this.Const.Perks.DeviousTree,
-				this.Const.Perks.CalmTree,
-				this.Const.Perks.AgileTree
+				::Const.Perks.ViciousTree,
+				::Const.Perks.DeviousTree,
+				::Const.Perks.CalmTree,
+				::Const.Perks.AgileTree
 			],
 			Enemy = [
-				this.Const.Perks.NomadsTree,
-				this.Const.Perks.SwordmastersTree,
-				this.Const.Perks.OutlawTree
+				::Const.Perks.CivilizationTree,
+				::Const.Perks.SwordmastersTree,
+				::Const.Perks.OutlawTree
 			],
 			Class = [],
 			Profession = [],
 			Magic = [
-				this.Const.Perks.AssassinMagicTree
+				::Const.Perks.AssassinMagicTree
 			]
 		}
 	}

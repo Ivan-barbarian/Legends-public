@@ -24,7 +24,7 @@
 	        if (i != null)
 	        	includedBaseArmor = m.ArmorFilter.Armor.remove(i) != null;
         }
-        
+
         if (hasHelmet) {
         	i = m.ArmorFilter.Helmet.find(-1);
 	        if (i != null)
@@ -295,7 +295,7 @@
 
 	o.convertPerksToUIData = function ()
 	{
-		return this.Const.Perks.PerksTreeTemplate;
+		return ::Const.Perks.PerksTreeTemplate;
 	}
 
 	local convertItemToUIData = o.convertItemToUIData;

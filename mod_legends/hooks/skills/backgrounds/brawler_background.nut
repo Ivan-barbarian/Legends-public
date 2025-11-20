@@ -46,19 +46,19 @@
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Ammo[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.DaggerTree,
-				this.Const.Perks.MaceTree,
-				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.FistsTree
+				::Const.Perks.DaggerTree,
+				::Const.Perks.MaceTree,
+				::Const.Perks.ThrowingTree,
+				::Const.Perks.FistsTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				::Const.Perks.LightArmorTree
 			],
 			Traits = [
-				this.Const.Perks.LargeTree,
-				this.Const.Perks.FitTree,
-				this.Const.Perks.FastTree,
-				this.Const.Perks.IndestructibleTree
+				::Const.Perks.LargeTree,
+				::Const.Perks.FitTree,
+				::Const.Perks.FastTree,
+				::Const.Perks.IndestructibleTree
 			],
 			Enemy = [],
 			Class = [],

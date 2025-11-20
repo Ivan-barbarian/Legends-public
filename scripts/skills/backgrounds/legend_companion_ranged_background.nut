@@ -79,29 +79,29 @@ this.legend_companion_ranged_background <- this.inherit("scripts/skills/backgrou
 
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.SpearTree,
-				this.Const.Perks.DaggerTree,
-				this.Const.Perks.BowTree,
-				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.AxeTree
+				::Const.Perks.SwordTree,
+				::Const.Perks.SpearTree,
+				::Const.Perks.DaggerTree,
+				::Const.Perks.BowTree,
+				::Const.Perks.ThrowingTree,
+				::Const.Perks.CrossbowTree,
+				::Const.Perks.AxeTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree,
-				this.Const.Perks.LightArmorTree
+				::Const.Perks.MediumArmorTree,
+				::Const.Perks.LightArmorTree
 			],
 			Traits = [
-				this.Const.Perks.AgileTree,
-				this.Const.Perks.FastTree,
-				this.Const.Perks.ViciousTree,
-				this.Const.Perks.FitTree,
-				this.Const.Perks.DeviousTree,
-				this.Const.Perks.TrainedTree
+				::Const.Perks.AgileTree,
+				::Const.Perks.FastTree,
+				::Const.Perks.ViciousTree,
+				::Const.Perks.FitTree,
+				::Const.Perks.DeviousTree,
+				::Const.Perks.TrainedTree
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.BeastClassTree
+				::Const.Perks.BeastClassTree
 			],
 			Profession = [],
 			Magic = []

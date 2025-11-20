@@ -86,32 +86,32 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		];
 	this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.FistsTree,
-				this.Const.Perks.PolearmTree,
-				this.Const.Perks.ThrowingTree
+				::Const.Perks.SwordTree,
+				::Const.Perks.FistsTree,
+				::Const.Perks.PolearmTree,
+				::Const.Perks.ThrowingTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				::Const.Perks.LightArmorTree
 			],
 			Traits = [
-				this.Const.Perks.SturdyTree,
-				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.LargeTree,
-				this.Const.Perks.FitTree
+				::Const.Perks.SturdyTree,
+				::Const.Perks.IntelligentTree,
+				::Const.Perks.LargeTree,
+				::Const.Perks.FitTree
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.HealerClassTree,
-				this.Const.Perks.SickleClassTree
+				::Const.Perks.HealerClassTree,
+				::Const.Perks.SickleClassTree
 			],
 			Profession = [
-				this.Const.Perks.HealerProfessionTree,
-				this.Const.Perks.HerbalistProfessionTree
+				::Const.Perks.HealerProfessionTree,
+				::Const.Perks.HerbalistProfessionTree
 			]
 			Magic = [
-				this.Const.Perks.DruidMagicTree,
-				this.Const.Perks.StavesMagicTree
+				::Const.Perks.DruidMagicTree,
+				::Const.Perks.StavesMagicTree
 			]
 		}
 	}

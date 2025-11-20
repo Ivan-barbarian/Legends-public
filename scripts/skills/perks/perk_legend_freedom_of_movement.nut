@@ -80,9 +80,9 @@ this.perk_legend_freedom_of_movement <- this.inherit("scripts/skills/skill", {
 		}
 
 		if (!this.getContainer().hasPerk(::Legends.Perk.LegendTacticalManeuvers))
-			addPerk(this.Const.Perks.PerkDefs.LegendTacticalManeuvers, 5);
+			addPerk(::Const.Perks.PerkDefs.LegendTacticalManeuvers, 5);
 		if (!this.getContainer().hasPerk(::Legends.Perk.LegendQuickStep))
-			addPerk(this.Const.Perks.PerkDefs.LegendQuickStep, 2);
+			addPerk(::Const.Perks.PerkDefs.LegendQuickStep, 2);
 	}
 });
 

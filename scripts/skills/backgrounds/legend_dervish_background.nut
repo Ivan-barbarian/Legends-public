@@ -35,26 +35,26 @@ this.legend_dervish_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[3];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.TwoHandedTree,
-				this.Const.Perks.CleaverTree
+				::Const.Perks.SwordTree,
+				::Const.Perks.TwoHandedTree,
+				::Const.Perks.CleaverTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree,
-				this.Const.Perks.ClothArmorTree
+				::Const.Perks.LightArmorTree,
+				::Const.Perks.ClothArmorTree
 			],
 			Traits = [ //lf 5
-				this.Const.Perks.IndestructibleTree,
-				this.Const.Perks.InspirationalTree,
-				this.Const.Perks.IntelligentTree
+				::Const.Perks.IndestructibleTree,
+				::Const.Perks.InspirationalTree,
+				::Const.Perks.IntelligentTree
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.FaithClassTree,
-				this.Const.Perks.HealerClassTree
+				::Const.Perks.FaithClassTree,
+				::Const.Perks.HealerClassTree
 			],
 			Profession = [
-				this.Const.Perks.HealerProfessionTree,
+				::Const.Perks.HealerProfessionTree,
 			],
 			Magic = []
 		}

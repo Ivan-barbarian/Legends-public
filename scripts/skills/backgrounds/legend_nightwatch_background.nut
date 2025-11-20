@@ -54,21 +54,21 @@ this.legend_nightwatch_background <- this.inherit("scripts/skills/backgrounds/ch
 			];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.PolearmTree,
-				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.SlingTree
+				::Const.Perks.PolearmTree,
+				::Const.Perks.CrossbowTree,
+				::Const.Perks.SlingTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree
+				::Const.Perks.MediumArmorTree
 			],
 			Traits = [
-				this.Const.Perks.FitTree,
-				this.Const.Perks.LargeTree,
-				this.Const.Perks.IndestructibleTree,
-				this.Const.Perks.SturdyTree
+				::Const.Perks.FitTree,
+				::Const.Perks.LargeTree,
+				::Const.Perks.IndestructibleTree,
+				::Const.Perks.SturdyTree
 			],
 			Enemy = [
-				this.Const.Perks.OccultTree
+				::Const.Perks.OccultTree
 			],
 			Profession = [],
 			Class = [],

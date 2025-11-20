@@ -92,27 +92,27 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 		];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.MaceTree,
-				this.Const.Perks.AxeTree,
-				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.FistsTree
+				::Const.Perks.MaceTree,
+				::Const.Perks.AxeTree,
+				::Const.Perks.ThrowingTree,
+				::Const.Perks.FistsTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				::Const.Perks.LightArmorTree
 			],
 			Traits = [
-				this.Const.Perks.SturdyTree,
-				this.Const.Perks.IndestructibleTree,
-				this.Const.Perks.LargeTree,
-				this.Const.Perks.FitTree
+				::Const.Perks.SturdyTree,
+				::Const.Perks.IndestructibleTree,
+				::Const.Perks.LargeTree,
+				::Const.Perks.FitTree
 			],
 			Enemy = [
-				this.Const.Perks.GreenskinTree
+				::Const.Perks.GreenskinTree
 			],
 			Class = [],
 			Profession = [],
 			Magic = [
-				this.Const.Perks.BerserkerMagicTree
+				::Const.Perks.BerserkerMagicTree
 			]
 		}
 	}

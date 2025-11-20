@@ -61,25 +61,25 @@ this.legend_muladi_background <- this.inherit("scripts/skills/backgrounds/charac
 			];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.BowTree,
-				this.Const.Perks.SlingTree,
-				this.Const.Perks.DaggerTree
+				::Const.Perks.BowTree,
+				::Const.Perks.SlingTree,
+				::Const.Perks.DaggerTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				::Const.Perks.LightArmorTree
 			],
 			Traits = [
-				this.Const.Perks.CalmTree,
-				this.Const.Perks.FastTree,
-				this.Const.Perks.DeviousTree,
-				this.Const.Perks.AgileTree
+				::Const.Perks.CalmTree,
+				::Const.Perks.FastTree,
+				::Const.Perks.DeviousTree,
+				::Const.Perks.AgileTree
 			],
 			Enemy = [
-				this.Const.Perks.NomadsTree
+				::Const.Perks.CivilizationTree
 			],
 			Class = [
-				this.Const.Perks.ShortbowClassTree,
-				this.Const.Perks.HoundmasterClassTree
+				::Const.Perks.ShortbowClassTree,
+				::Const.Perks.HoundmasterClassTree
 			],
 			Profession = [],
 			Magic = []

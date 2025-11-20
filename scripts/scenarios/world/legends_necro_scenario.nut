@@ -278,7 +278,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		if (_background.getID() == "background.gravedigger" || _background.getID() == "background.graverobber")
 		{
-			this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.LegendResurrectionist);
+			this.addScenarioPerk(_background, ::Const.Perks.PerkDefs.LegendResurrectionist);
 		}
 	}
 });

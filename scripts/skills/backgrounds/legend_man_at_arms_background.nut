@@ -41,31 +41,31 @@ this.legend_man_at_arms_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[3];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.SpearTree,
-				this.Const.Perks.AxeTree,
-				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.ShieldTree,
-				this.Const.Perks.PolearmTree
+				::Const.Perks.SwordTree,
+				::Const.Perks.SpearTree,
+				::Const.Perks.AxeTree,
+				::Const.Perks.CrossbowTree,
+				::Const.Perks.ShieldTree,
+				::Const.Perks.PolearmTree
 			],
 			Defense = [
-				this.Const.Perks.HeavyArmorTree
+				::Const.Perks.HeavyArmorTree
 			],
 			Traits = [
-				this.Const.Perks.TrainedTree,
-				this.Const.Perks.OrganisedTree,
-				this.Const.Perks.InspirationalTree,
-				this.Const.Perks.FitTree
+				::Const.Perks.TrainedTree,
+				::Const.Perks.OrganisedTree,
+				::Const.Perks.InspirationalTree,
+				::Const.Perks.FitTree
 			],
 			Enemy = [
-				this.Const.Perks.OutlawTree,
-				this.Const.Perks.BeastTree
+				::Const.Perks.OutlawTree,
+				::Const.Perks.BeastTree
 			],
 			Class = [
-				this.Const.Perks.MilitiaClassTree
+				::Const.Perks.MilitiaClassTree
 			],
 			Profession = [
-				this.Const.Perks.FencingTeacherProfessionTree
+				::Const.Perks.FencingTeacherProfessionTree
 			],
 			Magic = []
 		}

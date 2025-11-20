@@ -57,30 +57,30 @@ this.legend_legion_gladiator_background <- this.inherit("scripts/skills/backgrou
 			];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.DaggerTree,
-				this.Const.Perks.SpearTree,
-				this.Const.Perks.ShieldTree,
-				this.Const.Perks.PolearmTree,
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.CleaverTree
+				::Const.Perks.DaggerTree,
+				::Const.Perks.SpearTree,
+				::Const.Perks.ShieldTree,
+				::Const.Perks.PolearmTree,
+				::Const.Perks.SwordTree,
+				::Const.Perks.ThrowingTree,
+				::Const.Perks.CleaverTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree,
-				this.Const.Perks.MediumArmorTree
+				::Const.Perks.LightArmorTree,
+				::Const.Perks.MediumArmorTree
 			],
 			Traits = [
-				this.Const.Perks.TrainedTree,
-				this.Const.Perks.DeviousTree,
-				this.Const.Perks.MartyrTree,
-				this.Const.Perks.ViciousTree
+				::Const.Perks.TrainedTree,
+				::Const.Perks.DeviousTree,
+				::Const.Perks.MartyrTree,
+				::Const.Perks.ViciousTree
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.ButcherClassTree,
-				this.Const.Perks.BeastClassTree,
-				this.Const.Perks.JugglerClassTree,
-				this.Const.Perks.SpearfisherClassTree
+				::Const.Perks.ButcherClassTree,
+				::Const.Perks.BeastClassTree,
+				::Const.Perks.JugglerClassTree,
+				::Const.Perks.SpearfisherClassTree
 			],
 			Profession = [],
 			Magic = []

@@ -57,31 +57,31 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 			];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.DaggerTree,
-				this.Const.Perks.SpearTree,
-				this.Const.Perks.TwoHandedTree,
-				this.Const.Perks.ShieldTree,
-				this.Const.Perks.PolearmTree,
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.CleaverTree
+				::Const.Perks.DaggerTree,
+				::Const.Perks.SpearTree,
+				::Const.Perks.TwoHandedTree,
+				::Const.Perks.ShieldTree,
+				::Const.Perks.PolearmTree,
+				::Const.Perks.SwordTree,
+				::Const.Perks.ThrowingTree,
+				::Const.Perks.CleaverTree
 			],
 			Defense = [
-				this.Const.Perks.HeavyArmorTree,
-				this.Const.Perks.MediumArmorTree
+				::Const.Perks.HeavyArmorTree,
+				::Const.Perks.MediumArmorTree
 			],
 			Traits = [
-				this.Const.Perks.TrainedTree,
-				this.Const.Perks.DeviousTree,
-				this.Const.Perks.LargeTree,
-				this.Const.Perks.InspirationalTree,
-				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.ViciousTree
+				::Const.Perks.TrainedTree,
+				::Const.Perks.DeviousTree,
+				::Const.Perks.LargeTree,
+				::Const.Perks.InspirationalTree,
+				::Const.Perks.IntelligentTree,
+				::Const.Perks.ViciousTree
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.ButcherClassTree,
-				this.Const.Perks.ScytheClassTree
+				::Const.Perks.ButcherClassTree,
+				::Const.Perks.ScytheClassTree
 			],
 			Profession = [],
 			Magic = []

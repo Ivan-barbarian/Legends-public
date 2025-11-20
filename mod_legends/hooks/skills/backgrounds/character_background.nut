@@ -72,17 +72,17 @@
 	};
 	o.m.PerkTreeDynamicBase <- { // this is a base perk tree so even if you don't add custom or dynamic perk tree it will default to this and build an average bro
 		Weapon = [
-			this.Const.Perks.SwordTree,
-			this.Const.Perks.SpearTree,
-			this.Const.Perks.MaceTree
+			::Const.Perks.SwordTree,
+			::Const.Perks.SpearTree,
+			::Const.Perks.MaceTree
 		],
 		Defense = [
-			this.Const.Perks.MediumArmorTree
+			::Const.Perks.MediumArmorTree
 		],
 		Traits = [
-			this.Const.Perks.FitTree,
-			this.Const.Perks.FastTree,
-			this.Const.Perks.AgileTree
+			::Const.Perks.FitTree,
+			::Const.Perks.FastTree,
+			::Const.Perks.AgileTree
 		],
 		Enemy = [],
 		Class = [],
@@ -836,7 +836,7 @@
 			return this.m.PerkTree;
 		}
 
-		local pT = this.Const.Perks.PerksTreeTemplate;
+		local pT = ::Const.Perks.PerksTreeTemplate;
 		if (pT == null)
 		{
 			return [];
@@ -852,12 +852,12 @@
 		if (typeof _perk == "string")
 		{
 			id = _perk;
-			local basePerkDefObject = this.Const.Perks.findById(_perk);
+			local basePerkDefObject = ::Const.Perks.findById(_perk);
 			perkDef = ::Legends.Perk[basePerkDefObject.Const];
 		}
 		else
 		{
-			id = this.Const.Perks.PerkDefObjects[_perk].ID;
+			id = ::Const.Perks.PerkDefObjects[_perk].ID;
 			perkDef = _perk;
 		}
 
@@ -871,7 +871,7 @@
 
     o.addPerk <- function ( _perk, _preferredRow = 0, _isRefundable = true )
     {
-        local perkDefObject = clone this.Const.Perks.PerkDefObjects[_perk];
+        local perkDefObject = clone ::Const.Perks.PerkDefObjects[_perk];
 
         // Don't add duplicates
         if (this.m.PerkTreeMap == null || perkDefObject.ID in this.m.PerkTreeMap)
@@ -940,7 +940,7 @@
 
 	o.removePerk <- function ( _perk )
 	{
-		local perkDefObject = this.Const.Perks.PerkDefObjects[_perk];
+		local perkDefObject = ::Const.Perks.PerkDefObjects[_perk];
 		if (!(perkDefObject.ID in this.m.PerkTreeMap))
 		{
 			return false;
@@ -998,7 +998,7 @@
 
 	o.hasPerk <- function ( _perk )
 	{
-		return this.Const.Perks.PerkDefObjects[_perk].ID in this.m.PerkTreeMap;
+		return ::Const.Perks.PerkDefObjects[_perk].ID in this.m.PerkTreeMap;
 	}
 
 	o.buildDescription = function( _isFinal = false )
@@ -1320,8 +1320,8 @@
 	o.rebuildPerkTree <- function ( _tree )
 	{
 		this.m.CustomPerkTree = _tree;
-		this.m.CustomPerkTree = this.Const.Perks.MergeDynamicPerkTree(_tree, this.m.PerkTreeDynamic);
-		local pT = this.Const.Perks.BuildCustomPerkTree(this.m.CustomPerkTree);
+		this.m.CustomPerkTree = ::Const.Perks.MergeDynamicPerkTree(_tree, this.m.PerkTreeDynamic);
+		local pT = ::Const.Perks.BuildCustomPerkTree(this.m.CustomPerkTree);
 		this.m.PerkTree = pT.Tree;
 		this.m.PerkTreeMap = pT.Map;
 	}
@@ -1383,12 +1383,12 @@
 			local tree = this.m.PerkTreeDynamic == null ? this.m.PerkTreeDynamicBase : this.m.PerkTreeDynamic;
 			local mins = this.getPerkTreeDynamicMins();
 
-			local result  = this.Const.Perks.GetDynamicPerkTree(mins, tree);
+			local result  = ::Const.Perks.GetDynamicPerkTree(mins, tree);
 			this.m.CustomPerkTree = result.Tree;
 			a = result.Attributes;
 		}
 
-		local pT = this.Const.Perks.BuildCustomPerkTree(this.m.CustomPerkTree);
+		local pT = ::Const.Perks.BuildCustomPerkTree(this.m.CustomPerkTree);
 		this.m.PerkTree = pT.Tree;
 		this.m.PerkTreeMap = pT.Map;
 

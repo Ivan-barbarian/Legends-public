@@ -55,19 +55,19 @@
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[2];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.BowTree,
-				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.DaggerTree
+				::Const.Perks.BowTree,
+				::Const.Perks.CrossbowTree,
+				::Const.Perks.ThrowingTree,
+				::Const.Perks.DaggerTree
 			],
 			Defense = [
-				this.Const.Perks.ClothArmorTree
+				::Const.Perks.ClothArmorTree
 			],
 			Traits = [
-				this.Const.Perks.CalmTree,
-				this.Const.Perks.OrganisedTree,
-				this.Const.Perks.AgileTree,
-				this.Const.Perks.FastTree
+				::Const.Perks.CalmTree,
+				::Const.Perks.OrganisedTree,
+				::Const.Perks.AgileTree,
+				::Const.Perks.FastTree
 			],
 			Enemy = [],
 			Class = [],

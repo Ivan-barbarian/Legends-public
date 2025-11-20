@@ -58,20 +58,20 @@ this.legend_puppet_background <- this.inherit("scripts/skills/backgrounds/charac
 			];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.TwoHandedTree,
-				this.Const.Perks.AxeTree,
-				this.Const.Perks.MaceTree,
-				this.Const.Perks.FlailTree,
-				this.Const.Perks.ShieldTree,
-				this.Const.Perks.HammerTree
+				::Const.Perks.TwoHandedTree,
+				::Const.Perks.AxeTree,
+				::Const.Perks.MaceTree,
+				::Const.Perks.FlailTree,
+				::Const.Perks.ShieldTree,
+				::Const.Perks.HammerTree
 			],
 			Defense = [
-				this.Const.Perks.HeavyArmorTree
+				::Const.Perks.HeavyArmorTree
 			],
 			Traits = [
-				this.Const.Perks.MartyrTree,
-				this.Const.Perks.LargeTree,
-				this.Const.Perks.IndestructibleTree
+				::Const.Perks.MartyrTree,
+				::Const.Perks.LargeTree,
+				::Const.Perks.IndestructibleTree
 			],
 			Enemy = [],
 			Class = [],
@@ -141,7 +141,7 @@ this.legend_puppet_background <- this.inherit("scripts/skills/backgrounds/charac
 	function onAdded() //bite, exceptions to some injuries and zombie trait
 	{
 		this.character_background.onAdded();
-		if (this.m.IsNew) 
+		if (this.m.IsNew)
 		{
 			::Legends.Traits.grant(this, ::Legends.Trait.LegendRottenFlesh);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendZombieBite);

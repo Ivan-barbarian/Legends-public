@@ -50,7 +50,7 @@
 			Enemy = [],
 			Class = [],
 			Magic = [
-				this.Const.Perks.CaptainMagicTree
+				::Const.Perks.CaptainMagicTree
 			],
 			Profession = []
 		}

@@ -44,6 +44,6 @@ this.perk_legend_unburdened <- this.inherit("scripts/skills/skill", {
 		}
 
 		if (!this.getContainer().hasPerk(::Legends.Perk.Footwork))
-			addPerk(this.Const.Perks.PerkDefs.Footwork, 5);
+			addPerk(::Const.Perks.PerkDefs.Footwork, 5);
 	}
 });

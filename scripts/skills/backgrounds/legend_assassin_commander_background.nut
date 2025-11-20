@@ -67,44 +67,41 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.DaggerTree,
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.PolearmTree,
-				this.Const.Perks.FlailTree,
-				this.Const.Perks.BowTree,
-				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.OneHandedTree
+				::Const.Perks.DaggerTree,
+				::Const.Perks.SwordTree,
+				::Const.Perks.PolearmTree,
+				::Const.Perks.FlailTree,
+				::Const.Perks.BowTree,
+				::Const.Perks.ThrowingTree,
+				::Const.Perks.CrossbowTree,
+				::Const.Perks.OneHandedTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree,
-				this.Const.Perks.MediumArmorTree
+				::Const.Perks.LightArmorTree,
+				::Const.Perks.MediumArmorTree
 			],
 			Traits = [
-				this.Const.Perks.DeviousTree,
-				this.Const.Perks.ViciousTree,
-				this.Const.Perks.FastTree,
-				this.Const.Perks.FitTree,
-				this.Const.Perks.CalmTree,
-				this.Const.Perks.MartyrTree,
-				this.Const.Perks.LargeTree
+				::Const.Perks.DeviousTree,
+				::Const.Perks.ViciousTree,
+				::Const.Perks.FastTree,
+				::Const.Perks.FitTree,
+				::Const.Perks.CalmTree,
+				::Const.Perks.MartyrTree,
+				::Const.Perks.LargeTree
 
 			],
 			Enemy = [
-				this.Const.Perks.NoblesTree,
-				this.Const.Perks.MercenaryTree,
-				this.Const.Perks.BanditTree,
-				this.Const.Perks.CaravanTree
-
+				::Const.Perks.OutlawTree,
+				::Const.Perks.CivilizationTree
 			],
 			Class = [
-				this.Const.Perks.JugglerClassTree,
-				this.Const.Perks.PoisonClassTree
+				::Const.Perks.JugglerClassTree,
+				::Const.Perks.PoisonClassTree
 			],
 			Profession = [],
 			Magic = [
-				this.Const.Perks.AssassinMagicTree,
-				this.Const.Perks.AssassinLeftoverTree
+				::Const.Perks.AssassinMagicTree,
+				::Const.Perks.AssassinLeftoverTree
 			]
 
 

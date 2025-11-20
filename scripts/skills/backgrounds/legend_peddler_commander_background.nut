@@ -93,32 +93,32 @@ this.legend_peddler_commander_background <- this.inherit("scripts/skills/backgro
 			];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.PolearmTree,
-				this.Const.Perks.DaggerTree,
-				this.Const.Perks.SlingTree,
-				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.MaceTree
+				::Const.Perks.PolearmTree,
+				::Const.Perks.DaggerTree,
+				::Const.Perks.SlingTree,
+				::Const.Perks.CrossbowTree,
+				::Const.Perks.MaceTree
 
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree,
-				this.Const.Perks.MediumArmorTree
+				::Const.Perks.LightArmorTree,
+				::Const.Perks.MediumArmorTree
 			],
 			Traits = [
-				this.Const.Perks.OrganisedTree,
-				this.Const.Perks.CalmTree,
-				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.DeviousTree
+				::Const.Perks.OrganisedTree,
+				::Const.Perks.CalmTree,
+				::Const.Perks.IntelligentTree,
+				::Const.Perks.DeviousTree
 			],
 			Enemy = [
-				this.Const.Perks.OutlawTree
+				::Const.Perks.OutlawTree
 			],
 			Class = [],
 			Profession = [
-				this.Const.Perks.BarterProfessionTree
+				::Const.Perks.BarterProfessionTree
 			],
 			Magic = [
-				this.Const.Perks.PhilosophyMagicTree
+				::Const.Perks.PhilosophyMagicTree
 			]
 		}
 	}

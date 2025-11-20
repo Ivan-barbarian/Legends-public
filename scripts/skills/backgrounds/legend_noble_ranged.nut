@@ -59,24 +59,24 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.DaggerTree,
-				this.Const.Perks.BowTree
+				::Const.Perks.CrossbowTree,
+				::Const.Perks.ThrowingTree,
+				::Const.Perks.DaggerTree,
+				::Const.Perks.BowTree
 			],
 			Defense = [
-				this.Const.Perks.HeavyArmorTree,
-				this.Const.Perks.MediumArmorTree
+				::Const.Perks.HeavyArmorTree,
+				::Const.Perks.MediumArmorTree
 			],
 			Traits = [
-				this.Const.Perks.FastTree,
-				this.Const.Perks.AgileTree,
-				this.Const.Perks.FitTree,
-				this.Const.Perks.ViciousTree
+				::Const.Perks.FastTree,
+				::Const.Perks.AgileTree,
+				::Const.Perks.FitTree,
+				::Const.Perks.ViciousTree
 			],
 			Enemy = [
-				this.Const.Perks.OutlawTree,
-				this.Const.Perks.CivilizationTree
+				::Const.Perks.OutlawTree,
+				::Const.Perks.CivilizationTree
 			],
 			Profession = [],
 			Class = [],

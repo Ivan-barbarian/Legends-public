@@ -318,7 +318,7 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 	{
 		if (_background.getID() == "background.gravedigger" || _background.getID() == "background.graverobber" || _background.getID() == "background.cultist")
 		{
-			this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.LegendSiphon);
+			this.addScenarioPerk(_background, ::Const.Perks.PerkDefs.LegendSiphon);
 		}
 	}
 

@@ -93,31 +93,31 @@ this.legend_lurker_background <- this.inherit("scripts/skills/backgrounds/charac
 			];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.CleaverTree,
-				this.Const.Perks.FlailTree,
-				this.Const.Perks.BowTree,
-				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.SlingTree
+				::Const.Perks.CleaverTree,
+				::Const.Perks.FlailTree,
+				::Const.Perks.BowTree,
+				::Const.Perks.ThrowingTree,
+				::Const.Perks.CrossbowTree,
+				::Const.Perks.SlingTree
 			],
 			Defense = [
-				this.Const.Perks.ClothArmorTree,
-				this.Const.Perks.MediumArmorTree
+				::Const.Perks.ClothArmorTree,
+				::Const.Perks.MediumArmorTree
 			],
 			Traits = [
-				this.Const.Perks.AgileTree,
-				this.Const.Perks.FastTree,
-				this.Const.Perks.MartyrTree
+				::Const.Perks.AgileTree,
+				::Const.Perks.FastTree,
+				::Const.Perks.MartyrTree
 			],
 			Enemy = [
-				this.Const.Perks.CivilizationTree,
-				this.Const.Perks.CivilizationTree,
+				::Const.Perks.CivilizationTree,
+				::Const.Perks.CivilizationTree,
 
 			],
 			Class = [
-				this.Const.Perks.BeastClassTree,
-				this.Const.Perks.NinetailsClassTree,
-				this.Const.Perks.ShortbowClassTree
+				::Const.Perks.BeastClassTree,
+				::Const.Perks.NinetailsClassTree,
+				::Const.Perks.ShortbowClassTree
 			],
 			Profession = [],
 			Magic = []
