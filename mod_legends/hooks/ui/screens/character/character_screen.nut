@@ -822,47 +822,37 @@
 			local oh = data.inventory.getItemAtSlot(this.Const.ItemSlot.Offhand);
 			local ohBlocked = data.inventory.hasBlockedSlot(this.Const.ItemSlot.Offhand);
 
-			if (mh != null && oh == null && !ohBlocked) {
-
-				// Remove from stash
-				if (data.stash.removeByIndex(data.sourceIndex) == null) {
-					return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromSourceSlot);
-				}
-
-				// Temporarily change the SlotType to Offhand to be able to equip there
+			local targetSlot = (_data.len() >= 4
+				&& _data[3] != null && _data[3] == "offhand") ? this.Const.ItemSlot.Offhand : null;
+			if ((targetSlot == this.Const.ItemSlot.Offhand || (mh != null && oh == null))
+				&& !ohBlocked)
+			{
+				// Temporarily change SlotType to Offhand
 				local originalSlotType = data.sourceItem.m.SlotType;
 				data.sourceItem.m.SlotType = this.Const.ItemSlot.Offhand;
 
-				local equipResult = data.inventory.equip(data.sourceItem);
+				local result = general_onEquipStashItem(_data);
 
 				// Restore SlotType
 				data.sourceItem.m.SlotType = originalSlotType;
 
-				if (!equipResult) {
-					// Failed to equip, put it back in stash
-					data.stash.insert(data.sourceItem, data.sourceIndex);
-					return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToEquipStashItem);
-				}
-
-				data.sourceItem.playInventorySound(this.Const.Items.InventoryEventType.Equipped);
-				this.helper_payForAction(data.entity, [data.sourceItem]);
-
-				if (this.Tactical.isActive()) {
-					return this.UIDataHelper.convertStashAndEntityToUIData(data.entity, this.Tactical.TurnSequenceBar.getActiveEntity(), false, this.m.InventoryFilter);
-				} else {
-					return this.UIDataHelper.convertStashAndEntityToUIData(data.entity, null, false, this.m.InventoryFilter);
-				}
+				return result;
 			}
 		}
 
 		return general_onEquipStashItem(_data);
 	}
 
-	o.onEquipBagItem = function (_data) {
+	o.onEquipInventoryItem = function (_data) {
+		return this.general_onEquipStashItem(_data);
+	}
+
+	local general_onEquipBagItem = o.general_onEquipBagItem;
+	o.general_onEquipBagItem = function (_data) {
 
 		local data = this.helper_queryEntityItemData(_data);
 		if ("error" in data) {
-			::logError("character_screen::onEquipBagItem: Error in data");
+			::logError("character_screen::general_onEquipBagItem: Error in data");
 			return data;
 		}
 
@@ -876,44 +866,24 @@
 			local oh = data.inventory.getItemAtSlot(this.Const.ItemSlot.Offhand);
 			local ohBlocked = data.inventory.hasBlockedSlot(this.Const.ItemSlot.Offhand);
 
-			if (mh != null && oh == null && !ohBlocked) {
-
-				// Remove from bag
-				if (data.targetItemIdx != null) {
-					local sourceItemIdx = data.targetItemIdx;
-					if (data.inventory.removeFromBagSlot(sourceItemIdx) == false) {
-						return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromBag);
-					}
-				}
-
-				// Temporarily change the SlotType to Offhand to be able to equip there
+			local targetSlot = (_data.len() >= 4
+				&& _data[3] != null && _data[3] == "offhand") ? this.Const.ItemSlot.Offhand : null;
+			if ((targetSlot == this.Const.ItemSlot.Offhand || (mh != null && oh == null))
+				&& !ohBlocked)
+			{
+				// Temporarily change SlotType to Offhand
 				local originalSlotType = data.sourceItem.m.SlotType;
 				data.sourceItem.m.SlotType = this.Const.ItemSlot.Offhand;
 
-				local equipResult = data.inventory.equip(data.sourceItem);
+				local result = general_onEquipBagItem(_data);
 
 				// Restore SlotType
 				data.sourceItem.m.SlotType = originalSlotType;
 
-				if (!equipResult) {
-					// Failed to equip, put it back in bag
-					if (data.targetItemIdx != null) {
-						data.inventory.addToBag(data.sourceItem, data.targetItemIdx);
-					}
-					return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToEquipBagItem);
-				}
-
-				data.sourceItem.playInventorySound(this.Const.Items.InventoryEventType.Equipped);
-				this.helper_payForAction(data.entity, [data.sourceItem]);
-
-				if (this.Tactical.isActive()) {
-					return this.UIDataHelper.convertStashAndEntityToUIData(data.entity, this.Tactical.TurnSequenceBar.getActiveEntity(), false, this.m.InventoryFilter);
-				} else {
-					return this.UIDataHelper.convertStashAndEntityToUIData(data.entity, null, false, this.m.InventoryFilter);
-				}
+				return result;
 			}
 		}
 
-		return this.general_onEquipBagItem(_data);
+		return general_onEquipBagItem(_data);
 	}
 });

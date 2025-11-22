@@ -261,10 +261,16 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function (
 			sourceData !== null && "slotType" in sourceData ?
 				sourceData.slotType :
 				null;
-		var targetSlotType =
-			targetData !== null && "slotType" in targetData ?
-				targetData.slotType :
-				null;
+
+		// Use the container's permanent slot type, not the item's slot type
+		// (a mainhand weapon in offhand slot should report Offhand as the container type)
+		var targetSlotType = _target.data("containerSlotType");
+		if (targetSlotType === undefined || targetSlotType === null) {
+			if (targetData !== null && "containerSlotType" in targetData) {
+				targetSlotType = targetData.containerSlotType;
+			}
+		}
+
 		var sourceIsBlockingOffhand =
 			sourceData !== null && "isBlockingOffhand" in sourceData ?
 				sourceData.isBlockingOffhand :
@@ -435,6 +441,7 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function (
 			targetOwner === CharacterScreenIdentifier.ItemOwner.Paperdoll
 		) {
 			var ignoreSlotType = false;
+			var targetSlotOverride = null;
 
 			// Allow 2-handed weapons to swap with shields/offhand items
 			if (
@@ -451,6 +458,7 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function (
 				targetSlotType === CharacterScreenIdentifier.ItemSlot.Offhand
 			) {
 				ignoreSlotType = true;
+				targetSlotOverride = CharacterScreenIdentifier.ItemSlot.Offhand;
 			}
 
 			// Same slot type check
@@ -464,7 +472,7 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function (
 			sourceData.isAllowedToDrop = true;
 			_proxy.data("item", sourceData);
 
-			self.mDataSource.equipBagItem(entityId, sourceItemId, null);
+			self.mDataSource.equipBagItem(entityId, sourceItemId, null, targetSlotOverride);
 			return;
 		}
 	};
@@ -661,6 +669,10 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function (
 	itemData.owner = CharacterScreenIdentifier.ItemOwner.Paperdoll;
 	itemData.slotType = _slot.SlotType;
 
+	// Store the container's permanent slot type (won't change when items are added)
+	itemData.containerSlotType = _slot.SlotType;
+	_slot.Container.data("containerSlotType", _slot.SlotType);
+
 	// add event handler
 	var dropHandler = function (_source, _target, _proxy) {
 		//var sourceData = _source.data('item');
@@ -706,10 +718,16 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function (
 			sourceData !== null && "slotType" in sourceData ?
 				sourceData.slotType :
 				null;
-		var targetSlotType =
-			targetData !== null && "slotType" in targetData ?
-				targetData.slotType :
-				null;
+
+		// Use the container's permanent slot type, not the item's slot type
+		// (a mainhand weapon in offhand slot should report Offhand as the container type)
+		var targetSlotType = _target.data("containerSlotType");
+		if (targetSlotType === undefined || targetSlotType === null) {
+			if (targetData !== null && "containerSlotType" in targetData) {
+				targetSlotType = targetData.containerSlotType;
+			}
+		}
+
 		var sourceItemId =
 			sourceData !== null && "itemId" in sourceData ? sourceData.itemId : null;
 		var sourceItemIdx =
@@ -750,6 +768,7 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function (
 
 			// check conditions
 			var ignoreSlotType = false;
+			var targetSlotOverride = null;
 
 			// Special Case: Source = Twohander and Target = Offhand and Inventory = Stash and Main & Offhand are filled with Item and Stash = full
 			if (
@@ -779,6 +798,7 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function (
 				targetSlotType === CharacterScreenIdentifier.ItemSlot.Offhand
 			) {
 				ignoreSlotType = true;
+				targetSlotOverride = CharacterScreenIdentifier.ItemSlot.Offhand;
 			}
 
 			// Same Slot type ?
@@ -804,7 +824,7 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function (
 			console.info(
 				"Backpack -> Paperdoll (sourceItemIdx: " + sourceItemIdx + ")"
 			);
-			self.mDataSource.equipBagItem(entityId, sourceItemId, sourceItemIdx);
+			self.mDataSource.equipBagItem(entityId, sourceItemId, sourceItemIdx, targetSlotOverride);
 
 			return;
 		}
@@ -816,6 +836,7 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function (
 		) {
 			// NOTE: (js) check conditions
 			var ignoreSlotType = false;
+			var targetSlotOverride = null;
 
 			// Special Case: Source = Twohander and Target = Offhand and Inventory = Stash and Main & Offhand are filled with Item and Stash = full
 			if (
@@ -847,6 +868,7 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function (
 				targetSlotType === CharacterScreenIdentifier.ItemSlot.Offhand
 			) {
 				ignoreSlotType = true;
+				targetSlotOverride = CharacterScreenIdentifier.ItemSlot.Offhand;
 			}
 
 			// Same Slot type ?
@@ -882,7 +904,7 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function (
 
 			// all fine - drop this shit
 			//console.info('Stash | Ground -> Paperdoll');
-			self.mDataSource.equipInventoryItem(entityId, itemId, sourceItemIdx);
+			self.mDataSource.equipInventoryItem(entityId, itemId, sourceItemIdx, targetSlotOverride);
 		}
 	};
 
@@ -1215,12 +1237,14 @@ CharacterScreenPaperdollModule.prototype.assignItemToSlot = function (
 
 		// update item data
 		var itemData = _slot.Container.data("item") || {};
+		var preservedContainerSlotType = itemData.containerSlotType;
 		itemData.itemId = null;
 		itemData.slotType = null;
 		itemData.entityId = null;
 		itemData.isChangeableInBattle = null;
 		itemData.isBlockingOffhand = null;
 		itemData.isAllowedInBag = null;
+		itemData.containerSlotType = preservedContainerSlotType;
 		_slot.Container.data("item", itemData);
 		_slot.Container.setPaperdollRepairImageVisible(false);
 	} else {
@@ -1228,6 +1252,7 @@ CharacterScreenPaperdollModule.prototype.assignItemToSlot = function (
 
 		// update item data
 		var itemData = _slot.Container.data("item") || {};
+		var preservedContainerSlotType = itemData.containerSlotType;
 		itemData.itemId = _item[CharacterScreenIdentifier.Item.Id];
 
 		// set slot type correctly to offhand if the mainhand is a twohander
@@ -1247,6 +1272,7 @@ CharacterScreenPaperdollModule.prototype.assignItemToSlot = function (
 				false;
 		itemData.isAllowedInBag = _item.isAllowedInBag;
 		itemData.isUsable = _item.isUsable;
+		itemData.containerSlotType = preservedContainerSlotType;
 		_slot.Container.data("item", itemData);
 
 		// check size
