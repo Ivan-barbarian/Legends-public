@@ -40,7 +40,7 @@
 			food *= 2;
 		}
 		food -= this.World.State.getPlayer().getFoodModifier();
-		return food;
+		return this.Math.maxf(0.0, food);
 	}
 
 	o.setCommander <- function ( _f )
