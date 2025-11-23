@@ -563,7 +563,7 @@ CharacterScreenInventoryListModule.prototype.createItemSlot = function (_owner, 
 				}
 				else
 				{
-					self.mDataSource.equipInventoryItem(entityId, itemId, null);
+					self.mDataSource.equipInventoryItem(entityId, itemId, null, null);
 				}
 			}
 		}
