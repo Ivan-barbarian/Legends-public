@@ -2061,4 +2061,12 @@ effectsDefs.push({
 	Name = "LegendArmorTracking",
 });
 
+::Legends.Effect.LegendDualWieldOffhand <- null;
+effectsDefs.push({
+	ID = "effects.legend_dual_wield_offhand",
+	Script = "scripts/skills/effects/legend_dual_wield_offhand_effect",
+	Const = "LegendDualWieldOffhand",
+	Name = "Dual Wield Offhand",
+});
+
 ::Legends.Effects.addEffectDefObjects(effectsDefs);
