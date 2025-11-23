@@ -805,24 +805,33 @@
 
 	local general_onEquipStashItem = o.general_onEquipStashItem;
 	o.general_onEquipStashItem = function (_data) {
-
-		local data = this.helper_queryStashItemData(_data);
-		if ("error" in data) {
+		local entity = this.Tactical.getEntityByID(_data[0]);
+		if (entity == null || !entity.isPlayerControlled()) {
 			return general_onEquipStashItem(_data);
 		}
 
-		if (data.sourceItem.getSlotType() != this.Const.ItemSlot.Mainhand
-			|| data.sourceItem.getBlockedSlotType() != null
-			|| !::Legends.Perks.has(data.entity, ::Legends.Perk.LegendAmbidextrous))
+		if (this.Stash == null) {
+			return general_onEquipStashItem(_data);
+		}
+
+		local sourceItem = this.Stash.getItemByInstanceID(_data[1]);
+		if (sourceItem == null) {
+			return general_onEquipStashItem(_data);
+		}
+		sourceItem = sourceItem.item;
+
+		if (sourceItem.getSlotType() != this.Const.ItemSlot.Mainhand
+			|| sourceItem.getBlockedSlotType() != null
+			|| !::Legends.Perks.has(entity, ::Legends.Perk.LegendAmbidextrous))
 		{
 			return general_onEquipStashItem(_data);
 		}
 
-
 		// Check if mainhand is occupied and offhand is free
-		local mh = data.inventory.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		local oh = data.inventory.getItemAtSlot(this.Const.ItemSlot.Offhand);
-		local ohBlocked = data.inventory.hasBlockedSlot(this.Const.ItemSlot.Offhand);
+		local inventory = entity.getItems();
+		local mh = inventory.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local oh = inventory.getItemAtSlot(this.Const.ItemSlot.Offhand);
+		local ohBlocked = inventory.hasBlockedSlot(this.Const.ItemSlot.Offhand);
 
 		local targetSlot = null;
 		if (typeof _data == "array" && _data.len() >= 4 && _data[3] == "offhand") {
@@ -833,13 +842,13 @@
 			&& !ohBlocked)
 		{
 			// Temporarily change SlotType to Offhand
-			local originalSlotType = data.sourceItem.m.SlotType;
-			data.sourceItem.m.SlotType = this.Const.ItemSlot.Offhand;
+			local originalSlotType = sourceItem.m.SlotType;
+			sourceItem.m.SlotType = this.Const.ItemSlot.Offhand;
 
 			local result = general_onEquipStashItem(_data);
 
 			// Restore SlotType
-			data.sourceItem.m.SlotType = originalSlotType;
+			sourceItem.m.SlotType = originalSlotType;
 
 			return result;
 		}
@@ -849,23 +858,32 @@
 
 	local general_onEquipBagItem = o.general_onEquipBagItem;
 	o.general_onEquipBagItem = function (_data) {
-
-		local data = this.helper_queryEntityItemData(_data);
-		if ("error" in data) {
+		local entity = this.Tactical.getEntityByID(_data[0]);
+		if (entity == null || !entity.isPlayerControlled()) {
 			return general_onEquipBagItem(_data);
 		}
 
-		if (data.sourceItem.getSlotType() != this.Const.ItemSlot.Mainhand
-			|| data.sourceItem.getBlockedSlotType() != null
-			|| !::Legends.Perks.has(data.entity, ::Legends.Perk.LegendAmbidextrous))
+		local inventory = entity.getItems();
+		if (inventory == null) {
+			return general_onEquipBagItem(_data);
+		}
+
+		local sourceItem = inventory.getItemByInstanceID(_data[1]);
+		if (sourceItem == null) {
+			return general_onEquipBagItem(_data);
+		}
+
+		if (sourceItem.getSlotType() != this.Const.ItemSlot.Mainhand
+			|| sourceItem.getBlockedSlotType() != null
+			|| !::Legends.Perks.has(entity, ::Legends.Perk.LegendAmbidextrous))
 		{
 			return general_onEquipBagItem(_data);
 		}
 
 		// Check if mainhand is occupied and offhand is free
-		local mh = data.inventory.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		local oh = data.inventory.getItemAtSlot(this.Const.ItemSlot.Offhand);
-		local ohBlocked = data.inventory.hasBlockedSlot(this.Const.ItemSlot.Offhand);
+		local mh = inventory.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local oh = inventory.getItemAtSlot(this.Const.ItemSlot.Offhand);
+		local ohBlocked = inventory.hasBlockedSlot(this.Const.ItemSlot.Offhand);
 
 		local targetSlot = null;
 		if (typeof _data == "array" && _data.len() >= 4 && _data[3] == "offhand") {
@@ -876,13 +894,13 @@
 			&& !ohBlocked)
 		{
 			// Temporarily change SlotType to Offhand
-			local originalSlotType = data.sourceItem.m.SlotType;
-			data.sourceItem.m.SlotType = this.Const.ItemSlot.Offhand;
+			local originalSlotType = sourceItem.m.SlotType;
+			sourceItem.m.SlotType = this.Const.ItemSlot.Offhand;
 
 			local result = general_onEquipBagItem(_data);
 
 			// Restore SlotType
-			data.sourceItem.m.SlotType = originalSlotType;
+			sourceItem.m.SlotType = originalSlotType;
 
 			return result;
 		}
