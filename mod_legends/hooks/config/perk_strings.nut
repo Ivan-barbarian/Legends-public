@@ -317,7 +317,7 @@ Bring it on!
 'Being aware of your surroundings can make or break a fight.'
 
 [color=%passive%][u]Passive:[/u][/color]
-• Has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] lower chance to inflict friendly fire. Stacks with the 'Team Player'.
+• Has a [color=%positive%]50%[/color] lower chance to inflict friendly fire. Stacks with the 'Team Player'.
 
 [color=%passive%][u]Active:[/u][/color]
 • Unlocks the [color=%skill%]Taunt[/color] skill which forces a targeted opponent take offensive actions instead of defensive ones.
