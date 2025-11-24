@@ -24,24 +24,17 @@
 		local r;
 
 		local weapons = [
-			"weapons/winged_mace",
 			"weapons/hand_axe",
-			"weapons/fighting_axe",
 			"weapons/morning_star",
 			"weapons/arming_sword",
 			"weapons/flail",
-			"weapons/military_cleaver",
 			"weapons/longsword",
 			"weapons/greataxe",
-			"weapons/two_handed_flail",
 			"weapons/goedendag",
-			"weapons/legend_military_goedendag",
-			"weapons/legend_longsword",
-			"weapons/legend_reinforced_flail",
 			"weapons/legend_battle_glaive",
-			"weapons/legend_swordstaff",
-			"weapons/legend_military_warscythe",
+			"weapons/legend_reinforced_flail",
 			"weapons/legend_infantry_axe"
+			"weapons/legend_longsword",
 		];
 
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
@@ -110,7 +103,6 @@
 			"named_greatsword",
 			"named_mace",
 			"named_two_handed_hammer",
-			"legend_named_flamberge",
 			"legend_named_longsword",
 			"legend_named_glaive",
 			"legend_named_swordstaff",
@@ -118,8 +110,6 @@
 			"legend_named_ranged_flail",
 			"legend_named_infantry_axe",
 			"legend_named_warhammer",
-			"legend_named_military_goedendag",
-			"legend_named_military_warscythe",
 			"named_two_handed_mace",
 			"named_two_handed_flail"
 		];
