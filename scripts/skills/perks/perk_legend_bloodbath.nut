@@ -65,6 +65,8 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 
 		local bleedingEnemies = ::Tactical.Entities.getAllInstancesAsArray()
 			.filter(function (_, _actor) {
+				if (!::MSU.isKindOf(_target, "actor"))
+					return false;
 				if (::Legends.S.skillEntityAliveCheck(_actor))
 					return false;
 				if (_actor.isAlliedWith(myself))
@@ -81,8 +83,6 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 
 		local bonus = 0;
 		foreach (enemy in bleedingEnemies) {
-			if (::Legends.S.skillEntityAliveCheck(enemy))
-				continue;
 			bonus += enemy.getTile().getDistanceTo(myTile) > 1 ? 1 : 2;
 		}
 		return bonus;
