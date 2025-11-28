@@ -31,6 +31,11 @@
 					Type = this.Const.World.Spawn.Troops.OrcBerserker,
 					MinR = 200,
 					Cost = 25
+				},
+				{
+					Type = ::Const.World.Spawn.Troops.LegendOrcMadBerserker,
+					MinR = 1200,
+					Cost = 60
 				}
 			]
 		},
@@ -142,6 +147,11 @@
 					Type = this.Const.World.Spawn.Troops.OrcBerserker,
 					MinR = 200,
 					Cost = 25
+				},
+				{
+					Type = ::Const.World.Spawn.Troops.LegendOrcMadBerserker,
+					MinR = 1200,
+					Cost = 60
 				}
 			]
 		},
@@ -224,6 +234,11 @@
 					Type = this.Const.World.Spawn.Troops.OrcBerserker,
 					MinR = 200,
 					Cost = 25
+				},
+				{
+					Type = ::Const.World.Spawn.Troops.LegendOrcMadBerserker,
+					MinR = 1200,
+					Cost = 60
 				}
 			]
 		},
@@ -300,6 +315,11 @@
 				{
 					Type = this.Const.World.Spawn.Troops.OrcBerserker,
 					Cost = 25
+				},
+				{
+					Type = ::Const.World.Spawn.Troops.LegendOrcMadBerserker,
+					MinR = 1200,
+					Cost = 60
 				}
 			]
 		},
@@ -394,6 +414,11 @@
 					Type = this.Const.World.Spawn.Troops.OrcBerserker,
 					MinR = 200,
 					Cost = 25
+				},
+				{
+					Type = ::Const.World.Spawn.Troops.LegendOrcMadBerserker,
+					MinR = 1200,
+					Cost = 60
 				}
 			]
 		},
@@ -444,6 +469,11 @@
 				{
 					Type = this.Const.World.Spawn.Troops.OrcBerserker,
 					Cost = 25
+				},
+				{
+					Type = ::Const.World.Spawn.Troops.LegendOrcMadBerserker,
+					MinR = 1200,
+					Cost = 60
 				}
 			]
 		},

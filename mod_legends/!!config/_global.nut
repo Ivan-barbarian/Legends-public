@@ -124,6 +124,8 @@ for (local i = -1; i < ::Const.EntityIcon.len(); i++) {
 	::Const.EntityType.addNew("orc_elite_orientation", "Orc Elite", "Orc Elites", this.Const.FactionType.Orcs);
 ::Const.EntityType.LegendOrcBehemoth <-
 	::Const.EntityType.addNew("orc_behemoth_orientation", "Orc Behemoth", "Orc Behemoths", this.Const.FactionType.Orcs);
+::Const.EntityType.LegendOrcMadBerserker <-
+	::Const.EntityType.addNew("orc_03_orientation", "Orc Mad Berserker", "Orc Mad Berserkers", this.Const.FactionType.Orcs);
 ::Const.EntityType.LegendWhiteDirewolf <-
 	::Const.EntityType.addNew("white_direwolf_orientation", "White Direwolf", "White Direwolves", this.Const.FactionType.Beasts);
 ::Const.EntityType.LegendSkinGhoul <-

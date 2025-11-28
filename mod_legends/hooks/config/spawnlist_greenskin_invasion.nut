@@ -138,6 +138,11 @@
 					Type = ::Const.World.Spawn.Troops.LegendGoblinBerserker,
 					MinR = 900,
 					Cost = 50
+				},
+				{
+					Type = ::Const.World.Spawn.Troops.LegendOrcMadBerserker,
+					MinR = 1200,
+					Cost = 60
 				}
 			]
 		},
