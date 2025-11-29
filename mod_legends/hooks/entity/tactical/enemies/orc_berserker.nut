@@ -116,7 +116,8 @@
 			"weapons/greenskins/legend_limb_lopper",
 			"weapons/greenskins/legend_man_mangler",
 			"weapons/greenskins/legend_bough",
-			"weapons/greenskins/legend_skullbreaker"
+			"weapons/greenskins/legend_skullbreaker",
+			"weapons/greenskins/legend_skullsmasher",
 		];
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 

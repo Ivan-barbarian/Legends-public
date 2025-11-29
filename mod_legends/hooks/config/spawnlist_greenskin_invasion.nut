@@ -157,6 +157,11 @@
 					Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 					MinR = 0.75 * 1115,
 					Cost = 60
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendOrcTyrant,
+					MinR = 1300,
+					Cost = 70
 				}
 			]
 		},

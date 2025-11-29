@@ -2,15 +2,22 @@
 ::Const.World.Spawn.Troops.Zombie.Cost = 5;
 
 ::Const.World.Spawn.Troops.OrcWarrior.TitleList = this.Const.Strings.GoblinTitles;
+
 ::Const.World.Spawn.Troops.OrcWarlord.TitleList = this.Const.Strings.GoblinTitles;
+
+::Const.World.Spawn.Troops.OrcBerserker.TitleList <- this.Const.Strings.GoblinTitles;
+::Const.World.Spawn.Troops.OrcBerserker.NameList <- this.Const.Strings.OrcWarlordNames;
+::Const.World.Spawn.Troops.OrcBerserker.Variant = 1;
 
 ::Const.World.Spawn.Troops.ZombieBetrayer.NameList <- this.Const.Strings.KnightNames;
 ::Const.World.Spawn.Troops.ZombieBetrayer.TitleList <- this.Const.Strings.FallenHeroTitles;
 ::Const.World.Spawn.Troops.ZombieBetrayer.Strength = 50;
 ::Const.World.Spawn.Troops.ZombieBetrayer.Cost = 50;
+::Const.World.Spawn.Troops.ZombieBetrayer.Variant = 1;
 
 ::Const.World.Spawn.Troops.Vampire.NameList <- this.Const.Strings.VampireLordNames;
 ::Const.World.Spawn.Troops.Vampire.TitleList <- this.Const.Strings.FallenHeroTitles;
+::Const.World.Spawn.Troops.Vampire.Variant = 1;
 
 ::Const.World.Spawn.Troops.Peasant.Script = "scripts/entity/tactical/humans/legend_peasant";
 

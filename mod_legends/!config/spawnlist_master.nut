@@ -9,6 +9,28 @@
 	Script = "scripts/entity/tactical/enemies/legend_orc_elite"
 };
 
+::Const.World.Spawn.Troops.LegendOrcTyrant <- {
+	ID = this.Const.EntityType.LegendOrcTyrant,
+	Variant = 10,
+	Strength = 90,
+	Cost = 90,
+	Row = 1,
+	NameList = this.Const.Strings.OrcWarlordNames,
+	TitleList = this.Const.Strings.GoblinTitles,
+	Script = "scripts/entity/tactical/enemies/legend_orc_tyrant"
+};
+
+::Const.World.Spawn.Troops.LegendOrcMadBerserker <- {
+	ID = this.Const.EntityType.LegendOrcMadBerserker,
+	Variant = 1,
+	Strength = 90,
+	Cost = 90,
+	Row = 1,
+	NameList = this.Const.Strings.OrcWarlordNames,
+	TitleList = this.Const.Strings.GoblinTitles,
+	Script = "scripts/entity/tactical/enemies/legend_orc_mad_berserker"
+};
+
 ::Const.World.Spawn.Troops.LegendOrcBehemoth <- {
 	ID = this.Const.EntityType.LegendOrcBehemoth,
 	Variant = 1,

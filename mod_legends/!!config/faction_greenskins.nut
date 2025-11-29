@@ -18,6 +18,26 @@
 	FatigueRecoveryRate = 40,
 	DamageTotalMult = 1.25
 };
+::Const.Tactical.Actor.LegendOrcTyrant <- {
+	XP = 1000,
+	ActionPoints = 10,
+	Hitpoints = 520,
+	Bravery = 150,
+	Stamina = 470,
+	MeleeSkill = 100,
+	RangedSkill = 50,
+	MeleeDefense = 10,
+	RangedDefense = -10,
+	Initiative = 120,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		100,
+		0
+	],
+	FatigueRecoveryRate = 40,
+	DamageTotalMult = 1.25
+};
 ::Const.Tactical.Actor.LegendOrcMadBerserker <- {
 	XP = 700,
 	ActionPoints = 12,

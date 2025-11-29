@@ -168,6 +168,11 @@
 					MinR = 400,
 					Cost = 100,
 					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendOrcTyrant,
+					MinR = 1300,
+					Cost = 70
 				}
 			]
 		},
@@ -255,6 +260,11 @@
 					MinR = 800,
 					Cost = 60,
 					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendOrcTyrant,
+					MinR = 1300,
+					Cost = 70
 				}
 			]
 		},
@@ -286,7 +296,14 @@
 		{
 			Weight = 100 //percentage chance after min count is met
 			Type = this.Const.World.Spawn.Troops.OrcWarlord,
-			Cost = 50
+			Cost = 50,
+			MaxR = 1300
+		},
+		{
+			Type = this.Const.World.Spawn.Troops.LegendOrcTyrant,
+			MinR = 1300,
+			Cost = 70,
+			Weight = 100 //percentage chance after min count is met
 		}
 	],
 	Troops = [
@@ -336,6 +353,11 @@
 					MinR = 800,
 					Cost = 100,
 					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendOrcTyrant,
+					MinR = 1300,
+					Cost = 70
 				}
 			]
 		},

@@ -1,27 +1,33 @@
-this.legend_orc_mad_berserker <- this.inherit("scripts/entity/tactical/enemies/orc_berserker", {
+this.legend_orc_tyrant <- this.inherit("scripts/entity/tactical/enemies/orc_warlord", {
 	m = {},
 	function create()
 	{
-		this.orc_berserker.create();
-		this.m.Type = this.Const.EntityType.LegendOrcMadBerserker;
-		this.m.XP = this.Const.Tactical.Actor.LegendOrcMadBerserker.XP;
+		this.orc_warlord.create();
+		this.m.Type = this.Const.EntityType.LegendOrcTyrant;
+		this.m.XP = this.Const.Tactical.Actor.LegendOrcTyrant.XP;
 		this.actor.create();
 	}
 
 	function onInit()
 	{
-		this.orc_berserker.onInit();
-		::Legends.Perks.grant(this, ::Legends.Perk.CripplingStrikes);
+		this.orc_warlord.onInit();
+		::Legends.Perks.grant(this, ::Legends.Perk.BattleForged);
+		::Legends.Perks.grant(this, ::Legends.Perk.LegendComposure);
 		::Legends.Perks.grant(this, ::Legends.Perk.Brawny);
-		::Legends.Perks.grant(this, ::Legends.Perk.Colossus);
-		::Legends.Perks.grant(this, ::Legends.Perk.LegendHeightenedReflexes);
-		::Legends.Perks.grant(this, ::Legends.Perk.Adrenaline);
-		::Legends.Perks.grant(this, ::Legends.Perk.Nimble);
+		::Legends.Perks.grant(this, ::Legends.Perk.InspiringPresence);
 		::Legends.Traits.grant(this, ::Legends.Trait.Fearless);
+		::Legends.Actives.remove(this, ::Legends.Active.Warcry);
+		::Legends.Actives.grant(this, ::Legends.Active.Warcry, function (_skill) {
+			_skill.m.IsUpgraded = true;
+		});
 		if (::Legends.isLegendaryDifficulty())
 		{
-			::Legends.Perks.grant(this, ::Legends.Perk.LegendUberNimble);
-			::Legends.Perks.grant(this, ::Legends.Perk.LegendTasteThePain);
+			this.m.BaseProperties.Armor[this.Const.BodyPart.Head] += 100;
+			this.m.BaseProperties.ArmorMax[this.Const.BodyPart.Head] += 100;		
+			this.m.BaseProperties.Armor[this.Const.BodyPart.Body] += 250;
+			this.m.BaseProperties.ArmorMax[this.Const.BodyPart.Body] += 250;
+			::Legends.Perks.grant(this, ::Legends.Perk.Steadfast);
+			::Legends.Perks.grant(this, ::Legends.Perk.LegendImmovableObject);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendMuscularity);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendVengeance);
 		}
@@ -40,9 +46,17 @@ this.legend_orc_mad_berserker <- this.inherit("scripts/entity/tactical/enemies/o
 			"weapons/greenskins/legend_skullbreaker"
 		];
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+
+		this.getItems().equip(::Const.World.Common.pickArmor([
+			[1, ::Legends.Armor.Greenskin.legend_orc_elite_heavy_armor]
+		]));
+
+		this.getItems().equip(::Const.World.Common.pickHelmet([
+			[1, ::Legends.Helmet.Greenskin.orc_warlord_helmet]
+		]));
 	}
 
-	o.makeMiniboss <- function ()
+	function makeMiniboss()
 	{
 		if (!this.actor.makeMiniboss())
 		{
