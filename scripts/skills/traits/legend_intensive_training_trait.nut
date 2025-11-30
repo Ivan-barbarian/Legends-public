@@ -29,7 +29,7 @@ this.legend_intensive_training_trait <- this.inherit("scripts/skills/traits/char
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 		this.m.IsSerialized = true;
-		this.m.TrainingSeed = ::Math.rand(0, 65535) * ::Math.rand(0, 65535) + ::Math.rand(0, 65535);
+		this.m.TrainingSeed = ::Math.abs(::Math.rand(0, 65535) * ::Math.rand(0, 65535) + ::Math.rand(0, 65535));
 	}
 
 	function addRandomSkills( _bro, _skillsNum )
