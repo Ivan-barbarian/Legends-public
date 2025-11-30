@@ -852,7 +852,7 @@
 			local _result = general_onEquipStashItem(_data);
 			sourceItem.m.SlotType = originalSlotType;
 
-			this.dualWieldSafeRefresh(entity, dwPerk, this.Const.ItemSlot.Offhand);
+			this.dualWieldRefresh(entity, dwPerk, this.Const.ItemSlot.Offhand);
 
 			entity.getSkills().update();
 			return this.UIDataHelper.convertStashAndEntityToUIData(entity, null, false, this.m.InventoryFilter);
