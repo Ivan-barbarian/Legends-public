@@ -2639,14 +2639,20 @@ A time tested tradition of getting your opponent to the ground, disarmed and ree
 ";
 
 ::Const.Strings.PerkDescription.LegendAmbidextrous <- @"
-Unlock the ability to punch with your off hand!
+Unlock the ability to follow up attacks with your off hand!
 
 [color=%passive%][u]Passive:[/u][/color]
-• When your offhand is free allows you to use [color=%skill%]Hand to Hand[/color] and attack with the ability on each attack.
+• After attacking with your main hand, automatically follow up with a free offhand attack.
 
-• If you are using a Buckler, Mummy Shield or Parry Dagger you will attack with [color=%skill%]Buckler bash[/color] or [color=%skill%]Stab[/color] instead.
+• When your offhand is free, follow up with [color=%skill%]Hand to Hand[/color]. Gain [color=%positive%]+5[/color] Melee Skill and [color=%positive%]+10[/color] Melee Defense if both hands are free.
 
-• Additionally, gain [color=%positive%]+5[/color] Melee Skill and [color=%positive%]+10[/color] Melee Defense if both hands are free.
+• If using a Buckler, Mummy Shield or Parrying Dagger, follow up with [color=%skill%]Buckler Bash[/color] or [color=%skill%]Stab[/color] instead.
+
+• When dual wielding other weapons, follow up with the offhand weapon's attack. Offhand attacks deal [color=%negative%]-50%[/color] damage.
+
+[color=%negative%][u]Restrictions:[/u][/color]
+• Offhand follow-up only triggers when attacking with your main hand.
+• The offhand attack must cost equal or less AP than the main hand attack used.
 ";
 
 ::Const.Strings.PerkDescription.LegendPugilist <- @"
