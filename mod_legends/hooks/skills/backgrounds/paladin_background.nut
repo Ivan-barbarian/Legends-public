@@ -154,6 +154,7 @@
 
 	o.onUpdate <- function ( _properties )
 	{
+		this.character_background.onUpdate(_properties);
 		local bonus = this.getContainer().getActor().getBaseProperties().Bravery * 0.10;
 		_properties.Initiative += bonus;
 		_properties.Hitpoints += bonus;

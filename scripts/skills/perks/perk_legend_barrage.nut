@@ -44,7 +44,8 @@ this.perk_legend_barrage <- this.inherit("scripts/skills/skill", {
 		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.ShootBolt) || _skill.getID() == ::Legends.Actives.getID(::Legends.Active.ShootStake))
 		{
 			local skill = ::Legends.Actives.get(this, ::Legends.Active.ReloadBolt);
-			skill.onUse(user, _targetEntity.getTile());
+			if (skill.isUsable())
+				skill.onUse(user, _targetEntity.getTile());
 		}
 	}
 

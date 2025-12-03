@@ -19,7 +19,7 @@
 		}
 	}
 
-	o.assignRandomEquipment = function()
+	o.assignRandomEquipment <- function()
 	{
 		local r;
 
