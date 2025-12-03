@@ -136,6 +136,23 @@
 		}
 	}
 
+	o.onTargetHit <- function(_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor)
+	{
+		if (_skill != this)
+			return;
+
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
+			return;
+
+		local actor = this.getContainer().getActor();
+		if (actor.isAlliedWith(_targetEntity))
+			return false;
+
+		local skill = ::Legends.Actives.get(bro, ::Legends.Active.Taunt);
+		if (skill != null && ::Legends.Perks.has(actor, ::Legends.Perk.Taunt))
+			skill.onUse(actor, _targetEntity.getTile());
+	}
+
 	o.onTargetSelected <- function ( _targetTile )
 	{
 		local knockToTile = this.findTileToKnockBackTo(getContainer().getActor().getTile(), _targetTile);
