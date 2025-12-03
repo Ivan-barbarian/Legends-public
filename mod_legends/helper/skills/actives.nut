@@ -47,6 +47,11 @@ if (!("Actives" in ::Legends))
 	} else {
 		skill = ::new(skillDef.Script);
 	}
+	// Prevents an issue when deserializing dual wield weapons and having ambidextrous
+	// which grants double swing active - not sure how to fix it properly yet
+	if (skill == null) {
+		return null;
+	}
 	if (_applyFn != null)
 		_applyFn(skill);
 	// actives by default should be tied to items if _target is an item

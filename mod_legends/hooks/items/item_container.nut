@@ -262,4 +262,37 @@
 		return canDropItems(_killer);
 	}
 
+	// Needed to properly deserialize offhand weapons
+	o.onDeserialize = function (_in) {
+		this.m.UnlockedBagSlots = _in.readU8();
+
+		local numItems = _in.readU8();
+		for (local i = 0; i < numItems; ++i) {
+			local slotType = _in.readU8();
+			local item = ::new(::IO.scriptFilenameByHash(_in.readI32()));
+			item.onDeserialize(_in);
+
+			local win = false;
+
+			if (slotType == ::Const.ItemSlot.Bag) {
+				win = this.addToBag(item);
+			} else if (slotType == ::Const.ItemSlot.Offhand
+				&& item.getSlotType() == ::Const.ItemSlot.Mainhand
+				&& item.getBlockedSlotType() == null)
+			{
+				// Vanilla just calls `equip(item)` which won't work with offhand weapons
+				this.m.Items[::Const.ItemSlot.Offhand][0] = item;
+				item.setContainer(this);
+				item.setCurrentSlotType(::Const.ItemSlot.Offhand);
+				win = true;
+			} else {
+				win = this.equip(item);
+			}
+
+			if (!win) {
+				::World.Assets.getOverflowItems().push(item);
+			}
+		}
+	}
+
 });
