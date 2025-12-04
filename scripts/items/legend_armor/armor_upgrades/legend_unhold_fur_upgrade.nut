@@ -6,7 +6,7 @@ this.legend_unhold_fur_upgrade <- this.inherit("scripts/items/legend_armor/legen
 		this.m.ID = "legend_armor_upgrade.body.legend_unhold_fur";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Unhold Fur Cloak";
-		this.m.Description = "A thick cloak made out of a Frost Unhold\'s majestic white fur. Can be worn atop any armor to make the wearer more resilient against ranged weapons.";
+		this.m.Description = "A thick cloak made out of a Frost Unhold\'s majestic white fur. Can be worn atop any armor to make the wearer more resilient against ranged weapons and stop blows penetrating the armor.";
 		this.m.ArmorDescription = "A cloak of thick white fur has been attached to this armor to make it more resilient against ranged weapons.";
 		this.m.Icon = "armor_upgrades/upgrade_02.png";
 		this.m.IconLarge = this.m.Icon;
@@ -18,7 +18,11 @@ this.legend_unhold_fur_upgrade <- this.inherit("scripts/items/legend_armor/legen
 		this.m.SpriteDamagedBack = "upgrade_02_back";
 		this.m.SpriteCorpseFront = "upgrade_02_front_dead";
 		this.m.SpriteCorpseBack = "upgrade_02_back_dead";
-		this.m.Value = 1000;
+		this.m.Value = 1600;
+		this.m.Condition = 10;
+		this.m.ConditionMax = 10;
+		this.m.StaminaModifier = -1;
+		this.m.DirectDamageModifier = -20.0;
 	}
 
 	function getTooltip()
