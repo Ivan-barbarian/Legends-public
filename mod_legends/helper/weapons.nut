@@ -67,18 +67,5 @@ if (!("Weapons" in ::Legends)) {
 
 // Returns true if dual wielding weapons not covered by Ambidextrous.
 ::Legends.Weapons.isDualWielding <- function (_actor) {
-    if (_actor == null) {
-        return false;
-    }
-    local ambidextrous = ::Legends.Perks.get(_actor, ::Legends.Perk.LegendAmbidextrous);
-    if (ambidextrous == null) {
-        return false;
-    }
-    local items = _actor.getItems();
-    local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-    local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-    if (mh == null || oh == null) {
-        return false;
-    }
-    return ambidextrous.m.ApplicableItems.find(oh.getID()) == null;
+    return _actor != null && _actor.getFlags().get(::Legends.Flags.DualWield) == true;
 }

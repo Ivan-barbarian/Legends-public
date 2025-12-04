@@ -68,7 +68,7 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 			} else {
 				local text = "Follow-up attack: [color=%positive%]" + ohSkill.getName() + "[/color]";
 				if (::Legends.Weapons.isDualWielding(actor)) {
-					text += " ([color=%negative%]-" + this.Math.floor((1.0 - this.getOffhandDamageMult()) * 100) + "%[/color] damage, [color=%negative%]" + this.getOffhandHitBonus() + "[/color] hit chance)";
+					text += " ([color=%negative%]-" + this.Math.floor((1.0 - this.getOffhandDamageMult()) * 100) + "%[/color] damage, [color=%negative%]" + this.getOffhandHitBonus() + "[/color] Melee Skill)";
 				}
 				ret.push({
 					id = 3,
@@ -241,7 +241,7 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 			this.onEquip(off);
 		}
 
-		this.updateDoubleSwing();
+		this.updateDualWield();
 	}
 
 	function onEquip(_item) {
@@ -273,15 +273,30 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		this.updateDoubleSwing();
+		this.updateDualWield();
 	}
 
-	// Works when equipping from bag
-	// When equipping from inventory, the weapon skills replace everything
+	function updateDualWield() {
+		local actor = this.getContainer().getActor();
+		local items = actor.getItems();
+		local mh = items.getItemAtSlot(::Const.ItemSlot.Mainhand);
+		local oh = items.getItemAtSlot(::Const.ItemSlot.Offhand);
+		local dw = mh != null
+			&& oh != null
+			&& mh.isItemType(::Const.Items.ItemType.Weapon)
+			&& oh.isItemType(::Const.Items.ItemType.Weapon)
+			&& this.m.ApplicableItems.find(oh.getID()) == null;
+		actor.getFlags().set(::Legends.Flags.DualWield, dw);
+		if (dw) {
+			::Legends.Actives.grant(this, ::Legends.Active.LegendDoubleSwing)
+		} else {
+			::Legends.Actives.remove(this, ::Legends.Active.LegendDoubleSwing);
+		}
+	}
 
 	function onUnequip(_item) {
 		resetOffhandSkill();
-		this.updateDoubleSwing();
+		this.updateDualWield();
 
 		// Mark which slot needs refresh
 		if (!this.m.IsRefreshing) {
@@ -300,15 +315,6 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 			} else if (oh != null && oh != _item && mh == null) {
 				this.m.NeedsRefresh = "oh";
 			}
-		}
-	}
-
-	function updateDoubleSwing() {
-		local actor = this.getContainer().getActor();
-		if (::Legends.Weapons.isDualWielding(actor)) {
-			::Legends.Actives.grant(this, ::Legends.Active.LegendDoubleSwing)
-		} else {
-			::Legends.Actives.remove(this, ::Legends.Active.LegendDoubleSwing);
 		}
 	}
 

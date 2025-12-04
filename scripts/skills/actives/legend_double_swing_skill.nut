@@ -63,20 +63,7 @@ this.legend_double_swing_skill <- this.inherit("scripts/skills/skill", {
 		if (!this.skill.isUsable()) {
 			return false;
 		}
-
-		local items = this.getContainer().getActor().getItems();
-		local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-		if (mh == null || oh == null) {
-			return false;
-		}
-
-		local ambidextrous = ::Legends.Perks.get(this, ::Legends.Perk.LegendAmbidextrous);
-		if (ambidextrous != null && !ambidextrous.isDualWielding()) {
-			return false;
-		}
-
-		return true;
+		return ::Legends.Weapons.isDualWielding(this.getContainer().getActor());
 	}
 
 	function onUse(_user, _targetTile) {

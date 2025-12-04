@@ -865,7 +865,7 @@
 			// TODO Potentially need to check for errors here
 			local _result = general_onEquipStashItem(_data);
 
-			this.dualWieldSafeRefresh(entity, dwPerk, this.Const.ItemSlot.Mainhand);
+			this.dualWieldRefresh(entity, dwPerk, this.Const.ItemSlot.Mainhand);
 
 			entity.getSkills().update();
 			return this.UIDataHelper.convertStashAndEntityToUIData(entity, null, false, this.m.InventoryFilter);
