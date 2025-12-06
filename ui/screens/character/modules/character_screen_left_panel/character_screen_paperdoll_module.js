@@ -67,7 +67,7 @@ var CharacterScreenPaperdollModule = function (_parent, _dataSource) {
 			ContainerIsBig: true,
 			ContainerClasses: "is-big is-in-between-offset",
 			SlotType: CharacterScreenIdentifier.ItemSlot.Offhand,
-			BackgroundImage: Path.GFX + Asset.SLOT_BACKGROUND_OFFHAND
+			BackgroundImage: Path.GFX + 'ui/items/slots/inventory_slot_offhand_dw.png'
 		}
 	};
 
