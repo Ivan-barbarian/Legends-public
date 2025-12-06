@@ -67,7 +67,7 @@ if (!("Perks" in ::Const))
 		[],
 		[],
 		[],
-		[::Legends.Perk.LegendFavouredEnemyGreenskins],
+		[::Legends.Perk.LegendFavouredEnemyGreenskin],
 		[],
 		[]
 	]
