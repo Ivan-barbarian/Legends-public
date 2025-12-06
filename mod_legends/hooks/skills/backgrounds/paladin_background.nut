@@ -122,12 +122,12 @@
 	o.getTooltip = function ()
 	{
 		return this.character_background.getTooltip();
-		local bonus = this.getContainer().getActor().getBaseProperties().Bravery * 0.10;
+		local bonus = this.Math.round(this.getContainer().getActor().getBaseProperties().Bravery * 0.10);
 		ret.push({
 			id = 13,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "[color=%positive%]%bonus%[/color] Hitpoints and Initiative",
+			text = "[color=%positive%]%bonus%[/color] Hitpoints, Fatigue and Initiative",
 			params = ["bonus", bonus]
 		});
 	}
@@ -155,9 +155,10 @@
 	o.onUpdate <- function ( _properties )
 	{
 		this.character_background.onUpdate(_properties);
-		local bonus = this.getContainer().getActor().getBaseProperties().Bravery * 0.10;
+		local bonus = this.Math.round(this.getContainer().getActor().getBaseProperties().Bravery * 0.10);
 		_properties.Initiative += bonus;
 		_properties.Hitpoints += bonus;
+		_properties.Stamina += bonus;
 	}
 
 	o.onSetAppearance = function ()
