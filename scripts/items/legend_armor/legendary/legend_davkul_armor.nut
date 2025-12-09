@@ -73,7 +73,7 @@ this.legend_davkul_armor <- this.inherit("scripts/items/legend_armor/legend_armo
 		if (!actor.isHiddenToPlayer())
 		{
 			this.Tactical.spawnIconEffect("status_effect_79", actor.getTile(), this.Const.Tactical.Settings.SkillIconOffsetX, this.Const.Tactical.Settings.SkillIconOffsetY, this.Const.Tactical.Settings.SkillIconScale, this.Const.Tactical.Settings.SkillIconFadeInDuration, this.Const.Tactical.Settings.SkillIconStayDuration, this.Const.Tactical.Settings.SkillIconFadeOutDuration, this.Const.Tactical.Settings.SkillIconMovement);
-			this.Sound.play(this.m.ImpactSound[this.Math.rand(0, len(this.m.ImpactSound)) - 1], this.Const.Sound.Volume.RacialEffect * 1.25, actor.getPos());
+			this.Sound.play(this.m.ImpactSound[this.Math.rand(0, this.m.ImpactSound.len() -1)], this.Const.Sound.Volume.RacialEffect * 1.25, actor.getPos());
 			this.Tactical.EventLog.log(this.Const.UI.getColorized(this.m.Name, "#1e468f") + " heals for " + bodyAdded + " points");
 		}
 	}
