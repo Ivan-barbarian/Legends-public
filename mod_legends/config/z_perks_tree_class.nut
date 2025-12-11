@@ -116,7 +116,7 @@ ID = "TailorClassTree",
 		[],
 		[],
 		[],
-		[::Legends.Perk.LegendCarnage],
+		[],
 		[],
 		[]
 	]
