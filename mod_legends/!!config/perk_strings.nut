@@ -440,7 +440,7 @@ Take a deep breath, then get to work.
 There's wolves, bears, nachzehrers, and you. All beings of vicious slaughter.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Gain [color=%positive%]+10%[/color] chance to hit and damage for all Melee area of effect attacks.
+• Gain [color=%positive%]50%[/color] of the weapon's fatigue cost is translated to Damage and Hitchance.
 ";
 
 ::Const.Strings.PerkDescription.LegendImmovableObject <- @"
