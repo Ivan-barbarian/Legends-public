@@ -130,7 +130,7 @@
 		if (actor.isAlliedWith(_targetEntity))
 			return false;
 
-		local skill = ::Legends.Actives.get(bro, ::Legends.Active.Taunt);
+		local skill = ::Legends.Actives.get(actor, ::Legends.Active.Taunt);
 		if (skill != null && ::Legends.Perks.has(actor, ::Legends.Perk.Taunt))
 			skill.onUse(actor, _targetEntity.getTile());
 	}
