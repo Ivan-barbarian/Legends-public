@@ -1,10 +1,8 @@
 this.perk_legend_ironside <- this.inherit("scripts/skills/skill", {
 	m = {},
-	function create()
-	{
+	function create() {
 		::Legends.Perks.onCreate(this, ::Legends.Perk.LegendIronside);
 	}
-
 
 	function getDescription()
 	{
@@ -14,7 +12,13 @@ this.perk_legend_ironside <- this.inherit("scripts/skills/skill", {
 
 	function isOpponent( _actor, _tag )
 	{
-		if (this.Math.abs(_actor.getTile().Level - _tag.Actor.getTile().Level) > 1)
+		if (!::MSU.isKindOf(_actor, "actor"))
+			return;
+
+		if (::Legends.S.skillEntityAliveCheck(_actor))
+			return;
+
+		if (::Math.abs(_actor.getTile().Level - _tag.Actor.getTile().Level) > 1)
 			return;
 
 		if (!_actor.isAlliedWith) {
@@ -24,10 +28,17 @@ this.perk_legend_ironside <- this.inherit("scripts/skills/skill", {
 
 	function getBonus()
 	{
-		local result = {
-			Opponents = 0,
-			Actor = this.m.Container.getActor()
-		};
+		if (!::Tactical.isActive())
+			return 0;
+
+		if ("State" in ::Tactical && ::Tactical.State.isBattleEnded())
+			return 0;
+
+		if (!("Entities" in ::Tactical))
+			return 0;
+
+		if (::Tactical.Entities == null)
+			return 0;
 
 		if (::Legends.S.isNull(this.getContainer()))
 			return 0;
@@ -36,10 +47,19 @@ this.perk_legend_ironside <- this.inherit("scripts/skills/skill", {
 		if (::Legends.S.skillEntityAliveCheck(actor))
 			return 0;
 
-		if (actor.getTile() == null)
+		if (!actor.isPlacedOnMap())
 			return 0;
 
-		this.Tactical.queryActorsInRange(actor.getTile(), 0, 1, this.isOpponent, result);
+		local result = {
+			Opponents = 0,
+			Actor = actor
+		};
+
+		local myTile = actor.getTile();
+		if (myTile == null)
+			return 0;
+
+		this.Tactical.queryActorsInRange(myTile, 0, 1, this.isOpponent, result);
 
 		return result.Opponents * 0.05;
 	}
