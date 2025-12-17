@@ -166,7 +166,6 @@ this.legend_double_swing_skill <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-	// Check if both weapons hit the middle target (for Flurry Master perk)
 	function didBothHitMiddle() {
 		return this.m.BothHitMiddle;
 	}
