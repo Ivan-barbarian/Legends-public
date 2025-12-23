@@ -6,7 +6,7 @@
 	o.create = function() {
 		create();
 		::Legends.Screens.hook(this, "A", function (_screen) {
-			if (_event.m.Wildman != null && _event.m.Berserker == null)
+			if (this.m.Wildman != null && this.m.Berserker == null)
 			{
 				_screen.Text = "%townImage%Civilization is no place for a %person_wildman% like %wildman% and %they_wildman% quickly proves it.\n\nApparently, the damned %person_wildman% went crazy while in a shop and trashed the whole place. As the story goes, %they_wildman% just walked in and started taking things, not quite understanding the social norms of paying for goods. The shop owner then came after %them_wildman% with a broom, trying to shoo the %person_wildman% out of his store. Believing the broom a monster, the %person_wildman% proceeded to go completely crazy. Judging by the reports, it was quite the commotion, up to and including shite throwing.\n\nNow the shop owner is in your face demanding compensation for the damage done. Apparently he\'s wanting %compensation% crowns. Behind him, a few town militia stand with very watchful eyes.";
 			}
@@ -69,7 +69,7 @@
 				if (_event.m.Wildman != null && _event.m.Berserker == null)
 					this.Characters.push(_event.m.Wildman.getImagePath());
 			}
-		});
+		}.bindenv(this));
 		::Legends.Screens.hook(this, "B", function (_screen) {
 			_screen.Options = [{
 				Text = "To hell with your shop.",
