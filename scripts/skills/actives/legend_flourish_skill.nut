@@ -29,7 +29,7 @@ this.legend_flourish_skill <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		return tooltip =  [
+		return [
 			{
 				id = 1,
 				type = "title",
