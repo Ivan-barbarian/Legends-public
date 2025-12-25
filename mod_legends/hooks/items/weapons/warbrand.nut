@@ -21,4 +21,11 @@
 
 		this.weapon.addSkill(_skill);
 	}
+
+	local onEquip = o.onEquip;
+	o.onEquip = function ()
+	{
+		onEquip();
+		::Legends.Actives.grant(this, ::Legends.Active.LegendIntoTheFray);
+	}
 });

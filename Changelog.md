@@ -27,9 +27,14 @@ Favoured Enemy - Sword Master
 ### Weapons
 
 #### New Weapon Abilities
+
+**Throwing**
 - `Throw Backup Spear` - each one handed spear has 1 stack of a throwable ability
 - `Throw Backup Axe` - each one handed axe has 1 stack of a throwable ability
 - `Throw Backup Daggers` - each puncture dagger (daggers that don't have deathblow innately) has 8 stacks of a throwable ability
+
+**Warbrand and Rhompaias**
+- `Into The Fray` - 2 tile charge and attack
 
 ### For modders:
 

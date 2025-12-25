@@ -38,5 +38,6 @@ this.legend_military_rhomphaia <- this.inherit("scripts/items/weapons/weapon", {
 		}.bindenv(this));
 		::Legends.Actives.grant(this, ::Legends.Active.Split);
 		::Legends.Actives.grant(this, ::Legends.Active.Riposte);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendIntoTheFray);
 	}
 });

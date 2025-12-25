@@ -2934,12 +2934,12 @@ activesDefs.push({
 	Name = "Transform into Wolf",
 });
 
-::Legends.Active.LegendUnarmedLunge <- null;
+::Legends.Active.LegendIntoTheFray <- null;
 activesDefs.push({
-	ID = "actives.legend_unarmed_lunge",
-	Script = "scripts/skills/actives/legend_unarmed_lunge_skill",
-	Const = "LegendUnarmedLunge",
-	Name = "Jump Attack",
+	ID = "actives.legend_into_the_fray",
+	Script = "scripts/skills/actives/legend_into_the_fray",
+	Const = "LegendIntoTheFray",
+	Name = "Into The Fray",
 });
 
 ::Legends.Active.LegendUnleashBear <- null;
@@ -3228,6 +3228,14 @@ activesDefs.push({
 	Script = "scripts/skills/actives/corpse_explosion_skill",
 	Const = "CorpseExplosion",
 	Name = "Corpse Explosion",
+});
+
+::Legends.Active.LEgen;
+activesDefs.push({
+	ID = "actives.legend_flourish",
+	Script = "scripts/skills/actives/legend_flourish_skill",
+	Const = "LegendFlourish",
+	Name = "Flourish",
 });
 
 ::Legends.Actives.addActiveDefObjects(activesDefs);

@@ -47,5 +47,6 @@ this.legend_decorated_rhomphaia <- this.inherit("scripts/items/weapons/weapon", 
 		}.bindenv(this));
 		::Legends.Actives.grant(this, ::Legends.Active.Split);
 		::Legends.Actives.grant(this, ::Legends.Active.Swing);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendIntoTheFray);
 	}
 });
