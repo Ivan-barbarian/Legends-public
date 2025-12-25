@@ -132,7 +132,6 @@
 ::Const.Strings.PerkName.LegendLastStand <- "Last Stand";
 ::Const.Strings.PerkName.LegendGuideSteps <- "Guide Steps";
 ::Const.Strings.PerkName.LegendTasteThePain <- "Taste the Pain";
-::Const.Strings.PerkName.LegendKnifeplay <- "Knifeplay";
 ::Const.Strings.PerkName.LegendOpportunist <- "Opportunist";
 ::Const.Strings.PerkName.LegendPrepared <- "Prepared";
 ::Const.Strings.PerkName.LegendLurker <- "Lurker";
@@ -3198,23 +3197,6 @@ Practice in physical movement with a partner has given the ability to take the l
 
 [color=%passive%][u]Passive:[/u][/color]
 • [color=%skill%]Rotation[/color] can now target enemies.
-";
-
-::Const.Strings.PerkDescription.LegendKnifeplay <- @"
-Learn to accurately throw your knives.
-
-[color=%active%][u]Active:[/u][/color]
-• Unlocks a bound throwing knife skill that does [color=%positive%]15-25[/color] damage with poor armor penetration.
-
-• Has a [color=%positive%]+15%[/color] chance to hit the head.
-
-• Has a range of three tiles.
-
-• Has a [color=%positive%]25%[/color] chance to [color=%status%]Daze[/color] a target on hit.
-
-• Benefits from perks that affect throwing weapons.
-
-• Costs [color=%negative%]3[/color] AP and [color=%negative%]5[/color] Fatigue.
 ";
 
 ::Const.Strings.PerkDescription.LegendOpportunist <- @"

@@ -2719,17 +2719,6 @@ perkDefObjects.push({
 	Const = "LegendUntouchable"
 });
 
-::Legends.Perk.LegendKnifeplay <- null;
-perkDefObjects.push({
-	ID = "perk.legend_knifeplay",
-	Script = "scripts/skills/perks/perk_legend_knifeplay",
-	Name = ::Const.Strings.PerkName.LegendKnifeplay,
-	Tooltip = ::Const.Strings.PerkDescription.LegendKnifeplay,
-	Icon = "ui/perks/knifeplay.png",
-	IconDisabled = "ui/perks/knifeplay_bw.png",
-	Const = "LegendKnifeplay"
-});
-
 ::Legends.Perk.LegendOpportunist <- null;
 perkDefObjects.push({
 	ID = "perk.legend_opportunist",

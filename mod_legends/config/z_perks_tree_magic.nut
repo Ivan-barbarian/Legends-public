@@ -582,7 +582,7 @@ if (!("Perks" in ::Const))
 		"assassination"
 	],
 	Tree = [
-		[::Legends.Perk.LegendKnifeplay],
+		[],
 		[::Legends.Perk.LegendOpportunist],
 		[::Legends.Perk.LegendPrepared],
 		[],
