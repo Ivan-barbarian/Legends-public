@@ -17,6 +17,7 @@
 		::Legends.Actives.getID(::Legends.Active.LegendRatBite),
 		::Legends.Actives.getID(::Legends.Active.LegendEnGarde),
 		::Legends.Actives.getID(::Legends.Active.Lunge),
+		::Legends.Actives.getID(::Legends.Active.LegendIntoTheFray),
 		::Legends.Actives.getID(::Legends.Active.LegendNightmareTouch),
 		::Legends.Actives.getID(::Legends.Active.LegendBasiliskPeck),
 		::Legends.Actives.getID(::Legends.Active.LegendBasiliskSentryInject),
@@ -24,5 +25,6 @@
 		::Legends.Actives.getID(::Legends.Active.LegendSighthoundBite),
 		::Legends.Actives.getID(::Legends.Active.LegendHeartseeker),
 		::Legends.Actives.getID(::Legends.Active.LegendBucklerBash),
+		::Legends.Actives.getID(::Legends.Active.LegendThrowKnife),
 	]);
 });
