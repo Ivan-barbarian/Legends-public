@@ -91,6 +91,8 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + injury.m.HealingTimeMin + "-" + injury.m.HealingTimeMax +"[/color] days.";
 		if (effect != null)
 			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + effect.m.HealingTime + "[/color] days.";
+		if (_actor.isStabled())
+			return "Are you trying to make an animal read?";
 
 		return true;
 	}

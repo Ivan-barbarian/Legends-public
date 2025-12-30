@@ -136,6 +136,9 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 		if (effect != null)
 			return "Failed to use this item as the user will be recovering from the last reading for another [color=%negative%]" + effect.m.HealingTime + "[/color] days because of [color=%status%]" + effect.getName() + "[/color].";
 
+		if (_actor.isStabled())
+			return "Are you trying to make an animal read?";
+
 		if (!_actor.getFlags().has("LegendsSkillBookCount"))
 			return true;
 

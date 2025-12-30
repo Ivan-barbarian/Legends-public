@@ -35,6 +35,9 @@ this.legend_ancient_scroll_item <- ::inherit("scripts/items/misc/legend_skill_bo
 		if (_actor.getSkills().hasSkill("injury.brain_damage"))
 			return "Failed to use this item as the user has [color=%negative%]Brain Damage[/color] injury.";
 
+		if (_actor.isStabled())
+			return "Are you trying to make an animal read?";
+
 		if (_actor.getFlags().getAsInt("LegendsScrollCount") < 1)
 			return true;
 
