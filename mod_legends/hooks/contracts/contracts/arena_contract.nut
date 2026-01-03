@@ -124,7 +124,8 @@
 					{
 						this.Contract.getHome().getBuilding("building.arena").registerAttempt();
 						this.Contract.getHome().getBuilding("building.arena").refreshCooldown();
-						this.World.State.getTownScreen().getMainDialogModule().reload();
+						::World.Contracts.removeContract(this.Contract);
+						::World.State.getTownScreen().getMainDialogModule().reload();
 						return 0;
 					}
 				});
