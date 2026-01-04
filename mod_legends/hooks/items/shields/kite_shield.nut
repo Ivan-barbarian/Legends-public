@@ -53,7 +53,7 @@
 			102,
 			103,
 			104,
-			105
+			105,
 			106
 		];
 		if (this.Const.DLC.UnholdSupporter)

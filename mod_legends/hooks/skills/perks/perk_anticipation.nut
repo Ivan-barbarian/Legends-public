@@ -11,7 +11,7 @@
 		::Legends.Active.LegendShootStone,
 		::Legends.Active.LegendSlingHeavyStone,
 		::Legends.Active.SlingStone,
-	]
+	];
 
 	o.onMissed <- function ( _attacker, _skill )
 	{

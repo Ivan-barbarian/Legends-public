@@ -312,7 +312,7 @@ Bring it on!
 • Hitpoints are increased by [color=%positive%]25%[/color], which reduces the chance to sustain debilitating [color=%status%]Injuries[/color] on hit.
 ";
 ::Const.Perks.PerkDefObjects[::Legends.Perk.Colossus].Tooltip = ::Const.Strings.PerkDescription.Colossus;
-::Const.Strings.PerkName.Taunt <- "Battlefield Control"
+::Const.Strings.PerkName.Taunt <- "Battlefield Control";
 ::Const.Strings.PerkDescription.Taunt <- @"
 'Being aware of your surroundings can make or break a fight.'
 

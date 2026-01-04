@@ -53,7 +53,7 @@ this.perk_legend_versatile <- this.inherit("scripts/skills/skill", {
 	function onCombatStarted()
 	{
 		this.m.MeleeStacks = 0;
-		this.m.RangedStacks = 0
+		this.m.RangedStacks = 0;
 		this.m.SkillCount = 0;
 	}
 
@@ -61,7 +61,7 @@ this.perk_legend_versatile <- this.inherit("scripts/skills/skill", {
 	{
 		this.skill.onCombatFinished();
 		this.m.MeleeStacks = 0;
-		this.m.RangedStacks = 0
+		this.m.RangedStacks = 0;
 		this.m.IsHidden = true;
 	}
 

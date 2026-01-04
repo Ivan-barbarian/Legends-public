@@ -147,11 +147,6 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		return ret;
 	}
 
-	function isHidden()
-	{
-		return false;
-	}
-
 	function getUpgraded()
 	{
 		return this.Stash.hasItem(::Legends.Camp.Tent.Healer);

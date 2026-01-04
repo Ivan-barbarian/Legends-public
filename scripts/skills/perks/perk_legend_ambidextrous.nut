@@ -108,7 +108,7 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 					return;
 
 				// i need to somehow do this more dynamically
-				this.Const.SkillCounter++
+				this.Const.SkillCounter++;
 				::Time.scheduleEvent(::TimeUnit.Virtual, ::Const.Combat.RiposteDelay, this.executeFollowUpAttack.bindenv(this), {
 					TargetTile = _targetTile,
 					Skill = !::MSU.isNull(m.offHandSkill) ? m.offHandSkill : m.HandToHand
