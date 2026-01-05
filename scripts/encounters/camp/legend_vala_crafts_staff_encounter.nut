@@ -47,7 +47,6 @@ this.legend_vala_crafts_staff_encounter <- this.inherit("scripts/encounters/enco
 						break;
 					}
 				}
-
 				local item = this.new("scripts/items/weapons/named/legend_named_staff_vala");
 				item.m.Name = _event.m.Vala.getNameOnly() + "\'s " + item.m.Name;
 				this.World.Assets.getStash().add(item);
@@ -118,6 +117,7 @@ this.legend_vala_crafts_staff_encounter <- this.inherit("scripts/encounters/enco
 			return false;
 
 		local bros = this.World.getPlayerRoster().getAll();
+
 		local randomBros = [];
 		foreach (bro in bros)
 		{
@@ -133,8 +133,25 @@ this.legend_vala_crafts_staff_encounter <- this.inherit("scripts/encounters/enco
 		if (this.m.Vala == null)
 			return;
 
-		this.m.RandomBrother = randomBros[this.Math.rand(0, randomBros.len() - 1)];
+		if (randomBros.len() < 2)
+			return;
+
+		this.m.RandomBrother = randomBros.remove(this.Math.rand(0, randomBros.len() - 1));
 		this.m.RandomBrother2 = randomBros[this.Math.rand(0, randomBros.len() - 1)];
+
+		local stash = World.Assets.getStash().getItems();
+		local staves = 0;
+		foreach (item in stash)
+		{
+			if(item != null && item.getID() == "weapon.legend_staff_gnarled")
+			{
+				++staves;
+				break;
+			}
+		}
+
+		if (staves == 0)
+			return;
 
 		return !this.isOnCooldown();
 	}
