@@ -57,6 +57,7 @@
 			target.isAlliedWithPlayer = @() false;
 
 		local ret = onUse(_user, _targetTile); // this returns `null` or `false`, bruh
+		this.m.Item.consumeAmmo();
 		this.m.Item.drop(_targetTile); // just drop the spent net there
 		if (_user.getCurrentProperties().IsSpecializedInNetCasting && ret != false)
 		{
