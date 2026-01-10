@@ -107,8 +107,8 @@ this.legend_barbarian_marauder <- this.inherit("scripts/entity/tactical/human", 
 		];
 
 		this.m.Items.addToBag(this.new(items[this.Math.rand(0, items.len() - 1)]));
-		this.m.Items.addToBag(this.new("scripts/items/weapons/heavy_throwing_axe"));
-		this.m.Items.addToBag(this.new("scripts/items/weapons/heavy_javelin"));
+		this.m.Items.addToBag(this.new("scripts/items/weapons/barbarians/heavy_throwing_axe"));
+		this.m.Items.addToBag(this.new("scripts/items/weapons/barbarians/heavy_javelin"));
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body) && this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
 		{
