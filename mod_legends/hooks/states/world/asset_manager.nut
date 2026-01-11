@@ -15,6 +15,7 @@
 
 	o.m.HasDrillSergeant <- 0;
 	o.m.HasScholars <- 0;
+	o.m.HasVeterinarian <- 0;
 
 	o.getArmorPartsF <- function()
 	{

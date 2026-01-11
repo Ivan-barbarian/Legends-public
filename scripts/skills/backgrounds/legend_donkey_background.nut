@@ -136,12 +136,14 @@ this.legend_donkey_background <- this.inherit("scripts/skills/backgrounds/charac
 	function getTooltip()
 	{
 		local ret = this.character_background.getTooltip();
+		local stashModifier = this.m.Modifiers.Stash + this.getModifier();
+
 		ret.push(
 			{
 				id = 13,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Donkeys provide [color=%positive%]+" + this.m.Modifiers.Stash + "[/color] stash space, [color=%positive%]+" + this.m.Modifiers.Ammo + "[/color] maximum ammunition storage, [color=%positive%]+" + this.m.Modifiers.Meds + "[/color] maximum medicine capacity,  [color=%positive%]+" + this.m.Modifiers.ArmorParts + "[/color] maximum armor parts. These can be increased with perks (may take a moment for the increases to register). "
+				text = "Donkeys provide [color=%positive%]+" + stashModifier + "[/color] stash space, [color=%positive%]+" + this.m.Modifiers.Ammo + "[/color] maximum ammunition storage, [color=%positive%]+" + this.m.Modifiers.Meds + "[/color] maximum medicine capacity,  [color=%positive%]+" + this.m.Modifiers.ArmorParts + "[/color] maximum armor parts. These can be increased with perks (may take a moment for the increases to register). "
 			}
 		);
 		return ret;
@@ -193,7 +195,7 @@ this.legend_donkey_background <- this.inherit("scripts/skills/backgrounds/charac
 
 	function onUpdate(_properties)
 	{
-		if (::World.Statistics.getFlags().get("HasVeterinarian"))
+		if (::World.Assets.m.HasVeterinarian > 0)
 		{
 			_properties.HitpointsMult *= 1.25;
 		}
@@ -201,12 +203,12 @@ this.legend_donkey_background <- this.inherit("scripts/skills/backgrounds/charac
 
 	function getModifier()
 	{
-		return ::World.Statistics.getFlags().get("HasVeterinarian") ? 12 : 0;
+		return ::World.Assets.m.HasVeterinarian > 0 ? 12 : 0;
 	}
 
 	function onAdded()
 	{
-		if (m.IsNew)
+		if (this.m.IsNew)
 			getContainer().getActor().getFlags().set("donkey", true);
 
 		this.character_background.onAdded();
