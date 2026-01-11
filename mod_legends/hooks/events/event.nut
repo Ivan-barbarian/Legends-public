@@ -279,6 +279,14 @@
 
 		::Const.LegendMod.extendVarsWithPronouns(vars, bro1, "randombrother");
 		::Const.LegendMod.extendVarsWithPronouns(vars, bro2, "randombrother2");
+		// Dynamically handle pronouns for any additional actors in an event
+		// For this to work, any event text using the placeholder pronoun must refer to the actor in the lowercase form of the actor's variable name
+		// For example, the placeholder "%they_somebody%" will get the pronoun for this.m.Somebody
+		foreach (key, value in this.m) {
+			if (::MSU.isKindOf(value, "actor")) {
+				::Const.LegendMod.extendVarsWithPronouns(vars, value, key.tolower());
+			}
+		}
 		this.onPrepareVariables(vars);
 		return this.buildTextFromTemplate(_text, vars);
 	}

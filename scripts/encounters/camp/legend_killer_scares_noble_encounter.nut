@@ -70,8 +70,6 @@ this.legend_killer_scares_noble_encounter <- ::inherit("scripts/encounters/encou
 	function onPrepareVariables(_vars) {
 		_vars.push(["killer", this.m.Killer.m.Name]);
 		_vars.push(["noble", this.m.Noble.m.Name]);
-		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Killer, "killer");
-		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Noble, "noble");
 	}
 
 	function onClear() {

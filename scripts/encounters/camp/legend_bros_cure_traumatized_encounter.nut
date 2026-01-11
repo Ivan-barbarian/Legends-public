@@ -203,16 +203,6 @@ this.legend_bros_cure_traumatized_encounter <- this.inherit("scripts/encounters/
 			"traumatized",
 			this.m.Traumatized.getName()
 		]);
-		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Traumatized, "traumatized");
-		if (this.m.Monk != null) {
-			this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Monk, "monk");
-		}
-		if (this.m.Dervish != null) {
-			this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Dervish, "dervish");
-		}
-		if (this.m.Drunkard != null) {
-			this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Drunkard, "drunkard");
-		}
 	}
 
 	function isValid(_camp) {

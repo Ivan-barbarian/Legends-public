@@ -66,8 +66,6 @@ this.legend_monk_admires_dervish_encounter <- ::inherit("scripts/encounters/enco
 	function onPrepareVariables(_vars) {
 		_vars.push(["dervish", this.m.Dervish.m.Name]);
 		_vars.push(["monk", this.m.Monk.m.Name]);
-		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Monk, "monk");
-		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Dervish, "dervish");
 	}
 
 	function onClear() {

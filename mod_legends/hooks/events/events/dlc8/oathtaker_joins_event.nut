@@ -37,10 +37,4 @@
 			_screen.Text = "[img]gfx/ui/events/event_180.png[/img]{The %person_dude% sighs.%SPEECH_ON%Ah, I see now. There are far too many Hugos in this world, it does not surprise me that yet another has appeared in such a state as that dreary skull, though I know not why you carry it around like so.%SPEECH_OFF% | %SPEECH_ON%Hugo.%SPEECH_OFF%The %person_dude% says.%SPEECH_ON%Another farkin\' Hugo, huh? How many are out here? Every other man I run into is a Hugo.%SPEECH_OFF%%they_dude% turns and walks off, mumbling angrily about the commoners and their unoriginal naming schemes. | The %person_dude% sighs.%SPEECH_ON%Hugo, huh? Alright. Whelp, see you later.%SPEECH_OFF%}";
 		});
 	}
-
-	local onPrepareVariables = o.onPrepareVariables;
-	o.onPrepareVariables = function ( _vars ) {
-		onPrepareVariables(_vars);
-		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Dude, "dude");
-	}
 })

@@ -60,7 +60,6 @@ this.legend_qiyan_dances_encounter <- this.inherit("scripts/encounters/encounter
 
 	function onPrepareVariables (_vars) {
 		_vars.push(["qiyan", this.m.Qiyan.getName()]);
-		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Qiyan, "qiyan");
 	}
 
 	function onClear() {

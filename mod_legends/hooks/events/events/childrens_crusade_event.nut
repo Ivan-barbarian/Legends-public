@@ -245,7 +245,6 @@
 		]);
 		if (this.m.Shieldmaiden) {
 			_vars.push(["shieldmaiden", this.m.Shieldmaiden.getName()]);
-			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Shieldmaiden, "shieldmaiden");
 		}
 	}
 

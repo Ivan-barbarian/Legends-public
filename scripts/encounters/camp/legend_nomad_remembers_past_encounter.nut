@@ -33,7 +33,6 @@ this.legend_nomad_remembers_past_encounter <- ::inherit("scripts/encounters/enco
 
 	function onPrepareVariables (_vars) {
 		_vars.push(["nomad", this.m.Nomad.getName()]);
-		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Nomad, "nomad");
 	}
 
 	function isVisible() {
