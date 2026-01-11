@@ -163,6 +163,7 @@
 ::Legends.Compat.HardIncompat.add("mod_more_champions_x10");
 ::Legends.Compat.HardIncompat.add("mod_more_champions_x25");
 ::Legends.Compat.HardIncompat.add("mod_more_followers", "1.1");
+::Legends.Compat.HardIncompat.add("mod_more_followers_fixed", "1.3", "Think twice before installing mods written ai slop mods mid run"); // we're not supporting ai slop mods
 ::Legends.Compat.HardIncompat.add("mod_moreRecruits", "2", "For more recruits a safe alternative seems to be Necro's World Editor");
 ::Legends.Compat.HardIncompat.add("mod_more_weapon_skins", "0.8.0"); // Many of Karl's skins are being integ into Legends
 ::Legends.Compat.HardIncompat.add("mod_namedShieldsInShops", "1.0");
