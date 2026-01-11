@@ -166,8 +166,6 @@ this.legend_ironmonger_offends_blacksmith_encounter <- this.inherit("scripts/enc
 	function onPrepareVariables(_vars) {
 		_vars.push(["blacksmith", this.m.Blacksmith.getName()]);
 		_vars.push(["ironmonger", this.m.Ironmonger.getName()]);
-		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Blacksmith, "blacksmith");
-		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Ironmonger, "ironmonger");
 	}
 
 	function onClear() {

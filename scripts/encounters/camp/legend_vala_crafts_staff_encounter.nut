@@ -104,9 +104,6 @@ this.legend_vala_crafts_staff_encounter <- this.inherit("scripts/encounters/enco
 			"randombrother2",
 			this.m.RandomBrother2.getName()
 		]);
-		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Vala, "vala");
-		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.RandomBrother, "randombrother");
-		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.RandomBrother2, "randombrother2");
 	}
 
 	function isValid(_camp) {

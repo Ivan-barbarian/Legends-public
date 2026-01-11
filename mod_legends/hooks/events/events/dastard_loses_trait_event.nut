@@ -8,13 +8,4 @@
 			}
 		}
 	}
-
-	local onPrepareVariables = o.onPrepareVariables;
-	o.onPrepareVariables = function ( _vars )
-	{
-		onPrepareVariables(_vars);
-		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Dastard, "dastard");
-		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Braveman1, "braveman1");
-		::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Braveman2, "braveman2");
-	}
 })
