@@ -1,6 +1,6 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "19.2.39",
+	Version = "19.2.40",
 	Name = "Legends Mod",
 	BuildName = "Rock & Bone",
 	IsStartingNewCampaign = false
