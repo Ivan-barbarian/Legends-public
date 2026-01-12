@@ -65,7 +65,8 @@
 				herbalists.push(bro);
 			}
 		}
-		this.m.Herbalist = herbalists[this.Math.rand(0, herbalists.len() - 1)];
+		if (herbalists.len() > 0)
+			this.m.Herbalist = herbalists[this.Math.rand(0, herbalists.len() - 1)];
 
 		onUpdateScore();
 	}
