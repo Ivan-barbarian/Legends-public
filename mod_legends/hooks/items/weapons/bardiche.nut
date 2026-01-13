@@ -35,8 +35,6 @@
 	o.onEquip = function ()
 	{
 		onEquip();
-		::Legends.Actives.grant(this, ::Legends.Active.Thrust, function (_skill) {
-			_skill.m.IsHaftstrike = true;
-		}.bindenv(this));
+		::Legends.Actives.grant(this, ::Legends.Active.Haftstrike);
 	}
 });

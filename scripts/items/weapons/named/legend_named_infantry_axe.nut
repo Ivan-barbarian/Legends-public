@@ -52,8 +52,6 @@ this.legend_named_infantry_axe <- this.inherit("scripts/items/weapons/named/name
 			_skill.m.ActionPointCost = 4;
 			_skill.setFatigueCost(_skill.getFatigueCostRaw() + 5);
 		}.bindenv(this));
-		::Legends.Actives.grant(this, ::Legends.Active.Thrust, function (_skill) {
-			_skill.m.IsHaftstrike = true;
-		}.bindenv(this));
+		::Legends.Actives.grant(this, ::Legends.Active.Haftstrike);
 	}
 });

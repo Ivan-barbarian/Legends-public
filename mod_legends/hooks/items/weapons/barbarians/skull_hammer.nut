@@ -13,12 +13,9 @@
 		this.m.ArmamentIcon = "icon_wildmen_07" + v;
 	}
 
-	local onEquip = o.onEquip;
-	o.onEquip = function ()
-	{
-		onEquip();
-		::Legends.Actives.grant(this, ::Legends.Active.Thrust, function (_skill) {
-			_skill.m.IsHaftstrike = true;
-		}.bindenv(this));
-	}
+	// local onEquip = o.onEquip;
+	// o.onEquip = function ()
+	// {
+	// 	onEquip();
+	// }
 });

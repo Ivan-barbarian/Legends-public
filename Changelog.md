@@ -42,7 +42,7 @@ Favoured Enemy - Sword Master
 * `Mordhau` - batter
 
 **Various**
-* `Haftstrike` - a weak but quick attack with the haft - added to 2h hammers, 2h axes and 2h maces
+* `Haftstrike` - a weak but quick attack with the haft - added to 2h axes and 2h maces
 
 ### For modders:
 
