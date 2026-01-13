@@ -81,7 +81,7 @@
 		}
 	}
 
-	o.makeMiniboss <- function ()
+	o.makeMiniboss = function ()
 	{
 		if (!this.actor.makeMiniboss())
 		{
@@ -110,6 +110,7 @@
 			[1, ::Legends.Helmet.Ancient.ancient_heavy_restored_helmet]
 		]));
 
+		::Legends.Perks.grant(this, ::Legends.Perk.DevastatingStrikes);
 		::Legends.Perks.grant(this, ::Legends.Perk.NineLives);
 		::Legends.Perks.grant(this, ::Legends.Perk.LegendTerrifyingVisage);
 		::Legends.Perks.grant(this, ::Legends.Perk.LegendBackswing);
