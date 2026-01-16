@@ -1,5 +1,5 @@
 if (!("Weapons" in ::Legends)) {
-   ::Legends.Weapons <- {};
+    ::Legends.Weapons <- {};
 }
 
 ::Legends.Weapons.findPrimaryAttackSkill <- function (_actor, _weapon) {
@@ -7,24 +7,19 @@ if (!("Weapons" in ::Legends)) {
         return null;
     }
 
-    local skills = _actor.getSkills();
     local bestSkill = null;
     local bestAPCost = 9999;
 
-    foreach (skill in skills.m.Skills) {
-        if (skill.m.Item == null) {
+    local actorSkills = _actor.getSkills();
+    foreach (skill in _weapon.m.SkillPtrs) {
+        if (skill == null || skill.isGarbage()) {
             continue;
         }
 
-        // When dual wielding the same weapon type, the skill instance may point to the other
-        // weapon (due to skill container deduplication) so the instance id check will fail.
-        // We check if both weapons have the same ID in that case.
-        local skillMatchesWeapon = skill.m.Item.getInstanceID() == _weapon.getInstanceID();
-        if (!skillMatchesWeapon && skill.m.Item.getID() == _weapon.getID()) {
-            skillMatchesWeapon = true;
-        }
-        if (!skillMatchesWeapon) {
-            continue;
+        // Ensure skill has a container so validation methods like `isUsable()` don't crash.
+        // Needed when wielding two different weapons with the same skill (e.g. dagger + knife).
+        if (skill.getContainer() == null) {
+            skill.setContainer(actorSkills);
         }
 
         // Use same validation code as Attack of Opportunity
@@ -48,7 +43,7 @@ if (!("Weapons" in ::Legends)) {
     }
 
     if (bestSkill == null) {
-       ::logWarning("findPrimaryAttackSkill: no valid skill for weapon " + _weapon.getID());
+        ::logWarning("findPrimaryAttackSkill: no valid skill for weapon " + _weapon.getID());
     }
 
     return bestSkill;
