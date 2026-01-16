@@ -42,6 +42,7 @@
 	<sprite id="legend_halberd_smite" ic="FF23165B" img="skills\legend_halberd_smite.png" />
 	<sprite id="cat_bite" ic="FF23165B" img="skills\cat_bite.png" />
 	<sprite id="stone_aim_square" ic="FF23165B" img="skills\stone_aim_square.png" />
+	<sprite id="stone_square" ic="FF23165B" img="skills\stone_square.png" />
 	<sprite id="coordinated_volleys_square" ic="FF23165B" img="skills\coordinated_volleys_square.png" />
 	<sprite id="mini_coordinated_volleys_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_coordinated_volleys_circle.png" />
 	<sprite id="mini_mark_target" offsetY="35" ic="FF344955" img="skills\mini\mini_mark_target.png" />
