@@ -12,7 +12,8 @@
 		::Legends.Effect.LegendTackled,
 		::Legends.Effect.Shellshocked,
 		::Legends.Effect.Sleeping,
-		::Legends.Effect.Staggered
+		::Legends.Effect.Staggered,
+		::Legends.Effect.Stunned,
 	];
 
 	local create = o.create;
