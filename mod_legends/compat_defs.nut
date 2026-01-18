@@ -240,6 +240,7 @@
 ::Legends.Compat.SoftIncompat.add("mod_SAF", "1.0.0"); // Darx's Stackable Arena Fights
 ::Legends.Compat.SoftIncompat.add("mod_streamlined_ui", "1.0.3");
 ::Legends.Compat.SoftIncompat.add("mod_URUI", "1.2.0"); // Unrecognized UI
+::Legends.Compat.SoftIncompat.add("mod_persistent_characters", "0.1.8", "Bro wages keep growing on reload"); 
 //endregion
 
 //region IncompatButPatched
