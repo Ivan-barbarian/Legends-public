@@ -56,6 +56,36 @@ this.legend_double_swing_skill <- this.inherit("scripts/skills/skill", {
 				text = this.getCostString()
 			},
 		];
+
+		local actor = this.getContainer().getActor();
+		local items = actor.getItems();
+		local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+
+		local mhSkill = ::Legends.Weapons.findPrimaryAttackSkill(actor, mh);
+		if (mhSkill == null) {
+			::logWarning("legend_double_swing: no valid attack skill found for mainhand");
+		} else {
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Mainhand attack: [color=%skill%]" + mhSkill.getName() + "[/color]"
+			});
+		}
+
+		local ohSkill = ::Legends.Weapons.findPrimaryAttackSkill(actor, oh);
+		if (ohSkill == null) {
+			::logWarning("legend_double_swing: no valid attack skill found for offhand");
+		} else {
+			ret.push({
+				id = 11,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Offhand attack: [color=%skill%]" + ohSkill.getName() + "[/color]"
+			});
+		}
+
 		return ret;
 	}
 
