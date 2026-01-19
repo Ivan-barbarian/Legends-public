@@ -1,6 +1,18 @@
 ::mods_hookExactClass("skills/actives/decapitate", function(o)
 {
 	o.m.ApplyAxeMastery <- false;
+	o.m.IsScytheDecapitate <- false;
+
+	o.setItem <- function (_item)
+	{
+		this.skill.setItem(_item);
+		if (this.m.IsScytheDecapitate)
+		{
+			this.m.Description = "A devastating blow that can be used from behind the frontline, aimed to decapitate the target on the spot. Does more damage to hitpoints, the more the target is already wounded. Killing the target will always decapitate it, if at all possible.";
+			this.m.MinRange = 1;
+			this.m.MaxRange = 2;
+		}
+	}
 
 	o.getTooltip = function ()
 	{
@@ -19,6 +31,24 @@
 			icon = "ui/icons/regular_damage.png",
 			text = "Inflicts [color=%damage%]" + damage_regular_min + "[/color] - [color=%damage%]" + damage_regular_max * 2 + "[/color] damage depending on how wounded the target already is, of which [color=%damage%]0[/color] - [color=%damage%]" + damage_direct_max + "[/color] can ignore armor"
 		});
+		if (!this.m.IsScytheDecapitate)
+			return ret;
+
+		ret.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/vision.png",
+			text = "Has a range of [color=%positive%]2[/color] tiles"
+		});
+		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/hitchance.png",
+				text = "Has [color=%negative%]-15%[/color] chance to hit targets directly adjacent because the weapon is too unwieldy"
+			});
+		}
 		return ret;
 	}
 

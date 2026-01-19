@@ -49,6 +49,9 @@ this.legend_named_military_warscythe <- this.inherit("scripts/items/weapons/name
 			_skill.m.IsScytheCleave = true;
 		}.bindenv(this));
 		::Legends.Actives.grant(this, ::Legends.Active.Reap);
+		::Legends.Actives.grant(this, ::Legends.Active.Decapitate, function (_skill) {
+			_skill.m.IsScytheDecapitate = true;
+		}.bindenv(this));
 	}
 
 });
