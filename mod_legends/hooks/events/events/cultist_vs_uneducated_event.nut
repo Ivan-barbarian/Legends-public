@@ -14,10 +14,20 @@
 					this.Characters.push(_event.m.Cultist.getImagePath());
 					this.Characters.push(_event.m.Uneducated.getImagePath());
 
-					_event.m.Uneducated.getBackground().Convert();
-					_event.m.Uneducated.getBackground().m.RawDescription += " " + _event.m.Cultist.getName() + " helped " + _event.m.Uneducated.getName() + " see the darkness.";
+					this.Characters.push(_event.m.Cultist.getImagePath());
+					this.Characters.push(_event.m.Uneducated.getImagePath());
+					local background = this.new("scripts/skills/backgrounds/converted_cultist_background");
+					background.m.IsNew = false;
+					local oldPerkTree = _event.m.Uneducated.getBackground().m.CustomPerkTree;
+					_event.m.Uneducated.getSkills().removeByID(_event.m.Uneducated.getBackground().getID());
+					_event.m.Uneducated.getSkills().add(background);
+					_event.m.Uneducated.getBackground().m.RawDescription = "Who this figure was no longer matters. They now bear the mark of Davkul on their forehead and while their lips do not yet know the words of his newfound religion, they speak of the cult\'s fascination in a familiar tongue. Darkness, they say, is coming.";
 					_event.m.Uneducated.getBackground().buildDescription(true);
+					_event.m.Uneducated.getBackground().rebuildPerkTree(oldPerkTree);
+					_event.m.Uneducated.resetPerks();
 					_event.m.Uneducated.getSkills().update();
+					background.buildDescription();
+					background.onSetAppearance();
 					//set relations
 					this.List = [{
 						id = 13,
