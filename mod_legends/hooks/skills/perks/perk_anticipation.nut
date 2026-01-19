@@ -46,10 +46,27 @@
 		local chance = actor.getCurrentProperties().getRangedDefense();
 		local attackerTile = _attacker.getTile();
 		local myTile = actor.getTile();
+
 		if (skill.isUsable() && skill.onVerifyTarget(myTile, attackerTile) && skill.isUsableOn(attackerTile, myTile) && this.Math.rand(1, 100) < chance)
 		{
-			::Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(actor) + " has dodged the attack and preparing to counter.");
-			return skill.onUse(actor, attackerTile);
+			local skill = this.m.Skills.getAttackOfOpportunity();
+
+			if (skill != null)
+			{
+				local info = {
+					User = actor,
+					Skill = skill,
+					TargetTile = _attacker.getTile()
+				};
+				local delay = this.Math.max(this.Const.Combat.RiposteDelay, skill.m.Delay);
+				this.Time.scheduleEvent(this.TimeUnit.Virtual, delay, this.onCounterFire.bindenv(this), info);
+			}
 		}
+	}
+
+	o.onCounterFire <- function(_info)
+	{
+		::Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(actor) + " has dodged the attack and performing a counter attack.");
+		return skill.onUse(actor, attackerTile);
 	}
 });
