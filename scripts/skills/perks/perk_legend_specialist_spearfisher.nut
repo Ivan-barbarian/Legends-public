@@ -47,14 +47,4 @@ this.perk_legend_specialist_spearfisher <- this.inherit("scripts/skills/legend_s
 	{
 		this.m.FreeNet = false;
 	}
-
-	function onAfterUpdate(_properties)
-	{
-		if (!this.m.FreeNet)
-			return;
-		local skill = ::Legends.Actives.get(this, ::Legends.Active.ThrowNet);
-		if (skill != null) {
-			skill.m.ActionPointCost = 0;
-		}
-	}
 });
