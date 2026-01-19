@@ -23,7 +23,7 @@
 	{
 		if (_skill.getID() == "actives.deathblow")
 		{
-			_skill = ::new("scripts/skills/actives/deathblow_skill"); // replace strike with scythe cleave
+			_skill = ::new("scripts/skills/actives/deathblow_skill");
 			_skill.m.DeathblowBonus = true;
 		}
 
