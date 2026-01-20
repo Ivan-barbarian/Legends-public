@@ -341,7 +341,20 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		if (closest != null)
-			return skill.onUse(_entity, closest.getTile());
+		{
+			local info = {
+				User = _entity,
+				Skill = skill,
+				TargetTile = closest.getTile()
+			};
+			local delay = this.Math.max(this.Const.Combat.RiposteDelay, skill.m.Delay);
+			this.Time.scheduleEvent(this.TimeUnit.Virtual, delay, this.onAfterTeleport.bindenv(this), info);
+		}
+	}
+
+	function onAfterTeleport(_info)
+	{
+		return skill.onUse(_info.User, _info.TargetTile);
 	}
 
 });
