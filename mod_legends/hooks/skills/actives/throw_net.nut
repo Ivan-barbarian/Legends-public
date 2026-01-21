@@ -45,7 +45,7 @@
 		if (_properties.IsSpecializedInNetCasting)
 			this.m.MaxRange = 5;
 
-		local skill = ::Legends.Perks.get(this, ::Legends.Perk.SteelBrow);
+		local skill = ::Legends.Perks.get(this, ::Legends.Perk.LegendMasteryNets);
 		if (skill != null && skill.m.FreeNet)
 			this.m.ActionPointCost = 0;
 	}
