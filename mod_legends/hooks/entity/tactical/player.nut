@@ -659,6 +659,8 @@
 				bro.addXP(this.Math.max(1, this.Math.floor(XPgroup / brothers.len())));
 			}
 		}
+		if (this.Tactical.State.isScenarioMode())
+			return;
 		if (::World.Assets.m.HasDrillSergeant > 0 && this.getLevel() >= 12)
 		{
 			foreach( bro in brothers )
