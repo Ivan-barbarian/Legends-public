@@ -20,10 +20,10 @@
 					_event.m.Uneducated.getBackground().m.RawDescription = "Who this figure was no longer matters. They now bear the mark of Davkul on their forehead and while their lips do not yet know the words of his newfound religion, they speak of the cult\'s fascination in a familiar tongue. Darkness, they say, is coming. " + _event.m.Cultist.getName() + " helped " + _event.m.Uneducated.getName() + " see the darkness.";
 					_event.m.Uneducated.getBackground().buildDescription(true);
 					_event.m.Uneducated.getBackground().rebuildPerkTree(oldPerkTree);
+					_event.m.Uneducated.onSetAppearance();
 					_event.m.Uneducated.resetPerks();
+					_event.m.Uneducated.getBaseProperties().MeleeSkill += 10;
 					_event.m.Uneducated.getSkills().update();
-					background.buildDescription();
-					background.onSetAppearance();
 
 					this.List = [{
 						id = 13,
@@ -32,7 +32,6 @@
 					}];
 
 					_event.m.Cultist.getBaseProperties().Bravery += 2;
-					_event.m.Uneducated.getBaseProperties().MeleeSkill += 10;
 					_event.m.Cultist.getSkills().update();
 					this.List.push({
 						id = 16,

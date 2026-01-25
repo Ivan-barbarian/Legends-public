@@ -37,7 +37,9 @@
 			Weapon = [],
 			Defense = [
 			],
-			Traits = [],
+			Traits = [
+				this.Const.Perks.DeviousTree
+			],
 			Enemy = [],
 			Class = [
 				this.Const.Perks.NinetailsClassTree
