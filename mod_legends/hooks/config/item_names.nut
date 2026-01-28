@@ -9,3 +9,8 @@
 ::Const.Strings.WardogNames.extend([
 	"Fido"
 ]);
+
+::Const.Strings.GreatswordNames.extend([
+	"Freiheit",
+	"Sieger"
+]);

@@ -389,6 +389,7 @@
 	"Findscop",
 	"Maelmuire",
 	"Lonceta",
+	"Vigga"
 ];
 ::Const.Strings.InventorTitles <- [
 	"the Inventor",
