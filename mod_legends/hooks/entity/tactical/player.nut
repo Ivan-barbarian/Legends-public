@@ -1881,7 +1881,7 @@
 		if (_killer.getSkills().hasSkill("injury.legend_aperthropy") && !this.getSkills().hasSkill("injury.legend_aperthropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
-			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyTree.Tree);
+			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyMagicTree.Tree);
 			this.logDebug(this.getName() + " gained aperthropy");
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this) + " is infected with aperthropy ");
 		}
@@ -1889,7 +1889,7 @@
 		if (_killer.getSkills().hasSkill("injury.legend_arborthropy") && !this.getSkills().hasSkill("injury.legend_arborthropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_arborthropy_injury"));
-			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyTree.Tree);
+			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyMagicTree.Tree);
 			this.logDebug(this.getName() + " gained arborthropy");
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this) + " is infected with arborthropy ");
 		}
@@ -1897,7 +1897,7 @@
 		if (_killer.getSkills().hasSkill("injury.legend_lycanthropy") && !this.getSkills().hasSkill("injury.legend_lycanthropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
-			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyTree.Tree);
+			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyMagicTree.Tree);
 			this.logDebug(this.getName() + " gained lycanthropy");
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this) + " is infected with lycanthropy ");
 		}
@@ -1905,14 +1905,14 @@
 		if (_killer.getSkills().hasSkill("injury.legend_ursathropy") && !this.getSkills().hasSkill("injury.legend_ursathropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
-			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyTree.Tree);
+			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyMagicTree.Tree);
 			this.logDebug(this.getName() + " gained ursathropy");
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this) + " is infected with ursathropy ");
 		}
 		if (_killer.getSkills().hasSkill("injury.legend_vermesthropy") && !this.getSkills().hasSkill("injury.legend_vermesthropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
-			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyTree.Tree);
+			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyMagicTree.Tree);
 			this.logDebug(this.getName() + " gained vermesthropy");
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this) + " is infected with vermesthropy ");
 		}
@@ -1932,28 +1932,28 @@
 		if (r <= 60 && !this.getSkills().hasSkill("injury.legend_lycanthropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
-			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyTree.Tree);
+			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyMagicTree.Tree);
 			this.logDebug(this.getName() + " gained lycanthropy");
 		}
 
 		if (r > 50 && r <= 80 && !this.getSkills().hasSkill("injury.legend_aperthropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_aperthropy_injury"));
-			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyTree.Tree);
+			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyMagicTree.Tree);
 			this.logDebug(this.getName() + " gained aperthropy");
 		}
 
 		if (r > 80 && r <= 95 && !this.getSkills().hasSkill("injury.legend_ursathropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
-			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyTree.Tree);
+			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyMagicTree.Tree);
 			this.logDebug(this.getName() + " gained ursathropy");
 		}
 
 		if (r == 95 && !this.getSkills().hasSkill("injury.legend_vermesthropy"))
 		{
 			this.getSkills().add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
-			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyTree.Tree);
+			this.getBackground().addPerkGroup(this.Const.Perks.TherianthropyMagicTree.Tree);
 			this.logDebug(this.getName() + " gained vermesthropy");
 		}
 	}

@@ -5,6 +5,7 @@ if (!("Perks" in ::Const))
 }
 
 ::Const.Perks.SpecialTrees <- {
+// GroupsCategory = "Special", // let them be categorized as "Other" for now
 Tree = [],
 Perks = [],
 

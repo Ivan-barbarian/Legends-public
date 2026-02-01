@@ -6,6 +6,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.PoisonClassTree <- {
 	ID = "PoisonClassTree",
 	Name = "Poison",
+	Icon = "ui/perks/mastery_poison.png",
 	Descriptions = [
 		"poisons"
 	],
@@ -23,6 +24,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.BeastClassTree <- {
 	ID = "BeastClassTree",
 	Name = "Nets",
+	Icon = "ui/perks/net_perk.png",
 	Descriptions = [
 		"catching beasts"
 	],
@@ -38,8 +40,9 @@ if (!("Perks" in ::Const))
 };
 
 ::Const.Perks.TailorClassTree <- {
-ID = "TailorClassTree",
+	ID = "TailorClassTree",
 	Name = "Trendy",
+	Icon = "ui/perks/fashionable.png",
 	Descriptions = [
 		"tailoring"
 	],
@@ -57,6 +60,7 @@ ID = "TailorClassTree",
 ::Const.Perks.HealerClassTree <- {
 	ID = "HealerClassTree",
 	Name = "Healing",
+	Icon = "ui/perks/bandage_circle.png",
 	Descriptions = [
 		"healing"
 	],
@@ -74,6 +78,7 @@ ID = "TailorClassTree",
 ::Const.Perks.FaithClassTree <- {
 	ID = "FaithClassTree",
 	Name = "Faith",
+	Icon = "ui/perks/prayer_purple.png",
 	Descriptions = [
 		"faith"
 	],
@@ -91,6 +96,7 @@ ID = "TailorClassTree",
 ::Const.Perks.KnifeClassTree <- {
 	ID = "KnifeClassTree",
 	Name = "Knives",
+	Icon = "ui/perks/perk_spec_dagger.png",
 	Descriptions = [
 		"knives"
 	],
@@ -108,6 +114,7 @@ ID = "TailorClassTree",
 ::Const.Perks.ButcherClassTree <- {
 	ID = "ButcherClassTree",
 	Name = "Butcher",
+	Icon = "ui/perks/perk_spec_butcher.png",
 	Descriptions = [
 		"butchery"
 	],
@@ -125,6 +132,7 @@ ID = "TailorClassTree",
 ::Const.Perks.HammerClassTree <- {
 	ID = "HammerClassTree",
 	Name = "Blacksmith",
+	Icon = "ui/perks/perk_spec_smith.png",
 	Descriptions = [
 		"hammers"
 	],
@@ -142,6 +150,7 @@ ID = "TailorClassTree",
 ::Const.Perks.MilitiaClassTree <- {
 	ID = "MilitiaClassTree",
 	Name = "Militia",
+	Icon = "ui/perks/perk_spec_militia.png",
 	Descriptions = [
 		"militia"
 	],
@@ -159,6 +168,7 @@ ID = "TailorClassTree",
 ::Const.Perks.ConArtistTree <- {
 	ID = "ConArtistTree",
 	Name = "Con Artist",
+	Icon = "ui/perks/sleight_of_hand.png",
 	Descriptions = [
 		"sleight of hand"
 	],
@@ -176,6 +186,7 @@ ID = "TailorClassTree",
 ::Const.Perks.PickaxeClassTree <- {
 	ID = "PickaxeClassTree",
 	Name = "Miner",
+	Icon = "ui/perks/perk_spec_pickaxe.png",
 	Descriptions = [
 		"pickaxes"
 	],
@@ -193,6 +204,7 @@ ID = "TailorClassTree",
 ::Const.Perks.PitchforkClassTree <- {
 	ID = "PitchforkClassTree",
 	Name = "Farmer",
+	Icon = "ui/perks/perk_spec_bitchfork.png",
 	Descriptions = [
 		"pitchforks"
 	],
@@ -210,6 +222,7 @@ ID = "TailorClassTree",
 ::Const.Perks.ShortbowClassTree <- {
 	ID = "ShortbowClassTree",
 	Name = "Shortbow",
+	Icon = "ui/perks/perk_spec_shortbow.png",
 	Descriptions = [
 		"shortbows"
 	],
@@ -227,6 +240,7 @@ ID = "TailorClassTree",
 ::Const.Perks.ShovelClassTree <- {
 	ID = "ShovelClassTree",
 	Name = "Gravedigger",
+	Icon = "ui/perks/perk_spec_shovel.png",
 	Descriptions = [
 		"shovels"
 	],
@@ -244,6 +258,7 @@ ID = "TailorClassTree",
 ::Const.Perks.WoodaxeClassTree <- {
 	ID = "WoodaxeClassTree",
 	Name = "Woodsman",
+	Icon = "ui/perks/perk_spec_woodsman.png",
 	Descriptions = [
 		"axes"
 	],
@@ -261,6 +276,7 @@ ID = "TailorClassTree",
 ::Const.Perks.SickleClassTree <- {
 	ID = "SickleClassTree",
 	Name = "Herbalist",
+	Icon = "ui/perks/perk_spec_sickle.png",
 	Descriptions = [
 		"sickles"
 	],
@@ -278,6 +294,7 @@ ID = "TailorClassTree",
 ::Const.Perks.SlingClassTree <- {
 	ID = "SlingClassTree",
 	Name = "Sling",
+	Icon = "ui/perks/perk_spec_sling.png",
 	Descriptions = [
 		"slings"
 	],
@@ -293,8 +310,9 @@ ID = "TailorClassTree",
 };
 
 ::Const.Perks.StaffClassTree <- {
-	ID = "SpecialistStaffTree",
+	ID = "StaffClassTree",
 	Name = "Staff Defense",
+	Icon = "ui/perks/perk_spec_staff.png",
 	Descriptions = [
 		"staves"
 	],
@@ -310,8 +328,9 @@ ID = "TailorClassTree",
 };
 
 ::Const.Perks.InventorClassTree <- {
-	ID = "SpecialistInventorTree",
+	ID = "InventorClassTree",
 	Name = "Inventor",
+	Icon = "ui/perks/perk_spec_firearm.png",
 	Descriptions = [
 		"firearms"
 	],
@@ -329,6 +348,7 @@ ID = "TailorClassTree",
 ::Const.Perks.NinetailsClassTree <- {
 	ID = "NinetailsClassTree",
 	Name = "Cat O' Nine Tails",
+	Icon = "ui/perks/perk_spec_cultist.png",
 	Descriptions = [
 		"ninetails"
 	],
@@ -344,8 +364,9 @@ ID = "TailorClassTree",
 }
 
 ::Const.Perks.LongswordClassTree <- {
-	ID = "SpecialistLongswordTree",
+	ID = "LongswordClassTree",
 	Name = "Swordsman",
+	Icon = "ui/perks/perk_spec_2hsword.png",
 	Descriptions = [
 		"swords"
 	],
@@ -361,8 +382,9 @@ ID = "TailorClassTree",
 };
 
 ::Const.Perks.InquisitionClassTree <- {
-	ID = "SpecialistInquisitionTree",
+	ID = "InquisitionClassTree",
 	Name = "Inquisition",
+	Icon = "ui/perks/perk_spec_xbow.png",
 	Descriptions = [
 		"crossbows"
 	],
@@ -378,8 +400,9 @@ ID = "TailorClassTree",
 };
 
 ::Const.Perks.ClubClassTree <- {
-	ID = "SpecialistBrowbeaterTree",
+	ID = "ClubClassTree",
 	Name = "Browbeater",
+	Icon = "ui/perks/perk_spec_mace.png",
 	Descriptions = [
 		"clubs"
 	],
@@ -397,6 +420,7 @@ ID = "TailorClassTree",
 ::Const.Perks.JugglerClassTree <- {
 	ID = "JugglerClassTree",
 	Name = "Juggler",
+	Icon = "ui/perks/leap_circle.png",
 	Descriptions = [
 		"acrobatics"
 	],
@@ -414,6 +438,7 @@ ID = "TailorClassTree",
 ::Const.Perks.HoundmasterClassTree <- {
 	ID = "HoundmasterClassTree",
 	Name = "Hound Master",
+	Icon = "ui/perks/perk_hound.png",
 	Descriptions = [
 		"training dogs"
 	],
@@ -431,6 +456,7 @@ ID = "TailorClassTree",
 ::Const.Perks.ScytheClassTree <- {
 	ID = "ScytheClassTree",
 	Name = "Scythe",
+	Icon = "ui/perks/perk_spec_scythe.png",
 	Descriptions = [
 		"scythes"
 	],
@@ -448,6 +474,7 @@ ID = "TailorClassTree",
 ::Const.Perks.SharpshooterClassTree <- {
 	ID = "SharpshooterClassTree",
 	Name = "Sharpshooter",
+	Icon = "ui/perks/perk_spec_longbow.png",
 	Descriptions = [
 		"longbows"
 	],
@@ -465,6 +492,7 @@ ID = "TailorClassTree",
 ::Const.Perks.RaiderClassTree <- {
 	ID = "RaiderClassTree",
 	Name = "Raider",
+	Icon = "ui/perks/perk_spec_raider.png",
 	Descriptions = [
 		"handaxes and throwing axes"
 	],
@@ -482,6 +510,7 @@ ID = "TailorClassTree",
 ::Const.Perks.SpearfisherClassTree <- {
 	ID = "SpearfisherClassTree",
 	Name = "Spearfisher",
+	Icon = "ui/perks/perk_spec_javelin.png",
 	Descriptions = [
 		"javelins"
 	],
@@ -497,6 +526,7 @@ ID = "TailorClassTree",
 };
 
 ::Const.Perks.ClassTrees <- {
+	GroupsCategory = "Class",
 	Tree = [
 		::Const.Perks.BeastClassTree,
 		::Const.Perks.FaithClassTree,

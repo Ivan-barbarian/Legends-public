@@ -4,8 +4,9 @@ if (!("Perks" in ::Const))
 }
 
 ::Const.Perks.MaceTree <- {
-	ID = "Mace",
+	ID = "MaceTree",
 	Name = "Mace",
+	Icon = "ui/perks/perk_43.png",
 	Descriptions = [
 		"maces"
 	],
@@ -56,8 +57,9 @@ if (!("Perks" in ::Const))
 
 
 ::Const.Perks.FlailTree <- {
-	ID = "Flail",
+	ID = "FlailTree",
 	Name = "Flail",
+	Icon = "ui/perks/perk_47.png",
 	Descriptions = [
 		"flails"
 	],
@@ -107,8 +109,9 @@ if (!("Perks" in ::Const))
 };
 
 ::Const.Perks.HammerTree <- {
-	ID = "Hammer",
+	ID = "HammerTree",
 	Name = "Hammer",
+	Icon = "ui/perks/perk_53.png",
 	Descriptions = [
 		"hammers"
 	],
@@ -159,8 +162,9 @@ if (!("Perks" in ::Const))
 };
 
 ::Const.Perks.AxeTree <- {
-	ID = "Axe",
+	ID = "AxeTree",
 	Name = "Axe",
+	Icon = "ui/perks/perk_44.png",
 	Descriptions = [
 		"axes"
 	],
@@ -210,8 +214,9 @@ if (!("Perks" in ::Const))
 };
 
 ::Const.Perks.CleaverTree <- {
-	ID = "Cleaver",
+	ID = "CleaverTree",
 	Name = "Cleaver",
+	Icon = "ui/perks/perk_52.png",
 	Descriptions = [
 		"cleavers"
 	],
@@ -261,8 +266,9 @@ if (!("Perks" in ::Const))
 };
 
 ::Const.Perks.TwoHandedTree <- {
-	ID = "TwoHanded",
+	ID = "TwoHandedTree",
 	Name = "Two-Handed",
+	Icon = "ui/perks/spec_greatsword.png",
 	Descriptions = [
 		"two handed weapons"
 	],
@@ -312,8 +318,9 @@ if (!("Perks" in ::Const))
 };
 
 ::Const.Perks.OneHandedTree <- {
-	ID = "OneHanded",
+	ID = "OneHandedTree",
 	Name = "One-Handed",
+	Icon = "ui/perks/perk_41.png",
 	Descriptions = [
 		"one handed weapons"
 	],
@@ -363,8 +370,9 @@ if (!("Perks" in ::Const))
 };
 
 ::Const.Perks.SwordTree <- {
-	ID = "Sword",
+	ID = "SwordTree",
 	Name = "Sword",
+	Icon = "ui/perks/perk_46.png",
 	Descriptions = [
 		"swords"
 	],
@@ -414,8 +422,9 @@ if (!("Perks" in ::Const))
 };
 
 ::Const.Perks.DaggerTree <- {
-	ID = "Dagger",
+	ID = "DaggerTree",
 	Name = "Dagger",
+	Icon = "ui/perks/perk_51.png",
 	Descriptions = [
 		"daggers"
 	],
@@ -464,8 +473,9 @@ if (!("Perks" in ::Const))
 	]
 };
 ::Const.Perks.PolearmTree <- {
-	ID = "Polearm",
+	ID = "PolearmTree",
 	Name = "Polearm",
+	Icon = "ui/perks/perk_58.png",
 	Descriptions = [
 		"polearms"
 	],
@@ -515,8 +525,9 @@ if (!("Perks" in ::Const))
 };
 
 ::Const.Perks.SpearTree <- {
-	ID = "Spear",
+	ID = "SpearTree",
 	Name = "Spear",
+	Icon = "ui/perks/perk_45.png",
 	Descriptions = [
 		"spears"
 	],
@@ -566,8 +577,9 @@ if (!("Perks" in ::Const))
 };
 
 ::Const.Perks.CrossbowTree <- {
-	ID = "Crossbow",
+	ID = "CrossbowTree",
 	Name = "Crossbow",
+	Icon = "ui/perks/perk_48.png",
 	Descriptions = [
 		"crossbows"
 	],
@@ -617,8 +629,9 @@ if (!("Perks" in ::Const))
 };
 
 ::Const.Perks.BowTree <- {
-	ID = "Bow",
+	ID = "BowTree",
 	Name = "Bow",
+	Icon = "ui/perks/perk_49.png",
 	Descriptions = [
 		"bows"
 	],
@@ -668,8 +681,9 @@ if (!("Perks" in ::Const))
 };
 
 ::Const.Perks.ThrowingTree <- {
-	ID = "Throwing",
+	ID = "ThrowingTree",
 	Name = "Throwing",
+	Icon = "ui/perks/perk_50.png",
 	Descriptions = [
 		"throwing weapons"
 	],
@@ -719,8 +733,9 @@ if (!("Perks" in ::Const))
 };
 
 ::Const.Perks.SlingTree <- {
-	ID = "Sling",
-	Name = "Sling"
+	ID = "SlingTree",
+	Name = "Sling",
+	Icon = "ui/perks/perk_sling_mastery.png",
 	Descriptions = [
 		"slings"
 	],
@@ -772,6 +787,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.ShieldTree <- {
 	ID = "ShieldTree",
 	Name = "Shield",
+	Icon = "ui/perks/perk_05.png",
 	Descriptions = [
 		"shields"
 	],
@@ -823,6 +839,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.FistsTree <- {
 	ID = "FistsTree",
 	Name = "Unarmed",
+	Icon = "ui/perks/unarmed_mastery_circle.png",
 	Descriptions = [
 		"unarmed combat"
 	],
@@ -881,6 +898,7 @@ if (!("Perks" in ::Const))
 };
 
 ::Const.Perks.WeaponTrees <- {
+	GroupsCategory = "Weapon",
 	Tree = [
 		::Const.Perks.FistsTree,
 		::Const.Perks.MaceTree,

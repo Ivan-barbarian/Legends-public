@@ -4058,23 +4058,21 @@
 			];
 
 		case "world-town-screen.hire-dialog-module.KnownPerks":
-			return [
+			local ret = [
 				{
 					id = 1,
 					type = "title",
-					text = "Character Perks"
+					text = "Character Perk Groups"
 				},
 				{
 					id = 2,
 					type = "description",
-					text = "[color=%negative%]Click to view perks[/color]"
-				},
-				{
-					id = 3,
-					type = "text",
-					text = entity.getBackground().getPerkTreeDescription()
+					text = "[color=%negative%]Click to view all perks[/color]"
 				}
 			];
+
+			entity.getBackground().extendKnownPerksTooltip(ret);
+			return ret;
 
 		case "world-town-screen.taxidermist-dialog-module.CraftButton":
 			return [

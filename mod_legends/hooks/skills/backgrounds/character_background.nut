@@ -1001,6 +1001,107 @@
 		return this.Const.Perks.PerkDefObjects[_perk].ID in this.m.PerkTreeMap;
 	}
 
+	/**
+	 * Gets information on how many complete perk groups the character has,
+	 * as well as any additional perks that are not part of a complete set
+	 * 
+	 * @return A table containing the following:
+	 * 	- CompleteGroupsIDs: Table whose keys are perk group categories; values are arrays containing IDs of complete perk groups
+	 * 	- RemainingPerkDefs: Array of perkDefs (numbers representing indeces in ::Const.Perks.PerkDefObjects) that do not belong to any complete perk group
+	 */
+	o.getPerkGroups <- function ()
+	{
+		local tmp = {};
+		local nonStrayPerks = {};
+		local possibleStrayPerks = [];
+		local ret = {
+			CompleteGroupsIDs = ::Legends.Perks.buildPerkGroupCategoriesTableOfArrays(),
+			RemainingPerkDefs = [] // Array of perkDefs that do not belong to any complete perk group
+		}
+
+		foreach (perk in this.m.PerkTreeMap)
+		{
+			// 1. Find out which perk groups are possible
+			// 2. Check if each perk group is fully represented
+			// 3. List out all fully represented perk groups, and the remaining number of ungrouped perks
+			foreach (entry in perk.PerkGroups)
+			{
+				if (!(entry.ID in tmp))
+				{
+					tmp[entry.ID] <- {
+						Category = entry.Category,
+						PerkDefs = {}
+					}
+				}
+				
+				tmp[entry.ID].PerkDefs[Legends.Perk[perk.Const]] <- true;
+			}
+		}
+
+		foreach (id, entry in tmp)
+		{
+			if (::Legends.Perks.isPerkGroupFullyRepresented(id, entry.PerkDefs))
+			{
+				ret.CompleteGroupsIDs[entry.Category].push(id);
+				foreach (key, v in entry.PerkDefs)
+				{
+					if (!(key in nonStrayPerks))
+					{
+						nonStrayPerks[key] <- true;
+					}
+				}
+			}
+			else
+			{
+				foreach (key, v in entry.PerkDefs)
+				{
+					possibleStrayPerks.push(key);
+				}
+			}
+		}
+
+		foreach (perkDef in possibleStrayPerks)
+		{
+			if (!(perkDef in nonStrayPerks))
+			{
+				ret.RemainingPerkDefs.push(perkDef);
+			}
+		}
+
+		return ret;
+	}
+
+	/**
+	 * Update tooltip data to add a list of all perk groups this character has, organised by categories
+	 * 
+	 * @param arr An array of tables to hold the tooltip data, as seen in tooltip_events.nut
+	 */
+	o.extendKnownPerksTooltip <- function(arr)
+	{
+		local text = "";
+		local data = this.getPerkGroups();
+		foreach (category in ::Legends.Perks.PerkGroupCategoriesOrder)
+		{
+			if (data.CompleteGroupsIDs[category].len() > 0)
+			{
+				arr.push({
+					id = 3,
+					type = "text",
+					text = "\n[u]" + category + "[/u]"
+				});
+			}
+			foreach (index, group in data.CompleteGroupsIDs[category])
+			{
+				arr.push({
+					id = 3,
+					type = "text",
+					icon = "Icon" in ::Const.Perks[group] ? ::Const.Perks[group].Icon : "ui/perks/legend_vala_days.png",
+					text = ::Const.Perks[group].Name
+				});
+			}
+		}
+	}
+
 	o.buildDescription = function( _isFinal = false )
 	{
 		if (this.isBackgroundType(this.Const.BackgroundType.Scenario))

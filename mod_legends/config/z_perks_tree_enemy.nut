@@ -3,9 +3,13 @@ if (!("Perks" in ::Const))
 	::Const.Perks <- {};
 }
 
+local category = "Enemy";
+
 ::Const.Perks.BeastsTree <- {
 	ID = "BeastsTree",
 	Name = "Beasts",
+	Icon = "ui/perks/favoured_direwolf_01.png",
+	Category = category,
 	Descriptions = [
 		"beasts"
 	],
@@ -28,6 +32,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.GhoulTree <- {
 	ID = "GhoulTree",
 	Name = "Nachzehrers",
+	Icon = "ui/perks/favoured_ghoul_01.png",
 	Descriptions = [
 		"nachzehrers"
 	],
@@ -45,6 +50,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.DirewolfTree <- {
 	ID = "DirewolfTree",
 	Name = "Direwolves",
+	Icon = "ui/perks/favoured_direwolf_01.png",
 	Descriptions = [
 		"direwolves"
 	],
@@ -62,6 +68,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.SpiderTree <- {
 	ID = "SpiderTree",
 	Name = "Webknechts",
+	Icon = "ui/perks/favoured_spider_01.png",
 	Descriptions = [
 		"spiders"
 	],
@@ -79,6 +86,8 @@ if (!("Perks" in ::Const))
 ::Const.Perks.LindwurmTree <- {
 	ID = "LindwurmTree",
 	Name = "Lindwurms",
+	Icon = "ui/perks/favoured_lindwurm_01.png",
+	Category = category,
 	Descriptions = [
 		"lindwurms"
 	],
@@ -99,6 +108,8 @@ if (!("Perks" in ::Const))
 		"mystics"
 	],
 	Name = "Mystics",
+	Icon = "ui/perks/favoured_hexen_01.png",
+	Category = category,
 	Tree = [
 		[],
 		[],
@@ -116,6 +127,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.SchratTree <- {
 	ID = "SchratTree",
 	Name = "Schrats",
+	Icon = "ui/perks/favoured_schrat_01.png",
 	Descriptions = [
 		"schrats"
 	],
@@ -133,6 +145,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.HexenTree <- {
 	ID = "HexenTree",
 	Name = "Hexen",
+	Icon = "ui/perks/favoured_hexen_01.png",
 	Descriptions = [
 		"hexen"
 	],
@@ -150,6 +163,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.AlpTree <- {
 	ID = "AlpTree",
 	Name = "Alps",
+	Icon = "ui/perks/favoured_alps_01.png",
 	Descriptions = [
 		"alps"
 	],
@@ -167,6 +181,8 @@ if (!("Perks" in ::Const))
 ::Const.Perks.UndeadTree <- {
 	ID = "UndeadTree",
 	Name = "Undead",
+	Icon = "ui/perks/favoured_zombie_01.png",
+	Category = category,
 	Descriptions = [
 		"undead"
 	],
@@ -187,6 +203,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.SkeletonTree <- {
 	ID = "SkeletonTree",
 	Name = "Ancient Empire",
+	Icon = "ui/perks/favoured_skeleton_01.png",
 	Descriptions = [
 		"ancient empire"
 	],
@@ -204,6 +221,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.ZombieTree <- {
 	ID = "ZombieTree",
 	Name = "Wiedergangers",
+	Icon = "ui/perks/favoured_zombie_01.png",
 	Descriptions = [
 		"wiedergangers"
 	],
@@ -221,6 +239,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.VampireTree <- {
 	ID = "VampireTree",
 	Name = "Necrosavants",
+	Icon = "ui/perks/favoured_vampire_01.png",
 	Descriptions = [
 		"necrosavants"
 	],
@@ -238,6 +257,8 @@ if (!("Perks" in ::Const))
 ::Const.Perks.OrcsTree <- {
 	ID = "OrcsTree",
 	Name = "Greenskins",
+	Icon = "ui/perks/favoured_ork_01.png",
+	Category = category,
 	Descriptions = [
 		"greenskins"
 	],
@@ -258,6 +279,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.OrcTree <- {
 	ID = "OrcTree",
 	Name = "Orcs",
+	Icon = "ui/perks/favoured_ork_01.png",
 	Descriptions = [
 		"orcs"
 	],
@@ -275,6 +297,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.GoblinTree <- {
 	ID = "GoblinTree",
 	Name = "Goblins",
+	Icon = "ui/perks/favoured_goblin_01.png",
 	Descriptions = [
 		"goblins"
 	],
@@ -292,6 +315,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.UnholdTree <- {
 	ID = "UnholdTree",
 	Name = "Unholds",
+	Icon = "ui/perks/favoured_unhold_01.png",
 	Descriptions = [
 		"unholds"
 	],
@@ -309,6 +333,8 @@ if (!("Perks" in ::Const))
 ::Const.Perks.CivilizationTree <- {
 	ID = "CivilizationTree",
 	Name = "Civilians",
+	Icon = "ui/perks/favoured_caravan_01.png",
+	Category = category,
 	Descriptions = [
 		"civilians"
 	],
@@ -328,6 +354,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.CaravanTree <- {
 	ID = "CaravanTree",
 	Name = "Caravans",
+	Icon = "ui/perks/favoured_caravan_01.png",
 	Descriptions = [
 		"caravans"
 	],
@@ -345,6 +372,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.MercenaryTree <- {
 	ID = "MercenaryTree",
 	Name = "Mercenaries",
+	Icon = "ui/perks/favoured_mercenary_01.png",
 	Descriptions = [
 		"mercenaries"
 	],
@@ -362,6 +390,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.NoblesTree <- {
 	ID = "NoblesTree",
 	Name = "Nobles",
+	Icon = "ui/perks/favoured_noble_01.png",
 	Descriptions = [
 		"nobles"
 	],
@@ -379,6 +408,8 @@ if (!("Perks" in ::Const))
 ::Const.Perks.OutlandersTree <- {
 	ID = "OutlandersTree",
 	Name = "Outlanders",
+	Icon = "ui/perks/favoured_bandit_01.png",
+	Category = category,
 	Descriptions = [
 		"outlanders"
 	],
@@ -399,6 +430,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.BanditTree <- {
 	ID = "BanditTree",
 	Name = "Bandits",
+	Icon = "ui/perks/favoured_bandit_01.png",
 	Descriptions = [
 		"bandits"
 	],
@@ -414,8 +446,9 @@ if (!("Perks" in ::Const))
 };
 
 ::Const.Perks.BarbarianTree <- {
-	ID = "BarbariansTree",
+	ID = "BarbarianTree",
 	Name = "Barbarians",
+	Icon = "ui/perks/favoured_barbarian_01.png",
 	Descriptions = [
 		"barbarians"
 	],
@@ -433,6 +466,8 @@ if (!("Perks" in ::Const))
 ::Const.Perks.ArchersTree <- {
 	ID = "ArchersTree",
 	Name = "Sharpshooters",
+	Icon = "ui/perks/favoured_archer_01.png",
+	Category = category,
 	Descriptions = [
 		"sharpshooter"
 	],
@@ -449,7 +484,8 @@ if (!("Perks" in ::Const))
 
 ::Const.Perks.ArcherTree <- {
 	ID = "ArcherTree",
-	Name = "Archers"
+	Name = "Archers",
+	Icon = "ui/perks/favoured_archer_01.png",
 	Descriptions = [
 		"archers"
 	],
@@ -467,6 +503,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.SwordmastersTree <- {
 	ID = "SwordmastersTree",
 	Name = "Swordmasters",
+	Icon = "ui/perks/favoured_swordmaster_01.png",
 	Descriptions = [
 		"swordmasters"
 	],
@@ -487,6 +524,7 @@ if (!("Perks" in ::Const))
 ::Const.Perks.SouthernersTree <- {
 	ID = "SouthernersTree",
 	Name = "Southerners",
+	Icon = "ui/perks/favoured_southerner_01.png",
 	Descriptions = [
 		"southerners"
 	],
@@ -504,6 +542,8 @@ if (!("Perks" in ::Const))
 ::Const.Perks.NomadsTree <- {
 	ID = "NomadsTree",
 	Name = "Nomads",
+	Icon = "ui/perks/favoured_nomad_01.png",
+	Category = category,
 	Descriptions = [
 		"nomads"
 	],
@@ -519,6 +559,7 @@ if (!("Perks" in ::Const))
 };
 
 ::Const.Perks.EnemyTrees <- {
+	GroupsCategory = "Enemy",
 	Tree = [
 		::Const.Perks.GhoulTree,
 		::Const.Perks.DirewolfTree,
