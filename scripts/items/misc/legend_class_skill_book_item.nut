@@ -9,7 +9,7 @@ this.legend_class_skill_book_item <- ::inherit("scripts/items/misc/legend_skill_
 		this.legend_skill_book.create();
 		this.m.ID = "misc.legend_class_skill_book";
 		this.m.Name = "Art of War";
-		this.m.Description = "Tool usage training manual, written by a master craftsman. Will teach the relevant [color=%negative%]Class[/color] perk group to the character that uses it. Can only read one skill book per brother so choose wisely. You can still read Ancient Scrolls if permitted.";
+		this.m.Description = "Tool usage training manual, written by a master craftsman. Will teach the relevant [color=%negative%]Class[/color] perk group to the character that uses it.";
 		this.m.Icon = "misc/inventory_ledger_item.png";
 		this.m.SlotType = ::Const.ItemSlot.None;
 		this.m.ItemType = ::Const.Items.ItemType.Usable;

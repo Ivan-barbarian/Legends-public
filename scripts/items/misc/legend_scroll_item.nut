@@ -1,20 +1,21 @@
 this.legend_scroll_item <- ::inherit("scripts/items/item", {
 	m = {
-		Selection = null
+		Selection = null,
+		Cooldown = 10
 	},
 	function create()
 	{
 		this.item.create();
 		this.m.ID = "misc.legend_scroll";
-		this.m.Name = "Ancient Scroll";
-		this.m.Description = "A torn-up scroll with knowledge unseen for centuries. It can be translated by a character with the interpretation perk in the crafting tent. Highly valuable to some historians, although it is useless to many. They can, however, be studied with effort and a high chance of headache. Every brother may use up to 1 scroll. Being bright increases this to 2 scrolls, and being dumb decreases this to 0 scrolls.";
+		this.m.Name = "Scroll";
+		this.m.Description = "A freshly minted scroll. Could be a masterpiece used to train your mercenaries or gibberish that will be of interest to local scribes.";
 		this.m.Icon = "trade/scroll.png";
 		this.m.SlotType = ::Const.ItemSlot.None;
 		this.m.ItemType = ::Const.Items.ItemType.Usable;
 		this.m.IsDroppedAsLoot = true;
 		this.m.IsUsable = true;
 		this.m.Value = 2000;
-		this.m.Selection = ::Math.rand(0, 2);
+		this.m.Selection = ::Math.rand(0, 4);
 	}
 
 	function playInventorySound( _eventType )
@@ -48,12 +49,12 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 			{
 				id = 65,
 				type = "text",
-				text = "Right-click to use on a character. Studying will lead to irritability. What mercenary wants to study?"
+				text = "Right-click to use on a character. Studying will lead to [color=%status%]Irritability[/color]. What mercenary wants to study?"
 			},
 			{
 				id = 67,
 				type = "text",
-				text = "Will apply a 30 day cooldown until you can read again."
+				text = "Will apply a [color=%negative%]" + this.getCooldown() + "[/color] day cooldown until you can read again."
 			}
 		];
 
@@ -83,6 +84,92 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 		return result;
 	}
 
+	function getBuyPrice()
+	{
+		if (this.m.Selection == 0)
+			return this.item.getBuyPrice();
+
+		if (this.m.IsSold)
+		{
+			return this.getSellPrice();
+		}
+
+		if (("State" in this.World) && this.World.State != null && this.World.State.getCurrentTown() != null)
+		{
+			return this.Math.max(this.getSellPrice(), this.Math.ceil(this.getValue() * this.World.State.getCurrentTown().getBeastPartsPriceMult()));
+		}
+		else
+		{
+			return this.Math.ceil(this.getValue());
+		}
+	}
+
+	// turn the nutin scroll into a trade item
+	function getSellPrice()
+	{
+		if (this.m.Selection == 0)
+			return this.item.getSellPrice();
+
+		if (this.m.IsBought)
+		{
+			return this.getBuyPrice();
+		}
+
+		if (("State" in this.World) && this.World.State != null && this.World.State.getCurrentTown() != null)
+		{
+			return this.Math.floor(this.getValue() * this.World.State.getCurrentTown().getBeastPartsPriceMult());
+		}
+		else
+		{
+			return this.Math.floor(this.getValue());
+		}
+	}
+
+	function applyScrollEffect( _result = null, _actor = null )
+	{
+		if (_result == null)
+			_result = ::Math.rand(0, 4);
+
+		switch (_result)
+		{
+		case 1:
+			return gainGiftedEffect(_actor);
+		case 2:
+			return gainTrainingEffect(_actor);
+		case 3:
+			return gainExperience(_actor);
+		case 4:
+			return gainTrainingPoint(_actor);
+		default:
+			return "Nothing happens.";
+		}
+	}
+
+	function getCooldown()
+	{
+		switch (this.m.Selection)
+		{
+			case 1:
+				return 50;
+			case 2:
+				return 10;
+			case 3:
+				return 10;
+			case 4:
+				return 20;
+			default:
+				return 30;
+		}
+	}
+
+	function applySideEffect( _actor )
+	{
+		::Legends.Effects.grant(_actor, ::Legends.Effect.LegendHeadache, function (_effect) {
+			_effect.m.IrritableHealingTime = this.getCooldown();
+		}.bindenv(this));
+	}
+
+
 	function isAbleToUseScroll( _actor )
 	{
 		local effect = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendIrritable);
@@ -94,32 +181,18 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 		if (_actor.isStabled())
 			return "Are you trying to make an animal read?";
 
+		local trait = ::Legends.Traits.get(entity, ::Legends.Trait.LegendIntensiveTraining);
+		if (this.m.Selection == 4 && trait.isMaxReached())
+			return "Max training achieved so this scroll is not useful on this mercenary."
+
 		return true;
 	}
 
-	function applySideEffect( _actor )
+	function gainTrainingPoint( _actor )
 	{
-		::Legends.Effects.grant(_actor, ::Legends.Effect.LegendHeadache, function (_effect) {
-			_effect.m.IrritableHealingTime = 30;
-		}.bindenv(this));
-	}
-
-	function applyScrollEffect( _result = null, _actor = null )
-	{
-		if (_result == null)
-			_result = ::Math.rand(1, 2);
-
-		switch (_result)
-		{
-		case 1:
-			return gainGiftedEffect(_actor);
-		case 2:
-			return gainTrainingEffect(_actor);
-		case 3:
-			return gainExperience(_actor);
-		default:
-			return "Nothing happens.";
-		}
+		local trait = ::Legends.Traits.get(entity, ::Legends.Trait.LegendIntensiveTraining);
+		trait.addRandomSkills(entity, 1);
+		return format("You gain free [color=%s]1[/color] towards [color=%s]Intensive Training[/color].", ::Const.UI.Color.PositiveValue, ::Const.UI.Color.StatusEffect);
 	}
 
 	function gainGiftedEffect( _actor )
@@ -181,7 +254,7 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 	function getValue()
 	{
 		if (m.Selection == null || m.Selection == 0)
-			return 100;
+			return 500;
 
 		return this.item.getValue();
 	}
@@ -198,6 +271,8 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 				return "Battle Scroll";
 			case 3:
 				return "Scroll of Experience";
+			case 4:
+				return "Scroll of Training";
 		}
 	}
 
@@ -206,13 +281,15 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 		switch(this.m.Selection)
 		{
 			case 0:
-				return "After a bit of labor the scroll seems to just be gibberish, nothing meaningful could be translated. Can be sold to gullible scholars.";
+				return "After a bit of labor the scroll seems to just be gibberish and there's nothing meaningful written on it. Can be sold to gullible scholars for a tidy sum.";
 			case 1:
 				return "Use the scroll to grant a character a max-stat roll similar to gifted.";
 			case 2:
 				return "Use the scroll on a character to increase experience gains by +50% for at least the next 3 battles. This will override any other current trained effects.";
 			case 3:
 				return "Use the scroll on a character to gain 100-150 XP.";
+			case 4:
+				return "Use the scroll on a character to gain 1 point in extensive training.";
 		}
 	}
 

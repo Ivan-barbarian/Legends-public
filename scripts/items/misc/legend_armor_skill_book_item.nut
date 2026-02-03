@@ -9,7 +9,7 @@ this.legend_armor_skill_book_item <- ::inherit("scripts/items/misc/legend_skill_
 		this.legend_skill_book.create();
 		this.m.ID = "misc.legend_armor_skill_book";
 		this.m.Name = "Wearing it well";
-		this.m.Description = "A collection of notes of soldiers, craftsmen and armorers, that will explain everything about wearing armor.  Will teach the relevant [color=%negative%]Armor[/color] perk group to the character that uses it. Can only read one skill book per brother so choose wisely. You can still read Ancient Scrolls if permitted.";
+		this.m.Description = "A collection of notes of soldiers, craftsmen and armorers, that will explain everything about wearing armor.  Will teach the relevant [color=%negative%]Armor[/color] perk group to the character that uses it.";
 		this.m.Icon = "misc/inventory_ledger_item.png";
 		this.m.SlotType = ::Const.ItemSlot.None;
 		this.m.ItemType = ::Const.Items.ItemType.Usable;

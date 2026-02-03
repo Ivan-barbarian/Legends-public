@@ -54,14 +54,24 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 			{
 				id = 65,
 				type = "text",
-				text = "Right-click to use on a character. Studying will lead to irritability. What mercenary wants to study?"
+				text = "Right-click to use on a character. Studying will lead to [color=%status%]Irritability[/color]. What mercenary wants to study?"
 			},
 			{
-				id = 67,
+				id = 66,
 				type = "text",
 				text = "Will apply a " + this.m.Cooldown + " day cooldown until you can read again."
 			}
 		];
+
+		if (::MSU.String.endsWith(this.m.ID, "skill_book"))
+		{
+			result.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/warning.png",
+				text = "You can only read one skill book per character, so choose wisely"
+			});
+		}
 
 		if (this.m.HasToBeIdentified && ::World.Assets.m.HasScholars > 0 || !this.m.HasToBeIdentified)
 		{
@@ -111,6 +121,16 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 					type = "text",
 					icon = "ui/icons/cancel.png",
 					text = "Cannot be used for next [color=%negative%]" + effect.m.HealingTime + "[/color] days because of [color=%status%]" + effect.getName() + "[/color] status"
+				});
+				return result;
+			}
+			if (actor.getFlags().has("LegendsSkillBookCount"))
+			{
+				result.push({
+					id = 10,
+					type = "text",
+					icon = "ui/icons/cancel.png",
+					text = "Cannot be used as this chracter has already read a skill book"
 				});
 				return result;
 			}

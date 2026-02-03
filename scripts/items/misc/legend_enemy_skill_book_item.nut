@@ -9,7 +9,7 @@ this.legend_enemy_skill_book_item <- ::inherit("scripts/items/misc/legend_skill_
 		this.legend_skill_book.create();
 		this.m.ID = "misc.legend_enemy_skill_book";
 		this.m.Name = "101: How to fight x";
-		this.m.Description = "Compendium in fighting particular enemies and their relevant weak spots.  Will teach the relevant [color=%negative%]Enemy[/color] perk group to the character that uses it. Can only read one skill book per brother so choose wisely. You can still read Ancient Scrolls if permitted.";
+		this.m.Description = "Compendium in fighting particular enemies and their relevant weak spots.  Will teach the relevant [color=%negative%]Enemy[/color] perk group to the character that uses it.";
 		this.m.Icon = "misc/inventory_ledger_item.png";
 		this.m.SlotType = ::Const.ItemSlot.None;
 		this.m.ItemType = ::Const.Items.ItemType.Usable;
