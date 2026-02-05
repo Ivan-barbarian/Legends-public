@@ -77,7 +77,12 @@ if (!("Weapons" in ::Legends)) {
     local items = _actor.getItems();
     local mh = items.getItemAtSlot(::Const.ItemSlot.Mainhand);
     local oh = items.getItemAtSlot(::Const.ItemSlot.Offhand);
-    return mh != null && oh != null;
+    return mh != null
+        && oh != null
+        && ("isItemType" in mh)
+        && ("isItemType" in oh)
+        && mh.isItemType(::Const.Items.ItemType.Weapon)
+        && oh.isItemType(::Const.Items.ItemType.Weapon);
 }
 
 // Returns true if dual wielding weapons of the given type.
