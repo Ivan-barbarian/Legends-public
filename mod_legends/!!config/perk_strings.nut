@@ -418,7 +418,7 @@ Heavy armor, a trusty shield and your heels dug into the ground and you can weat
 [color=%passive%][u]Passive:[/u][/color]
 • For every 10 points of gear weight from all slot gain [color=%positive%]1[/color] Resolve and [color=%negative%]1%[/color] less damage ignoring armor.
 
-• If you have at least 50 gear weight become immune to stuns.
+• If you have at least 50 gear weight any attack that would stun you will instead daze you.
 
 • If you have at least 80 gear weight and [color=%perk%]Steel Brow[/color] become immune to knockback and grab.
 ";
