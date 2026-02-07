@@ -376,9 +376,9 @@ s<sprite id="bust_demonalp_shadow_01" offsetY="35" ic="FF000000" width="174" hei
 <sprite id="mummy_bandage_03_damaged" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_03_damaged.png" left="-31" right="39" top="-11" bottom="59" />
 <sprite id="mummy_bandage_04" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_04.png" left="-32" right="38" top="-11" bottom="59" />
 <sprite id="mummy_bandage_04_damaged" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_04_damaged.png" left="-32" right="38" top="-11" bottom="59" />
-<sprite id="mummy_bandage_04_dead" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01_dead.png" left="-17" right="29" top="-14" bottom="48" />
-<sprite id="mummy_bandage_04_dead" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01_dead.png" left="-17" right="29" top="-14" bottom="48" />
-<sprite id="mummy_bandage_04_dead" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01_dead.png" left="-17" right="29" top="-14" bottom="48" />
+<sprite id="mummy_bandage_01_dead" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01_dead.png" left="-17" right="29" top="-14" bottom="48" />
+<sprite id="mummy_bandage_02_dead" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01_dead.png" left="-17" right="29" top="-14" bottom="48" />
+<sprite id="mummy_bandage_03_dead" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01_dead.png" left="-17" right="29" top="-14" bottom="48" />
 <sprite id="mummy_bandage_04_dead" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01_dead.png" left="-17" right="29" top="-14" bottom="48" />
 
 <sprite id="bust_goblin_04_helmet_04" offsetY="35" ic="FF4E5053" width="60" height="80" img="entity\goblins\bust_goblin_04_helmet_04.png" left="-36" right="24" top="-28" bottom="52" />
