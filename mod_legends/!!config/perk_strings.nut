@@ -2828,11 +2828,12 @@ This character is keen to guard the horde of gold the company has accumulated �
 
 [color=%passive%][u]Passive:[/u][/color]
 • For every 10,000 crowns you have in your stash:
-- Gain [color=%positive%]+1.5[/color] to Melee Skill and Ranged Skill.
-- Gain [color=%positive%]+1.5[/color] as Melee Defense and Ranged Defense.
-- Gain [color=%positive%]+2[/color] to Resolve.
+- Gain [color=%positive%]+1[/color] to Melee Skill and Ranged Skill.
+- Gain [color=%positive%]+1[/color] as Melee Defense and Ranged Defense.
+- Gain [color=%positive%]+1.5[/color] to Resolve.
+- Gain [color=%positive%]+1.5[/color] to Initiative.
 
-• The Bonus gained from Crowns above 80000 is reduced by [color=%negative%]20%[/color].
+• The Bonus gained from Crowns is capped at 160000.
 
 • Additionally, your global Barter is divided by [color=%negative%](1 + Brothers with this perk)[/color] at all times.
 ";
