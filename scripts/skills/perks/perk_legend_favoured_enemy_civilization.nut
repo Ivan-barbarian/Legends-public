@@ -3,7 +3,7 @@ this.perk_legend_favoured_enemy_civilization <- this.inherit("scripts/skills/leg
 	function create()
 	{
 		this.legend_favoured_enemy_skill.create();
-		::Legends.Perks.onCreate(this.m, ::Legends.Perk.LegendFavouredEnemyCivilization);
+		::Legends.Perks.onCreate(this, ::Legends.Perk.LegendFavouredEnemyCivilization);
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.ValidTypes = this.Const.LegendMod.FavoriteCivilization;
 	}
