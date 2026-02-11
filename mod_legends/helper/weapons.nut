@@ -82,9 +82,7 @@ if (!("Weapons" in ::Legends)) {
         && ("isItemType" in mh)
         && ("isItemType" in oh)
         && mh.isItemType(::Const.Items.ItemType.Weapon)
-        && oh.isItemType(::Const.Items.ItemType.Weapon)
-        && !mh.isItemType(::Const.Items.ItemType.RangedWeapon)
-        && !oh.isItemType(::Const.Items.ItemType.RangedWeapon);
+        && oh.isItemType(::Const.Items.ItemType.Weapon);
 }
 
 // Returns true if dual wielding weapons of the given type.

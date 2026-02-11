@@ -839,7 +839,8 @@
 
 		// Equipping to offhand
 		if ((targetSlot == this.Const.ItemSlot.Offhand || (mh != null && oh == null))
-			&& !ohBlocked)
+			&& !ohBlocked
+			&& inventory.canDualWield(entity, sourceItem))
 		{
 
 			local originalSlotType = sourceItem.m.SlotType;
@@ -903,7 +904,8 @@
 
 		// Equipping to offhand
 		if ((targetSlot == this.Const.ItemSlot.Offhand || (mh != null && oh == null))
-			&& !ohBlocked)
+			&& !ohBlocked
+			&& inventory.canDualWield(entity, sourceItem))
 		{
 
 			local originalSlotType = sourceItem.m.SlotType;
