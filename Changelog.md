@@ -1,3 +1,13 @@
+## Dual Wielding
+
+Any one-handed weapon can be equipped in the offhand slot when the mainhand already holds a one-handed weapon.
+
+This activates Dual Wield:
+
+- Automatically triggers a free **follow-up offhand attack** after every mainhand attack
+- Applies a **fatigue and hit chance penalty** based on the offhand weapon's weight
+- Grants the **Double Swing** active skill (an AoE attack hitting up to 3 adjacent tiles, using both weapons)
+
 ## Favoured enemy rework
 
 Perks were condensed into a few:
@@ -10,10 +20,12 @@ Favoured Enemy - Outlaw
 Favoured Enemy - Sword Master
 
 ## New enemies
+
 - Orc Tyrant - elite orc warlord, his warcry can cascade on other warlords
 - Orc Mad Berserker - elite version of the orc berserker, has nimble and nudist
 
 ## Enemy Changes
+
 - Bandit Warlord is renamed to Robber Baron
 
 ## New Runes
@@ -26,14 +38,24 @@ Favoured Enemy - Sword Master
 
 - Integrated Better Obituary v3, thanks to Allania
 
+## Perk Changes
+
+- **Sword Mastery**: Riposte can trigger from both weapons when dual wielding swords
+- **Axe Mastery**: Split Shield uses combined shield damage from both weapons when dual wielding axes
+- **Flail Mastery**: Both attacks apply Bleed when dual wielding flails
+- **Dagger Mastery**: Offhand successful hits grant -1 AP and +10% damage on next mainhand attack when dual wielding daggers
+- **Ambidextrous**: Now also reduces weight penalty by 33% when dual wielding other weapons
+
 ## Item Changes
 
 ### Helmets
-- merged the two fencer hats 
+
+- merged the two fencer hats
 
 ### For modders:
 
 Following trees were removed, refer to `z_perks_tree_enemy.nut` for replacements:
+
 ```
 ::Const.Perks.GhoulTree
 ::Const.Perks.DirewolfTree
