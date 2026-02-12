@@ -13,8 +13,8 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		DistortTargetPrevD = this.createVec(0, 0),
 		DistortAnimationStartTimeD = 0
 	},
-	function create()
-	{
+
+	function create() {
 		this.m.Type = this.Const.EntityType.LegendWicht;
 		this.m.BloodType = this.Const.BloodType.None;
 		this.m.MoraleState = this.Const.MoraleState.Ignore;
@@ -37,15 +37,15 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.AIAgent.setActor(this);
 	}
 
-	function onDeath( _killer, _skill, _tile, _fatalityType )
-	{
-		if (!this.Tactical.State.isScenarioMode() && _killer != null && _killer.isPlayerControlled())
+	function onDeath(_killer, _skill, _tile, _fatalityType) {
+		if (!this.Tactical.State.isScenarioMode()
+			&& _killer != null
+			&& _killer.isPlayerControlled())
 		{
 			this.updateAchievement("OvercomingFear", 1, 1);
 		}
 
-		if (_tile != null)
-		{
+		if (_tile != null) {
 			local effect = {
 				Delay = 0,
 				Quantity = 12,
@@ -113,13 +113,13 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 
 		local deathLoot = this.getItems().getDroppableLoot(_killer);
 		local tileLoot = this.getLootForTile(_killer, deathLoot);
+		local flip = !this.isAlliedWithPlayer();
 		this.dropLoot(_tile, tileLoot, !flip);
 
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
 
-	function onFactionChanged()
-	{
+	function onFactionChanged() {
 		this.actor.onFactionChanged();
 		local flip = !this.isAlliedWithPlayer();
 		this.getSprite("body").setHorizontalFlipping(flip);
@@ -150,8 +150,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("helmet_vanity_2").setHorizontalFlipping(flip);
 	}
 
-	function onInit()
-	{
+	function onInit() {
 		this.actor.onInit();
 		this.setRenderCallbackEnabled(true);
 		local b = this.m.BaseProperties;
@@ -166,8 +165,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
 
-		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 140)
-		{
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 140) {
 			b.MeleeDefense += 5;
 		}
 
@@ -232,8 +230,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		::Legends.Perks.grant(this, ::Legends.Perk.LegendComposure);
 		::Legends.Perks.grant(this, ::Legends.Perk.LegendPoisonImmunity);
 		::Legends.Perks.grant(this, ::Legends.Perk.Fearsome);
-		if (::Legends.isLegendaryDifficulty())
-		{
+		if (::Legends.isLegendaryDifficulty()) {
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendSmashingShields);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendBackToBasics);
 			::Legends.Perks.grant(this, ::Legends.Perk.ShieldBash);
@@ -242,77 +239,65 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		}
 	}
 
-	function onRender()
-	{
+	function onRender() {
 		this.actor.onRender();
 
-		if (this.m.DistortTargetA == null)
-		{
+		if (this.m.DistortTargetA == null) {
 			this.m.DistortTargetA = this.createVec(this.Math.rand(0, 8) - 4, this.Math.rand(0, 8) - 4);
 			this.m.DistortAnimationStartTimeA = this.Time.getVirtualTimeF();
 		}
 
-		if (this.moveSpriteOffset("head", this.m.DistortTargetPrevA, this.m.DistortTargetA, 3.8, this.m.DistortAnimationStartTimeA))
-		{
+		if (this.moveSpriteOffset("head", this.m.DistortTargetPrevA, this.m.DistortTargetA, 3.8, this.m.DistortAnimationStartTimeA)) {
 			this.m.DistortAnimationStartTimeA = this.Time.getVirtualTimeF();
 			this.m.DistortTargetPrevA = this.m.DistortTargetA;
 			this.m.DistortTargetA = this.createVec(this.Math.rand(0, 8) - 4, this.Math.rand(0, 8) - 4);
 		}
 
-		if (this.m.DistortTargetB == null)
-		{
+		if (this.m.DistortTargetB == null) {
 			this.m.DistortTargetB = this.createVec(this.Math.rand(0, 8) - 4, this.Math.rand(0, 8) - 4);
 			this.m.DistortAnimationStartTimeB = this.Time.getVirtualTimeF();
 		}
 
-		if (this.moveSpriteOffset("blur_1", this.m.DistortTargetPrevB, this.m.DistortTargetB, 4.9000001, this.m.DistortAnimationStartTimeB))
-		{
+		if (this.moveSpriteOffset("blur_1", this.m.DistortTargetPrevB, this.m.DistortTargetB, 4.9000001, this.m.DistortAnimationStartTimeB)) {
 			this.m.DistortAnimationStartTimeB = this.Time.getVirtualTimeF();
 			this.m.DistortTargetPrevB = this.m.DistortTargetB;
 			this.m.DistortTargetB = this.createVec(this.Math.rand(0, 8) - 4, this.Math.rand(0, 8) - 4);
 		}
 
-		if (this.m.DistortTargetC == null)
-		{
+		if (this.m.DistortTargetC == null) {
 			this.m.DistortTargetC = this.createVec(this.Math.rand(0, 8) - 4, this.Math.rand(0, 8) - 4);
 			this.m.DistortAnimationStartTimeC = this.Time.getVirtualTimeF();
 		}
 
-		if (this.moveSpriteOffset("body", this.m.DistortTargetPrevC, this.m.DistortTargetC, 4.3, this.m.DistortAnimationStartTimeC))
-		{
+		if (this.moveSpriteOffset("body", this.m.DistortTargetPrevC, this.m.DistortTargetC, 4.3, this.m.DistortAnimationStartTimeC)) {
 			this.m.DistortAnimationStartTimeC = this.Time.getVirtualTimeF();
 			this.m.DistortTargetPrevC = this.m.DistortTargetC;
 			this.m.DistortTargetC = this.createVec(this.Math.rand(0, 8) - 4, this.Math.rand(0, 8) - 4);
 		}
 
-		if (this.m.DistortTargetD == null)
-		{
+		if (this.m.DistortTargetD == null) {
 			this.m.DistortTargetD = this.createVec(this.Math.rand(0, 8) - 4, this.Math.rand(0, 8) - 4);
 			this.m.DistortAnimationStartTimeD = this.Time.getVirtualTimeF();
 		}
 
-		if (this.moveSpriteOffset("blur_2", this.m.DistortTargetPrevD, this.m.DistortTargetD, 5.5999999, this.m.DistortAnimationStartTimeD))
-		{
+		if (this.moveSpriteOffset("blur_2", this.m.DistortTargetPrevD, this.m.DistortTargetD, 5.5999999, this.m.DistortAnimationStartTimeD)) {
 			this.m.DistortAnimationStartTimeD = this.Time.getVirtualTimeF();
 			this.m.DistortTargetPrevD = this.m.DistortTargetD;
 			this.m.DistortTargetD = this.createVec(this.Math.rand(0, 8) - 4, this.Math.rand(0, 8) - 4);
 		}
 	}
 
-	function onFinish()
-	{
+	function onFinish() {
 		this.actor.onFinish();
 	}
 
-	function assignRandomEquipment()
-	{
-		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand))
-		{
+	function assignRandomEquipment() {
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand)) {
 			local weapons = [
 				"weapons/greatsword",
 				"weapons/greataxe",
 				"weapons/two_handed_hammer",
-				"weapons/two_handed_flanged_mace",	// Moved all weapons into one array because Legends requires all DLCs anyways
+				"weapons/two_handed_flanged_mace", // Moved all weapons into one array because Legends requires all DLCs anyways
 				"weapons/two_handed_flail",
 				"weapons/bardiche"
 			];
@@ -320,8 +305,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 
-		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
-		{
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body)) {
 			local armor = [
 				[1, ::Legends.Armor.Standard.coat_of_plates],
 				[1, ::Legends.Armor.Standard.coat_of_scales],
@@ -334,10 +318,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 			));
 		}
 
-
-
-		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
-		{
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head)) {
 			local helmet = [
 				[30, ::Legends.Helmet.Standard.full_helm],
 				[10, ::Legends.Helmet.Standard.closed_flat_top_with_mail],
@@ -369,10 +350,8 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		}
 	}
 
-	function makeMiniboss()
-	{
-		if (!this.actor.makeMiniboss())
-		{
+	function makeMiniboss() {
+		if (!this.actor.makeMiniboss()) {
 			return false;
 		}
 
@@ -389,16 +368,13 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		local r = this.Math.rand(1, 2);
-		if (r == 1)
-		{
+		if (r == 1) {
 			this.m.Items.equip(this.Const.World.Common.pickArmor([
 				[1, ::Legends.Armor.Named.brown_coat_of_plates_armor],
 				[1, ::Legends.Armor.Named.golden_scale_armor],
 				[1, ::Legends.Armor.Named.green_coat_of_plates_armor]
 			]));
-		}
-		else
-		{
+		} else {
 			this.m.Items.equip(this.Const.World.Common.pickHelmet([
 				[3, ::Legends.Helmet.Named.bascinet_named],
 				[3, ::Legends.Helmet.Named.kettle_helm_named],
@@ -414,4 +390,3 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
-
