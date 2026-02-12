@@ -40,7 +40,14 @@ this.legend_orc_mad_berserker <- this.inherit("scripts/entity/tactical/enemies/o
 			"weapons/greenskins/legend_bough",
 			"weapons/greenskins/legend_skullbreaker"
 		];
-		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		local weapon = weapons[this.Math.rand(0, weapons.len() - 1)];
+		this.m.Items.equip(this.new("scripts/items/" + weapon));
+		if (!this.m.Items.hasBlockedSlot(::Const.ItemSlot.Offhand)
+			&& this.Math.rand(1, 100) <= 50)
+		{
+			this.m.Items.equip(this.new("scripts/items/" + weapon));
+			this.m.Items.updateDualWield();
+		}
 	}
 
 	function makeMiniboss() {

@@ -106,7 +106,14 @@
 			"weapons/greenskins/legend_skullbreaker",
 			"weapons/greenskins/legend_skullsmasher",
 		];
-		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		local weapon = weapons[this.Math.rand(0, weapons.len() - 1)];
+		this.m.Items.equip(this.new("scripts/items/" + weapon));
+		if (!this.m.Items.hasBlockedSlot(::Const.ItemSlot.Offhand)
+			&& this.Math.rand(1, 100) <= 33)
+		{
+			this.m.Items.equip(this.new("scripts/items/" + weapon));
+			this.m.Items.updateDualWield();
+		}
 
 		local item = this.Const.World.Common.pickArmor([
 			[1, ::Legends.Armor.Greenskin.orc_berserker_light_armor],
