@@ -120,6 +120,11 @@ if (!("Spawn" in ::Const.World))
 					Cost = 20
 				},
 				{
+					MinR = 150,
+					Type = this.Const.World.Spawn.Troops.LegendWicht,
+					Cost = 40
+				},
+				{
 					MinR = 350,
 					Type = this.Const.World.Spawn.Troops.LegendBanshee,
 					Cost = 70

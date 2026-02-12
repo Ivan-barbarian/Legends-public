@@ -549,6 +549,16 @@
 // 	Script = "scripts/entity/tactical/enemies/legend_kobold_wolfrider"
 // };
 
+::Const.World.Spawn.Troops.LegendWicht <- {
+	ID = this.Const.EntityType.LegendWicht,
+	Variant = 2,
+	Strength = 40,
+	Cost = 40,
+	Row = 0,
+	NameList = this.Const.World.Spawn.Troops.GhostArmorNames,
+	Script = "scripts/entity/tactical/enemies/legend_wicht"
+};
+
 ::Const.World.Spawn.Troops.LegendMummyLight <- {
 	ID = this.Const.EntityType.LegendMummyLight,
 	Variant = 0,

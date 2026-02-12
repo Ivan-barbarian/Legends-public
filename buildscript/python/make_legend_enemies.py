@@ -576,6 +576,8 @@ s<sprite id="bust_demonalp_shadow_01" offsetY="35" ic="FF000000" width="174" hei
 <sprite id="mummy_bandage_03_dead" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01_dead.png" left="-17" right="29" top="-14" bottom="48" />
 <sprite id="mummy_bandage_04_dead" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\mummybandage_01_dead.png" left="-17" right="29" top="-14" bottom="48" />
 
+<sprite id="bust_ghost_body_01" offsetY="35" ic="FF364656" width="104" height="142" img="entity\undead\bust_ghost_body_01.png" left="-39" right="43" top="-61" bottom="13" />
+<sprite id="bust_ghost_head_01" offsetY="35" ic="FF5877A6" width="104" height="142" img="entity\undead\bust_ghost_head_01.png" left="-20" right="30" top="-21" bottom="47" />
 """
 
 

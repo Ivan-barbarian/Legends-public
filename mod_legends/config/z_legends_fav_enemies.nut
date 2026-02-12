@@ -20,7 +20,6 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.SkeletonGladiator,
 	::Const.EntityType.FlyingSkull,
 	::Const.EntityType.Vampire,
-	::Const.EntityType.LegendDemonHound,
 	::Const.EntityType.LegendVampireLord,
 	::Const.EntityType.LegendMummyLight,
 	::Const.EntityType.LegendMummyMedium,
@@ -42,7 +41,9 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.Schrat,
 	::Const.EntityType.SchratSmall,
 	::Const.EntityType.LegendGreenwoodSchrat,
-	::Const.EntityType.LegendGreenwoodSchratSmall
+	::Const.EntityType.LegendGreenwoodSchratSmall,
+	::Const.EntityType.LegendDemonHound,
+	::Const.EntityType.LegendWicht
 ];
 
 ::Const.LegendMod.FavoriteBeast <- [
@@ -84,7 +85,9 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.OrcWarrior,
 	::Const.EntityType.OrcWarlord,
 	::Const.EntityType.LegendOrcBehemoth,
-	::Const.EntityType.LegendOrcElite
+	::Const.EntityType.LegendOrcElite,
+	::Const.EntityType.LegendMadBerserker,
+	::Const.EntityType.LegendOrcTyrant,
 	//	::Const.EntityType.KoboldWolfrider, //Not used currently
 	//	::Const.EntityType.KoboldFighter //Not used currently
 ];

@@ -50,50 +50,6 @@
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 
-		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body) && this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
-		{
-			local armor = [
-				[1, ::Legends.Armor.Standard.coat_of_plates],
-				[1, ::Legends.Armor.Standard.coat_of_scales],
-				[1, ::Legends.Armor.Standard.heavy_lamellar_armor]
-			];
-
-			local helmet = [
-				[30, ::Legends.Helmet.Standard.full_helm],
-				[10, ::Legends.Helmet.Standard.closed_flat_top_with_mail],
-				[5, ::Legends.Helmet.Standard.legend_helm_breathed],
-				[5, ::Legends.Helmet.Standard.legend_helm_full],
-				[5, ::Legends.Helmet.Standard.legend_helm_bearded],
-				[5, ::Legends.Helmet.Standard.legend_helm_point],
-				[5, ::Legends.Helmet.Standard.legend_helm_snub],
-				[5, ::Legends.Helmet.Standard.legend_helm_short],
-				[5, ::Legends.Helmet.Standard.legend_helm_curved],
-				[5, ::Legends.Helmet.Standard.legend_helm_sharp],
-				//[2, ::Legends.Helmet.Standard.wallace_sallet],
-				//[2, ::Legends.Helmet.Standard.deep_sallet],
-				//[2, ::Legends.Helmet.Standard.italo_norman_helm],
-				[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_great_helm_01],
-				[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_armet_01],
-				[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_armet_02],
-				[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_great_bascinet_01],
-				[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_great_bascinet_02],
-				[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_great_bascinet_03],
-				[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_kettle_sallet_01],
-				[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_kettle_sallet_02],
-				//[2, ::Legends.Helmet.Standard.legend_enclave_vanilla_kettle_sallet_03]
-			];
-
-			local outfits = [
-				[1, ::Legends.Outfit.brown_hedgeknight_outfit_00]
-			];
-
-			foreach( item in this.Const.World.Common.pickOutfit(outfits, armor, helmet) )
-			{
-				this.m.Items.equip(item)
-			}
-			return;
-		}
-
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
 			local armor = [

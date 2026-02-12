@@ -288,3 +288,5 @@ for (local i = -1; i < ::Const.EntityIcon.len(); i++) {
 	::Const.EntityType.addNew("barbarian_marauder_orientation", "Barbarian Marauder", "Barbarian Marauders", this.Const.FactionType.Barbarians);
 ::Const.EntityType.LegendBarbarianRunechosen <-
 	::Const.EntityType.addNew("barbarian_runechosen_orientation", "Barbarian Runechosen", "Barbarian Runechosen", this.Const.FactionType.Barbarians);
+::Const.EntityType.LegendWicht <-
+	::Const.EntityType.addNew("barbarian_runechosen_orientation", "Wicht", "Wichts", this.Const.FactionType.Undead);

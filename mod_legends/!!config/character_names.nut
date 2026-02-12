@@ -2,6 +2,15 @@
 
 ::Const.Strings.EmbalmedNobleNames <- ::Const.Strings.AncientSouthernNames;
 
+::Const.Strings.GhostArmorNames <- [
+	"Alleberg",
+	"Momon",
+	"Sleepy Hollow",
+	"Kopfloser Reiter",
+	"Gespenster",
+	"Glen of Mull"
+];
+
 ::Const.Strings.DesertStalkerChampionTitles <- [
 	"the Scorpion",
 	"the Sand Stalker",

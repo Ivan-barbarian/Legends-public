@@ -659,7 +659,7 @@ if (!("Spawn" in ::Const.World))
 				{
 					Type = this.Const.World.Spawn.Troops.LegendDemonHound,
 					MinR = 800,
-					Cost = 40
+					Cost = 25
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinWolfrider,

@@ -322,6 +322,15 @@ if (!("Spawn" in ::Const.World))
 			Weight = 10,
 			Types = [
 				{
+					Type = this.Const.World.Spawn.Troops.LegendWicht,
+					Cost = 40
+				}
+			]
+		},
+		{
+			Weight = 10,
+			Types = [
+				{
 					Type = this.Const.World.Spawn.Troops.Ghost,
 					Cost = 20
 				}
@@ -333,7 +342,7 @@ if (!("Spawn" in ::Const.World))
 				{
 					Type = this.Const.World.Spawn.Troops.LegendDemonHound,
 					MinR = 400,
-					Cost = 40
+					Cost = 25
 				}
 			]
 		},
@@ -410,12 +419,21 @@ if (!("Spawn" in ::Const.World))
 			]
 		},
 		{
+			Weight = 10,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendWicht,
+					Cost = 40
+				}
+			]
+		},
+		{
 			Weight = 5,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendDemonHound,
 					MinR = 400,
-					Cost = 40
+					Cost = 25
 				}
 			]
 		},
@@ -453,12 +471,22 @@ if (!("Spawn" in ::Const.World))
 			]
 		},
 		{
+			Weight = 40,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendWicht,
+					Cost = 40,
+					MinR = 400,
+				}
+			]
+		},
+		{
 			Weight = 10,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendDemonHound,
 					MinR = 400,
-					Cost = 40
+					Cost = 25
 				}
 			]
 		},
@@ -608,9 +636,19 @@ if (!("Spawn" in ::Const.World))
 			Weight = 4,
 			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.LegendDemonHound,
+					Type = this.Const.World.Spawn.Troops.LegendWicht,
 					MinR = 400,
 					Cost = 40
+				}
+			]
+		},
+		{
+			Weight = 4,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendDemonHound,
+					MinR = 400,
+					Cost = 25
 				}
 			]
 		},

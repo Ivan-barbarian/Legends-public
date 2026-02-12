@@ -17,6 +17,25 @@
 	]
 };
 
+::Const.Tactical.Actor.LegendWicht <- {
+	XP = 350,
+	ActionPoints = 9,
+	Hitpoints = 1,
+	Bravery = 100,
+	Stamina = 100,
+	MeleeSkill = 75,
+	RangedSkill = 0,
+	MeleeDefense = 10,
+	RangedDefense = 5,
+	Initiative = 120,
+	FatigueEffectMult = 0.0,
+	MoraleEffectMult = 0.0,
+	Armor = [
+		0,
+		0
+	]
+};
+
 ::Const.Tactical.Actor.LegendVampireLord <- {
 	XP = 600,
 	ActionPoints = 9,
