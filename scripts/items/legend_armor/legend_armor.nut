@@ -18,6 +18,11 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		}
 	}
 
+	function getUpgradeVariant ( _idx )
+	{
+		return this.m.Upgrades[_idx].getVariant();
+	}
+
 	function isArmorNamed()
 	{
 		if (this.isNamed())
@@ -525,6 +530,9 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 	function getTooltip()
 	{
+		if (::Legends.Mod.ModSettings.getSetting("LogOutfits").getValue())
+			::Legends.S.logArmor(this);
+
 		local description = this.getDescription();
 
 		foreach( u in this.m.Upgrades )

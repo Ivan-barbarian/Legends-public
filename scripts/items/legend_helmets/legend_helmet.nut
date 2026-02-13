@@ -20,6 +20,11 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		}
 	}
 
+	function getUpgradeVariant ( _idx )
+	{
+		return this.m.Upgrades[_idx].getVariant();
+	}
+
 	function onPaint(_variant)
 	{
 	}
@@ -576,6 +581,8 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function getTooltip()
 	{
+		if (::Legends.Mod.ModSettings.getSetting("LogOutfits").getValue())
+			::Legends.S.logHelmet(this);
 
 		local description = this.getDescription();
 

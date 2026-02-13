@@ -23,6 +23,7 @@ Favoured Enemy - Sword Master
 
 - Orc Tyrant - elite orc warlord, his warcry can cascade on other warlords
 - Orc Mad Berserker - elite version of the orc berserker, has nimble and nudist
+- Wicht - armored ghost enemies who cannot be killed until you destroy their armor
 
 ## Enemy Changes
 
@@ -37,6 +38,7 @@ Favoured Enemy - Sword Master
 ## Integrated mods
 
 - Integrated Better Obituary v3, thanks to Allania
+- layer logger from Merc
 
 ## Perk Changes
 
