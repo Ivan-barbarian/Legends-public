@@ -471,6 +471,17 @@
 		}
 	}
 
+	local onFactionChanged = o.onFactionChanged;
+	o.onFactionChanged = function () {
+		onFactionChanged();
+		if (hasSprite("shield_icon") && ::Legends.Weapons.isDualWielding(this)) {
+			this.setAlwaysApplySpriteOffset(true);
+			local flip = !this.isAlliedWithPlayer();
+			getSprite("shield_icon").setHorizontalFlipping(!flip);
+			setSpriteOffset("shield_icon", this.createVec(flip ? -40 : 40, 0));
+		}
+	}
+
 	local setHitpoints = o.setHitpoints;
 	o.setHitpoints = function( _h )
 	{
