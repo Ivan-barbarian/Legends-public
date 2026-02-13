@@ -202,6 +202,7 @@
 	<sprite id="feint_mini" ic="FF1B293C" img="skills\mini\feint_mini.png" />
 	<sprite id="freedom_of_movement_circle_mini" ic="FF1B293C" img="skills\mini\freedom_of_movement_circle_mini.png" />
 	<sprite id="legend_flourish_effect_mini" ic="FF1B293C" img="skills\mini\legend_flourish_effect_mini.png" />
+	<sprite id="legend_double_swing" ic="FF1B293C" img="skills\legend_double_swing.png" />
 	<!-- Orientation below -->
 
 
