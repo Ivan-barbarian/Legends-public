@@ -54,10 +54,10 @@ this.perk_legend_point_blank <- this.inherit("scripts/skills/skill", {
 		else
 		{
 			mskillBonus = 0;
-			rdefBonus = this.Math.floor(0.2 * _properties.getRangedDefense());
+			rdefBonus = this.Math.floor(0.3 * _properties.getRangedDefense());
 		}
 
-		return this.Math.max(mskillBonus, rdefBonus);
+		return mskillBonus + rdefBonus;
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )

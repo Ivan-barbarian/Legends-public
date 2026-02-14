@@ -132,7 +132,7 @@ Master throwing weapons to wound or kill the enemy before they even get close.
 [color=%passive%][u]Passive:[/u][/color]
 • Skills build up [color=%negative%]25%[/color] less Fatigue.
 
-• Gain [color=%positive%]20%[/color] of your Ranged Skill as additional Armor penetration and [color=%positive%]25%[/color] of your Melee Skill as additional Armor effectiveness when attacking at a distance of three tiles or less.
+• Gain [color=%positive%]+20%[/color] additional Armor penetration, [color=%positive%]+25%[/color] Armor effectiveness and lowers the threshold to inflict [color=%status%]Injuries[/color] by [color=%negative%]33%[/color] when using Throwing weapons.
 ";
 ::Const.Perks.PerkDefObjects[::Legends.Perk.SpecThrowing].Tooltip = ::Const.Strings.PerkDescription.SpecThrowing;
 ::Const.Strings.PerkDescription.SpecAxe <- @"

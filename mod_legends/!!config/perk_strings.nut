@@ -503,9 +503,9 @@ Put full force in your every blow!
 Don't fire until you see the whites of their eyes!
 
 [color=%passive%][u]Passive:[/u][/color]
-• When using a ranged weapon against a target 4 or less tiles away, inflict additional damage, scaling based on [color=%positive%]20%[/color] of Ranged Defense.
+• When using a ranged weapon against a target 4 or less tiles away, inflict additional damage, scaling based on [color=%positive%]30%[/color] of Ranged Defense.
 
-• When using Throwing Weapons inflict additional damage, scaling based on [color=%positive%]30%[/color] of Melee Skill or [color=%positive%]50%[/color] of Ranged Defense, whichever stat is highest, but maximum range is reduced to 3.
+• When using Throwing Weapons additionally inflict additional damage [color=%positive%]30%[/color] of Melee Skill and [color=%positive%]50%[/color] of Ranged Defense combined.
 
 • Allows you to use Throwing Weapons in melee.
 ";

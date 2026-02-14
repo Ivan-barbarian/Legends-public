@@ -8,8 +8,8 @@
 		if (weapon == null || !weapon.isWeaponType(::Const.Items.WeaponType.Throwing))
 			return;
 
-		local actor = this.getContainer().getActor();
-		_properties.DamageDirectAdd += 0.002 * _properties.getRangedSkill();
-		_properties.DamageArmorMult += 0.0025 * _properties.getMeleeSkill();
+		_properties.DamageArmorMult += 0.25;
+		_properties.DamageDirectAdd += 0.2;
+		_properties.ThresholdToInflictInjuryMult *= 0.67;
 	}
 });

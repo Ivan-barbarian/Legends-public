@@ -3,6 +3,14 @@
 	o.m.AdditionalAccuracy <- 20;
 	o.m.AdditionalHitChance <- -10;
 
+	local create = o.create;
+	o.create = function ()
+	{
+		create();
+		this.m.MinRange = 1;
+		this.m.Delay = 150;
+	}
+
 	o.getTooltip = function ()
 	{
 		local tooltip = this.getRangedTooltip(this.getDefaultTooltip());

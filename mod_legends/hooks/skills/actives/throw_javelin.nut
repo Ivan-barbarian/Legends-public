@@ -3,6 +3,14 @@
 	o.m.AdditionalAccuracy = 20;
 	o.m.AdditionalHitChance = -10;
 
+	local create = o.create;
+	o.create = function ()
+	{
+		create();
+		this.m.MinRange = 1;
+		this.m.Delay = 150;
+	}
+
 	o.getTooltip = function ()
 	{
 		local tooltip = this.getRangedTooltip(this.getDefaultTooltip());
@@ -53,10 +61,8 @@
 	o.onAfterUpdate = function ( _properties )
 	{
 		if (this.getContainer().hasPerk(::Legends.Perk.LegendPointBlank))
-		{
 			this.m.MinRange = 1;
-			this.m.MaxRange = 3;
-		}
+
 		this.m.FatigueCostMult = _properties.IsSpecializedInThrowing ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		this.m.AdditionalAccuracy = 20 + this.m.Item.getAdditionalAccuracy();
 	}
