@@ -192,7 +192,7 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 	{
 		local trait = ::Legends.Traits.get(_actor, ::Legends.Trait.LegendIntensiveTraining);
 		trait.addRandomSkills(_actor, 1);
-		return format("You gain free [color=%s]1[/color] towards [color=%s]Intensive Training[/color].", ::Const.UI.Color.PositiveValue, ::Const.UI.Color.StatusEffect);
+		return format("You gain free [color=%s]1[/color] towards [color=%s]Intensive Training[/color].", ::Const.UI.Color.PositiveValue, ::Const.UI.Color.Status);
 	}
 
 	function gainGiftedEffect( _actor )
