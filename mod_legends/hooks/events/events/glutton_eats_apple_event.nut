@@ -12,7 +12,7 @@
 				this.List.push({
 					id = 10,
 					icon = "ui/traits/trait_icon_07.png",
-					text = _event.m.Drunkard.getName() + " is no longer a gluttonous"
+					text = _event.m.Glutton.getName() + " is no longer a gluttonous"
 				});
 			}
 		});

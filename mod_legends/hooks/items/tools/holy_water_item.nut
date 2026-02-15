@@ -147,7 +147,7 @@
 
 	o.onPutIntoBag <- function ()
 	{
-		local skill = ::Legends.Actives.get(this, ::Legends.Active.LegendLaunchFireBomb);
+		local skill = ::Legends.Actives.get(this, ::Legends.Active.LegendLaunchHolyWater);
 		if (skill != null && this.getAmmo() > 0)
 			skill.setItem(this);
 	}
