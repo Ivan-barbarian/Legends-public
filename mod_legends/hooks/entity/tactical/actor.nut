@@ -464,12 +464,21 @@
 				this.setAlwaysApplySpriteOffset(true);
 				local flip = !this.isAlliedWithPlayer();
 				local oh = this.getItems().getItemAtSlot(::Const.ItemSlot.Offhand);
-				local isTwoHanded = oh != null && oh.isItemType(this.Const.Items.ItemType.TwoHanded);
-				getSprite("shield_icon").setHorizontalFlipping(!flip && !isTwoHanded);
-				setSpriteOffset("shield_icon", this.createVec(flip ? -40 : 40, 0));
+				local ohSprite = getSprite("shield_icon");
+				ohSprite.setHorizontalFlipping(!flip);
+				if (oh != null && oh.isItemType(this.Const.Items.ItemType.TwoHanded)) {
+					// WIP, not sure if dual-wielding two handed weapons will stay
+					ohSprite.Scale = 0.80;
+					setSpriteOffset("shield_icon", this.createVec(flip ? -10 : 10, 0));
+				} else {
+					ohSprite.Scale = 1.0;
+					setSpriteOffset("shield_icon", this.createVec(flip ? -40 : 40, 0));
+				}
 			} else {
+				local ohSprite = getSprite("shield_icon");
+				ohSprite.setHorizontalFlipping(false);
+				ohSprite.Scale = 1.0;
 				this.setAlwaysApplySpriteOffset(false);
-				getSprite("shield_icon").setHorizontalFlipping(false);
 				setSpriteOffset("shield_icon", this.createVec(0, 0));
 			}
 		}
@@ -482,9 +491,16 @@
 			this.setAlwaysApplySpriteOffset(true);
 			local flip = !this.isAlliedWithPlayer();
 			local oh = this.getItems().getItemAtSlot(::Const.ItemSlot.Offhand);
-			local isTwoHanded = oh != null && oh.isItemType(this.Const.Items.ItemType.TwoHanded);
-			getSprite("shield_icon").setHorizontalFlipping(!flip && !isTwoHanded);
-			setSpriteOffset("shield_icon", this.createVec(flip ? -40 : 40, 0));
+			local ohSprite = getSprite("shield_icon");
+			ohSprite.setHorizontalFlipping(!flip);
+			if (oh != null && oh.isItemType(this.Const.Items.ItemType.TwoHanded)) {
+				// WIP, not sure if dual-wielding two handed weapons will stay
+				ohSprite.Scale = 0.80;
+				setSpriteOffset("shield_icon", this.createVec(flip ? -10 : 10, 0));
+			} else {
+				ohSprite.Scale = 1.0;
+				setSpriteOffset("shield_icon", this.createVec(flip ? -40 : 40, 0));
+			}
 		}
 	}
 
