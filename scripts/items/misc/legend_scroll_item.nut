@@ -181,7 +181,7 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 		if (_actor.isStabled())
 			return "Are you trying to make an animal read?";
 
-		local trait = ::Legends.Traits.get(entity, ::Legends.Trait.LegendIntensiveTraining);
+		local trait = ::Legends.Traits.get(_actor, ::Legends.Trait.LegendIntensiveTraining);
 		if (this.m.Selection == 4 && trait.isMaxReached())
 			return "Max training achieved so this scroll is not useful on this mercenary."
 
@@ -190,8 +190,8 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 
 	function gainTrainingPoint( _actor )
 	{
-		local trait = ::Legends.Traits.get(entity, ::Legends.Trait.LegendIntensiveTraining);
-		trait.addRandomSkills(entity, 1);
+		local trait = ::Legends.Traits.get(_actor, ::Legends.Trait.LegendIntensiveTraining);
+		trait.addRandomSkills(_actor, 1);
 		return format("You gain free [color=%s]1[/color] towards [color=%s]Intensive Training[/color].", ::Const.UI.Color.PositiveValue, ::Const.UI.Color.StatusEffect);
 	}
 
