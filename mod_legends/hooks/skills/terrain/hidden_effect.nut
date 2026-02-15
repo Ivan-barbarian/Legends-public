@@ -83,27 +83,29 @@
 	//added all this missing code from legend_hidden_effect which seemingly controls the hidden graphics--
 	o.onMovementFinished <- function ()
 	{
-		local tile = this.getContainer().getActor().getTile();
 		//initialise variables
 		local body = 0;
 		local head = 0;
 		local actor = this.getContainer().getActor();
+		local tile = actor.getTile();
+		if (::Legends.S.isEntityNullOrDead(actor))
+			return;
 
 		//get the items
-		local bodyItem = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Body);
-		local headItem = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Head);
+		local bodyItem = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+		local headItem = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
 
 		//check if the item exists to stop the error: getStaminaModifier does not exist
 
 		if (bodyItem != null)
 		{
-		//update the variables
-		body = bodyItem.getStaminaModifier();
+			//update the variables
+			body = bodyItem.getStaminaModifier();
 		}
 
 		if (headItem != null)
 		{
-		head = headItem.getStaminaModifier();
+			head = headItem.getStaminaModifier();
 		}
 
 		//calculate either on the initial or updated variable
@@ -113,7 +115,7 @@
 		local entites = this.Tactical.Entities.getAllHostilesAsArray();
 
 		local outOfEarshot3 = true;
-		if(fat > 15 && fat <=35){
+		if (fat > 15 && fat <= 35) {
 
 			foreach( unit in entites )
 			{
@@ -137,7 +139,7 @@
 		}
 
 		local outOfEarshot5 = true;
-		if(fat > 35){
+		if (fat > 35) {
 			foreach( unit in entites )
 			{
 	            if (unit.getID() == actor.getID())
@@ -158,7 +160,7 @@
 				return;
 			}
 		}
-		if(fat <= 15){
+		if (fat <= 15) {
 			if (tile.hasZoneOfControlOtherThan(actor.getAlliedFactions()))
 			{
 				this.m.ToRemove = true;
