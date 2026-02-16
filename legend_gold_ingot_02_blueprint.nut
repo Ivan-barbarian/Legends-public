@@ -1,19 +1,19 @@
-this.legend_silver_ingot_02_blueprint <- this.inherit("scripts/crafting/blueprint", {
+this.legend_gold_ingot_02_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	m = {},
 	function create()
 	{
 		this.blueprint.create();
-		this.m.ID = "blueprint.legend_silver_ingot_02";
+		this.m.ID = "blueprint.legend_gold_ingot_02";
 		this.m.Type = this.Const.Items.ItemType.Usable;
-		this.m.PreviewCraftable = this.new("scripts/items/trade/legend_silver_ingots_item");
+		this.m.PreviewCraftable = this.new("scripts/items/trade/legend_gold_ingots_item");
 		this.m.Cost = 180;
 		local ingredients = [
 			{
-				Script = "scripts/items/loot/silverware_item",
+				Script = "scripts/items/loot/ancient_gold_coins_item",
 				Num = 1
 			},
 			{
-				Script = "scripts/items/loot/silver_bowl_item",
+				Script = "scripts/items/loot/golden_chalice_item",
 				Num = 1
 			}
 		];
@@ -30,9 +30,8 @@ this.legend_silver_ingot_02_blueprint <- this.inherit("scripts/crafting/blueprin
 
 	function onCraft( _stash )
 	{
-		_stash.add(this.new("scripts/items/trade/legend_silver_ingots_item"));
+		_stash.add(this.new("scripts/items/trade/legend_gold_ingots_item"));
 	}
 
 });
-
 
