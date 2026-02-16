@@ -22,24 +22,38 @@
 		return cost;
 	}
 
-	o.getDailyCost = function ()
-	{
+	o.getDailyCost = function () {
 		if (!("State" in this.World)) {
 			return 0
 		}
-		local wageMult = (this.m.CurrentProperties.DailyWageMult * (this.World.State != null ? this.World.Assets.getDailyWageMult() : 1.0)) - (this.World.State != null ? this.World.State.getPlayer().getWageModifier() : 0.0);
-		//local costAdj = this.Math.max(0, this.m.CurrentProperties.DailyWageMult * barterMult);
+		// getWageModifier needs a defensive check here but it's a bit convoluted why:
+		// - mods_hookExactClass only applies during class definition (::inherit()), not during
+		//   instance creation (::new()).
+		// - When deserializing, World.getPlayerEntity() recreates the player_party entity and
+		//   applies "new" hooks, but getWageModifier is in exact hooks, so it's not applied.
+		// - Each bro's onDeserialize() calls m.Skills.update(), which then calls onUpdate() on
+		//   all skills.
+		// - In the case of the greedy trait, onUpdate() calls getDailyCost() (here) to calculate
+		//   the  bonus, but getWageModifier doesn't exist yet => crash.
+		// In theory the onCampaignLoaded callback will reapply the hook and set the cost,
+		// but this check is needed to prevent crashes at load.
+		local player = this.World.State != null ? this.World.State.getPlayer() : null;
+		local wageModifier = player != null && ("getWageModifier" in player) ? player.getWageModifier() : 0.0;
+		local worldMult = this.World.State != null ? this.World.Assets.getDailyWageMult() : 1.0;
+		local wageMult = (this.m.CurrentProperties.DailyWageMult * worldMult) - wageModifier;
 		return this.Math.max(0, this.m.CurrentProperties.DailyWage * wageMult);
 	}
 
-	o.getDailyFood = function ()
-	{
+	o.getDailyFood = function () {
 		local food = this.Math.maxf(0.0, this.m.CurrentProperties.DailyFood);
-		if (this.isInReserves() && !this.m.Skills.hasPerk(::Legends.Perk.LegendPeaceful))
-		{
+		if (this.isInReserves() && !this.m.Skills.hasPerk(::Legends.Perk.LegendPeaceful)) {
 			food *= 2;
 		}
-		food -= this.World.State.getPlayer().getFoodModifier();
+		// See getDailyCost for the explanation behind this defensive check; technically it is not 
+		// needed now, but if getDailyFood is ever used in a skill it would cause the same issue.
+		local player = this.World.State != null ? this.World.State.getPlayer() : null;
+		local foodModifier = player != null && ("getFoodModifier" in player) ? player.getFoodModifier() : 0.0;
+		food -= foodModifier;
 		return this.Math.maxf(0.0, food);
 	}
 
