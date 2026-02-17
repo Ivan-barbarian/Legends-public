@@ -16,11 +16,12 @@ this.legend_RSS_radiance <- this.inherit("scripts/skills/skill", {
 	function onMovementFinished()
 	{
 		local actor = this.getContainer().getActor();
-		local myTile = actor.getTile();
-		if (actor == null)
-		{
+		
+		if (::Legends.S.isEntityNullOrDead(actor)) //In case actor dies to spearwall
 			return;
-		}
+		
+		local myTile = actor.getTile();
+
 		if (this.getItem() == null)
 		{
 			return;
