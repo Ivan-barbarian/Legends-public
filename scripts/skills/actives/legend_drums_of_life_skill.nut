@@ -3,7 +3,7 @@ this.legend_drums_of_life_skill <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendDrumsOfLife);
-		this.m.Description = "Heal allies on with your music, restoring the health of all allies within 8 tiles. Must be holding a musical instrument to use.";
+		this.m.Description = "Heal allies on with your music, restoring the health of all allies within 8 tiles. Must be holding a musical instrument to use. Songs apply once per turn.";
 		this.m.Icon = "skills/drums_of_life_square.png";
 		this.m.IconDisabled = "skills/drums_of_life_square_bw.png";
 		this.m.Overlay = "drums_of_life_square";
