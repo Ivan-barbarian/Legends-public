@@ -384,7 +384,8 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 
 			if (r.Points >= r.Blueprint.getCost())
 			{
-				r.Blueprint.enchant(this.getUpgraded());
+				r.Blueprint.enchant(this.getUpgraded()); // will do nothing if it's a craft item like uncut gems
+				r.Blueprint.onCraft(this.Stash); // will do nothing if it's a rune
 				this.m.ItemsCrafted.push(r.Blueprint);
 				this.m.Queue[i] = null;
 			}
