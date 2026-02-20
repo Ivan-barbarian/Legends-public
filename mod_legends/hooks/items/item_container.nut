@@ -181,6 +181,9 @@
 		if (_item.isItemType(::Const.Items.ItemType.RangedWeapon)) {
 			return false;
 		}
+		if (_item.isItemType(::Const.Items.ItemType.TwoHanded) && _item.getBlockedSlotType() != null) {
+			return false;
+		}
 		return true;
 	}
 
