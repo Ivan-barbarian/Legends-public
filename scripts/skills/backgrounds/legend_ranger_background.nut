@@ -177,11 +177,9 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 
 	function onAdded()
 	{
+		if (this.m.IsNew)
+			::Legends.Traits.grant(this, ::Legends.Trait.Loyal);
 		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_pathfinder"));
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_footwork"));
-		::Legends.Traits.grant(this, ::Legends.Trait.Loyal);
 
 	}
 

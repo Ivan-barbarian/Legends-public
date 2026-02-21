@@ -191,9 +191,10 @@ this.legend_companion_ranged_background <- this.inherit("scripts/skills/backgrou
 	}
 
 	function onAdded() // enables relationships
-	{
+	{	
+		if (this.m.IsNew)
+			::Legends.Traits.grant(this, ::Legends.Trait.LegendLWRelationship);
 		this.character_background.onAdded();
-		::Legends.Traits.grant(this, ::Legends.Trait.LegendLWRelationship);
 	}
 
 	function onSetAppearance()

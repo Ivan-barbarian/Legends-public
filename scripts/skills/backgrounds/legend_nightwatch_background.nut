@@ -148,8 +148,9 @@ this.legend_nightwatch_background <- this.inherit("scripts/skills/backgrounds/ch
 
 	function onAdded() // always has night owl
 	{
+		if (this.m.IsNew)
+			::Legends.Traits.grant(this, ::Legends.Trait.NightOwl);
 		this.character_background.onAdded();
-		::Legends.Traits.grant(this, ::Legends.Trait.NightOwl);
 	}
 
 	function onAddEquipment()

@@ -53,7 +53,6 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 		]);
 		bros[1].setPlaceInFormation(5);
 		bros[1].setVeteranPerks(2);
-		::Legends.Traits.grant(bros[1], ::Legends.Trait.LegendRottenFlesh);
  		bros[1].getSprite("socket").setBrush("bust_base_undead");
  		bros[1].getBackground().m.RawDescription = "You found %name% down on their luck behind an Inn in the middle of nowhere... they had long since fallen alseep from the dagger between their ribs. But you took pity and offered them a place in your latest scheme. They would be a fool to refuse, after all.";
 		bros[1].getBaseProperties().Hitpoints += 12;
@@ -74,7 +73,6 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 		]);
 		bros[2].setPlaceInFormation(3);
 		bros[2].setVeteranPerks(2);
-		::Legends.Traits.grant(bros[2], ::Legends.Trait.LegendRottenFlesh);
  		bros[2].getSprite("socket").setBrush("bust_base_undead");
  		bros[2].getBackground().m.RawDescription = "%name% is a character of stunning vocal range - when you heard them sing in that graveyard you couldn't resist to allure them with the promise of fame and glory on the stage!";
 		bros[2].getBaseProperties().Hitpoints += 12;
