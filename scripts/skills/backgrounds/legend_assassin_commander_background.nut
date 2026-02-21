@@ -222,9 +222,10 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 	}
 
 	function onAdded()
-	{
+	{	
+		if (this.m.IsNew)
+			::Legends.Traits.grant(this, ::Legends.Trait.LegendAggressive);
 		this.character_background.onAdded();
-		::Legends.Traits.grant(this, ::Legends.Trait.LegendAggressive);
 	}
 
 	function onAddEquipment()

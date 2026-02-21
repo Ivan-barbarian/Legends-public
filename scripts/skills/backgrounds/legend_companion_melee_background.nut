@@ -192,8 +192,9 @@ this.legend_companion_melee_background <- this.inherit("scripts/skills/backgroun
 
 	function onAdded() // enables relationships
 	{
+		if (this.m.IsNew)
+			::Legends.Traits.grant(this, ::Legends.Trait.LegendLWRelationship);
 		this.character_background.onAdded();
-		::Legends.Traits.grant(this, ::Legends.Trait.LegendLWRelationship);
 	}
 
 	function onSetAppearance()

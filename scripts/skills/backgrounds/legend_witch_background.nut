@@ -150,8 +150,9 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 
 	function onAdded()
 	{
+		if (this.m.IsNew)
+			::Legends.Traits.grant(this, ::Legends.Trait.Loyal);
 		this.character_background.onAdded();
-		::Legends.Traits.grant(this, ::Legends.Trait.Loyal);
 	}
 
 	function onAddEquipment()

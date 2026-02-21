@@ -198,8 +198,9 @@ this.mage_legend_mage_commander_background <- this.inherit("scripts/skills/backg
 
 	function onAdded()
 	{
+		if (this.m.IsNew)
+			::Legends.Traits.grant(this, ::Legends.Trait.Bright);
 		this.character_background.onAdded();
-		::Legends.Traits.grant(this, ::Legends.Trait.Bright);
 	}
 
 	function onAddEquipment()

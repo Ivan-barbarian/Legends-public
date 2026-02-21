@@ -178,10 +178,11 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 
 	function onAdded()
 	{
+		if (this.m.IsNew)
+			::Legends.Traits.grant(this, ::Legends.Trait.Loyal);
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 		actor.setTitle(this.Const.Strings.PeddlerTitles[this.Math.rand(0, this.Const.Strings.PeddlerTitles.len() - 1)]);
-		::Legends.Traits.grant(this, ::Legends.Trait.Loyal);
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_bribe"));
 
 	}

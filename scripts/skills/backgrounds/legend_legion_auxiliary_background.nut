@@ -151,10 +151,10 @@ this.legend_legion_auxiliary_background <- this.inherit("scripts/skills/backgrou
 
 	function onAdded()
 	{
-		this.character_background.onAdded();
 		if (this.m.IsNew) {
 			::Legends.Traits.grant(this, ::Legends.Trait.LegendFleshless);
 		}
+		this.character_background.onAdded();
 
 		local actor = this.getContainer().getActor();
 		actor.m.ExcludedInjuries = ::Legends.Legion.ExcludedInjures;

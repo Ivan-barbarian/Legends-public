@@ -140,12 +140,12 @@ this.legend_puppet_background <- this.inherit("scripts/skills/backgrounds/charac
 
 	function onAdded() //bite, exceptions to some injuries and zombie trait
 	{
-		this.character_background.onAdded();
 		if (this.m.IsNew) 
 		{
 			::Legends.Traits.grant(this, ::Legends.Trait.LegendRottenFlesh);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendZombieBite);
 		}
+		this.character_background.onAdded();
 
 		local actor = this.getContainer().getActor();
 		actor.m.ExcludedInjuries = ::Legends.Necromancer.ExcludedInjures;

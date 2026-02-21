@@ -208,13 +208,13 @@ this.legend_donkey_background <- this.inherit("scripts/skills/backgrounds/charac
 
 	function onAdded()
 	{
-		if (this.m.IsNew)
-			getContainer().getActor().getFlags().set("donkey", true);
-
+		if (this.m.IsNew) {
+			this.getContainer().getActor().getFlags().set("donkey", true);
+			this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_donkey_injury"));
+			::Legends.Actives.grant(this, ::Legends.Active.LegendDonkeyKick);
+			::Legends.Traits.grant(this, ::Legends.Trait.LegendDonkeyAppetite);
+		}
 		this.character_background.onAdded();
-		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_donkey_injury"));
-		::Legends.Actives.grant(this, ::Legends.Active.LegendDonkeyKick);
-		::Legends.Traits.grant(this, ::Legends.Trait.LegendDonkeyAppetite);
 	}
 
 

@@ -115,11 +115,9 @@
 
 	o.onAdded <- function ()
 	{
-		this.character_background.onAdded();
 		if (this.m.IsNew) 
-		{
 			::Legends.Traits.grant(this, ::Legends.Trait.LegendHateNobles);
-		}
+		this.character_background.onAdded();
 	}
 
 	o.onChangeAttributes = function ()

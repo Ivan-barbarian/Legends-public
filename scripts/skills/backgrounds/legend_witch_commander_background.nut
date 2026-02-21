@@ -173,8 +173,9 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 
 	function onAdded()
 	{
+		if (this.m.IsNew)
+			::Legends.Traits.grant(this, ::Legends.Trait.Bright);
 		this.character_background.onAdded();
-		::Legends.Traits.grant(this, ::Legends.Trait.Bright);
 	}
 
 	function onAddEquipment()

@@ -203,13 +203,9 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 
 	function onAdded()
 	{
+		if (this.m.IsNew)
+			::Legends.Traits.grant(this, ::Legends.Trait.Athletic);
 		this.character_background.onAdded();
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_pathfinder"));
-		::Legends.Traits.grant(this, ::Legends.Trait.Athletic);
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_guide_steps"));
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_footwork"));
-
 	}
 
 

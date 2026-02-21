@@ -191,9 +191,10 @@
 	}
 
 	o.onAdded <- function ()
-	{
+	{	
+		if (this.m.IsNew)
+			::Legends.Traits.grant(this, ::Legends.Trait.Quick);
 		this.character_background.onAdded();
-		::Legends.Traits.grant(this, ::Legends.Trait.Quick);
 	}
 
 	o.onAddEquipment = function ()

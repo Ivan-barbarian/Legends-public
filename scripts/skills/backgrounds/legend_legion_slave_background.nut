@@ -147,10 +147,10 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 
 	function onAdded()
 	{
-		this.character_background.onAdded();
 		if (this.m.IsNew) {
 			::Legends.Traits.grant(this, ::Legends.Trait.LegendFleshless);
 		}
+		this.character_background.onAdded();
 
 		local actor = this.getContainer().getActor();
 		actor.m.ExcludedInjuries = ::Legends.Legion.ExcludedInjures;
