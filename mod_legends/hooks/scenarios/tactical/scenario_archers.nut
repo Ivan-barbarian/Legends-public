@@ -169,7 +169,7 @@
 		this.Stash.add(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.flat_top_with_mail]]));
 		this.Stash.add(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.full_helm]]));
 		this.Stash.add(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.full_helm]]));
-		this.Stash.add(this.new("scripts/items/armor/quilted_aketon"));
+		this.Stash.add(this.new("scripts/items/legend_armor/cloth/quilted_aketon"));
 		this.Stash.add(this.new("scripts/items/armor/gambeson"));
 		this.Stash.add(this.new("scripts/items/armor/gambeson"));
 		this.Stash.add(this.new("scripts/items/armor/padded_leather"));

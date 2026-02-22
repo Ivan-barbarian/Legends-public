@@ -108,7 +108,7 @@ this.legend_scenario_hexe_leader <- this.inherit("scripts/scenarios/tactical/sce
 		entity.setScenarioValues();
 		items = entity.getItems();
 		items.equip(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Named.norse_helmet]]));
-		items.equip(this.new("scripts/items/armor/quilted_aketon"));
+		items.equip(this.new("scripts/items/legend_armor/cloth/quilted_aketon"));
 		items.equip(this.new("scripts/items/weapons/winged_mace"));
 		items.equip(this.new("scripts/items/shields/wooden_shield"));
 		entity = this.spawnEntity("scripts/entity/tactical/player", 13, 13, 17, 17);
@@ -246,7 +246,7 @@ this.legend_scenario_hexe_leader <- this.inherit("scripts/scenarios/tactical/sce
 		this.Stash.add(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.flat_top_with_mail]]));
 		this.Stash.add(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.full_helm]]));
 		this.Stash.add(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.full_helm]]));
-		this.Stash.add(this.new("scripts/items/armor/quilted_aketon"));
+		this.Stash.add(this.new("scripts/items/legend_armor/cloth/quilted_aketon"));
 		this.Stash.add(this.new("scripts/items/armor/gambeson"));
 		this.Stash.add(this.new("scripts/items/armor/gambeson"));
 		this.Stash.add(this.new("scripts/items/armor/padded_leather"));

@@ -47,7 +47,7 @@
 		entity.setScenarioValues();
 		items = entity.getItems();
 		items.equip(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.hood]]));
-		items.equip(this.new("scripts/items/armor/quilted_aketon"));
+		items.equip(this.new("scripts/items/legend_armor/cloth/quilted_aketon"));
 		items.equip(this.new("scripts/items/weapons/hunting_bow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
 		items.addToBag(this.new("scripts/items/weapons/hatchet"));
@@ -116,7 +116,7 @@
 		this.Stash.add(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.nasal_helmet]]));
 		this.Stash.add(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.kettle_hat]]));
 		this.Stash.add(this.new("scripts/items/armor/leather_tunic"));
-		this.Stash.add(this.new("scripts/items/armor/quilted_aketon"));
+		this.Stash.add(this.new("scripts/items/legend_armor/cloth/quilted_aketon"));
 		this.Stash.add(this.new("scripts/items/armor/padded_leather"));
 		this.Stash.add(this.new("scripts/items/armor/mail_shirt"));
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_arrows"));

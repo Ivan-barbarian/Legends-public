@@ -32,7 +32,7 @@
 		entity.setScenarioValues();
 		items = entity.getItems();
 		items.equip(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.hood]]));
-		items.equip(this.new("scripts/items/armor/quilted_aketon"));
+		items.equip(this.new("scripts/items/legend_armor/cloth/quilted_aketon"));
 		items.equip(this.new("scripts/items/weapons/hunting_bow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
 		entity = this.spawnEntity("scripts/entity/tactical/player", 3, 7, 3, 7);
@@ -132,8 +132,8 @@
 		this.Stash.add(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.flat_top_helmet]]));
 		this.Stash.add(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.full_helm]]));
 		this.Stash.add(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.full_helm]]));
-		this.Stash.add(this.new("scripts/items/armor/quilted_aketon"));
-		this.Stash.add(this.new("scripts/items/armor/quilted_aketon"));
+		this.Stash.add(this.new("scripts/items/legend_armor/cloth/quilted_aketon"));
+		this.Stash.add(this.new("scripts/items/legend_armor/cloth/quilted_aketon"));
 		this.Stash.add(this.new("scripts/items/armor/gambeson"));
 		this.Stash.add(this.new("scripts/items/armor/gambeson"));
 		this.Stash.add(this.new("scripts/items/armor/padded_leather"));

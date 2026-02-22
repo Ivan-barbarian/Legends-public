@@ -29,7 +29,7 @@
 		entity.setScenarioValues();
 		items = entity.getItems();
 		items.equip(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.hood]]));
-		items.equip(this.new("scripts/items/armor/quilted_aketon"));
+		items.equip(this.new("scripts/items/legend_armor/cloth/quilted_aketon"));
 		items.equip(this.new("scripts/items/weapons/noble_sword"));
 		items.equip(this.new("scripts/items/shields/wooden_shield"));
 		this.Tactical.getTileSquare(19, 16).removeObject();
