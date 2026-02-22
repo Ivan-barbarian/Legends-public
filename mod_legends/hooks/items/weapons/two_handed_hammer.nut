@@ -29,4 +29,11 @@
 		this.m.ArmamentIcon = "icon_hammer_01" + v;
 	}
 
+	local onEquip = o.onEquip;
+	o.onEquip = function ()
+	{
+		onEquip();
+		::Legends.Actives.grant(this, ::Legends.Active.LegendObliterate);
+	}
+
 });

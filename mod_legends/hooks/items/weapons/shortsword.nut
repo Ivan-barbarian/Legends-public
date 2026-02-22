@@ -14,4 +14,16 @@
 		this.m.ArmamentIcon = "icon_sword_01" + v;
 	}
 
+	local onEquip = o.onEquip;
+	o.onEquip = function ()
+	{
+		onEquip();
+		::Legends.Actives.grant(this, ::Legends.Active.Puncture, function (_skill) {
+			_skill.m.IsHalfsword = true;
+		}.bindenv(this));
+		::Legends.Actives.grant(this, ::Legends.Active.Hammer, function (_skill) {
+			_skill.m.IsMordhau = true;
+		}.bindenv(this));
+	}
+
 });

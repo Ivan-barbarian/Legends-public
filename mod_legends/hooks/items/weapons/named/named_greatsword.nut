@@ -1,5 +1,5 @@
 ::mods_hookExactClass("items/weapons/named/named_greatsword", function(o) {
-
+	// i'm a zweihander
 	local create = o.create;
 	o.create = function() {
 		create();

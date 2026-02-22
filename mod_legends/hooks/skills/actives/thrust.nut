@@ -42,6 +42,25 @@
 		this.m.DazeChance = _properties.IsSpecializedInMaces ? 50 : 25;
 	}
 
+	o.onTargetHit <- function(_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor)
+	{
+		if (_skill != this || !this.m.IsGoedendagThrust)
+			return;
+
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity))
+			return;
+
+		local actor = this.getContainer().getActor();
+		if (!target.getCurrentProperties().IsImmuneToDaze && this.Math.rand(1, 100) <= this.m.DazeChance)
+		{
+			local dazed = ::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Dazed);
+
+			if (!actor.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer) {
+				this.Tactical.EventLog.log(dazed.getLogEntryOnAdded(this.Const.UI.getColorizedEntityName(actor), this.Const.UI.getColorizedEntityName(_targetEntity)));
+			}
+		}
+	}
+
 	local onUse = o.onUse;
 	o.onUse = function ( _user, _targetTile )
 	{
@@ -49,26 +68,6 @@
 			return onUse(_user, _targetTile);
 
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
-		local success = this.attackEntity(_user, _targetTile.getEntity());
-
-		if (!_user.isAlive() || _user.isDying())
-		{
-			return success;
-		}
-
-		if (success && _targetTile.IsOccupiedByActor)
-		{
-			local target = _targetTile.getEntity();
-
-			if (!target.getCurrentProperties().IsImmuneToDaze && this.Math.rand(1, 100) <= this.m.DazeChance)
-				::Legends.Effects.grant(target, ::Legends.Effect.Dazed);
-
-			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
-			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has dazed " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
-			}
-		}
-
-		return success;
+		return this.attackEntity(_user, _targetTile.getEntity());
 	}
 });

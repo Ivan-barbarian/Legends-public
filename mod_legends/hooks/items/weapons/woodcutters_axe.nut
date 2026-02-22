@@ -14,4 +14,11 @@
 		this.m.ArmamentIcon = "icon_axe_two_handed_02" + v;
 	}
 
+	local onEquip = o.onEquip;
+	o.onEquip = function ()
+	{
+		onEquip();
+		::Legends.Actives.grant(this, ::Legends.Active.LegendHaftstrike);
+	}
+
 });

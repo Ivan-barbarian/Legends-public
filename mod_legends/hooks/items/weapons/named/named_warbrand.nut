@@ -12,8 +12,15 @@
 	o.addSkill <- function( _skill )
 	{
 		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.Slash))
-			_skill.m.IsGreatSlash = true;
+			_skill.m.IsGreatBreachSlash = true;
 
-		this.named_weapon.addSkill(_skill);
+		this.weapon.addSkill(_skill);
+	}
+
+	local onEquip = o.onEquip;
+	o.onEquip = function ()
+	{
+		onEquip();
+		::Legends.Actives.grant(this, ::Legends.Active.LegendIntoTheFray);
 	}
 });

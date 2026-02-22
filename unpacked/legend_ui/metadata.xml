@@ -42,6 +42,7 @@
 	<sprite id="legend_halberd_smite" ic="FF23165B" img="skills\legend_halberd_smite.png" />
 	<sprite id="cat_bite" ic="FF23165B" img="skills\cat_bite.png" />
 	<sprite id="stone_aim_square" ic="FF23165B" img="skills\stone_aim_square.png" />
+	<sprite id="stone_square" ic="FF23165B" img="skills\stone_square.png" />
 	<sprite id="coordinated_volleys_square" ic="FF23165B" img="skills\coordinated_volleys_square.png" />
 	<sprite id="mini_coordinated_volleys_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_coordinated_volleys_circle.png" />
 	<sprite id="mini_mark_target" offsetY="35" ic="FF344955" img="skills\mini\mini_mark_target.png" />
@@ -194,11 +195,14 @@
 	<sprite id="active_legend_heartseeker" ic="FF1B293C" img="skills\active_legend_heartseeker.png" />
 	<sprite id="active_legend_pry_armor_warhammer" ic="FF1B293C" img="skills\legend_active_pry_armor_warhammer.png" />
 	<sprite id="active_legend_pry_armor_polehammer" ic="FF1B293C" img="skills\legend_active_pry_armor_polehammer.png" />
+	<sprite id="active_throw_knife" ic="FF1B293C" img="skills\active_throw_knife.png" />
 	<sprite id="legend_enraged_hyena_bite_effect" ic="FF1B293C" img="skills\legend_enraged_hyena_bite_effect.png" />
 	<sprite id="legend_enraged_hyena_bite_effect_mini" ic="FF1B293C" img="skills\mini\legend_enraged_hyena_bite_effect_mini.png" />
 	<sprite id="feint" ic="FF1B293C" img="skills\feint.png" />
 	<sprite id="active_halfsword" ic="FF1B293C" img="skills\active_halfsword.png" />
 	<sprite id="active_mordhau" ic="FF1B293C" img="skills\active_mordhau.png" />
+	<sprite id="active_haftstrike" ic="FF1B293C" img="skills\active_haftstrike.png" />
+	<sprite id="unarmed_lunge_square" ic="FF1B293C" img="skills\unarmed_lunge_square.png" />
 	<sprite id="feint_mini" ic="FF1B293C" img="skills\mini\feint_mini.png" />
 	<sprite id="freedom_of_movement_circle_mini" ic="FF1B293C" img="skills\mini\freedom_of_movement_circle_mini.png" />
 	<sprite id="legend_flourish_effect_mini" ic="FF1B293C" img="skills\mini\legend_flourish_effect_mini.png" />

@@ -4,6 +4,9 @@
 	o.create = function() {
 		create();
 		this.setVariant(this.Math.rand(0, 2));
+		this.m.Ammo = 1;
+		this.m.AmmoMax = 1;
+		this.m.AmmoCost = 10;
 	}
 
 	o.updateVariant <- function() {
@@ -14,9 +17,11 @@
 	}
 
 	local onEquip = o.onEquip;
-	o.onEquip = function ()
+	o.onEquip = function()
 	{
 		onEquip();
-		//::Legends.Actives.grant(this, ::Legends.Active.LegendHarvestTree);
+		::Legends.Actives.grant(this.weapon, ::Legends.Active.ThrowAxe, function (_skill) {
+			_skill.m.IsBackupAxe = true;
+		}.bindenv(this));
 	}
 });

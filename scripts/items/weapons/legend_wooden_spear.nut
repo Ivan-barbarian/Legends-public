@@ -1,5 +1,21 @@
 this.legend_wooden_spear <- this.inherit("scripts/items/weapons/weapon", {
 	m = {},
+
+	function isAmountShown()
+	{
+		return true;
+	}
+
+	function setAmmo ( _a )
+	{
+		this.weapon.setAmmo(_a);
+	}
+
+	function getAmountString ()
+	{
+		return this.m.Ammo + "/" + this.m.AmmoMax;
+	}
+
 	function create()
 	{
 		this.weapon.create();
@@ -20,6 +36,9 @@ this.legend_wooden_spear <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Condition = 16.0;
 		this.m.ConditionMax = 16.0;
 		this.m.StaminaModifier = -6;
+		this.m.Ammo = 1;
+		this.m.AmmoMax = 1;
+		this.m.AmmoCost = 10;
 		this.m.RegularDamage = 15;
 		this.m.RegularDamageMax = 25;
 		this.m.ArmorDamageMult = 0.45;
@@ -33,6 +52,9 @@ this.legend_wooden_spear <- this.inherit("scripts/items/weapons/weapon", {
 		::Legends.Actives.grant(this, ::Legends.Active.Thrust);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendHeartseeker);
 		::Legends.Actives.grant(this, ::Legends.Active.Spearwall);
+		::Legends.Actives.grant(this.weapon, ::Legends.Active.ThrowJavelin, function (_skill) {
+			_skill.m.IsBackupSpear = true;
+		}.bindenv(this));
 	}
 
 	function onUpdateProperties( _properties )

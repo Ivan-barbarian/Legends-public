@@ -13,5 +13,6 @@
 		::Legends.Actives.getID(::Legends.Active.ThrowJavelin),
 		::Legends.Actives.getID(::Legends.Active.ThrowAxe),
 		::Legends.Actives.getID(::Legends.Active.ThrowSpear),
+		::Legends.Actives.getID(::Legends.Active.LegendThrowKnife),
 	]);
 });

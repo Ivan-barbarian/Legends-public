@@ -1,5 +1,21 @@
 this.legend_oxtongue_spear <- this.inherit("scripts/items/weapons/weapon", {
 	m = {},
+
+	function isAmountShown()
+	{
+		return true;
+	}
+
+	function setAmmo ( _a )
+	{
+		this.weapon.setAmmo(_a);
+	}
+
+	function getAmountString ()
+	{
+		return this.m.Ammo + "/" + this.m.AmmoMax;
+	}
+
 	function create()
 	{
 		this.weapon.create();
@@ -20,6 +36,9 @@ this.legend_oxtongue_spear <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Condition = 45.0;
 		this.m.ConditionMax = 45.0;
 		this.m.StaminaModifier = -8;
+		this.m.Ammo = 1;
+		this.m.AmmoMax = 1;
+		this.m.AmmoCost = 10;
 		this.m.RegularDamage = 30;
 		this.m.RegularDamageMax = 35;
 		this.m.ArmorDamageMult = 1.0;
@@ -32,6 +51,9 @@ this.legend_oxtongue_spear <- this.inherit("scripts/items/weapons/weapon", {
 		::Legends.Actives.grant(this.weapon, ::Legends.Active.Thrust);
 		::Legends.Actives.grant(this.weapon, ::Legends.Active.LegendHeartseeker);
 		::Legends.Actives.grant(this.weapon, ::Legends.Active.Spearwall);
+		::Legends.Actives.grant(this.weapon, ::Legends.Active.ThrowJavelin, function (_skill) {
+			_skill.m.IsBackupSpear = true;
+		}.bindenv(this));
 	}
 
 	function onUpdateProperties( _properties )

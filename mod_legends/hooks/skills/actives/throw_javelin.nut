@@ -1,8 +1,17 @@
 ::mods_hookExactClass("skills/actives/throw_javelin", function(o)
 {
+	o.m.IsBackupSpear <- false;
 	o.m.AdditionalAccuracy = 20;
 	o.m.AdditionalHitChance = -10;
 
+	o.setItem <- function(_item) {
+		this.skill.setItem(_item);
+		if (this.m.IsBackupSpear) {
+			this.m.Name = "Throw Backup Spear";
+			this.m.Description = "Hurl your backup spear at a target. Can not be used while engaged in melee.";
+			this.m.ActionPointCost = 5;
+			this.m.FatigueCost = 20;
+		}
 	local create = o.create;
 	o.create = function ()
 	{
@@ -16,14 +25,15 @@
 		local tooltip = this.getRangedTooltip(this.getDefaultTooltip());
 
 		local ammo = this.getAmmo();
-
+		local itemName = this.m.IsBackupSpear ? "backup spears" : "javelins";
 		if (ammo > 0)
 		{
 			tooltip.push({
 				id = 8,
 				type = "text",
 				icon = "ui/icons/ammo.png",
-				text = "Has [color=%positive%]" + ammo + "[/color] javelins left"
+				text = "Has [color=%positive%]%_ammo%[/color] %_itemName% left",
+				param = [["_itemName", itemName], ["_ammo", ammo]]
 			});
 		}
 		else
@@ -32,7 +42,8 @@
 				id = 8,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=%negative%]No javelins left[/color]"
+				text = "[color=%negative%]No %itemName% left[/color]",
+				param = [["_itemName", itemName]]
 			});
 		}
 

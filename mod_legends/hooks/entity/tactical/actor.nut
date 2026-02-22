@@ -183,6 +183,12 @@
 		return item != null && item.isWeaponType(this.Const.Items.WeaponType.MagicStaff);
 	}
 
+	o.isArmedWithPoleWeapon <- function ()
+	{
+		local item = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		return item != null && item.isItemType(this.Const.Items.ItemType.MeleeWeapon) && item.m.RangeMax > 1;
+	}
+
 	o.equipItem <- function( _item)
 	{
 		return this.getItems().equip(_item);

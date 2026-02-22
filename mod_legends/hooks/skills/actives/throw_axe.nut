@@ -1,5 +1,6 @@
 ::mods_hookExactClass("skills/actives/throw_axe", function(o)
 {
+	o.m.IsBackupAxe <- false;
 	o.m.AdditionalAccuracy = 20;
 	o.m.AdditionalHitChance = -10;
 
@@ -11,19 +12,30 @@
 		this.m.Delay = 150;
 	}
 
+	o.setItem <- function(_item) {
+		this.skill.setItem(_item);
+		if (this.m.IsBackupAxe) {
+			this.m.Name = "Throw Backup Axe";
+			this.m.Description = "Hurl your backup axe at a target. Can not be used while engaged in melee.";
+			this.m.ActionPointCost = 5;
+			this.m.FatigueCost = 20;
+		}
+	}
+
 	o.getTooltip = function ()
 	{
 		local tooltip = this.getRangedTooltip(this.getDefaultTooltip());
 
 		local ammo = this.getAmmo();
-
+		local itemName = this.m.IsBackupAxe ? "backup axe" : "axes";
 		if (ammo > 0)
 		{
 			tooltip.push({
 				id = 8,
 				type = "text",
 				icon = "ui/icons/ammo.png",
-				text = "Has [color=%positive%]" + ammo + "[/color] axes left"
+				text = "Has [color=%positive%]%_ammo%[/color] %_itemName% left",
+				param = [["_itemName", itemName], ["_ammo", ammo]]
 			});
 		}
 		else
@@ -32,7 +44,8 @@
 				id = 8,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=%negative%]No axes left[/color]"
+				text = "[color=%negative%]No %itemName% left[/color]",
+				param = [["_itemName", itemName]]
 			});
 		}
 

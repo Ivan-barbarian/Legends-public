@@ -1,5 +1,21 @@
 this.legend_redback_dagger <- this.inherit("scripts/items/weapons/weapon", {
 	m = {},
+
+	function isAmountShown()
+	{
+		return true;
+	}
+
+	function setAmmo ( _a )
+	{
+		this.weapon.setAmmo(_a);
+	}
+
+	function getAmountString ()
+	{
+		return this.m.Ammo + "/" + this.m.AmmoMax;
+	}
+
 	function create()
 	{
 		this.weapon.create();
@@ -29,6 +45,9 @@ this.legend_redback_dagger <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Condition = 70.0;
 		this.m.ConditionMax = 70.0;
 		this.m.Value = 3800;
+		this.m.Ammo = 8;
+		this.m.AmmoMax = 8;
+		this.m.AmmoCost = 1;
 		this.m.RegularDamage = 26;
 		this.m.RegularDamageMax = 52;
 		this.m.ArmorDamageMult = 0.7;
@@ -60,6 +79,7 @@ this.legend_redback_dagger <- this.inherit("scripts/items/weapons/weapon", {
 		::Legends.Actives.grant(this, ::Legends.Active.Stab);
 		::Legends.Actives.grant(this, ::Legends.Active.Puncture);
 		::Legends.Actives.grant(this, ::Legends.Active.Deathblow);
+		::Legends.Actives.grant(this.weapon, ::Legends.Active.LegendThrowKnife);
 	}
 
 	function onUpdateProperties( _properties )

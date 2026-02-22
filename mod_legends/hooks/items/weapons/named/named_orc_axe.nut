@@ -2,11 +2,29 @@
 	o.m.PossibleEffects <- ["scripts/skills/effects/legend_named_axe_effect"];
 	o.m.EffectBounds <- [ [15, 35] ];
 
+	o.isAmountShown <- function()
+	{
+		return true;
+	}
+
+	o.setAmmo <- function ( _a )
+	{
+		this.weapon.setAmmo(_a);
+	}
+
+	o.getAmountString <- function ()
+	{
+		return this.m.Ammo + "/" + this.m.AmmoMax;
+	}
+
 	local create = o.create;
 	o.create = function ()
 	{
 		create();
-		this.m.Variants = [1,2,3]
+		this.m.Variants = [1,2,3];
+		this.m.Ammo = 1;
+		this.m.AmmoMax = 1;
+		this.m.AmmoCost = 10;
 	}
 
 	o.getTooltip <- function ()
@@ -25,9 +43,11 @@
 	}
 
 	local onEquip = o.onEquip;
-	o.onEquip = function ()
+	o.onEquip = function()
 	{
 		onEquip();
-		//::Legends.Actives.grant(this, ::Legends.Active.LegendHarvestTree);
+		::Legends.Actives.grant(this.weapon, ::Legends.Active.ThrowAxe, function (_skill) {
+			_skill.m.IsBackupAxe = true;
+		}.bindenv(this));
 	}
 });

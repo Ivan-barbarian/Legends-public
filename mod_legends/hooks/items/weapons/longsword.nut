@@ -18,4 +18,18 @@
 		this.m.ArmamentIcon = "icon_sword_two_handed_01" + v;
 	}
 
+	local onEquip = o.onEquip;
+	o.onEquip = function ()
+	{
+		this.weapon.onEquip();
+		::Legends.Actives.grant(this, ::Legends.Active.OverheadStrike);
+		::Legends.Actives.grant(this, ::Legends.Active.Swing);
+		::Legends.Actives.grant(this, ::Legends.Active.Puncture, function (_skill) {
+			_skill.m.IsHalfsword = true;
+		}.bindenv(this));
+		::Legends.Actives.grant(this, ::Legends.Active.Hammer, function (_skill) {
+			_skill.m.IsMordhau = true;
+		}.bindenv(this));
+	}
+
 });

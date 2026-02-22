@@ -14,4 +14,12 @@
 		this.m.ArmamentIcon = "icon_sword_04" + v;
 	}
 
+	o.addSkill <- function( _skill )
+	{
+		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.Slash))
+			_skill.m.IsBreachSlash = true;
+
+		this.weapon.addSkill(_skill);
+	}
+
 });

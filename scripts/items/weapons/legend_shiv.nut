@@ -1,5 +1,21 @@
 this.legend_shiv <- this.inherit("scripts/items/weapons/weapon", {
 	m = {},
+
+	function isAmountShown()
+	{
+		return true;
+	}
+
+	function setAmmo ( _a )
+	{
+		this.weapon.setAmmo(_a);
+	}
+
+	function getAmountString ()
+	{
+		return this.m.Ammo + "/" + this.m.AmmoMax;
+	}
+
 	function create()
 	{
 		this.weapon.create();
@@ -19,6 +35,9 @@ this.legend_shiv <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Value = 3;
 		this.m.Condition = 13.0;
 		this.m.ConditionMax = 13.0;
+		this.m.Ammo = 8;
+		this.m.AmmoMax = 8;
+		this.m.AmmoCost = 1;
 		this.m.RegularDamage = 10;
 		this.m.RegularDamageMax = 20;
 		this.m.ArmorDamageMult = 0.3;

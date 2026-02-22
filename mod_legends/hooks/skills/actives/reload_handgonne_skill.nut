@@ -10,4 +10,22 @@
 		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.LegendSpecialistInventor))
 			this.m.ActionPointCost -= 1;
 	}
+
+	local isUsable = o.isUsable;
+	o.isUsable = function()
+	{
+		return isUsable() && !this.getItem().isLoaded();
+	}
+	
+	o.onUse = function( _user, _targetTile )
+	{
+		this.consumeAmmo();
+		this.getItem().setLoaded(true);
+		return true;
+	}
+
+	o.onUpdate <- function(_properties)
+	{
+		this.m.IsHidden = this.getItem().isLoaded();
+	}
 });

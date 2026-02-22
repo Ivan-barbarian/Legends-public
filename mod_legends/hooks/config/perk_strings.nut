@@ -166,6 +166,8 @@ Master swift and deadly daggers.
 • Skills build up [color=%negative%]25%[/color] less Fatigue.
 
 • [color=%skill%]Stab[/color], [color=%skill%]Puncture[/color], and [color=%skill%]Deathblow[/color] Action Point cost is reduced to [color=%negative%]3[/color], allowing for an additional attack each turn.
+
+• [color=%skill%]Throw Knife[/color] chance to distract on head hit is increased by [color=%positive%]25%[/color].
 ";
 ::Const.Perks.PerkDefObjects[::Legends.Perk.SpecDagger].Tooltip = ::Const.Strings.PerkDescription.SpecDagger;
 ::Const.Strings.PerkDescription.SpecSword <- @"
@@ -216,6 +218,8 @@ Master hammers and fighting against heavily armored opponents.
 • [color=%skill%]Destroy Armor[/color] and [color=%skill%]Demolish Armor[/color] inflict [color=%positive%]33%[/color] more damage against armor.
 
 • [color=%skill%]Shatter[/color] gains [color=%positive%]+5%[/color] chance to hit.
+
+• [color=%skill%]Obliterate[/color] gains [color=%positive%]+25%[/color] chance to hit.
 
 • The Polehammer no longer has a penalty for attacking targets directly adjacent.
 ";

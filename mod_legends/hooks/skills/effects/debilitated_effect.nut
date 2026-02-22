@@ -13,6 +13,11 @@
 		return "This character is debilitated and will only do [color=%negative%] 75% [/color] damage and take [color=%negative%] 115% [/color] damage for [color=%negative%]" + this.m.TurnsLeft + "[/color] more turn(s).";
 	}
 
+	o.getLogEntryOnAdded <- function ( _user, _victim )
+	{
+		return _user + " has debilitated " + _victim + " for " + this.getEffectDurationString();
+	}
+
 	o.onAdded <- function()
 	{
 		this.m.TurnsLeft = this.Math.max(1, 3 + this.getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration);

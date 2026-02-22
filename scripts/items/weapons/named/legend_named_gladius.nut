@@ -50,6 +50,12 @@ this.legend_named_gladius <- this.inherit("scripts/items/weapons/named/named_wea
 		this.named_weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.Slash);
 		::Legends.Actives.grant(this, ::Legends.Active.Riposte);
+		::Legends.Actives.grant(this, ::Legends.Active.Puncture, function (_skill) {
+			_skill.m.IsHalfsword = true;
+		}.bindenv(this));
+		::Legends.Actives.grant(this, ::Legends.Active.Hammer, function (_skill) {
+			_skill.m.IsMordhau = true;
+		}.bindenv(this));
 	}
 
 	function onUpdateProperties( _properties )

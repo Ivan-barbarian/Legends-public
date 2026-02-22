@@ -25,6 +25,14 @@
 		return result;
 	}
 
+	local onEquip = o.onEquip;
+	o.onEquip = function ()
+	{
+		onEquip();
+		::Legends.Actives.grant(this, ::Legends.Active.LegendLineThemUp);
+		::Legends.Actives.grant(this, ::Legends.Active.ReloadHandgonne);
+	}
+
 	o.onCombatFinished = function ()
 	{
 		this.named_weapon.onCombatFinished();

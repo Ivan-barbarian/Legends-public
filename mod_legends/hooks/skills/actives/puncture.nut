@@ -12,6 +12,7 @@
 			this.m.Overlay = "active_halfsword";
 			this.m.ActionPointCost = 5;
 			this.m.FatigueCost = 25;
+			this.m.IsHidden = true;
 		}
 	}
 
@@ -99,6 +100,7 @@
 		}
 		else
 		{
+			this.m.IsHidden = !this.canDoubleGrip() && !this.m.Item.isItemType(this.Const.Items.ItemType.TwoHanded);
 			this.m.FatigueCostMult = _properties.IsSpecializedInSwords ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		}
 	}

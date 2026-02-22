@@ -358,6 +358,14 @@ activesDefs.push({
 	Name = "Smite",
 });
 
+::Legends.Active.LegendObliterate <- null;
+activesDefs.push({
+	ID = "actives.legend_obliterate",
+	Script = "scripts/skills/actives/legend_obliterate_skill",
+	Const = "Obliterate",
+	Name = "Obliterate",
+});
+
 ::Legends.Active.Cudgel <- null;
 activesDefs.push({
 	ID = "actives.cudgel",
@@ -2934,12 +2942,20 @@ activesDefs.push({
 	Name = "Transform into Wolf",
 });
 
-::Legends.Active.LegendUnarmedLunge <- null;
+::Legends.Active.LegendIntoTheFray <- null;
 activesDefs.push({
-	ID = "actives.legend_unarmed_lunge",
-	Script = "scripts/skills/actives/legend_unarmed_lunge_skill",
-	Const = "LegendUnarmedLunge",
-	Name = "Jump Attack",
+	ID = "actives.legend_into_the_fray",
+	Script = "scripts/skills/actives/legend_into_the_fray",
+	Const = "LegendIntoTheFray",
+	Name = "Into The Fray",
+});
+
+::Legends.Active.LegendHaftstrike <- null;
+activesDefs.push({
+	ID = "actives.legend_haftstrike",
+	Script = "scripts/skills/actives/legend_haftstrike",
+	Const = "LegendHaftstrike",
+	Name = "Haftstrike",
 });
 
 ::Legends.Active.LegendUnleashBear <- null;
@@ -3236,6 +3252,14 @@ activesDefs.push({
 	Script = "scripts/skills/actives/legend_double_swing_skill",
 	Const = "LegendDoubleSwing",
 	Name = "Double Swing",
+});
+
+::Legends.Active.LegendLineThemUp <- null;
+activesDefs.push({
+	ID = "actives.legend_line_them_up",
+	Script = "scripts/skills/actives/legend_line_them_up_skill",
+	Const = "LegendLineThemUp",
+	Name = "Line Them Up",
 });
 
 ::Legends.Actives.addActiveDefObjects(activesDefs);

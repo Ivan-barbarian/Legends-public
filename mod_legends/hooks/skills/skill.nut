@@ -49,20 +49,12 @@
 		return getFatigueCost();
 	}
 
+	local getActionPointCost = o.getActionPointCost;
 	o.getActionPointCost = function()
 	{
-		if (this.m.Container.getActor().getCurrentProperties().IsSkillUseFree)
-		{
+		if (this.m.ActionPointCost == 0)
 			return 0;
-		}
-		else if (this.m.Container.getActor().getCurrentProperties().IsSkillUseHalfCost && this.m.ActionPointCost != 0)
-		{
-			return this.Math.max(1, this.Math.floor(this.m.ActionPointCost / 2));
-		}
-		else
-		{
-			return this.m.ActionPointCost;
-		}
+		return this.Math.floor(getActionPointCost());
 	}
 
 	// Allow Perks to push Tooltip elements that will be displayed when the user views the Tooltips of unactivated Perks in the Perk screen

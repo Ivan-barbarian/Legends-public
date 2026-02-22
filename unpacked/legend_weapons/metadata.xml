@@ -784,10 +784,6 @@
   <sprite id="player_banner_105_shaft" offsetY="35" ic="FF2B3144" width="200" height="230" img="icons\player_banner\player_banner_105_shaft.png" left="-19" right="45" top="-55" bottom="7" />
   <sprite id="player_banner_106" offsetY="35" ic="FF2E3E59" width="200" height="230" img="icons\player_banner\player_banner_106.png" left="-65" right="33" top="-35" bottom="109" />
   <sprite id="player_banner_106_shaft" offsetY="35" ic="FF2B3144" width="200" height="230" img="icons\player_banner\player_banner_106_shaft.png" left="22" right="44" top="-52" bottom="12" />
-  <sprite id="projectile_blood" ic="FF445660" width="32" height="64" img="effects\projectile_blood.png" left="-8" right="14" top="-31" bottom="29" />
-  <sprite id="projectile_dart" ic="FF445660" width="32" height="64" img="effects\projectile_dart.png" left="-8" right="14" top="-31" bottom="29" />
-  <sprite id="projectile_missile" ic="FF445660" width="32" height="64" img="effects\projectile_missile.png" left="-8" right="14" top="-31" bottom="29" />
-  <sprite id="projectile_pebble" ic="FF445660" width="32" height="64" img="effects\projectile_pebble.png" left="-8" right="14" top="-31" bottom="29" />
   <sprite id="shield_heartwood_damaged" offsetY="35" ic="FF2A3D56" width="130" height="142" img="icons\shield_heartwood_damaged.png" left="1" right="65" top="-69" bottom="19" />
   <sprite id="shield_heartwood_destroyed" offsetX="-20" offsetY="8" f="6406" ic="FF2A3D56" width="95" height="71" img="icons\shield_heartwood_destroyed.png" left="-44" right="46" top="-36" bottom="34" />
   <sprite id="shield_heartwood" offsetY="35" ic="FF2B3F5A" width="130" height="142" img="icons\shield_heartwood.png" left="-1" right="65" top="-69" bottom="19" />

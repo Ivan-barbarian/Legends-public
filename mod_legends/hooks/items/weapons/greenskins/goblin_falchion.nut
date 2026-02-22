@@ -14,4 +14,19 @@
 		this.m.ArmamentIcon = "icon_goblin_weapon_02" + v;
 	}
 
+	o.addSkill <- function( _skill )
+	{
+		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.Slash))
+			_skill.m.IsBreachSlash = true;
+
+		this.weapon.addSkill(_skill);
+	}
+
+	local onEquip = o.onEquip;
+	o.onEquip = function ()
+	{
+		onEquip();
+		::Legends.Actives.grant(this, ::Legends.Active.Gash);
+	}
+
 });

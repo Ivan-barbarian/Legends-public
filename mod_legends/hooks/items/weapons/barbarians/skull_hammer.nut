@@ -32,6 +32,6 @@
 	o.onEquip = function ()
 	{
 		onEquip();
-		//::Legends.Actives.grant(this, ::Legends.Active.LegendHarvestRock);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendObliterate);
 	}
 });
