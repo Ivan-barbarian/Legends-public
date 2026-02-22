@@ -362,7 +362,7 @@ activesDefs.push({
 activesDefs.push({
 	ID = "actives.legend_obliterate",
 	Script = "scripts/skills/actives/legend_obliterate_skill",
-	Const = "Obliterate",
+	Const = "LegendObliterate",
 	Name = "Obliterate",
 });
 
