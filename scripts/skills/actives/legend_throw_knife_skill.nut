@@ -156,15 +156,6 @@ this.legend_throw_knife_skill <- this.inherit("scripts/skills/skill", {
 		return success;
 	}
 
-	function isUsable()
-	{
-		local isUsable = !this.Tactical.isActive() || this.skill.isUsable() && this.getAmmo() > 0;
-		if (this.getContainer().hasPerk(::Legends.Perk.LegendPointBlank))
-			return isUsable;
-
-		return isUsable && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
-	}
-
 	function onTargetHit ( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 		if (_skill != this)
