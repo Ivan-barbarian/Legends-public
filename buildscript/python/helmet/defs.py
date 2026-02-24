@@ -114,7 +114,7 @@ class Defs:
  },
 {"name" : "aventail_named"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 1500, "con" : 60, "stam" : -3, "vis" : 0, "hair" : "false", "beard" : "true", "impactSound" : "chain", "invSound" : "chain", "named" : True, "rmaxViz" : 0, "rminViz" : 0, "rmaxStam" : 2, "rminStam" : 3, "rminCond" : 60, "rmaxCond" : 75, "names" : Names,
 "title" :  "",
-"desc" :  "Truly fit for a knight, this mail coif is made from the highest quality materials and boasts precious decorations and ornaments.",
+"desc" :  "Truly fit for a knight, this mail aventail is made from the highest quality materials and boasts precious decorations and ornaments.",
 "adesc" : "Includes a mail aventail of the highest quality."
 },
 {"name" : "rusty_chain_hood"                     , "layer" : "hood", "min" : 1, "max" : 3, "base" : True, "value" : 150, "con" : 70, "stam" : -4, "vis" : 0, "hair" : "true", "beard" : "false", "impactSound" : "chain", "invSound" : "chain",
