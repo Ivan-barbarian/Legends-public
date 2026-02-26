@@ -558,7 +558,7 @@
 		Tops = [
 			[1, "top/legend_helmet_faceplate_winged"], //50, -5, -1
 			[1, "top/legend_helmet_faceplate_winged_full"], //65, -7, -1
-			[1, "top_lower/legend_helmet_faceplate_winged_long"], //40, -4, -1
+			[1, "top/legend_helmet_faceplate_winged_long"], //40, -4, -1
 		],
 		Vanity = []
 	}]
@@ -1708,7 +1708,7 @@
 			[1, "vanity/legend_helmet_plait"], //10
 			[1, "vanity/legend_helmet_noble_feather"],
 
-			[1, "vanity_lower/legend_helmet_back_feathers"],
+			[1, "vanity/legend_helmet_back_feathers"],
 		]
 	}]
 };
@@ -1737,7 +1737,7 @@
 			[1, "vanity/legend_helmet_plait"], //10
 			[1, "vanity/legend_helmet_noble_feather"],
 
-			[1, "vanity_lower/legend_helmet_back_feathers"],
+			[1, "vanity/legend_helmet_back_feathers"],
 		]
 	}]
 };
@@ -1772,7 +1772,7 @@
 			[1, "vanity/legend_helmet_plait"], //10
 			[1, "vanity/legend_helmet_noble_feather"],
 
-			[1, "vanity_lower/legend_helmet_back_feathers"],
+			[1, "vanity/legend_helmet_back_feathers"],
 		]
 	}]
 };
@@ -1807,7 +1807,7 @@
 			[1, "vanity/legend_helmet_plait"], //10
 			[1, "vanity/legend_helmet_noble_feather"],
 
-			[1, "vanity_lower/legend_helmet_back_feathers"],
+			[1, "vanity/legend_helmet_back_feathers"],
 		]
 	}]
 };
@@ -1842,7 +1842,7 @@
 			[1, "vanity/legend_helmet_plait"], //10
 			[1, "vanity/legend_helmet_noble_feather"],
 
-			[1, "vanity_lower/legend_helmet_back_feathers"],
+			[1, "vanity/legend_helmet_back_feathers"],
 		]
 	}]
 };
@@ -1870,7 +1870,7 @@
 			[1, "vanity/legend_helmet_plait"], //10
 			[1, "vanity/legend_helmet_noble_feather"],
 
-			[1, "vanity_lower/legend_helmet_back_feathers"],
+			[1, "vanity/legend_helmet_back_feathers"],
 		]
 	}]
 };
@@ -2362,7 +2362,7 @@
 		Tops = [
 			[1, "top/legend_helmet_faceplate_winged"], //50, -5, -1
 			[1, "top/legend_helmet_faceplate_winged_full"], //65, -7, -1
-			[1, "top_lower/legend_helmet_faceplate_winged_long"], //40, -4, -1
+			[1, "top/legend_helmet_faceplate_winged_long"], //40, -4, -1
 			[1, "top/legend_helmet_faceplate_snub_nose"], //20
 			[1, "top/legend_helmet_faceplate_snub_slit"], //20
 			[1, "top/legend_helmet_faceplate_short"], //20
@@ -2750,7 +2750,7 @@
 			[3, ""],
 			[5, "top/legend_helmet_faceplate_winged"],
 			[2, "top/legend_helmet_faceplate_winged_full"],
-			[2, "top_lower/legend_helmet_faceplate_winged_long"],
+			[2, "top/legend_helmet_faceplate_winged_long"],
 			[3, "top/legend_helmet_faceplate_long"],
 			[3, "top/legend_helmet_faceplate_full"],
 			[3, "top/legend_helmet_faceplate_full_breaths"],

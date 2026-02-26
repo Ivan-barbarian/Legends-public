@@ -213,6 +213,8 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("armor_layer_tabbard");
 		this.addSprite("accessory");
 		this.addSprite("accessory_special");
+		this.addSprite("helmet_helm_lower");
+		this.addSprite("helmet_top_lower");
 		this.addSprite("helmet_vanity_lower");
 		this.addSprite("helmet_vanity_lower_2");
 		this.addSprite("armor_layer_cloak");

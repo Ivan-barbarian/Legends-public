@@ -67,8 +67,8 @@
 		Vanity = [
 			[1, "vanity/legend_helmet_side_feather"], //10
 			[1, "vanity/legend_helmet_top_feather"], //10
-			[1, "vanity_lower/legend_helmet_back_crest"], //10
-			[1, "vanity_lower/legend_helmet_top_plume"] //10
+			[1, "vanity/legend_helmet_back_crest"], //10
+			[1, "vanity/legend_helmet_top_plume"] //10
 		]
 	}]
 };
@@ -123,8 +123,8 @@
 		Vanity = [
 			[1, "vanity/legend_helmet_side_feather"], //10
 			[1, "vanity/legend_helmet_top_feather"], //10
-			[1, "vanity_lower/legend_helmet_back_crest"], //10
-			[1, "vanity_lower/legend_helmet_top_plume"] //10
+			[1, "vanity/legend_helmet_back_crest"], //10
+			[1, "vanity/legend_helmet_top_plume"] //10
 		]
 	}]
 };
@@ -664,7 +664,7 @@
 			[2, "top/legend_helmet_faceplate_sharp"],
 			[1, "top/legend_helmet_faceplate_winged"],
 			[1, "top/legend_helmet_faceplate_winged_full"],
-			[1, "top_lower/legend_helmet_faceplate_winged_long"],
+			[1, "top/legend_helmet_faceplate_winged_long"],
 			[3, "top/legend_helmet_southern_faceplate"],
 			[1, "top/legend_helmet_facemask"],
 			[1, "top/legend_helmet_nose_plate"],
@@ -701,7 +701,7 @@
 			[3, ""],
 			[2, "top/legend_helmet_faceplate_winged"],
 			[2, "top/legend_helmet_faceplate_winged_full"],
-			[2, "top_lower/legend_helmet_faceplate_winged_long"],
+			[2, "top/legend_helmet_faceplate_winged_long"],
 			[3, "top/legend_helmet_faceplate_long"],
 			[3, "top/legend_helmet_faceplate_full"],
 			[3, "top/legend_helmet_faceplate_full_breaths"],

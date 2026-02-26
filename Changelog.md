@@ -21,7 +21,7 @@ This activates Dual Wield:
 
 ## Perks
 
-### Specialist Perk
+### Specialist Perks
 - spec perks are now disabled from this version onwards
 - because recent legends perk work focused on making a lot more recruits viable and interesting to play we decided that spec perks aren't as worthwhile anymore
 - they also pigeonhole players into certain builds and make lowborn backgrounds disproportionately better than expensive recruits
@@ -79,6 +79,7 @@ Favoured Enemy - Sword Master
 - description fixes and changes
 - named items naming fixes and changes
 - fixed beard/hair hiding while covering items are set to invisible
+- modified layering so some L2's go under L1
 	
 ### Armors
 - added Studded Aketon
@@ -175,6 +176,11 @@ items that used the same brush name into standalone definitions. Note that items
 The .pngs have also gone necessary changes, see the link below for more details (includes removal of bust_ prefix).
 For clarity, legend_armor is prefixed at make_legends_armor level and should be referenced as such while building outfits.
 Description changes for both armors and helmets.
+Added named helmet bases support.
+Refactored vanity_lower -> vanity in outfits and lowervanity defs field to lower.
+Lower layers are now available for helms and masks.
+The display ordering is as follows:
+VanityLower -> VanityLower2 -> Head -> Helmet -> HelmLower -> TopLower -> Helm -> Top -> Vanity -> Vanity2
 
 Armor refactors in legend_armor defs.py: 
 https://github.com/Battle-Brothers-Legends/Legends-public/commit/7e2a567abdfc71395283994a488e3150d47b53a0

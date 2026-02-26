@@ -60,7 +60,7 @@
 		],
 		Vanity = [
 			[1, ""],
-			[1, "vanity_lower/legend_helmet_goblin_tail"] //10
+			[1, "vanity/legend_helmet_goblin_tail"] //10
 		]
 	}]
 };
@@ -165,8 +165,8 @@
 		],
 		Tops = [],
 		Vanity = [
-			[2, "vanity_lower/legend_helmet_orc_tail"], //10
-			[1, "vanity_lower/legend_helmet_knotted_tail"] //10
+			[2, "vanity/legend_helmet_orc_tail"], //10
+			[1, "vanity/legend_helmet_knotted_tail"] //10
 		]
 	}]
 };
@@ -187,7 +187,7 @@
 		Tops = [],
 		Vanity = [
 			[3, ""],
-			[1, "vanity_lower/legend_helmet_knotted_tail"] //10
+			[1, "vanity/legend_helmet_knotted_tail"] //10
 		]
 	}]
 };

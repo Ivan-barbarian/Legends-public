@@ -166,13 +166,16 @@
 			else if (_id == "helmet") {
 				original_addSprite("accessory");
 				original_addSprite("accessory_special");
-				original_addSprite("helmet_helm_lower");
-				original_addSprite("helmet_top_lower");
 				original_addSprite("helmet_vanity_lower");
 				original_addSprite("helmet_vanity_lower_2");
 			}
 
 			local layer = original_addSprite(_id);
+
+			if (_id == "helmet") {
+				original_addSprite("helmet_helm_lower");
+				original_addSprite("helmet_top_lower");
+			}
 
 			if (_id == "surcoat") {
 				original_addSprite("armor_layer_cloak");
