@@ -119,26 +119,7 @@ this.legend_rotten_flesh_trait <- this.inherit("scripts/skills/traits/character_
 			this.setDirty(true);
 		};
 
-		actor.m.ExcludedInjuries = [
-			"injury.cut_artery",
-			"injury.cut_throat",
-			"injury.deep_abdominal_cut",
-			"injury.deep_chest_cut",
-			"injury.exposed_ribs",
-			"injury.grazed_kidney",
-			"injury.grazed_neck",
-			"injury.infected_wound",
-			"injury.sickness",
-			"injury.stabbed_guts",
-			"injury.broken_nose",
-			"injury.broken_ribs",
-			"injury.crushed_windpipe",
-			"injury.fractured_ribs",
-			"injury.inhaled_flames",
-			"injury.pierced_chest",
-			"injury.pierced_lung",
-			"injury.pierced_side"
-		];
+		actor.m.ExcludedInjuries = ::Legends.Necromancer.excludedTraits();
 
 		local sw_onFactionChanged = actor.onFactionChanged;
 		actor.onFactionChanged = function ()
@@ -151,6 +132,14 @@ this.legend_rotten_flesh_trait <- this.inherit("scripts/skills/traits/character_
 
 		if (this.m.IsNew)
 		{
+			foreach (trait in ::Legends.Necromancer.excludedTraits())
+			{
+				if (this.getContainer().hasSkill(::Legends.Traits.getID(trait)))
+				{
+					this.getContainer().removeByID(::Legends.Traits.getID(trait));
+				}
+			}
+
 			this.onApplyAppearance();
 			actor.m.Flags.add("undead");
 			actor.m.Flags.add("zombie");
