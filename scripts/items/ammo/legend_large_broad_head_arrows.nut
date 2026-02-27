@@ -5,7 +5,7 @@ this.legend_large_broad_head_arrows <- this.inherit("scripts/items/ammo/ammo", {
 		this.ammo.create();
 		this.m.ID = "ammo.arrows";
 		this.m.Name = "Large Quiver of Broad Head Arrows";
-		this.m.Description = "A large quiver of arrows with broad tips, designed for tearing flesh, but easily stopped by armor. Is automatically refilled after each battle if you have enough global ammunition. Grants +10% damage but -10% armor piercing damage while wielding a bow.";
+		this.m.Description = "A large quiver of arrows with broad tips, designed for tearing flesh, but easily stopped by armor. Is automatically refilled after each battle if you have enough global ammunition. Grants 10% more damage, but 10% less armor piercing damage while wielding a bow.";
 		this.m.Icon = "ammo/quiver_03_light.png";
 		this.m.IconEmpty = "ammo/quiver_03_empty.png";
 		this.m.SlotType = this.Const.ItemSlot.Ammo;
