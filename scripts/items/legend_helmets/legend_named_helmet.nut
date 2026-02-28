@@ -101,6 +101,7 @@ this.legend_named_helmet <- this.inherit("scripts/items/legend_helmets/legend_he
 		this.m.Name = _in.readString();
 		this.m.ConditionMax = _in.readF32();
 		this.m.StaminaModifier = _in.readI8();
+		this.m.Vision = _in.readI8();
 		this.legend_helmet.onDeserialize(_in);
 		this.updateVariant();
 		if (this.isRuned())
