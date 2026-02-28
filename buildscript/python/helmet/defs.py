@@ -344,20 +344,15 @@ class Defs:
  "desc" :  "A conical helm of excellent quality with polished, golden elements that catch the light with a sharp, brilliant glint.",
  "adesc" : "Includes a conical helm of excellent quality with polished, golden elements."
  },
-{"name" : "flat_top_helm_low"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 225, "con" : 70, "stam" : -5, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
+{"name" : "flat_top_helm_rusted"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 225, "con" : 70, "stam" : -5, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Rusted Flat Top Helm",
- "desc" :  "A worn out flat top helm, rusted and dented beyond full repair.",
-  "adesc" : "Includes a rusted flat top helm."
+ "desc" :  "A rusted and dented helm with a flat top, a telling sign of a negligent owner.",
+ "adesc" : "Includes a rusted flat metal helm."
  },
 {"name" : "flat_top_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 325, "con" : 85, "stam" : -5, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Flat Top Helm",
  "desc" :  "A flat metal helm with a nose guard, popular among the soldiers.",
  "adesc" : "Includes a flat metal helm."
- },
-{"name" : "flat_top_helm_polished"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 750, "con" : 100, "stam" : -5, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
- "title" :  "Hardened Flat Top Helm",
- "desc" :  "An outstandingly well made and maintained flat metal helm with a nose guard.",
- "adesc" : "Includes a sturdy flat metal helm."
  },
 {"name" : "barbute"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 7, "value" : 1250, "con" : 75, "stam" : -3, "vis" : -2, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Barbute",
@@ -404,25 +399,20 @@ class Defs:
  "desc" :  "A tall helm composed of a peaked bascinet and riveted cheek protection.",
   "adesc" : "Includes a great bascinet."
  },
-{"name" : "kettle_helm_low"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 300, "con" : 75, "stam" : -7, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
+{"name" : "kettle_helm_rusted"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 300, "con" : 75, "stam" : -7, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Rusted Kettle Helm",
- "desc" :  "A low, broad-rimmed metal helm, rusted and dented beyond full repair.",
- "adesc" : "Includes a rusted kettle helm."
+ "desc" :  "A low, broad-rimmed metal helm, rusted and dented.",
+ "adesc" : "Includes a rusted steel kettle helm."
  },
-{"name" : "kettle_helm_med"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 500, "con" : 95, "stam" : -7, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
- "title" :  "Kettle Helm",
+{"name" : "kettle_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 500, "con" : 95, "stam" : -7, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
+ "title" : "Kettle Helm",
  "desc" :  "A metal helm with a broad rim, popular among the soldiers.",
  "adesc" : "Includes a steel kettle helm."
  },
 {"name" : "kettle_helm_high"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 850, "con" : 125, "stam" : -9, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
- "title" :  "Hardened Kettle Helm",
- "desc" :  "A tall, hardened metal helm with a broad rim of excellent quality.",
- "adesc" : "Includes a hardened kettle helm."
- },
-{"name" : "kettle_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 750, "con" : 115, "stam" : -8, "vis" : -2, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
- "title" :  "Kettle Helm",
- "desc" :  "A metal helm with a broad rim.",
- "adesc" : "Includes a kettle helm."
+ "title" :  "Deep Kettle Helm",
+ "desc" :  "A tall metal helm with a broad rim.",
+ "adesc" : "Includes a tall kettle helm."
  },
 {"name" : "kettle_hat"                     , "layer" : "helm", "min" : 1, "max" : 7, "value" : 800, "con" : 120, "stam" : -9, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Kettle Hat",
@@ -485,9 +475,9 @@ class Defs:
  "adesc" : "Includes a foreign alloy helm."
  },
 {"name" : "conic_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 700, "con" : 110, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
- "title" :  "Conic Helm",
- "desc" :  "A conic helm fluted to redirect the force of the incoming blows.",
- "adesc" : "Includes a fluted conic helm."
+ "title" :  "Conical Helm",
+ "desc" :  "A conical helm fluted to redirect the force of the incoming blows.",
+ "adesc" : "Includes a fluted conical helm."
  },
 {"name" : "sallet"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 800, "con" : 50, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Sallet",
@@ -571,8 +561,8 @@ class Defs:
  },
 {"name" : "italo_norman_helm"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 6, "value" : 425, "con" : 90, "stam" : -6, "vis" : -2, "hair" : "true", "beard" : "true", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Italo Norman Helm",
- "desc" :  "A pointed conic helm with a large duck-bill shaped faceplate covering the front.",
- "adesc" : "Includes a conic helm with a duck-bill shaped faceplate."
+ "desc" :  "A pointed conical helm with a large duck-bill shaped faceplate covering the front.",
+ "adesc" : "Includes a conical helm with a duck-bill shaped faceplate."
  },
 {"name" : "giles_helm"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 7, "value" : 1500, "con" : 100, "stam" : -6, "vis" : -3, "hair" : "true", "beard" : "true", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Sir Giles Helm",
@@ -581,18 +571,18 @@ class Defs:
  },
 {"name" : "italo_norman_helm_named"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 3, "value" : 2000, "con" : 110, "stam" : -5, "vis" : -2, "hair" : "true", "beard" : "true", "impactSound" : "plate", "invSound" : "plate", "named" : True, "rmaxViz" : 1, "rminViz" : 2, "rmaxStam" : 4, "rminStam" : 5, "rminCond" : 110, "rmaxCond" : 135, "names" : Names,
  "title" :  "Italo Conical Helm",
- "desc" :  "A well-built and lavishly decorated pointed conic helm with a large duck-bill shaped faceplate covering the front.",
- "adesc" : "Includes a well-built pointed conic helm with a duck-bill shaped faceplate."
+ "desc" :  "A well-built and lavishly decorated pointed conical helm with a large duck-bill shaped faceplate covering the front.",
+ "adesc" : "Includes a well-built pointed conical helm with a duck-bill shaped faceplate."
  },
 {"name" : "southern_conic_helm"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 1000, "con" : 75, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Southern Conical Helm",
- "desc" :  "A sturdy metal helm with a spiked conic crown and a reinforced nasal guard.",
- "adesc" : "Includes a spiked conic helm."
+ "desc" :  "A sturdy metal helm with a spiked conical crown and a reinforced nasal guard.",
+ "adesc" : "Includes a spiked conical helm."
  },
 {"name" : "southern_conic_named"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 2000, "con" : 85, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate", "named" : True, "rmaxViz" : 1, "rminViz" : 1, "rmaxStam" : 3, "rminStam" : 4, "rminCond" : 85, "rmaxCond" : 105, "names" : Names,
  "title" :  "Southern Conical",
- "desc" :  "A masterwork metal helm with a spiked conic crown and a reinforced nasal guard, crested by twin feathers. Light yet sturdy.",
- "adesc" : "Includes a masterwork spiked conic helm."
+ "desc" :  "A masterwork metal helm with a spiked conical crown and a reinforced nasal guard, crested by twin feathers. Light yet sturdy.",
+ "adesc" : "Includes a masterwork spiked conical helm."
  },
 {"name" : "southern_peaked_helm"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 2000, "con" : 115, "stam" : -8, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Southern Peaked Helm",
@@ -792,7 +782,7 @@ class Defs:
  },
 {"name" : "rotten_helm_adornment"                     , "layer" : "top", "min" : 1, "max" : 3, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false", "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Tarnished Helm Adornment",
- "desc" :  "Ancient rotten relics of adornment from the helm of a long dead questing knight.",
+ "desc" :  "Ancient decayed relics of adornment from the helm of a long dead questing knight.",
  "adesc" : "Includes a set of decayed relics of adornment."
  },
 {"name" : "faceplate_flat"                     , "layer" : "top", "lower": True, "min" : 1, "max" : 6, "value" : 300, "con" : 35, "stam" : -2, "vis" : -1, "hair" : "false", "beard" : "true", "impactSound" : "plate", "invSound" : "plate",

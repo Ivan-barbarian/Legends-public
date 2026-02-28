@@ -113,6 +113,50 @@
 
 		onDeath(_killer, _skill, _tile, _fatalityType);
 
+		local appearance = this.getItems().getAppearance();
+		local flip = this.m.IsCorpseFlipped;
+
+		local armorLayers = [
+			"CorpseArmorLayerChain",
+			"CorpseArmorLayerPlate",
+			"CorpseArmorLayerTabbard",
+			"CorpseArmorLayerCloakBack",
+			"CorpseArmorLayerCloakFront"
+		];
+
+		foreach (layer in armorLayers) 
+		{
+			if (appearance[layer] != "") 
+			{
+				local decal = _tile.spawnDetail(appearance[layer], this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
+				decal.Scale = 0.9;
+				decal.setBrightness(0.9);
+			}
+		}
+
+		if (!appearance.HideCorpseHead && _fatalityType != this.Const.FatalityType.Decapitated){
+			local helmetLayers = [
+    			"HelmetLayerVanityLowerCorpse",
+    			"HelmetLayerVanity2LowerCorpse",
+				"HelmetCorpse",
+				"HelmetLayerHelmLowerCorpse",
+				"HelmetLayerTopLowerCorpse",
+				"HelmetLayerHelmCorpse",
+				"HelmetLayerTopCorpse",
+				"HelmetLayerVanityCorpse",
+				"HelmetLayerVanity2Corpse"
+			];
+			foreach (layer in helmetLayers) 
+				{
+					if (appearance[layer] != "") 
+					{
+						local decal = _tile.spawnDetail(appearance[layer], this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
+						decal.Scale = 0.9;
+						decal.setBrightness(0.9);
+					}
+				}
+		}
+
 		if (_tile != null) {
 			_tile.Properties.get("Corpse").isHuman = 1;
 

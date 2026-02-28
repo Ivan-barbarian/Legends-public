@@ -93,7 +93,7 @@
 			[1, "hood/legend_helmet_padded_hood"] //50, -2
 		],
 		Helms = [
-			[1, "helm/legend_helmet_flat_top_helm_low"] //90, -6, -1
+			[1, "helm/legend_helmet_flat_top_helm_rusted"] //90, -6, -1
 		],
 		Tops = [
 			[1, "top/legend_helmet_faceplate_flat"] //30, -2, -2
@@ -141,7 +141,7 @@
 			[1, "hood/legend_helmet_chain_hood_full"] //90, -6
 		],
 		Helms = [
-			[1, "helm/legend_helmet_flat_top_helm_polished"] //150, -11, -1
+			[1, "helm/legend_helmet_flat_top_helm"] //150, -11, -1
 		],
 		Tops = [
 			[1, "top/legend_helmet_faceplate_flat"] //30, -2, -2
@@ -464,7 +464,7 @@
 			[1, "hood/legend_helmet_padded_cap"], // 40, -1, 0 //40
 		],
 		Helms = [
-			[1, "helm/legend_helmet_flat_top_helm_low"] //90, -6, -1
+			[1, "helm/legend_helmet_flat_top_helm_rusted"] //90, -6, -1
 		],
 		Tops = [
 		],
@@ -483,7 +483,7 @@
 			[1, "hood/legend_helmet_chain_hood_full"] //90, -6
 		],
 		Helms = [
-			[1, "helm/legend_helmet_flat_top_helm_polished"] //150, -11, -1
+			[1, "helm/legend_helmet_flat_top_helm"] //150, -11, -1
 		],
 		Tops = [
 		],
@@ -504,7 +504,7 @@
 			[1, "hood/legend_helmet_chain_hood"], //80, -5
 		],
 		Helms = [
-			[1, "helm/legend_helmet_flat_top_helm_polished"] //150, -11, -1
+			[1, "helm/legend_helmet_flat_top_helm"] //150, -11, -1
 		],
 		Tops = [
 			[1, "top/legend_helmet_chain_attachment"] //20, -1
@@ -871,8 +871,8 @@
 			[1, "hood/legend_helmet_simple_hood"] //30
 		],
 		Helms = [
-			[20, "helm/legend_helmet_kettle_helm_low"],
-			[1, "helm/legend_helmet_kettle_helm_med"],
+			[20, "helm/legend_helmet_kettle_helm_rusted"],
+			[1, "helm/legend_helmet_kettle_helm"],
 			[1, "helm/legend_helmet_kettle_helm_high"], //75
 			[1, "helm/legend_helmet_kettle_hat"]
 		],
@@ -1413,8 +1413,8 @@
 			[1, "hood/legend_helmet_padded_hood"] //50
 		],
 		Helms = [
-			[1, "helm/legend_helmet_kettle_helm_low"],
-			[20, "helm/legend_helmet_kettle_helm_med"],
+			[1, "helm/legend_helmet_kettle_helm_rusted"],
+			[20, "helm/legend_helmet_kettle_helm"],
 			[1, "helm/legend_helmet_kettle_helm_high"], //75
 			[1, "helm/legend_helmet_kettle_hat"]
 		],
@@ -2593,9 +2593,8 @@
 			[1, "hood/legend_helmet_padded_cap"],
 		],
 		Helms = [
-			[1, "helm/legend_helmet_flat_top_helm_low"],
-			[3, "helm/legend_helmet_flat_top_helm"],
-			[1, "helm/legend_helmet_flat_top_helm_polished"],
+			[1, "helm/legend_helmet_flat_top_helm_rusted"],
+			[4, "helm/legend_helmet_flat_top_helm"],
 		],
 		Tops = [
 			[5, ""],
@@ -2682,8 +2681,8 @@
 		],
 		Helms = [
 			[20, "helm/legend_helmet_kettle_hat"],
-			[3, "helm/legend_helmet_kettle_helm_low"],
-			[2, "helm/legend_helmet_kettle_helm_med"],
+			[3, "helm/legend_helmet_kettle_helm_rusted"],
+			[2, "helm/legend_helmet_kettle_helm"],
 			[1, "helm/legend_helmet_kettle_helm_high"],
 		],
 		Tops = [

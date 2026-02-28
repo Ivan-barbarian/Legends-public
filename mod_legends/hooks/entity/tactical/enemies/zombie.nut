@@ -201,6 +201,32 @@
 		}
 	}
 
+	local onDeath = o.onDeath;
+	o.onDeath = function ( _killer, _skill, _tile, _fatalityType )
+	{
+		onDeath(_killer, _skill, _tile, _fatalityType);
+
+		local appearance = this.getItems().getAppearance();
+		local flip = this.m.IsCorpseFlipped;
+		local armorLayers = [
+			"CorpseArmorLayerChain",
+			"CorpseArmorLayerPlate",
+			"CorpseArmorLayerTabbard",
+			"CorpseArmorLayerCloakBack",
+			"CorpseArmorLayerCloakFront"
+		];
+
+		foreach (layer in armorLayers) 
+		{
+			if (appearance[layer] != "") 
+			{
+				local decal = _tile.spawnDetail(appearance[layer], this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
+				decal.Scale = 0.9;
+				decal.setBrightness(0.9);
+			}
+		}
+	}
+
 	o.onFactionChanged = function ()
 	{
 		this.actor.onFactionChanged();

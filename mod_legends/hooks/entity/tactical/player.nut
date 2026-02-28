@@ -655,6 +655,9 @@
 		::World.Statistics.addFallen = function (_fallen) {
 			originalAddFallen(bro.finalizeFallen(_fallen));
 		}
+
+		local appearance = this.getItems().getAppearance();
+		appearance.HelmetCorpse = "";
 		onDeath(_killer, _skill, _tile, _fatalityType);
 		::World.Statistics.addFallen = originalAddFallen;
 	}

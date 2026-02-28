@@ -450,10 +450,14 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 	{
 		local frontSprite = "";
 		local backSprite = "";
+		local frontSpriteCorpse = this.m.SpriteCorpseFront != null ? this.m.SpriteCorpseFront : "";
+		local backSpriteCorpse = this.m.SpriteCorpseBack != null ? this.m.SpriteCorpseBack : "";
 		if (this.isVisible() == false)
 		{
 			frontSprite = "";
 			backSprite = "";
+			frontSpriteCorpse = "";
+			backSpriteCorpse = "";
 		}
 		else if (this.m.Condition / this.m.ConditionMax <= this.Const.Combat.ShowDamagedArmorThreshold)
 		{
@@ -471,36 +475,29 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 			return;
 		}
 
-		switch(this.m.Type)
-		{
-			case this.Const.Items.ArmorUpgrades.Chain:
-				_app.ArmorLayerChain = backSprite;
-				_app.CorpseArmorLayerChain = this.m.SpriteCorpseBack != null ? this.m.SpriteCorpseBack : "";
-				break;
+		local key = "";
+		local prefix = "ArmorLayer";
+		
+		switch(this.m.Type) {
+			case this.Const.Items.ArmorUpgrades.Chain:      key = "Chain"; break;
+			case this.Const.Items.ArmorUpgrades.Plate:      key = "Plate"; break;
+			case this.Const.Items.ArmorUpgrades.Tabbard:    key = "Tabbard"; break;
+			case this.Const.Items.ArmorUpgrades.Cloak:      key = "Cloak"; break;
+			case this.Const.Items.ArmorUpgrades.Attachment: key = "Upgrade"; prefix = "Armor"; break; 
+		}
 
-			case this.Const.Items.ArmorUpgrades.Plate:
-				_app.ArmorLayerPlate = backSprite;
-				_app.CorpseArmorLayerPlate = this.m.SpriteCorpseBack != null ? this.m.SpriteCorpseBack : "";
-				break;
+		if (key != "") {
+			local hasFrontSprite = (key == "Cloak" || key == "Upgrade");
+			local p = prefix + key;
+			local s = hasFrontSprite ? "Back" : "";
 
-			case this.Const.Items.ArmorUpgrades.Tabbard:
-				_app.ArmorLayerTabbard = backSprite;
-				_app.CorpseArmorLayerTabbard = this.m.SpriteCorpseBack != null ? this.m.SpriteCorpseBack : "";
-				break;
+			if (hasFrontSprite) {
+				_app[p + "Front"] = frontSprite;
+				_app["Corpse" + p + "Front"] = frontSpriteCorpse;
+			}
 
-			case this.Const.Items.ArmorUpgrades.Cloak:
-				_app.ArmorLayerCloakFront = frontSprite;
-				_app.ArmorLayerCloakBack = backSprite;
-				_app.CorpseArmorLayerCloakFront = this.m.SpriteCorpseFront != null ? this.m.SpriteCorpseFront : "";
-				_app.CorpseArmorLayerCloakBack = this.m.SpriteCorpseBack != null ? this.m.SpriteCorpseBack : "";
-				break;
-
-			case this.Const.Items.ArmorUpgrades.Attachment:
-				_app.ArmorUpgradeFront = frontSprite;
-				_app.ArmorUpgradeBack = backSprite;
-				_app.CorpseArmorUpgradeFront = this.m.SpriteCorpseFront != null ? this.m.SpriteCorpseFront : "";
-				_app.CorpseArmorUpgradeBack = this.m.SpriteCorpseBack ? this.m.SpriteCorpseBack : "";
-				break;
+			_app[p + s] = backSprite;
+			_app["Corpse" + p + s] = backSpriteCorpse;
 		}
 	}
 

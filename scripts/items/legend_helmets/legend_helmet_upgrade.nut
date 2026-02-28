@@ -447,6 +447,7 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 			return false;
 		}
 		local sprite = "";
+		local spriteCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
 		local slot = this.m.Type;
 		if (slot == this.Const.Items.HelmetUpgrades.Vanity && this.m.Armor.getUpgrade(slot) != this)
 		{
@@ -456,6 +457,7 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		if (this.isVisible() == false)
 		{
 			sprite = "";
+			spriteCorpse = "";
 		}
 		else if (this.m.Condition / this.m.ConditionMax <= this.Const.Combat.ShowDamagedArmorThreshold)
 		{
@@ -466,76 +468,25 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 			sprite = this.m.Sprite != null ? this.m.Sprite : "";
 		}
 
-		switch(slot)
-		{
-			case this.Const.Items.HelmetUpgrades.Helm:
-				if (this.m.IsLower){
-					_app.HelmetLayerHelm = "";
-					_app.HelmetLayerHelmCorpse = "";
-					_app.HelmetLayerHelmLower = sprite;
-					_app.HelmetLayerHelmLowerCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
-				}
-				else
-				{
-					_app.HelmetLayerHelm = sprite;
-					_app.HelmetLayerHelmCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
-					_app.HelmetLayerHelmLower = "";
-					_app.HelmetLayerHelmLowerCorpse = "";
-				}
-				break;
+		local key = "";
+		switch(slot) {
+			case this.Const.Items.HelmetUpgrades.Helm:        key = "Helm"; break;
+			case this.Const.Items.HelmetUpgrades.Top:         key = "Top"; break;
+			case this.Const.Items.HelmetUpgrades.Vanity:      key = "Vanity"; break;
+			case this.Const.Items.HelmetUpgrades.ExtraVanity: key = "Vanity2"; break;
+		}
 
-			case this.Const.Items.HelmetUpgrades.Top:
-				if (this.m.IsLower){
-					_app.HelmetLayerTop = "";
-					_app.HelmetLayerTopCorpse = "";
-					_app.HelmetLayerTopLower = sprite;
-					_app.HelmetLayerTopLowerCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
-				}
-				else
-				{
-					_app.HelmetLayerTop = sprite;
-					_app.HelmetLayerTopCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
-					_app.HelmetLayerTopLower = "";
-					_app.HelmetLayerTopLowerCorpse = "";
-				}
-				break;
+		if (key != "") {
+			local normal = "HelmetLayer" + key;
+			local lower = "HelmetLayer" + key + "Lower";
 
-			case this.Const.Items.HelmetUpgrades.Vanity:
-				if (this.m.IsLower)
-				{
-					_app.HelmetLayerVanity = "";
-					_app.HelmetLayerVanityCorpse = "";
-					_app.HelmetLayerVanityLower = sprite;
-					_app.HelmetLayerVanityLowerCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
-				}
-				else
-				{
-					_app.HelmetLayerVanity = sprite;
-					_app.HelmetLayerVanityCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
-					_app.HelmetLayerVanityLower = "";
-					_app.HelmetLayerVanityLowerCorpse = "";
-				}
-				break;
-
-			case this.Const.Items.HelmetUpgrades.ExtraVanity:
-				if (this.m.IsLower)
-				{
-					_app.HelmetLayerVanity2 = "";
-					_app.HelmetLayerVanity2Corpse = "";
-					_app.HelmetLayerVanity2Lower = sprite;
-					_app.HelmetLayerVanity2LowerCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
-				}
-				else
-				{
-					_app.HelmetLayerVanity2 = sprite;
-					_app.HelmetLayerVanity2Corpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
-					_app.HelmetLayerVanity2Lower = "";
-					_app.HelmetLayerVanity2LowerCorpse = "";
-				}
+			_app[normal] = this.m.IsLower ? "" : sprite;
+			_app[normal + "Corpse"] = this.m.IsLower ? "" : spriteCorpse;
+			_app[lower] = this.m.IsLower ? sprite : "";
+			_app[lower + "Corpse"] = this.m.IsLower ? spriteCorpse : "";
 		}
 
 		return true;
-
 	}
 
 	function onEquip()

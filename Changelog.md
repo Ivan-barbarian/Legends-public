@@ -181,6 +181,8 @@ Refactored vanity_lower -> vanity in outfits and lowervanity defs field to lower
 Lower layers are now available for helms and masks.
 The display ordering is as follows:
 VanityLower -> VanityLower2 -> Head -> Helmet -> HelmLower -> TopLower -> Helm -> Top -> Vanity -> Vanity2
+Chain, Plate, Tabard and Cloak layers are now displayed on bodies.
+Base, Chain, Helm, Vanity layers are now displayed on bodies.
 
 Armor refactors in legend_armor defs.py: 
 https://github.com/Battle-Brothers-Legends/Legends-public/commit/7e2a567abdfc71395283994a488e3150d47b53a0
@@ -370,6 +372,11 @@ enclave_great_bascinet -> enclave_peaked_bascinet / renamed to fit the name used
 enclave_great_bascinet_visor -> enclave_peaked_bascinet_visor / renamed to fit the name used in game
 enclave_venitian_bascinet -> enclave_great_bascinet / renamed to fit the name used in game + typo
 enclave_venitian_bascinet_visor -> enclave_great_bascinet_visor / renamed to fit the name used in game + typo
+flat_top_helm_low -> flat_top_helm_rusted
+flat_top_helm_polished -> removed / removing well-maintained version that only existed for 3 helms in the game
+kettle_helm_low -> kettle_helm_rusted
+kettle_helm_med -> kettle_helm 
+kettle_helm -> removed (unused)
 fencerhat and fencer_hat -> merged into fencer_hat
 ```
 
