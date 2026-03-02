@@ -31,24 +31,22 @@ this.perk_legend_onslaught <- this.inherit("scripts/skills/skill", {
 
 		return tooltip;
 	}
+
+	function isHidden()
+	{
+		this.getBonus() == 0;
+	}
+
 	function getBonus()
 	{
-		local fat = this.getContainer().getActor().getItems().getStaminaModifier([
-			::Const.ItemSlot.Body,
-			::Const.ItemSlot.Head,
-			::Const.ItemSlot.Bag,
-			::Const.ItemSlot.Offhand,
-			::Const.ItemSlot.Accessory,
-			::Const.ItemSlot.Mainhand
-		]);
-		fat *= -1;
-		return ::Math.min(30, fat * 0.30);
+		local actor = this.getContainer().getActor();
+		return 0.02 * (actor.getArmor(Const.BodyPart.Head) + actor.getArmor(Const.BodyPart.Body));
 	}
 
 	function onUpdate( _properties )
 	{
 		local bonus = this.getBonus();
-		_properties.MeleeDamageMult *= 1 + bonus * 0.01;
+		_properties.MeleeDamageMult *= 1 + bonus;
 	}
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )

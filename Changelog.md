@@ -21,6 +21,8 @@ This activates Dual Wield:
 
 ## Perks
 
+- Onslaught now increases melee damage by your 2% for every 100 armor you have
+
 ### Specialist Perks
 - spec perks are now disabled from this version onwards
 - because recent legends perk work focused on making a lot more recruits viable and interesting to play we decided that spec perks aren't as worthwhile anymore

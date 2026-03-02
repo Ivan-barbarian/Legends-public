@@ -2414,7 +2414,7 @@ Don't slow down!
 
 • [color=%status%]Baffled[/color] enemies have [color=%negative%]-15%[/color] damage, Fatigue, and Initiative.
 
-• [color=%positive%]30%[/color] of your gear weight will be added to melee damage done with a maximum bonus of 30%.
+• Increase melee damage by [color=%positive%]2%[/color] for every 100 points of armor.
 ";
 
 ::Const.Strings.PerkDescription.LegendBackToBasics <- @"
