@@ -18,7 +18,7 @@
 ::Const.World.Spawn.Troops.SkeletonHeavyPolearm.Variant = 1;
 
 ::Const.World.Spawn.Troops.SkeletonHeavyBodyguard.NameList <- this.Const.Strings.AncientDeadNames;
-::Const.World.Spawn.Troops.SkeletonHeavyPolearm.TitleList <- null;
+::Const.World.Spawn.Troops.SkeletonHeavyBodyguard.TitleList <- null;
 ::Const.World.Spawn.Troops.SkeletonHeavyBodyguard.Variant = 1;
 
 ::Const.World.Spawn.Troops.ZombieBetrayer.NameList <- this.Const.Strings.KnightNames;

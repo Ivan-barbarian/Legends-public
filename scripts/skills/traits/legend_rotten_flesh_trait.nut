@@ -134,7 +134,7 @@ this.legend_rotten_flesh_trait <- this.inherit("scripts/skills/traits/character_
 		{
 			foreach (trait in ::Legends.Necromancer.excludedTraits())
 			{
-				if (this.getContainer().hasSkill(::Legends.Traits.getID(trait)))
+				if (this.getContainer().getSkillByID(trait))
 				{
 					this.getContainer().removeByID(::Legends.Traits.getID(trait));
 				}
