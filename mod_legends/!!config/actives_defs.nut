@@ -2945,7 +2945,7 @@ activesDefs.push({
 ::Legends.Active.LegendIntoTheFray <- null;
 activesDefs.push({
 	ID = "actives.legend_into_the_fray",
-	Script = "scripts/skills/actives/legend_into_the_fray",
+	Script = "scripts/skills/actives/legend_into_the_fray_skill",
 	Const = "LegendIntoTheFray",
 	Name = "Into The Fray",
 });
