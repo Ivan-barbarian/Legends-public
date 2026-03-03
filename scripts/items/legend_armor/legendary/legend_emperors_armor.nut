@@ -63,9 +63,9 @@ this.legend_emperors_armor <- this.inherit("scripts/items/legend_armor/legend_ar
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.SpriteBack = "bust_armor_emperors_named_" + variant;
-		this.m.SpriteDamagedBack = "bust_armor_emperors_named_" + variant + "_damaged";
-		this.m.SpriteCorpseBack = "bust_armor_emperors_named_" + variant + "_dead";
+		this.m.SpriteBack = "armor_emperors_named_" + variant;
+		this.m.SpriteDamagedBack = "armor_emperors_named_" + variant + "_damaged";
+		this.m.SpriteCorpseBack = "armor_emperors_named_" + variant + "_dead";
 		this.m.Icon = "legend_armor/icon_armor_emperors_named_" + variant + ".png";
 		this.m.IconLarge = "legend_armor/inventory_armor_emperors_named_" + variant + ".png";
 		this.m.OverlayIcon = "legend_armor/icon_armor_emperors_named_" + variant + ".png";

@@ -17,9 +17,9 @@ this.legend_armor_named_warlock_cloak <- this.inherit("scripts/items/legend_armo
 		];
 		this.m.Icon = "legend_armor/icon_cloak_cursed_01.png";
 		this.m.IconLarge = "legend_armor/inventory_cloak_cursed_01.png";
-		this.m.Sprite = "bust_cloak_cursed_01";
-		this.m.SpriteDamaged = "bust_cloak_cursed_01_damaged";
-		this.m.SpriteCorpse= "bust_cloak_cursed_01_dead";
+		this.m.Sprite = "cloak_cursed_01";
+		this.m.SpriteDamaged = "cloak_cursed_01_damaged";
+		this.m.SpriteCorpse= "cloak_cursed_01_dead";
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Value = 5000;

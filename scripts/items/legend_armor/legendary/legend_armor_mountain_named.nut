@@ -89,9 +89,9 @@ this.legend_armor_mountain_named <- this.inherit("scripts/items/legend_armor/leg
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.SpriteBack = "bust_mountain_armor" + "_" + variant;
-		this.m.SpriteDamagedBack = "bust_mountain_armor" + "_" + variant + "_damaged";
-		this.m.SpriteCorpseBack = "bust_mountain_armor" + "_" + variant + "_dead";
+		this.m.SpriteBack = "mountain_armor_" + "_" + variant;
+		this.m.SpriteDamagedBack = "mountain_armor_" + "_" + variant + "_damaged";
+		this.m.SpriteCorpseBack = "mountain_armor_" + "_" + variant + "_dead";
 		this.m.Icon = "legend_armor/icon_mountain_armor" + "_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/icon_mountain_armor" + "_" + variant + ".png";
