@@ -262,7 +262,7 @@ if (!("LegendMod" in ::Const))
 	case ::Const.EntityType.Hyena :
 		return 5;
 
-	case ::Const.EntityType.LegendRagingHyena :
+	case ::Const.EntityType.LegendEnragedHyena :
 		return 0.5;
 
 	case ::Const.EntityType.Direwolf :

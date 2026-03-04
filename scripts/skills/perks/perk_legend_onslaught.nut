@@ -46,7 +46,7 @@ this.perk_legend_onslaught <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local bonus = this.getBonus();
-		_properties.MeleeDamageMult *= 1 + bonus;
+		_properties.MeleeDamageMult *= 1 + bonus * 0.01;
 	}
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
