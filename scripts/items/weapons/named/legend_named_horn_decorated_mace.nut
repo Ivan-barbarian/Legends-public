@@ -47,7 +47,7 @@ this.legend_named_horn_decorated_mace <- this.inherit("scripts/items/weapons/nam
 			_skill.m.Overlay = "active_179";
 		}.bindenv(this));
 		::Legends.Actives.grant(this, ::Legends.Active.SplitShield, function (_skill) {
-			_skill.setFatigueCost(skillToAdd.getFatigueCostRaw() + 5);
+			_skill.setFatigueCost(_skill.getFatigueCostRaw() + 5);
 		}.bindenv(this));
 	}
 });
