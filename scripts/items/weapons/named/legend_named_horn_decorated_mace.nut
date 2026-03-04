@@ -4,7 +4,7 @@ this.legend_named_horn_decorated_mace <- this.inherit("scripts/items/weapons/nam
 	{
 		this.named_weapon.create();
 		this.m.ID = "weapon.legend_named_horn_decorated_mace";
-		this.m.NameList = this.Const.Strings.GreatswordNames;
+		this.m.NameList = this.Const.Strings.MaceNames;
 		this.m.PrefixList = this.Const.Strings.BarbarianPrefix;
 		this.m.SuffixList = this.Const.Strings.BarbarianSuffix;
 		this.m.Description = "A huge club decorated with skulls and horns, woven in patterns that betray strange meaning. For the average mercenary you just need to know that a blow will leave a person reeling and struggling for breath.";
@@ -31,6 +31,7 @@ this.legend_named_horn_decorated_mace <- this.inherit("scripts/items/weapons/nam
 		this.m.DirectDamageMult = 0.5;
 		this.m.DirectDamageAdd = 0.05;
 		this.m.ChanceToHitHead = 0;
+		this.randomizeValues();
 	}
 
 	function onEquip()
