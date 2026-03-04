@@ -51,7 +51,7 @@ this.legend_named_rusty_greatsword <- this.inherit("scripts/items/weapons/named/
 		::Legends.Actives.grant(this, ::Legends.Active.Split);
 		::Legends.Actives.grant(this, ::Legends.Active.Swing);
 		::Legends.Actives.grant(this, ::Legends.Active.SplitShield, function (_skill) {
-			_skill.setFatigueCost(skillToAdd.getFatigueCostRaw() + 5);
+			_skill.setFatigueCost(_skill.getFatigueCostRaw() + 5);
 		}.bindenv(this));
 	}
 });
