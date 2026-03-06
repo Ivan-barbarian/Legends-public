@@ -613,6 +613,7 @@
 			return getLootForTile(_killer, _loot);
 
 		foreach (entry in this.m.OnDeathLootTable) {
+			if (entry == null) continue;
 			if (entry[0] == 0) { // no division by zero!
 				::logError("division by zero, skipping " + entry[1]);
 				continue;
