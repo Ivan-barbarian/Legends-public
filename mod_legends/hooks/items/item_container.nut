@@ -115,7 +115,7 @@
 
 			local mh = this.getItemAtSlot(::Const.ItemSlot.Mainhand);
 			local oh = this.getItemAtSlot(::Const.ItemSlot.Offhand);
-			if (mh != null && oh == null) {
+			if (mh != null && oh == null && !this.hasBlockedSlot(::Const.ItemSlot.Offhand)) {
 
 				if (_item.getCurrentSlotType() != ::Const.ItemSlot.None) {
 					return false;
