@@ -130,8 +130,10 @@
 			foreach (layer in armorLayers) {
 				if (appearance[layer] != "") {
 					local decal = _tile.spawnDetail(appearance[layer], this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-					decal.Scale = 0.9;
-					decal.setBrightness(0.9);
+					if (decal != null) {
+						decal.Scale = 0.9;
+						decal.setBrightness(0.9);
+					}
 				}
 			}
 
@@ -152,8 +154,10 @@
 				foreach (layer in helmetLayers) {
 					if (appearance[layer] != "") {
 						local decal = _tile.spawnDetail(appearance[layer], this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-						decal.Scale = 0.9;
-						decal.setBrightness(0.9);
+						if (decal != null) {
+							decal.Scale = 0.9;
+							decal.setBrightness(0.9);
+						}
 					}
 				}
 			}
