@@ -83,7 +83,7 @@
 		this.applyDamage();
 	}
 
-	o.onTurnStart <- function()
+	o.onTurnEnd <- function()
 	{
 		this.applyDamage();
 	}
