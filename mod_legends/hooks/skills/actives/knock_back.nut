@@ -30,7 +30,7 @@
 	{
 		local ret = this.getContainer().hasPerk(::Legends.Perk.ShieldBash) ? this.getDefaultTooltip() : this.getDefaultUtilityTooltip();
 
-		if (this.getContainer().hasSkill("trait.oath_of_fortification"))
+		if (this.getContainer().hasTrait(::Legends.Trait.OathOfFortification))
 		{
 			ret.push({
 				id = 7,
@@ -55,7 +55,7 @@
 	o.onUse = function ( _user, _targetTile )
 	{
 		local target = _targetTile.getEntity();
-		local shouldNotHarmAlly = getContainer().hasTrait(::Legends.Trait.Teamplayer) && target.isAlliedWith(_user);
+		local shouldNotHarmAlly = this.getContainer().hasTrait(::Legends.Trait.Teamplayer) && target.isAlliedWith(_user);
 
 		if (!getContainer().hasPerk(::Legends.Perk.ShieldBash) || shouldNotHarmAlly) {
 			if (shouldNotHarmAlly)
