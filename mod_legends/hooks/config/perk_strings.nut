@@ -327,6 +327,8 @@ Bring it on!
 
 • [color=%skill%]Knock Back[/color] will now apply [color=%status%]Taunt effect[/color].
 
+• [color=%skill%]Knock Back[/color], [color=%skill%]Repel[/color] and [color=%skill%]Hook[/color] skills have [color=%positive%]100%[/color] chance to hit when targeting an allied character and will not apply negative effects or damage when used on an ally.
+
 [color=%passive%][u]Active:[/u][/color]
 • Unlocks the [color=%skill%]Taunt[/color] skill which forces a targeted opponent take offensive actions instead of defensive ones.
 

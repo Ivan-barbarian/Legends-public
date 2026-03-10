@@ -11,18 +11,20 @@ This activates Dual Wield:
 - Grants the **Double Swing** active skill (an AoE attack hitting up to 3 adjacent tiles, using both weapons)
 
 ## Traits
-- Hesitant now acts last in turn order
-- Impatient acts first in turn order but cannot wait and loses 10% of melee defense
+- `Hesitant` now acts last in turn order
+- `Impatient` acts first in turn order but cannot wait and loses 10% of melee defense
 > Both of the above can still be manipulated by effects like adrenaline, the exact math is that Adrenaline increases turn order number by 2000, Hesitant and Impatient subtract/add 1000 respectively
 > A character with Adrenaline and Hesitant will act before every other character but will act after a character with Adrenaline who does not have Hesitant
 > A character with Impatient will act before everyone else but will act after a character with Adrenaline unless they also have Adrenaline, in which case they will always be first
-- Greedy will now increase wage by 25% but also gain 1 to every attribute for every 10 gold paid in wages
-- Eagle Eyes now increases vision by 2
+- `Greedy` will now increase wage by 25% but also gain 1 to every attribute for every 10 gold paid in wages
+- `Eagle Eyes` now increases vision by 2
+- `Team Player` now gets 5% melee skill and ranged skill when adjacent to an ally
 
 ## Perks
 
 - `Onslaught` now increases melee damage by your 2% for every 100 armor you have
 - `Immovable Object` now also counts accessory slot
+- `Battlefield Control` now additionally `Knock Back`, `Repel` and `Hook` skills have 100% chance to hit when targeting an allied character and will not apply negative effects or damage when used on an ally
 
 ### One Handed Tree
 - no longer exists in short
@@ -195,7 +197,7 @@ Favoured Enemy - Sword Master
 
 ### For modders:
 
-> deleted `legend_hanunted_01_trait`, `legend_hanunted_02_trait`, `legend_hanunted_03_trait`, `legend_hanunted_04_trait`, `legend_hanunted_05_trait`, `legend_hanunted_06_trait`
+> deleted `legend_haunted_01_trait`, `legend_haunted_02_trait`, `legend_haunted_03_trait`, `legend_haunted_04_trait`, `legend_haunted_05_trait`, `legend_haunted_06_trait`
 
 - you can assign scaling on the origin itself with the `BrotherScaling` property
 > look at `militia_scenario` and `lone_wolf_scenario`
