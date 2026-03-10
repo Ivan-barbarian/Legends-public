@@ -5,10 +5,10 @@ if (!("Perks" in ::Const))
 
 ::Const.Perks.HealerProfessionTree <- {
 	ID = "HealerProfessionTree",
-	Name = "Healing",
+	Name = "Apothecary",
 	Icon = "ui/perks/MaxMedsT2.png",
 	Descriptions = [
-		"healing"
+		"medical ingredients"
 	],
 	Tree = [
 		[::Legends.Perk.LegendMedIngredients],
