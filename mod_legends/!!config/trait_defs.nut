@@ -1027,13 +1027,6 @@ traitDefs.push({
 	Const = "LegendBrothersInChains"
 });
 
-::Legends.Trait.LegendPeaceful <- null;
-traitDefs.push({
-	ID = "trait.legend_peaceful",
-	Script = "scripts/skills/traits/legend_peaceful_trait",
-	Const = "LegendPeaceful"
-});
-
 ::Legends.Trait.RacialSkeleton <- null;
 traitDefs.push({
 	ID = "racial.skeleton",

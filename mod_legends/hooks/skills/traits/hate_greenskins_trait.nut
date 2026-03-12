@@ -4,7 +4,6 @@
 	o.create = function ()
 	{
 		create();
-		this.m.Excluded.push(::Legends.Traits.getID(::Legends.Trait.LegendPeaceful));
 	}
 
 	local getTooltip = o.getTooltip;
