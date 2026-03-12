@@ -15,16 +15,16 @@
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
-					MaxR = 100,
+					MaxR = 75,
 					Cost = 7
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
-					MinR = 75,
+					MinR = 60,
 					Cost = 8
 				},
 				{
-					MinR = 150,
+					MinR = 120,
 					Type = this.Const.World.Spawn.Troops.BanditRaiderLOW,
 					Cost = 16
 				},
@@ -137,16 +137,16 @@
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
-					MaxR = 100,
+					MaxR = 75,
 					Cost = 7
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
-					MinR = 75,
+					MinR = 60,
 					Cost = 8
 				},
 				{
-					MinR = 150,
+					MinR = 120,
 					Type = this.Const.World.Spawn.Troops.BanditRaiderLOW,
 					Cost = 16
 				},
@@ -266,16 +266,16 @@
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
-					MaxR = 100,
+					MaxR = 75,
 					Cost = 7
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
-					MinR = 75,
+					MinR = 60,
 					Cost = 8
 				},
 				{
-					MinR = 150,
+					MinR = 120,
 					Type = this.Const.World.Spawn.Troops.BanditRaiderLOW,
 					Cost = 16
 				},
@@ -436,27 +436,25 @@
 			Types = [
 				// {
 				// 	Type = this.Const.World.Spawn.Troops.BanditRabble,
-				// 	MaxR = 130,
-				// 	Cost = 6
+				// 	MaxR = 75,
+				// 	Cost = 7
 				// },
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
-					//MinR = 110,
 					Cost = 8
 				},
 				{
+					MinR = 120,
 					Type = this.Const.World.Spawn.Troops.BanditRaiderLOW,
-					MinR = 130,
 					Cost = 16
 				},
 				{
-					//MinR = 400,
-					MinR = 320,
+					MinR = 225,
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
 				},
 				{
-					MinR = 600,
+					MinR = 500,
 					Type = this.Const.World.Spawn.Troops.BanditVeteran,
 					Cost = 30
 				}
