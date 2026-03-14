@@ -893,17 +893,6 @@ perkDefObjects.push({
 	Const = "LegendPointBlank"
 });
 
-::Legends.Perk.LegendCascade <- null;
-perkDefObjects.push({
-	ID = "perk.legend_cascade",
-	Script = "scripts/skills/perks/perk_legend_cascade",
-	Name = ::Const.Strings.PerkName.LegendCascade,
-	Tooltip = ::Const.Strings.PerkDescription.LegendCascade,
-	Icon = "ui/perks/triplestrike56.png",
-	IconDisabled = "ui/perks/triplestrike56_bw.png",
-	Const = "LegendCascade"
-});
-
 ::Legends.Perk.LegendEvasion <- null;
 perkDefObjects.push({
 	ID = "perk.legend_evasion",
@@ -2047,17 +2036,6 @@ perkDefObjects.push({
 	Icon = "ui/perks/scry_perk.png",
 	IconDisabled = "ui/perks/scry_perk_bw.png",
 	Const = "LegendScry"
-});
-
-::Legends.Perk.LegendPiercingShot <- null;
-perkDefObjects.push({
-	ID = "perk.legend_piercing_shot",
-	Script = "scripts/skills/perks/perk_legend_piercing_shot",
-	Name = ::Const.Strings.PerkName.LegendPiercingShot,
-	Tooltip = ::Const.Strings.PerkDescription.LegendPiercingShot,
-	Icon = "ui/perks/PiercingBoltPerk.png",
-	IconDisabled = "ui/perks/PiercingBoltPerk_bw.png",
-	Const = "LegendPiercingShot"
 });
 
 ::Legends.Perk.LegendLevitate <- null;

@@ -241,9 +241,7 @@ if (!("Perks" in ::Const))
 			::Legends.Perk.BagsAndBelts,
 		],
 		[],
-		[
-			::Legends.Perk.LegendCascade
-		],
+		[],
 		[],
 		[
 			::Legends.Perk.LegendEvasion

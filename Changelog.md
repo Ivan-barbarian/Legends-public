@@ -22,9 +22,15 @@ This activates Dual Wield:
 
 ## Perks
 
-- `Onslaught` now increases melee damage by your 2% for every 100 armor you have
+- `Sword Mastery` -  Riposte can trigger from both weapons when dual wielding swords
+- `Axe Mastery` - Split Shield uses combined shield damage from both weapons when dual wielding axes
+- `Flail Mastery` - Both attacks apply Bleed when dual wielding flails
+- `Dagger Mastery` - Offhand successful hits grant -1 AP and +10% damage on next mainhand attack when dual wielding daggers
+- `Ambidextrous` - Now also reduces weight penalty by 33% when dual wielding other weapons
+- `Onslaught` - now increases melee damage by your 2% for every 100 armor you have
 - `Immovable Object` now also counts accessory slot
 - `Battlefield Control` now additionally `Knock Back`, `Repel` and `Hook` skills have 100% chance to hit when targeting an allied character and will not apply negative effects or damage when used on an ally
+- `Ballistics` now also increases range of handgonne
 
 ### One Handed Tree
 - no longer exists in short
@@ -82,14 +88,6 @@ Favoured Enemy - Sword Master
 
 - Integrated Better Obituary v3, thanks to Allania
 - layer logger from Merc - check mod options under misc
-
-## Perk Changes
-
-- **Sword Mastery**: Riposte can trigger from both weapons when dual wielding swords
-- **Axe Mastery**: Split Shield uses combined shield damage from both weapons when dual wielding axes
-- **Flail Mastery**: Both attacks apply Bleed when dual wielding flails
-- **Dagger Mastery**: Offhand successful hits grant -1 AP and +10% damage on next mainhand attack when dual wielding daggers
-- **Ambidextrous**: Now also reduces weight penalty by 33% when dual wielding other weapons
 
 ## Item Changes
 
@@ -192,6 +190,11 @@ Favoured Enemy - Sword Master
 * `Harvest` - two tile swing which applies 5-10 bleeding damage
 * `Decapitate` - unchanged
 
+**Crowsbows**
+* gain `Piercing Shot` by default
+
+**Shortbows**
+
 ### New recipes
 
 - new silk blueprint
@@ -217,6 +220,7 @@ Favoured Enemy - Sword Master
 > look at `militia_scenario` and `lone_wolf_scenario`
 
 - `LegendKnifeplay`, `perk_legend_knifeplay` perk has been deleted
+- `LegendPiercingShot`, `perk_legend_piercing_shot` perk has been deleted
 - Bandit Warlord renamed to Robber Baron
 > `LegendBanditWarlord` -> `LegendRobberBaron`
 > `legend_bandit_warlord` -> `legend_robber_baron`

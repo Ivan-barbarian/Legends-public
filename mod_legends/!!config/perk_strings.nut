@@ -33,7 +33,6 @@
 ::Const.Strings.PerkName.LegendInspire <- "Inspire";
 ::Const.Strings.PerkName.LegendAthlete <- "Athlete";
 ::Const.Strings.PerkName.LegendQuickStep <- "Quick Step";
-::Const.Strings.PerkName.LegendCascade <- "Cascade strikes";
 ::Const.Strings.PerkName.LegendEvasion <- "Evasion";
 ::Const.Strings.PerkName.LegendHoldTheLine <- "Hold the line";
 ::Const.Strings.PerkName.LegendCoordinatedVolleys <- "Coordinated Volleys";
@@ -55,7 +54,6 @@
 ::Const.Strings.PerkName.LegendFieldTriage <- "Field Triage";
 ::Const.Strings.PerkName.LegendFieldRepairs <- "Field Repairs";
 ::Const.Strings.PerkName.LegendDangerPay <- "Danger Pay";
-::Const.Strings.PerkName.LegendPiercingShot <- "Piercing Shot";
 ::Const.Strings.PerkName.LegendTeacher <- "Teacher";
 ::Const.Strings.PerkName.LegendForcefulSwing <- "Forceful Swing";
 ::Const.Strings.PerkName.LegendSpecSpearWall <- "Spearwaller";
@@ -357,6 +355,8 @@ Through familiarity and training with your weapon, you know just how your projec
 • Crossbows gain a scaling bonus to armor penetration depending on the distance to the target with the highest bonus in melee and the lowest at maximum range for the relevant skill. [color=%skill%]Shoot Bolt[/color] gains up to 20%, while [color=%skill%]Shoot Heavy Bolt[/color] and [color=%skill%]Shoot Stake[/color] gain up to [color=%positive%]+30%[/color] instead.
 
 • The range penalty to hitchance is reduced by [color=%negative%]-2[/color] per tile for all ranged weapons.
+
+• Additionally, Handgonnes gain [color=%positive%]+1[/color] range.
 ";
 
 ::Const.Strings.PerkDescription.LegendBackswing <- @"
@@ -606,17 +606,6 @@ Unlock the deadly art of poisoning and be able to lick your poisoned weapon with
 • AP cost is reduced to [color=%negative%]0[/color] on first round of combat.
 
 • Costs [color=%negative%]4[/color] AP and [color=%negative%]15[/color] Fatigue.
-";
-
-::Const.Strings.PerkDescription.LegendCascade <- @"
-Let loose a cascade of three striking heads on your opponent striking over or around shield cover.
-
-[color=%active%][u]Active:[/u][/color]
-• Unlocks the [color=%skill%]Cascade Strike[/color] skill which deals [color=%negative%]1/2[/color] of your weapon damage [color=%positive%]3[/color] times.
-
-• This skill ignores defense bonuses from shields.
-
-• Costs [color=%negative%]4[/color] AP and [color=%negative%]13[/color] Fatigue.
 ";
 
 ::Const.Strings.PerkDescription.LegendEvasion <- @"
@@ -1859,19 +1848,6 @@ Use your extraordinary senses to notice things no one else can.
 • Unlocks the [color=%skill%]Scry[/color] skill which reveals everything within twelve tiles.
 
 • Costs [color=%negative%]3[/color] AP and [color=%negative%]15[/color] Fatigue.
-";
-
-::Const.Strings.PerkDescription.LegendPiercingShot <- @"
-Launch a shot so powerful it goes through an additional target.
-
-[color=%passive%][u]Active/Passive:[/u][/color]
-• Unlocks the [color=%skill%]Piercing Shot[/color] skill which allows bows and crossbows to hit two targets in a straight line, but will only do [color=%negative%]50%[/color] damage on the second target.
-
-• Additionally, Handgonnes gain [color=%positive%]+1[/color] range.
-
-• Does not work with throwing weapons.
-
-• Costs [color=%negative%]5[/color] AP and [color=%negative%]20[/color] Fatigue.
 ";
 
 ::Const.Strings.PerkDescription.LegendLevitate <- @"

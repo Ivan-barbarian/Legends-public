@@ -518,7 +518,7 @@ if (!("Perks" in ::Const)) {
 		[::Legends.Perk.SpecCrossbow],
 		[::Legends.Perk.LegendHeightenedReflexes],
 		[::Legends.Perk.LegendBallistics],
-		[::Legends.Perk.LegendPiercingShot]
+		[::Legends.Perk.LegendBarrage]
 	]
 };
 

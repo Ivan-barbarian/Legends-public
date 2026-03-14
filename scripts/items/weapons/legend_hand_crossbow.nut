@@ -73,7 +73,6 @@ this.legend_hand_crossbow <- this.inherit("scripts/items/weapons/weapon", {
 		{
 			::Legends.Actives.grant(this, ::Legends.Active.ReloadBolt);
 		}
-		::Legends.Actives.grant(this, ::Legends.Active.LegendPiercingBolt);
 		::Legends.Actives.grant(this, ::Legends.Active.ReloadBolt);
 	}
 
