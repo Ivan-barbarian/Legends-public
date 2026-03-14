@@ -2674,9 +2674,9 @@
 			[1, "tabard/legend_armor_tabard_noble"]], // 10 -0 1000
 		Attachments = [
 			[2, ""],
-			[1, "armor_upgrades/legend_metal_plating_upgrade", 0],
+			[1, "armor_upgrades/legend_metal_plating_upgrade"],
 			[1, "armor_upgrades/legend_pauldron_swan_upgrade"],
-			[1, "armor_upgrades/legend_armor_spiked_collar_upgrade", 0]],
+			[1, "armor_upgrades/legend_armor_spiked_collar_upgrade"]],
 	}]
 };
 ::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.mercury_noble_elite_footman_00);
@@ -2757,9 +2757,9 @@
 			[1, "tabard/legend_armor_tabard_noble"]], // 10 -0 1000
 		Attachments = [
 			[3, ""],
-			[1, "armor_upgrades/legend_metal_plating_upgrade", 0],
+			[1, "armor_upgrades/legend_metal_plating_upgrade"],
 			[1, "armor_upgrades/legend_pauldron_swan_upgrade"],
-			[1, "armor_upgrades/legend_armor_spiked_collar_upgrade", 0]],
+			[1, "armor_upgrades/legend_armor_spiked_collar_upgrade"]],
 	}]
 };
 ::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.mercury_pollax_00);
