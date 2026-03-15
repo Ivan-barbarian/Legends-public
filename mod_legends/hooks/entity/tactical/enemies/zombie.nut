@@ -1,7 +1,6 @@
-::mods_hookExactClass("entity/tactical/enemies/zombie", function(o)
-{
-	o.onInit = function ()
-	{
+::mods_hookExactClass("entity/tactical/enemies/zombie", function (o) {
+
+	o.onInit = function () {
 		this.actor.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.Zombie);
@@ -9,15 +8,13 @@
 		b.IsAffectedByInjuries = false;
 		b.IsImmuneToBleeding = true;
 
-		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 90)
-		{
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 90) {
 			b.DamageTotalMult += 0.1;
 		}
 
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
-		if(::Legends.isLegendaryDifficulty())
-		{
+		if (::Legends.isLegendaryDifficulty()) {
 			this.m.Hitpoints = b.Hitpoints * 1.5;
 		}
 		this.m.CurrentProperties = clone b;
@@ -70,15 +67,11 @@
 		beard.setHorizontalFlipping(true);
 		beard.varyColor(0.02, 0.02, 0.02);
 
-		if (this.Math.rand(1, 100) <= 50)
-		{
-			if (this.m.InjuryType == 4)
-			{
+		if (this.Math.rand(1, 100) <= 50) {
+			if (this.m.InjuryType == 4) {
 				beard.setBrush("beard_" + hairColor + "_" + this.Const.Beards.ZombieExtended[this.Math.rand(0, this.Const.Beards.ZombieExtended.len() - 1)]);
 				beard.setBrightness(0.9);
-			}
-			else
-			{
+			} else {
 				beard.setBrush("beard_" + hairColor + "_" + this.Const.Beards.Zombie[this.Math.rand(0, this.Const.Beards.Zombie.len() - 1)]);
 			}
 		}
@@ -91,21 +84,18 @@
 		hair.setHorizontalFlipping(true);
 		hair.Color = beard.Color;
 
-		if (this.Math.rand(0, this.Const.Hair.Zombie.len()) != this.Const.Hair.Zombie.len())
-		{
+		if (this.Math.rand(0, this.Const.Hair.Zombie.len()) != this.Const.Hair.Zombie.len()) {
 			hair.setBrush("hair_" + hairColor + "_" + this.Const.Hair.Zombie[this.Math.rand(0, this.Const.Hair.Zombie.len() - 1)]);
 		}
 
-		foreach (a in this.Const.CharacterSprites.Helmets)
-		{
+		foreach (a in this.Const.CharacterSprites.Helmets) {
 			this.addSprite(a).setHorizontalFlipping(true);
 		}
 
 		local beard_top = this.addSprite("beard_top");
 		beard_top.setHorizontalFlipping(true);
 
-		if (beard.HasBrush && this.doesBrushExist(beard.getBrush().Name + "_top"))
-		{
+		if (beard.HasBrush && this.doesBrushExist(beard.getBrush().Name + "_top")) {
 			beard_top.setBrush(beard.getBrush().Name + "_top");
 			beard_top.Color = beard.Color;
 		}
@@ -134,15 +124,13 @@
 		::Legends.Perks.grant(this, ::Legends.Perk.LegendPoisonImmunity);
 		::Legends.Perks.grant(this, ::Legends.Perk.LegendStrengthInNumbers);
 
-		if(::Legends.isLegendaryDifficulty())
-		{
+		if (::Legends.isLegendaryDifficulty()) {
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendStrengthInNumbers);
 			::Legends.Perks.grant(this, ::Legends.Perk.Colossus);
 		}
 	}
 
-	o.assignRandomEquipment = function ()
-	{
+	o.assignRandomEquipment = function () {
 
 		if (this.Math.rand(1, 100) <= 50) {
 			// Make sure not to include weapons that only have 6AP skills
@@ -173,15 +161,13 @@
 		];
 		local armor = this.Const.World.Common.pickArmor(aList);
 
-		if (this.Math.rand(1, 100) <= 50)
-		{
+		if (this.Math.rand(1, 100) <= 50) {
 			armor.setArmor(this.Math.round(armor.getArmorMax() / 2 - 1));
 		}
 
 		this.m.Items.equip(armor);
 
-		if (this.Math.rand(1, 100) <= 33)
-		{
+		if (this.Math.rand(1, 100) <= 33) {
 			local item = this.Const.World.Common.pickHelmet([
 				[1, ::Legends.Helmet.Standard.aketon_cap],
 				[1, ::Legends.Helmet.Standard.full_aketon_cap],
@@ -189,10 +175,8 @@
 				[1, ::Legends.Helmet.Standard.padded_kettle_hat],
 				[1, ::Legends.Helmet.Standard.full_leather_cap]
 			]);
-			if (item != null)
-			{
-				if (this.Math.rand(1, 100) <= 50)
-				{
+			if (item != null) {
+				if (this.Math.rand(1, 100) <= 50) {
 					item.setArmor(item.getArmorMax() / 2 - 1);
 				}
 			}
@@ -202,9 +186,12 @@
 	}
 
 	local onDeath = o.onDeath;
-	o.onDeath = function ( _killer, _skill, _tile, _fatalityType )
-	{
+	o.onDeath = function (_killer, _skill, _tile, _fatalityType) {
 		onDeath(_killer, _skill, _tile, _fatalityType);
+
+		if (_tile == null) {
+			return;
+		}
 
 		local appearance = this.getItems().getAppearance();
 		local flip = this.m.IsCorpseFlipped;
@@ -216,10 +203,8 @@
 			"CorpseArmorLayerCloakFront"
 		];
 
-		foreach (layer in armorLayers) 
-		{
-			if (appearance[layer] != "") 
-			{
+		foreach (layer in armorLayers) {
+			if (appearance[layer] != "") {
 				local decal = _tile.spawnDetail(appearance[layer], this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 				decal.Scale = 0.9;
 				decal.setBrightness(0.9);
@@ -227,8 +212,7 @@
 		}
 	}
 
-	o.onFactionChanged = function ()
-	{
+	o.onFactionChanged = function () {
 		this.actor.onFactionChanged();
 		local flip = !this.isAlliedWithPlayer();
 		this.getSprite("background").setHorizontalFlipping(flip);
@@ -253,10 +237,8 @@
 		this.getSprite("body_blood").setHorizontalFlipping(flip);
 		this.getSprite("dirt").setHorizontalFlipping(flip);
 		this.getSprite("status_rage").setHorizontalFlipping(flip);
-		foreach (a in this.Const.CharacterSprites.Helmets)
-		{
-			if (!this.hasSprite(a))
-			{
+		foreach (a in this.Const.CharacterSprites.Helmets) {
+			if (!this.hasSprite(a)) {
 				continue;
 			}
 			this.getSprite(a).setHorizontalFlipping(flip);
