@@ -323,6 +323,7 @@ if (!("Spawn" in ::Const.World))
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendWicht,
+					MinR = 450,
 					Cost = 40
 				}
 			]
@@ -423,6 +424,7 @@ if (!("Spawn" in ::Const.World))
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendWicht,
+					MinR = 450,
 					Cost = 40
 				}
 			]
@@ -476,7 +478,7 @@ if (!("Spawn" in ::Const.World))
 				{
 					Type = this.Const.World.Spawn.Troops.LegendWicht,
 					Cost = 40,
-					MinR = 400,
+					MinR = 450,
 				}
 			]
 		},
@@ -637,7 +639,7 @@ if (!("Spawn" in ::Const.World))
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendWicht,
-					MinR = 400,
+					MinR = 450,
 					Cost = 40
 				}
 			]

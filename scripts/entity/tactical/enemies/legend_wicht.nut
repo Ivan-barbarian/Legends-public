@@ -132,8 +132,6 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("armor_upgrade_back").setHorizontalFlipping(flip);
 		this.getSprite("armor_upgrade_front").setHorizontalFlipping(flip);
 		this.getSprite("head").setHorizontalFlipping(flip);
-		this.getSprite("helmet").setHorizontalFlipping(flip);
-		this.getSprite("helmet_damage").setHorizontalFlipping(flip);
 		this.getSprite("accessory").setHorizontalFlipping(flip);
 		this.getSprite("accessory_special").setHorizontalFlipping(flip);
 		this.getSprite("armor_layer_chain").setHorizontalFlipping(flip);
@@ -142,6 +140,8 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("armor_layer_cloak_front").setHorizontalFlipping(flip);
 		this.getSprite("armor_layer_cloak").setHorizontalFlipping(flip);
 
+		this.getSprite("helmet").setHorizontalFlipping(flip);
+		this.getSprite("helmet_damage").setHorizontalFlipping(flip);
 		this.getSprite("helmet_helm_lower").setHorizontalFlipping(flip);
 		this.getSprite("helmet_top_lower").setHorizontalFlipping(flip);
 		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
@@ -203,8 +203,6 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		blur_4.varySaturation(0.25);
 		blur_4.varyColor(0.2, 0.2, 0.2);
 		this.addSprite("armor");
-		this.addSprite("helmet");
-		this.addSprite("helmet_damage");
 		this.addSprite("armor_upgrade_front");
 		this.addSprite("surcoat");
 		this.addSprite("dirt");
@@ -213,14 +211,16 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("armor_layer_tabbard");
 		this.addSprite("accessory");
 		this.addSprite("accessory_special");
+		this.addSprite("armor_layer_cloak");
+		this.addSprite("armor_layer_cloak_front");
+		this.addSprite("armor_upgrade_back");
+		this.addSprite("helmet");
+		this.addSprite("helmet_damage");
+		this.addSprite("helmet_helm");
 		this.addSprite("helmet_helm_lower");
 		this.addSprite("helmet_top_lower");
 		this.addSprite("helmet_vanity_lower");
 		this.addSprite("helmet_vanity_lower_2");
-		this.addSprite("armor_layer_cloak");
-		this.addSprite("armor_layer_cloak_front");
-		this.addSprite("armor_upgrade_back");
-		this.addSprite("helmet_helm");
 		this.addSprite("helmet_top");
 		this.addSprite("helmet_vanity");
 		this.addSprite("helmet_vanity_2");
