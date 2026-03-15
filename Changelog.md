@@ -256,6 +256,7 @@ VanityLower -> VanityLower2 -> Head -> Helmet -> HelmLower -> TopLower -> Helm -
 Chain, Plate, Tabard and Cloak layers are now displayed on bodies.
 Base, Chain, Helm, Vanity layers are now displayed on bodies.
 Added template definition for armor's brush_only_layers to define armors with custom size via front/back sprites.
+Changed named helmet and armor fields to an object for better readability (for armor min and max CON have been reversed, so both helmets and armor work the same way).
 
 Armor refactors in legend_armor defs.py: 
 https://github.com/Battle-Brothers-Legends/Legends-public/commit/7e2a567abdfc71395283994a488e3150d47b53a0

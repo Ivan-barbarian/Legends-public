@@ -99,7 +99,7 @@ class Defs:
  "title" :  "",
  "desc" :  "A mastercrafted heavy padded tunic that offers excellent protection.",
  "adesc" :"",
- "named" : True, "rminStam" : 4, "rmaxStam": 6, "rminCond" : 75, "rmaxCond" : 90,  "names" : ["Heraldic Gambeson", "Splendor", "Grandiosity", "Pageantry", "Swank", "Noble Gambeson", "Duty", "Honor", "Noble\'s Burden", "Protector", "Ward"]
+ "named" : { "con": { "min" : 75, "max" : 90 }, "fat": { "min" : 6, "max" : 4 }, "names" : ["Heraldic Gambeson", "Splendor", "Grandiosity", "Pageantry", "Swank", "Noble Gambeson", "Duty", "Honor", "Noble\'s Burden", "Protector", "Ward"] } 
 },
 {"name": "quilted_aketon",                         "layer": "cloth", "min": 1, "max": 31, "value" : 150, "con" : 55, "stam" : -6, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Quilted Aketon",
@@ -220,7 +220,7 @@ class Defs:
  "title" :  "",
  "desc" :  "A fine, linen tunic of exquisite material, embroidered with pleasing patterns. Light and sturdy.",
  "adesc" :"",
- "named" : True, "rminStam" : 0, "rmaxStam": 2, "rminCond" : 46, "rmaxCond" : 56,  "names" : ['Heraldic Tunic', "Splendor", "Grandiosity", "Pageantry", "Swank", "Duty", "Honor", "Noble"]
+ "named" : { "con": { "min" : 46, "max" : 56 }, "fat": { "min" : 2, "max" : 0 }, "names" : ['Heraldic Tunic', "Splendor", "Grandiosity", "Pageantry", "Swank", "Duty", "Honor", "Noble"]  }
 },
 {"name": "southern_robe",                 "layer": "cloth", "min": 1, "max": 6, "value" : 35, "con" : 25, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth",
  "title" : "Southern Wool Robe",
@@ -307,7 +307,7 @@ class Defs:
  "title" :  "",
  "desc" :  "Truly fit for a knight, this mail hauberk is made from the highest quality materials and boasts precious decorations and ornaments.",
  "adesc" : "Includes a mail hauberk made from the highest quality materials and boasting precious decorations and ornaments.",
- "named" : True, "rminStam" : 9, "rmaxStam": 13, "rminCond" : 125, "rmaxCond" : 150,  "names" : ['Heraldic Mail', "Splendor", "Grandiosity", "Pageantry", "Swank", "Full Mail", "Mail Hauberk", "Chain Mail", "Duty", "Honor", "Noble Mail"]
+ "named" : { "con": { "min" : 125, "max" : 150 }, "fat": { "min" : 13, "max" : 9 }, "names" : ["Heraldic Mail", "Splendor", "Grandiosity", "Pageantry", "Swank", "Full Mail", "Mail Hauberk", "Chain Mail", "Duty", "Honor", "Noble Mail"]  } 
 },
 {"name": "hauberk_sleeveless",                "layer": "chain", "min": 1, "max": 1, "value" : 1250, "con" : 65, "stam" : -7, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Sleeveless Hauberk",
@@ -409,7 +409,7 @@ class Defs:
  "title" :  "",
  "desc" :  "A rare thick leather brigandine studded with steel rivets for added protection. A piece of true craftsmanship!",
  "adesc" : "Includes a masterwork reinforced leather brigandine.",
- "named" : True, "rminStam" : 5, "rmaxStam": 7, "rminCond" : 80, "rmaxCond" : 100,  "names" : ["Harness", "Ward", "Defense", "Barrier", "Studded Vest", "Lifesaver", "Skin", "Peel", "Guard", "Tarnished Harness", "Duty", "Honor"]
+ "named" : { "con": { "min" : 80, "max" : 100 }, "fat": { "min" : 7, "max" : 5 }, "names" : ["Harness", "Ward", "Defense", "Barrier", "Studded Vest", "Lifesaver", "Skin", "Peel", "Guard", "Tarnished Harness", "Duty", "Honor"]  }
 },
 {"name": "leather_jacket",                   "layer": "plate", "min": 1, "max": 10, "value" : 75, "con" : 25, "stam" : -3, "impactSound" : "leather", "invSound" : "leather",
  "title" :  "Leather Jacket",
@@ -425,13 +425,13 @@ class Defs:
  "title" :  "",
  "desc" :  "A well-crafted, hardened leather armor. Light to wear, yet exceptionally sturdy.",
  "adesc" : "Includes a masterwork hardened leather jacket.",
- "named" : True, "rminStam" : 1, "rmaxStam": 2, "rminCond" : 35, "rmaxCond" : 45,  "names" : ["Leather Cuirass", "Leather Armor", "Skin", "Peel", "Guard", "Coat", "Nightcloak", "Black Leather", "Dark Omen", "Toadskin", "Ogreskin"]
+ "named" : { "con": { "min" : 35, "max" : 45 }, "fat": { "min" : 2, "max" : 1 }, "names" : ["Leather Cuirass", "Leather Armor", "Skin", "Peel", "Guard", "Coat", "Nightcloak", "Black Leather", "Dark Omen", "Toadskin", "Ogreskin"]  }
 },
 {"name": "leather_studded_jacket_named",             "layer": "plate", "min": 1, "max": 13, "value" : 750, "con" : 30, "stam" : -3, "impactSound" : "leather", "invSound" : "leather",
  "title" :  "",
  "desc" :  "A well-crafted, studded leather jacket with reinforced padding. Light to wear, but very sturdy.",
  "adesc" : "Includes a well-crafted studded leather jacket.",
- "named" : True, "rminStam" : 1, "rmaxStam": 2, "rminCond" : 35, "rmaxCond" : 45,  "names" : ["Leather Cuirass", "Leather Armor", "Skin", "Peel", "Guard", "Coat", "Nightcloak", "Black Leather", "Dark Omen", "Toadskin", "Ogreskin"]
+ "named" : { "con": { "min" : 35, "max" : 45 }, "fat": { "min" : 2, "max" : 1 }, "names" : ["Leather Cuirass", "Leather Armor", "Skin", "Peel", "Guard", "Coat", "Nightcloak", "Black Leather", "Dark Omen", "Toadskin", "Ogreskin"]  }
 },
 {"name": "apron_undertakers",                                  "layer": "plate", "min": 1, "max": 1, "value" : 60, "con" : 35, "stam" : -4, "impactSound" : "leather", "invSound" : "leather",
  "title" :  "Undertaker's Apron",
@@ -472,7 +472,7 @@ class Defs:
  "title" :  "",
  "desc" :  "An extraordinarily well-crafted piece of lamellar armor. It is overlaid with beaten gold, which makes it truly stand out.",
  "adesc" : "Includes an extraordinarily well-crafted gold plated lamellar harness.",
- "named" : True, "rminStam" : 19, "rmaxStam": 23, "rminCond" : 175, "rmaxCond" : 195,  "names" : ["Harness", "Ward", "Defense", "Splendor", "Golden Lamellar"]
+ "named" : { "con": { "min" : 175, "max" : 195 }, "fat": { "min" : 23, "max" : 19 }, "names" : ["Harness", "Ward", "Defense", "Splendor", "Golden Lamellar"]  }
 },
 {"name": "leather_lamellar_reinforced",      "layer": "plate", "min": 1, "max": 1, "value" : 2500, "con" : 150, "stam" : -23, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Reinforced Leather Lamellar Armor",
@@ -578,13 +578,13 @@ class Defs:
  "title" :  "",
  "desc" :  "A masterfully crafted harness of solid, plated steel.",
  "adesc" : "Includes a masterfully crafted set of painted, solid plated steel with matching greaves.",
- "named" : True, "rminStam" : 23, "rmaxStam": 25, "rminCond" : 185, "rmaxCond" : 225,  "names" : ["Glory", "Triumph", "Victory", "Joy"]
+ "named" : { "con": { "min" : 185, "max" : 225 }, "fat": { "min" : 25, "max" : 23 }, "names" : ["Glory", "Triumph", "Victory", "Joy"]  }
 },
 {"name": "plate_full_greaves_painted",       "layer": "plate", "min": 1, "max": 1, "value" : 10000, "con" : 170, "stam" : -26, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "",
  "desc" :  "A masterfully crafted harness of solid, plated steel, finished with a layer of decorative paint.",
  "adesc" : "Includes a masterfully crafted set of painted, solid plated steel with matching greaves.",
- "named" : True, "rminStam" : 23, "rmaxStam": 25, "rminCond" : 185, "rmaxCond" : 225,  "names" : ["Ward", "Death", "Barrier", "Plate Armor", "Dark Plated Armor", "Life Stealer"]
+ "named" : { "con": { "min" : 185, "max" : 225 }, "fat": { "min" : 25, "max" : 23 }, "names" : ["Ward", "Death", "Barrier", "Plate Armor", "Dark Plated Armor", "Life Stealer"]  }
 },
 {"name": "scale",                            "layer": "plate", "min": 1, "max": 1, "value" : 2250, "con" : 100, "stam" : -12, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Scale Armor",
@@ -610,7 +610,7 @@ class Defs:
  "title" :  "",
  "desc" :  "A heavy coat of small, interlocking metal scales that cover most of the body. The style and craftsmanship hint at the armor coming from a far-away region.",
  "adesc" : "Includes a heavy coat of small, interlocking metal scales.",
- "named" : True, "rminStam" : 10, "rmaxStam": 14, "rminCond" : 130, "rmaxCond" : 160,  "names" : ["Scale Shirt", "Scale Armor", "Dragonskin", "Snakeskin", "Scales", "Wyrmskin", "Goldskin", "Scale Tunic", "Golden Armor", "Golden Reminder"]
+ "named" : { "con": { "min" : 130, "max" : 160 }, "fat": { "min" : 14, "max" : 10 }, "names" : ["Scale Shirt", "Scale Armor", "Dragonskin", "Snakeskin", "Scales", "Wyrmskin", "Goldskin", "Scale Tunic", "Golden Armor", "Golden Reminder"]  }
 },
 {"name": "rotten_scale_coat",                "layer": "plate", "min": 1, "max": 1, "value" : 600, "con" : 60, "stam" : -9, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Decayed Coat of Scales",
@@ -666,7 +666,7 @@ class Defs:
  "title" :  "",
  "desc" :  "This armor is composed of a strange alloy, and well crafted for barbarian standards. A truly rare and remarkable piece.",
  "adesc" : "Includes a heavy armor composed of a strange alloy, and well crafted for barbarian standards. A truly rare and remarkable piece.",
- "named" : True, "rminStam" : 23, "rmaxStam": 26, "rminCond" : 155, "rmaxCond" : 175,  "names" : ["Tarnished Harness", "Alloy Plate Armor", "Tainted Bulwark", "Tribal Plate"]
+ "named" : { "con": { "min" : 155, "max" : 175 }, "fat": { "min" : 26, "max" : 23 }, "names" : ["Tarnished Harness", "Alloy Plate Armor", "Tainted Bulwark", "Tribal Plate"]  }
 },
 #{"name": "bronze_armor_named",           "layer": "plate", "min": 104, "max": 104, "value" : 4000, "con" : 130, "stam" : -14, "impactSound" : "plate", "invSound" : "plate", "vanilla" : "body",
 # "title" :  "Rivet Plated Fur Armor",
@@ -685,7 +685,7 @@ class Defs:
  "title" :  "",
  "desc" :  "Ancient knowledge has been used when forging this unique set of armor. Its light mail overlapped with golden splints offers high protection with manageable encumbrance.",
  "adesc" : "Includes light mail overlapped with golden splints offering high protection with manageable encumbrance.",
-    "named" : True, "rminStam" : 23, "rmaxStam": 26, "rminCond" : 210, "rmaxCond" : 230,  "names" : ["Gilder\'s Shining Ward", "Gilder\'s Skin", "Suncloak", "Snakeskin", "Blazing Mail", "Suntouched Harness", "Shining Hauberk", "Armor of the Scorpion King"]
+    "named" : { "con": { "min" : 210, "max" : 230 }, "fat": { "min" : 26, "max" : 23 }, "names" : ["Gilder\'s Shining Ward", "Gilder\'s Skin", "Suncloak", "Snakeskin", "Blazing Mail", "Suntouched Harness", "Shining Hauberk", "Armor of the Scorpion King"]  }
 },
 #{"name": "armor_emperors_named",                  "layer": "plate", "min": 1, "max": 1, "value" : 9000, "con" : 210, "stam" : -25, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_named_plate",
 # "title" :  "fake emperors armor",
@@ -747,7 +747,7 @@ class Defs:
  "title" :  "Diviner's Jacket",
  "desc" :  "An embellished jacket previously worn by the Diviner. You\'d expect the stench of rotting flesh to cling to it, but it remains pristine.",
  "adesc" : "Includes an embellished jacket.",
- "named" : True, "rminStam" : 2, "rmaxStam": 4, "rminCond" : 35, "rmaxCond" : 60, "names" : ["Heretic\'s Wrap", "Beholder\'s vestments", "Jacket of the Augur", "Empyrian Coat", "Attestor\'s Skin", "Goreflesh Mantle"]
+ "named" : { "con": { "min" : 35, "max" : 60 }, "fat": { "min" : 4, "max" : 2 }, "names" : ["Heretic\'s Wrap", "Beholder\'s vestments", "Jacket of the Augur", "Empyrian Coat", "Attestor\'s Skin", "Goreflesh Mantle"]  }
 },
 {"name": "fleshcultist_jacket",           "itemType" : "this.Const.Items.ItemType.Cultist", "layer": "plate", "min": 1, "max": 2, "value" : 350, "con" : 30, "stam" : -3, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Faultfinder Jacket",

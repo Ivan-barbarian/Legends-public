@@ -83,8 +83,7 @@ def makeBrushes(path):
             #print(calculateCropArea(os.path.abspath(os.path.join(helmetDir, name + ".png"))))
 
             for s in templates:
-                text = s.substitute(opts)
-                F.write(text)
+                F.write(s.substitute(opts))
 
                 imageCount += 1  
                 if imageCount > 1600:           
@@ -120,9 +119,8 @@ def generate_legend_helmets(base_path):
             "plate": "::Const.Sound.ArmorHalfplateImpact",
             "bone":  "::Const.Sound.ArmorBoneImpact",
         }
-        default_sound = "::Const.Sound.ArmorLeatherImpact"
-        invsound = sounds.get(d.get("invSound"), default_sound)
-        impactsound = sounds.get(d.get("impactSound"), default_sound)
+        invsound = sounds.get(d.get("invSound"), sounds["leather"])
+        impactsound = sounds.get(d.get("impactSound"), sounds["leather"])
 
         variants = list(range(1, d["max"] + 1))
         has_missing = has_missing or checkForIcon(base_path, f"inventory_{d['name']}", variants)
