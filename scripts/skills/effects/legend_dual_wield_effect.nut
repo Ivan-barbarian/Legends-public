@@ -1,9 +1,11 @@
 this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		OffhandWeight = 0,
+		MainHandSkill = null,
 		OffHandSkill = null,
+		OffhandWeight = 0,
 		AmbidextrousBonus = 0.33,
 		IsRefreshing = false,
+		IsExecutingOffhand = false,
 		NeedsRefresh = null,
 		ExcludedSkills = [],
 	},
@@ -75,8 +77,21 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		::Legends.Actives.grant(this, ::Legends.Active.LegendDoubleSwing);
 
+		local items = actor.getItems();
+
+		// Find and store the mainhand attack skill
+		local mh = items.getItemAtSlot(::Const.ItemSlot.Mainhand);
+		if (mh != null) {
+			local skill = ::Legends.Weapons.findPrimaryAttackSkill(actor, mh);
+			if (skill != null) {
+				this.m.MainHandSkill = ::MSU.asWeakTableRef(skill);
+			}
+		} else {
+			this.m.MainHandSkill = null;
+		}
+
 		// Find and store the offhand attack skill
-		local oh = actor.getItems().getItemAtSlot(::Const.ItemSlot.Offhand);
+		local oh = items.getItemAtSlot(::Const.ItemSlot.Offhand);
 		if (oh != null) {
 			local skill = ::Legends.Weapons.findPrimaryAttackSkill(actor, oh);
 			if (skill != null) {
@@ -129,22 +144,15 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		// Don't trigger for Double Swing (prevents infinite loop)
-		if (this.m.ExcludedSkills.find(_skill.getID()) != null) {
+		// Don't trigger for Double Swing or follow ups (prevents infinite loop)
+		if (this.m.ExcludedSkills.find(_skill.getID()) != null || this.m.IsExecutingOffhand) {
 			return;
 		}
 
 		local actor = this.getContainer().getActor();
 		local items = actor.getItems();
+		local mh = items.getItemAtSlot(::Const.ItemSlot.Mainhand);
 		local off = items.getItemAtSlot(::Const.ItemSlot.Offhand);
-
-		// Don't trigger if the attack came from the offhand
-		if (_skill.m.Item != null
-			&& off != null
-			&& _skill.m.Item.getInstanceID() == off.getInstanceID())
-		{
-			return;
-		}
 
 		// Check target is valid
 		if (_targetEntity == null || !_targetEntity.isAlive() || _targetEntity.isDying()) {
@@ -156,21 +164,42 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		// Refresh offhand skill reference if it became invalid
-		if (off != null && ::MSU.isNull(this.m.OffHandSkill)) {
-			local skill = ::Legends.Weapons.findPrimaryAttackSkill(actor, off);
-			if (skill != null) {
-				this.m.OffHandSkill = ::MSU.asWeakTableRef(skill);
+		// Determine if the attack came from the offhand
+		local isOffhandAttack = _skill.m.Item != null
+			&& off != null
+			&& _skill.m.Item.getInstanceID() == off.getInstanceID();
+
+		local skillToUse = null;
+		if (isOffhandAttack) {
+			// Offhand attack, follow up with mainhand
+			if (mh != null && ::MSU.isNull(this.m.MainHandSkill)) {
+				local skill = ::Legends.Weapons.findPrimaryAttackSkill(actor, mh);
+				if (skill != null) {
+					this.m.MainHandSkill = ::MSU.asWeakTableRef(skill);
+				}
+			}
+			if (!items.hasBlockedSlot(::Const.ItemSlot.Mainhand)
+				&& !::MSU.isNull(this.m.MainHandSkill))
+			{
+				skillToUse = this.m.MainHandSkill;
+			}
+		} else {
+			// Mainhand attack, follow up with offhand
+			if (off != null && ::MSU.isNull(this.m.OffHandSkill)) {
+				local skill = ::Legends.Weapons.findPrimaryAttackSkill(actor, off);
+				if (skill != null) {
+					this.m.OffHandSkill = ::MSU.asWeakTableRef(skill);
+				}
+			}
+			if (!items.hasBlockedSlot(::Const.ItemSlot.Offhand)
+				&& !::MSU.isNull(this.m.OffHandSkill))
+			{
+				skillToUse = this.m.OffHandSkill;
 			}
 		}
 
 		// Schedule follow-up attack
-		if (!_forFree
-			&& !items.hasBlockedSlot(::Const.ItemSlot.Offhand)
-			&& !::MSU.isNull(this.m.OffHandSkill))
-		{
-			local skillToUse = this.m.OffHandSkill;
-
+		if (!_forFree && skillToUse != null) {
 			this.Const.SkillCounter++;
 			::Time.scheduleEvent(::TimeUnit.Virtual, ::Const.Combat.RiposteDelay, this.executeFollowUpAttack.bindenv(this), {
 				TargetTile = _targetTile,
@@ -189,6 +218,7 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 		}
 		_info.Skill.m.IsExecutingOffhand = true;
 		_info.Skill.useForFree(_info.TargetTile);
+		this.m.IsExecutingOffhand = false;
 	}
 
 	function onEquip(_item) {
@@ -196,6 +226,13 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 		local items = actor.getItems();
 		local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+
+		if (mh != null && mh.getInstanceID() == _item.getInstanceID()) {
+			local skill = ::Legends.Weapons.findPrimaryAttackSkill(actor, _item);
+			if (skill != null) {
+				this.m.MainHandSkill = ::MSU.asWeakTableRef(skill);
+			}
+		}
 
 		if (oh != null && oh.getInstanceID() == _item.getInstanceID()) {
 			local skill = ::Legends.Weapons.findPrimaryAttackSkill(actor, _item);
@@ -217,6 +254,7 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 	function onUnequip(_item) {
+		this.m.MainHandSkill = null;
 		this.m.OffHandSkill = null;
 
 		// Mark which slot needs refresh
