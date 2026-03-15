@@ -15,8 +15,8 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Value = 200;
-		this.m.Condition = 10;
-		this.m.ConditionMax = 10;
+		this.m.Condition = 20;
+		this.m.ConditionMax = 20;
 		this.m.StaminaModifier = -1;
 		this.m.Vision = 0;
 		this.m.Lower = false;

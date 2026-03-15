@@ -257,7 +257,7 @@
 	"Folly\'s Friend",
 	"Fool\'s Crown",
 	"Jolly Folly"   ,
-	"Knightly",
+	"Knighthood",
 	"Golden Crest",
 	"Vizier\'s Pride",
 	"Sun Veil",

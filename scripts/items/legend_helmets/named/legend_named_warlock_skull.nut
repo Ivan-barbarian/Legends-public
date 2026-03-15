@@ -23,7 +23,7 @@ this.legend_named_warlock_skull <- this.inherit("scripts/items/legend_helmets/le
 		this.m.HideBeard = true;
         this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Cultist;
         this.randomizeValues();
-		this.m.NameList = this.Const.Strings.LegendArmorLayers;
+		this.m.NameList = this.Const.Strings.LegendHelmetLayers;
 	}
 
 	function updateVariant()

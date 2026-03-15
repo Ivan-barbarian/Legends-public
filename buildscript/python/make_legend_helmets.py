@@ -152,13 +152,13 @@ def generate_legend_helmets(base_path):
         }
         if "named" in d:
             opts.update({
-                "names":    d.get("names", []),
-                "rminViz":  d.get("rminViz", 0),
-                "rmaxViz":  d.get("rmaxViz", 0),
-                "rminStam": d.get("rminStam", 0),
-                "rmaxStam": d.get("rmaxStam", 0),
-                "rminCond": d.get("rminCond", 0),
-                "rmaxCond": d.get("rmaxCond", 0),
+                "names":    d["named"].get("names", []),
+                "rminViz":  d["named"].get("vis", {}).get("min", 0),
+                "rmaxViz":  d["named"].get("vis", {}).get("max", 0),
+                "rminStam": d["named"].get("fat", {}).get("min", 0),
+                "rmaxStam": d["named"].get("fat", {}).get("max", 0),
+                "rminCond": d["named"].get("con", {}).get("min", 0),
+                "rmaxCond": d["named"].get("con", {}).get("max", 0)
             })
 
         dirpath = base_path / "helmet_scripts" / layer
