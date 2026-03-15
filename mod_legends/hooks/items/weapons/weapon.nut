@@ -16,8 +16,10 @@
 	local onDamageDealt = o.onDamageDealt;
 	o.onDamageDealt = function ( _target, _skill, _hitInfo )
 	{
-		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.HandToHand))
+		if (_skill.m.IsExecutingOffhand) {
+			_skill.m.IsExecutingOffhand = false;
 			return;
+		}
 
 		onDamageDealt( _target, _skill, _hitInfo );
 	}

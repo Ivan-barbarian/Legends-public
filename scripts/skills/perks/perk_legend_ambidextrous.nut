@@ -164,7 +164,8 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 			::logWarning("legend_ambidextrous: offhand skill is null, cannot execute follow-up attack");
 			return;
 		}
-
+		
+		_info.Skill.m.IsExecutingOffhand = true;
 		_info.Skill.useForFree(_info.TargetTile);
 	}
 

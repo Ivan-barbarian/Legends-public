@@ -6,6 +6,7 @@
 	o.m.Sound <- [];
 	o.m.AdditionalTooltip <- [];
 	o.m.MinRangeForPerTile <- 2; // to fix HitChanceAdditionalWithEachTile in cases where the min range is higher than 2 
+	o.m.IsExecutingOffhand <- false;
 
 	o.getDescription = function()
 	{
@@ -1502,6 +1503,7 @@
 			local distanceToTarget = _user.getTile().getDistanceTo(_targetEntity.getTile());
 			_targetEntity.onMissed(_user, this, this.m.IsShieldRelevant && shield != null && r <= toHit + shieldBonus * 2);
 			this.m.Container.onTargetMissed(this, _targetEntity);
+			this.m.IsExecutingOffhand = false;
 			local prohibitDiversion = false;
 
 			if (_allowDiversion && this.m.IsRanged && !_user.isPlayerControlled() && this.Math.rand(1, 100) <= 25 && distanceToTarget > 2)

@@ -187,6 +187,7 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 		if (::MSU.isNull(_info.Skill)) {
 			return;
 		}
+		_info.Skill.m.IsExecutingOffhand = true;
 		_info.Skill.useForFree(_info.TargetTile);
 	}
 
