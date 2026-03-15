@@ -1,6 +1,7 @@
 this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		MainHandSkill = null,
+		MainhandWeight = 0,
 		OffHandSkill = null,
 		OffhandWeight = 0,
 		AmbidextrousBonus = 0.33,
@@ -13,7 +14,7 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 	function create() {
 		::Legends.Effects.onCreate(this, ::Legends.Effect.LegendDualWield);
 		this.m.Name = "Dual Wielding";
-		this.m.Description = "This character is wielding two weapons at once. The weight of the offhand weapon increases fatigue costs and reduces accuracy.";
+		this.m.Description = "This character is wielding two weapons at once. The weight of the other weapon increases fatigue costs and reduces accuracy.";
 		this.m.Icon = "skills/status_effect_75.png";
 		this.m.IconMini = "";
 		this.m.Type = this.Const.SkillType.StatusEffect;
@@ -41,32 +42,45 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 
 		local ohSkill = this.m.OffHandSkill;
 		if (ohSkill != null && !::MSU.isNull(ohSkill)) {
+			if (this.m.OffhandWeight > 0) {
+				ret.push({
+					id = 3,
+					type = "text",
+					icon = "ui/icons/fatigue.png",
+					text = "Mainhand skills cost [color=%negative%]+" + this.m.OffhandWeight + "[/color] Fatigue and have [color=%negative%]-" + this.m.OffhandWeight + "[/color] Melee Skill"
+				});
+			}
 			ret.push({
-				id = 3,
+				id = 4,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Follow-up attack: [color=%positive%]" + ohSkill.getName() + "[/color]"
+				text = "Mainhand follow-up: [color=%positive%]" + ohSkill.getName() + "[/color]"
 			});
 		}
 
-		ret.push({
-			id = 4,
-			type = "text",
-			icon = "ui/icons/fatigue.png",
-			text = "Skills cost [color=%negative%]+" + this.m.OffhandWeight + "[/color] Fatigue"
-		});
-		ret.push({
-			id = 5,
-			type = "text",
-			icon = "ui/icons/melee_skill.png",
-			text = "Skills have [color=%negative%]-" + this.m.OffhandWeight + "[/color] Melee Skill"
-		});
+		local mhSkill = this.m.MainHandSkill;
+		if (mhSkill != null && !::MSU.isNull(mhSkill)) {
+			if (this.m.MainhandWeight > 0) {
+				ret.push({
+					id = 5,
+					type = "text",
+					icon = "ui/icons/fatigue.png",
+					text = "Offhand skills cost [color=%negative%]+" + this.m.MainhandWeight + "[/color] Fatigue and have [color=%negative%]-" + this.m.MainhandWeight + "[/color] Melee Skill"
+				});
+			}
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Offhand follow-up: [color=%positive%]" + mhSkill.getName() + "[/color]"
+			});
+		}
 
 		return ret;
 	}
 
-	function getOffhandWeight(_actor, _oh) {
-		local weight = -_oh.getStaminaModifier();
+	function getWeaponWeight(_actor, _weapon) {
+		local weight = -_weapon.getStaminaModifier();
 		if (::Legends.Perks.has(_actor, ::Legends.Perk.LegendAmbidextrous)) {
 			weight = ::Math.floor(weight * (1 - this.m.AmbidextrousBonus));
 		}
@@ -85,9 +99,11 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 			local skill = ::Legends.Weapons.findPrimaryAttackSkill(actor, mh);
 			if (skill != null) {
 				this.m.MainHandSkill = ::MSU.asWeakTableRef(skill);
+				this.m.MainhandWeight = getWeaponWeight(actor, mh);
 			}
 		} else {
 			this.m.MainHandSkill = null;
+			this.m.MainhandWeight = 0;
 		}
 
 		// Find and store the offhand attack skill
@@ -96,7 +112,7 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 			local skill = ::Legends.Weapons.findPrimaryAttackSkill(actor, oh);
 			if (skill != null) {
 				this.m.OffHandSkill = ::MSU.asWeakTableRef(skill);
-				this.m.OffhandWeight = getOffhandWeight(actor, oh);
+				this.m.OffhandWeight = getWeaponWeight(actor, oh);
 			}
 		} else {
 			this.m.OffHandSkill = null;
@@ -110,22 +126,30 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 	function onUpdate(_properties) {
-		if (this.m.OffhandWeight <= 0) {
-			return;
-		}
-
 		local actor = this.getContainer().getActor();
 		foreach (skill in actor.getSkills().m.Skills) {
-			if (skill.m.IsAttack && this.m.ExcludedSkills.find(skill.getID()) == null) {
+			if (!skill.m.IsAttack || this.m.ExcludedSkills.find(skill.getID()) != null) {
+				continue;
+			}
+
+			local weight = 0;
+			if (::Legends.Weapons.isOffHandSkill(actor, skill)) {
+				weight = this.m.MainhandWeight;
+			} else {
+				weight = this.m.OffhandWeight;
+			}
+
+			if (weight > 0) {
 				_properties.SkillCostAdjustments.push({
 					ID = skill.getID(),
-					FatigueAdjust = this.m.OffhandWeight
+					FatigueAdjust = weight
 				});
 			}
 		}
 	}
 
-	// Apply hit chance penalty to attack skills
+	// Melee skill penalty: initiator gets opposite hand's weight,
+	// follow-up inherits the same penalty (= its own hand's weight)
 	function onAnySkillUsed(_skill, _targetEntity, _properties) {
 		if (!_skill.m.IsAttack) {
 			return;
@@ -133,8 +157,14 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 		if (this.m.ExcludedSkills.find(_skill.getID()) != null) {
 			return;
 		}
-		_properties.MeleeSkill -= this.m.OffhandWeight;
-		_skill.m.HitChanceBonus -= this.m.OffhandWeight;
+
+		local actor = this.getContainer().getActor();
+		local weight = ::Legends.Weapons.isOffHandSkill(actor, _skill)
+			? this.m.MainhandWeight
+			: this.m.OffhandWeight;
+
+		_properties.MeleeSkill -= weight;
+		_skill.m.HitChanceBonus -= weight;
 	}
 
 	function onAnySkillExecuted(_skill, _targetTile, _targetEntity, _forFree) {
@@ -164,13 +194,9 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		// Determine if the attack came from the offhand
-		local isOffhandAttack = _skill.m.Item != null
-			&& off != null
-			&& _skill.m.Item.getInstanceID() == off.getInstanceID();
-
+		// Determine the follow up depending on where the attack came from
 		local skillToUse = null;
-		if (isOffhandAttack) {
+		if (::Legends.Weapons.isOffHandSkill(actor, _skill)) {
 			// Offhand attack, follow up with mainhand
 			if (mh != null && ::MSU.isNull(this.m.MainHandSkill)) {
 				local skill = ::Legends.Weapons.findPrimaryAttackSkill(actor, mh);
@@ -231,6 +257,7 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 			local skill = ::Legends.Weapons.findPrimaryAttackSkill(actor, _item);
 			if (skill != null) {
 				this.m.MainHandSkill = ::MSU.asWeakTableRef(skill);
+				this.m.MainhandWeight = getWeaponWeight(actor, mh);
 			}
 		}
 
@@ -238,7 +265,7 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 			local skill = ::Legends.Weapons.findPrimaryAttackSkill(actor, _item);
 			if (skill != null) {
 				this.m.OffHandSkill = ::MSU.asWeakTableRef(skill);
-				this.m.OffhandWeight = getOffhandWeight(actor, oh);
+				this.m.OffhandWeight = getWeaponWeight(actor, oh);
 			}
 		}
 
