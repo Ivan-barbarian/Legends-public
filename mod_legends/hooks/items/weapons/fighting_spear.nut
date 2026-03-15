@@ -22,6 +22,7 @@
 		this.m.Ammo = 1;
 		this.m.AmmoMax = 1;
 		this.m.AmmoCost = 10;
+		this.m.ItemType = this.m.ItemType | ::Const.Items.ItemType.Ammo;
 		this.setVariant(this.Math.rand(0, 2));
 	}
 

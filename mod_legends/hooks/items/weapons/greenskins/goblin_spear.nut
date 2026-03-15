@@ -37,6 +37,7 @@
 		this.m.Ammo = 1;
 		this.m.AmmoMax = 1;
 		this.m.AmmoCost = 10;
+		this.m.ItemType = this.m.ItemType | ::Const.Items.ItemType.Ammo;
 		this.m.RangeIdeal = 1;
 		this.m.RegularDamage = 35;
 		this.m.RegularDamageMax = 60;

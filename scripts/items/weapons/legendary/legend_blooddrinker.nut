@@ -25,7 +25,6 @@ this.legend_blooddrinker <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ArmorDamageMult = 1.6;
 		this.m.DirectDamageMult = 0.25;
 		this.m.ChanceToHitHead = 20;
-		this.randomizeValues();
 	}
 
 	function getTooltip()

@@ -5,6 +5,7 @@
 		this.m.Ammo = 1;
 		this.m.AmmoMax = 1;
 		this.m.AmmoCost = 10;
+		this.m.ItemType = this.m.ItemType | ::Const.Items.ItemType.Ammo;
 	}
 
 	o.isAmountShown <- function()
