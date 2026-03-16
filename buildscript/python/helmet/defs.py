@@ -541,7 +541,7 @@ class Defs:
  "desc" :  "A sturdy steel helm with a crafty sloped design meant to deflect blows.",
  "adesc" : "Includes a steel frogmouth helm."
  },
-{"name" : "frogmouth_named"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 5, "value" : 2250, "con" : 160, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "true", "impactSound" : "plate", "invSound" : "plate",  "named" : { "con": { "min" : 165, "max" : 180 }, "fat": { "min" : 9, "max" : 8 }, "vis": { "min" : 3, "max" : 2 }, "names" : Names  },
+{"name" : "frogmouth_named"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 5, "value" : 2250, "con" : 160, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "true", "impactSound" : "plate", "invSound" : "plate",  "named" : { "con": { "min" : 170, "max" : 195 }, "fat": { "min" : 13, "max" : 11 }, "vis": { "min" : 3, "max" : 2 }, "names" : Names  },
  "title" :  "Frogmouth",
  "desc" :  "A prestigious helm with a crafty sloped design meant to deflect blows. Such a masterpiece surely belonged to a champion of many great tournaments.",
  "adesc" : "Includes a prestigious frogmouth helm of excellent construction."
@@ -616,7 +616,7 @@ class Defs:
  "desc" :  "A hardened nasal helm with a cloth band and a tail.",
  "adesc" : "Includes a nasal helm with a tail."
  },
-{"name" : "armet_named"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 3, "value" : 4000, "con" : 170, "stam" : -11, "vis" : -2, "hair" : "true", "beard" : "true", "impactSound" : "plate", "invSound" : "plate", "named" : { "con": { "min" : 170, "max" : 195 }, "fat": { "min" : 13, "max" : 11 }, "vis": { "min" : 2, "max" : 1 }, "names" : Names  },
+{"name" : "armet_named"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 3, "value" : 4000, "con" : 170, "stam" : -11, "vis" : -2, "hair" : "true", "beard" : "true", "impactSound" : "plate", "invSound" : "plate", "named" : { "con": { "min" : 165, "max" : 180 }, "fat": { "min" : 9, "max" : 8 }, "vis": { "min" : 2, "max" : 1 }, "names" : Names  },
  "title" :  "Armet",
  "desc" :  "A sophisticated steel helm offering excellent protection despite its agile silhouette. Masterfully crafted of exquisite steel and layered with decorative paint.",
  "adesc" : "Includes a masterfully crafted armet of exquisite steel."
