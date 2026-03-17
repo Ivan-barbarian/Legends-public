@@ -33,7 +33,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		];
 		this.m.SoundPitch = this.Math.rand(90, 110) * 0.01;
 		this.getFlags().add("undead");
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bounty_hunter_melee_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/zombie_agent");
 		this.m.AIAgent.setActor(this);
 	}
 
