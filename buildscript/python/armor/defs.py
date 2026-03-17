@@ -802,7 +802,7 @@ class Defs:
  "desc" :  "A hooded cowl with dour, tabbed edges that helps one stay unremarkable and unassuming.",
  "adesc" : "Includes a hooded cowl with dour, tabbed edges."
 },
-{"name": "anatomist_hood",           "layer": "cloak", "min": 1, "max": 1, "value" : 150, "con" : 30, "stam" : -2, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "anatomist_hood",           "layer": "cloak", "min": 1, "max": 7, "value" : 150, "con" : 30, "stam" : -2, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Anatomist Hood",
  "desc" :  "A dark hood with reinforced edges popular with those working with filth and entrails.",
  "adesc" : "Includes a dark hood with reinforced edges."

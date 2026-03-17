@@ -669,7 +669,7 @@ class Defs:
  "desc" :  "A distinctive, bird-like mask. The beak acts as a ventilator, containing sweet-smelling herbs to ward away sickness and disease.",
  "adesc" : "Includes a distinctive, bird-like mask."
  },
-{"name" : "orc_horn_mask"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "top", "min" : 1, "max" : 4, "value" : 200, "con" : 60, "stam" : -8, "vis" : -2, "hair" : "true", "beard" : "false", "impactSound" : "leather", "invSound" : "leather",
+{"name" : "orc_horn_mask"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "top", "lower": True, "min" : 1, "max" : 4, "value" : 200, "con" : 60, "stam" : -8, "vis" : -2, "hair" : "true", "beard" : "false", "impactSound" : "leather", "invSound" : "leather",
  "title" :  "Orc Horn Mask",
  "desc" :  "A rough horned face mask, worn by young orcs. Counts as a cultist item.",
  "adesc" : "Includes a rough, heavy horned face mask."
@@ -679,7 +679,7 @@ class Defs:
  "desc" :  "A simple, heavy construction of metal plates, worn by young orcs.",
  "adesc" : "Includes a simple, heavy metal mask."
  },
-{"name" : "orc_leather_mask"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "top", "min" : 1, "max" : 4, "value" : 50, "con" : 40, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "leather", "invSound" : "leather",
+{"name" : "orc_leather_mask"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "top", "lower": True, "min" : 1, "max" : 4, "value" : 50, "con" : 40, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "leather", "invSound" : "leather",
  "title" :  "Orc Leather Mask",
  "desc" :  "A simple, heavy construction of strange leather, worn by young orcs. Counts as a cultist item.",
  "adesc" : "Includes a simple, heavy leather mask."

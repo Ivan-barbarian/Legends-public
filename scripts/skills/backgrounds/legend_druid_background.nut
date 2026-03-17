@@ -39,7 +39,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 			"the Feral",
 			"the Wild",
 			"the Barbarian",
-			"The Green thumb",
+			"the Green thumb",
 			"Oakheart",
 			"Treebeard",
 			"the flower",
