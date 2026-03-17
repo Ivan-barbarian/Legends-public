@@ -31,6 +31,7 @@ This activates Dual Wield:
 - `Immovable Object` now also counts accessory slot
 - `Battlefield Control` now additionally `Knock Back`, `Repel` and `Hook` skills have 100% chance to hit when targeting an allied character and will not apply negative effects or damage when used on an ally
 - `Ballistics` now also increases range of handgonne
+- `Stick Fighting` now gives 16 matk, mdef and rdef when wielding a staff or a magic staff and 8 when wielding a hybrid staff or musical instrument
 
 ### One Handed Tree
 - no longer exists in short
@@ -142,7 +143,7 @@ Favoured Enemy - Sword Master
 * `Halfsword` - puncture
 > 5 ap cost and requires double grip to be usable
 * `Mordhau` - batter (hammer)
-> 5 ap cost, doubles your armor damage with this skill and always deals at least 10 hp
+> 5 ap cost, 50% more armor damage with this skill and always deals at least 10 hp, hits to the head will daze
 
 **Longsword**
 - `Slash` - unchanged
@@ -153,8 +154,8 @@ Favoured Enemy - Sword Master
 **Greatsword**
 - `Overhead Strike` - unchanged
 - `Swing` - unchanged
-- `Halfsword`
-- `Mordhau`
+- `Halfsword` - 7 ap cost, -80% hitchance instead of -65%
+- `Mordhau` - 7 ap cost, hits to the head will stagger
 
 **Falchions**
 - `Breach` - `Slash`
@@ -205,6 +206,7 @@ Favoured Enemy - Sword Master
 
 - additional info is now provided on support skill including if the skill is considered an attack, it's range and the maximum level difference
 - african male heads have been updated and adjusted to start showing up on brothers
+- `Belly Dancer` receives 20% scouting modifier for camping purposes
 
 ## Bug Fixes
 

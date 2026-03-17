@@ -1680,13 +1680,9 @@ Mastering the art of leaning against a wall with a big stick has it's benefits.
 Twist and thrust with your staff to deflect blows and intercept strikes.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Gain [color=%positive%]+12[/color] chance to hit and [color=%positive%]+16[/color] Defense while wielding a pure staves or magic staves.
+• Gain [color=%positive%]+16[/color] Melee Skill and [color=%positive%]+16[/color] Defense while wielding a staves or magic staves.
 
-• When taking [color=%perk%]Polearm Mastery[/color] gain [color=%positive%]10%[/color] damage.
-
-• For other weapons classified as a Staff, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
-
-• When wielding slingstaves, musical instruments and other hybrid staves the bonus is only [color=%positive%]+8[/color] Defense.
+• When wielding slingstaves, musical instruments and other hybrid staves the bonus is only [color=%positive%]+8[/color].
 ";
 
 ::Const.Strings.PerkDescription.LegendSpecialistRaider <- @"
