@@ -9,8 +9,7 @@ this.legend_cestus_item_named <- this.inherit("scripts/items/accessory/gloves/le
 		InventorySound = "sounds/combat/armor_halfplate_impact_01.wav",
 		StaminaModifier = -4
 	},
-	function create()
-	{
+	function create() {
 		this.legend_named_glove.create();
 		this.m.ID = "accessory.legend_cestus_item_named";
 		this.m.Name = "Gladiator\'s Golden Cestus";
@@ -22,7 +21,7 @@ this.legend_cestus_item_named <- this.inherit("scripts/items/accessory/gloves/le
 		this.m.Icon = "accessory/cestus_golden.png";
 		this.m.Value = 4300;
 		this.randomizeValues();
-		this.m.NameList = ["Gilder's Judgement","Final Sermon","Calamity's Grip","Grand Arena Knuckles","Titan's Fists","Devil Grip","Iron Breakers"];
-		this.m.Name = this.m.NameList[this.Math.rand(0, this.m.NameList.len())];
+		this.m.NameList = ["Gilder's Judgement", "Final Sermon", "Calamity's Grip", "Grand Arena Knuckles", "Titan's Fists", "Devil Grip", "Iron Breakers"];
+		this.m.Name = this.m.NameList[this.Math.rand(0, this.m.NameList.len() - 1)];
 	}
 });
