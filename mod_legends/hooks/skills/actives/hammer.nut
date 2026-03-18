@@ -53,9 +53,10 @@
 		if (_bodyPart != this.Const.BodyPart.Head)
 			return;
 
+		local actor = this.getContainer().getActor();
 		local effect = this.m.IsGreatMordhau ? ::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Staggered) : ::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Dazed);
-		if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer) {
-			this.Tactical.EventLog.log(effect.getLogEntryOnAdded(this.Const.UI.getColorizedEntityName(_user), this.Const.UI.getColorizedEntityName(_targetEntity)));
+		if (!actor.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer) {
+			this.Tactical.EventLog.log(effect.getLogEntryOnAdded(this.Const.UI.getColorizedEntityName(actor), this.Const.UI.getColorizedEntityName(_targetEntity)));
 		}
 
 		this.m.FreeReload = true;
