@@ -54,6 +54,10 @@
 		if (_bodyPart != this.Const.BodyPart.Head)
 			return;
 
+		if (::Legends.S.skillEntityAliveCheck(_targetEntity)) {
+			return;
+		}
+
 		local actor = this.getContainer().getActor();
 		local effect = this.m.IsGreatMordhau ? ::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Staggered) : ::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Dazed);
 		if (!actor.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer) {
