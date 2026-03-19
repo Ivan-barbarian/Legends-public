@@ -1,7 +1,6 @@
 ::mods_hookExactClass("ai/tactical/behaviors/ai_attack_default", function (o) {
 	o.m.PossibleSkills.extend([
 		::Legends.Actives.getID(::Legends.Active.LegendCatBite),
-		::Legends.Actives.getID(::Legends.Active.LegendSkinGhoulClaws),
 		::Legends.Actives.getID(::Legends.Active.LegendWhiteWolfBite),
 		::Legends.Actives.getID(::Legends.Active.LegendRedbackSpiderBite),
 		::Legends.Actives.getID(::Legends.Active.LegendDemonHoundBite),
@@ -9,7 +8,6 @@
 		::Legends.Actives.getID(::Legends.Active.LegendHorseKick),
 		::Legends.Actives.getID(::Legends.Active.LegendDonkeyKick),
 		::Legends.Actives.getID(::Legends.Active.LegendBearBite),
-		::Legends.Actives.getID(::Legends.Active.LegendBearClaws),
 		::Legends.Actives.getID(::Legends.Active.LegendFlagellate),
 		::Legends.Actives.getID(::Legends.Active.LegendBoarGore),
 		::Legends.Actives.getID(::Legends.Active.LegendRatClaws),
@@ -26,6 +24,6 @@
 		::Legends.Actives.getID(::Legends.Active.LegendBucklerBash),
 		::Legends.Actives.getID(::Legends.Active.LegendThrowKnife),
 		::Legends.Actives.getID(::Legends.Active.LegendHaftstrike),
-		::Legends.Actives.getID(::Legends.Active.LegendDoubleSwing),
+		::Legends.Actives.getID(::Legends.Active.LegendHew),
 	]);
 });
