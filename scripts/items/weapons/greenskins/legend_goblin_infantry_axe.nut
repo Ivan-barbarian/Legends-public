@@ -1,7 +1,6 @@
 this.legend_goblin_infantry_axe <- this.inherit("scripts/items/weapons/weapon", {
 	m = {},
-	function create()
-	{
+	function create() {
 		this.weapon.create();
 		this.m.ID = "weapon.goblin_infantry_axe";
 		this.m.Name = "Goblin Harrier Axe";
@@ -28,8 +27,7 @@ this.legend_goblin_infantry_axe <- this.inherit("scripts/items/weapons/weapon", 
 		this.m.ChanceToHitHead = 10;
 	}
 
-	function onEquip()
-	{
+	function onEquip() {
 		this.weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.Chop, function (_skill) {
 			_skill.m.Icon = "skills/active_79.png";

@@ -49,15 +49,6 @@ this.legend_hew_skill <- this.inherit("scripts/skills/skill", {
 				text = "Has a [color=%positive%]" + this.m.StunChance + "%[/color] chance to stun on a hit"
 			});
 		}
-		if (this.m.IsHew) {
-			local dmg = this.getContainer().getActor().getCurrentProperties().IsSpecializedInCleavers ? 20 : 10;
-				tooltip.push({
-				id = 8,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Inflicts additional stacking [color=%damage%]" + dmg + "[/color] bleeding damage per turn, for 2 turns"
-			});
-		}
 
 		return tooltip;
 	}
