@@ -513,7 +513,7 @@
 		}
 
 		// if (this.m.IsRanged && myTile.getDistanceTo(_targetTile) > 1)
-		if (this.m.IsRanged && myTile.getDistanceTo(_targetTile) > this.m.MinRange)
+		if (this.m.IsRanged && myTile.getDistanceTo(_targetTile) > this.Math.min(this.m.MinRange, this.m.MinRangeForPerTile))
 		{
 			if (_targetTile.IsOccupiedByActor && ("AdditionalHitChance" in this.m))
 			{
@@ -781,7 +781,7 @@
 		local isRangedRelevant = function ()
 		{
 			// return thisSkill.m.IsRanged && myTile.getDistanceTo(_targetTile) > 1 && _targetTile.IsOccupiedByActor;
-			return thisSkill.m.IsRanged && myTile.getDistanceTo(_targetTile) > this.m.MinRange && _targetTile.IsOccupiedByActor;
+			return thisSkill.m.IsRanged && myTile.getDistanceTo(_targetTile) > this.Math.min(this.m.MinRange, this.m.MinRangeForPerTile) && _targetTile.IsOccupiedByActor;
 		};
 
 		if (isRangedRelevant())
@@ -790,7 +790,7 @@
 			local propertiesWithSkill = this.factoringOffhand(thisSkill.m.Container.buildPropertiesForUse(thisSkill, targetEntity));
 			modifier["Distance of " + distanceToTarget] <- function ( row, description )
 			{
-				local hitDistancePenalty = (distanceToTarget - thisSkill.m.MinRange) * propertiesWithSkill.HitChanceAdditionalWithEachTile * propertiesWithSkill.HitChanceWithEachTileMult;
+				local hitDistancePenalty = (distanceToTarget - this.Math.min(thisSkill.m.MinRange, thisSkill.m.MinRangeForPerTile)) * propertiesWithSkill.HitChanceAdditionalWithEachTile * propertiesWithSkill.HitChanceWithEachTileMult;
 				row.text = (hitDistancePenalty > 0 ? green(hitDistancePenalty + "%") : red(-hitDistancePenalty + "%")) + " " + description;
 			};
 			modifier["Line of fire blocked"] <- function ( row, description )
@@ -1298,7 +1298,7 @@
 
 		if (this.m.IsRanged)
 		{
-			toHit = toHit + (distanceToTarget - this.m.MinRange) * properties.HitChanceAdditionalWithEachTile * properties.HitChanceWithEachTileMult;
+			toHit = toHit + (distanceToTarget - this.Math.min(this.m.MinRange, this.m.MinRangeForPerTile)) * properties.HitChanceAdditionalWithEachTile * properties.HitChanceWithEachTileMult;
 		}
 
 		if (levelDifference < 0)
