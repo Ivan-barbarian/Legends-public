@@ -32,6 +32,7 @@ This activates Dual Wield:
 - `Battlefield Control` now additionally `Knock Back`, `Repel` and `Hook` skills have 100% chance to hit when targeting an allied character and will not apply negative effects or damage when used on an ally
 - `Ballistics` now also increases range of handgonne
 - `Stick Fighting` now gives 16 matk, mdef and rdef when wielding a staff or a magic staff and 8 when wielding a hybrid staff or musical instrument
+- `Muscularity` now has no lower bound.
 
 ### One Handed Tree
 - no longer exists in short

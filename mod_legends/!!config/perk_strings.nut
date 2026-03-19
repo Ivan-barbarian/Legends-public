@@ -908,9 +908,7 @@ Real berserkers don't need pants.
 Put your full weight into every blow!
 
 [color=%passive%][u]Passive:[/u][/color]
-• When using Melee Weapons, Unarmed, Throwing and Bows inflict additional damage, scaling based on [color=%positive%]10%[/color] of your current Hitpoints and [color=%positive%]15%[/color] of current Fatigue.
-
-• However, when below [color=%negative%]50%[/color] Hitpoints or Fatigue all damage inflicted will be increased by [color=%positive%]5%[/color] of maximum Hitpoints or [color=%positive%]7.5%[/color] of maximum Fatigue, instead.
+• When using Melee Weapons, Unarmed, Throwing and Bows inflict additional damage, scaling based on [color=%positive%]10%[/color] of your current Hitpoints and [color=%positive%]15%[/color] of your current Fatigue.
 
 • Fatigue calculations are done after gear and values might change in combat.
 ";
