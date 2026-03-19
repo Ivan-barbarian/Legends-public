@@ -59,6 +59,7 @@ this.legend_hew_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local target = _targetTile.getEntity();
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
+		local success = this.attackEntity(_user, target);
 		return success;
 	}
 
