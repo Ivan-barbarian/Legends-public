@@ -231,7 +231,7 @@ function isUsable()
 			}
 		}
 
-		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectSlash);
+		this.spawnAttackEffect(_tag.TargetTile, this.Const.Tactical.AttackEffectSlash);
 		local s = this.m.SoundOnUse;
 		this.m.SoundOnUse = this.m.SoundOnAttack;
 		this.attackEntity(_entity, _tag.TargetTile.getEntity());
