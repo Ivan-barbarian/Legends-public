@@ -25,42 +25,21 @@ this.legend_meat_hacker <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 45;
 		this.m.RegularDamageMax = 65;
 		this.m.ArmorDamageMult = 1.5;
-		this.m.DirectDamageMult = 0.3;
+		this.m.DirectDamageMult = 0.4;
 		this.m.ChanceToHitHead = 0;
 		this.m.FatigueOnSkillUse = 5;
-	}
-
-	function getTooltip()
-	{
-		local result = this.weapon.getTooltip();
-		result.push({
-			id = 6,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Can use [color=" + ::Const.UI.Color.Active + "]Split Man[/color] when [color=" + ::Const.UI.Color.Status + "]Double Gripped[/color] and [color=" + ::Const.UI.Color.Active + "]Chop[/color] if not"
-		});
-		return result;
 	}
 
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		::Legends.Actives.grant(this, ::Legends.Active.SplitMan, function (_skill) {
-			_skill.setApplyOrcWeapon(true); //Sets Split Man's Direct Damage Mult to Meat Hacker's Direct Damage Mult
-		}.bindenv(this));
 		::Legends.Actives.grant(this, ::Legends.Active.Chop, function (_skill) {
-			_skill.setApplyOrcWeapon(true); //Sets Split Man's Direct Damage Mult to Meat Hacker's Direct Damage Mult
+			_skill.m.IsHack = true;
 		}.bindenv(this));
 		::Legends.Actives.grant(this, ::Legends.Active.SplitShield, function (_skill) {
 			_skill.setApplyAxeMastery(true);
-			_skill.setApplyOrcWeapon(true);
+			_skill.m.ActionPointCost = 4;
 			_skill.setFatigueCost(_skill.getFatigueCostRaw() + 5);
 		}.bindenv(this));
 	}
-
-	function onUpdateProperties( _properties )
-	{
-		this.weapon.onUpdateProperties(_properties);
-	}
-
 });

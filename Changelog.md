@@ -79,6 +79,7 @@ Favoured Enemy - Sword Master
 > Armored Wiederganger 6 to 8;
 > Fallen Hero 7 to 9;
 > players turned Wiederganger 6 to 8;
+- Nomad Slingers will now more likely to spawn with a Sturdy Sling before day 30 and gain a chance for more armor after day 40
 
 ## New Runes
 
@@ -122,6 +123,10 @@ Favoured Enemy - Sword Master
 #### New Weapon Abilities
 
 * Named Cleaver and sword riposte effects will no longer roll on named items
+
+**Infatry Axes**
+- `Chop` is replaced with `Hack`
+> 40% armor penetration and 25% better chance to hit the head
 
 **Throwing**
 - `Throw Backup Spear` - each one handed spear has 1 stack of a throwable ability
