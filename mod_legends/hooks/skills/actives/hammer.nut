@@ -63,7 +63,5 @@
 		if (!actor.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer) {
 			this.Tactical.EventLog.log(effect.getLogEntryOnAdded(this.Const.UI.getColorizedEntityName(actor), this.Const.UI.getColorizedEntityName(_targetEntity)));
 		}
-
-		this.m.FreeReload = true;
 	}
 });
