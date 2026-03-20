@@ -142,7 +142,8 @@
 				{
 					Type = ::Const.World.Spawn.Troops.LegendOrcMadBerserker,
 					MinR = 1200,
-					Cost = 60
+					Cost = 60,
+					Roll = true
 				}
 			]
 		},
