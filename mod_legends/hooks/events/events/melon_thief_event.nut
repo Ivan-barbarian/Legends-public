@@ -1,5 +1,5 @@
 ::mods_hookExactClass("events/events/melon_thief_event", function (o) {
-	o.isValid = function () {
+	o.isValid <- function () {
 		this.onClear();
 		this.onUpdateScore();
 		return this.m.Town != null;
