@@ -98,8 +98,7 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties ) {
-		if (_skill == this)
-		{
+		if (_skill == this) {
 			_properties.ThresholdToInflictInjuryMult *= 0.5;
 			_properties.DamageTotalMult *= 1.1;
 			if (_targetEntity == null)
@@ -109,7 +108,6 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 			if (actor.getTile().getDistanceTo(_targetEntity.getTile()) != 1)
 				return;
 			if ((this.m.IsPolearm && !_properties.IsSpecializedInPolearms) || (this.m.IsTwoHanded && !_properties.IsSpecializedInSpears)) {
-			{
 				_properties.MeleeSkill -= 15;
 				this.m.HitChanceBonus -= 15;
 			}
