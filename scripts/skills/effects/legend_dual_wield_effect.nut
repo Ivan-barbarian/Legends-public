@@ -242,6 +242,7 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 		if (::MSU.isNull(_info.Skill)) {
 			return;
 		}
+		this.m.IsExecutingOffhand = true;
 		_info.Skill.m.IsExecutingOffhand = true;
 		_info.Skill.useForFree(_info.TargetTile);
 		this.m.IsExecutingOffhand = false;
@@ -311,23 +312,26 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 
 		local refreshTarget = this.m.NeedsRefresh;
 		this.m.NeedsRefresh = null;
-		this.m.IsRefreshing = true;
 
 		local actor = this.getContainer().getActor();
 		local items = actor.getItems();
+		local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+
+		// Only refresh if both hands still have weapons, if one hand is empty
+		// dual wield is ending and refresh would needlessly remove or re-add weapon skills
+		if (mh == null || oh == null) {
+			return;
+		}
+
+		this.m.IsRefreshing = true;
 
 		if (refreshTarget == "mh") {
-			local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-			if (mh != null) {
-				mh.onUnequip();
-				mh.onEquip();
-			}
+			mh.onUnequip();
+			mh.onEquip();
 		} else if (refreshTarget == "oh") {
-			local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-			if (oh != null) {
-				oh.onUnequip();
-				oh.onEquip();
-			}
+			oh.onUnequip();
+			oh.onEquip();
 		}
 
 		this.m.IsRefreshing = false;
