@@ -611,7 +611,7 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function (
 
 		var isEmpty = data !== null && "isEmpty" in data ? data.isEmpty : true;
 		var itemId = data !== null && "itemId" in data ? data.itemId : null;
-		//var itemIdx = (data !== null && 'index' in data) ? data.index : null;
+		var itemIdx = (data !== null && 'index' in data) ? data.index : null;
 		var entityId = data !== null && "entityId" in data ? data.entityId : null;
 		var dropIntoInventory =
 			KeyModiferConstants.CtrlKey in _event &&
@@ -624,7 +624,7 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function (
 		if (
 			isEmpty === false &&
 			itemId !== null &&
-			entityId !== null /*&& itemIdx !== null*/
+			entityId !== null
 		) {
 			// equip or drop into inventory
 			if (repairItem === true) {
@@ -640,7 +640,7 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function (
 			}
 			else {
 				//console.info('equip item: ' + itemId);
-				self.mDataSource.equipBagItem(entityId, itemId, null);
+				self.mDataSource.equipBagItem(entityId, itemId, itemIdx);
 			}
 
 			self.mDataSource.getInventoryModule().updateSlotsLabel();
