@@ -30,17 +30,24 @@ this.legend_armor_sacred_shield_upgrade <- this.inherit("scripts/items/legend_ar
 		this.m.OverlayIconLarge = "legend_armor/inventory_pauldrons_belt_shield_"  + variant + ".png";
 	}
 
-	function getTooltip()
-	{
-		local result = this.legend_armor_upgrade.getTooltip();
-		result.push({
+	function updateTooltip( _tooltip )	{
+		_tooltip.push({
 			id = 14,
 			type = "text",
 			icon = "ui/icons/bravery.png",
 			text = "[color=%positive%]+5%[/color] Resolve"
 		});
-		return result;
+		return _tooltip;
 	}
+
+	function getTooltip()	{
+		return updateTooltip(this.legend_armor_upgrade.getTooltip());
+	}
+
+	function onArmorTooltip( _result )	{
+		this.legend_armor_upgrade.onArmorTooltip(updateTooltip(_result));
+	}
+
 	function onUpdateProperties( _properties )
 	{
 		this.legend_armor_upgrade.onUpdateProperties(_properties);

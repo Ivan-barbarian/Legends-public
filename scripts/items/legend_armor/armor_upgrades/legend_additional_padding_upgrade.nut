@@ -35,26 +35,22 @@ this.legend_additional_padding_upgrade <- this.inherit("scripts/items/legend_arm
 		this.m.OverlayIconLarge = "legend_armor/inventory_pauldrons_padding_fur_"  + variant + ".png";
 	}
 
-	function getTooltip()
-	{
-		local result = this.legend_armor_upgrade.getTooltip();
-		result.push({
+	function updateTooltip( _tooltip )	{
+		_tooltip.push({
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "Reduces any ranged damage to the body by [color=%negative%]-10%[/color]"
 		});
-		return result;
+		return _tooltip;
 	}
 
-	function onArmorTooltip( _result )
-	{
-		_result.push({
-			id = 7,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Reduces any ranged damage to the body by [color=%negative%]-10%[/color]"
-		});
+	function getTooltip()	{
+		return updateTooltip(this.legend_armor_upgrade.getTooltip());
+	}
+
+	function onArmorTooltip( _result )	{
+		this.legend_armor_upgrade.onArmorTooltip(updateTooltip(_result));
 	}
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )

@@ -28,26 +28,22 @@ this.legend_protective_runes_upgrade <- this.inherit("scripts/items/legend_armor
 		this.m.OverlayIconLarge = "legend_armor/inventory_pauldrons_protective_runes_"  + variant + ".png";
 	}
 
-	function getTooltip()
-	{
-		local result = this.legend_armor_upgrade.getTooltip();
-		result.push({
+	function updateTooltip( _tooltip )	{
+		_tooltip.push({
 			id = 14,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "[color=%positive%]+20[/color] Resolve at morale checks against fear, panic or mind control effects"
 		});
-		return result;
+		return _tooltip;
 	}
 
-	function onArmorTooltip( _result )
-	{
-		_result.push({
-			id = 14,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "[color=%positive%]+20[/color] Resolve at morale checks against fear, panic or mind control effects"
-		});
+	function getTooltip()	{
+		return updateTooltip(this.legend_armor_upgrade.getTooltip());
+	}
+
+	function onArmorTooltip( _result )	{
+		this.legend_armor_upgrade.onArmorTooltip(updateTooltip(_result));
 	}
 
 	function onUpdateProperties( _properties )
