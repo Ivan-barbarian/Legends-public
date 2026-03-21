@@ -640,7 +640,17 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function (
 			}
 			else {
 				//console.info('equip item: ' + itemId);
-				self.mDataSource.equipBagItem(entityId, itemId, itemIdx);
+				self.mDataSource.equipBagItem(entityId, itemId, itemIdx, null);
+
+				// Force refresh after equip, in theory equipBagItem should already handle
+				// this via updateBrother, but somehow the visual refresh doesn't seem to
+				// work for right click?
+				setTimeout(function() {
+					var bro = self.mDataSource.getSelectedBrother();
+					if (bro) {
+						self.onBrotherSelected(self.mDataSource, bro);
+					}
+				}, 100);
 			}
 
 			self.mDataSource.getInventoryModule().updateSlotsLabel();

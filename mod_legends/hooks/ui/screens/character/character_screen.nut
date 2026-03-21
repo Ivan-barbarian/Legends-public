@@ -932,6 +932,11 @@
 			return general_onEquipBagItem(_data);
 		}
 
+		// Reject if the item is not actually in the bag (stale UI after a previous equip)
+		if (!sourceItem.isInBag()) {
+			return this.UIDataHelper.convertStashAndEntityToUIData(entity, null, false, this.m.InventoryFilter);
+		}
+
 		// Proceed only if this is a 1h main hand weapon
 		if (sourceItem.getSlotType() != this.Const.ItemSlot.Mainhand
 			|| sourceItem.getBlockedSlotType() != null)
