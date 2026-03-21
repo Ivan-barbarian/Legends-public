@@ -1419,7 +1419,7 @@ Lets hope your enemies like fighting in the shade.
 
 • [color=%skill%]Sling Heavy Stone[/color] will stun on headshots.
 
-• [color=%skill%]Shoot Bolt[/color] and [color=%skill%]Shoot Bolt[/color] will automatically reload on headshots.
+• [color=%skill%]Shoot Bolt[/color] and [color=%skill%]Shoot Stake[/color] will automatically reload on headshots.
 ";
 
 ::Const.Strings.PerkDescription.LegendStaffBlock <- @"
@@ -2163,7 +2163,7 @@ Well fitting armor lets you strike faster and fight longer.
 Poking things where they don't belong is just a natural inclination for some.
 
 [color=%passive%][u]Passive:[/u][/color]
-• [color=%skill%]Thrust[/color], [color=%skill%]Prong[/color], [color=%skill%]Skewer[/color], [color=%skill%]Impale[/color], [color=%skill%]Rupture[/color] and [color=%skill%]Glaive Strike[/color] do [color=%positive%]+15%[/color] damage.
+• [color=%skill%]Thrust[/color], [color=%skill%]Prong[/color], [color=%skill%]Skewer[/color], [color=%skill%]Impale[/color], [color=%skill%]Rupture[/color], [color=%skill%]Heartseeker[/color] and [color=%skill%]Glaive Strike[/color] do [color=%positive%]+15%[/color] damage.
 
 • Also removes the hitchance penalty per tile when throwing Spears and Javelins.
 ";

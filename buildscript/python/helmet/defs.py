@@ -216,7 +216,7 @@ class Defs:
  "desc" :  "A dome helm with heavy riveted bands that has once been in possession of an ancient household guard.",
   "adesc" : "Includes an ancient dome helm."
  },
-{"name" : "ancient_crested"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 5, "value" : 200, "con" : 60, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
+{"name" : "ancient_crested"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 200, "con" : 60, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Ancient Crested Helm",
  "desc" :  "A helm with a heavy crest and jutting cheek guards, its glory faded by the passage of time.",
  "adesc" : "Includes an ancient crested helm."

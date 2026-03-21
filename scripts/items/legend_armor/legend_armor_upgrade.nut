@@ -522,6 +522,8 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 
 		if (armor == null) return false;
 
+		if (armor.SuperName != null && armor.SuperName.find("upgrade") != null) return false; //prevent trying to equip upgrade on upgrade without base
+
 		local success = armor.setUpgrade(this);
 
 		if (success && _playSound)
