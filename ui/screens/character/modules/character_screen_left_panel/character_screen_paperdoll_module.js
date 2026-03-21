@@ -706,9 +706,36 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function (
 			return;
 		}
 
-		// we don't allow swapping within the paperdoll
+		// we don't allow swapping within the paperdoll (except for dual wield)
 		if (sourceOwner === targetOwner) {
-			//console.error('Failed to drop item. Owners are equal.');
+			if (sourceOwner === CharacterScreenIdentifier.ItemOwner.Paperdoll) {
+				var srcSlot = sourceData !== null && 'containerSlotType' in sourceData ? sourceData.containerSlotType : null;
+				var tgtSlot = _target.data('containerSlotType');
+				if (tgtSlot === undefined || tgtSlot === null) {
+					tgtSlot = targetData !== null && 'containerSlotType' in targetData ? targetData.containerSlotType : null;
+				}
+				var isMhToOh = srcSlot === CharacterScreenIdentifier.ItemSlot.Mainhand && tgtSlot === CharacterScreenIdentifier.ItemSlot.Offhand;
+				var isOhToMh = srcSlot === CharacterScreenIdentifier.ItemSlot.Offhand && tgtSlot === CharacterScreenIdentifier.ItemSlot.Mainhand;
+				if (isMhToOh || isOhToMh) {
+					var swapEntityId = sourceData !== null && 'entityId' in sourceData ? sourceData.entityId : null;
+					if (swapEntityId !== null) {
+						sourceData.isAllowedToDrop = true;
+						_proxy.data('item', sourceData);
+
+						SQ.call(self.mDataSource.mSQHandle, 'onSwapDualWieldSlots', [swapEntityId], function (data) {
+							if (data !== null && typeof data === 'object') {
+								if (CharacterScreenIdentifier.QueryResult.Brother in data) {
+									var brotherData = data[CharacterScreenIdentifier.QueryResult.Brother];
+									if (CharacterScreenIdentifier.Entity.Id in brotherData) {
+										self.mDataSource.updateBrother(brotherData);
+									}
+								}
+							}
+						});
+						return;
+					}
+				}
+			}
 			return;
 		}
 

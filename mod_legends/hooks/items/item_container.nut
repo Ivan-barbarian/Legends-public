@@ -233,6 +233,41 @@
 		}
 	}
 
+	o.swapDualWieldSlots <- function () {
+		local mh = this.getItemAtSlot(::Const.ItemSlot.Mainhand);
+		local oh = this.getItemAtSlot(::Const.ItemSlot.Offhand);
+
+		if (mh == null || oh == null) {
+			return false;
+		}
+		if (oh.getSlotType() != ::Const.ItemSlot.Mainhand) {
+			return false;
+		}
+		if (oh.getCurrentSlotType() != ::Const.ItemSlot.Offhand) {
+			return false;
+		}
+
+		// Clear skills for both weapons
+		mh.onUnequip();
+		oh.onUnequip();
+
+		// Swap slot contents
+		this.m.Items[::Const.ItemSlot.Mainhand][0] = oh;
+		this.m.Items[::Const.ItemSlot.Offhand][0] = mh;
+
+		oh.setCurrentSlotType(::Const.ItemSlot.Mainhand);
+		mh.setCurrentSlotType(::Const.ItemSlot.Offhand);
+
+		// Re equip both
+		oh.onEquip();
+		mh.onEquip();
+
+		this.m.Actor.getSkills().update();
+		this.updateDualWield();
+
+		return true;
+	}
+
 	o.unequipNoUpdate <- function (_item) {
 		if (_item == null || _item == -1) {
 			return;
