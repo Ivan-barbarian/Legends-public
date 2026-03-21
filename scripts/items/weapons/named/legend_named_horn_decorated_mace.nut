@@ -19,7 +19,7 @@ this.legend_named_horn_decorated_mace <- this.inherit("scripts/items/weapons/nam
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_horn_decorated_mace_01";
+		this.m.ArmamentIcon = "icon_legend_named_horn_decorated_mace_01";
 		this.m.Value = 4400;
 		this.m.ShieldDamage = 26;
 		this.m.Condition = 126.0;
