@@ -161,6 +161,16 @@
 				this.m.Items[::Const.ItemSlot.Offhand][0] = null;
 
 				if (!::Legends.S.isEntityNullOrDead(this.m.Actor)) {
+					// Unequipping the oh may remove skill instances that the mainhand also uses
+					// (skills don't stack, there is only one instance per skill id in m.Skills)
+					// so the easiest way I've found to prevent that is to re-equip the mh - there
+					// maybe something cleaner to prevent the removal but idk.
+					local mh = this.getItemAtSlot(::Const.ItemSlot.Mainhand);
+					if (mh != null) {
+						mh.onUnequip();
+						mh.onEquip();
+					}
+
 					this.m.Actor.getSkills().update();
 					this.updateDualWield();
 				}
