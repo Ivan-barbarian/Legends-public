@@ -58,9 +58,8 @@ this.legend_hew_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local target = _targetTile.getEntity();
-		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
-		local success = this.attackEntity(_user, target);
-		return success;
+		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectChop);
+		return this.attackEntity(_user, target);
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
@@ -72,12 +71,10 @@ this.legend_hew_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 	function onDamageDealt( _target, _skill, _hitInfo ) {
-		this.named_weapon.onDamageDealt(_target, _skill, _hitInfo);
 		local actor = this.getContainer().getActor();
 		if (!_target.isAlive() || _target.isDying())
 			return;
 
-		_skill.spawnAttackEffect(_target.getTile(), this.Const.Tactical.AttackEffectChop);
 		if (!actor.isAlive() || actor.isDying())
 			return;
 
