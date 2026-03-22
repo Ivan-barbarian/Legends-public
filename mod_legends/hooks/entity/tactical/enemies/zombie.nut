@@ -133,8 +133,6 @@
 	o.assignRandomEquipment = function () {
 
 		if (this.Math.rand(1, 100) <= 50) {
-			// Make sure not to include weapons that only have 6AP skills
-			// in this list, as zombies only have 5AP.
 			local weapons = [
 				"weapons/knife",
 				"weapons/bludgeon",
