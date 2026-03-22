@@ -33,7 +33,7 @@ this.legend_haftstrike <- this.inherit("scripts/skills/skill", {
 		this.m.HitChanceBonus = 0;
 		this.m.DirectDamageMult = 0.25;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 15;
+		this.m.FatigueCost = 12;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 	}
@@ -72,7 +72,7 @@ this.legend_haftstrike <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties ) {
 		if (_skill == this)
-			_properties.DamageTotalMult *= 0.4;
+			_properties.DamageTotalMult *= 0.3;
 	}
 });
 
