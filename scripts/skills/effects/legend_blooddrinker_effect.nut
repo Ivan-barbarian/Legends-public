@@ -3,6 +3,7 @@ this.legend_blooddrinker_effect <- this.inherit("scripts/skills/skill", {
 		HealPct = 10
 	},
 	function create() {
+		::Legends.Effects.onCreate(this, ::Legends.Effect.LegendBlooddrinker);
 		this.m.ID = "effects.legend_blooddrinker";
 		this.m.Name = "";
 		this.m.Description = "";

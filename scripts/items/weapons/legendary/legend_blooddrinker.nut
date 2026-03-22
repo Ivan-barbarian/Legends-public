@@ -12,7 +12,7 @@ this.legend_blooddrinker <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded | ::Const.Items.ItemType.Legendary;
 		this.m.IconLarge = "weapons/melee/legendary_greatsword.png";
 		this.m.Icon = "weapons/melee/legendary_greatsword_70x70.png";
-		this.m.ArmamentIcon = "icon_legendary_greatsword";
+		this.m.ArmamentIcon = "icon_legendary_greatsword_01";
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
@@ -42,7 +42,7 @@ this.legend_blooddrinker <- this.inherit("scripts/items/weapons/weapon", {
 
 	function onEquip()
 	{
-		this.named_weapon.onEquip();
+		this.weapon.onEquip();
 		::Legends.Effects.grant(this, ::Legends.Effect.LegendBlooddrinker);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendHew);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendHarvest);
