@@ -42,7 +42,9 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 			::Legends.Traits.getID(::Legends.Trait.Dastard),
 			::Legends.Traits.getID(::Legends.Trait.Drunkard),
 			::Legends.Traits.getID(::Legends.Trait.Disloyal),
-			::Legends.Traits.getID(::Legends.Trait.Loyal)
+			::Legends.Traits.getID(::Legends.Trait.Loyal),
+			::Legends.Traits.getID(::Legends.Trait.LegendSureshot),
+			::Legends.Traits.getID(::Legends.Trait.LegendSteadyHands),
 		];
 		this.m.Titles = [
 			"the Savage",
