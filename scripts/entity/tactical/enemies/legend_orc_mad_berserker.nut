@@ -5,6 +5,10 @@ this.legend_orc_mad_berserker <- this.inherit("scripts/entity/tactical/enemies/o
 		this.orc_berserker.create();
 		this.m.Type = this.Const.EntityType.LegendOrcMadBerserker;
 		this.m.XP = this.Const.Tactical.Actor.LegendOrcMadBerserker.XP;
+		if (this.m.Type != this.Const.EntityType.Player)
+		{
+			this.m.Name = this.Const.Strings.EntityName[this.m.Type];
+		}
 		this.actor.create();
 	}
 
