@@ -2789,13 +2789,13 @@
 	Script = "",
 	Sets = [{
 		Cloth = [
-			[1, "cloth/legend_armor_robes", 14]], // 25 -2 25
+			[1, "cloth/legend_armor_robes", 6]], // 25 -2 25
 		Chain = [
 			[1, ""]],
 		Plate = [
 			[1, "plate/legend_armor_leather_riveted", 5]], // 95 -13 900
 		Cloak = [
-			[1, "cloak/legend_armor_cloak_heavy", 24]], // 30 -4 500
+			[1, "cloak/legend_armor_cloak_heavy", 9]], // 30 -4 500
 		Tabard = [
 			[1, "tabard/legend_armor_tabard_noble"]], // 10 -0 1000
 		Attachments = [
