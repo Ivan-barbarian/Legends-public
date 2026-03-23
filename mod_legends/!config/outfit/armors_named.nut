@@ -504,7 +504,7 @@
 		]
 	}]
 };
-::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Named.ghost_armor_named);
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Named.ghost_armor_named_01);
 
 ::Legends.Armor.Named.ghost_armor_named_02 <- {
 	ID = "ghost_armor_named_02", // 320-385 -35-47 9550-10250
