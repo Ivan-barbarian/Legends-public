@@ -2884,9 +2884,9 @@
 		Tabard = [
 			[1, "tabard/legend_armor_tabard_noble"]], // 10 -0 1000
 		Attachments = [
-			[3, ""], [1, "armor_upgrades/legend_leather_neckguard_upgrade", 0],
-			[1, "armor_upgrades/legend_double_mail_upgrade", 0],
-			[1, "armor_upgrades/legend_leather_shoulderguards_upgrade", 0]],
+			[3, ""], [1, "armor_upgrades/legend_leather_neckguard_upgrade"],
+			[1, "armor_upgrades/legend_double_mail_upgrade"],
+			[1, "armor_upgrades/legend_leather_shoulderguards_upgrade"]],
 	}]
 };
 ::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.mercury_royal_guard_00);
