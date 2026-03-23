@@ -184,7 +184,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		local corpse = clone this.Const.Corpse;
 		corpse.IsResurrectable = false;
 		corpse.IsConsumable = false;
-		corpse.Items = _fatalityType != this.Const.FatalityType.Unconscious ? this.getItems().prepareItemsForCorpse(_killer) : null;
+		corpse.Items = this.getItems().prepareItemsForCorpse(_killer);
 		corpse.IsHeadAttached = _fatalityType != this.Const.FatalityType.Decapitated;
 
 		if (_tile != null)

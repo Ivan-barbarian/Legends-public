@@ -742,4 +742,4 @@
 		Vanity = []
 	}]
 };
-::Const.LegendMod.HelmObjs.push(::Legends.Named.Standard.ghost_helmet_named);
+::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Named.ghost_helmet_named);
