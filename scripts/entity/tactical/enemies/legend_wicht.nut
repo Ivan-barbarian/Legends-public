@@ -45,6 +45,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		{
 			this.updateAchievement("OvercomingFear", 1, 1);
 		}
+		local flip = !this.isAlliedWithPlayer();
 
 		if (_tile != null) {
 			local effect = {
@@ -110,14 +111,88 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 				]
 			};
 			this.Tactical.spawnParticleEffect(false, effect.Brushes, _tile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 40));
-		}
 
+			local appearance = this.getItems().getAppearance();
+
+			local armorLayers = [
+				"CorpseArmor"
+				"CorpseArmorLayerChain",
+				"CorpseArmorLayerPlate",
+				"CorpseArmorLayerTabbard",
+				"CorpseArmorLayerCloakBack",
+				"CorpseArmorLayerCloakFront",
+				"CorpseArmorUpgradeFront"
+			];
+
+			foreach (layer in armorLayers) {
+				if (appearance[layer] != "") {
+					local decal = _tile.spawnDetail(appearance[layer], this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
+					if (decal != null) {
+						decal.Scale = 0.9;
+						decal.setBrightness(0.9);
+					}
+				}
+			}
+
+			if (!appearance.HideCorpseHead
+				&& _fatalityType != this.Const.FatalityType.Decapitated)
+			{
+				local helmetLayers = [
+					"HelmetLayerVanityLowerCorpse",
+					"HelmetLayerVanity2LowerCorpse",
+					"HelmetCorpse",
+					"HelmetLayerHelmLowerCorpse",
+					"HelmetLayerTopLowerCorpse",
+					"HelmetLayerHelmCorpse",
+					"HelmetLayerTopCorpse",
+					"HelmetLayerVanityCorpse",
+					"HelmetLayerVanity2Corpse"
+				];
+				foreach (layer in helmetLayers) {
+					if (appearance[layer] != "") {
+						local decal = _tile.spawnDetail(appearance[layer], this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
+						if (decal != null) {
+							decal.Scale = 0.9;
+							decal.setBrightness(0.9);
+						}
+					}
+				}
+			}
+		}
+		this.spawnTerrainDropdownEffect(_tile);
 		local deathLoot = this.getItems().getDroppableLoot(_killer);
 		local tileLoot = this.getLootForTile(_killer, deathLoot);
-		local flip = !this.isAlliedWithPlayer();
 		this.dropLoot(_tile, tileLoot, !flip);
+		local corpse = this.generateCorpse(_tile, _fatalityType, _killer);
+
+		if (_tile == null)
+		{
+			this.Tactical.Entities.addUnplacedCorpse(corpse);
+		}
+		else
+		{
+			_tile.Properties.set("Corpse", corpse);
+			this.Tactical.Entities.addCorpse(_tile);
+		}
 
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
+	}
+
+	function generateCorpse( _tile, _fatalityType, _killer )
+	{
+		local isResurrectable = false;
+		local corpse = clone this.Const.Corpse;
+		corpse.IsResurrectable = false;
+		corpse.IsConsumable = false;
+		corpse.Items = _fatalityType != this.Const.FatalityType.Unconscious ? this.getItems().prepareItemsForCorpse(_killer) : null;
+		corpse.IsHeadAttached = _fatalityType != this.Const.FatalityType.Decapitated;
+
+		if (_tile != null)
+		{
+			corpse.Tile = _tile;
+		}
+
+		return corpse;
 	}
 
 	function onFactionChanged() {
