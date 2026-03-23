@@ -37,7 +37,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Southern.assassin_head_wrap);
 
 ::Legends.Helmet.Southern.blade_dancer_head_wrap <- {
-	ID = "oriental/blade_dancer_head_wrap", // 45-50 -1 -0 110-320
+	ID = "oriental/blade_dancer_head_wrap", // 50-55 -1 -0 110-320
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -49,14 +49,14 @@
 		Tops = [
 		],
 		Vanity = [
-			[1, "vanity/legend_helmet_southern_feathered_turban"], // 5 -0 -0 20
+			[1, "vanity/legend_helmet_southern_feathered_turban"], // 10 -0 -0 20
 		]
 	}]
 };
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Southern.blade_dancer_head_wrap);
 
 ::Legends.Helmet.Southern.desert_stalker_head_wrap <- {
-	ID = "oriental/desert_stalker_head_wrap", // 45-50 -1 -0 110-320
+	ID = "oriental/desert_stalker_head_wrap", // 50-55 -1 -0 110-320
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -68,7 +68,7 @@
 		Tops = [
 		],
 		Vanity = [
-			[1, "vanity/legend_helmet_southern_feathered_turban"], // 5 -0 -0 20
+			[1, "vanity/legend_helmet_southern_feathered_turban"], // 10 -0 -0 20
 		]
 	}]
 };
@@ -153,7 +153,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Southern.heavy_lamellar_helmet);
 
 ::Legends.Helmet.Southern.leather_head_wrap <- {
-	ID = "oriental/leather_head_wrap", // 25-30 -0 -0 50
+	ID = "oriental/leather_head_wrap", // 25 -0 -0 50
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -164,7 +164,7 @@
 		Tops = [
 		],
 		Vanity = [
-			[1, "vanity/legend_helmet_headband"], // 10 -0 -0 20
+			[1, "vanity/legend_helmet_headband"], // 5 -0 -0 20
 			[15, "vanity/legend_helmet_southern_headband"], // 5 -0 -0 20
 			[4, "vanity/legend_helmet_southern_patterned_headband"], // 5 -0 -0 20
 		]
@@ -191,7 +191,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Southern.nomad_head_wrap);
 
 ::Legends.Helmet.Southern.nomad_leather_cap <- {
-	ID = "oriental/nomad_leather_cap", // 25-30 -0 -0 50
+	ID = "oriental/nomad_leather_cap", // 25 -0 -0 50
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -202,7 +202,7 @@
 		Tops = [
 		],
 		Vanity = [
-			[1, "vanity/legend_helmet_headband"], // 10 -0 -0 20
+			[1, "vanity/legend_helmet_headband"], // 5 -0 -0 20
 			[4, "vanity/legend_helmet_southern_headband"], // 5 -0 -0 20
 			[15, "vanity/legend_helmet_southern_patterned_headband"] // 5 -0 -0 20
 		]

@@ -99,7 +99,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Mercenary.mercenary_crossbow_helmet_01);
 
 ::Legends.Helmet.Mercenary.mercenary_crossbow_helmet_02 <- {
-	ID = "mercenary_crossbow_helmet_02", // 85-90 -4-5 -0 330-360
+	ID = "mercenary_crossbow_helmet_02", // 80-90 -4-5 -0 330-360
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -109,7 +109,7 @@
 		],
 		Tops = [
 			[1, "top/legend_helmet_nose_plate"], // 15 -1 -0 60
-			[1, "top/legend_helmet_headband_side"] // 10 -0 -0 30
+			[1, "top/legend_helmet_headband_side"] // 5 -0 -0 30
 		],
 		Vanity = [
 		]
@@ -165,7 +165,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Mercenary.mercenary_spearman_helmet_01);
 
 ::Legends.Helmet.Mercenary.mercenary_leader_helmet_uncommon_00 <- {
-	ID = "mercenary_leader_helmet_uncommon_00", // 190 -10 -2 955
+	ID = "mercenary_leader_helmet_uncommon_00", // 185 -10 -2 955
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -175,7 +175,7 @@
 			[1, "helm/legend_helmet_italo_norman_helm"] // 90 -6 -2 425
 		],
 		Tops = [
-			[1, "top/legend_helmet_headband_side"] // 10 -0 -0 30
+			[1, "top/legend_helmet_headband_side"] // 5 -0 -0 30
 		],
 		Vanity = [
 			[1, "vanity/legend_helmet_wolf_helm"] // 10 -0 -0 100
@@ -216,7 +216,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Mercenary.mercenary_leader_helmet_00);
 
 ::Legends.Helmet.Mercenary.mercenary_leader_helmet_gilded_00 <- {
-	ID = "mercenary_leader_helmet_gilded_00", // 220-245 -11-10 -4-3 2650
+	ID = "mercenary_leader_helmet_gilded_00", // 220-245 -10-11 -4-3 2650
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -226,7 +226,7 @@
 			[1, "helm/legend_helmet_barbute", 3] // 75 -3 -2 1250
 		],
 		Tops = [
-			[1, "top/legend_helmet_faceplate_winged_full_named"], // 65-90 -4-3 -2-1 1000
+			[1, "top/legend_helmet_faceplate_winged_full_named"], // 65-90 -3-4 -2-1 1000
 		],
 		Vanity = [
 		]
@@ -258,7 +258,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Mercenary.mercenary_billman_helmet_00);
 
 ::Legends.Helmet.Mercenary.mercenary_longbow_helmet_00 <- {
-	ID = "mercenary_longbow_helmet_00", // 80-95 -3-4 -0-1 200-895
+	ID = "mercenary_longbow_helmet_00", // 80-90 -3-4 -0-1 200-895
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -273,7 +273,7 @@
 		],
 		Vanity = [
 			[3, ""],
-			[1, "vanity/legend_helmet_headband"], // 10 -0 -0 20
+			[1, "vanity/legend_helmet_headband"], // 5 -0 -0 20
 			[1, "vanity/legend_helmet_southern_patterned_headband"], // 5 -0 -0 20
 			[1, "vanity/legend_helmet_southern_patterned_headwrap"] // 5 -0 -0 20
 		]

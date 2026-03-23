@@ -1748,7 +1748,7 @@
 		],
 		Cloak = [
 			[1, ""],
-			[2, "cloak/legend_armor_shoulder_cloth", 2], // 5 -0 50,
+			[2, "cloak/legend_armor_shoulder_cloth", 2], // 5 -0 50
 			[2, "cloak/legend_direwolf_pelt_cloak"], // 10
 		],
 		Tabard = [

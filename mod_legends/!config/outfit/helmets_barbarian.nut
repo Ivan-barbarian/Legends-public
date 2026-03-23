@@ -19,7 +19,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Barbarian.barbarian_ritual_helmet);
 
 ::Legends.Helmet.Barbarian.bear_headpiece <- {
-	ID = "barbarians/bear_headpiece", // 43-70 -1-3 -0 125-250
+	ID = "barbarians/bear_headpiece", // 45-70 -1-3 -0 125-250
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -32,7 +32,7 @@
 		Tops = [
 		],
 		Vanity = [
-			[1, "vanity/legend_helmet_bear_head"], // 8 -0 -0 50
+			[1, "vanity/legend_helmet_bear_head"], // 10 -0 -0 50
 			[1, "vanity/legend_helmet_wolf_helm"], // 10 -0 -0 100
 		]
 	}]
@@ -140,12 +140,12 @@
 		Tops = [
 			[2, ""], //10
 			[1, "top/legend_helmet_barb_hood_leather"], // 45 -4 -2 300
-			[2, "top/legend_helmet_headband_side"], // 10 -0 -0 30
-			[2, "top/legend_helmet_headband_nose"], // 10 -0 -0 30
+			[2, "top/legend_helmet_headband_side"], // 5 -0 -0 30
+			[2, "top/legend_helmet_headband_nose"], // 5 -0 -0 30
 		],
 		Vanity = [
 			[1, "vanity/legend_helmet_antler"], // 5 -0 -0 20
-			[1, "vanity/legend_helmet_bear_head"], // 8 -0 -0 50
+			[1, "vanity/legend_helmet_bear_head"], // 10 -0 -0 50
 			[5, "vanity/legend_helmet_bull_horns"], // 5 -0 -0 20
 			[1, "vanity/legend_helmet_goat_horns"], // 10 -0 -0 100
 			[1, "vanity/legend_helmet_ram_horns"], // 6 -0 -0 50
@@ -156,7 +156,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Barbarian.heavy_horned_plate_helmet);
 
 ::Legends.Helmet.Barbarian.leather_headband <- {
-	ID = "barbarians/leather_headband", // 35 -0 -0 85
+	ID = "barbarians/leather_headband", // 30 -0 -0 85
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -165,8 +165,8 @@
 		Helms = [
 		],
 		Tops = [
-			[1, "top/legend_helmet_headband_side"], // 10 -0 -0 30
-			[1, "top/legend_helmet_headband_nose"], // 10 -0 -0 30
+			[1, "top/legend_helmet_headband_side"], // 5 -0 -0 30
+			[1, "top/legend_helmet_headband_nose"], // 5 -0 -0 30
 		],
 		Vanity = [
 		]
@@ -175,7 +175,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Barbarian.leather_headband);
 
 ::Legends.Helmet.Barbarian.leather_helmet <- {
-	ID = "barbarians/leather_helmet", // 120-153 -7-9 -2 525-650
+	ID = "barbarians/leather_helmet", // 120-155 -7-9 -2 525-650
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -193,7 +193,7 @@
 			[1, "vanity/legend_helmet_bull_horns"], // 5 -0 -0 20
 			[1, "vanity/legend_helmet_ram_horns"], // 6 -0 -0 50
 			[1, "vanity/legend_helmet_ponytail"], // 5 -0 -0 50
-			[1, "vanity/legend_helmet_bear_head"], // 8 -0 -0 50
+			[1, "vanity/legend_helmet_bear_head"], // 10 -0 -0 50
 			[10, ""], //30
 		]
 	}]

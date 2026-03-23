@@ -320,12 +320,9 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		}
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head)) {
-			local helmet = [
+			this.m.Items.equip(this.Const.World.Common.pickHelmet([
 				[1, ::Legends.Helmet.Standard.ghost_helmet]
-			];
-			this.m.Items.equip(this.Const.World.Common.pickHelmet(
-				helmet
-			));
+			]));
 		}
 	}
 
@@ -350,15 +347,10 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		if (r == 1)
 		{
 			local armor = this.Const.World.Common.pickArmor([
-				[1, ::Legends.Armor.Standard.ghost_armor]
+				[2, ::Legends.Armor.Named.ghost_armor_named_01],
+				[1, ::Legends.Armor.Named.ghost_armor_named_02]
 			]);
-			upgrades = [
-				"plate/legend_armor_plate_full_greaves_named",
-				"plate/legend_armor_plate_full_greaves_painted",
-				"chain/legend_armor_hauberk_full_named"
-			]
-			// armor.setUpgrade(this.new("scripts/items/legend_armor/" + upgrades[this.Math.rand(0, upgrades.len() - 1)]));
-			this.m.Items.equip(this.new("scripts/items/legend_armor/" + upgrades[this.Math.rand(0, upgrades.len() - 1)]));
+			this.m.Items.equip(armor);
 		}
 		else if (r == 2)
 		{
@@ -366,15 +358,10 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		}
 		else
 		{
-			local helmet = this.Const.World.Common.pickArmor([
-				[1, ::Legends.Armor.Standard.ghost_helmet]
+			local helmet = this.Const.World.Common.pickHelmet([
+				[1, ::Legends.Helmet.Named.ghost_helmet_named]
 			]);
-			upgrades = [
-				"helm/legend_helmet_frogmouth_named",
-				"helm/legend_helmet_armet_named"
-			]
-			// helmet.setUpgrade(this.new("scripts/items/legend_armor/" + upgrades[this.Math.rand(0, upgrades.len() - 1)]));
-			this.m.Items.equip(this.new("scripts/items/legend_helmets/" + upgrades[this.Math.rand(0, upgrades.len() - 1)]));
+			this.m.Items.equip(helmet);
 		}
 
 		return true;
