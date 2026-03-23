@@ -11,7 +11,8 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		DistortAnimationStartTimeC = 0,
 		DistortTargetD = null,
 		DistortTargetPrevD = this.createVec(0, 0),
-		DistortAnimationStartTimeD = 0
+		DistortAnimationStartTimeD = 0,
+		ArmorDifficultyMult = 1.5,
 	},
 
 	function create() {
@@ -234,13 +235,18 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		::Legends.Perks.grant(this, ::Legends.Perk.LegendComposure);
 		::Legends.Perks.grant(this, ::Legends.Perk.LegendPoisonImmunity);
 		::Legends.Perks.grant(this, ::Legends.Perk.Fearsome);
+		::Legends.Perks.grant(this, ::Legends.Perk.BattleForged)
 		if (::Legends.isLegendaryDifficulty()) {
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendSmashingShields);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendBackToBasics);
 			::Legends.Perks.grant(this, ::Legends.Perk.ShieldBash);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendImmovableObject);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendBloodyHarvest);
+			this.m.ArmorDifficultyMult = 2;
 		}
+		::Legends.S.scaleBaseProperties(b);
+		local daysToScale = this.Math.floor(this.World.getTime().Days / ::Legends.S.getDaysToScaleDifficulty());
+		this.m.ArmorDifficultyMult += 0.1 * this.Math.floor(daysToScale);
 	}
 
 	function onRender() {
@@ -326,6 +332,15 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		}
 	}
 
+	function onPlacedOnMap() {
+		this.actor.onPlacedOnMap();
+		this.m.BaseProperties.Armor[this.Const.BodyPart.Head] *= this.m.ArmorDifficultyMult;
+		this.m.BaseProperties.ArmorMax[this.Const.BodyPart.Head] *= this.m.ArmorDifficultyMult;
+		this.m.BaseProperties.Armor[this.Const.BodyPart.Body] *= this.m.ArmorDifficultyMult;
+		this.m.BaseProperties.ArmorMax[this.Const.BodyPart.Body] *= this.m.ArmorDifficultyMult;
+
+	}
+
 	function makeMiniboss() {
 		if (!this.actor.makeMiniboss()) {
 			return false;
@@ -344,20 +359,17 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 
 		local upgrades = [];
 		local r = this.Math.rand(1, 3);
-		if (r == 1)
-		{
+		if (r == 1) {
 			local armor = this.Const.World.Common.pickArmor([
 				[2, ::Legends.Armor.Named.ghost_armor_named_01],
 				[1, ::Legends.Armor.Named.ghost_armor_named_02]
 			]);
 			this.m.Items.equip(armor);
 		}
-		else if (r == 2)
-		{
+		else if (r == 2) {
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
-		else
-		{
+		else {
 			local helmet = this.Const.World.Common.pickHelmet([
 				[1, ::Legends.Helmet.Named.ghost_helmet_named]
 			]);
