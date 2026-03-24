@@ -201,12 +201,12 @@ class Defs:
 
 ### Helm
 
-{"name" : "ancient_conic_helm"                     , "layer" : "helm",  "lower": True, "min" : 1, "max" : 5, "value" : 200, "con" : 60, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
+{"name" : "ancient_conic_helm"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 200, "con" : 60, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Ancient Conical Helm",
  "desc" :  "A conical helm with a nasal guard from a bygone era, its ragged leather lining barely hanging from the weathered shell.",
  "adesc" : "Includes an ancient conical helm."
  },
-{"name" : "ancient_kettle"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 15, "value" : 200, "con" : 60, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
+{"name" : "ancient_kettle"                     , "layer" : "helm", "min" : 1, "max" : 15, "value" : 200, "con" : 60, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Ancient Kettle",
  "desc" :  "An ancient kettle helm decorated with a tall metal crest, topped with twin feathers that have since lost their lustre.",
  "adesc" : "Includes an ancient kettle helm."
@@ -246,7 +246,7 @@ class Defs:
  "desc" :  "A conical helm of ancient design, topped with a tail long stiff and matted with rot.",
  "adesc" : "Includes a heavy, ancient tailed conical helm."
  },
-{"name" : "ancient_face_helm"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 5, "value" : 500, "con" : 120, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
+{"name" : "ancient_face_helm"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 500, "con" : 120, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Ancient Face Helm",
  "desc" :  "A sturdy helm with a face mask of an ancient honor guard. Despite its age, the helm is in remarkably good condition.",
  "adesc" : "Includes a sturdy, ancient helm with a metal face mask."

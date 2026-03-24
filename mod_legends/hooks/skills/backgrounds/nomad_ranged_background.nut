@@ -24,9 +24,7 @@
 				::Const.Perks.CivilizationTree,
 				::Const.Perks.BeastTree,
 			],
-			Class = [
-				::Const.Perks.SlingClassTree
-			],
+			Class = [],
 			Profession = [],
 			Magic = []
 		}
