@@ -12,7 +12,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		DistortTargetD = null,
 		DistortTargetPrevD = this.createVec(0, 0),
 		DistortAnimationStartTimeD = 0,
-		ArmorDifficultyMult = 0.5,
+		ArmorDifficultyMult = 1.5,
 	},
 
 	function create() {
@@ -315,7 +315,6 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		if (::Legends.isLegendaryDifficulty()) {
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendSmashingShields);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendBackToBasics);
-			::Legends.Perks.grant(this, ::Legends.Perk.ShieldBash);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendImmovableObject);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendBloodyHarvest);
 			this.m.ArmorDifficultyMult += 0.5;
@@ -325,7 +324,8 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 
 		local daysToScale = this.Math.floor(this.World.getTime().Days / ::Legends.S.getDaysToScaleDifficulty());
 		this.m.ArmorDifficultyMult += 0.1 * this.Math.floor(daysToScale);
-		::Legends.Traits.get(this, ::Legends.Trait.RacialGhost).m.ArmorDifficultyMult = this.m.ArmorDifficultyMult;
+		b.ArmorMult[0] = this.m.ArmorDifficultyMult;
+		b.ArmorMult[1] = this.m.ArmorDifficultyMult;
 	}
 
 	function onRender() {
@@ -416,7 +416,11 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 			return false;
 		}
 
-		::Legends.Traits.get(this, ::Legends.Trait.RacialGhost).m.ArmorDifficultyMult = this.m.ArmorDifficultyMult + 0.5;
+		local b = this.m.BaseProperties;
+		this.m.ArmorDifficultyMult += 0.5;
+		b.ArmorMult[0] = this.m.ArmorDifficultyMult;
+		b.ArmorMult[1] = this.m.ArmorDifficultyMult;
+
 		this.getSprite("miniboss").setBrush("bust_miniboss");
 		local weapons = [
 			"weapons/named/named_greataxe",
