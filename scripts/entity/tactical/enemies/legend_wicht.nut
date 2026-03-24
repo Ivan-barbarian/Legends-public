@@ -114,14 +114,16 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 
 			local appearance = this.getItems().getAppearance();
 
+			//will need edits if wichts start using front/back upgrades similar to human.nut
 			local armorLayers = [
 				"CorpseArmor"
 				"CorpseArmorLayerChain",
 				"CorpseArmorLayerPlate",
 				"CorpseArmorLayerTabbard",
+				"CorpseArmorUpgradeBack",
+				"CorpseArmorUpgradeFront",
 				"CorpseArmorLayerCloakBack",
 				"CorpseArmorLayerCloakFront",
-				"CorpseArmorUpgradeFront"
 			];
 
 			foreach (layer in armorLayers) {
@@ -134,8 +136,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 				}
 			}
 
-			if (!appearance.HideCorpseHead
-				&& _fatalityType != this.Const.FatalityType.Decapitated)
+			if (!appearance.HideCorpseHead && _fatalityType != this.Const.FatalityType.Decapitated)
 			{
 				local helmetLayers = [
 					"HelmetLayerVanityLowerCorpse",
@@ -287,9 +288,9 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("armor_layer_tabbard");
 		this.addSprite("accessory");
 		this.addSprite("accessory_special");
+		this.addSprite("armor_upgrade_back");
 		this.addSprite("armor_layer_cloak");
 		this.addSprite("armor_layer_cloak_front");
-		this.addSprite("armor_upgrade_back");
 		this.addSprite("helmet");
 		this.addSprite("helmet_damage");
 		this.addSprite("helmet_helm");

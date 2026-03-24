@@ -109,6 +109,16 @@ var Helper = {
 		currentImageIndex++;
 	}
 
+	var frontBackShoulders = [ // add front-back upgrades here to draw them over cloaks in the inventory
+		"legend_armor/inventory_pauldrons_shoulderplates_heraldic",
+		"legend_armor/inventory_pauldrons_barbarian_horn",
+		"legend_armor/inventory_pauldrons_padding_fur"
+	];
+
+	var hasFrontBackShoulders = _imagePaths.some(function(imagepath){
+		return frontBackShoulders.some(function(item) { return imagepath.indexOf(item) === 0; });
+	})
+
 	if(_slot === "head"){
 		addLayer(0, 4, 2); // helm   
 		addLayer(1, 5, 3); // top
@@ -121,8 +131,14 @@ var Helper = {
 		addLayer(0, 0); // chain   
 		addLayer(1, 1); // plate
 		addLayer(2, 2); // tabard
-		addLayer(3, 3); // cloak
-		addLayer(4, 4); // upgrade
+		if (hasFrontBackShoulders)	{
+			addLayer(3, 3); // cloak
+			addLayer(4, 4); // upgrade
+		}
+		else {
+			addLayer(3, 4); // cloak
+			addLayer(4, 3); // upgrade
+		}
 		addLayer(5, 5); // runes
 	}
 
