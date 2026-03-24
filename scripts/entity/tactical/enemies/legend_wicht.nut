@@ -12,7 +12,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		DistortTargetD = null,
 		DistortTargetPrevD = this.createVec(0, 0),
 		DistortAnimationStartTimeD = 0,
-		ArmorDifficultyMult = 1.5,
+		ArmorDifficultyMult = 0.5,
 	},
 
 	function create() {
@@ -318,11 +318,14 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 			::Legends.Perks.grant(this, ::Legends.Perk.ShieldBash);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendImmovableObject);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendBloodyHarvest);
-			this.m.ArmorDifficultyMult = 2;
+			this.m.ArmorDifficultyMult += 0.5;
 		}
-		::Legends.S.scaleBaseProperties(b);
+		::Legends.S.scaleBaseProperties(b); // this bit increases hitpoints
+		b.Hitpoints = 1;
+
 		local daysToScale = this.Math.floor(this.World.getTime().Days / ::Legends.S.getDaysToScaleDifficulty());
 		this.m.ArmorDifficultyMult += 0.1 * this.Math.floor(daysToScale);
+		::Legends.Traits.get(this, ::Legends.Trait.RacialGhost).m.ArmorDifficultyMult = this.m.ArmorDifficultyMult;
 	}
 
 	function onRender() {
@@ -408,20 +411,12 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		}
 	}
 
-	function onPlacedOnMap() {
-		this.actor.onPlacedOnMap();
-		this.m.BaseProperties.Armor[this.Const.BodyPart.Head] *= this.m.ArmorDifficultyMult;
-		this.m.BaseProperties.ArmorMax[this.Const.BodyPart.Head] *= this.m.ArmorDifficultyMult;
-		this.m.BaseProperties.Armor[this.Const.BodyPart.Body] *= this.m.ArmorDifficultyMult;
-		this.m.BaseProperties.ArmorMax[this.Const.BodyPart.Body] *= this.m.ArmorDifficultyMult;
-
-	}
-
 	function makeMiniboss() {
 		if (!this.actor.makeMiniboss()) {
 			return false;
 		}
 
+		::Legends.Traits.get(this, ::Legends.Trait.RacialGhost).m.ArmorDifficultyMult = this.m.ArmorDifficultyMult + 0.5;
 		this.getSprite("miniboss").setBrush("bust_miniboss");
 		local weapons = [
 			"weapons/named/named_greataxe",
