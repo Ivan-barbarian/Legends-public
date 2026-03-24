@@ -17,7 +17,7 @@ class Defs:
         {"name": "cloak_basilisk", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
         {"name": "cloak_cursed", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
         {"name" :"cloak_emperors_named", "min" : 1, "max" : 1, "layer" : "cloak", "impactSound" : "leather", "invSound" : "cloth"},
-        {"name": "cloak_fur_hyena", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth", "front_back": { "front" : [-54,4,-57,21], "front_dead" : [-9,43,-55,29], "back": [9,51,-41,19], "back_dead": [-51,-17,-50,16] }},
+        {"name": "cloak_fur_hyena", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth", "front_back": { "front" : [-63,1,-50,12], "front_dead" : [-4,58,-59,7], "back": [-61,55,-50,42], "back_dead": [-57,33,-76,28] }},
         {"name": "cloak_fur_unhold", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth", "front_back": { "front" : [-64,-2,-59,11], "front_dead" : [-2,60,-55,11], "back": [-43,57,-32,28], "back_dead": [-59,35,-61,9] }},
         {"name": "cloak_hexe", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
         {"name": "cloak_lindwurm", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
