@@ -213,7 +213,7 @@
 			armorLayers.push("CorpseArmorUpgradeFront");
 		} 
 		else {
-    		armorLayers.insert(3, tempCorpseArmorUpgradeBack);
+    		armorLayers.insert(3, "CorpseArmorUpgradeBack");
 		}
 
 		foreach (layer in armorLayers) {
