@@ -3278,4 +3278,12 @@ activesDefs.push({
 	Name = "Line Them Up",
 });
 
+::Legends.Active.LesserFleshGolemAttack <- null;
+activesDefs.push({
+	ID = "actives.lesser_flesh_golem_attack",
+	Script = "scripts/skills/actives/lesser_flesh_golem_attack_skill",
+	Const = "LesserFleshGolemAttack",
+	Name = "Smack",
+});
+
 ::Legends.Actives.addActiveDefObjects(activesDefs);
