@@ -33,6 +33,8 @@ This activates Dual Wield:
 - `Ballistics` now also increases range of handgonne
 - `Stick Fighting` now gives 16 matk, mdef and rdef when wielding a staff or a magic staff and 8 when wielding a hybrid staff or musical instrument
 - `Muscularity` now has no lower bound.
+- `Thrust Master` tooltip fixes
+- `Barrage` tooltip fixes
 
 ### One Handed Tree
 - no longer exists in short
@@ -63,6 +65,12 @@ Favoured Enemy - Civilization
 Favoured Enemy - Outlaw
 Favoured Enemy - Sword Master
 
+## Backgrounds
+- added new icons to gladiator prizefighter and pilgrim
+
+## Origins
+- ranger origin's druid rebalanced to use the regular druid background with extra talents and melee skill
+
 ## New enemies
 
 - Orc Tyrant - elite orc warlord, his warcry can cascade on other warlords
@@ -74,6 +82,7 @@ Favoured Enemy - Sword Master
 - Bandit Warlord is renamed to Robber Baron
 - Webknechts lose 10 rdef and 10 mdef on Legendary, but retain Dodge
 - Bandit Rabble should start being phased out by Bandit Thugs much quicker
+- Normalized Bandit Thug outfits by removing the highest one
 - Zombies will now have increased action points but will move slower on all terrains (like a reverse pathfinder)
 > Wiederganger 6 to 8;
 > Armored Wiederganger 6 to 8;
@@ -104,6 +113,11 @@ Favoured Enemy - Sword Master
 - named items naming fixes and changes
 - fixed beard/hair hiding while covering items are set to invisible
 - modified layering so some L2's go under L1
+- all tail items moved to lower vanity
+
+### Shields
+- added a few missing shield paints
+- fixed towershield paint to only the wooden part
 	
 ### Armors
 - added Studded Aketon
@@ -111,6 +125,7 @@ Favoured Enemy - Sword Master
 - description fixes and changes
 - named items naming fixes and changes
 - hyena fur, white wolf pelt, direwolf pelt upgrades reformed into cloaks
+- regular cloaks now displayed over upgrades
 
 ### Weapons
 
@@ -119,12 +134,13 @@ Favoured Enemy - Sword Master
 - `Horn Decorated Mace` - named mace, will appear on Runechosen
 - `Named Longsword` - named version of the longsword
 - `Blooddrinker` - Legendary Cleaver which will drop from the Mastaba
+- `Golden Cestus` - named version of the cestus
 
 #### New Weapon Abilities
 
 * Named Cleaver and sword riposte effects will no longer roll on named items
 
-**Infatry Axes**
+**Infantry Axes**
 - `Chop` is replaced with `Hack`
 > 40% armor penetration and 25% better chance to hit the head
 
@@ -197,8 +213,9 @@ Favoured Enemy - Sword Master
 * `Harvest` - two tile swing which applies 5-10 bleeding damage
 * `Decapitate` - unchanged
 
-**Crowsbows**
+**Crossbows**
 * gain `Piercing Shot` by default
+* `Strafing Shot` gains a new icon
 
 **Shortbows**
 
@@ -220,6 +237,7 @@ Favoured Enemy - Sword Master
 - possible fix for ai rotation crashes
 - fixed an error giving higher scaling to starts that have less than 3 characters
 - fixed an error with gear scaling using sell price instead of value
+- fixed incorrect time and item count tooltips on the camp screen
 
 ### For modders:
 
