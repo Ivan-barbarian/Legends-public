@@ -238,6 +238,7 @@ Favoured Enemy - Sword Master
 - fixed an error giving higher scaling to starts that have less than 3 characters
 - fixed an error with gear scaling using sell price instead of value
 - fixed incorrect time and item count tooltips on the camp screen
+- fixed rerolling trait into the same trait during merciless regimen
 
 ### For modders:
 

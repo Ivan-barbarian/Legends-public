@@ -149,8 +149,8 @@
 				price = ::Legends.Training.CostRerollBase + trait.m.TraitRerollCount * ::Legends.Training.CostRerollScaled;
 				trait.m.TraitRerollDelay += 5;
 				trait.m.TraitRerollCount += 1;
-				::Legends.Traits.remove(entity, trait.m.TraitGained);
 				local traitConst = ::Legends.Training.addRandomTrainingTrait(entity);
+				::Legends.Traits.remove(entity, trait.m.TraitGained);
 				trait.finishedTraining(traitConst);
 				::Time.scheduleEvent(::TimeUnit.Real, 200, this.showTraitPopup.bindenv(this),
 					::format("Trained trait changed to [color=%s]%s[/color].", ::Const.UI.Color.PositiveEventValue, ::Legends.Traits.get(entity, traitConst).getName())
