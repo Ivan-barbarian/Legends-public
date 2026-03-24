@@ -12,7 +12,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		DistortTargetD = null,
 		DistortTargetPrevD = this.createVec(0, 0),
 		DistortAnimationStartTimeD = 0,
-		ArmorDifficultyMult = 1.5,
+		ArmorDifficultyMult = 0.5,
 	},
 
 	function create() {
@@ -324,8 +324,6 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 
 		local daysToScale = this.Math.floor(this.World.getTime().Days / ::Legends.S.getDaysToScaleDifficulty());
 		this.m.ArmorDifficultyMult += 0.1 * this.Math.floor(daysToScale);
-		b.ArmorMult[0] = this.m.ArmorDifficultyMult;
-		b.ArmorMult[1] = this.m.ArmorDifficultyMult;
 	}
 
 	function onRender() {
@@ -395,19 +393,23 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 
+		local b = this.m.BaseProperties;
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body)) {
-			local armor = [
+			local armor = this.Const.World.Common.pickArmor([
 				[1, ::Legends.Armor.Standard.ghost_armor]
-			];
-			this.m.Items.equip(this.Const.World.Common.pickArmor(
-				armor
-			));
+			]);
+			b.Armor[0] = this.Math.round(armor.getArmorMax() * this.m.ArmorDifficultyMult)
+			b.ArmorMax[0] = this.Math.round(armor.getArmorMax() * this.m.ArmorDifficultyMult)
+			this.m.Items.equip(armor);
 		}
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head)) {
-			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+			local helmet = this.Const.World.Common.pickHelmet([
 				[1, ::Legends.Helmet.Standard.ghost_helmet]
-			]));
+			]);
+			b.Armor[1] = this.Math.round(helmet.getArmorMax() * this.m.ArmorDifficultyMult)
+			b.ArmorMax[1] = this.Math.round(helmet.getArmorMax() * this.m.ArmorDifficultyMult)
+			this.m.Items.equip(helmet);
 		}
 	}
 
@@ -418,8 +420,6 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 
 		local b = this.m.BaseProperties;
 		this.m.ArmorDifficultyMult += 0.5;
-		b.ArmorMult[0] = this.m.ArmorDifficultyMult;
-		b.ArmorMult[1] = this.m.ArmorDifficultyMult;
 
 		this.getSprite("miniboss").setBrush("bust_miniboss");
 		local weapons = [
@@ -439,6 +439,8 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 				[2, ::Legends.Armor.Named.ghost_armor_named_01],
 				[1, ::Legends.Armor.Named.ghost_armor_named_02]
 			]);
+			b.Armor[0]= this.Math.round(armor.getArmorMax() * this.m.ArmorDifficultyMult);
+			b.ArmorMax[0]= this.Math.round(armor.getArmorMax() * this.m.ArmorDifficultyMult);
 			this.m.Items.equip(armor);
 		}
 		else if (r == 2) {
@@ -448,6 +450,8 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 			local helmet = this.Const.World.Common.pickHelmet([
 				[1, ::Legends.Helmet.Named.ghost_helmet_named]
 			]);
+			b.Armor[1]= this.Math.round(helmet.getArmorMax() * this.m.ArmorDifficultyMult);
+			b.ArmorMax[1]= this.Math.round(helmet.getArmorMax() * this.m.ArmorDifficultyMult);
 			this.m.Items.equip(helmet);
 		}
 
