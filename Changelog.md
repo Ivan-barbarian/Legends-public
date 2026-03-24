@@ -66,7 +66,10 @@ Favoured Enemy - Outlaw
 Favoured Enemy - Sword Master
 
 ## Backgrounds
-- added new icons to gladiator prizefighter and pilgrim
+- `Belly Dancer` receives 20% scouting modifier for camping purposes
+- `Berserker` can no longer roll `Sureshot` and `Steady Hands` traits
+- `Gladiator Prizefighter` added new icon
+- `Pilgrim` added new icon
 
 ## Origins
 - ranger origin's druid rebalanced to use the regular druid background with extra talents and melee skill
@@ -229,8 +232,7 @@ Favoured Enemy - Sword Master
 
 - additional info is now provided on support skill including if the skill is considered an attack, it's range and the maximum level difference
 - african male heads have been updated and adjusted to start showing up on brothers
-- `Belly Dancer` receives 20% scouting modifier for camping purposes
-- `Berserker` can no longer roll `Sureshot` and `Steady Hands` traits
+- bros in training hall with no training options are now hidden from the list
 
 ## Bug Fixes
 
