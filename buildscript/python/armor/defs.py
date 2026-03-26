@@ -5,7 +5,7 @@ class Defs:
     brush_only_layers = [ #sounds unused, only for readability
         ### Plate
         {"name" :"armor_davkul_named", "min" : 1, "max" : 1, "layer" : "plate"}, # custom sounds
-        {"name" :"armor_emperors_named", "min" : 1, "max" : 2, "layer" : "plate", "impactSound" : "plate", "invSound" : "plate"},
+        {"name" :"armor_emperors_named", "min" : 1, "max" : 5, "layer" : "plate", "impactSound" : "plate", "invSound" : "plate"},
         #{"name": "armor_ijirok_named", "min" : 1, "max" : 1, "layer": "plate", "impactSound" : "plate", "invSound" : "plate"},
         {"name": "mountain_armor", "min" : 1, "max" : 2, "layer": "plate", "impactSound" : "plate", "invSound" : "plate"},
         {"name": "skin_armor", "min" : 1, "max" : 2, "layer": "plate", "impactSound" : "leather", "invSound" : "leather"},
@@ -15,15 +15,15 @@ class Defs:
         {"name": "tabard_named", "min" : 1, "max" : 26, "layer": "tabard", "impactSound" : "leather", "invSound" : "cloth"},
         ### Cloak
         {"name": "cloak_basilisk", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
-        {"name": "cloak_cursed", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
-        {"name" :"cloak_emperors_named", "min" : 1, "max" : 1, "layer" : "cloak", "impactSound" : "leather", "invSound" : "cloth"},
+        {"name": "cloak_cursed", "min" : 1, "max" : 5, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
+        {"name" :"cloak_emperors_named", "min" : 1, "max" : 4, "layer" : "cloak", "impactSound" : "leather", "invSound" : "cloth"},
         {"name": "cloak_fur_hyena", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth", "front_back": { "front" : [-63,1,-50,12], "front_dead" : [-4,58,-59,7], "back": [-61,55,-50,42], "back_dead": [-57,33,-76,28] }},
         {"name": "cloak_fur_unhold", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth", "front_back": { "front" : [-64,-2,-59,11], "front_dead" : [-2,60,-55,11], "back": [-43,57,-32,28], "back_dead": [-59,35,-61,9] }},
-        {"name": "cloak_hexe", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
+        {"name": "cloak_hexe", "min" : 1, "max" : 5, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
         {"name": "cloak_lindwurm", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
         {"name": "cloak_pelt_wolf_dire", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth", "front_back": { "front" : [-70,0,-56,18], "front_dead" : [-14,60,-76,2], "back": [-61,55,-49,43], "back_dead": [-56,50,-71,23] }},
         {"name": "cloak_pelt_wolf_white", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth", "front_back": { "front" : [-70,0,-56,18], "front_dead" : [-14,60,-76,2], "back": [-61,55,-49,43], "back_dead": [-56,50,-71,23] }},
-        {"name": "cloak_redback", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
+        {"name": "cloak_redback", "min" : 1, "max" : 4, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
         {"name": "cloak_serpent", "min" : 1, "max" : 1, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
         {"name": "cloak_stollwurm", "min" : 1, "max" : 2, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
         {"name": "cloak_rich", "min" : 1, "max" : 6, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
@@ -60,7 +60,7 @@ class Defs:
 
     layers = [
 ### Cloth
-{"name": "ancient_cloth",                          "layer": "cloth", "min": 1, "max": 4, "value" : 20, "con" : 30, "stam" : -5, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "ancient_cloth",                          "layer": "cloth", "min": 1, "max": 11, "value" : 20, "con" : 30, "stam" : -5, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Ancient Cloth",
  "desc" :  "An ancient cloth wrap, heavy and offering little protection.",
  "adesc" :""
@@ -176,7 +176,7 @@ class Defs:
  "desc" :  "Various uneven patches of rough leather sewn together.",
  "adesc" :""
 },
-{"name": "bandages",                              "layer": "cloth", "min": 1, "max": 2, "value" : 1, "con" : 5, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "bandages",                              "layer": "cloth", "min": 1, "max": 6, "value" : 1, "con" : 5, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Bandages",
  "desc" :  "Normally used for dressing wounds rather than preventing new ones.",
  "adesc" :""
@@ -283,12 +283,12 @@ class Defs:
  "desc" :  "Heavy and rotten double-layered mail of ancient design offering decent protection, but very fatiguing to wear.",
  "adesc" :"Includes a set of heavy and rotten double-layered mail of ancient design."
 },
-{"name": "ancient_mail",                     "layer": "chain", "min": 1, "max": 1, "value" : 300, "con" : 35, "stam" : -6, "impactSound" : "chain", "invSound" : "chain",
+{"name": "ancient_mail",                     "layer": "chain", "min": 1, "max": 5, "value" : 300, "con" : 35, "stam" : -6, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Ancient Mail",
  "desc" :  "Old and crusted heavy mail of ancient design offering some protection, but fatiguing to wear.",
  "adesc" :"Includes a set of old and crusted heavy mail of ancient design."
 },
-{"name": "basic_mail",                       "layer": "chain", "min": 1, "max": 1, "value" : 800, "con" : 85, "stam" : -12, "impactSound" : "chain", "invSound" : "chain",
+{"name": "basic_mail",                       "layer": "chain", "min": 1, "max": 4, "value" : 800, "con" : 85, "stam" : -12, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Basic Mail",
  "desc" :  "A set of chain mail that offers good protection, but is very fatiguing to wear.",
  "adesc" : "Includes a set of long and heavy chain mail."
@@ -433,7 +433,7 @@ class Defs:
  "adesc" : "Includes a well-crafted studded leather jacket.",
  "named" : { "con": { "min" : 35, "max" : 45 }, "fat": { "min" : 2, "max" : 1 }, "names" : ["Leather Cuirass", "Leather Armor", "Skin", "Peel", "Guard", "Coat", "Nightcloak", "Black Leather", "Dark Omen", "Toadskin", "Ogreskin"]  }
 },
-{"name": "apron_undertakers",                                  "layer": "plate", "min": 1, "max": 1, "value" : 60, "con" : 35, "stam" : -4, "impactSound" : "leather", "invSound" : "leather",
+{"name": "apron_undertakers",                                  "layer": "plate", "min": 1, "max": 10, "value" : 60, "con" : 35, "stam" : -4, "impactSound" : "leather", "invSound" : "leather",
  "title" :  "Undertaker's Apron",
  "desc" :  "A heavy leather apron designed to protect the wearer's clothing from stains and fluids. Usually worn by those who tend to the dead.",
  "adesc" :"Includes a heavy leather undertaker's apron."
@@ -448,7 +448,7 @@ class Defs:
  "desc" :  "Numerous overlapping leather plates provide decent protection for most of the upper body.",
  "adesc" : "Includes armor of overlapping leather plates."
 },
-{"name": "cult_armor",               "itemType" : "this.Const.Items.ItemType.Cultist", "layer": "plate", "min": 1, "max": 2, "value" : 250, "con" : 55, "stam" : -7, "impactSound" : "leather", "invSound" : "leather",
+{"name": "cult_armor",               "itemType" : "this.Const.Items.ItemType.Cultist", "layer": "plate", "min": 1, "max": 30, "value" : 250, "con" : 55, "stam" : -7, "impactSound" : "leather", "invSound" : "leather",
  "title" :  "Cultist Leather Armor",
  "desc" :  "Dark, heavy leather armor adorned with occult symbols. It offers sturdy protection and was likely used in grim rituals.",
  "adesc" : "Includes leather armor adorned with occult symbols."
@@ -767,7 +767,7 @@ class Defs:
  "desc" :  "A shawl of exquisite material that wraps around the shoulders, signifying high status and wealth.",
  "adesc" : "Includes a fine noble shawl."
 },
-{"name": "cloak_wooly_dark",           "layer": "cloak", "min": 1, "max": 1, "value" : 120, "con" : 15, "stam" : -2, "bravery" : 1, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "cloak_wooly_dark",           "layer": "cloak", "min": 1, "max": 4, "value" : 120, "con" : 15, "stam" : -2, "bravery" : 1, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Dark Wooly Cloak",
  "desc" :  "A cloak of dark wool that wraps around the shoulders.",
  "adesc" : "Includes a cloak of dark wool."
@@ -807,12 +807,12 @@ class Defs:
  "desc" :  "A dark hood with reinforced edges popular with those working with filth and entrails.",
  "adesc" : "Includes a dark hood with reinforced edges."
 },
-{"name": "cloak_cursed",           "layer": "cloak", "min": 1, "max": 1, "value" : 500, "con" : 20, "stam" : -1, "bravery" : -1, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "cloak_cursed",           "layer": "cloak", "min": 1, "max": 5, "value" : 500, "con" : 20, "stam" : -1, "bravery" : -1, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Cursed Cloak",
  "desc" :  "A cloak of the feathers of a strange creature of the abyss. ",
  "adesc" : "Includes a cloak of the feathers of a strange creature of the abyss."
 },
-{"name": "cloak_crusader",           "layer": "cloak", "min": 1, "max": 1, "value" : 500, "con" : 35, "stam" : -5, "bravery" : 4, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "cloak_crusader",           "layer": "cloak", "min": 1, "max": 6, "value" : 500, "con" : 35, "stam" : -5, "bravery" : 4, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Crusader's Cloak",
  "desc" :  "A holy cloak of thick, layered, warm wool that provides some protection, but is quite hefty.",
  "adesc" : "Includes a holy cloak of thick, layered wool."

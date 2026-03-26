@@ -10,7 +10,7 @@ this.legend_hexen_leader_cloak <- this.inherit("scripts/items/legend_armor/legen
 		this.m.Name = "Hexen Leader Silk Cloak";
 		this.m.Description = "An elegant cloak made of gossamer and powerful witch's hair shielding the wearer's mind against adversity and foul magic alike.";
 		this.m.ArmorDescription = "Includes an elegant cloak.";
-		this.m.Variants = [1];
+		this.m.Variants = [1, 2, 3, 4, 5];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;

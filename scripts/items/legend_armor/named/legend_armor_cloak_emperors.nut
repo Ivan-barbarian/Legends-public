@@ -12,8 +12,8 @@ this.legend_armor_cloak_emperors <- this.inherit("scripts/items/legend_armor/leg
 		this.m.ArmorDescription = "Has a flowing embroidered cloak of the finest material.";
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
-		this.m.Variants = [1];
-		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
+		this.m.Variants = [1, 2, 3, 4];
+		this.m.Variant = 1;
 		this.updateVariant();
 		this.m.Value = 15000;
 		this.m.Condition = 40;

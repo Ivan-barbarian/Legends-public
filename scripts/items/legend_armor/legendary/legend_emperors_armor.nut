@@ -8,7 +8,7 @@ this.legend_emperors_armor <- this.inherit("scripts/items/legend_armor/legend_ar
 		this.m.Name = "The Emperor\'s Armor";
 		this.m.Description = "A shining armor once worn by the emperor of an age long past, made from the most wondrous of materials, imbued with mystical energies. Light reflects easily off the polished armor, turning the wearer into a shimmering figure of light during the day.";
 		this.m.ArmorDescription = "Includes a shining armor made from the most wondrous of materials.";
-		this.m.Variants = [1, 2];
+		this.m.Variants = [1, 2, 3, 4, 5];
 		this.m.Variant = 1;
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
