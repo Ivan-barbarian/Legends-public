@@ -533,7 +533,7 @@ Specialize in heavy armor!
 [color=%passive%][u]Passive:[/u][/color]
 • Armor damage taken is reduced by a percentage equal to 5% of the current total armor value of both body and head armor.
 
-• The heavier your armor and helmet the more you benefit.
+• The heavier your armor and helmet the more you benefit. Damage taken cannot be reduced below 20% of the total value.
 
 • Does not affect damage from mental attacks or status effects.
 ";

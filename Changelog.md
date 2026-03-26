@@ -35,6 +35,7 @@ This activates Dual Wield:
 - `Muscularity` now has no lower bound.
 - `Thrust Master` tooltip fixes
 - `Barrage` tooltip fixes
+- `Battle Forged` maximum reduction capped at 80%
 
 ### One Handed Tree
 - no longer exists in short
@@ -242,6 +243,7 @@ Favoured Enemy - Sword Master
 - fixed an error with gear scaling using sell price instead of value
 - fixed incorrect time and item count tooltips on the camp screen
 - fixed rerolling trait into the same trait during merciless regimen
+- fixed crafting window not updating components properly
 
 ### For modders:
 
