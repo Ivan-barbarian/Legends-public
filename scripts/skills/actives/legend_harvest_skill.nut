@@ -53,6 +53,12 @@ this.legend_harvest_skill <- this.inherit("scripts/skills/skill", {
 			icon = "ui/icons/special.png",
 			text = "Inflicts additional stacking [color=%damage%]" + dmg + "[/color] bleeding damage per turn, for 2 turns"
 		});
+		ret.push({
+			id = 8,
+			type = "text",
+			icon = "ui/icons/damage_dealt.png",
+			text = "Inflicts [color=%damage%]20%[/color] more damage against bleeding enemies"
+		});
 		return ret;
 	}
 
@@ -127,6 +133,16 @@ this.legend_harvest_skill <- this.inherit("scripts/skills/skill", {
 		}
 		else {
 			this.Sound.play(this.m.SoundsB[this.Math.rand(0, this.m.SoundsB.len() - 1)], this.Const.Sound.Volume.Skill, actor.getPos());
+		}
+	}
+
+	function onAnySkillUsed( _skill, _targetEntity, _properties ){
+		if (_targetEntity == null)
+			return;
+
+
+		if (_skill == this && ::Legends.Effects.has(_targetEntity, ::Legends.Effect.Bleeding)) {
+			_properties.DamageTotalMult *= 1.2;
 		}
 	}
 });
