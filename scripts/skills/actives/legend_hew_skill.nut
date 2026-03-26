@@ -1,8 +1,10 @@
 this.legend_hew_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		ApplyHead = false
+	},
 	function create() {
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendHew);
-		this.m.Description = "A horizontal side strike performed with full force to devastating effect.";
+		this.m.Description = "An overhead strike that bears the full force on the targets entire body.";
 		this.m.KilledString = "Hewed";
 		this.m.Icon = "skills/active_20.png";
 		this.m.IconDisabled = "skills/active_20_sw.png";
@@ -28,7 +30,7 @@ this.legend_hew_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsWeaponSkill = true;
 		this.m.InjuriesOnBody = this.Const.Injury.CuttingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.CuttingHead;
-		this.m.DirectDamageMult = 0.25;
+		this.m.DirectDamageMult = 0.35;
 		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
@@ -48,6 +50,12 @@ this.legend_hew_skill <- this.inherit("scripts/skills/skill", {
 			icon = "ui/icons/special.png",
 			text = "Inflicts additional stacking [color=%damage%]" + dmg + "[/color] bleeding damage per turn, for 2 turns"
 		});
+		tooltip.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Hits both head and body for [color=%damage%]50%[/color] each"
+		});
 		return tooltip;
 	}
 
@@ -55,19 +63,15 @@ this.legend_hew_skill <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCostMult = _properties.IsSpecializedInCleavers ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 
-	function onUse( _user, _targetTile )
-	{
+	function onUse( _user, _targetTile ) {
 		local target = _targetTile.getEntity();
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectChop);
+		this.m.ApplyHead = true;
+		local success = this.attackEntity(_user, target);
+		if (::Legends.S.isEntityNullOrDead(target))
+			return success;
+		this.m.ApplyHead = false;
 		return this.attackEntity(_user, target);
-	}
-
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
-	{
-		if (_skill == this) {
-			_properties.DamageRegularMin += 10;
-			_properties.DamageRegularMax += 10;
-		}
 	}
 
 	function onDamageDealt( _target, _skill, _hitInfo ) {
@@ -90,7 +94,7 @@ this.legend_hew_skill <- this.inherit("scripts/skills/skill", {
 			::Legends.Effects.grant(_target, ::Legends.Effect.Bleeding, function(_effect) {
 				if (actor.getFaction() == this.Const.Faction.Player )
 					_effect.setActor(this.getContainer().getActor());
-				_effect.setDamage(this.getContainer().getActor().getCurrentProperties().IsSpecializedInCleavers ? 20 : 10);
+				_effect.setDamage(this.getContainer().getActor().getCurrentProperties().IsSpecializedInCleavers ? 10 : 5);
 			}.bindenv(this));
 			this.Sound.play(this.m.SoundsA[this.Math.rand(0, this.m.SoundsA.len() - 1)], this.Const.Sound.Volume.Skill, actor.getPos());
 		}
@@ -99,5 +103,14 @@ this.legend_hew_skill <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function onAnySkillUsed( _skill, _targetEntity, _properties ) {
+		if (_skill != this)
+			return;
+
+		if (this.m.ApplyHead)
+			_properties.HitChance[this.Const.BodyPart.Head] = 100;
+
+		_properties.DamageTotalMult *= 0.5;
+	}
 });
 

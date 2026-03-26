@@ -212,9 +212,10 @@ Favoured Enemy - Sword Master
 
 **Sword Cleavers**
 * Two Handed Saif, Scimitars and Khopesh are now all purely cleaver weapons
-* `Hew` - overhead strike with 10 less bonus damage but 10-20 bleeding damage
+* `Hew` - split attack which does 50% of it's damage to both the body and the head, 35% base penetration
 * `Harvest` - two tile swing which applies 5-10 bleeding damage, deals an additional 20% damage when the target is bleeding
-* `Decapitate` - unchanged
+* `Decapitate` - 6 ap, 30% armor penetration
+* all of these weapons have had their durability, price and damage bumped (damage by ~20 points)
 
 **Crossbows**
 * gain `Piercing Shot` by default

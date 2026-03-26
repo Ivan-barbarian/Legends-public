@@ -20,8 +20,8 @@ this.legend_blooddrinker <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Condition = 150.0;
 		this.m.ConditionMax = 150.0;
 		this.m.StaminaModifier = -20;
-		this.m.RegularDamage = 90;
-		this.m.RegularDamageMax = 115;
+		this.m.RegularDamage = 100;
+		this.m.RegularDamageMax = 140;
 		this.m.ArmorDamageMult = 1.6;
 		this.m.DirectDamageMult = 0.25;
 		this.m.ChanceToHitHead = 20;
