@@ -66,5 +66,9 @@
 			this.m.FatigueCostMult = _properties.IsSpecializedInPolearms ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 			this.m.ActionPointCost = _properties.IsSpecializedInPolearms ? 5 : 6;
 		}
+		else
+		{
+			onAfterUpdate(_properties);
+		}
 	}
 });
