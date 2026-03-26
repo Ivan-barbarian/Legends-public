@@ -363,7 +363,7 @@ Through familiarity and training with your weapon, you know just how your projec
 Use your built up inertia to wreak havoc on the second swing.
 
 [color=%passive%][u]Passive:[/u][/color]
-• After performing [color=%skill%]Round Swing[/color], [color=%skill%]Swing[/color], [color=%skill%]Thresh[/color], [color=%skill%]Reap[/color], [color=%skill%]Castigate[/color], [color=%skill%]Shatter[/color] and [color=%skill%]Double Swing[/color] you can perform a followup for [color=%negative%]-50%[/color] Fatigue and Action Points. [color=%skill%]Swing[/color] Damage is reduced by [color=%negative%]-25%[/color] and for the rest of the skills by [color=%negative%]-50%[/color].
+• After performing [color=%skill%]Round Swing[/color], [color=%skill%]Swing[/color], [color=%skill%]Thresh[/color], [color=%skill%]Reap[/color], [color=%skill%]Castigate[/color], [color=%skill%]Shatter[/color], [color=%skill%]Harvest[/color] and [color=%skill%]Double Swing[/color] you can perform a followup for [color=%negative%]-50%[/color] Fatigue and Action Points. [color=%skill%]Swing[/color] Damage is reduced by [color=%negative%]-25%[/color] and for the rest of the skills by [color=%negative%]-50%[/color].
 
 • Moving, ending your turn or waiting will all remove this effect.
 ";
