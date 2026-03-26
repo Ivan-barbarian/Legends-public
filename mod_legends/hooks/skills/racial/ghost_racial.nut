@@ -1,12 +1,18 @@
 ::mods_hookExactClass("skills/racial/ghost_racial", function(o)
 {	
-	o.m.ArmorAdded <- 0;
-	o.m.HelmetAdded <- 0;
+	o.m.IsWicht <- false;
 
 	o.onUpdate <- function (_properties)
 	{
 		_properties.DamageReceivedDirectMult *= 0.00; // ghosts don't have armor so this doesn't matter for regular ghosts, just ghost armor/wichts
 	}
+
+	local onBeingAttacked = o.onBeingAttacked;
+    o.onBeingAttacked = function (_attacker, _skill, _properties) {
+        if (this.m.IsWicht)
+            return; // turn off the ranged dodge stuff for wichts
+        onBeingAttacked(_attacker, _skill, _properties);
+    }
 
 	o.onCombatStarted <- function ()
 	{
