@@ -643,7 +643,8 @@
 		local faction = _e.getFaction();
 		if (faction == ::Const.Faction.Player
 			|| faction == ::Const.Faction.PlayerAnimals
-			|| this.World.FactionManager.isAlliedWithPlayer(faction)) {
+			|| this.World.FactionManager.isAlliedWithPlayer(faction)
+			|| faction == ::Const.Faction.Undead) {
 			return;
 		}
 
