@@ -2150,4 +2150,12 @@ effectsDefs.push({
 	Const = "LegendDualWield"
 });
 
+::Legends.Effect.LegendConstrained <- null;
+effectsDefs.push({
+	ID = "effects.legend_constrained",
+	Script = "scripts/skills/effects/legend_constrained_effect",
+	Name = "Constrained",
+	Const = "LegendConstrained"
+});
+
 ::Legends.Effects.addEffectDefObjects(effectsDefs);
