@@ -111,6 +111,7 @@ this.legend_hew_skill <- this.inherit("scripts/skills/skill", {
 			_properties.HitChance[this.Const.BodyPart.Head] = 100;
 
 		_properties.DamageTotalMult *= 0.5;
+		_properties.DamageTooltipMaxMult *= 2.0;
 	}
 });
 
