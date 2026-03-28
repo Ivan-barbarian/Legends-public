@@ -2775,7 +2775,8 @@
 		Plate = [
 			[1, "plate/legend_armor_scale_shirt", 1]], // 85 -10 1750
 		Cloak = [
-			[1, "cloak/legend_armor_decorative_hood", 8], [1, "cloak/legend_armor_shoulder_cloth", 2]], // 15 -1 50
+			[1, "cloak/legend_armor_decorative_hood", 8],
+			[1, "cloak/legend_armor_shoulder_cloth", 2]], // 15 -1 50
 		Tabard = [
 			[1, "tabard/legend_armor_tabard"]], // 5 -0 200
 		Attachments = [

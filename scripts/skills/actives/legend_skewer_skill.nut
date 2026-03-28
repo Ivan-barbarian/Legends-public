@@ -58,7 +58,7 @@ this.legend_skewer_skill <- this.inherit("scripts/skills/skill", {
 		if (this.m.IsSpearSkewer)
 		{
 			this.m.FatigueCostMult = _properties.IsSpecializedInSpears ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-			this.m.ActionPointCost = _properties.IsSpecializedInPolearms ? 5 : 6;
+			this.m.ActionPointCost = _properties.IsSpecializedInSpears ? 5 : 6;
 		}
 		else
 		{
