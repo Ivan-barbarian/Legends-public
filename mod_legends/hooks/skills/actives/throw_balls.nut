@@ -14,6 +14,20 @@
 	{
 		local ret = this.getRangedTooltip(this.getDefaultTooltip());
 		local ammo = this.getAmmo();
+		ret.extend([
+			{
+				id = 5,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Apply Constrained on a hit to the body for a turn"
+			},
+			{
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Constrained increases the fatigue and AP cost of moving"
+			}
+		]);
 
 		if (ammo > 0)
 		{
@@ -54,6 +68,20 @@
 			return isUsable;
 
 		return isUsable && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
+	}
+	
+	o.onTargetHit <- function( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
+	{
+		if (_skill != this)
+			return;
+
+		if (::Legends.S.skillEntityAliveCheck(this.getContainer().getActor(), _targetEntity))
+			return;
+			
+		if (_bodyPart != ::Const.BodyPart.Body)
+			return;
+
+		::Legends.Effects.grant(_targetEntity, ::Legends.Effect.LegendConstrained);
 	}
 
 	o.onAfterUpdate = function ( _properties )
