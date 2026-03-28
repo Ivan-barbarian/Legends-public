@@ -18,7 +18,7 @@ if (!("Weapons" in ::Legends)) {
 
         // Ensure skill has a container so validation methods like `isUsable()` don't crash.
         // Needed when wielding two different weapons with the same skill (e.g. dagger + knife).
-        if (skill.getContainer() == null) {
+        if (skill.getContainer() == null || !("getActor" in skill.getContainer())) {
             skill.setContainer(actorSkills);
         }
 
