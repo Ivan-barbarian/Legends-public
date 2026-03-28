@@ -235,6 +235,7 @@ Favoured Enemy - Sword Master
 - additional info is now provided on support skill including if the skill is considered an attack, it's range and the maximum level difference
 - african male heads have been updated and adjusted to start showing up on brothers
 - bros in training hall with no training options are now hidden from the list
+- training hall now shows the current veteran trait while Merciless Regimen trait reroll option is on the list
 
 ## Bug Fixes
 

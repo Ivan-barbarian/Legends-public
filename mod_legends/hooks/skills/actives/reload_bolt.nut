@@ -53,5 +53,11 @@
 			return;
 
 		this.m.FreeReload = true;
+		this.m.ActionPointCost = 0;
+		this.m.FatigueCost = 10;
+		local actor = this.getContainer().getActor();
+        if (actor != null && actor.isAlive()) {
+            actor.setDirty(true); 
+        }
 	}
 });
