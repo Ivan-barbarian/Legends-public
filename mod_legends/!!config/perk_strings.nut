@@ -588,7 +588,7 @@ Exert yourself to move one tile at an unusually quick speed.
 You're a well-rounded athlete!
 
 [color=%passive%][u]Passive:[/u][/color]
-• Reduce the Fatigue cost of all your skills by a scaling percentage based on [color=%negative%]20%[/color] of your maximum usable Fatigue. Maximum usable fatigue is your fatigue after gear weight is accounted for.
+• Reduce the Fatigue cost of all your skills by a percentage equal to [color=%negative%]20%[/color] of your maximum usable Fatigue after gear weight is accounted for.
 ";
 
 ::Const.Strings.PerkDescription.LegendSpecPoison <- @"
@@ -1259,7 +1259,7 @@ As if being warned by some higher being, the Vala occasionally gets glimpses of 
 Through extensive study of the human form, you learn how to fashion replacement parts from wood and metal.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Unlocks a series of events that let you create prosthetic body parts to help your mercenaries Resolve their permanent [color=%status%]Injuries[/color] that are presented through random events.
+• Unlocks the creation of prosthetic body parts in the crafting tent to help your mercenaries resolve their permanent [color=%status%]Injuries[/color].
 ";
 
 ::Const.Strings.PerkDescription.LegendGuideSteps <- @"
@@ -3023,7 +3023,7 @@ Control the elements, calling down the rain.
 All those years of studying ancient languages finally has a use.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Allows the user to identify Ancient Scrolls, when given a Cloth and Dyes. These tomes grant a specific effect, whereas an Ancient Scroll gives any random effect.
+• Allows the user to create Ancient Scrolls when given Cloth and Dyes.
 ";
 
 ::Const.Strings.PerkDescription.LegendScholar <- @"

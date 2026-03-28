@@ -13,12 +13,12 @@
 	Tooltip = @"
 This item has the power of the rune sigil of Endurance:
 [color=%positive%]+%bonus1%[/color] Fatigue recovery per turn.
-[color=%positive%]+%bonus2%%[/color] Fatigue cost and effects multiplier.
+[color=%negative%]%bonus2%%[/color] reduced Fatigue cost of all your skills.
 	",
 	RuneTooltip = @"
 This item has the power of the rune sigil of Endurance:
 [color=%positive%]+0[/color] to [color=%positive%]+%max1%[/color] Fatigue recovery per turn.
-[color=%positive%]+3%[/color] to [color=%positive%]+%max2%%[/color] Fatigue cost and effects multiplier.
+[color=%negative%]3%[/color] to [color=%positive%]%max2%%[/color] reduced Fatigue cost of all your skills.
 	",
 	setRuneBonus = function(_item, _bonus) {
 		if (_bonus) {
