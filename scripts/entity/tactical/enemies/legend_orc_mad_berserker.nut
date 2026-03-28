@@ -67,10 +67,12 @@ this.legend_orc_mad_berserker <- this.inherit("scripts/entity/tactical/enemies/o
 		];
 		local weapon = weapons[this.Math.rand(0, weapons.len() - 1)];
 		this.m.Items.equip(this.new("scripts/items/" + weapon));
-		if (!this.m.Items.hasBlockedSlot(::Const.ItemSlot.Offhand)
-			&& this.Math.rand(1, 100) <= 50)
-		{
-			this.m.Items.equip(this.new("scripts/items/" + weapon));
+		if (!this.m.Items.hasBlockedSlot(::Const.ItemSlot.Offhand)) {
+			local weapons = [
+				"weapons/greenskins/orc_axe",
+				"weapons/greenskins/orc_cleaver",
+			];
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 			this.m.Items.updateDualWield();
 		}
 
