@@ -38,6 +38,13 @@
 
 		foreach (bro in brothers) {
 			local trait = ::Legends.Traits.grant(bro, ::Legends.Trait.LegendIntensiveTraining);
+			local mercilessRegimenNameBlock = "Merciless Regimen";
+			if(trait != null && trait.m.TraitGained != null && trait.m.TraitGained != -1){
+				mercilessRegimenNameBlock = "<div style='display: block; line-height: 18px; margin-top: -8px;'>" +
+												"<span style='font-size: 18px;'>Merciless Regimen</span><br>" +
+												"<span style='color:" + this.Const.UI.Color.PositiveValue + "; font-size: 16px;'>Current: " + this.new(::Legends.Traits.TraitDefObjects[trait.m.TraitGained].Script).getName() + "</span>" +
+											"</div>"
+			}
 			local roster = result.Roster;
 			local broFound = false;
 			foreach (element in roster) {
@@ -63,7 +70,7 @@
 						element.Training.push({
 							id = 102,
 							icon = "skills/status_effect_75.png",
-							name = "Merciless Regimen",
+							name = mercilessRegimenNameBlock,
 							tooltip = "world-town-screen.training-dialog-module.Train102",
 							price = ::Legends.Training.CostRerollBase + trait.m.TraitRerollCount * ::Legends.Training.CostRerollScaled
 						});
@@ -97,7 +104,7 @@
 				training.push({
 					id = 102,
 					icon = "skills/status_effect_75.png",
-					name = "Merciless Regimen",
+					name = mercilessRegimenNameBlock,
 					tooltip = "world-town-screen.training-dialog-module.Train102",
 					price = ::Legends.Training.CostRerollBase + trait.m.TraitRerollCount * ::Legends.Training.CostRerollScaled
 				});
