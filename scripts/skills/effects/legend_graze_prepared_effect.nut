@@ -51,12 +51,18 @@ this.legend_graze_prepared_effect<- this.inherit("scripts/skills/skill", {
 		if (this.m.AttacksLeft <= 0)
 			this.removeSelf();
 
+		if (!::Legends.S.isEntityNullOrDead(_targetEntity)) {
+			return;
+		}
+
+		if (_targetEntity.getCurrentProperties().IsImmuneToPoison
+			|| _damageInflictedHitpoints <= this.Const.Combat.MinDamageToApplyBleeding
+			|| _targetEntity.getHitpoints() <= 0) {
+			return;
+		}
+
 		if (_targetEntity.getCurrentProperties().IsImmuneToBleeding || _damageInflictedHitpoints <= this.Const.Combat.MinDamageToApplyBleeding || _targetEntity.getHitpoints() <= 0)
 			return;
-
-		if (!_targetEntity.isAlive())
-			return;
-
 
 		if (!_targetEntity.isHiddenToPlayer())
 		{

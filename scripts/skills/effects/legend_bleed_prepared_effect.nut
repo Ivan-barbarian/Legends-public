@@ -53,13 +53,13 @@ this.legend_bleed_prepared_effect <- this.inherit("scripts/skills/skill", {
 			this.removeSelf();
 		}
 
-		if (_targetEntity.getCurrentProperties().IsImmuneToPoison || _damageInflictedHitpoints <= this.Const.Combat.MinDamageToApplyBleeding || _targetEntity.getHitpoints() <= 0)
-		{
+		if (!::Legends.S.isEntityNullOrDead(_targetEntity)) {
 			return;
 		}
 
-		if (!_targetEntity.isAlive())
-		{
+		if (_targetEntity.getCurrentProperties().IsImmuneToPoison
+			|| _damageInflictedHitpoints <= this.Const.Combat.MinDamageToApplyBleeding
+			|| _targetEntity.getHitpoints() <= 0) {
 			return;
 		}
 
