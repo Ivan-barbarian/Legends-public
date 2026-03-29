@@ -252,7 +252,7 @@ class Defs:
  "desc" :  "A bright, decorated coat that offers decent protection.",
  "adesc" : ""
 },
-{"name": "fleshcultist_tunic",           "layer": "cloth", "min": 1, "max": 4, "value" : 350, "con" : 55, "stam" : -4, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "fleshcultist_tunic",           "layer": "cloth", "min": 1, "max": 12, "value" : 350, "con" : 55, "stam" : -4, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Fleshcultist Tunic",
  "desc" :  "An elaborate leather tunic.",
  "adesc" : ""
@@ -743,13 +743,13 @@ class Defs:
  "desc" :  "A heavy lamellar harness of metal plates that provides good protection, but is very fatiguing to wear.",
  "adesc" : "Includes a heavy lamellar harness of metal plates."
 },
-{"name": "diviner_jacket",           "itemType" : "this.Const.Items.ItemType.Cultist", "layer": "plate", "min": 1, "max": 2, "value" : 3000, "con" : 40, "stam" : -3, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "diviner_jacket",           "itemType" : "this.Const.Items.ItemType.Cultist", "layer": "plate", "min": 1, "max": 6, "value" : 3000, "con" : 40, "stam" : -3, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Diviner's Jacket",
  "desc" :  "An embellished jacket previously worn by the Diviner. You\'d expect the stench of rotting flesh to cling to it, but it remains pristine.",
  "adesc" : "Includes an embellished jacket.",
  "named" : { "con": { "min" : 35, "max" : 60 }, "fat": { "min" : 4, "max" : 2 }, "names" : ["Heretic\'s Wrap", "Beholder\'s vestments", "Jacket of the Augur", "Empyrian Coat", "Attestor\'s Skin", "Goreflesh Mantle"]  }
 },
-{"name": "fleshcultist_jacket",           "itemType" : "this.Const.Items.ItemType.Cultist", "layer": "plate", "min": 1, "max": 2, "value" : 350, "con" : 30, "stam" : -3, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "fleshcultist_jacket",           "itemType" : "this.Const.Items.ItemType.Cultist", "layer": "plate", "min": 1, "max": 6, "value" : 350, "con" : 30, "stam" : -3, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Faultfinder Jacket",
  "desc" :  "A heavy linen jacket worn by fault finders.",
  "adesc" : "Includes a heavy linen jacket worn by fault finders."
@@ -915,13 +915,13 @@ class Defs:
  "desc" :  "A flowing cloth covering for armor that displays some colors or heraldry cut in the southern style. It provides a layer of protection and a sense of belonging.",
  "adesc" : "Includes a flowing cloth tabard."
 },
-{"name": "diviner_tabard",           "layer": "tabard", "min": 1, "max": 2, "value" : 200, "con" : 10, "stam" : 0, "bravery" : 3, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "diviner_tabard",           "layer": "tabard", "min": 1, "max": 6, "value" : 200, "con" : 10, "stam" : 0, "bravery" : 3, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Diviner\'s Sash",
  "desc" :  "A decorated sash and belt previously worn by the Diviner.",
  "adesc" : "Includes a decorated sash and belt previously worn by the Diviner."
 },
-{"name": "fleshcultist_tabard",           "layer": "tabard", "min": 1, "max": 2, "value" : 200, "con" : 5, "stam" : 0, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth",
-  "title" :  "",
+{"name": "fleshcultist_tabard",           "layer": "tabard", "min": 1, "max": 6, "value" : 200, "con" : 5, "stam" : 0, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth",
+  "title" :  "Fleshcultist's Sash",
   "desc" :  "A linen sash and belt previously worn by followers of the Diviner.",
   "adesc" : "Includes a linen sash and belt previously worn by followers of the Diviner."
  }
