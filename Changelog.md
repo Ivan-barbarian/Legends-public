@@ -247,6 +247,9 @@ Favoured Enemy - Sword Master
 - fixed crafting window not updating components properly
 - fixed white wolf scaling
 - fixed white wolf pet spawning as hostile
+- fixed bandit army contract incorrectly assuming raiding party on load
+- fixed bandit army contract reveal on killing instead of sparing
+- fixed vala fury incorrectly affecting brothers at distance of over 3 with full effect of fury chant
 
 ### For modders:
 
