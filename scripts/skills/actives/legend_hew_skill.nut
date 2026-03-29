@@ -102,7 +102,7 @@ this.legend_hew_skill <- this.inherit("scripts/skills/skill", {
 			hitInfo.DamageRegular = damageRegular * damageMult;
 			hitInfo.DamageArmor = damageArmor * damageMult;
 			hitInfo.DamageDirect = damageDirect;
-			hitInfo.BodyPart = this.m.ApplyBonusToBodyPart;
+			hitInfo.BodyPart = this.Const.BodyPart.Body;
 			hitInfo.BodyDamageMult = 1.0;
 			hitInfo.FatalityChanceMult = 1.0;
 			target.onDamageReceived(this.getContainer().getActor(), this, hitInfo);
