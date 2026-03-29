@@ -630,7 +630,7 @@
 		return onResurrect(_info, _force);
 	}
 
-	o.isAllowedToDualWield = function (_entity) {
+	o.isAllowedToDualWield <- function (_entity) {
 		local faction = _entity.getFaction();
 		if (faction == ::Const.Faction.Player
 			|| faction == ::Const.Faction.PlayerAnimals
@@ -645,7 +645,7 @@
 			::Const.EntityType.ZombieBoss
 		]; // should move this to a config or smth
 
-		if (::Legends.S.oneOf(_entity.getType(), barredEntities)
+		if (::Legends.S.oneOf(_entity.getType(), barredEntities))
 			return false;
 		return true;
 	}
