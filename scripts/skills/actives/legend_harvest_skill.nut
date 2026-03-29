@@ -68,14 +68,20 @@ this.legend_harvest_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile ) {
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectSwing);
-		local ret = false;
+		local success = false;
 		local ownTile = _user.getTile();
 		local dir = ownTile.getDirectionTo(_targetTile);
-		ret = this.attackEntity(_user, _targetTile.getEntity());
+		local hp = _targetTile.getEntity()
+		success = this.attackEntity(_user, _targetTile.getEntity());
 
-		if (!_user.isAlive() || _user.isDying()) {
-			return ret;
-		}
+		if (::Legends.S.isEntityNullOrDead(_user))
+			return success;
+		
+		if (success)
+			::Legends.S.applyBleed(_targetTile.getEntity(), _user, hp);
+
+		if (::Legends.S.isEntityNullOrDead(target))
+			return success;
 
 		local nextDir = dir - 1 >= 0 ? dir - 1 : this.Const.Direction.COUNT - 1;
 
@@ -83,11 +89,20 @@ this.legend_harvest_skill <- this.inherit("scripts/skills/skill", {
 			local nextTile = ownTile.getNextTile(nextDir);
 
 			if (nextTile.IsOccupiedByActor && nextTile.getEntity().isAttackable() && this.Math.abs(nextTile.Level - ownTile.Level) <= 1) {
-				ret = this.attackEntity(_user, nextTile.getEntity()) || ret;
+				hp = nextTile.getEntity().getHitpoints();
+				success = this.attackEntity(_user, nextTile.getEntity()) || success;
+
+				if (::Legends.S.isEntityNullOrDead(_user))
+					return success;
+					
+				::Legends.S.applyBleed(_targetTile.getEntity(), _user, hp);
+
+				if (::Legends.S.isEntityNullOrDead(target))
+					return success;
 			}
 		}
 
-		return ret;
+		return success;
 	}
 
 	function onTargetSelected( _targetTile ) {
@@ -105,41 +120,9 @@ this.legend_harvest_skill <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-	function onDamageDealt( _target, _skill, _hitInfo ) {
-		this.named_weapon.onDamageDealt(_target, _skill, _hitInfo);
-		local actor = this.getContainer().getActor();
-		if (!_target.isAlive() || _target.isDying())
-			return;
-
-		_skill.spawnAttackEffect(_target.getTile(), this.Const.Tactical.AttackEffectChop);
-		if (!actor.isAlive() || actor.isDying())
-			return;
-
-		if (!_target.isAlive() || _target.isDying()) {
-			if (_target.getFlags().has("tail") || !_target.getCurrentProperties().IsImmuneToBleeding) {
-				this.Sound.play(this.m.SoundsA[this.Math.rand(0, this.m.SoundsA.len() - 1)], this.Const.Sound.Volume.Skill, actor.getPos());
-			}
-			else {
-				this.Sound.play(this.m.SoundsB[this.Math.rand(0, this.m.SoundsB.len() - 1)], this.Const.Sound.Volume.Skill, actor.getPos());
-			}
-		}
-		else if (!_target.getCurrentProperties().IsImmuneToBleeding) {
-			::Legends.Effects.grant(_target, ::Legends.Effect.Bleeding, function(_effect) {
-				if (actor.getFaction() == this.Const.Faction.Player)
-					_effect.setActor(this.getContainer().getActor());
-				_effect.setDamage(this.getContainer().getActor().getCurrentProperties().IsSpecializedInCleavers ? 10 : 5);
-			}.bindenv(this));
-			this.Sound.play(this.m.SoundsA[this.Math.rand(0, this.m.SoundsA.len() - 1)], this.Const.Sound.Volume.Skill, actor.getPos());
-		}
-		else {
-			this.Sound.play(this.m.SoundsB[this.Math.rand(0, this.m.SoundsB.len() - 1)], this.Const.Sound.Volume.Skill, actor.getPos());
-		}
-	}
-
-	function onAnySkillUsed( _skill, _targetEntity, _properties ){
+	function onAnySkillUsed( _skill, _targetEntity, _properties ) {
 		if (_targetEntity == null)
 			return;
-
 
 		if (_skill == this && ::Legends.Effects.has(_targetEntity, ::Legends.Effect.Bleeding)) {
 			_properties.DamageTotalMult *= 1.2;

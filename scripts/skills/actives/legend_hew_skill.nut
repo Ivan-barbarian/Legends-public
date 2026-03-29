@@ -65,42 +65,41 @@ this.legend_hew_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile ) {
 		local target = _targetTile.getEntity();
+		local hp = target.getHitpoints();
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectChop);
 		this.m.ApplyHead = true;
 		local success = this.attackEntity(_user, target);
+
+		if (::Legends.S.isEntityNullOrDead(_user))
+			return success;
+
+		if (success)
+			::Legends.S.applyBleed(target, _user, hp);
+
 		if (::Legends.S.isEntityNullOrDead(target))
 			return success;
+
 		this.m.ApplyHead = false;
-		return this.attackEntity(_user, target);
-	}
-
-	function onDamageDealt( _target, _skill, _hitInfo ) {
-		local actor = this.getContainer().getActor();
-		if (!_target.isAlive() || _target.isDying())
-			return;
-
-		if (!actor.isAlive() || actor.isDying())
-			return;
-
-		if (!_target.isAlive() || _target.isDying()) {
-			if (_target.getFlags().has("tail") || !_target.getCurrentProperties().IsImmuneToBleeding) {
-				this.Sound.play(this.m.SoundsA[this.Math.rand(0, this.m.SoundsA.len() - 1)], this.Const.Sound.Volume.Skill, actor.getPos());
-			}
-			else {
-				this.Sound.play(this.m.SoundsB[this.Math.rand(0, this.m.SoundsB.len() - 1)], this.Const.Sound.Volume.Skill, actor.getPos());
-			}
+		if (success)
+		{
+			hp = target.getHitpoints()
+			local p = this.getContainer().buildPropertiesForUse(this, target);
+			local hitInfo = clone this.Const.Tactical.HitInfo;
+			local damageMult = p.MeleeDamageMult * p.DamageTotalMult;
+			local damageRegular = this.Math.rand(p.DamageRegularMin, p.DamageRegularMax) * p.DamageRegularMult;
+			local damageArmor = this.Math.rand(p.DamageRegularMin, p.DamageRegularMax) * p.DamageArmorMult;
+			local damageDirect = this.Math.minf(1.0, p.DamageDirectMult * (this.m.DirectDamageMult + p.DamageDirectAdd + p.DamageDirectMeleeAdd));
+			hitInfo.DamageRegular = damageRegular * damageMult;
+			hitInfo.DamageArmor = damageArmor * damageMult;
+			hitInfo.DamageDirect = damageDirect;
+			hitInfo.BodyPart = this.m.ApplyBonusToBodyPart;
+			hitInfo.BodyDamageMult = 1.0;
+			hitInfo.FatalityChanceMult = 1.0;
+			target.onDamageReceived(this.getContainer().getActor(), this, hitInfo);
+			::Legends.S.applyBleed(target, _user, hp);
 		}
-		else if (!_target.getCurrentProperties().IsImmuneToBleeding) {
-			::Legends.Effects.grant(_target, ::Legends.Effect.Bleeding, function(_effect) {
-				if (actor.getFaction() == this.Const.Faction.Player )
-					_effect.setActor(this.getContainer().getActor());
-				_effect.setDamage(this.getContainer().getActor().getCurrentProperties().IsSpecializedInCleavers ? 10 : 5);
-			}.bindenv(this));
-			this.Sound.play(this.m.SoundsA[this.Math.rand(0, this.m.SoundsA.len() - 1)], this.Const.Sound.Volume.Skill, actor.getPos());
-		}
-		else {
-			this.Sound.play(this.m.SoundsB[this.Math.rand(0, this.m.SoundsB.len() - 1)], this.Const.Sound.Volume.Skill, actor.getPos());
-		}
+
+		return success;
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties ) {
