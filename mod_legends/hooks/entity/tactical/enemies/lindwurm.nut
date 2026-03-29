@@ -30,6 +30,7 @@
 		b.IsAffectedByRain = false;
 		::Legends.Perks.grant(this, ::Legends.Perk.Stalwart);
 		::Legends.Perks.grant(this, ::Legends.Perk.LegendComposure);
+		::Legends.Perks.remove(this, ::Legends.Perk.HoldOut);
 		if(::Legends.isLegendaryDifficulty())
 		{
 			this.m.Hitpoints = b.Hitpoints * 1.5;

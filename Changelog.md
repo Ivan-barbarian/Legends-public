@@ -80,6 +80,7 @@ Favoured Enemy - Sword Master
 - Orc Tyrant - elite orc warlord, his warcry can cascade on other warlords
 - Orc Mad Berserker - elite version of the orc berserker, has nimble and nudist
 - Wicht - armored ghost enemies who cannot be killed until you destroy their armor
+> very resistant to status effects
 
 ## Enemy Changes
 
@@ -93,6 +94,10 @@ Favoured Enemy - Sword Master
 > Fallen Hero 7 to 9;
 > players turned Wiederganger 6 to 8;
 - Nomad Slingers will now more likely to spawn with a Sturdy Sling before day 30 and gain a chance for more armor after day 40
+> Lindwurm and Stollwurms
+> health decreased to 950 and 1500 respectively
+> lose resilient so they are more succeptable to bleeding
+> gain 25% damage reduction from cutting and blunt attacks but damage is increased by 30% from piercing
 
 ## New Runes
 
