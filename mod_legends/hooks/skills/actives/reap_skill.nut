@@ -139,7 +139,7 @@
 		}
 
 		if (success && _user.getCurrentProperties().IsSpecializedInCleavers)
-			::Legends.S.applyBleed(_targetTile.getEntity(), _user, hp, SoundsA, SoundsB);
+			::Legends.S.applyBleed(_targetTile.getEntity(), _user, hp, this.m.SoundsA, this.m.SoundsB);
 
 		return success;
 	}

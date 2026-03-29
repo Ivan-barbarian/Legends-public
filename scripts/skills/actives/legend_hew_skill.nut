@@ -84,7 +84,7 @@ this.legend_hew_skill <- this.inherit("scripts/skills/skill", {
 			return success;
 
 		if (success)
-			::Legends.S.applyBleed(target, _user, hp, SoundsA, SoundsB);
+			::Legends.S.applyBleed(target, _user, hp, this.m.SoundsA, this.m.SoundsB);
 
 		if (::Legends.S.isEntityNullOrDead(target))
 			return success;
@@ -106,7 +106,7 @@ this.legend_hew_skill <- this.inherit("scripts/skills/skill", {
 			hitInfo.BodyDamageMult = 1.0;
 			hitInfo.FatalityChanceMult = 1.0;
 			target.onDamageReceived(this.getContainer().getActor(), this, hitInfo);
-			::Legends.S.applyBleed(target, _user, hp, SoundsA, SoundsB);
+			::Legends.S.applyBleed(target, _user, hp, this.m.SoundsA, this.m.SoundsB);
 		}
 
 		return success;
