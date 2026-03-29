@@ -1,6 +1,10 @@
 ::mods_hookExactClass("skills/actives/reload_bolt", function ( o )
 {	
 	o.m.FreeReload <- false;
+	o.m.FreeReloadAPCost <- 0;
+	o.m.FreeReloadFatCost <- 10;
+	o.m.RegularAPCost <- 4;
+	o.m.RegularFatCost <- 20;
 
 	local create = o.create;
 	o.create = function()
@@ -34,8 +38,8 @@
 	o.onAfterUpdate = function(_properties)
 	{
 		onAfterUpdate(_properties);
-		this.m.ActionPointCost = this.m.FreeReload ? 0 : 4;
-		this.m.FatigueCost = this.m.FreeReload ? 10 : 20;
+		this.m.ActionPointCost = this.m.FreeReload ? this.m.FreeReloadAPCost : this.m.RegularAPCost;
+		this.m.FatigueCost = this.m.FreeReload ? this.m.FreeReloadFatCost : this.m.RegularFatCost;
 	}
 
 	o.onTargetHit <- function ( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
@@ -53,8 +57,8 @@
 			return;
 
 		this.m.FreeReload = true;
-		this.m.ActionPointCost = 0;
-		this.m.FatigueCost = 10;
+		this.m.ActionPointCost = this.m.FreeReloadAPCost;
+		this.m.FatigueCost = this.m.FreeReloadFatCost;
 		local actor = this.getContainer().getActor();
         if (actor != null && actor.isAlive()) {
             actor.setDirty(true); 
