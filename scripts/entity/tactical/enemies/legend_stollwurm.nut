@@ -5,20 +5,24 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 		DroppableRunes = [
 			::Legends.Rune.LegendRsaEndurance,
 			::Legends.Rune.LegendRsaSafety
-		]
+		],
+		MovementAPSpent = 0,
+		EffectsSharedWithTail = {
+    		"effects.staggered": "scripts/skills/effects/staggered_effect",
+    		"effects.dazed": "scripts/skills/effects/dazed_effect",
+    		"effects.legend_baffled": "scripts/skills/effects/legend_baffled_effect"
+		}
 	},
-	function getIdealRange()
-	{
+
+	function getIdealRange() {
 		return 2;
 	}
 
-	function getMode()
-	{
+	function getMode() {
 		return this.m.Mode;
 	}
 
-	function setMode( _m )
-	{
+	function setMode( _m ) {
 		this.m.Mode = _m;
 
 		if (this.isPlacedOnMap())
@@ -33,13 +37,11 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 		}
 	}
 
-	function getImageOffsetY()
-	{
+	function getImageOffsetY() {
 		return 20;
 	}
 
-	function create()
-	{
+	function create() {
 		this.m.Type = this.Const.EntityType.LegendStollwurm;
 		this.m.BloodType = this.Const.BloodType.Red;
 		this.m.XP = this.Const.Tactical.Actor.LegendStollwurm.XP;
@@ -116,8 +118,7 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 		}
 	}
 
-	function playSound( _type, _volume, _pitch = 0.5 )
-	{
+	function playSound( _type, _volume, _pitch = 0.5 ) {
 		if (_type == this.Const.Sound.ActorEvent.Move && this.Math.rand(1, 100) <= 50)
 		{
 			return;
@@ -126,8 +127,12 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.playSound(_type, _volume, _pitch);
 	}
 
-	function onDeath( _killer, _skill, _tile, _fatalityType )
-	{
+	function onTurnStart() {
+		this.actor.onTurnStart();
+		this.m.MovementAPSpent = 0;
+	}
+
+	function onDeath( _killer, _skill, _tile, _fatalityType ) {
 		local flip = this.Math.rand(0, 100) < 50;
 		if (_tile != null)
 		{
@@ -363,6 +368,28 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 				this.m.Tail.getSprite("body").Saturation = body.Saturation;
 			}
 		}
+
+		local skills = this.getSkills();
+		local skills_add = skills.add;
+		skills.add = function( _skill, _order = 0 )
+		{
+			skills_add(_skill, _order);
+
+			local actor = this.getActor();
+			if (_skill.getID() in actor.m.EffectsSharedWithTail && actor.m.Tail != null && actor.m.Tail.isAlive()) {
+				local tempEffect = ::new(actor.m.EffectsSharedWithTail[_skill.getID()]);
+				tempEffect.m.IsFromHead <- true;
+				actor.m.Tail.getSkills().add(tempEffect);
+			}
+		}.bindenv(skills);
+	}
+
+	function onMovementStep( _tile, _levelDifference ) {
+		local result = actor.onMovementStep( _tile, _levelDifference );
+		if(result) {
+			this.m.MovementAPSpent += this.Math.max(1, (this.m.ActionPointCosts[_tile.Type] + this.m.CurrentProperties.MovementAPCostAdditional) * this.m.CurrentProperties.MovementAPCostMult) + (_levelDifference != 0 ? this.m.LevelActionPointCost : 0);
+		}
+		return result;
 	}
 
 	function onMovementFinish(_tile)
