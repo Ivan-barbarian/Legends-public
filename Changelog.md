@@ -1,4 +1,4 @@
-# 19.3.0 - Title Pending
+# 19.3.0 - Left & Right
 
 ## Dual Wielding
 
@@ -222,9 +222,12 @@ Favoured Enemy - Sword Master
 
 **Sword Cleavers**
 * Two Handed Saif, Scimitars and Khopesh are now all purely cleaver weapons
-* `Hew` - split attack which does 50% of it's damage to both the body and the head, 35% base penetration
+* `Hew` - split attack which does 50% of it's damage to both the body and the head, regardless of chance to hit head
+> 35% base penetration, 6 ap, 20 fatigue
 * `Harvest` - two tile swing which applies 5-10 bleeding damage, deals an additional 20% damage when the target is bleeding
-* `Decapitate` - 6 ap, 30% armor penetration
+> 25% penetration, 6 ap, 30 fatigue cost
+* `Decapitate`
+> 6 ap, 30% armor penetration, 30 fatigue cost
 * all of these weapons have had their durability, price and damage bumped (damage by ~20 points)
 
 **Crossbows**
@@ -232,6 +235,12 @@ Favoured Enemy - Sword Master
 * `Strafing Shot` gains a new icon
 
 **Shortbows**
+* gain `Cascade`
+> the Initiative difference between you and the target will be added as additional damage
+
+**Bolas**
+* `Throw Bola` can now `Constrain` your target
+> `Constrained` - additional 2 ap and 5 fatigue per tile traveled (we know you think goblins are easy)
 
 ### New recipes
 
@@ -268,6 +277,7 @@ Favoured Enemy - Sword Master
 > look at `militia_scenario` and `lone_wolf_scenario`
 
 - `LegendKnifeplay`, `perk_legend_knifeplay` perk has been deleted
+- `LegendCascade`, `perk_legend_cascade` perk has been deleted
 - `LegendPiercingShot`, `perk_legend_piercing_shot` perk has been deleted
 - Bandit Warlord renamed to Robber Baron
 > `LegendBanditWarlord` -> `LegendRobberBaron`
