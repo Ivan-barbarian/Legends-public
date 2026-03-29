@@ -245,6 +245,8 @@ Favoured Enemy - Sword Master
 - fixed incorrect time and item count tooltips on the camp screen
 - fixed rerolling trait into the same trait during merciless regimen
 - fixed crafting window not updating components properly
+- fixed white wolf scaling
+- fixed white wolf pet spawning as hostile
 
 ### For modders:
 
