@@ -118,10 +118,8 @@
 				ret = this.applyBleed( _user, t) || ret;
 			}
 
-			if (!_user.isAlive() || _user.isDying())
-			{
+			if (::Legends.S.isEntityNullOrDead(_user))
 				break;
-			}
 		}
 
 		return ret;
@@ -133,13 +131,13 @@
 		local hp = target.getHitpoints();
 		local success = this.attackEntity(_user, _targetTile.getEntity());
 
-		if (!_user.isAlive() || _user.isDying())
-		{
-			return;
-		}
+		if (::Legends.S.isEntityNullOrDead(_user))
+			return success;
 
-		if (success && _user.getCurrentProperties().IsSpecializedInCleavers)
-			::Legends.S.applyBleed(_targetTile.getEntity(), _user, hp, this.m.SoundsA, this.m.SoundsB);
+		if (success && _user.getCurrentProperties().IsSpecializedInCleavers) {
+			local damage = 5;
+			::Legends.S.applyBleed(target, _user, hp, this.m.SoundsA, this.m.SoundsB, damage);
+		}
 
 		return success;
 	}

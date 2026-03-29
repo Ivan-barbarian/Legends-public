@@ -82,7 +82,7 @@ this.legend_harvest_skill <- this.inherit("scripts/skills/skill", {
 		local success = false;
 		local ownTile = _user.getTile();
 		local dir = ownTile.getDirectionTo(_targetTile);
-		local hp = _targetTile.getEntity()
+		local hp = _targetTile.getEntity();
 		success = this.attackEntity(_user, _targetTile.getEntity());
 
 		if (::Legends.S.isEntityNullOrDead(_user))
@@ -91,7 +91,7 @@ this.legend_harvest_skill <- this.inherit("scripts/skills/skill", {
 		if (success)
 			::Legends.S.applyBleed(_targetTile.getEntity(), _user, hp, this.m.SoundsA, this.m.SoundsB);
 
-		if (::Legends.S.isEntityNullOrDead(target))
+		if (::Legends.S.isEntityNullOrDead(_targetTile.getEntity()))
 			return success;
 
 		local nextDir = dir - 1 >= 0 ? dir - 1 : this.Const.Direction.COUNT - 1;
@@ -108,7 +108,7 @@ this.legend_harvest_skill <- this.inherit("scripts/skills/skill", {
 					
 				::Legends.S.applyBleed(_targetTile.getEntity(), _user, hp, this.m.SoundsA, this.m.SoundsB);
 
-				if (::Legends.S.isEntityNullOrDead(target))
+				if (::Legends.S.isEntityNullOrDead(_targetTile.getEntity()))
 					return success;
 			}
 		}
