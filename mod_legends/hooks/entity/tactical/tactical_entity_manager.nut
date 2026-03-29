@@ -630,6 +630,18 @@
 		return onResurrect(_info, _force);
 	}
 
+	o.isAllowedToDualWield = function (_entity) {
+		local faction = _entity.getFaction();
+		if (faction == ::Const.Faction.Player
+			|| faction == ::Const.Faction.PlayerAnimals
+			|| this.World.FactionManager.isAlliedWithPlayer(faction)
+			|| faction == ::Const.Faction.Undead)
+		{
+			return false;
+		}
+		return true;
+	}
+
 	local setupEntity = o.setupEntity;
 	o.setupEntity = function( _e, _t )
 	{
@@ -640,11 +652,7 @@
 		::Legends.Scaling.scaleEnemy(_e, _t);
 
 		// Small chance for enemies with a 1H weapon and free offhand to dual wield
-		local faction = _e.getFaction();
-		if (faction == ::Const.Faction.Player
-			|| faction == ::Const.Faction.PlayerAnimals
-			|| this.World.FactionManager.isAlliedWithPlayer(faction)
-			|| faction == ::Const.Faction.Undead) {
+		if (!this.isAllowedToDualWield(_e)) {
 			return;
 		}
 
