@@ -193,12 +193,20 @@ this.legend_white_warwolf <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Items.getAppearance().Armor = "bust_wolf_02_armor_01";
 
 		local body = getSprite("body");
-		body.setBrush("bust_direwolf_white_0" + _v + "_body");
+		local head = getSprite("head");
+		if(_v != "bust_direwolf_white_tame_01") {
+			body.setBrush("bust_direwolf_white_0" + _v + "_body");
+			head.setBrush("bust_direwolf_white_0" + _v + "_head");
+		}
+		else {
+			body.setBrush("bust_direwolf_white_01_body");
+			head.setBrush("bust_direwolf_white_01_head");
+			//body.setBrush("bust_direwolf_white_tame_01_body");
+			//head.setBrush("bust_direwolf_white_tame_01_head");
+		}
 		body.Color = _c;
 		body.Saturation = _s;
 
-		local head = getSprite("head");
-		head.setBrush("bust_direwolf_white_0" + _v + "_head");
 		head.Color = _c;
 		head.Saturation = _s;
 
@@ -208,11 +216,13 @@ this.legend_white_warwolf <- this.inherit("scripts/entity/tactical/actor", {
 
 		if(_hp != 1.0)
 		{
+			local c = this.m.CurrentProperties;
 			this.m.Hitpoints = this.getHitpointsMax() * _hp;
-			this.m.BaseProperties.Armor[this.Const.BodyPart.Body] * _hp;
-			this.m.BaseProperties.Armor[this.Const.BodyPart.Head] * _hp;
-			// this.m.Properties.Armor[this.Const.BodyPart.Body] * _hp;
-			// this.m.Properties.Armor[this.Const.BodyPart.Head] * _hp;
+			c.Hitpoints = this.getHitpointsMax() * _hp;
+			c.Armor[this.Const.BodyPart.Body] = b.Armor[this.Const.BodyPart.Body] * _hp;
+			c.ArmorMax[this.Const.BodyPart.Body] = b.ArmorMax[this.Const.BodyPart.Body] * _hp;
+			c.Armor[this.Const.BodyPart.Head] = b.Armor[this.Const.BodyPart.Head] * _hp;
+			c.ArmorMax[this.Const.BodyPart.Head] = b.ArmorMax[this.Const.BodyPart.Head] * _hp;
 			this.onUpdateInjuryLayer();
 		}
 		else
