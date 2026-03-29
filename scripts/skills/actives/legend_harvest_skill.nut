@@ -1,5 +1,16 @@
 this.legend_harvest_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		SoundsA = [
+			"sounds/combat/cleave_hit_hitpoints_01.wav",
+			"sounds/combat/cleave_hit_hitpoints_02.wav",
+			"sounds/combat/cleave_hit_hitpoints_03.wav"
+		],
+		SoundsB = [
+			"sounds/combat/chop_hit_01.wav",
+			"sounds/combat/chop_hit_02.wav",
+			"sounds/combat/chop_hit_03.wav"
+		]
+	},
 	function create() {
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendHarvest);
 		this.m.Description = "Swinging the weapon in an arc that hits two adjacent tiles in counter-clockwise order. Be careful around your own men unless you want to relieve your payroll!";
@@ -78,7 +89,7 @@ this.legend_harvest_skill <- this.inherit("scripts/skills/skill", {
 			return success;
 		
 		if (success)
-			::Legends.S.applyBleed(_targetTile.getEntity(), _user, hp);
+			::Legends.S.applyBleed(_targetTile.getEntity(), _user, hp, SoundsA, SoundsB);
 
 		if (::Legends.S.isEntityNullOrDead(target))
 			return success;
@@ -95,7 +106,7 @@ this.legend_harvest_skill <- this.inherit("scripts/skills/skill", {
 				if (::Legends.S.isEntityNullOrDead(_user))
 					return success;
 					
-				::Legends.S.applyBleed(_targetTile.getEntity(), _user, hp);
+				::Legends.S.applyBleed(_targetTile.getEntity(), _user, hp, SoundsA, SoundsB);
 
 				if (::Legends.S.isEntityNullOrDead(target))
 					return success;

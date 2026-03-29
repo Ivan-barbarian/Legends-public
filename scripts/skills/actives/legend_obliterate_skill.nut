@@ -57,6 +57,12 @@ this.legend_obliterate_skill <- this.inherit("scripts/skills/skill", {
 			: 1.0;
 	}
 
+	function onUse( _user, _targetTile ) {
+		local target = _targetTile.getEntity();
+		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
+		return this.attackEntity(_user, _targetTile.getEntity());
+	}
+
 	function onTargetHit(_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor) {
 		if (_skill != this) {
 			return;

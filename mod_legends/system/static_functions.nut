@@ -206,13 +206,13 @@
 	return this.Math.maxf(0.5, (100.0 - toolEfficiencyModifier) / 100.0);
 }
 
-::Legends.S.applyBleed <- function (_target, _actor, _hpBefore) {
+::Legends.S.applyBleed <- function (_target, _actor, _hpBefore, _soundsA, _soundsB) {
 	if (::Legends.S.isEntityNullOrDead(_target)) {
 		if (_target.getFlags().has("tail") || !_target.getCurrentProperties().IsImmuneToBleeding) {
-			this.Sound.play(this.m.SoundsA[this.Math.rand(0, this.m.SoundsA.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+			this.Sound.play(_soundsA[this.Math.rand(0, _soundsA.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 		}
 		else {
-			this.Sound.play(this.m.SoundsB[this.Math.rand(0, this.m.SoundsB.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+			this.Sound.play(_soundsB[this.Math.rand(0, _soundsB.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 		}
 	}
 	else if (!_target.getCurrentProperties().IsImmuneToBleeding && _hpBefore - _target.getHitpoints() >= this.Const.Combat.MinDamageToApplyBleeding ) {
@@ -221,10 +221,10 @@
 				_effect.setActor(_actor);
 			_effect.setDamage(_actor.getCurrentProperties().IsSpecializedInCleavers ? 10 : 5);
 		}.bindenv(this));
-		this.Sound.play(this.m.SoundsA[this.Math.rand(0, this.m.SoundsA.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+		this.Sound.play(_soundsA[this.Math.rand(0, _soundsA.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 	}
 	else {
-		this.Sound.play(this.m.SoundsB[this.Math.rand(0, this.m.SoundsB.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+		this.Sound.play(_soundsB[this.Math.rand(0, _soundsB.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 	}
 }
 
