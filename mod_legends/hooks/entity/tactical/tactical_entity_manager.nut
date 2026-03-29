@@ -634,11 +634,19 @@
 		local faction = _entity.getFaction();
 		if (faction == ::Const.Faction.Player
 			|| faction == ::Const.Faction.PlayerAnimals
-			|| this.World.FactionManager.isAlliedWithPlayer(faction)
-			|| faction == ::Const.Faction.Undead)
-		{
+			|| this.World.FactionManager.isAlliedWithPlayer(faction)) {
 			return false;
 		}
+		local barredEntities = [
+			::Const.EntityType.Zombie,
+			::Const.EntityType.ZombieYeoman,
+			::Const.EntityType.ZombieKnight,
+			::Const.EntityType.ZombieBetrayer,
+			::Const.EntityType.ZombieBoss
+		]; // should move this to a config or smth
+
+		if (::Legends.S.oneOf(_entity.getType(), barredEntities)
+			return false;
 		return true;
 	}
 
