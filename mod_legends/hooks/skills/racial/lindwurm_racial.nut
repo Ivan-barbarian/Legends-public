@@ -1,6 +1,6 @@
 ::mods_hookExactClass("skills/racial/lindwurm_racial", function(o)
 {	
-	o.onBeforeDamageReceived = function ( _attacker, _skill, _hitInfo, _properties )
+	o.onBeforeDamageReceived <- function ( _attacker, _skill, _hitInfo, _properties )
 	{
 		switch (_hitInfo.DamageType)
 		{
