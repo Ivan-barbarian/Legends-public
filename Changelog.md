@@ -100,8 +100,8 @@ Favoured Enemy - Sword Master
 > gain 25% damage reduction from cutting and blunt attacks but damage is increased by 30% from piercing
 > Stollwurm tail now spends AP on head's long moves
 > fixed stagger effect desynchronizing head and tail turn order
-> Stollwurms no longer get Baffled, Dazed or Staggered when an appropriate attack hits the tail
-> Both parts of the Stollwurm now get Baffled, Dazed or Staggered when an appropriate attack hits the head
+> wurms no longer get Baffled, Dazed or Staggered when an appropriate attack hits the tail
+> Both parts of the wurm now get Baffled, Dazed or Staggered when an appropriate attack hits the head
 
 ## New Runes
 

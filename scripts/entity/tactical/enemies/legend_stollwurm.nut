@@ -10,7 +10,10 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 		EffectsSharedWithTail = {
     		"effects.staggered": "scripts/skills/effects/staggered_effect",
     		"effects.dazed": "scripts/skills/effects/dazed_effect",
-    		"effects.legend_baffled": "scripts/skills/effects/legend_baffled_effect"
+    		"effects.legend_baffled": "scripts/skills/effects/legend_baffled_effect",
+			"effects.withered": "scripts/skills/effects/withered_effect",
+			"effects.insect_swarm": "scripts/skills/effects/insect_swarm_effect",
+			"effects.legend_dazed": "scripts/skills/effects/legend_dazed_effect"
 		}
 	},
 
