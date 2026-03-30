@@ -187,6 +187,16 @@
 			&& (slot == ::Const.ItemSlot.Mainhand || slot == ::Const.ItemSlot.Offhand)
 			&& !::Legends.S.isEntityNullOrDead(this.m.Actor))
 		{
+			// Unequipping the mh may remove skill instances that the offhand also uses
+			// (same fix as the offhand case above)
+			if (slot == ::Const.ItemSlot.Mainhand) {
+				local oh = this.getItemAtSlot(::Const.ItemSlot.Offhand);
+				if (oh != null) {
+					oh.onUnequip();
+					oh.onEquip();
+				}
+			}
+
 			this.updateDualWield();
 		}
 
