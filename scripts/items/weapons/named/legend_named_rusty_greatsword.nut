@@ -13,6 +13,7 @@ this.legend_named_rusty_greatsword <- this.inherit("scripts/items/weapons/named/
 		this.m.SuffixList = this.Const.Strings.BarbarianSuffix;
 		this.m.Description = "This massive and exceptionally well-crafted warblade is built like a cleaver, but has a surprisingly light blade that allows wielding it like a sword.";
 		this.m.Categories = "Sword, Two-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

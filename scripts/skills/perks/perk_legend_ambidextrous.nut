@@ -164,7 +164,8 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 			::logWarning("legend_ambidextrous: offhand skill is null, cannot execute follow-up attack");
 			return;
 		}
-
+		
+		_info.Skill.m.IsExecutingOffhand = true;
 		_info.Skill.useForFree(_info.TargetTile);
 	}
 
@@ -184,7 +185,12 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 	}
 
 	function onAdded() {
-		this.m.HandToHand = ::MSU.asWeakTableRef(::Legends.Actives.get(this, ::Legends.Active.HandToHand));
+		if (::Legends.Actives.get(this, ::Legends.Active.LesserFleshGolemAttack))
+			this.m.HandToHand = ::MSU.asWeakTableRef(::Legends.Actives.get(this, ::Legends.Active.LesserFleshGolemAttack));
+		else if (::Legends.Actives.get(this, ::Legends.Active.GreaterFleshGolemAttack))
+			this.m.HandToHand = ::MSU.asWeakTableRef(::Legends.Actives.get(this, ::Legends.Active.GreaterFleshGolemAttack));
+		else
+			this.m.HandToHand = ::MSU.asWeakTableRef(::Legends.Actives.get(this, ::Legends.Active.HandToHand));
 
 		local off = this.getContainer().getActor().getOffhandItem();
 		if (off != null) {

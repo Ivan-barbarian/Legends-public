@@ -464,6 +464,19 @@
 
 		onAppearanceChanged(_appearance, _setDirty);
 
+		if (this.hasSprite("armor_upgrade_back_top"))
+		{
+			local pauldronBackTop = this.getSprite("armor_upgrade_back_top");
+			if (_appearance.ArmorUpgradeFront.len() != 0) { // if has front-back upgrade - draw back upgrade over cloak and hide the regular upgrade
+				pauldronBackTop.setBrush(_appearance.ArmorUpgradeBack);
+				pauldronBackTop.Visible = true;
+				this.getSprite("armor_upgrade_back").Visible = false;
+			}
+			else {
+				pauldronBackTop.Visible = false;
+			}
+		}
+
 		// Flip the offhand weapon sprite when dual wielding
 		if (hasSprite("shield_icon") && _appearance.Shield.len() != 0) {
 			if (::Legends.Weapons.isDualWielding(this)) {

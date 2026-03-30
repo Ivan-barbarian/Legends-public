@@ -65,7 +65,7 @@ this.legend_named_rusty_serrated_axe <- this.inherit("scripts/items/weapons/name
 	{
 		this.named_weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.Chop, function (_skill) {
-			_skill.m.FatigueCost = 15;
+			_skill.m.IsHack = true;
 		}.bindenv(this));
 		::Legends.Actives.grant(this, ::Legends.Active.Decapitate, function (_skill) {
 			_skill.m.ApplyAxeMastery = true;

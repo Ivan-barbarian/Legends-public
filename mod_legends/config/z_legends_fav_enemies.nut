@@ -42,11 +42,15 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.SchratSmall,
 	::Const.EntityType.LegendGreenwoodSchrat,
 	::Const.EntityType.LegendGreenwoodSchratSmall,
-	::Const.EntityType.LegendDemonHound,
-	::Const.EntityType.LegendWicht
+	::Const.EntityType.LegendWicht,
+	::Const.EntityType.Necromancer,
+	::Const.EntityType.GoblinShaman,
+	::Const.EntityType.LegendGoblinWitchDoctor
 ];
 
 ::Const.LegendMod.FavoriteBeast <- [
+	::Const.EntityType.LegendBasiliskDrone,
+	::Const.EntityType.LegendBasiliskSentry,
 	::Const.EntityType.Hyena,
 	::Const.EntityType.LegendEnragedHyena,
 	::Const.EntityType.Direwolf,
@@ -68,18 +72,23 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.UnholdFrost,
 	::Const.EntityType.BarbarianUnhold,
 	::Const.EntityType.BarbarianUnholdFrost,
-	::Const.EntityType.LegendRockUnhold
+	::Const.EntityType.LegendRockUnhold,
+	::Const.EntityType.LegendBear
 ];
 
 ::Const.LegendMod.FavoriteGreenSkins <- [
 	::Const.EntityType.GoblinFighter,
 	::Const.EntityType.LegendGoblinPlunderer, //
 	::Const.EntityType.LegendGoblinHarrier, // these 2 inherit from the goblin fighter but just in case?
+	::Const.EntityType.LegendGoblinBerserker,
 	::Const.EntityType.GoblinAmbusher,
 	::Const.EntityType.LegendGoblinTribeDefender,
 	::Const.EntityType.GoblinLeader,
 	::Const.EntityType.GoblinShaman,
+	::Const.EntityType.LegendGoblinWitchDoctor,
 	::Const.EntityType.GoblinWolfrider,
+	::Const.EntityType.LegendGoblinDirewolfRider,
+	::Const.EntityType.LegendGoblinWhiteDirewolfRider,
 	::Const.EntityType.OrcBerserker,
 	::Const.EntityType.OrcYoung,
 	::Const.EntityType.OrcWarrior,
@@ -100,8 +109,9 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.BanditLeader,
 	// ::Const.EntityType.BanditVeteran,
 	::Const.EntityType.LegendRobberBaron,
+	::Const.EntityType.LegendBarbarianRunechosen,
 	::Const.EntityType.BarbarianChampion,
-	::Const.EntityType.BarbarianChosen, //King
+	::Const.EntityType.BarbarianChosen,
 	::Const.EntityType.Sergeant,
 	::Const.EntityType.Officer,
 	::Const.EntityType.Gladiator,
@@ -109,17 +119,21 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.NomadLeader,
 	::Const.EntityType.Executioner,
 	::Const.EntityType.DesertDevil,
+	::Const.EntityType.DesertStalker,
 	::Const.EntityType.LegendFencer
 ];
 
 ::Const.LegendMod.FavoriteOutlaw <- [
 	::Const.EntityType.Warhound,
 	::Const.EntityType.BarbarianThrall,
-	::Const.EntityType.BarbarianMarauder,
-	::Const.EntityType.BarbarianChampion,
-	::Const.EntityType.BarbarianChosen,
+	::Const.EntityType.BarbarianMarauder, //Reaver
+	::Const.EntityType.BarbarianChampion, //Chosen
+	::Const.EntityType.BarbarianChosen, //King
 	::Const.EntityType.BarbarianDrummer,
 	::Const.EntityType.BarbarianBeastmaster,
+	::Const.EntityType.LegendBarbarianMarauder,
+	::Const.EntityType.LegendBarbarianPillager,
+	::Const.EntityType.LegendBarbarianRunechosen,
 	::Const.EntityType.BanditRabble,
 	::Const.EntityType.BanditRabblePoacher,
 	::Const.EntityType.BanditThug,
@@ -135,6 +149,7 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.NomadSlinger,
 	::Const.EntityType.NomadArcher,
 	::Const.EntityType.NomadLeader,
+	::Const.EntityType.LegendSighthound,
 	// I see sellswords as more civilized outlaws
 	::Const.EntityType.Mercenary, //Contains LOW varient
 	::Const.EntityType.MercenaryRanged,
@@ -151,6 +166,7 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.LegendPeasantPoacher,
 	::Const.EntityType.LegendPeasantMiner,
 	::Const.EntityType.LegendPeasantSquire,
+	::Const.EntityType.LegendPeasantWoodsman,
 	::Const.EntityType.LegendPeasantWitchHunter,
 	::Const.EntityType.CaravanHand,
 	::Const.EntityType.CaravanGuard,
@@ -183,7 +199,9 @@ if (!("LegendMod" in ::Const))
 	::Const.EntityType.Engineer,
 	::Const.EntityType.Assassin,
 	::Const.EntityType.LegendManhunter,
-	::Const.EntityType.LegendManhunterVeteran
+	::Const.EntityType.LegendManhunterRanged,
+	::Const.EntityType.LegendManhunterVeteran,
+	::Const.EntityType.LegendManhunterVeteranRanged
 ];
 
 ::Const.LegendMod.GetFavoriteEnemyValue <- function ( _type ) //Number = how many you need to kill to attain 1% towards a fav. enemy multiplier. | EG, 1 = 1%, 4 = 0.25%, etc. | 1 / <return number> = how many needed to gain 1%.
@@ -201,6 +219,9 @@ if (!("LegendMod" in ::Const))
 
 	case ::Const.EntityType.Alp :
 		return 4;
+
+	case ::Const.EntityType.AlpShadow :
+		return 20;
 
 	case ::Const.EntityType.LegendDemonAlp :
 		return 1;
@@ -259,6 +280,12 @@ if (!("LegendMod" in ::Const))
 	case ::Const.EntityType.LegendSkinGhoul :
 		return 2;
 
+	case ::Const.EntityType.LegendBasiliskDrone :
+		return 5;
+
+	case ::Const.EntityType.LegendBasiliskSentry :
+		return 4;
+
 	case ::Const.EntityType.Hyena :
 		return 5;
 
@@ -314,6 +341,9 @@ if (!("LegendMod" in ::Const))
 		return 8;
 
 	case ::Const.EntityType.LegendBanshee :
+		return 2;
+
+	case ::Const.EntityType.LegendWicht :
 		return 4;
 
 	case ::Const.EntityType.ZombieBoss :
@@ -337,17 +367,30 @@ if (!("LegendMod" in ::Const))
 	case ::Const.EntityType.GoblinWolfrider :
 		return 5;
 
+	case ::Const.EntityType.LegendGoblinDirewolfRider :
+		return 5;
+
+	case ::Const.EntityType.LegendGoblinWhiteDirewolfRider :
+		return 2;
+
 	case ::Const.EntityType.GoblinShaman :
 		return 4;
+
+	case ::Const.EntityType.LegendGoblinWitchDoctor :
+		return 2;
 
 	case ::Const.EntityType.GoblinLeader :
 		return 4;
 
 	case ::Const.EntityType.GoblinFighter :
-		return 8;
-
+	case ::Const.EntityType.LegendGoblinPlunderer :
+	case ::Const.EntityType.LegendGoblinHarrier :
 	case ::Const.EntityType.GoblinAmbusher :
 		return 8;
+
+	case ::Const.EntityType.LegendGoblinBerserker :
+	case ::Const.EntityType.LegendGoblinTribeDefender :
+		return 4;
 
 	case ::Const.EntityType.OrcYoung :
 		return 6;
@@ -357,6 +400,12 @@ if (!("LegendMod" in ::Const))
 
 	case ::Const.EntityType.LegendOrcElite :
 		return 4;
+
+	case ::Const.EntityType.LegendOrcMadBerserker :
+		return 1;
+
+	case ::Const.EntityType.LegendOrcTyrant :
+		return 1;
 
 	case ::Const.EntityType.OrcWarlord :
 		return 1;
@@ -390,6 +439,7 @@ if (!("LegendMod" in ::Const))
 	case ::Const.EntityType.LegendPeasantPoacher :
 	case ::Const.EntityType.LegendPeasantMiner :
 	case ::Const.EntityType.LegendPeasantSquire :
+	case ::Const.EntityType.LegendPeasantWoodsman :
 	case ::Const.EntityType.LegendPeasantWitchHunter :
 	case ::Const.EntityType.Peasant :
 		return 25; //Just using this for now, they are all pretty much the same in strength aside from the witchunter and squire anyway.
@@ -403,6 +453,7 @@ if (!("LegendMod" in ::Const))
 
 	case ::Const.EntityType.Wardog :
 	case ::Const.EntityType.ArmoredWardog :
+	case ::Const.EntityType.LegendSighthound :
 		return 16;
 
 	case ::Const.EntityType.Mercenary :
@@ -419,6 +470,8 @@ if (!("LegendMod" in ::Const))
 	case ::Const.EntityType.NobleEliteFootman :
 	case ::Const.EntityType.NoblePollax :
 	case ::Const.EntityType.NobleSureshot :
+	case ::Const.EntityType.LegendNobleGuard :
+	case ::Const.EntityType.LegendManAtArms :
 		return 8;
 
 	case ::Const.EntityType.Greatsword :
@@ -485,9 +538,16 @@ if (!("LegendMod" in ::Const))
 	case ::Const.EntityType.BarbarianMarauder :
 		return 8;
 
+	case ::Const.EntityType.LegendBarbarianRunechosen:
 	case ::Const.EntityType.BarbarianChosen: //Barbarian King
-	case ::Const.EntityType.BarbarianChampion:
 		return 1;
+
+	case ::Const.EntityType.LegendBarbarianMarauder:
+	case ::Const.EntityType.LegendBarbarianPillager:
+		return 2;
+
+	case ::Const.EntityType.BarbarianChampion:
+		return 2;
 
 	case ::Const.EntityType.BarbarianDrummer :
 		return 4;
@@ -496,6 +556,9 @@ if (!("LegendMod" in ::Const))
 		return 2;
 
 	case ::Const.EntityType.BarbarianUnholdFrost :
+		return 2;
+
+	case ::Const.EntityType.LegendBear :
 		return 2;
 
 	case ::Const.EntityType.BarbarianBeastmaster :
@@ -564,7 +627,7 @@ if (!("LegendMod" in ::Const))
 		return 1;
 
 	case ::Const.EntityType.SkeletonLichMirrorImage :
-		return 0.5;
+		return 5;
 
 	case ::Const.EntityType.SkeletonPhylactery :
 		return 1;

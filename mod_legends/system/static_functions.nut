@@ -206,6 +206,36 @@
 	return this.Math.maxf(0.5, (100.0 - toolEfficiencyModifier) / 100.0);
 }
 
+::Legends.S.applyBleed <- function (_target, _actor, _hpBefore, _soundsA, _soundsB, _damage = 0, _effect = ::Legends.Effect.Bleeding) {
+	local damage = 0;
+	if (_damage > 0) {
+		damage = _damage;
+	}
+	else {
+		damage = _actor.getCurrentProperties().IsSpecializedInCleavers ? 10 : 5;
+	}
+
+	if (::Legends.S.isEntityNullOrDead(_target)) {
+		if (_target.getFlags().has("tail") || !_target.getCurrentProperties().IsImmuneToBleeding) {
+			this.Sound.play(_soundsA[this.Math.rand(0, _soundsA.len() - 1)], this.Const.Sound.Volume.Skill, _actor.getPos());
+		}
+		else {
+			this.Sound.play(_soundsB[this.Math.rand(0, _soundsB.len() - 1)], this.Const.Sound.Volume.Skill, _actor.getPos());
+		}
+	}
+	else if (!_target.getCurrentProperties().IsImmuneToBleeding && _hpBefore - _target.getHitpoints() >= this.Const.Combat.MinDamageToApplyBleeding ) {
+		::Legends.Effects.grant(_target, _effect, function(_effect) {
+			if (_actor.getFaction() == this.Const.Faction.Player )
+				_effect.setActor(_actor);
+			_effect.setDamage(damage);
+		}.bindenv(this));
+		this.Sound.play(_soundsA[this.Math.rand(0, _soundsA.len() - 1)], this.Const.Sound.Volume.Skill, _actor.getPos());
+	}
+	else {
+		this.Sound.play(_soundsB[this.Math.rand(0, _soundsB.len() - 1)], this.Const.Sound.Volume.Skill, _actor.getPos());
+	}
+}
+
 ::Legends.S.oneOf <- function (_value, ...) {
 	if (vargv.len() == 0) {
 		::logError("::Legends.S.oneOf used with empty args, returning false");

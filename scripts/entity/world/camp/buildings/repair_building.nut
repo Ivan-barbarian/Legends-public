@@ -105,13 +105,19 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	function getModifierToolip()
 	{
 		this.init();
+		local nonNullEntries = 0;
+		foreach (key, value in this.m.Repairs) {
+		    if (value != null) {
+        		nonNullEntries++;
+			}
+		}
 		local mod = this.getModifiers();
 		local ret = [
 			{
 				id = 3,
 				type = "text",
 				icon = "ui/icons/plus.png",
-				text = "There are [color=%positive%]" + this.m.Repairs.len() + "[/color] items in the repair queue."
+				text = "There are [color=%positive%]" + nonNullEntries + "[/color] items in the repair queue."
 			},
 			{
 				id = 4,
@@ -276,6 +282,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	function getRequiredTime()
 	{
 		local points = 0;
+		this.init();
 		if (this.m.Repairs == null)
 		{
 			return 0;

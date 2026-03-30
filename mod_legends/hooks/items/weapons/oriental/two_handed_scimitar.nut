@@ -4,7 +4,14 @@
 	o.create = function() {
 		create();
 		this.m.Categories = "Cleaver, Two-Handed";
-		this.m.Value = 2900;
+		this.m.Value = 3100;
+		this.m.Condition = 68.0;
+		this.m.ConditionMax = 68.0;
+		this.m.StaminaModifier = -14;
+		this.m.RegularDamage = 85;
+		this.m.RegularDamageMax = 105;
+		this.m.DirectDamageMult = 0.35;
+		this.m.ShieldDamage = 0;
 		this.setVariant(this.Math.rand(0, 2));
 	}
 
@@ -20,7 +27,9 @@
 		this.weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.LegendHew);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendHarvest);
-		::Legends.Actives.grant(this, ::Legends.Active.Decapitate);
+		::Legends.Actives.grant(this, ::Legends.Active.Decapitate, function (_skill) {
+			_skill.m.IsTwoHand = true;
+		}.bindenv(this));
 	}
 
 });

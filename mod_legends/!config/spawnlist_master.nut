@@ -556,6 +556,7 @@
 	Cost = 40,
 	Row = 0,
 	NameList = this.Const.Strings.GhostArmorNames,
+	TitleList = null,
 	Script = "scripts/entity/tactical/enemies/legend_wicht"
 };
 

@@ -46,11 +46,11 @@
 		Helms = [
 		],
 		Tops = [
-			[1, "top/legend_helmet_mummy_mask"], // 40 -3 -2 450
+			[1, "top/legend_helmet_mummy_mask", [1]], // 40 -3 -2 450
 			[1, ""]
 		],
 		Vanity = [
-			[1, "vanity/legend_helmet_mummy_crown"] // 10 -0 -0 50
+			[1, "vanity/legend_helmet_mummy_crown", [1]] // 10 -0 -0 50
 		]
 	}]
 };

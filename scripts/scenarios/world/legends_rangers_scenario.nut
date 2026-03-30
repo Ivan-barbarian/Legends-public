@@ -37,8 +37,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 			i = ++i;
 		}
 
-		local bros = roster.getAll(); //starting party
-		local talents;
+		local bros = roster.getAll(); //starting party	
 		bros[0].setStartValuesEx([
 			"legend_ranger_commander_background"
 		]);
@@ -53,7 +52,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		bros[0].setVeteranPerks(2);
 
 		bros[1].setStartValuesEx([
-			"legend_druid_commander_background"
+			"legend_druid_background"
 		]);
 		bros[1].getBackground().m.RawDescription = "{%name% was the bastard of a noblewoman who left them in a ditch at the edge of the forest to be taken by wolves. It worked, but instead left %name% being cared for by a wolfmother with no cubs of her own. When the she-wolf was slain by vengeful poachers %name% took it upon themselves to be as far away from society as possible. Right up until a certain ranger fell headfirst into their hovel}";
 
@@ -64,6 +63,11 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		bros[1].getFlags().set("IsPlayerCharacter", true);
 		bros[1].setPlaceInFormation(4);
 		bros[1].setVeteranPerks(2);
+		bros[1].getBaseProperties().MeleeSkill += 10;
+		local talents = bros[1].getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.MeleeSkill] = 2;
+		talents[this.Const.Attributes.Hitpoints] = 2;
 		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_venison_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/trade/furs_item"));

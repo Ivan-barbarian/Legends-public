@@ -30,23 +30,30 @@ this.legend_armor_chain_and_mail_upgrade <- this.inherit("scripts/items/legend_a
 		this.m.OverlayIconLarge = "legend_armor/inventory_pauldrons_chain_and_mail_"  + variant + ".png";
 	}
 
-	function getTooltip()
-	{
-		local result = this.legend_armor_upgrade.getTooltip();
-		result.push({
+	function updateTooltip( _tooltip )	{
+		_tooltip.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/bravery.png",
 			text = "[color=%positive%]+3[/color] Resolve"
 		});
-		result.push({
+		_tooltip.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "Doubles enemy desire to attack you in battle"
 		});
-		return result;
+		return _tooltip;
 	}
+
+	function getTooltip()	{
+		return updateTooltip(this.legend_armor_upgrade.getTooltip());
+	}
+
+	function onArmorTooltip( _result )	{
+		this.legend_armor_upgrade.onArmorTooltip(updateTooltip(_result));
+	}
+
 	function onUpdateProperties( _properties )
 	{
 		this.legend_armor_upgrade.onUpdateProperties(_properties);

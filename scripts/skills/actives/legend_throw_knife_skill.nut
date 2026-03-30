@@ -170,8 +170,8 @@ this.legend_throw_knife_skill <- this.inherit("scripts/skills/skill", {
 		if (this.Math.rand(1, 100) <= this.m.DistractedChance)
 		{
 			::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Distracted);
-			if (!user.isHiddenToPlayer() && targetTile.IsVisibleForPlayer)
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " struck a hit that leaves " + this.Const.UI.getColorizedEntityName(_targetEntity) + " distracted");
+			if (!this.getContainer().getActor().isHiddenToPlayer() && targetTile.IsVisibleForPlayer)
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " struck a hit that leaves " + this.Const.UI.getColorizedEntityName(_targetEntity) + " distracted");
 		}
 	}
 

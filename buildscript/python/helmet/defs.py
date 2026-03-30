@@ -201,12 +201,12 @@ class Defs:
 
 ### Helm
 
-{"name" : "ancient_conic_helm"                     , "layer" : "helm",  "lower": True, "min" : 1, "max" : 5, "value" : 200, "con" : 60, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
+{"name" : "ancient_conic_helm"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 200, "con" : 60, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Ancient Conical Helm",
  "desc" :  "A conical helm with a nasal guard from a bygone era, its ragged leather lining barely hanging from the weathered shell.",
  "adesc" : "Includes an ancient conical helm."
  },
-{"name" : "ancient_kettle"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 15, "value" : 200, "con" : 60, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
+{"name" : "ancient_kettle"                     , "layer" : "helm", "min" : 1, "max" : 15, "value" : 200, "con" : 60, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Ancient Kettle",
  "desc" :  "An ancient kettle helm decorated with a tall metal crest, topped with twin feathers that have since lost their lustre.",
  "adesc" : "Includes an ancient kettle helm."
@@ -216,7 +216,7 @@ class Defs:
  "desc" :  "A dome helm with heavy riveted bands that has once been in possession of an ancient household guard.",
   "adesc" : "Includes an ancient dome helm."
  },
-{"name" : "ancient_crested"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 5, "value" : 200, "con" : 60, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
+{"name" : "ancient_crested"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 200, "con" : 60, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Ancient Crested Helm",
  "desc" :  "A helm with a heavy crest and jutting cheek guards, its glory faded by the passage of time.",
  "adesc" : "Includes an ancient crested helm."
@@ -246,7 +246,7 @@ class Defs:
  "desc" :  "A conical helm of ancient design, topped with a tail long stiff and matted with rot.",
  "adesc" : "Includes a heavy, ancient tailed conical helm."
  },
-{"name" : "ancient_face_helm"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 5, "value" : 500, "con" : 120, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
+{"name" : "ancient_face_helm"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 500, "con" : 120, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Ancient Face Helm",
  "desc" :  "A sturdy helm with a face mask of an ancient honor guard. Despite its age, the helm is in remarkably good condition.",
  "adesc" : "Includes a sturdy, ancient helm with a metal face mask."
@@ -541,7 +541,7 @@ class Defs:
  "desc" :  "A sturdy steel helm with a crafty sloped design meant to deflect blows.",
  "adesc" : "Includes a steel frogmouth helm."
  },
-{"name" : "frogmouth_named"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 5, "value" : 2250, "con" : 160, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "true", "impactSound" : "plate", "invSound" : "plate",  "named" : { "con": { "min" : 165, "max" : 180 }, "fat": { "min" : 9, "max" : 8 }, "vis": { "min" : 3, "max" : 2 }, "names" : Names  },
+{"name" : "frogmouth_named"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 5, "value" : 2250, "con" : 160, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "true", "impactSound" : "plate", "invSound" : "plate",  "named" : { "con": { "min" : 170, "max" : 195 }, "fat": { "min" : 13, "max" : 11 }, "vis": { "min" : 3, "max" : 2 }, "names" : Names  },
  "title" :  "Frogmouth",
  "desc" :  "A prestigious helm with a crafty sloped design meant to deflect blows. Such a masterpiece surely belonged to a champion of many great tournaments.",
  "adesc" : "Includes a prestigious frogmouth helm of excellent construction."
@@ -616,7 +616,7 @@ class Defs:
  "desc" :  "A hardened nasal helm with a cloth band and a tail.",
  "adesc" : "Includes a nasal helm with a tail."
  },
-{"name" : "armet_named"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 3, "value" : 4000, "con" : 170, "stam" : -11, "vis" : -2, "hair" : "true", "beard" : "true", "impactSound" : "plate", "invSound" : "plate", "named" : { "con": { "min" : 170, "max" : 195 }, "fat": { "min" : 13, "max" : 11 }, "vis": { "min" : 2, "max" : 1 }, "names" : Names  },
+{"name" : "armet_named"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 3, "value" : 4000, "con" : 170, "stam" : -11, "vis" : -2, "hair" : "true", "beard" : "true", "impactSound" : "plate", "invSound" : "plate", "named" : { "con": { "min" : 165, "max" : 180 }, "fat": { "min" : 9, "max" : 8 }, "vis": { "min" : 2, "max" : 1 }, "names" : Names  },
  "title" :  "Armet",
  "desc" :  "A sophisticated steel helm offering excellent protection despite its agile silhouette. Masterfully crafted of exquisite steel and layered with decorative paint.",
  "adesc" : "Includes a masterfully crafted armet of exquisite steel."
@@ -669,7 +669,7 @@ class Defs:
  "desc" :  "A distinctive, bird-like mask. The beak acts as a ventilator, containing sweet-smelling herbs to ward away sickness and disease.",
  "adesc" : "Includes a distinctive, bird-like mask."
  },
-{"name" : "orc_horn_mask"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "top", "min" : 1, "max" : 4, "value" : 200, "con" : 60, "stam" : -8, "vis" : -2, "hair" : "true", "beard" : "false", "impactSound" : "leather", "invSound" : "leather",
+{"name" : "orc_horn_mask"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "top", "lower": True, "min" : 1, "max" : 4, "value" : 200, "con" : 60, "stam" : -8, "vis" : -2, "hair" : "true", "beard" : "false", "impactSound" : "leather", "invSound" : "leather",
  "title" :  "Orc Horn Mask",
  "desc" :  "A rough horned face mask, worn by young orcs. Counts as a cultist item.",
  "adesc" : "Includes a rough, heavy horned face mask."
@@ -679,7 +679,7 @@ class Defs:
  "desc" :  "A simple, heavy construction of metal plates, worn by young orcs.",
  "adesc" : "Includes a simple, heavy metal mask."
  },
-{"name" : "orc_leather_mask"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "top", "min" : 1, "max" : 4, "value" : 50, "con" : 40, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "leather", "invSound" : "leather",
+{"name" : "orc_leather_mask"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "top", "lower": True, "min" : 1, "max" : 4, "value" : 50, "con" : 40, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "leather", "invSound" : "leather",
  "title" :  "Orc Leather Mask",
  "desc" :  "A simple, heavy construction of strange leather, worn by young orcs. Counts as a cultist item.",
  "adesc" : "Includes a simple, heavy leather mask."

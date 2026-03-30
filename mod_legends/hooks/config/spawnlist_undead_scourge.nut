@@ -120,7 +120,7 @@ if (!("Spawn" in ::Const.World))
 					Cost = 20
 				},
 				{
-					MinR = 150,
+					MinR = 300,
 					Type = this.Const.World.Spawn.Troops.LegendWicht,
 					Cost = 40
 				},

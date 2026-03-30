@@ -161,6 +161,16 @@
 				this.m.Items[::Const.ItemSlot.Offhand][0] = null;
 
 				if (!::Legends.S.isEntityNullOrDead(this.m.Actor)) {
+					// Unequipping the oh may remove skill instances that the mainhand also uses
+					// (skills don't stack, there is only one instance per skill id in m.Skills)
+					// so the easiest way I've found to prevent that is to re-equip the mh - there
+					// maybe something cleaner to prevent the removal but idk.
+					local mh = this.getItemAtSlot(::Const.ItemSlot.Mainhand);
+					if (mh != null) {
+						mh.onUnequip();
+						mh.onEquip();
+					}
+
 					this.m.Actor.getSkills().update();
 					this.updateDualWield();
 				}
@@ -177,6 +187,16 @@
 			&& (slot == ::Const.ItemSlot.Mainhand || slot == ::Const.ItemSlot.Offhand)
 			&& !::Legends.S.isEntityNullOrDead(this.m.Actor))
 		{
+			// Unequipping the mh may remove skill instances that the offhand also uses
+			// (same fix as the offhand case above)
+			if (slot == ::Const.ItemSlot.Mainhand) {
+				local oh = this.getItemAtSlot(::Const.ItemSlot.Offhand);
+				if (oh != null) {
+					oh.onUnequip();
+					oh.onEquip();
+				}
+			}
+
 			this.updateDualWield();
 		}
 
@@ -221,6 +241,41 @@
 			::Legends.Actives.remove(actor, ::Legends.Active.LegendDoubleSwing);
 			::Legends.Effects.remove(actor, ::Legends.Effect.LegendDualWield);
 		}
+	}
+
+	o.swapDualWieldSlots <- function () {
+		local mh = this.getItemAtSlot(::Const.ItemSlot.Mainhand);
+		local oh = this.getItemAtSlot(::Const.ItemSlot.Offhand);
+
+		if (mh == null || oh == null) {
+			return false;
+		}
+		if (oh.getSlotType() != ::Const.ItemSlot.Mainhand) {
+			return false;
+		}
+		if (oh.getCurrentSlotType() != ::Const.ItemSlot.Offhand) {
+			return false;
+		}
+
+		// Clear skills for both weapons
+		mh.onUnequip();
+		oh.onUnequip();
+
+		// Swap slot contents
+		this.m.Items[::Const.ItemSlot.Mainhand][0] = oh;
+		this.m.Items[::Const.ItemSlot.Offhand][0] = mh;
+
+		oh.setCurrentSlotType(::Const.ItemSlot.Mainhand);
+		mh.setCurrentSlotType(::Const.ItemSlot.Offhand);
+
+		// Re equip both
+		oh.onEquip();
+		mh.onEquip();
+
+		this.m.Actor.getSkills().update();
+		this.updateDualWield();
+
+		return true;
 	}
 
 	o.unequipNoUpdate <- function (_item) {

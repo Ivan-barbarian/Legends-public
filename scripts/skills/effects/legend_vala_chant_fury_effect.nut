@@ -43,8 +43,12 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 		{
 			return 0.75;
 		}
-
-		return 1.0;
+		else if (distance == 1){
+			return 1.0;
+		}
+		else{
+			return 0;
+		}
 	}
 
 	function getMasteryMult()

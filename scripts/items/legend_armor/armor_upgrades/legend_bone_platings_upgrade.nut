@@ -28,26 +28,22 @@ this.legend_bone_platings_upgrade <- this.inherit("scripts/items/legend_armor/le
 		this.m.OverlayIconLarge = "legend_armor/inventory_pauldrons_bone_platings_"  + variant + ".png";
 	}
 
-	function getTooltip()
-	{
-		local result = this.legend_armor_upgrade.getTooltip();
-		result.push({
+	function updateTooltip( _tooltip )	{
+		_tooltip.push({
 			id = 14,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "Completely absorbs the first hit of every combat encounter which doesn\'t ignore armor"
 		});
-		return result;
+		return _tooltip;
 	}
 
-	function onArmorTooltip( _result )
-	{
-		_result.push({
-			id = 14,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Completely absorbs the first hit of every combat encounter which doesn\'t ignore armor"
-		});
+	function getTooltip()	{
+		return updateTooltip(this.legend_armor_upgrade.getTooltip());
+	}
+
+	function onArmorTooltip( _result )	{
+		this.legend_armor_upgrade.onArmorTooltip(updateTooltip(_result));
 	}
 
 	function onCombatStarted()

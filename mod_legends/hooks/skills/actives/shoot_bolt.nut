@@ -3,6 +3,12 @@
 	o.m.AdditionalAccuracy = 15;
 	o.m.AdditionalHitChance = -3;
 
+	local create = o.create;
+	o.create = function () {
+		create();
+		this.m.Order = this.Const.SkillOrder.OffensiveTargeted+1;
+	}
+
 	o.getTooltip = function ()
 	{
 		local tooltip = this.getRangedTooltip(this.getDefaultTooltip());

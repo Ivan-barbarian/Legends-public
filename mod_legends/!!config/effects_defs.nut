@@ -1562,8 +1562,8 @@ effectsDefs.push({
 effectsDefs.push({
 	ID = "effects.legend_blooddrinker",
 	Script = "scripts/skills/effects/legend_blooddrinker_effect",
-	Name = "Named Shamshir",
-	Const = "LegendNamedShamshir"
+	Name = "Blooddrinker",
+	Const = "LegendBlooddrinker"
 });
 
 ::Legends.Effect.LegendParrying <- null;

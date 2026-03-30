@@ -76,8 +76,7 @@ this.legend_legion_slave_background <- this.inherit("scripts/skills/backgrounds/
 			],
 			Enemy = [],
 			Class = [
-				::Const.Perks.BeastClassTree,
-				::Const.Perks.SlingClassTree
+				::Const.Perks.BeastClassTree
 			],
 			Profession = [],
 			Magic = []

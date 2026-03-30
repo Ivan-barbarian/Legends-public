@@ -1,20 +1,4 @@
 ::mods_hookExactClass("items/weapons/greenskins/goblin_notched_blade", function(o) {
-
-	o.isAmountShown <- function()
-	{
-		return true;
-	}
-
-	o.setAmmo <- function ( _a )
-	{
-		this.weapon.setAmmo(_a);
-	}
-
-	o.getAmountString <- function ()
-	{
-		return this.m.Ammo + "/" + this.m.AmmoMax;
-	}
-
 	local create = o.create;
 	o.create = function() {
 		create();
@@ -23,6 +7,7 @@
 		this.m.Ammo = 8;
 		this.m.AmmoMax = 8;
 		this.m.AmmoCost = 1;
+		this.m.ItemType = this.m.ItemType | ::Const.Items.ItemType.Ammo;
 	}
 
 	o.updateVariant <- function() {

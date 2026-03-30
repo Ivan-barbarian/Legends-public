@@ -1,14 +1,14 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "19.3.0-alpha11",
+	Version = "19.3.0-alpha16",
 	Name = "Legends Mod",
-	BuildName = "Rock & Bone",
+	BuildName = "Left & Right",
 	IsStartingNewCampaign = false
 };
 
 ::mods_registerMod(::Legends.ID, ::Legends.Version, ::Legends.Name);
 ::mods_queue(::Legends.ID, [
-	"mod_legends_assets(>=19.3.0-alpha11)",
+	"mod_legends_assets(>=19.3.0-alpha16)",
 	"mod_msu(>=1.7.0)",
 	"vanilla(>=1.5.1-5)",
 	"vanilla(<1.5.2)",

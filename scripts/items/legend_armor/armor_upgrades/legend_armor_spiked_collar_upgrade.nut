@@ -30,39 +30,30 @@ this.legend_armor_spiked_collar_upgrade <- this.inherit("scripts/items/legend_ar
 		this.m.OverlayIconLarge = "legend_armor/inventory_pauldrons_spiked_chain_"  + variant + ".png";
 	}
 
-	function getTooltip()
-	{
-		local result = this.legend_armor_upgrade.getTooltip();
-		result.push({
+	function updateTooltip( _tooltip )	{
+		_tooltip.push({
 			id = 14,
 			type = "text",
 			icon = "ui/icons/melee_defense.png",
 			text = "[color=%positive%]+3[/color] Melee Defense"
 		});
-		result.push({
+		_tooltip.push({
 			id = 14,
 			type = "text",
 			icon = "ui/icons/initiative.png",
 			text = "[color=%negative%]-6[/color] Initiative"
 		});
-		return result;
+		return _tooltip;
 	}
-	function onArmorTooltip( _result )
-	{
-		_result.push({
-			id = 14,
-			type = "text",
-			icon = "ui/icons/melee_defense.png",
-			text = "[color=%positive%]+3[/color] Melee Defense"
-		});
 
-		_result.push({
-			id = 14,
-			type = "text",
-			icon = "ui/icons/initiative.png",
-			text = "[color=%negative%]-6[/color] Initiative"
-		});
+	function getTooltip()	{
+		return updateTooltip(this.legend_armor_upgrade.getTooltip());
 	}
+
+	function onArmorTooltip( _result )	{
+		this.legend_armor_upgrade.onArmorTooltip(updateTooltip(_result));
+	}
+
 	function onUpdateProperties( _properties )
 	{
 		this.legend_armor_upgrade.onUpdateProperties(_properties);

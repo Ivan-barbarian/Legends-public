@@ -1,21 +1,5 @@
 this.legend_redback_dagger <- this.inherit("scripts/items/weapons/weapon", {
 	m = {},
-
-	function isAmountShown()
-	{
-		return true;
-	}
-
-	function setAmmo ( _a )
-	{
-		this.weapon.setAmmo(_a);
-	}
-
-	function getAmountString ()
-	{
-		return this.m.Ammo + "/" + this.m.AmmoMax;
-	}
-
 	function create()
 	{
 		this.weapon.create();
@@ -36,7 +20,7 @@ this.legend_redback_dagger <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Icon = "weapons/melee/legend_redback_dagger_70x70.png";
 		this.m.WeaponType = this.Const.Items.WeaponType.Dagger;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded | this.Const.Items.ItemType.Ammo;
 		this.m.IsDoubleGrippable = true;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
@@ -48,6 +32,7 @@ this.legend_redback_dagger <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Ammo = 8;
 		this.m.AmmoMax = 8;
 		this.m.AmmoCost = 1;
+		this.m.ItemType = this.m.ItemType | ::Const.Items.ItemType.Ammo;
 		this.m.RegularDamage = 26;
 		this.m.RegularDamageMax = 52;
 		this.m.ArmorDamageMult = 0.7;

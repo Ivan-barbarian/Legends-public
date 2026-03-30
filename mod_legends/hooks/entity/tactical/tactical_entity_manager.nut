@@ -630,6 +630,26 @@
 		return onResurrect(_info, _force);
 	}
 
+	o.isAllowedToDualWield <- function (_entity) {
+		local faction = _entity.getFaction();
+		if (faction == ::Const.Faction.Player
+			|| faction == ::Const.Faction.PlayerAnimals
+			|| this.World.FactionManager.isAlliedWithPlayer(faction)) {
+			return false;
+		}
+		local barredEntities = [
+			::Const.EntityType.Zombie,
+			::Const.EntityType.ZombieYeoman,
+			::Const.EntityType.ZombieKnight,
+			::Const.EntityType.ZombieBetrayer,
+			::Const.EntityType.ZombieBoss
+		]; // should move this to a config or smth
+
+		if (::Legends.S.oneOf(_entity.getType(), barredEntities))
+			return false;
+		return true;
+	}
+
 	local setupEntity = o.setupEntity;
 	o.setupEntity = function( _e, _t )
 	{
@@ -640,10 +660,7 @@
 		::Legends.Scaling.scaleEnemy(_e, _t);
 
 		// Small chance for enemies with a 1H weapon and free offhand to dual wield
-		local faction = _e.getFaction();
-		if (faction == ::Const.Faction.Player
-			|| faction == ::Const.Faction.PlayerAnimals
-			|| this.World.FactionManager.isAlliedWithPlayer(faction)) {
+		if (!this.isAllowedToDualWield(_e)) {
 			return;
 		}
 

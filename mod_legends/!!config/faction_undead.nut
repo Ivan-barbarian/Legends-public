@@ -22,7 +22,7 @@
 	ActionPoints = 9,
 	Hitpoints = 1,
 	Bravery = 100,
-	Stamina = 100,
+	Stamina = 130,
 	MeleeSkill = 75,
 	RangedSkill = 0,
 	MeleeDefense = 10,

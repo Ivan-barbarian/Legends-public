@@ -57,6 +57,12 @@ this.legend_obliterate_skill <- this.inherit("scripts/skills/skill", {
 			: 1.0;
 	}
 
+	function onUse( _user, _targetTile ) {
+		local target = _targetTile.getEntity();
+		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
+		return this.attackEntity(_user, _targetTile.getEntity());
+	}
+
 	function onTargetHit(_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor) {
 		if (_skill != this) {
 			return;
@@ -85,12 +91,12 @@ this.legend_obliterate_skill <- this.inherit("scripts/skills/skill", {
 	function onAnySkillUsed(_skill, _targetEntity, _properties) {
 		if (_skill == this) {
 			this.m.HitChanceBonus += _properties.IsSpecializedInHammers ? 25 : 0;
+			_properties.MeleeSkill += _properties.IsSpecializedInHammers ? 25 : 0;
 			_properties.DamageTotalMult *= 1.5;
 			_properties.ThresholdToInflictInjuryMult *= 0.66;
-			if (_targetEntity != null
-				&& (_targetEntity.getCurrentProperties().IsRooted || ::Legends.Effects.has(_targetEntity, ::Legends.Effect.Stunned)))
-			{
+			if (_targetEntity != null && (_targetEntity.getCurrentProperties().IsRooted || ::Legends.Effects.has(_targetEntity, ::Legends.Effect.Stunned))) {
 				this.m.HitChanceBonus += 50;
+				_properties.MeleeSkill += 50;
 			}
 		}
 	}

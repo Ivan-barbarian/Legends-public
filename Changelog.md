@@ -1,4 +1,4 @@
-# 19.3.0 - Title Pending
+# 19.3.0 - Left & Right
 
 ## Dual Wielding
 
@@ -31,6 +31,11 @@ This activates Dual Wield:
 - `Immovable Object` now also counts accessory slot
 - `Battlefield Control` now additionally `Knock Back`, `Repel` and `Hook` skills have 100% chance to hit when targeting an allied character and will not apply negative effects or damage when used on an ally
 - `Ballistics` now also increases range of handgonne
+- `Stick Fighting` now gives 16 matk, mdef and rdef when wielding a staff or a magic staff and 8 when wielding a hybrid staff or musical instrument
+- `Muscularity` now has no lower bound.
+- `Thrust Master` tooltip fixes
+- `Barrage` tooltip fixes
+- `Battle Forged` maximum reduction capped at 80%
 
 ### One Handed Tree
 - no longer exists in short
@@ -61,22 +66,42 @@ Favoured Enemy - Civilization
 Favoured Enemy - Outlaw
 Favoured Enemy - Sword Master
 
+## Backgrounds
+- `Belly Dancer` receives 20% scouting modifier for camping purposes
+- `Berserker` can no longer roll `Sureshot` and `Steady Hands` traits
+- `Gladiator Prizefighter` added new icon
+- `Pilgrim` added new icon
+
+## Origins
+- ranger origin's druid rebalanced to use the regular druid background with extra talents and melee skill
+
 ## New enemies
 
 - Orc Tyrant - elite orc warlord, his warcry can cascade on other warlords
 - Orc Mad Berserker - elite version of the orc berserker, has nimble and nudist
 - Wicht - armored ghost enemies who cannot be killed until you destroy their armor
+> very resistant to status effects
 
 ## Enemy Changes
 
 - Bandit Warlord is renamed to Robber Baron
 - Webknechts lose 10 rdef and 10 mdef on Legendary, but retain Dodge
 - Bandit Rabble should start being phased out by Bandit Thugs much quicker
+- Normalized Bandit Thug outfits by removing the highest one
 - Zombies will now have increased action points but will move slower on all terrains (like a reverse pathfinder)
 > Wiederganger 6 to 8;
 > Armored Wiederganger 6 to 8;
 > Fallen Hero 7 to 9;
 > players turned Wiederganger 6 to 8;
+- Nomad Slingers will now more likely to spawn with a Sturdy Sling before day 30 and gain a chance for more armor after day 40
+> Lindwurm and Stollwurms
+> health decreased to 950 and 1500 respectively
+> lose resilient so they are more succeptable to bleeding
+> gain 25% damage reduction from cutting and blunt attacks but damage is increased by 30% from piercing
+> Stollwurm tail now spends AP on head's long moves
+> fixed stagger effect desynchronizing head and tail turn order
+> wurms no longer get Baffled, Dazed or Staggered when an appropriate attack hits the tail
+> Both parts of the wurm now get Baffled, Dazed or Staggered when an appropriate attack hits the head
 
 ## New Runes
 
@@ -101,6 +126,11 @@ Favoured Enemy - Sword Master
 - named items naming fixes and changes
 - fixed beard/hair hiding while covering items are set to invisible
 - modified layering so some L2's go under L1
+- all tail items moved to lower vanity
+
+### Shields
+- added a few missing shield paints
+- fixed towershield paint to only the wooden part
 	
 ### Armors
 - added Studded Aketon
@@ -108,6 +138,7 @@ Favoured Enemy - Sword Master
 - description fixes and changes
 - named items naming fixes and changes
 - hyena fur, white wolf pelt, direwolf pelt upgrades reformed into cloaks
+- regular cloaks now displayed over upgrades
 
 ### Weapons
 
@@ -116,10 +147,15 @@ Favoured Enemy - Sword Master
 - `Horn Decorated Mace` - named mace, will appear on Runechosen
 - `Named Longsword` - named version of the longsword
 - `Blooddrinker` - Legendary Cleaver which will drop from the Mastaba
+- `Golden Cestus` - named version of the cestus
 
 #### New Weapon Abilities
 
 * Named Cleaver and sword riposte effects will no longer roll on named items
+
+**Infantry Axes**
+- `Chop` is replaced with `Hack`
+> 40% armor penetration and 25% better chance to hit the head
 
 **Throwing**
 - `Throw Backup Spear` - each one handed spear has 1 stack of a throwable ability
@@ -142,7 +178,7 @@ Favoured Enemy - Sword Master
 * `Halfsword` - puncture
 > 5 ap cost and requires double grip to be usable
 * `Mordhau` - batter (hammer)
-> 5 ap cost, doubles your armor damage with this skill and always deals at least 10 hp
+> 5 ap cost, 50% more armor damage with this skill and always deals at least 10 hp, hits to the head will daze
 
 **Longsword**
 - `Slash` - unchanged
@@ -153,8 +189,8 @@ Favoured Enemy - Sword Master
 **Greatsword**
 - `Overhead Strike` - unchanged
 - `Swing` - unchanged
-- `Halfsword`
-- `Mordhau`
+- `Halfsword` - 7 ap cost, -80% hitchance instead of -65%
+- `Mordhau` - 7 ap cost, hits to the head will stagger
 
 **Falchions**
 - `Breach` - `Slash`
@@ -167,7 +203,7 @@ Favoured Enemy - Sword Master
 * `Round Swing` - unchanged
 * `Split Shield` - unchanged
 * `Haftstrike` - a weak but quick attack with the haft 
-> costs 4 ap and 15 fatigue, the ap cost reduces by 1 with each successful attack this turn by **other** skills 
+> costs 4 ap, 12 fatigue and does 30% damage, the ap cost reduces by 1 with each successful attack this turn by **other** skills 
 
 **2h Hammers**
 * `Smite` - unchanged
@@ -186,14 +222,31 @@ Favoured Enemy - Sword Master
 
 **Sword Cleavers**
 * Two Handed Saif, Scimitars and Khopesh are now all purely cleaver weapons
-* `Hew` - overhead strike with 10 less bonus damage but 10-20 bleeding damage
-* `Harvest` - two tile swing which applies 5-10 bleeding damage
-* `Decapitate` - unchanged
+* `Hew` - split attack which does 50% of it's damage to both the body and the head, regardless of chance to hit head
+> 35% base penetration, 6 ap, 20 fatigue
+* `Harvest` - two tile swing which applies 5-10 bleeding damage, deals an additional 20% damage when the target is bleeding
+> 25% penetration, 6 ap, 30 fatigue cost
+* `Decapitate`
+> 6 ap, 30% armor penetration, 30 fatigue cost
+* all of these weapons have had their durability, price and damage bumped (damage by ~20 points)
 
-**Crowsbows**
+**Crossbows**
 * gain `Piercing Shot` by default
+* `Strafing Shot` gains a new icon
 
 **Shortbows**
+* gain `Cascade`
+> the Initiative difference between you and the target will be added as additional damage
+
+**Bolas**
+* `Throw Bola` can now `Constrain` your target
+> `Constrained` - additional 2 ap and 5 fatigue per tile traveled (we know you think goblins are easy)
+
+**Firelance**
+* Thrust
+* Heartseeker
+* Ignite Firelance
+* Spearwall
 
 ### New recipes
 
@@ -205,12 +258,22 @@ Favoured Enemy - Sword Master
 
 - additional info is now provided on support skill including if the skill is considered an attack, it's range and the maximum level difference
 - african male heads have been updated and adjusted to start showing up on brothers
+- bros in training hall with no training options are now hidden from the list
+- training hall now shows the current veteran trait while Merciless Regimen trait reroll option is on the list
 
 ## Bug Fixes
 
 - possible fix for ai rotation crashes
 - fixed an error giving higher scaling to starts that have less than 3 characters
 - fixed an error with gear scaling using sell price instead of value
+- fixed incorrect time and item count tooltips on the camp screen
+- fixed rerolling trait into the same trait during merciless regimen
+- fixed crafting window not updating components properly
+- fixed white wolf scaling
+- fixed white wolf pet spawning as hostile
+- fixed bandit army contract incorrectly assuming raiding party on load
+- fixed bandit army contract reveal on killing instead of sparing
+- fixed vala fury incorrectly affecting brothers at distance of over 3 with full effect of fury chant
 
 ### For modders:
 
@@ -220,6 +283,7 @@ Favoured Enemy - Sword Master
 > look at `militia_scenario` and `lone_wolf_scenario`
 
 - `LegendKnifeplay`, `perk_legend_knifeplay` perk has been deleted
+- `LegendCascade`, `perk_legend_cascade` perk has been deleted
 - `LegendPiercingShot`, `perk_legend_piercing_shot` perk has been deleted
 - Bandit Warlord renamed to Robber Baron
 > `LegendBanditWarlord` -> `LegendRobberBaron`
@@ -256,6 +320,7 @@ VanityLower -> VanityLower2 -> Head -> Helmet -> HelmLower -> TopLower -> Helm -
 Chain, Plate, Tabard and Cloak layers are now displayed on bodies.
 Base, Chain, Helm, Vanity layers are now displayed on bodies.
 Added template definition for armor's brush_only_layers to define armors with custom size via front/back sprites.
+Changed named helmet and armor fields to an object for better readability (for armor min and max CON have been reversed, so both helmets and armor work the same way).
 
 Armor refactors in legend_armor defs.py: 
 https://github.com/Battle-Brothers-Legends/Legends-public/commit/7e2a567abdfc71395283994a488e3150d47b53a0

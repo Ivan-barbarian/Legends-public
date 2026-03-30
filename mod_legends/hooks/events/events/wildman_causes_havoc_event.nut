@@ -225,7 +225,7 @@
 
 		this.m.Screens.push({
 			ID = "X",
-			Text = "[img]gfx/ui/events/event_20.png[/img]Surveying the damage, you agree to compensate the businessman. But this isn\'t your fault, it\'s the wildling\'s. You dock %their_vandal% pay: for some time to come, the mercenary\'s earnings will be halved. %vandal% doesn\'t take this information lightly, and as %their_vandal% face starts to contort in anger, you question whether it was good idea to discipline such a volatile brute. %vandal% quickly reaches the limit of %their_vandal% restraint and jumps at you, fists eager to smash your face! You almost faint before rest of %companyname% manages to restrain %vandal%. This time compensation for damage caused by wildlings of %companyname% was paid both with crowns and blood of your men.",
+			Text = "[img]gfx/ui/events/event_20.png[/img]Surveying the damage, you agree to compensate the businessman. But this isn\'t your fault, it\'s the wildling\'s. You dock %their_berserker% pay: for some time to come, the mercenary\'s earnings will be halved. %berserker% doesn\'t take this information lightly, and as %their_berserker% face starts to contort in anger, you question whether it was good idea to discipline such a volatile brute. %berserker% quickly reaches the limit of %their_berserker% restraint and jumps at you, fists eager to smash your face! You almost faint before rest of %companyname% manages to restrain %berserker%. This time compensation for damage caused by wildlings of %companyname% was paid both with crowns and blood of your men.",
 			Image = "",
 			List = [],
 			Characters = [],

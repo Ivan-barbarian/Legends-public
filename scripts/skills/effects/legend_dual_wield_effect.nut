@@ -1,17 +1,14 @@
 this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		OffhandWeight = 0,
-		OffHandSkill = null,
 		AmbidextrousBonus = 0.33,
-		IsRefreshing = false,
-		NeedsRefresh = null,
+		IsExecutingOffhand = false,
 		ExcludedSkills = [],
 	},
 
 	function create() {
 		::Legends.Effects.onCreate(this, ::Legends.Effect.LegendDualWield);
 		this.m.Name = "Dual Wielding";
-		this.m.Description = "This character is wielding two weapons at once. The weight of the offhand weapon increases fatigue costs and reduces accuracy.";
+		this.m.Description = "This character is wielding two weapons at once. The weight of the other weapon increases fatigue costs and reduces accuracy.";
 		this.m.Icon = "skills/status_effect_75.png";
 		this.m.IconMini = "";
 		this.m.Type = this.Const.SkillType.StatusEffect;
@@ -37,80 +34,102 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 			}
 		];
 
-		local ohSkill = this.m.OffHandSkill;
-		if (ohSkill != null && !::MSU.isNull(ohSkill)) {
-			ret.push({
-				id = 3,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Follow-up attack: [color=%positive%]" + ohSkill.getName() + "[/color]"
-			});
+		local actor = this.getContainer().getActor();
+		local items = actor.getItems();
+		local mh = items.getItemAtSlot(::Const.ItemSlot.Mainhand);
+		local oh = items.getItemAtSlot(::Const.ItemSlot.Offhand);
+
+		if (oh != null) {
+			local ohSkill = ::Legends.Weapons.findPrimaryAttackSkill(actor, oh);
+			local ohWeight = getWeaponWeight(actor, oh);
+			if (ohWeight > 0) {
+				ret.push({
+					id = 3,
+					type = "text",
+					icon = "ui/icons/fatigue.png",
+					text = "Mainhand skills cost [color=%negative%]+" + ohWeight + "[/color] Fatigue and have [color=%negative%]-" + ohWeight + "[/color] Melee Skill"
+				});
+			}
+			if (ohSkill != null) {
+				ret.push({
+					id = 4,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = "Mainhand follow-up: [color=%positive%]" + ohSkill.getName() + "[/color]"
+				});
+			}
 		}
 
-		ret.push({
-			id = 4,
-			type = "text",
-			icon = "ui/icons/fatigue.png",
-			text = "Skills cost [color=%negative%]+" + this.m.OffhandWeight + "[/color] Fatigue"
-		});
-		ret.push({
-			id = 5,
-			type = "text",
-			icon = "ui/icons/melee_skill.png",
-			text = "Skills have [color=%negative%]-" + this.m.OffhandWeight + "[/color] Melee Skill"
-		});
+		if (mh != null) {
+			local mhSkill = ::Legends.Weapons.findPrimaryAttackSkill(actor, mh);
+			local mhWeight = getWeaponWeight(actor, mh);
+			if (mhWeight > 0) {
+				ret.push({
+					id = 5,
+					type = "text",
+					icon = "ui/icons/fatigue.png",
+					text = "Offhand skills cost [color=%negative%]+" + mhWeight + "[/color] Fatigue and have [color=%negative%]-" + mhWeight + "[/color] Melee Skill"
+				});
+			}
+			if (mhSkill != null) {
+				ret.push({
+					id = 6,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = "Offhand follow-up: [color=%positive%]" + mhSkill.getName() + "[/color]"
+				});
+			}
+		}
 
 		return ret;
 	}
 
-	function getOffhandWeight(_actor, _oh) {
-		local weight = -_oh.getStaminaModifier();
+	function getWeaponWeight(_actor, _weapon) {
+		local weight = -_weapon.getStaminaModifier();
 		if (::Legends.Perks.has(_actor, ::Legends.Perk.LegendAmbidextrous)) {
 			weight = ::Math.floor(weight * (1 - this.m.AmbidextrousBonus));
 		}
 		return weight;
 	}
 
-	function onAdded() {
+	function getOppositeHandWeight(_skill) {
 		local actor = this.getContainer().getActor();
-		::Legends.Actives.grant(this, ::Legends.Active.LegendDoubleSwing);
-
-		// Find and store the offhand attack skill
-		local oh = actor.getItems().getItemAtSlot(::Const.ItemSlot.Offhand);
-		if (oh != null) {
-			local skill = ::Legends.Weapons.findPrimaryAttackSkill(actor, oh);
-			if (skill != null) {
-				this.m.OffHandSkill = ::MSU.asWeakTableRef(skill);
-				this.m.OffhandWeight = getOffhandWeight(actor, oh);
-			}
-		} else {
-			this.m.OffHandSkill = null;
-			this.m.OffhandWeight = 0;
+		local items = actor.getItems();
+		local mh = items.getItemAtSlot(::Const.ItemSlot.Mainhand);
+		local oh = items.getItemAtSlot(::Const.ItemSlot.Offhand);
+		if (::Legends.Weapons.isOffHandSkill(actor, _skill)) {
+			return mh != null ? getWeaponWeight(actor, mh) : 0;
 		}
+		return oh != null ? getWeaponWeight(actor, oh) : 0;
+	}
+
+	function onAdded() {
+		::Legends.Actives.grant(this, ::Legends.Active.LegendDoubleSwing);
 	}
 
 	function onRemoved() {
-		local actor = this.getContainer().getActor();
-		::Legends.Actives.remove(actor, ::Legends.Active.LegendDoubleSwing);
+		::Legends.Actives.remove(this, ::Legends.Active.LegendDoubleSwing);
 	}
 
 	function onUpdate(_properties) {
-		if (this.m.OffhandWeight <= 0) {
-			return;
-		}
-
 		local actor = this.getContainer().getActor();
 		foreach (skill in actor.getSkills().m.Skills) {
-			if (skill.m.IsAttack && this.m.ExcludedSkills.find(skill.getID()) == null) {
+			if (!skill.m.IsAttack || this.m.ExcludedSkills.find(skill.getID()) != null) {
+				continue;
+			}
+
+			local weight = getOppositeHandWeight(skill);
+			if (weight > 0) {
 				_properties.SkillCostAdjustments.push({
 					ID = skill.getID(),
-					FatigueAdjust = this.m.OffhandWeight
+					FatigueAdjust = weight
 				});
 			}
 		}
 	}
 
-	// Apply hit chance penalty to attack skills
+	// Melee skill penalty: initiator gets opposite hand's weight,
+	// follow-up inherits the same penalty (= its own hand's weight)
 	function onAnySkillUsed(_skill, _targetEntity, _properties) {
 		if (!_skill.m.IsAttack) {
 			return;
@@ -118,8 +137,10 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 		if (this.m.ExcludedSkills.find(_skill.getID()) != null) {
 			return;
 		}
-		_properties.MeleeSkill -= this.m.OffhandWeight;
-		_skill.m.HitChanceBonus -= this.m.OffhandWeight;
+
+		local weight = getOppositeHandWeight(_skill);
+		_properties.MeleeSkill -= weight;
+		_skill.m.HitChanceBonus -= weight;
 	}
 
 	function onAnySkillExecuted(_skill, _targetTile, _targetEntity, _forFree) {
@@ -129,22 +150,15 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		// Don't trigger for Double Swing (prevents infinite loop)
-		if (this.m.ExcludedSkills.find(_skill.getID()) != null) {
+		// Don't trigger for Double Swing or follow ups (prevents infinite loop)
+		if (this.m.ExcludedSkills.find(_skill.getID()) != null || this.m.IsExecutingOffhand) {
 			return;
 		}
 
 		local actor = this.getContainer().getActor();
 		local items = actor.getItems();
+		local mh = items.getItemAtSlot(::Const.ItemSlot.Mainhand);
 		local off = items.getItemAtSlot(::Const.ItemSlot.Offhand);
-
-		// Don't trigger if the attack came from the offhand
-		if (_skill.m.Item != null
-			&& off != null
-			&& _skill.m.Item.getInstanceID() == off.getInstanceID())
-		{
-			return;
-		}
 
 		// Check target is valid
 		if (_targetEntity == null || !_targetEntity.isAlive() || _targetEntity.isDying()) {
@@ -156,21 +170,22 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		// Refresh offhand skill reference if it became invalid
-		if (off != null && ::MSU.isNull(this.m.OffHandSkill)) {
-			local skill = ::Legends.Weapons.findPrimaryAttackSkill(actor, off);
-			if (skill != null) {
-				this.m.OffHandSkill = ::MSU.asWeakTableRef(skill);
+		// Determine the follow up depending on where the attack came from
+		local skillToUse = null;
+		if (::Legends.Weapons.isOffHandSkill(actor, _skill)) {
+			// Offhand attack, follow up with mainhand
+			if (mh != null && !items.hasBlockedSlot(::Const.ItemSlot.Mainhand)) {
+				skillToUse = ::Legends.Weapons.findPrimaryAttackSkill(actor, mh);
+			}
+		} else {
+			// Mainhand attack, follow up with offhand
+			if (off != null && !items.hasBlockedSlot(::Const.ItemSlot.Offhand)) {
+				skillToUse = ::Legends.Weapons.findPrimaryAttackSkill(actor, off);
 			}
 		}
 
 		// Schedule follow-up attack
-		if (!_forFree
-			&& !items.hasBlockedSlot(::Const.ItemSlot.Offhand)
-			&& !::MSU.isNull(this.m.OffHandSkill))
-		{
-			local skillToUse = this.m.OffHandSkill;
-
+		if (!_forFree && skillToUse != null) {
 			this.Const.SkillCounter++;
 			::Time.scheduleEvent(::TimeUnit.Virtual, ::Const.Combat.RiposteDelay, this.executeFollowUpAttack.bindenv(this), {
 				TargetTile = _targetTile,
@@ -187,84 +202,10 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 		if (::MSU.isNull(_info.Skill)) {
 			return;
 		}
+		this.m.IsExecutingOffhand = true;
+		_info.Skill.m.IsExecutingOffhand = true;
 		_info.Skill.useForFree(_info.TargetTile);
-	}
-
-	function onEquip(_item) {
-		local actor = this.getContainer().getActor();
-		local items = actor.getItems();
-		local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-
-		if (oh != null && oh.getInstanceID() == _item.getInstanceID()) {
-			local skill = ::Legends.Weapons.findPrimaryAttackSkill(actor, _item);
-			if (skill != null) {
-				this.m.OffHandSkill = ::MSU.asWeakTableRef(skill);
-				this.m.OffhandWeight = getOffhandWeight(actor, oh);
-			}
-		}
-
-		if (!this.m.IsRefreshing) {
-			if (mh != null && oh != null && mh.getID() != oh.getID()) {
-				if (mh == _item) {
-					this.m.NeedsRefresh = "oh";
-				} else if (oh == _item) {
-					this.m.NeedsRefresh = "mh";
-				}
-			}
-		}
-	}
-
-	function onUnequip(_item) {
-		this.m.OffHandSkill = null;
-
-		// Mark which slot needs refresh
-		if (!this.m.IsRefreshing) {
-			local items = this.getContainer().getActor().getItems();
-			local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-			local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-
-			if (mh != null && oh != null && mh.getID() != oh.getID()) {
-				if (mh == _item) {
-					this.m.NeedsRefresh = "oh";
-				} else if (oh == _item) {
-					this.m.NeedsRefresh = "mh";
-				}
-			} else if (mh != null && mh != _item && oh == null) {
-				this.m.NeedsRefresh = "mh";
-			} else if (oh != null && oh != _item && mh == null) {
-				this.m.NeedsRefresh = "oh";
-			}
-		}
-	}
-
-	function onAfterUpdate(_properties) {
-		if (this.m.NeedsRefresh == null || this.m.IsRefreshing) {
-			return;
-		}
-
-		local refreshTarget = this.m.NeedsRefresh;
-		this.m.NeedsRefresh = null;
-		this.m.IsRefreshing = true;
-
-		local actor = this.getContainer().getActor();
-		local items = actor.getItems();
-
-		if (refreshTarget == "mh") {
-			local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-			if (mh != null) {
-				mh.onUnequip();
-				mh.onEquip();
-			}
-		} else if (refreshTarget == "oh") {
-			local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-			if (oh != null) {
-				oh.onUnequip();
-				oh.onEquip();
-			}
-		}
-
-		this.m.IsRefreshing = false;
+		this.m.IsExecutingOffhand = false;
 	}
 
 });

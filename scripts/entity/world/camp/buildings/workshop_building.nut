@@ -114,13 +114,19 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	function getModifierToolip()
 	{
 		this.init();
+		local nonNullEntries = 0;
+		foreach (key, value in this.m.Salvage) {
+		    if (value != null) {
+        		nonNullEntries++;
+			}
+		}
 		local mod = this.getModifiers();
 		local ret = [
 			{
 				id = 3,
 				type = "text",
 				icon = "ui/icons/plus.png",
-				text = "There are [color=%positive%]" + this.m.Salvage.len() + "[/color] items in the salvage queue."
+				text = "There are [color=%positive%]" + nonNullEntries + "[/color] items in the salvage queue."
 			},
 			{
 				id = 4,
@@ -295,7 +301,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	function getRequiredTime()
 	{
 		local points = 0;
-
+		this.init();
 		if (this.m.Salvage == null)
 		{
 			return 0;

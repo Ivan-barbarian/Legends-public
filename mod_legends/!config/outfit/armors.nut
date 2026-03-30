@@ -1748,7 +1748,7 @@
 		],
 		Cloak = [
 			[1, ""],
-			[2, "cloak/legend_armor_shoulder_cloth", 2], // 5 -0 50,
+			[2, "cloak/legend_armor_shoulder_cloth", 2], // 5 -0 50
 			[2, "cloak/legend_direwolf_pelt_cloak"], // 10
 		],
 		Tabard = [
@@ -2775,7 +2775,8 @@
 		Plate = [
 			[1, "plate/legend_armor_scale_shirt", 1]], // 85 -10 1750
 		Cloak = [
-			[1, "cloak/legend_armor_decorative_hood", 8], [1, "cloak/legend_armor_shoulder_cloth", 2]], // 15 -1 50
+			[1, "cloak/legend_armor_decorative_hood", 8],
+			[1, "cloak/legend_armor_shoulder_cloth", 2]], // 15 -1 50
 		Tabard = [
 			[1, "tabard/legend_armor_tabard"]], // 5 -0 200
 		Attachments = [
@@ -2789,13 +2790,13 @@
 	Script = "",
 	Sets = [{
 		Cloth = [
-			[1, "cloth/legend_armor_robes", 14]], // 25 -2 25
+			[1, "cloth/legend_armor_robes", 6]], // 25 -2 25
 		Chain = [
 			[1, ""]],
 		Plate = [
 			[1, "plate/legend_armor_leather_riveted", 5]], // 95 -13 900
 		Cloak = [
-			[1, "cloak/legend_armor_cloak_heavy", 24]], // 30 -4 500
+			[1, "cloak/legend_armor_cloak_heavy", 9]], // 30 -4 500
 		Tabard = [
 			[1, "tabard/legend_armor_tabard_noble"]], // 10 -0 1000
 		Attachments = [
@@ -2884,9 +2885,9 @@
 		Tabard = [
 			[1, "tabard/legend_armor_tabard_noble"]], // 10 -0 1000
 		Attachments = [
-			[3, ""], [1, "armor_upgrades/legend_leather_neckguard_upgrade", 0],
-			[1, "armor_upgrades/legend_double_mail_upgrade", 0],
-			[1, "armor_upgrades/legend_leather_shoulderguards_upgrade", 0]],
+			[3, ""], [1, "armor_upgrades/legend_leather_neckguard_upgrade"],
+			[1, "armor_upgrades/legend_double_mail_upgrade"],
+			[1, "armor_upgrades/legend_leather_shoulderguards_upgrade"]],
 	}]
 };
 ::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.mercury_royal_guard_00);

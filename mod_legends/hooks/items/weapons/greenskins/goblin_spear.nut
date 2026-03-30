@@ -1,19 +1,4 @@
 ::mods_hookExactClass("items/weapons/greenskins/goblin_spear", function(o) {
-	o.isAmountShown <- function()
-	{
-		return true;
-	}
-
-	o.setAmmo <- function ( _a )
-	{
-		this.weapon.setAmmo(_a);
-	}
-
-	o.getAmountString <- function ()
-	{
-		return this.m.Ammo + "/" + this.m.AmmoMax;
-	}
-
 	local create = o.create;
 	o.create = function ()
 	{
@@ -34,9 +19,7 @@
 		this.m.ConditionMax = 48.0;
 		this.m.RangeMin = 1;
 		this.m.RangeMax = 1;
-		this.m.Ammo = 1;
-		this.m.AmmoMax = 1;
-		this.m.AmmoCost = 10;
+		this.m.ItemType = this.m.ItemType | ::Const.Items.ItemType.Ammo;
 		this.m.RangeIdeal = 1;
 		this.m.RegularDamage = 35;
 		this.m.RegularDamageMax = 60;
@@ -61,8 +44,5 @@
 			_skill.m.IconDisabled = "skills/skewer_general_bw.png";
 			_skill.m.Overlay = "skewer_general";
 		}.bindenv(this));	
-		::Legends.Actives.grant(this.weapon, ::Legends.Active.ThrowJavelin, function (_skill) {
-			_skill.m.IsBackupSpear = true;
-		}.bindenv(this));
 	}
 });

@@ -3,9 +3,15 @@
 	local create = o.create;
 	o.create = function() {
 		create();
-		this.m.Value = 2400;
+		this.m.Value = 2700;
 		this.m.Categories = "Cleaver, Two-Handed";
 		this.setVariant(this.Math.rand(0, 2));
+		this.m.Condition = 62.0;
+		this.m.ConditionMax = 62.0;
+		this.m.RegularDamage = 70;
+		this.m.RegularDamageMax = 90;
+		this.m.ArmorDamageMult = 0.9;
+		this.m.DirectDamageMult = 0.35;
 	}
 
 	o.updateVariant <- function() {
@@ -25,6 +31,8 @@
 		this.weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.LegendHew);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendHarvest);
-		::Legends.Actives.grant(this, ::Legends.Active.Decapitate);
+		::Legends.Actives.grant(this, ::Legends.Active.Decapitate, function (_skill) {
+			_skill.m.IsTwoHand = true;
+		}.bindenv(this));
 	}
 });

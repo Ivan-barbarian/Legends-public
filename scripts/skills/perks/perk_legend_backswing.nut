@@ -9,6 +9,7 @@ this.perk_legend_backswing <- this.inherit("scripts/skills/skill", {
 			::Legends.Actives.getID(::Legends.Active.RoundSwing),
 			::Legends.Actives.getID(::Legends.Active.Shatter),
 			::Legends.Actives.getID(::Legends.Active.LegendDoubleSwing),
+			::Legends.Actives.getID(::Legends.Active.LegendHarvest),
 		]
 	},
 

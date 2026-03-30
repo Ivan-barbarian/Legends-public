@@ -430,6 +430,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 	function getRequiredTime()
 	{
 		local points = 0;
+		this.init();
 		if (this.m.Queue == null)
 		{
 			return 0;

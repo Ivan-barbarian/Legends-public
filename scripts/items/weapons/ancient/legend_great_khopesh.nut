@@ -17,15 +17,15 @@ this.legend_great_khopesh <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_great_khopesh";
+		this.m.Value = 3200;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 54.0;
 		this.m.ConditionMax = 54.0;
 		this.m.StaminaModifier = -18;
-		this.m.Value = 2000;
-		this.m.RegularDamage = 75;
-		this.m.RegularDamageMax = 95;
+		this.m.RegularDamage = 80;
+		this.m.RegularDamageMax = 115;
 		this.m.ArmorDamageMult = 1.2;
-		this.m.DirectDamageMult = 0.25;
+		this.m.DirectDamageMult = 0.35;
 		this.m.FatigueOnSkillUse = 5;
 	}
 
@@ -34,6 +34,8 @@ this.legend_great_khopesh <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.LegendHew);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendHarvest);
-		::Legends.Actives.grant(this, ::Legends.Active.Decapitate);
+		::Legends.Actives.grant(this, ::Legends.Active.Decapitate, function (_skill) {
+			_skill.m.IsTwoHand = true;
+		}.bindenv(this));
 	}
 });

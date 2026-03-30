@@ -66,7 +66,7 @@
 				::Const.Perks.AgileTree
 			],
 			Enemy = [::Const.Perks.BeastTree],
-			Class = [::Const.Perks.SlingClassTree],
+			Class = [],
 			Profession = [],
 			Magic = []
 		}

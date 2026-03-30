@@ -8,7 +8,7 @@ this.legend_armor_named_warlock_cloak <- this.inherit("scripts/items/legend_armo
 		this.m.Name = "";
 		this.m.Description = "A cloak made from the skin of dead men and dark magic. This wretched garment pulses with a cold, malevolent life of its own, serving as both a horrific trophy and a conduit for the forbidden arts.";
 		this.m.ArmorDescription = "Includes a cloak made from the skin of dead men and dark magic.";
-		this.m.Variants = [1];
+		this.m.Variants = [1, 2, 3, 4, 5];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;

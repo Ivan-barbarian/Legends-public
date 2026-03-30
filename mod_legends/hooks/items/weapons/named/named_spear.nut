@@ -1,20 +1,5 @@
 ::mods_hookExactClass("items/weapons/named/named_spear", function(o) {
 
-	o.isAmountShown <- function()
-	{
-		return true;
-	}
-
-	o.setAmmo <- function ( _a )
-	{
-		this.weapon.setAmmo(_a);
-	}
-
-	o.getAmountString <- function ()
-	{
-		return this.m.Ammo + "/" + this.m.AmmoMax;
-	}
-	
 	local create = o.create;
 	o.create = function ()
 	{
@@ -24,7 +9,8 @@
 		this.updateVariant();
 		this.m.Ammo = 1;
 		this.m.AmmoMax = 1;
-		this.m.AmmoCost = 10;
+		this.m.AmmoCost = 5;
+		this.m.ItemType = this.m.ItemType | ::Const.Items.ItemType.Ammo;
 	}
 
 	o.onEquip = function()

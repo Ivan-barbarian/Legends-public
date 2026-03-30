@@ -1,5 +1,6 @@
 ::mods_hookExactClass("skills/perks/perk_battle_forged", function (o) {
 	o.m.ArmorPercentageAsReduction <- 5;
+	o.m.ReductionCapMax <- 80;
 
 	o.isHidden = function () {
 		return this.getReductionPercentage() <= 0;
@@ -11,7 +12,7 @@
 
 	o.getReductionPercentage <- function () {
 		local armor = this.getContainer().getActor().getArmor(this.Const.BodyPart.Head) + this.getContainer().getActor().getArmor(this.Const.BodyPart.Body);
-		return this.Math.min(100, this.Math.floor(armor * this.m.ArmorPercentageAsReduction * 0.01));
+		return this.Math.min(this.m.ReductionCapMax, this.Math.floor(armor * this.m.ArmorPercentageAsReduction * 0.01));
 	}
 
 	o.getTooltip = function () {

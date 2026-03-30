@@ -47,8 +47,10 @@
 		this.addSprite("armor_layer_chain").setHorizontalFlipping(true);
 		this.addSprite("armor_layer_plate").setHorizontalFlipping(true);
 		this.addSprite("armor_layer_tabbard").setHorizontalFlipping(true);
-		this.addSprite("armor_layer_cloak").setHorizontalFlipping(true);
 		this.addSprite("armor_upgrade_back").setHorizontalFlipping(true);
+		this.addSprite("armor_layer_cloak").setHorizontalFlipping(true);
+		this.addSprite("armor_layer_cloak_front").setHorizontalFlipping(true);
+		this.addSprite("armor_upgrade_back_top").setHorizontalFlipping(true);
 		this.addSprite("surcoat");
 		this.addSprite("armor_upgrade_front");
 		local body_blood_always = this.addSprite("body_blood_always");
@@ -133,8 +135,6 @@
 	o.assignRandomEquipment = function () {
 
 		if (this.Math.rand(1, 100) <= 50) {
-			// Make sure not to include weapons that only have 6AP skills
-			// in this list, as zombies only have 5AP.
 			local weapons = [
 				"weapons/knife",
 				"weapons/bludgeon",
@@ -187,13 +187,18 @@
 
 	local onDeath = o.onDeath;
 	o.onDeath = function (_killer, _skill, _tile, _fatalityType) {
+		local appearance = this.getItems().getAppearance();
+		local tempCorpseArmorUpgradeBack = appearance.CorpseArmorUpgradeBack;
+		local tempCorpseArmorUpgradeFront = appearance.CorpseArmorUpgradeFront;
+		appearance.CorpseArmorUpgradeBack = "";
+		appearance.CorpseArmorUpgradeFront = "";
 		onDeath(_killer, _skill, _tile, _fatalityType);
+		appearance.CorpseArmorUpgradeBack = tempCorpseArmorUpgradeBack;
+		appearance.CorpseArmorUpgradeFront = tempCorpseArmorUpgradeFront;
 
 		if (_tile == null) {
 			return;
 		}
-
-		local appearance = this.getItems().getAppearance();
 		local flip = this.m.IsCorpseFlipped;
 		local armorLayers = [
 			"CorpseArmorLayerChain",
@@ -202,6 +207,14 @@
 			"CorpseArmorLayerCloakBack",
 			"CorpseArmorLayerCloakFront"
 		];
+
+		if (tempCorpseArmorUpgradeFront != "") {
+		    armorLayers.push("CorpseArmorUpgradeBack");
+			armorLayers.push("CorpseArmorUpgradeFront");
+		}
+		else {
+    		armorLayers.insert(3, "CorpseArmorUpgradeBack");
+		}
 
 		foreach (layer in armorLayers) {
 			if (appearance[layer] != "") {

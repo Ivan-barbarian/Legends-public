@@ -108,4 +108,26 @@ this.legend_glove_item <- this.inherit("scripts/items/accessory/accessory", {
 	{
 		this.Sound.play(this.m.InventorySound, this.Const.Sound.Volume.Inventory);
 	}
+
+	function getIconOverlay()
+	{
+		local L = [];
+
+		if (this.isNamed())
+		{
+			if (this.isItemType(::Const.Items.ItemType.Legendary))
+				L.push("layers/legendary_icon_glow.png");
+			else
+				L.push("layers/named_icon_glow.png");
+		}
+
+		L.push(this.m.Icon);
+
+		if (L.len() == 0)
+		{
+			return [""];
+		}
+
+		return L;
+	}
 });

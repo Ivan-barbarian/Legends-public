@@ -173,10 +173,14 @@ this.legend_bros_cure_traumatized_encounter <- this.inherit("scripts/encounters/
 				local bg = this.new("scripts/skills/backgrounds/beggar_background");
 				bg.m.IsNew = false;
 				local dude = _event.m.Traumatized;
+				local oldPerkTree = dude.getBackground().m.CustomPerkTree;
 				dude.getSkills().removeByID(dude.getBackground().getID());
+				dude.getSkills().removeByID("injury.traumatized")
 				dude.getSkills().add(bg);
 				dude.getBackground().m.RawDescription = "%name% has taken a vow of austerity and become a beggar willingly.";
 				dude.getBackground().buildDescription(true);
+				dude.getBackground().rebuildPerkTree(oldPerkTree);
+				dude.resetPerks();
 			}
 		});
 	}

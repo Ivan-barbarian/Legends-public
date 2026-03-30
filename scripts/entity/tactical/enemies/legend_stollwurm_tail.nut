@@ -201,12 +201,6 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 		this.getFlags().add("lindwurm");
 		this.getFlags().add("tail");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/lindwurm_tail_agent");
-
-		this.logInfo("AIAGENT STOLLWURM TAIL = " + this.m.AIAgent);
-		foreach(k,v in this.m.AIAgent)
-		{
-			this.logInfo("key = " + k + " : " + v)
-		}
 		this.m.AIAgent.setActor(this);
 	}
 
@@ -581,7 +575,14 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 		}
 
 		::Legends.S.scaleBaseProperties(b);
+
+		local skills = this.getSkills();
+		local skills_add = skills.add;
+		skills.add = function( _skill, _order = 0 )	{
+			if ((_skill.getID() in this.getActor().m.Body.m.EffectsSharedWithTail || _skill.getID() == "effects.legends_choked") && (!("IsFromHead" in _skill.m) || !_skill.m.IsFromHead)) {
+				return;
+        	}
+        	skills_add(_skill, _order);
+		}.bindenv(skills);
 	}
-
-
 });

@@ -1,21 +1,5 @@
 this.legend_wooden_spear <- this.inherit("scripts/items/weapons/weapon", {
 	m = {},
-
-	function isAmountShown()
-	{
-		return true;
-	}
-
-	function setAmmo ( _a )
-	{
-		this.weapon.setAmmo(_a);
-	}
-
-	function getAmountString ()
-	{
-		return this.m.Ammo + "/" + this.m.AmmoMax;
-	}
-
 	function create()
 	{
 		this.weapon.create();
@@ -26,7 +10,7 @@ this.legend_wooden_spear <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Icon = "weapons/melee/legend_wooden_spear_01_70x70.png";
 		this.m.WeaponType = this.Const.Items.WeaponType.Spear;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded | this.Const.Items.ItemType.Defensive;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.Ammo;
 		this.m.IsDoubleGrippable = true;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
@@ -38,7 +22,7 @@ this.legend_wooden_spear <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -6;
 		this.m.Ammo = 1;
 		this.m.AmmoMax = 1;
-		this.m.AmmoCost = 10;
+		this.m.AmmoCost = 5;
 		this.m.RegularDamage = 15;
 		this.m.RegularDamageMax = 25;
 		this.m.ArmorDamageMult = 0.45;

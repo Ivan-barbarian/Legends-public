@@ -1,5 +1,8 @@
 this.legend_white_wolf_item <- this.inherit("scripts/items/accessory/legend_accessory_dog", {
-	m = {},
+	m = {
+		Skill = null,
+		Entity = null
+	},
 
 	function create()
 	{
@@ -72,7 +75,7 @@ this.legend_white_wolf_item <- this.inherit("scripts/items/accessory/legend_acce
 
 	function onEquip()
 	{
-		this.accessory.onEquip();
+		this.legend_accessory_dog.onEquip();
 		::Legends.Actives.grant(this, ::Legends.Active.LegendUnleashWhiteWolf, function (_skill) {
 			_skill.setItem(this);
 			this.m.Skill = this.WeakTableRef(_skill);

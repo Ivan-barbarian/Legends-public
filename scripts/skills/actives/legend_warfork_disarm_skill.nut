@@ -1,7 +1,6 @@
 this.legend_warfork_disarm_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
-	function create()
-	{
+	function create() {
 		this.m.ID = "actives.legend_warfork_disarm";
 		this.m.Name = "Disarm";
 		this.m.Description = "Use the warfork\'s particular shape to temporarily disarm an opponent on a hit. A disarmed opponent can not use any weapon skills, but may still use other skills and move freely. Unarmed targets can not be disarmed.";
@@ -38,8 +37,7 @@ this.legend_warfork_disarm_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 2;
 	}
 
-	function getTooltip()
-	{
+	function getTooltip() {
 		local ret = this.skill.getDefaultUtilityTooltip();
 		ret.push({
 			id = 7,
@@ -67,41 +65,32 @@ this.legend_warfork_disarm_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-	function onAfterUpdate( _properties )
-	{
+	function onAfterUpdate( _properties ) {
 		this.m.FatigueCostMult = _properties.IsSpecializedInPolearms ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 
-		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms)
-		{
+		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms) {
 			this.m.HitChanceBonus = -10;
 		}
-		else
-		{
+		else {
 			this.m.HitChanceBonus = -20;
 		}
 	}
 
-	function onUse( _user, _targetTile )
-	{
+	function onUse( _user, _targetTile ) {
 		local target = _targetTile.getEntity();
 		local success = this.attackEntity(_user, target);
 
-		if (success)
-		{
-			if (!target.getCurrentProperties().IsStunned && !target.getCurrentProperties().IsImmuneToDisarm)
-			{
+		if (success) {
+			if (!target.getCurrentProperties().IsStunned && !target.getCurrentProperties().IsImmuneToDisarm) {
 				::Legends.Effects.grant(target, ::Legends.Effect.Disarmed);
 
-				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
-				{
+				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer) {
 					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has disarmed " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
 				}
 			}
 		}
-		else
-		{
-			if (this.m.SoundOnMiss.len() != 0)
-			{
+		else {
+			if (this.m.SoundOnMiss.len() != 0) {
 				this.Sound.play(this.m.SoundOnMiss[this.Math.rand(0, this.m.SoundOnMiss.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 			}
 
@@ -111,10 +100,8 @@ this.legend_warfork_disarm_skill <- this.inherit("scripts/skills/skill", {
 		return success;
 	}
 
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
-	{
-		if (_skill == this)
-		{
+	function onAnySkillUsed( _skill, _targetEntity, _properties ) {
+		if (_skill == this) {
 			if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms)
 			{
 				_properties.MeleeSkill -= 20;

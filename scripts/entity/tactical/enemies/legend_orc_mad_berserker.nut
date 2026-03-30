@@ -5,6 +5,10 @@ this.legend_orc_mad_berserker <- this.inherit("scripts/entity/tactical/enemies/o
 		this.orc_berserker.create();
 		this.m.Type = this.Const.EntityType.LegendOrcMadBerserker;
 		this.m.XP = this.Const.Tactical.Actor.LegendOrcMadBerserker.XP;
+		if (this.m.Type != this.Const.EntityType.Player)
+		{
+			this.m.Name = this.Const.Strings.EntityName[this.m.Type];
+		}
 		this.actor.create();
 	}
 
@@ -42,12 +46,11 @@ this.legend_orc_mad_berserker <- this.inherit("scripts/entity/tactical/enemies/o
 		];
 		local weapon = weapons[this.Math.rand(0, weapons.len() - 1)];
 		this.m.Items.equip(this.new("scripts/items/" + weapon));
-		if (!this.m.Items.hasBlockedSlot(::Const.ItemSlot.Offhand)
-			&& this.Math.rand(1, 100) <= 50)
-		{
+		if (!this.m.Items.hasBlockedSlot(::Const.ItemSlot.Offhand)) {
 			this.m.Items.equip(this.new("scripts/items/" + weapon));
 			this.m.Items.updateDualWield();
 		}
+
 	}
 
 	function makeMiniboss() {
@@ -64,10 +67,12 @@ this.legend_orc_mad_berserker <- this.inherit("scripts/entity/tactical/enemies/o
 		];
 		local weapon = weapons[this.Math.rand(0, weapons.len() - 1)];
 		this.m.Items.equip(this.new("scripts/items/" + weapon));
-		if (!this.m.Items.hasBlockedSlot(::Const.ItemSlot.Offhand)
-			&& this.Math.rand(1, 100) <= 50)
-		{
-			this.m.Items.equip(this.new("scripts/items/" + weapon));
+		if (!this.m.Items.hasBlockedSlot(::Const.ItemSlot.Offhand)) {
+			local weapons = [
+				"weapons/greenskins/orc_axe",
+				"weapons/greenskins/orc_cleaver",
+			];
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 			this.m.Items.updateDualWield();
 		}
 

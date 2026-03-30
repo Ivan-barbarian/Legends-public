@@ -21,6 +21,7 @@
 			_skill.m.Icon = "skills/skewer_spetum.png";
 			_skill.m.IconDisabled = "skills/skewer_spetum_bw.png";
 			_skill.m.Overlay = "skewer_spetum";
+			_skill.m.IsSpearSkewer = true;
 		}.bindenv(this));
 		::Legends.Actives.grant(this.weapon, ::Legends.Active.Spearwall, function (_skill) {
 			_skill.m.Icon = "skills/active_124.png";

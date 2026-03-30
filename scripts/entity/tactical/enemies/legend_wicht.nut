@@ -11,7 +11,8 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		DistortAnimationStartTimeC = 0,
 		DistortTargetD = null,
 		DistortTargetPrevD = this.createVec(0, 0),
-		DistortAnimationStartTimeD = 0
+		DistortAnimationStartTimeD = 0,
+		ArmorDifficultyMult = 0.5,
 	},
 
 	function create() {
@@ -33,7 +34,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		];
 		this.m.SoundPitch = this.Math.rand(90, 110) * 0.01;
 		this.getFlags().add("undead");
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bounty_hunter_melee_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/zombie_agent");
 		this.m.AIAgent.setActor(this);
 	}
 
@@ -44,6 +45,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		{
 			this.updateAchievement("OvercomingFear", 1, 1);
 		}
+		local flip = !this.isAlliedWithPlayer();
 
 		if (_tile != null) {
 			local effect = {
@@ -109,14 +111,89 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 				]
 			};
 			this.Tactical.spawnParticleEffect(false, effect.Brushes, _tile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 40));
-		}
 
+			local appearance = this.getItems().getAppearance();
+
+			//will need edits if wichts start using front/back upgrades similar to human.nut
+			local armorLayers = [
+				"CorpseArmor"
+				"CorpseArmorLayerChain",
+				"CorpseArmorLayerPlate",
+				"CorpseArmorLayerTabbard",
+				"CorpseArmorUpgradeBack",
+				"CorpseArmorUpgradeFront",
+				"CorpseArmorLayerCloakBack",
+				"CorpseArmorLayerCloakFront",
+			];
+
+			foreach (layer in armorLayers) {
+				if (appearance[layer] != "") {
+					local decal = _tile.spawnDetail(appearance[layer], this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
+					if (decal != null) {
+						decal.Scale = 0.9;
+						decal.setBrightness(0.9);
+					}
+				}
+			}
+
+			if (!appearance.HideCorpseHead && _fatalityType != this.Const.FatalityType.Decapitated)
+			{
+				local helmetLayers = [
+					"HelmetLayerVanityLowerCorpse",
+					"HelmetLayerVanity2LowerCorpse",
+					"HelmetCorpse",
+					"HelmetLayerHelmLowerCorpse",
+					"HelmetLayerTopLowerCorpse",
+					"HelmetLayerHelmCorpse",
+					"HelmetLayerTopCorpse",
+					"HelmetLayerVanityCorpse",
+					"HelmetLayerVanity2Corpse"
+				];
+				foreach (layer in helmetLayers) {
+					if (appearance[layer] != "") {
+						local decal = _tile.spawnDetail(appearance[layer], this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
+						if (decal != null) {
+							decal.Scale = 0.9;
+							decal.setBrightness(0.9);
+						}
+					}
+				}
+			}
+		}
+		this.spawnTerrainDropdownEffect(_tile);
 		local deathLoot = this.getItems().getDroppableLoot(_killer);
 		local tileLoot = this.getLootForTile(_killer, deathLoot);
-		local flip = !this.isAlliedWithPlayer();
 		this.dropLoot(_tile, tileLoot, !flip);
+		local corpse = this.generateCorpse(_tile, _fatalityType, _killer);
+
+		if (_tile == null)
+		{
+			this.Tactical.Entities.addUnplacedCorpse(corpse);
+		}
+		else
+		{
+			_tile.Properties.set("Corpse", corpse);
+			this.Tactical.Entities.addCorpse(_tile);
+		}
 
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
+	}
+
+	function generateCorpse( _tile, _fatalityType, _killer )
+	{
+		local isResurrectable = false;
+		local corpse = clone this.Const.Corpse;
+		corpse.IsResurrectable = false;
+		corpse.IsConsumable = false;
+		corpse.Items = this.getItems().prepareItemsForCorpse(_killer);
+		corpse.IsHeadAttached = _fatalityType != this.Const.FatalityType.Decapitated;
+
+		if (_tile != null)
+		{
+			corpse.Tile = _tile;
+		}
+
+		return corpse;
 	}
 
 	function onFactionChanged() {
@@ -132,8 +209,6 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("armor_upgrade_back").setHorizontalFlipping(flip);
 		this.getSprite("armor_upgrade_front").setHorizontalFlipping(flip);
 		this.getSprite("head").setHorizontalFlipping(flip);
-		this.getSprite("helmet").setHorizontalFlipping(flip);
-		this.getSprite("helmet_damage").setHorizontalFlipping(flip);
 		this.getSprite("accessory").setHorizontalFlipping(flip);
 		this.getSprite("accessory_special").setHorizontalFlipping(flip);
 		this.getSprite("armor_layer_chain").setHorizontalFlipping(flip);
@@ -142,6 +217,8 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("armor_layer_cloak_front").setHorizontalFlipping(flip);
 		this.getSprite("armor_layer_cloak").setHorizontalFlipping(flip);
 
+		this.getSprite("helmet").setHorizontalFlipping(flip);
+		this.getSprite("helmet_damage").setHorizontalFlipping(flip);
 		this.getSprite("helmet_helm_lower").setHorizontalFlipping(flip);
 		this.getSprite("helmet_top_lower").setHorizontalFlipping(flip);
 		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
@@ -203,8 +280,6 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		blur_4.varySaturation(0.25);
 		blur_4.varyColor(0.2, 0.2, 0.2);
 		this.addSprite("armor");
-		this.addSprite("helmet");
-		this.addSprite("helmet_damage");
 		this.addSprite("armor_upgrade_front");
 		this.addSprite("surcoat");
 		this.addSprite("dirt");
@@ -213,14 +288,16 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("armor_layer_tabbard");
 		this.addSprite("accessory");
 		this.addSprite("accessory_special");
+		this.addSprite("armor_upgrade_back");
+		this.addSprite("armor_layer_cloak");
+		this.addSprite("armor_layer_cloak_front");
+		this.addSprite("helmet");
+		this.addSprite("helmet_damage");
+		this.addSprite("helmet_helm");
 		this.addSprite("helmet_helm_lower");
 		this.addSprite("helmet_top_lower");
 		this.addSprite("helmet_vanity_lower");
 		this.addSprite("helmet_vanity_lower_2");
-		this.addSprite("armor_layer_cloak");
-		this.addSprite("armor_layer_cloak_front");
-		this.addSprite("armor_upgrade_back");
-		this.addSprite("helmet_helm");
 		this.addSprite("helmet_top");
 		this.addSprite("helmet_vanity");
 		this.addSprite("helmet_vanity_2");
@@ -231,16 +308,22 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 
 		// perks need to be added
 		::Legends.Traits.grant(this, ::Legends.Trait.RacialGhost);
+		::Legends.Traits.get(this, ::Legends.Trait.RacialGhost).m.IsWicht = true;
 		::Legends.Perks.grant(this, ::Legends.Perk.LegendComposure);
 		::Legends.Perks.grant(this, ::Legends.Perk.LegendPoisonImmunity);
 		::Legends.Perks.grant(this, ::Legends.Perk.Fearsome);
+		::Legends.Perks.grant(this, ::Legends.Perk.BattleForged)
 		if (::Legends.isLegendaryDifficulty()) {
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendSmashingShields);
-			::Legends.Perks.grant(this, ::Legends.Perk.LegendBackToBasics);
-			::Legends.Perks.grant(this, ::Legends.Perk.ShieldBash);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendImmovableObject);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendBloodyHarvest);
+			this.m.ArmorDifficultyMult += 0.5;
 		}
+		::Legends.S.scaleBaseProperties(b); // this bit increases hitpoints
+		b.Hitpoints = 1;
+
+		local daysToScale = this.Math.floor(this.World.getTime().Days / ::Legends.S.getDaysToScaleDifficulty());
+		this.m.ArmorDifficultyMult += 0.1 * this.Math.floor(daysToScale);
 	}
 
 	function onRender() {
@@ -310,22 +393,23 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 
+		local b = this.m.BaseProperties;
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body)) {
-			local armor = [
+			local armor = this.Const.World.Common.pickArmor([
 				[1, ::Legends.Armor.Standard.ghost_armor]
-			];
-			this.m.Items.equip(this.Const.World.Common.pickArmor(
-				armor
-			));
+			]);
+			b.Armor[0] = this.Math.round(armor.getArmorMax() * this.m.ArmorDifficultyMult)
+			b.ArmorMax[0] = this.Math.round(armor.getArmorMax() * this.m.ArmorDifficultyMult)
+			this.m.Items.equip(armor);
 		}
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head)) {
-			local helmet = [
+			local helmet = this.Const.World.Common.pickHelmet([
 				[1, ::Legends.Helmet.Standard.ghost_helmet]
-			];
-			this.m.Items.equip(this.Const.World.Common.pickHelmet(
-				helmet
-			));
+			]);
+			b.Armor[1] = this.Math.round(helmet.getArmorMax() * this.m.ArmorDifficultyMult)
+			b.ArmorMax[1] = this.Math.round(helmet.getArmorMax() * this.m.ArmorDifficultyMult)
+			this.m.Items.equip(helmet);
 		}
 	}
 
@@ -333,6 +417,9 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		if (!this.actor.makeMiniboss()) {
 			return false;
 		}
+
+		local b = this.m.BaseProperties;
+		this.m.ArmorDifficultyMult += 0.5;
 
 		this.getSprite("miniboss").setBrush("bust_miniboss");
 		local weapons = [
@@ -347,34 +434,25 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 
 		local upgrades = [];
 		local r = this.Math.rand(1, 3);
-		if (r == 1)
-		{
+		if (r == 1) {
 			local armor = this.Const.World.Common.pickArmor([
-				[1, ::Legends.Armor.Standard.ghost_armor]
+				[2, ::Legends.Armor.Named.ghost_armor_named_01],
+				[1, ::Legends.Armor.Named.ghost_armor_named_02]
 			]);
-			upgrades = [
-				"plate/legend_armor_plate_full_greaves_named",
-				"plate/legend_armor_plate_full_greaves_painted",
-				"chain/legend_armor_hauberk_full_named"
-			]
-			// armor.setUpgrade(this.new("scripts/items/legend_armor/" + upgrades[this.Math.rand(0, upgrades.len() - 1)]));
-			this.m.Items.equip(this.new("scripts/items/legend_armor/" + upgrades[this.Math.rand(0, upgrades.len() - 1)]));
+			b.Armor[0]= this.Math.round(armor.getArmorMax() * this.m.ArmorDifficultyMult);
+			b.ArmorMax[0]= this.Math.round(armor.getArmorMax() * this.m.ArmorDifficultyMult);
+			this.m.Items.equip(armor);
 		}
-		else if (r == 2)
-		{
+		else if (r == 2) {
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
-		else
-		{
-			local helmet = this.Const.World.Common.pickArmor([
-				[1, ::Legends.Armor.Standard.ghost_helmet]
+		else {
+			local helmet = this.Const.World.Common.pickHelmet([
+				[1, ::Legends.Helmet.Named.ghost_helmet_named]
 			]);
-			upgrades = [
-				"helm/legend_helmet_frogmouth_named",
-				"helm/legend_helmet_armet_named"
-			]
-			// helmet.setUpgrade(this.new("scripts/items/legend_armor/" + upgrades[this.Math.rand(0, upgrades.len() - 1)]));
-			this.m.Items.equip(this.new("scripts/items/legend_helmets/" + upgrades[this.Math.rand(0, upgrades.len() - 1)]));
+			b.Armor[1]= this.Math.round(helmet.getArmorMax() * this.m.ArmorDifficultyMult);
+			b.ArmorMax[1]= this.Math.round(helmet.getArmorMax() * this.m.ArmorDifficultyMult);
+			this.m.Items.equip(helmet);
 		}
 
 		return true;

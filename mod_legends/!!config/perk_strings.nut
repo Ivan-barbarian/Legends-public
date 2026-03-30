@@ -363,7 +363,7 @@ Through familiarity and training with your weapon, you know just how your projec
 Use your built up inertia to wreak havoc on the second swing.
 
 [color=%passive%][u]Passive:[/u][/color]
-• After performing [color=%skill%]Round Swing[/color], [color=%skill%]Swing[/color], [color=%skill%]Thresh[/color], [color=%skill%]Reap[/color], [color=%skill%]Castigate[/color], [color=%skill%]Shatter[/color] and [color=%skill%]Double Swing[/color] you can perform a followup for [color=%negative%]-50%[/color] Fatigue and Action Points. [color=%skill%]Swing[/color] Damage is reduced by [color=%negative%]-25%[/color] and for the rest of the skills by [color=%negative%]-50%[/color].
+• After performing [color=%skill%]Round Swing[/color], [color=%skill%]Swing[/color], [color=%skill%]Thresh[/color], [color=%skill%]Reap[/color], [color=%skill%]Castigate[/color], [color=%skill%]Shatter[/color], [color=%skill%]Harvest[/color] and [color=%skill%]Double Swing[/color] you can perform a followup for [color=%negative%]-50%[/color] Fatigue and Action Points. [color=%skill%]Swing[/color] Damage is reduced by [color=%negative%]-25%[/color] and for the rest of the skills by [color=%negative%]-50%[/color].
 
 • Moving, ending your turn or waiting will all remove this effect.
 ";
@@ -588,7 +588,7 @@ Exert yourself to move one tile at an unusually quick speed.
 You're a well-rounded athlete!
 
 [color=%passive%][u]Passive:[/u][/color]
-• Reduce the Fatigue cost of all your skills by a scaling percentage based on [color=%negative%]20%[/color] of your maximum usable Fatigue. Maximum usable fatigue is your fatigue after gear weight is accounted for.
+• Reduce the Fatigue cost of all your skills by a percentage equal to [color=%negative%]20%[/color] of your maximum usable Fatigue after gear weight is accounted for.
 ";
 
 ::Const.Strings.PerkDescription.LegendSpecPoison <- @"
@@ -908,9 +908,7 @@ Real berserkers don't need pants.
 Put your full weight into every blow!
 
 [color=%passive%][u]Passive:[/u][/color]
-• When using Melee Weapons, Unarmed, Throwing and Bows inflict additional damage, scaling based on [color=%positive%]10%[/color] of your current Hitpoints and [color=%positive%]15%[/color] of current Fatigue.
-
-• However, when below [color=%negative%]50%[/color] Hitpoints or Fatigue all damage inflicted will be increased by [color=%positive%]5%[/color] of maximum Hitpoints or [color=%positive%]7.5%[/color] of maximum Fatigue, instead.
+• When using Melee Weapons, Unarmed, Throwing and Bows inflict additional damage, scaling based on [color=%positive%]10%[/color] of your current Hitpoints and [color=%positive%]15%[/color] of your current Fatigue.
 
 • Fatigue calculations are done after gear and values might change in combat.
 ";
@@ -1261,7 +1259,7 @@ As if being warned by some higher being, the Vala occasionally gets glimpses of 
 Through extensive study of the human form, you learn how to fashion replacement parts from wood and metal.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Unlocks a series of events that let you create prosthetic body parts to help your mercenaries Resolve their permanent [color=%status%]Injuries[/color] that are presented through random events.
+• Unlocks the creation of prosthetic body parts in the crafting tent to help your mercenaries resolve their permanent [color=%status%]Injuries[/color].
 ";
 
 ::Const.Strings.PerkDescription.LegendGuideSteps <- @"
@@ -1421,7 +1419,7 @@ Lets hope your enemies like fighting in the shade.
 
 • [color=%skill%]Sling Heavy Stone[/color] will stun on headshots.
 
-• [color=%skill%]Shoot Bolt[/color] and [color=%skill%]Shoot Bolt[/color] will automatically reload on headshots.
+• [color=%skill%]Shoot Bolt[/color] and [color=%skill%]Shoot Stake[/color] will automatically reload on headshots.
 ";
 
 ::Const.Strings.PerkDescription.LegendStaffBlock <- @"
@@ -1680,13 +1678,9 @@ Mastering the art of leaning against a wall with a big stick has it's benefits.
 Twist and thrust with your staff to deflect blows and intercept strikes.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Gain [color=%positive%]+12[/color] chance to hit and [color=%positive%]+16[/color] Defense while wielding a pure staves or magic staves.
+• Gain [color=%positive%]+16[/color] Melee Skill and [color=%positive%]+16[/color] Defense while wielding a staves or magic staves.
 
-• When taking [color=%perk%]Polearm Mastery[/color] gain [color=%positive%]10%[/color] damage.
-
-• For other weapons classified as a Staff, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
-
-• When wielding slingstaves, musical instruments and other hybrid staves the bonus is only [color=%positive%]+8[/color] Defense.
+• When wielding slingstaves, musical instruments and other hybrid staves the bonus is only [color=%positive%]+8[/color].
 ";
 
 ::Const.Strings.PerkDescription.LegendSpecialistRaider <- @"
@@ -2169,7 +2163,7 @@ Well fitting armor lets you strike faster and fight longer.
 Poking things where they don't belong is just a natural inclination for some.
 
 [color=%passive%][u]Passive:[/u][/color]
-• [color=%skill%]Thrust[/color], [color=%skill%]Prong[/color], [color=%skill%]Skewer[/color], [color=%skill%]Impale[/color], [color=%skill%]Rupture[/color] and [color=%skill%]Glaive Strike[/color] do [color=%positive%]+15%[/color] damage.
+• [color=%skill%]Thrust[/color], [color=%skill%]Prong[/color], [color=%skill%]Skewer[/color], [color=%skill%]Impale[/color], [color=%skill%]Rupture[/color], [color=%skill%]Heartseeker[/color] and [color=%skill%]Glaive Strike[/color] do [color=%positive%]+15%[/color] damage.
 
 • Also removes the hitchance penalty per tile when throwing Spears and Javelins.
 ";
@@ -3029,7 +3023,7 @@ Control the elements, calling down the rain.
 All those years of studying ancient languages finally has a use.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Allows the user to identify Ancient Scrolls, when given a Cloth and Dyes. These tomes grant a specific effect, whereas an Ancient Scroll gives any random effect.
+• Allows the user to create Ancient Scrolls when given Cloth and Dyes.
 ";
 
 ::Const.Strings.PerkDescription.LegendScholar <- @"

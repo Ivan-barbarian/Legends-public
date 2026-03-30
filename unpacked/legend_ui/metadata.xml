@@ -207,6 +207,7 @@
 	<sprite id="active_ribcracker_2hmace" ic="FF1B293C" img="skills\active_ribcracker_2hmace.png" />
 	<sprite id="active_ribcracker_bonemace" ic="FF1B293C" img="skills\active_ribcracker_bonemace.png" />
 	<sprite id="active_ribcracker_polemace" ic="FF1B293C" img="skills\active_ribcracker_polemace.png" />
+	<sprite id="active_strafing_run" ic="FF1B293C" img="skills\active_strafing_run.png" />
 	<sprite id="unarmed_lunge_square" ic="FF1B293C" img="skills\unarmed_lunge_square.png" />
 	<sprite id="feint_mini" ic="FF1B293C" img="skills\mini\feint_mini.png" />
 	<sprite id="freedom_of_movement_circle_mini" ic="FF1B293C" img="skills\mini\freedom_of_movement_circle_mini.png" />

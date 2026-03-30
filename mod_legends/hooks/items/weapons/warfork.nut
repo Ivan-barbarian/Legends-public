@@ -28,6 +28,7 @@
 			_skill.m.Icon = "skills/skewer_warfork.png";
 			_skill.m.IconDisabled = "skills/skewer_warfork_bw.png";
 			_skill.m.Overlay = "skewer_warfork";
+			_skill.m.IsSpearSkewer = true;
 		}.bindenv(this));
 		::Legends.Actives.grant(this.weapon, ::Legends.Active.LegendWarforkDisarm);
 		::Legends.Actives.grant(this.weapon, ::Legends.Active.Spearwall, function (_skill)

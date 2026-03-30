@@ -1,9 +1,12 @@
 ::mods_hookExactClass("items/weapons/hatchet", function(o) {
-
 	local create = o.create;
 	o.create = function() {
 		create();
 		this.setVariant(this.Math.rand(0, 2));
+		this.m.Ammo = 1;
+		this.m.AmmoMax = 1;
+		this.m.AmmoCost = 5;
+		this.m.ItemType = this.m.ItemType | ::Const.Items.ItemType.Ammo;
 	}
 
 	o.updateVariant <- function() {
@@ -11,6 +14,15 @@
 		this.m.Icon = "weapons/melee/axe_01" + v + "_70x70.png";
 		this.m.IconLarge = "weapons/melee/axe_01" + v + ".png";
 		this.m.ArmamentIcon = "icon_axe_01" + v;
+	}
+
+	local onEquip = o.onEquip;
+	o.onEquip = function()
+	{
+		onEquip();
+		::Legends.Actives.grant(this.weapon, ::Legends.Active.ThrowAxe, function (_skill) {
+			_skill.m.IsBackupAxe = true;
+		}.bindenv(this));
 	}
 
 });

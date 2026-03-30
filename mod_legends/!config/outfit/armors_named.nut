@@ -472,3 +472,67 @@
 	}]
 };
 ::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Named.lindwurm_armor);
+
+::Legends.Armor.Named.ghost_armor_named_01 <- {
+	ID = "ghost_armor_named_01", // 240-395 -31-50 10175-11500
+	Script = "",
+	Sets = [{
+		Cloth = [
+			[1, "cloth/legend_armor_tunic_dark"], // 35 -4 50
+			[1, "cloth/legend_armor_gambeson", [1, 2, 3]] // 65 -8 250
+		],
+		Chain = [
+			[1, "chain/legend_armor_reinforced_worn_mail"], // 105 -17 1250
+			[1, "chain/legend_armor_reinforced_worn_mail_shirt"], // 65 -11 350
+			[1, "chain/legend_armor_rusty_mail_shirt"], // 20 -4 125
+		],
+		Plate = [
+			[1, "plate/legend_armor_plate_full_greaves_named"], // 185-225 -23-25 10000
+			[1, "plate/legend_armor_plate_full_greaves_painted"] // 185-225 -23-25 10000
+		],
+		Cloak = [
+		],
+		Tabard = [
+		],
+		Attachments = [
+			[1, "armor_upgrades/legend_pauldron_swan_upgrade"],
+			[1, "armor_upgrades/legend_pauldron_upgrade"],
+			[1, "armor_upgrades/legend_pauldron_stag_upgrade"],
+			[1, "armor_upgrades/legend_pauldron_heavy_upgrade"],
+			[1, "armor_upgrades/legend_pauldron_strong_upgrade"],
+			[1, "armor_upgrades/legend_metal_pauldrons_upgrade"]
+		]
+	}]
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Named.ghost_armor_named_01);
+
+::Legends.Armor.Named.ghost_armor_named_02 <- {
+	ID = "ghost_armor_named_02", // 320-385 -35-47 9550-10250
+	Script = "",
+	Sets = [{
+		Cloth = [
+			[1, "cloth/legend_armor_tunic_dark"], // 35 -4 50
+			[1, "cloth/legend_armor_gambeson", [1, 2, 3]] // 65 -8 250
+		],
+		Chain = [
+			[1, "chain/legend_armor_hauberk_full_named"] // 125-150 -9-13 5000
+		],
+		Plate = [
+			[1, "plate/legend_armor_plate_full"], // 160 -22 4500
+			[10, "plate/legend_armor_plate_full_greaves"] // 170 -26 5000
+		],
+		Cloak = [
+		],
+		Tabard = [
+		],
+		Attachments = [
+			[1, "armor_upgrades/legend_pauldron_swan_upgrade"],
+			[1, "armor_upgrades/legend_pauldron_upgrade"],
+			[1, "armor_upgrades/legend_pauldron_stag_upgrade"],
+			[1, "armor_upgrades/legend_pauldron_heavy_upgrade"],
+			[1, "armor_upgrades/legend_pauldron_strong_upgrade"],
+			[1, "armor_upgrades/legend_metal_pauldrons_upgrade"]
+		]
+	}]
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Named.ghost_armor_named_02);

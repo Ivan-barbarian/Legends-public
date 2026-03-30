@@ -566,7 +566,7 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 						this.World.Assets.getStash().add(this.new("scripts/items/supplies/goat_cheese_item"));
 						this.World.Assets.getStash().add(this.new("scripts/items/supplies/wine_item"));
 						this.World.Assets.getStash().add(this.new("scripts/items/supplies/ammo_item"));
-						this.World.Assets.getStash().add(this.new("scripts/items/loot/armor_parts_item"));
+						this.World.Assets.getStash().add(this.new("scripts/items/supplies/armor_parts_item"));
 						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Rid the town of stollwurms");
 						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Hero of the land");
 						this.World.Contracts.finishActiveContract();

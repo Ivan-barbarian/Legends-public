@@ -30,24 +30,30 @@ this.legend_armor_skull_chain_upgrade <- this.inherit("scripts/items/legend_armo
 		this.m.OverlayIconLarge = "legend_armor/inventory_pauldrons_skull_chain_"  + variant + ".png";
 	}
 
-	function getTooltip()
-	{
-
-		local result = this.legend_armor_upgrade.getTooltip();
-		result.push({
+	function updateTooltip( _tooltip )	{
+		_tooltip.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/chance_to_hit_head.png",
 			text = "Has a [color=%positive%]+5%[/color] Chance To Hit Head"
 		});
-		result.push({
+		_tooltip.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "Builds up [color=%negative%]1[/color] more fatigue for each tile travelled"
 		});
-		return result;
+		return _tooltip;
 	}
+
+	function getTooltip()	{
+		return updateTooltip(this.legend_armor_upgrade.getTooltip());
+	}
+
+	function onArmorTooltip( _result )	{
+		this.legend_armor_upgrade.onArmorTooltip(updateTooltip(_result));
+	}
+
 	function onUpdateProperties( _properties )
 	{
 		this.legend_armor_upgrade.onUpdateProperties(_properties);

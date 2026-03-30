@@ -6,7 +6,8 @@
 		this.setVariant(this.Math.rand(0, 2));
 		this.m.Ammo = 1;
 		this.m.AmmoMax = 1;
-		this.m.AmmoCost = 10;
+		this.m.AmmoCost = 5;
+		this.m.ItemType = this.m.ItemType | ::Const.Items.ItemType.Ammo;
 	}
 
 	o.updateVariant <- function() {

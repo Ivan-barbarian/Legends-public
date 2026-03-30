@@ -193,7 +193,7 @@ Master fighting with spears and keeping the enemy at bay.
 
 • [color=%skill%]Spearwall[/color] is no longer disabled once an opponent manages to overcome it. Instead, [color=%skill%]Spearwall[/color] can still be used and continues to give free attacks on any further opponent attempting to enter the Zone of Control.
 
-• Reduces the AP cost of [color=%skill%]Prong[/color] and by [color=%negative%]1[/color] and no longer has a penalty for attacking targets directly adjacent.
+• Reduces the AP cost of two-handed spear skills: [color=%skill%]Prong[/color], [color=%skill%]Skewer[/color] and [color=%skill%]Heartseeker[/color] by [color=%negative%]1[/color]. [color=%skill%]Prong[/color] and [color=%skill%]Heartseeker[/color] no longer have a penalty for attacking targets directly adjacent.
 
 • Increases armor penetration of [color=%skill%]Heartseeker[/color] by [color=%positive%]+5%[/color].
 ";
@@ -533,7 +533,7 @@ Specialize in heavy armor!
 [color=%passive%][u]Passive:[/u][/color]
 • Armor damage taken is reduced by a percentage equal to 5% of the current total armor value of both body and head armor.
 
-• The heavier your armor and helmet the more you benefit.
+• The heavier your armor and helmet the more you benefit. Damage taken cannot be reduced below 20% of the total value.
 
 • Does not affect damage from mental attacks or status effects.
 ";

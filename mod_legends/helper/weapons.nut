@@ -18,7 +18,7 @@ if (!("Weapons" in ::Legends)) {
 
         // Ensure skill has a container so validation methods like `isUsable()` don't crash.
         // Needed when wielding two different weapons with the same skill (e.g. dagger + knife).
-        if (skill.getContainer() == null) {
+        if (skill.getContainer() == null || !("getActor" in skill.getContainer())) {
             skill.setContainer(actorSkills);
         }
 
@@ -85,11 +85,11 @@ if (!("Weapons" in ::Legends)) {
 
 // Returns true if dual wielding weapons of the given type.
 ::Legends.Weapons.isDualWieldingWeaponType <- function (_actor, _weaponType) {
-    if (_actor == null) {
+    if (!::Legends.Weapons.isDualWielding(_actor)) {
         return false;
     }
     local items = _actor.getItems();
     local mh = items.getItemAtSlot(::Const.ItemSlot.Mainhand);
     local oh = items.getItemAtSlot(::Const.ItemSlot.Offhand);
-    return mh != null && oh != null && mh.isWeaponType(_weaponType) && oh.isWeaponType(_weaponType);
+    return mh.isWeaponType(_weaponType) && oh.isWeaponType(_weaponType);
 }

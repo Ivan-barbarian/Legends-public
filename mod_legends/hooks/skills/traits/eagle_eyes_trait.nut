@@ -18,7 +18,7 @@
 				id = 10,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "[color=%positive%]" + this.m.Vision + "[/color] Vision"
+				text = "[color=%positive%]+" + this.m.Vision + "[/color] Vision"
 			}
 		];
 	}

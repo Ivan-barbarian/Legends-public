@@ -34,7 +34,7 @@
 		Vanity = [
 			[5, ""],
 			[1, "vanity/legend_helmet_feather_band"], // 5 -0 -0 20
-			[1, "vanity/legend_helmet_headband"], // 10 -0 -0 20
+			[1, "vanity/legend_helmet_headband"], // 5 -0 -0 20
 			[1, "vanity/legend_helmet_plait"] // 10 -0 -0 50
 		]
 	}]
@@ -54,7 +54,7 @@
 		Tops = [],
 		Vanity = [
 			[5, ""],
-			[1, "vanity/legend_helmet_headband"], // 10 -0 -0 20
+			[1, "vanity/legend_helmet_headband"], // 5 -0 -0 20
 			[1, "vanity/legend_helmet_plait"] // 10 -0 -0 50
 		]
 	}]
@@ -100,7 +100,7 @@
 		],
 		Vanity = [
 			[5, ""],
-			[1, "vanity/legend_helmet_headband"], // 10 -0 -0 20
+			[1, "vanity/legend_helmet_headband"], // 5 -0 -0 20
 			[1, "vanity/legend_helmet_plait"] // 10 -0 -0 50
 		]
 	}]
@@ -125,7 +125,7 @@
 		],
 		Vanity = [
 			[5, ""],
-			[1, "vanity/legend_helmet_headband"], // 10 -0 -0 20
+			[1, "vanity/legend_helmet_headband"], // 5 -0 -0 20
 			[1, "vanity/legend_helmet_plait"] // 10 -0 -0 50
 		]
 	}]
@@ -148,7 +148,7 @@
 		],
 		Vanity = [
 			[5, ""],
-			[1, "vanity/legend_helmet_headband"], // 10 -0 -0 20
+			[1, "vanity/legend_helmet_headband"], // 5 -0 -0 20
 			[1, "vanity/legend_helmet_plait"] // 10 -0 -0 50
 		]
 	}]
@@ -168,7 +168,7 @@
 		],
 		Vanity = [
 			[5, ""],
-			[1, "vanity/legend_helmet_headband"], // 10 -0 -0 20
+			[1, "vanity/legend_helmet_headband"], // 5 -0 -0 20
 			[1, "vanity/legend_helmet_plait"] // 10 -0 -0 50
 		]
 	}]
@@ -489,7 +489,7 @@
 		],
 		Vanity = [
 			[5, ""],
-			[1, "vanity/legend_helmet_headband"], // 10 -0 -0 20
+			[1, "vanity/legend_helmet_headband"], // 5 -0 -0 20
 			[1, "vanity/legend_helmet_plait"] // 10 -0 -0 50
 		]
 	}]
@@ -966,7 +966,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.legend_seer_hat);
 
 ::Legends.Helmet.Standard.legend_warlock_hood <- {
-	ID = "legend_warlock_hood", // 105-140 -2-1 -1-0 2110
+	ID = "legend_warlock_hood", // 15-25 -0 -0 110
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -1072,7 +1072,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.nasal_helmet_with_mail);
 
 ::Legends.Helmet.Standard.nasal_helmet_with_rusty_mail <- {
-	ID = "nasal_helmet_with_rusty_mail", // 110-130 -6-7 -1 250-320
+	ID = "nasal_helmet_with_rusty_mail", // 105-125 -6-7 -1 250-320
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -1086,7 +1086,7 @@
 		Tops = [
 		],
 		Vanity = [
-			[1, "vanity/legend_helmet_headband"] // 10 -0 -0 20
+			[1, "vanity/legend_helmet_headband"] // 5 -0 -0 20
 		]
 	}]
 };
@@ -1497,7 +1497,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.sallet_helmet);
 
 ::Legends.Helmet.Standard.steppe_helmet_with_mail <- {
-	ID = "steppe_helmet_with_mail", // 125-145 -6-7 -1 575-670
+	ID = "steppe_helmet_with_mail", // 125-140 -6-7 -1 575-670
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -1509,7 +1509,7 @@
 		],
 		Tops = [],
 		Vanity = [
-			[1, "vanity/legend_helmet_headband"], // 10 -0 -0 20
+			[1, "vanity/legend_helmet_headband"], // 5 -0 -0 20
 			[9, ""]
 		]
 	}]
@@ -2115,7 +2115,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.cervelliere);
 
 ::Legends.Helmet.Standard.red_bandit_leader_helmet <- {
-	ID = "red_bandit_leader_helmet", // 185 -8 -3 1820
+	ID = "red_bandit_leader_helmet", // 180 -8 -3 1820
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -2128,7 +2128,7 @@
 			[1, "top/legend_helmet_wallace_sallet_visor"] // 20 -1 -1 150
 		],
 		Vanity = [
-			[1, "vanity/legend_helmet_headband", 1], // 10 -0 -0 20
+			[1, "vanity/legend_helmet_headband", 1], // 5 -0 -0 20
 		]
 	}]
 };
@@ -2297,7 +2297,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.barbarian_chosen_helmet_00);
 
 ::Legends.Helmet.Standard.barbarian_chosen_helmet_01 <- {
-	ID = "barbarian_chosen_helmet_01", // 135-215 -6-19 -0-2 580-1250
+	ID = "barbarian_chosen_helmet_01", // 130-215 -6-19 -0-2 580-1250
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -2312,7 +2312,7 @@
 			[1, "top/legend_helmet_orc_horn_mask"], // 60 -8 -2 200
 			[1, "top/legend_helmet_barb_hood_leather"], // 45 -4 -2 300
 			[1, "top/legend_helmet_orc_metal_mask"], // 75 -11 -2 400
-			[1, "top/legend_helmet_headband_nose"], // 10 -0 -0 30
+			[1, "top/legend_helmet_headband_nose"], // 5 -0 -0 30
 		],
 		Vanity = [
 			[1, "vanity/legend_helmet_wolf_helm"], // 10 -0 -0 100
@@ -2323,7 +2323,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.barbarian_chosen_helmet_01);
 
 ::Legends.Helmet.Standard.barbarian_chosen_helmet_02 <- {
-	ID = "barbarian_chosen_helmet_02", // 205 -15 -2 1290
+	ID = "barbarian_chosen_helmet_02", // 200 -15 -2 1290
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -2333,7 +2333,7 @@
 			[1, "helm/legend_helmet_heavy_plate_helm"], // 175 -15 -2 1200
 		],
 		Tops = [
-			[1, "top/legend_helmet_headband_side"], // 10 -0 -0 30
+			[1, "top/legend_helmet_headband_side"], // 5 -0 -0 30
 		],
 		Vanity = [
 			[1, "vanity/legend_helmet_ponytail", 1], // 5 -0 -0 50
@@ -2437,7 +2437,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.white_nomad_leader_helmet_00);
 
 ::Legends.Helmet.Standard.citrene_nomad_cutthroat_helmet_00 <- {
-	ID = "citrene_nomad_cutthroat_helmet_00", // 20-30 -0 -0 30-50
+	ID = "citrene_nomad_cutthroat_helmet_00", // 20-25 -0 -0 30-50
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -2449,7 +2449,7 @@
 		Tops = [
 		],
 		Vanity = [
-			[1, "vanity/legend_helmet_headband"], // 10 -0 -0 20
+			[1, "vanity/legend_helmet_headband"], // 5 -0 -0 20
 			[4, "vanity/legend_helmet_southern_headband"], // 5 -0 -0 20
 			[10, "vanity/legend_helmet_southern_patterned_headband"] // 5 -0 -0 20
 		]
@@ -2458,7 +2458,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.citrene_nomad_cutthroat_helmet_00);
 
 ::Legends.Helmet.Standard.citrene_nomad_cutthroat_helmet_01 <- {
-	ID = "citrene_nomad_cutthroat_helmet_01", // 25-75 -0-3 -0 50-220
+	ID = "citrene_nomad_cutthroat_helmet_01", // 25-70 -0-3 -0 50-220
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -2470,7 +2470,7 @@
 		Tops = [
 		],
 		Vanity = [
-			[1, "vanity/legend_helmet_headband"], // 10 -0 -0 20
+			[1, "vanity/legend_helmet_headband"], // 5 -0 -0 20
 			[4, "vanity/legend_helmet_southern_headband"], // 5 -0 -0 20
 			[10, "vanity/legend_helmet_southern_patterned_headband"] // 5 -0 -0 20
 		]
@@ -2541,7 +2541,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.theamson_nomad_leader_helmet_facemask);
 
 ::Legends.Helmet.Standard.theamson_nomad_outlaw_helmet <- {
-	ID = "theamson_nomad_outlaw_helmet", // 115-160 -5-8 -0-1 820-1320
+	ID = "theamson_nomad_outlaw_helmet", // 115-155 -5-8 -0-1 820-1320
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -2556,7 +2556,7 @@
 		Tops = [
 		],
 		Vanity = [
-			[1, "vanity/legend_helmet_headband"], // 10 -0 -0 20
+			[1, "vanity/legend_helmet_headband"], // 5 -0 -0 20
 			[4, "vanity/legend_helmet_southern_patterned_headband"], // 5 -0 -0 20
 		]
 	}]
@@ -2733,7 +2733,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.undertaker_hat);
 
 ::Legends.Helmet.Standard.swan_helm <- {
-	ID = "swan_helm" // 265-405 -19-25 -3-4 5225-6550
+	ID = "swan_helm" // 265-405 -17-27 -3-4 5225-6550
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -2742,7 +2742,7 @@
 			[1, "hood/legend_helmet_open_chain_hood"], // 65 -3 -0 225
 		],
 		Helms = [
-			[1, "helm/legend_helmet_swan_helm"] // 200-225 -16-14 -3-2 5000
+			[1, "helm/legend_helmet_swan_helm"] // 200-225 -14-16 -3-2 5000
 		],
 		Tops = [
 
@@ -2753,7 +2753,7 @@
 			[3, "top/legend_helmet_faceplate_long"], // 35 -3 -0 180
 			[3, "top/legend_helmet_faceplate_full"], // 60 -5 -1 800
 			[3, "top/legend_helmet_faceplate_full_breaths"], // 35 -2 -1 300
-			[1, "top/legend_helmet_faceplate_winged_full_named"], // 65-90 -4-3 -2-1 1000
+			[1, "top/legend_helmet_faceplate_winged_full_named"], // 65-90 -3-4 -2-1 1000
 			[2, "top/legend_helmet_faceplate_pointed"], // 50 -4 -1 500
 			[3, "top/legend_helmet_faceplate_pointed_slit"], // 50 -4 -1 600
 			[3, "top/legend_helmet_facemask"], // 20 -1 -1 150
@@ -2774,7 +2774,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.swan_helm);
 
 ::Legends.Helmet.Standard.stag_helm <- {
-	ID = "stag_helm" // 265-405 -19-21 -3-4 5225-6500
+	ID = "stag_helm" // 265-405 -17-24 -3-4 5225-6500
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -2783,14 +2783,14 @@
 			[1, "hood/legend_helmet_open_chain_hood"] // 65 -3 -0 225
 		],
 		Helms = [
-			[1, "helm/legend_helmet_swan_helm"] // 200-225 -16-14 -3-2 5000
+			[1, "helm/legend_helmet_swan_helm"] // 200-225 -14-16 -3-2 5000
 		],
 		Tops = [
 			[5, ""],
 			[5, "top/legend_helmet_faceplate_long"], // 35 -3 -0 180
 			[3, "top/legend_helmet_faceplate_snub_nose"], // 45 -3 -1 500
 			[3, "top/legend_helmet_faceplate_snub_slit"], // 50 -3 -2 500
-			[1, "top/legend_helmet_faceplate_winged_full_named"], // 65-90 -4-3 -2-1 1000
+			[1, "top/legend_helmet_faceplate_winged_full_named"], // 65-90 -3-4 -2-1 1000
 			[3, "top/legend_helmet_faceplate_full_breaths"], // 35 -2 -1 300
 			[2, "top/legend_helmet_faceplate_flat"], // 35 -2 -1 300
 			[2, "top/legend_helmet_faceplate_curved"], // 35 -2 -1 300
@@ -2997,7 +2997,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.mercury_sureshot_00);
 
 ::Legends.Helmet.Standard.mercury_sureshot_01 <- {
-	ID = "mercury_sureshot_01", // 110 -4 -2 1315
+	ID = "mercury_sureshot_01", // 105 -4 -2 1315
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -3010,14 +3010,14 @@
 			[1, ""]
 		],
 		Vanity = [
-			[1, "vanity/legend_helmet_headband", 15] // 10 -0 -0 20
+			[1, "vanity/legend_helmet_headband", 15] // 5 -0 -0 20
 		]
 	}]
 };
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.mercury_sureshot_01);
 
 ::Legends.Helmet.Standard.mercury_rusty_sureshot_00 <- {
-	ID = "mercury_rusty_sureshot_00", // 75 -3 -0 215
+	ID = "mercury_rusty_sureshot_00", // 70 -3 -0 215
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -3030,7 +3030,7 @@
 			[1, ""]
 		],
 		Vanity = [
-			[1, "vanity/legend_helmet_headband", 15] // 10 -0 -0 20
+			[1, "vanity/legend_helmet_headband", 15] // 5 -0 -0 20
 		]
 	}]
 };
@@ -3057,7 +3057,7 @@
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Standard.mercury_pollax_00);
 
 ::Legends.Helmet.Standard.mercury_pollax_01 <- {
-	ID = "mercury_pollax_01", // 185 -10 -2 1095-1195
+	ID = "mercury_pollax_01", // 180 -10 -2 1095-1195
 	Script = "",
 	Sets = [{
 		Hoods = [
@@ -3071,7 +3071,7 @@
 			[1, "top/legend_helmet_faceplate_pointed", 1] // 50 -4 -1 500
 		],
 		Vanity = [
-			[1, "vanity/legend_helmet_headband", 16] // 10 -0 -0 20
+			[1, "vanity/legend_helmet_headband", 16] // 5 -0 -0 20
 		],
 	}]
 };
@@ -3150,7 +3150,7 @@
 		],
 		Tops = [],
 		Vanity = [
-			[1, "vanity/legend_helmet_headband", 8], // 10 -0 -0 20
+			[1, "vanity/legend_helmet_headband", 8], // 5 -0 -0 20
 			[1, "vanity/legend_helmet_hood_cloth_long", 2], // 10 -0 -0 30
 			[1, ""]
 		],
