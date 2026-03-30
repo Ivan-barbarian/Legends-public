@@ -96,7 +96,7 @@
 
 //region HardIncompat
 ::Legends.Compat.HardIncompat.add("mod_18bros", null, "Legends has more anyway.");
-::Legends.Compat.HardIncompat.add("mod_AC", "1.30.33"); // Accessory Companions
+::Legends.Compat.HardIncompat.add("mod_AC", "1.30.33", "Instead use the newer ACU found in the AC Submod channel Pins"); // Accessory Companions
 ::Legends.Compat.HardIncompat.add("mod_allCripplesBecomeTheKingsGuard", "1.0");
 ::Legends.Compat.HardIncompat.add("and_justice_for_all", "1.4.0");
 ::Legends.Compat.HardIncompat.add("mod_autopilot", "23", "Instead use Hackflow's Autopilot New mod");
@@ -118,7 +118,7 @@
 ::Legends.Compat.HardIncompat.add("CampaignTweakster", "6");
 ::Legends.Compat.HardIncompat.add("mod_cartupgrade", "1.0");
 ::Legends.Compat.HardIncompat.add("mod_challengeScenarioPack", "1.0");
-::Legends.Compat.HardIncompat.add("mod_champion_beasts", "1.2.0"); // Necro's Vanila champ beasts.
+::Legends.Compat.HardIncompat.add("mod_champion_beasts", "1.2.0", "Instead use Magic Concepts which is the Legends version of this"); // Necro's Vanila champ beasts.
 ::Legends.Compat.HardIncompat.add("mod_Chirutiru_enemies", "1", "Sellswords not compaible, there's Legends version of this mod (SSU) on Legends Discord"); // This entry should cover old Sellswords
 ::Legends.Compat.HardIncompat.add("sarisofoi_company_tabards"); // Company Tabards
 ::Legends.Compat.HardIncompat.add("comrades_mod", "4.3.0");
@@ -240,7 +240,8 @@
 ::Legends.Compat.SoftIncompat.add("mod_SAF", "1.0.0"); // Darx's Stackable Arena Fights
 ::Legends.Compat.SoftIncompat.add("mod_streamlined_ui", "1.0.3");
 ::Legends.Compat.SoftIncompat.add("mod_URUI", "1.2.0"); // Unrecognized UI
-::Legends.Compat.SoftIncompat.add("mod_persistent_characters", "0.1.8", "Bro wages keep growing on reload"); 
+::Legends.Compat.SoftIncompat.add("mod_persistent_characters", "0.1.8", "Bro wages keep growing on reload");
+::Legends.Compat.SoftIncompat.add("mod_bbforge", "0.4.3", "The equivalent of Breditor, if you are using bbforge do not report bug reports to the Legends Mod Team")
 //endregion
 
 //region IncompatButPatched
