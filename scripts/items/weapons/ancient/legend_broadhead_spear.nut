@@ -1,21 +1,6 @@
 this.legend_broadhead_spear <- this.inherit("scripts/items/weapons/weapon", {
 	m = {},
 
-	function isAmountShown()
-	{
-		return true;
-	}
-
-	function setAmmo ( _a )
-	{
-		this.weapon.setAmmo(_a);
-	}
-
-	function getAmountString ()
-	{
-		return this.m.Ammo + "/" + this.m.AmmoMax;
-	}
-
 	function create()
 	{
 		this.weapon.create();
@@ -38,7 +23,7 @@ this.legend_broadhead_spear <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -10;
 		this.m.Ammo = 1;
 		this.m.AmmoMax = 1;
-		this.m.AmmoCost = 10;
+		this.m.AmmoCost = 5;
 		this.m.RegularDamage = 35;
 		this.m.RegularDamageMax = 45;
 		this.m.ArmorDamageMult = 0.35;

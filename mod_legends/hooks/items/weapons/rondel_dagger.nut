@@ -1,20 +1,4 @@
-::mods_hookExactClass("items/weapons/rondel_dagger", function(o) {
-
-	o.isAmountShown <- function()
-	{
-		return true;
-	}
-
-	o.setAmmo <- function ( _a )
-	{
-		this.weapon.setAmmo(_a);
-	}
-
-	o.getAmountString <- function ()
-	{
-		return this.m.Ammo + "/" + this.m.AmmoMax;
-	}
-	
+::mods_hookExactClass("items/weapons/rondel_dagger", function(o) {	
 	local create = o.create;
 	o.create = function() {
 		create();

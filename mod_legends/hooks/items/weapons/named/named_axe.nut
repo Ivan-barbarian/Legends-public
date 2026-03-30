@@ -2,21 +2,6 @@
 	o.m.PossibleEffects <- ["scripts/skills/effects/legend_named_axe_effect"];
 	o.m.EffectBounds <- [ [10, 25] ];
 
-	o.isAmountShown <- function()
-	{
-		return true;
-	}
-
-	o.setAmmo <- function ( _a )
-	{
-		this.weapon.setAmmo(_a);
-	}
-
-	o.getAmountString <- function ()
-	{
-		return this.m.Ammo + "/" + this.m.AmmoMax;
-	}
-
 	local create = o.create;
 	o.create = function ()
 	{
@@ -26,7 +11,7 @@
 		this.updateVariant();
 		this.m.Ammo = 1;
 		this.m.AmmoMax = 1;
-		this.m.AmmoCost = 10;
+		this.m.AmmoCost = 5;
 		this.m.ItemType = this.m.ItemType | ::Const.Items.ItemType.Ammo;
 	}
 

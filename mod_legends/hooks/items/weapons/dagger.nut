@@ -1,20 +1,4 @@
 ::mods_hookExactClass("items/weapons/dagger", function(o) {
-
-	o.isAmountShown <- function()
-	{
-		return true;
-	}
-
-	o.setAmmo <- function ( _a )
-	{
-		this.weapon.setAmmo(_a);
-	}
-
-	o.getAmountString <- function ()
-	{
-		return this.m.Ammo + "/" + this.m.AmmoMax;
-	}
-
 	local create = o.create;
 	o.create = function() {
 		create();

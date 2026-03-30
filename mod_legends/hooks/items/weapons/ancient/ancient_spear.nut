@@ -4,23 +4,8 @@
 		create();
 		this.m.Ammo = 1;
 		this.m.AmmoMax = 1;
-		this.m.AmmoCost = 10;
+		this.m.AmmoCost = 5;
 		this.m.ItemType = this.m.ItemType | ::Const.Items.ItemType.Ammo;
-	}
-
-	o.isAmountShown <- function()
-	{
-		return true;
-	}
-
-	o.setAmmo <- function ( _a )
-	{
-		this.weapon.setAmmo(_a);
-	}
-
-	o.getAmountString <- function ()
-	{
-		return this.m.Ammo + "/" + this.m.AmmoMax;
 	}
 
 	o.onEquip = function()

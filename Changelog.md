@@ -242,6 +242,12 @@ Favoured Enemy - Sword Master
 * `Throw Bola` can now `Constrain` your target
 > `Constrained` - additional 2 ap and 5 fatigue per tile traveled (we know you think goblins are easy)
 
+**Firelance**
+* Thrust
+* Heartseeker
+* Ignite Firelance
+* Spearwall
+
 ### New recipes
 
 - new silk blueprint
