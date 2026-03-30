@@ -583,8 +583,9 @@
 	"bust_head_african_05",
 	"bust_head_african_06",
 	"bust_head_african_07",
-	// "bust_head_african_08",
-	// "bust_head_african_09",
-	// "bust_head_african_10",
-	// "bust_head_african_11"
+	"bust_head_african_08",
+	"bust_head_african_09",
+	"bust_head_african_10",
+	"bust_head_african_11",
+	"bust_head_african_12"
 ];
