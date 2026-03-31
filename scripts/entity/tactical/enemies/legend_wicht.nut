@@ -116,7 +116,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 
 			//will need edits if wichts start using front/back upgrades similar to human.nut
 			local armorLayers = [
-				"CorpseArmor"
+				"CorpseArmor",
 				"CorpseArmorLayerChain",
 				"CorpseArmorLayerPlate",
 				"CorpseArmorLayerTabbard",
@@ -312,7 +312,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		::Legends.Perks.grant(this, ::Legends.Perk.LegendComposure);
 		::Legends.Perks.grant(this, ::Legends.Perk.LegendPoisonImmunity);
 		::Legends.Perks.grant(this, ::Legends.Perk.Fearsome);
-		::Legends.Perks.grant(this, ::Legends.Perk.BattleForged)
+		::Legends.Perks.grant(this, ::Legends.Perk.BattleForged);
 		if (::Legends.isLegendaryDifficulty()) {
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendSmashingShields);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendImmovableObject);
@@ -398,8 +398,8 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 			local armor = this.Const.World.Common.pickArmor([
 				[1, ::Legends.Armor.Standard.ghost_armor]
 			]);
-			b.Armor[0] = this.Math.round(armor.getArmorMax() * this.m.ArmorDifficultyMult)
-			b.ArmorMax[0] = this.Math.round(armor.getArmorMax() * this.m.ArmorDifficultyMult)
+			b.Armor[0] = this.Math.round(armor.getArmorMax() * this.m.ArmorDifficultyMult);
+			b.ArmorMax[0] = this.Math.round(armor.getArmorMax() * this.m.ArmorDifficultyMult);
 			this.m.Items.equip(armor);
 		}
 
@@ -407,8 +407,8 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 			local helmet = this.Const.World.Common.pickHelmet([
 				[1, ::Legends.Helmet.Standard.ghost_helmet]
 			]);
-			b.Armor[1] = this.Math.round(helmet.getArmorMax() * this.m.ArmorDifficultyMult)
-			b.ArmorMax[1] = this.Math.round(helmet.getArmorMax() * this.m.ArmorDifficultyMult)
+			b.Armor[1] = this.Math.round(helmet.getArmorMax() * this.m.ArmorDifficultyMult);
+			b.ArmorMax[1] = this.Math.round(helmet.getArmorMax() * this.m.ArmorDifficultyMult);
 			this.m.Items.equip(helmet);
 		}
 	}

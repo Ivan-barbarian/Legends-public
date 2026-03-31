@@ -23,18 +23,6 @@ this.legend_stollwurm_hauberk_armor <- this.inherit("scripts/items/legend_armor/
 
 	function updateVariant()
 	{
-		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.SpriteBack = "wurm_hauberk_" + variant;
-		this.m.SpriteDamagedBack = "wurm_hauberk_" + variant + "_damaged";
-		this.m.SpriteCorpseBack = "wurm_hauberk_" + variant + "_dead";
-		this.m.Icon = "legend_armor/icon_wurm_hauberk_" + variant + ".png";
-		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "legend_armor/icon_wurm_hauberk_" + variant + ".png";
-		this.m.OverlayIconLarge = "legend_armor/inventory_wurm_hauberk_" + variant + ".png";
-	}
-
-	function updateVariant()
-	{
 		this.m.SpriteBack = "wurm_hauberk_01";
 		this.m.SpriteDamagedBack = "wurm_hauberk_01_damaged";
 		this.m.SpriteCorpseBack = "wurm_hauberk_01_dead";
