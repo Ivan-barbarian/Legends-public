@@ -44,6 +44,7 @@ this.legend_named_glaive <- this.inherit("scripts/items/weapons/named/named_weap
 		::Legends.Actives.grant(this, ::Legends.Active.Strike, function (_skill) {
 			_skill.m.IsGlaiveStrike = true;
 		}.bindenv(this));
+		::Legends.Actives.grant(this, ::Legends.Active.Rupture);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendSkewer);
 	}
 });

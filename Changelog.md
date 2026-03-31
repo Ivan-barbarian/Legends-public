@@ -253,6 +253,18 @@ Favoured Enemy - Sword Master
 * `Repel`
 * `Skewer`
 
+**Goblin Spear**
+* `Breach`
+* `Rupture`
+> 1 tile range, 5 ap - can be reduced to 4 ap with mastery, 13 fatigue cost, 25% armor penetration
+* `Skewer`
+
+**Glaives (not militia)**
+* `Great Slash`
+* `Rupture`
+> 1 tile range, 5 ap - can be reduced to 4 ap with mastery, 13 fatigue cost, 25% armor penetration
+* `Skewer`
+
 ### New recipes
 
 - new silk blueprint
