@@ -75,7 +75,7 @@ this.legend_prayer_of_life_skill <- this.inherit("scripts/skills/skill", {
 
 			if (a.getFaction() == _user.getFaction())
 			{
-				if (!a.getFlags().has("cultist") && ::Legends.Effects.has(a, ::Legends.Effect.LegendPrayerOfLife))
+				if (!a.getFlags().has("cultist") && !::Legends.Effects.has(a, ::Legends.Effect.LegendPrayerOfLife))
 				{
 					::Legends.Effects.grant(a, ::Legends.Effect.LegendPrayerOfLife, @(_effect) _effect.setHeal(bonus));
 				}
