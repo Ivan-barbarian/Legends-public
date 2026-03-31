@@ -111,7 +111,7 @@
 					}
 				}
 			}
-
+		
 			if (("State" in this.World)
 				&& this.World.State != null
 				&& this.World.Assets.getOrigin().getID() == "scenario.manhunters")
@@ -193,15 +193,7 @@
 		}
 		return this.UIDataHelper.convertEntityToUIData(bro, null);
 	}
-
-	o.queryRosterSizeData <- function (_shake = false) {
-		local brosInCombat = 18;
-		// try/catch, so getBrothersInFrontline() after quitting game to menu and starting a scenario doesn't crash - Narkh 2026/03/01
-		try {
-			brosInCombat = ::World.State.getBrothersInFrontline();
-		} catch (e) {
-		}
-
+	
 	o.queryRosterSizeData <- function (_shake = false)
 	{
 		local brosInCombat = 18;
@@ -222,7 +214,7 @@
 
 		return result;
 	}
-
+	
 	o.queryData = function () {
 		local result = {
 			brothers = this.onQueryBrothersList()
@@ -254,7 +246,7 @@
 
 		return result;
 	}
-
+	
 	o.onSwapInventoryItem = function (_data) {
 		if (_data[2]) {
 			return this.general_onUpgradeInventoryItem(_data);
