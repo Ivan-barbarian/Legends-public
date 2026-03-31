@@ -246,6 +246,11 @@ TacticalCombatResultScreenDatasource.prototype.updateStashList = function (_data
         return;
     }
 
+    var forceUpdateSlot = -1;
+    if (_data["forceUpdate"] != null) {
+        forceUpdateSlot = _data["forceUpdate"]
+    }
+
     // check stash for changes
     for (var i = 0; i < this.mStashList.length; ++i) {
         var sourceItem = this.mStashList[i];
@@ -264,6 +269,9 @@ TacticalCombatResultScreenDatasource.prototype.updateStashList = function (_data
             //console.info('STASH: Item removed (Index: ' + i + ')');
             this.mStashList[i] = targetItem;
             this.notifyEventListener(TacticalCombatResultScreenDatasourceIdentifier.Stash.ItemUpdated, { item: sourceItem, index: i, flag: TacticalCombatResultScreenDatasourceIdentifier.Item.Flag.Removed });
+        }
+        else if (i == forceUpdateSlot) {
+            this.notifyEventListener(TacticalCombatResultScreenDatasourceIdentifier.Stash.ItemUpdated, { item: targetItem, index: i, flag: TacticalCombatResultScreenDatasourceIdentifier.Item.Flag.Updated });
         }
         // item might have changed within stash slot
         else {
@@ -360,9 +368,9 @@ TacticalCombatResultScreenDatasource.prototype.getFoundLootList = function () {
 };
 
 
-TacticalCombatResultScreenDatasource.prototype.swapItem = function (_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner) {
+TacticalCombatResultScreenDatasource.prototype.swapItem = function (_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner, _tryToUpgrade) {
     var self = this;
-    this.notifyBackendSwapItem(_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner, function (data) {
+    this.notifyBackendSwapItem(_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner, _tryToUpgrade, function (data) {
         if (data === undefined || data == null || typeof (data) !== 'object') {
             console.error('ERROR: Failed to swap item. Invalid data result #1.');
             return;
@@ -380,6 +388,9 @@ TacticalCombatResultScreenDatasource.prototype.swapItem = function (_sourceItemI
             }
             else {
                 if (TacticalCombatResultScreenIdentifier.QueryResult.Stash in data) {
+                    if (_tryToUpgrade === true) {
+                        data[TacticalCombatResultScreenIdentifier.QueryResult.Stash].forceUpdate = _targetItemIdx;
+                    }
                     self.updateStashList(data[TacticalCombatResultScreenIdentifier.QueryResult.Stash]);
                 }
 
@@ -439,8 +450,8 @@ TacticalCombatResultScreenDatasource.prototype.getStashStatistics = function () 
     return { size: this.mStashList.length, used: usedSpace };
 };
 
-TacticalCombatResultScreenDatasource.prototype.notifyBackendSwapItem = function (_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner, _callback) {
-    SQ.call(this.mSQHandle, 'onSwapItem', [_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner], _callback);
+TacticalCombatResultScreenDatasource.prototype.notifyBackendSwapItem = function (_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner, _tryToUpgrade, _callback) {
+    SQ.call(this.mSQHandle, 'onSwapItem', [_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner, _tryToUpgrade], _callback);
 };
 
 /*TacticalCombatResultScreenDatasource.prototype.notifyBackendDestroyItem = function (_itemIdx, _itemOwner)
@@ -456,5 +467,23 @@ TacticalCombatResultScreenDatasource.prototype.notifyBackendLootAllItemsButtonPr
     var self = this;
     SQ.call(this.mSQHandle, 'onLootAllItemsButtonPressed', null, function (_data) {
         self.loadFromData(_data);
+    });
+};
+
+TacticalCombatResultScreenDatasource.prototype.notifyBackendRemoveInventoryItemUpgrades = function (_slot) {
+    var self = this;
+    SQ.call(this.mSQHandle, 'removeInventoryItemUpgrades', [_slot], function (data) {
+        if (data === undefined || data == null || typeof (data) !== 'object') {
+            console.error('ERROR: Failed to drop paperdoll item into bag. Invalid data result.');
+            return;
+        }
+
+        self.getStashStatistics();
+
+        if (data !== null && jQuery.isArray(data)) {
+            data.forceUpdate = _slot;
+            self.updateStashList(data);
+        }
+
     });
 };

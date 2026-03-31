@@ -372,7 +372,7 @@ WorldTownScreenShopDialogModule.prototype.setupEventHandler = function () {
             return;
         }
 
-        self.triggerSwapFlow(sourceItemIdx, sourceOwner, targetItemIdx, targetOwner);
+        self.triggerSwapFlow(sourceItemIdx, sourceOwner, targetItemIdx, targetOwner, false);
 
         // workaround if the source container was removed before we got here
         if (drag.parent().length === 0) {
@@ -686,7 +686,7 @@ WorldTownScreenShopDialogModule.prototype.assignItems = function (_owner, _items
         for (var i = 0; i < _items.length; ++i) {
             // ignore empty slots
             if (_items[i] !== undefined && _items[i] !== null) {
-                this.assignItemToSlot(_owner, _itemArray[i], _items[i]);
+                this.assignItemToInventorySlot(_owner, _itemArray[i], _items[i]);
             }
         }
 
@@ -712,7 +712,7 @@ WorldTownScreenShopDialogModule.prototype.removeItemFromSlot = function (_slot) 
     _slot.assignListItemTooltip();
 };
 
-WorldTownScreenShopDialogModule.prototype.assignItemToSlot = function (_owner, _slot, _item) {
+WorldTownScreenShopDialogModule.prototype.assignItemToInventorySlot = function (_owner, _slot, _item) {
     var remove = false;
 
     if (!('id' in _item) || !('imagePath' in _item)) {
@@ -726,12 +726,13 @@ WorldTownScreenShopDialogModule.prototype.assignItemToSlot = function (_owner, _
         // update item data
         var itemData = _slot.data('item') || {};
         itemData.id = _item.id;
+        itemData.slotType = _item.slot;
+        itemData.isUsable = _item.isUsable;
         _slot.data('item', itemData);
 
         // assign image
-        _slot.assignListItemImage(Path.ITEMS + _item.imagePath);
-        if (_item['imageOverlayPath']) _slot.assignListItemOverlayImage(Path.ITEMS + _item['imageOverlayPath']);
-        else _slot.assignListItemOverlayImage();
+        _slot.assignListItemImage(Path.ITEMS + _item['imagePath']);
+        _slot.assignListItemOverlayImage(_item['imageOverlayPath'], _item);
 
         // show amount
         if (_item.showAmount === true && _item.amount != '') {
@@ -787,7 +788,7 @@ WorldTownScreenShopDialogModule.prototype.createItemSlot = function (_owner, _in
     result.data('item', itemData);
 
     // add event handler
-    var dropHandler = function (_source, _target) {
+    var dropHandler = function (_source, _target, _proxy, _dd, _event) {
         var sourceData = _source.data('item');
         var targetData = _target.data('item');
 
@@ -806,8 +807,27 @@ WorldTownScreenShopDialogModule.prototype.createItemSlot = function (_owner, _in
             console.error('Failed to drop item. Source idx is invalid.');
             return;
         }
+        
+        if (sourceOwner === WorldTownScreenShop.ItemOwner.Stash && targetOwner === WorldTownScreenShop.ItemOwner.Stash) {
+            // don't allow swapping with same slot..
+            if (sourceItemIdx === targetItemIdx) {
+                //console.error('Inventory::dropHandler: Failed to drop item. Source idx is same as target idx.');
+                return;
+            }
 
-        self.triggerSwapFlow(sourceItemIdx, sourceOwner, targetItemIdx, targetOwner);
+            // allow drop animation
+            sourceData.isAllowedToDrop = true;
+            _source.data('item', sourceData);
+
+            // console.info('Stash -> Stash (swap)');
+            var shiftPressed = (KeyModiferConstants.ShiftKey in _event && _event[KeyModiferConstants.ShiftKey] === true);
+            var tryToUpgrade = shiftPressed && ((sourceData.slotType == "body" || sourceData.slotType == "head") && targetData.slotType == sourceData.slotType);
+
+            self.triggerSwapFlow(sourceItemIdx, sourceOwner, targetItemIdx, targetOwner, tryToUpgrade);
+            return;
+        }
+
+        self.triggerSwapFlow(sourceItemIdx, sourceOwner, targetItemIdx, targetOwner, false);
     };
 
     var dragEndHandler = function (_source, _target) {
@@ -852,26 +872,30 @@ WorldTownScreenShopDialogModule.prototype.createItemSlot = function (_owner, _in
         var itemIdx = (data !== null && 'index' in data) ? data.index : null;
         var destroyItem = false;
         var repairItem = KeyModiferConstants.AltKey in _event && _event[KeyModiferConstants.AltKey] === true;
+        var removeUpgrades = (KeyModiferConstants.ShiftKey in _event && _event[KeyModiferConstants.ShiftKey] === true && ("isUsable" in data && data.isUsable === false));
 
         if (/*doSomething &&*/ isEmpty === false && owner !== null /*&& itemId !== null*/ && itemIdx !== null) {
-            // buy, sell or destroy
+            // buy, remove upgrades, sell or destroy
             switch (owner) {
                 case WorldTownScreenShop.ItemOwner.Stash:
                     {
-                        if (repairItem === true) {
+                        if (removeUpgrades === true) {
+                            self.notifyBackendRemoveInventoryItemUpgrades(itemIdx);
+                        }
+                        else if (repairItem === true) {
                             //console.info('destroy');
                             self.repairItem(itemIdx);
                         }
                         else {
                             //console.info('sell');
-                            self.triggerSwapFlow(itemIdx, owner, null, WorldTownScreenShop.ItemOwner.Shop);
+                            self.triggerSwapFlow(itemIdx, owner, null, WorldTownScreenShop.ItemOwner.Shop, false);
                         }
                     } break;
                 case WorldTownScreenShop.ItemOwner.Shop:
                     {
                         if (destroyItem !== true) {
                         //console.info('buy');
-                        /*if(*/self.triggerSwapFlow(itemIdx, owner, null, WorldTownScreenShop.ItemOwner.Stash);//))
+                        /*if(*/self.triggerSwapFlow(itemIdx, owner, null, WorldTownScreenShop.ItemOwner.Stash, false);//))
                             // 						{
                             // 							var slot = self.querySlotByIndex(self.mShopSlots, data.index);
                             // 							slot.assignListItemImage();
@@ -896,27 +920,27 @@ WorldTownScreenShopDialogModule.prototype.repairItem = function (_itemIdx) {
     });
 }
 
-WorldTownScreenShopDialogModule.prototype.triggerSwapFlow = function (_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner) {
+WorldTownScreenShopDialogModule.prototype.triggerSwapFlow = function (_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner, _tryToUpgrade) {
     var self = this;
-    this.notifyBackendCanSwapItem(_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner, function (data) {
+    this.notifyBackendCanSwapItem(_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner, _tryToUpgrade, function (data) {
         if (data === undefined || data == null || typeof (data) !== 'object') {
             console.error("ERROR: Item not swappable. Reason: Invalid data result.");
             return;
         }
 
         if (data.Result == ResponseCode.CanSwap) {
-            self.swapItem(_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner);
+            self.swapItem(_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner, _tryToUpgrade);
         }
         else {
-            var callbackOnConfirm = function () { self.swapItem(_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner); }
+            var callbackOnConfirm = function () { self.swapItem(_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner, _tryToUpgrade); }
             self.showSwapConfirmationDialog(data.Item, self.getSwapConfirmationOptionsFromResult(data.Result), callbackOnConfirm);
         }
     })
 }
 
-WorldTownScreenShopDialogModule.prototype.swapItem = function (_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner) {
+WorldTownScreenShopDialogModule.prototype.swapItem = function (_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner, _tryToUpgrade) {
     var self = this;
-    this.notifyBackendSwapItem(_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner, function (data) {
+    this.notifyBackendSwapItem(_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner, _tryToUpgrade, function (data) {
         if (data === undefined || data == null || typeof (data) !== 'object') {
             console.error("ERROR: Failed to swap item. Reason: Invalid data result.");
             return;
@@ -931,7 +955,7 @@ WorldTownScreenShopDialogModule.prototype.swapItem = function (_sourceItemIdx, _
                 self.mStashSlotSizeContainer.shakeLeftRight();
             }
             else {
-                console.error("Failed to swap item. Reason: Unknown");
+                //console.error("Failed to swap item. Reason: Unknown");
             }
 
             return;
@@ -949,6 +973,9 @@ WorldTownScreenShopDialogModule.prototype.swapItem = function (_sourceItemIdx, _
         }
 
         if ('Stash' in data) {
+            if (_tryToUpgrade === true) {
+                data.Stash.forceUpdate = _targetItemIdx;
+            }
             self.updateStashList(data.Stash);
         }
 
@@ -970,11 +997,15 @@ WorldTownScreenShopDialogModule.prototype.updateStashList = function (_data) {
         return;
     }
 
+    var forceUpdateSlot = -1;
+    if (_data["forceUpdate"] != null) {
+        forceUpdateSlot = _data["forceUpdate"]
+    }
+
     // check stash for changes
     for (var i = 0; i < this.mStashList.length; ++i) {
         var sourceItem = this.mStashList[i];
         var targetItem = _data[i];
-
         // item added to stash slot
         if (sourceItem === null && targetItem !== null) {
             if ('id' in targetItem) {
@@ -990,7 +1021,9 @@ WorldTownScreenShopDialogModule.prototype.updateStashList = function (_data) {
             this.mStashList[i] = targetItem;
             this.updateSlotItem(WorldTownScreenShop.ItemOwner.Stash, this.mStashSlots, targetItem, i, WorldTownScreenShop.ItemFlag.Removed);
         }
-
+        else if (i == forceUpdateSlot) {
+            this.updateSlotItem(WorldTownScreenShop.ItemOwner.Stash, this.mStashSlots, targetItem, i, WorldTownScreenShop.ItemFlag.Updated);
+        }
         // item might have changed within stash slot
         else {
             if ((sourceItem !== null && targetItem !== null) && ('id' in sourceItem && 'id' in targetItem) && (sourceItem.id !== targetItem.id)) {
@@ -1100,7 +1133,7 @@ WorldTownScreenShopDialogModule.prototype.updateSlotItem = function (_owner, _it
         case WorldTownScreenShop.ItemFlag.Updated:
             {
                 this.removeItemFromSlot(slot);
-                this.assignItemToSlot(_owner, slot, _item);
+                this.assignItemToInventorySlot(_owner, slot, _item);
                 this.updateItemPriceLabel(slot, _item, _owner === WorldTownScreenShop.ItemOwner.Stash);
                 break;
             }
@@ -1209,12 +1242,12 @@ WorldTownScreenShopDialogModule.prototype.notifyBackendRepairItem = function (_i
 };
 
 
-WorldTownScreenShopDialogModule.prototype.notifyBackendCanSwapItem = function (_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner, _callback) {
+WorldTownScreenShopDialogModule.prototype.notifyBackendCanSwapItem = function (_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner, _tryToUpgrade, _callback) {
     SQ.call(this.mSQHandle, 'onCanSwapItem', [_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner], _callback);
 };
 
-WorldTownScreenShopDialogModule.prototype.notifyBackendSwapItem = function (_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner, _callback) {
-    SQ.call(this.mSQHandle, 'onSwapItem', [_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner], _callback);
+WorldTownScreenShopDialogModule.prototype.notifyBackendSwapItem = function (_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner, _tryToUpgrade, _callback) {
+    SQ.call(this.mSQHandle, 'onSwapItem', [_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner, _tryToUpgrade], _callback);
 };
 
 
@@ -1240,4 +1273,32 @@ WorldTownScreenShopDialogModule.prototype.notifyBackendFilterMiscButtonClicked =
 
 WorldTownScreenShopDialogModule.prototype.notifyBackendFilterUsableButtonClicked = function () {
     SQ.call(this.mSQHandle, 'onFilterUsable');
+};
+
+WorldTownScreenShopDialogModule.prototype.notifyBackendRemoveInventoryItemUpgrades = function (_slot)
+{
+	var self = this;
+	SQ.call(this.mSQHandle, 'removeInventoryItemUpgrades', [_slot], function (data) {
+		if (data === undefined || data == null || typeof (data) !== 'object')
+		{
+			console.error('ERROR: Failed to drop paperdoll item into bag. Invalid data result.');
+			return;
+		}
+
+         if ('stashSpaceUsed' in data) {
+            self.mStashSpaceUsed = data.stashSpaceUsed;
+        }
+
+        if ('stashSpaceMax' in data) {
+            self.mStashSpaceMax = data.stashSpaceMax;
+        }
+
+        if ('stash' in data) {
+            if (data.stash !== null && jQuery.isArray(data.stash))
+			{
+				data.stash.forceUpdate = _slot;
+				self.updateStashList(data.stash);
+			}
+        }
+	});
 };

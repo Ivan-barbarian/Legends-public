@@ -175,8 +175,7 @@ TacticalCombatResultScreenLootPanel.prototype.setupEventHandler = function () {
             console.error('Failed to drop item. Source idx is invalid.');
             return;
         }
-
-        self.mDataSource.swapItem(sourceItemIdx, sourceOwner, targetItemIdx, targetOwner);
+        self.mDataSource.swapItem(sourceItemIdx, sourceOwner, targetItemIdx, targetOwner, false);
 
         // workaround if the source container was removed before we got here
         if (drag.parent().length === 0) {
@@ -304,7 +303,7 @@ TacticalCombatResultScreenLootPanel.prototype.createItemSlot = function (_owner,
     result.data('item', itemData);
 
     // add event handler
-    var dropHandler = function (_source, _target) {
+    var dropHandler = function (_source, _target, _proxy, _dd, _event) {
         var sourceData = _source.data('item');
         var targetData = _target.data('item');
 
@@ -329,7 +328,26 @@ TacticalCombatResultScreenLootPanel.prototype.createItemSlot = function (_owner,
             return;
         }
 
-        self.mDataSource.swapItem(sourceItemIdx, sourceOwner, targetItemIdx, targetOwner);
+        if (sourceOwner === TacticalCombatResultScreenIdentifier.ItemOwner.Stash && targetOwner === TacticalCombatResultScreenIdentifier.ItemOwner.Stash) {
+            // don't allow swapping with same slot..
+            if (sourceItemIdx === targetItemIdx) {
+                //console.error('Inventory::dropHandler: Failed to drop item. Source idx is same as target idx.');
+                return;
+            }
+
+            // allow drop animation
+            sourceData.isAllowedToDrop = true;
+            _source.data('item', sourceData);
+
+            // console.info('Stash -> Stash (swap)');
+            var shiftPressed = (KeyModiferConstants.ShiftKey in _event && _event[KeyModiferConstants.ShiftKey] === true);
+            var tryToUpgrade = shiftPressed && ((sourceData.slotType == "body" || sourceData.slotType == "head") && targetData.slotType == sourceData.slotType);
+            
+            self.mDataSource.swapItem(sourceItemIdx, sourceOwner, targetItemIdx, targetOwner, tryToUpgrade);
+            return;
+        }
+
+        self.mDataSource.swapItem(sourceItemIdx, sourceOwner, targetItemIdx, targetOwner, false);
     };
 
     var dragEndHandler = function (_source, _target) {
@@ -377,19 +395,23 @@ TacticalCombatResultScreenLootPanel.prototype.createItemSlot = function (_owner,
         //var itemId = (data !== null && 'id' in data) ? data.id : null;
         var itemIdx = (data !== null && 'index' in data) ? data.index : null;
         var destroyItem = false;//(KeyModiferConstants.AltKey in _event && _event[KeyModiferConstants.AltKey] === true);
+        var removeUpgrades = (KeyModiferConstants.ShiftKey in _event && _event[KeyModiferConstants.ShiftKey] === true && ("isUsable" in data && data.isUsable === false));
 
         if (isEmpty === false && owner !== null /*&& itemId !== null*/ && itemIdx !== null) {
             // pickup, drop or destroy
             switch (owner) {
                 case TacticalCombatResultScreenIdentifier.ItemOwner.Stash:
                     {
-                        if (destroyItem === true) {
+                        if (removeUpgrades === true) {
+                            self.mDataSource.notifyBackendRemoveInventoryItemUpgrades(itemIdx);
+                        }
+                        else if (destroyItem === true) {
                             //console.info('destroy');
                             self.mDataSource.destroyItem(itemIdx, owner);
                         }
                         else {
                             //console.info('drop');
-                            self.mDataSource.swapItem(itemIdx, owner, null, TacticalCombatResultScreenIdentifier.ItemOwner.FoundLoot);
+                            self.mDataSource.swapItem(itemIdx, owner, null, TacticalCombatResultScreenIdentifier.ItemOwner.FoundLoot, false);
                         }
                     } break;
                 case TacticalCombatResultScreenIdentifier.ItemOwner.FoundLoot:
@@ -400,7 +422,7 @@ TacticalCombatResultScreenLootPanel.prototype.createItemSlot = function (_owner,
                         }
                         else {
                             //console.info('pickup');
-                            self.mDataSource.swapItem(itemIdx, owner, null, TacticalCombatResultScreenIdentifier.ItemOwner.Stash);
+                            self.mDataSource.swapItem(itemIdx, owner, null, TacticalCombatResultScreenIdentifier.ItemOwner.Stash, false);
                         }
                     } break;
             }
@@ -426,7 +448,7 @@ TacticalCombatResultScreenLootPanel.prototype.assignItems = function (_owner, _i
         for (var i = 0; i < _items.length; ++i) {
             // ignore empty slots
             if (_items[i] !== undefined && _items[i] !== null) {
-                this.assignItemToSlot(_owner, _itemArray[i], _items[i]);
+                this.assignItemToInventorySlot(_owner, _itemArray[i], _items[i]);
             }
         }
 
@@ -436,7 +458,7 @@ TacticalCombatResultScreenLootPanel.prototype.assignItems = function (_owner, _i
     }
 };
 
-TacticalCombatResultScreenLootPanel.prototype.assignItemToSlot = function (_owner, _slot, _item) {
+TacticalCombatResultScreenLootPanel.prototype.assignItemToInventorySlot = function (_owner, _slot, _item) {
     var remove = false;
     if (!(TacticalCombatResultScreenIdentifier.Item.Id in _item) || !(TacticalCombatResultScreenIdentifier.Item.ImagePath in _item)) {
         remove = true;
@@ -449,12 +471,13 @@ TacticalCombatResultScreenLootPanel.prototype.assignItemToSlot = function (_owne
         // update item data
         var itemData = _slot.data('item') || {};
         itemData.id = _item[TacticalCombatResultScreenIdentifier.Item.Id];
+        itemData.slotType = _item.slot;
+        itemData.isUsable = _item.isUsable;
         _slot.data('item', itemData);
 
         // assign image
-        _slot.assignListItemImage(Path.ITEMS + _item[TacticalCombatResultScreenIdentifier.Item.ImagePath]);
-        if (_item['imageOverlayPath']) _slot.assignListItemOverlayImage(Path.ITEMS + _item['imageOverlayPath']);
-        else _slot.assignListItemOverlayImage();
+        _slot.assignListItemImage(Path.ITEMS + _item['imagePath']);
+        _slot.assignListItemOverlayImage(_item['imageOverlayPath'], _item);
 
         // show amount
         // show amount
@@ -479,7 +502,7 @@ TacticalCombatResultScreenLootPanel.prototype.updateSlotItem = function (_owner,
         case TacticalCombatResultScreenDatasourceIdentifier.Item.Flag.Updated:
             {
                 this.removeItemFromSlot(slot);
-                this.assignItemToSlot(_owner, slot, _item);
+                this.assignItemToInventorySlot(_owner, slot, _item);
             } break;
         case TacticalCombatResultScreenDatasourceIdentifier.Item.Flag.Removed:
             {
