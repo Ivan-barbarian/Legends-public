@@ -287,7 +287,6 @@
 	Sets = [{
 		Hoods = [
 			[2, "hood/legend_helmet_aventail_named"], // 60 -3 -0 150
-			[6, "hood/legend_helmet_chain_hood"], // 75 -4 -0 300
 			[2, "hood/legend_helmet_chain_hood_full_named"], // 80 -4 -0 400
 		],
 		Helms = [
