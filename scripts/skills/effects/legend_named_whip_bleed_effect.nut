@@ -4,7 +4,7 @@ this.legend_named_whip_bleed_effect <- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
-		this.m.ID = "effects.legend_named_flail";
+		::Legends.Effects.onCreate(this, ::Legends.Effect.LegendNamedWhipBleed);
 		this.m.Name = "";
 		this.m.Description = "";
 		this.m.Icon = "skills/placeholder_circle.png";

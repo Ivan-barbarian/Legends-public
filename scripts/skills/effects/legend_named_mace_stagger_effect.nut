@@ -4,7 +4,7 @@ this.legend_named_mace_stagger_effect <- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
-		this.m.ID = "effects.legend_named_mace_stagger";
+		::Legends.Effects.onCreate(this, ::Legends.Effect.LegendNamedMaceStagger);
 		this.m.Name = "";
 		this.m.Description = "";
 		this.m.Icon = "skills/placeholder_circle.png";

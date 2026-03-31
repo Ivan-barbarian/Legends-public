@@ -4,7 +4,7 @@ this.legend_named_shamshir_effect <- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
-		this.m.ID = "effects.legend_named_shamshir";
+		::Legends.Effects.onCreate(this, ::Legends.Effect.LegendNamedShamshir);
 		this.m.Name = "";
 		this.m.Description = "";
 		this.m.Icon = "skills/placeholder_circle.png";

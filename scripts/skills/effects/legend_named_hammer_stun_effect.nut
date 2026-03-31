@@ -4,7 +4,7 @@ this.legend_named_hammer_stun_effect <- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
-		this.m.ID = "effects.legend_named_hammer_stun";
+		::Legends.Effects.onCreate(this, ::Legends.Effect.LegendNamedHammerStun);
 		this.m.Name = "";
 		this.m.Description = "";
 		this.m.Icon = "skills/placeholder_circle.png";
