@@ -243,10 +243,15 @@ Favoured Enemy - Sword Master
 > `Constrained` - additional 2 ap and 5 fatigue per tile traveled (we know you think goblins are easy)
 
 **Firelance**
-* Thrust
-* Heartseeker
-* Ignite Firelance
-* Spearwall
+* `Thrust`
+* `Heartseeker`
+* `Ignite Firelance`
+* `Spearwall`
+
+**Goblin Pike**
+* `Rupture`
+* `Repel`
+* `Skewer`
 
 ### New recipes
 
