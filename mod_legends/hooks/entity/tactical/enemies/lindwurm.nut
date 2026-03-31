@@ -30,7 +30,7 @@
 			}.bindenv(this)]);
 		}
 		foreach(def in this.m.EffectsSharedWithTail) { // you have id:def mapping here
-			this.m.EffectsSharedWithTailLookup[::Legends.Effects.getID(def)] = def
+			this.m.EffectsSharedWithTailLookup[::Legends.Effects.getID(def)] <- def
 		}
 	}
 

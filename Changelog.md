@@ -100,8 +100,9 @@ Favoured Enemy - Sword Master
 > gain 25% damage reduction from cutting and blunt attacks but damage is increased by 30% from piercing
 > Stollwurm tail now spends AP on head's long moves
 > fixed stagger effect desynchronizing head and tail turn order
-> wurms no longer get Baffled, Dazed or Staggered when an appropriate attack hits the tail
-> Both parts of the wurm now get Baffled, Dazed or Staggered when an appropriate attack hits the head
+> wurms no longer get Baffled, Dazed, Withered, Stupefied, Swarm of Insects and Staggered when an appropriate attack hits the tail
+> both parts of the wurm now get Baffled, Dazed, Withered, Stupefied, Swarm of Insects and Staggered when an appropriate attack hits the head
+> tails cannot be Choked anymore
 
 ## New Runes
 
@@ -127,6 +128,7 @@ Favoured Enemy - Sword Master
 - fixed beard/hair hiding while covering items are set to invisible
 - modified layering so some L2's go under L1
 - all tail items moved to lower vanity
+- allow layering and unlayering on combat result and town shop screens
 
 ### Shields
 - added a few missing shield paints
@@ -139,6 +141,7 @@ Favoured Enemy - Sword Master
 - named items naming fixes and changes
 - hyena fur, white wolf pelt, direwolf pelt upgrades reformed into cloaks
 - regular cloaks now displayed over upgrades
+- allow layering and unlayering on combat result and town shop screens
 
 ### Weapons
 

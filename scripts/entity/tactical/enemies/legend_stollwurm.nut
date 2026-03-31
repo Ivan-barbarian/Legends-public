@@ -121,7 +121,7 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 			]);
 		}
 		foreach(def in this.m.EffectsSharedWithTail) { // you have id:def mapping here
-			this.m.EffectsSharedWithTailLookup[::Legends.Effects.getID(def)] = def
+			this.m.EffectsSharedWithTailLookup[::Legends.Effects.getID(def)] <- def
 		}
 	}
 
