@@ -119,7 +119,7 @@
 				}
 
 				local stagger = ::Legends.Effects.grant(target, ::Legends.Effect.Staggered);
-				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer && !_targetEntity.getFlags().has("tail")) {
+				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer && !target.getFlags().has("tail")) {
 					this.Tactical.EventLog.log(stagger.getLogEntryOnAdded(this.Const.UI.getColorizedEntityName(_user), this.Const.UI.getColorizedEntityName(target)));
 				}
 			}
