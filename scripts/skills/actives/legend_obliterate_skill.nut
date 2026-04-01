@@ -83,7 +83,7 @@ this.legend_obliterate_skill <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 		local stagger = ::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Staggered);
-		if (!_targetEntity.isHiddenToPlayer() && targetTile.IsVisibleForPlayer) {
+		if (!_targetEntity.isHiddenToPlayer() && targetTile.IsVisibleForPlayer && !_targetEntity.getFlags().has("tail")) {
 			this.Tactical.EventLog.log(stagger.getLogEntryOnAdded(this.Const.UI.getColorizedEntityName(user), this.Const.UI.getColorizedEntityName(_targetEntity)));
 		}
 	}
