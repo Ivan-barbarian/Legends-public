@@ -4,6 +4,7 @@
 	o.create = function() {
 		create();
 		this.setVariant(this.Math.rand(0, 2));
+		this.m.ItemType = this.Const.Items.ItemType.Weapon;
 	}
 
 	o.updateVariant <- function() {
@@ -19,6 +20,15 @@
 		this.m.IconLarge = "weapons/ranged/firelance_01" + v + ".png";
 		this.m.ArmamentIcon = "icon_firelance_01" + v + "_empty";
 	}
+
+	o.getAmmo <- function() {
+		return this.m.Ammo;
+	}
+
+	o.getAmmoMax <- function() {
+		return this.m.AmmoMax;
+	}
+
 
 	local setAmmo = o.setAmmo;
 	o.setAmmo = function(_a) {
