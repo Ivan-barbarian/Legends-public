@@ -7,7 +7,7 @@
 		this.m.Ammo = 1;
 		this.m.AmmoMax = 1;
 		this.m.AmmoCost = 5;
-		this.m.ItemType = this.m.ItemType | ::Const.Items.ItemType.Ammo;
+		this.m.ItemType = this.m.ItemType;
 	}
 
 	o.updateVariant <- function() {
@@ -15,6 +15,14 @@
 		this.m.Icon = "weapons/melee/wildmen_03" + v + "_70x70.png";
 		this.m.IconLarge = "weapons/melee/wildmen_03" + v + ".png";
 		this.m.ArmamentIcon = "icon_wildmen_03" + v;
+	}
+
+	o.getAmmo <- function() {
+		return this.m.Ammo;
+	}
+
+	o.getAmmoMax <- function() {
+		return this.m.AmmoMax;
 	}
 
 	o.addSkill <- function( _skill )

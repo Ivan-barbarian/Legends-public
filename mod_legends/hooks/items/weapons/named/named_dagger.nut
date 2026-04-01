@@ -8,8 +8,16 @@
 		this.m.Ammo = 8;
 		this.m.AmmoMax = 8;
 		this.m.AmmoCost = 1;
-		this.m.ItemType = this.m.ItemType | ::Const.Items.ItemType.Ammo;
+		this.m.ItemType = this.m.ItemType;
 		this.updateVariant();
+	}
+
+	o.getAmmo <- function() {
+		return this.m.Ammo;
+	}
+
+	o.getAmmoMax <- function() {
+		return this.m.AmmoMax;
 	}
 
 	local onEquip = o.onEquip;

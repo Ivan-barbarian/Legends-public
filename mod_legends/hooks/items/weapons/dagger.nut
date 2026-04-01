@@ -6,7 +6,7 @@
 		this.m.Ammo = 8;
 		this.m.AmmoMax = 8;
 		this.m.AmmoCost = 1;
-		this.m.ItemType = this.m.ItemType | ::Const.Items.ItemType.Ammo;
+		this.m.ItemType = this.m.ItemType;
 	}
 
 	o.updateVariant <- function() {
@@ -14,6 +14,14 @@
 		this.m.Icon = "weapons/melee/dagger_01" + v + "_70x70.png";
 		this.m.IconLarge = "weapons/melee/dagger_01" + v + ".png";
 		this.m.ArmamentIcon = "icon_dagger_01" + v;
+	}
+
+	o.getAmmo <- function() {
+		return this.m.Ammo;
+	}
+
+	o.getAmmoMax <- function() {
+		return this.m.AmmoMax;
 	}
 
 	local onEquip = o.onEquip;

@@ -12,7 +12,7 @@
 		this.m.Ammo = 1;
 		this.m.AmmoMax = 1;
 		this.m.AmmoCost = 5;
-		this.m.ItemType = this.m.ItemType | ::Const.Items.ItemType.Ammo;
+		this.m.ItemType = this.m.ItemType;
 	}
 
 	o.getTooltip <- function ()
@@ -28,6 +28,14 @@
 			});
 		}
 		return result;
+	}
+
+	o.getAmmo <- function() {
+		return this.m.Ammo;
+	}
+
+	o.getAmmoMax <- function() {
+		return this.m.AmmoMax;
 	}
 
 	local onEquip = o.onEquip;

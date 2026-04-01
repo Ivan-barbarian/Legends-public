@@ -19,7 +19,7 @@
 		this.m.ConditionMax = 48.0;
 		this.m.RangeMin = 1;
 		this.m.RangeMax = 1;
-		this.m.ItemType = this.m.ItemType | ::Const.Items.ItemType.Ammo;
+		this.m.ItemType = this.m.ItemType;
 		this.m.RangeIdeal = 1;
 		this.m.RegularDamage = 35;
 		this.m.RegularDamageMax = 60;
@@ -30,6 +30,14 @@
 		this.m.IconLarge = "weapons/melee/goblin_spear_0" + this.m.Variant + ".png";
 		this.m.Icon = "weapons/melee/goblin_spear_0" + this.m.Variant + "_70x70.png";
 		this.m.ArmamentIcon = "icon_goblin_spear_0" + this.m.Variant;
+	}
+
+	o.getAmmo <- function() {
+		return this.m.Ammo;
+	}
+
+	o.getAmmoMax <- function() {
+		return this.m.AmmoMax;
 	}
 
 	o.onEquip = function ()
