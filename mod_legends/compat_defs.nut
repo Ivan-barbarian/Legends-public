@@ -245,7 +245,7 @@
 //endregion
 
 //region IncompatButPatched
-::Legends.Compat.IncompatButPatched.add("mod_breditor", "on Legends Discord (pinned message in #battle_brothers_chat), replace one from nexus. If you have it already, ignore this message.");
+::Legends.Compat.IncompatButPatched.add("mod_breditor", "on Legends Discord (Breditor Containment Chamber in #submod_files), replace one from nexus. If you have it already, ignore this message.");
 //endregion
 
 //region OtherVersionCompat
