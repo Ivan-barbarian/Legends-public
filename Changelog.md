@@ -25,7 +25,7 @@ This activates Dual Wield:
 - `Sword Mastery` -  Riposte can trigger from both weapons when dual wielding swords
 - `Axe Mastery` - Split Shield uses combined shield damage from both weapons when dual wielding axes
 - `Flail Mastery` - Both attacks apply Bleed when dual wielding flails
-- `Dagger Mastery` - Offhand successful hits grant -1 AP and +10% damage on next mainhand attack when dual wielding daggers
+- `Double Strike` - Offhand successful hits grant -1 AP and +10% damage on next mainhand attack when dual wielding daggers
 - `Ambidextrous` - Now also reduces weight penalty by 33% when dual wielding other weapons
 - `Onslaught` - now increases melee damage by your 2% for every 100 armor you have
 - `Immovable Object` now also counts accessory slot
@@ -94,7 +94,7 @@ Favoured Enemy - Sword Master
 > Fallen Hero 7 to 9;
 > players turned Wiederganger 6 to 8;
 - Nomad Slingers will now more likely to spawn with a Sturdy Sling before day 30 and gain a chance for more armor after day 40
-> Lindwurm and Stollwurms
+- Lindwurm and Stollwurms
 > health decreased to 950 and 1500 respectively
 > lose resilient so they are more succeptable to bleeding
 > gain 25% damage reduction from cutting and blunt attacks but damage is increased by 30% from piercing
@@ -183,7 +183,7 @@ Favoured Enemy - Sword Master
 * `Halfsword` - puncture
 > 5 ap cost and requires double grip to be usable
 * `Mordhau` - batter (hammer)
-> 5 ap cost, 50% more armor damage with this skill and always deals at least 10 hp, hits to the head will daze
+> 5 ap cost, more armor piercing damage, 50% more armor damage with this skill and always deals at least 10 hp, hits to the head will daze
 
 **Longsword**
 - `Slash` - unchanged

@@ -141,7 +141,7 @@ Master combat with axes and destroying shields.
 [color=%passive%][u]Passive:[/u][/color]
 • Skills build up [color=%negative%]25%[/color] less Fatigue.
 
-• [color=%skill%]Split Shield[/color] damage is increased by [color=%positive%]50%[/color] when used with axes.
+• [color=%skill%]Split Shield[/color] damage is increased by [color=%positive%]50%[/color] when used with axes. When [color=%status%]Dual Wielding[/color] axes, [color=%skill%]Split Shield[/color] damage is combined.
 
 • [color=%skill%]Round Swing[/color] gains [color=%positive%]+5%[/color] chance to hit.
 
