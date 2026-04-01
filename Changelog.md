@@ -297,6 +297,7 @@ Favoured Enemy - Sword Master
 - fixed bandit army contract reveal on killing instead of sparing
 - fixed vala fury incorrectly affecting brothers at distance of over 3 with full effect of fury chant
 - fixed shop named item sell warning dialog (icon layering, runed items)
+- fixed female bodies generating with non-matching combinations of body and head colors
 
 ### For modders:
 
