@@ -167,7 +167,10 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 		}
 		this.character_background.onAdded();
 
-		::Legends.Actives.grant(this, ::Legends.Active.LegendCommandLegion);
+		if (!this.m.Container.hasActive(::Legends.Active.LegendCommandLegion))
+		{
+			::Legends.Actives.grant(this, ::Legends.Active.LegendCommandLegion);
+		}
 
 		local actor = this.getContainer().getActor();
 		actor.m.ExcludedInjuries = ::Legends.Legion.ExcludedInjures;
