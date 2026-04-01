@@ -128,7 +128,8 @@ Favoured Enemy - Sword Master
 - fixed beard/hair hiding while covering items are set to invisible
 - modified layering so some L2's go under L1
 - all tail items moved to lower vanity
-- allow layering and unlayering on combat result and town shop screens
+- allowed layering and unlayering on combat result and town shop screens
+- added sound effect while removing layers
 
 ### Shields
 - added a few missing shield paints
@@ -141,7 +142,8 @@ Favoured Enemy - Sword Master
 - named items naming fixes and changes
 - hyena fur, white wolf pelt, direwolf pelt upgrades reformed into cloaks
 - regular cloaks now displayed over upgrades
-- allow layering and unlayering on combat result and town shop screens
+- allowed layering and unlayering on combat result and town shop screens
+- added sound effect while removing layers
 
 ### Weapons
 
@@ -294,6 +296,7 @@ Favoured Enemy - Sword Master
 - fixed bandit army contract incorrectly assuming raiding party on load
 - fixed bandit army contract reveal on killing instead of sparing
 - fixed vala fury incorrectly affecting brothers at distance of over 3 with full effect of fury chant
+- fixed shop named item sell warning dialog (icon layering, runed items)
 
 ### For modders:
 

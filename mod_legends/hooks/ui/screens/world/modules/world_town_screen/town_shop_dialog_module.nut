@@ -88,6 +88,9 @@
 					code = this.Const.UI.Error.NotEnoughStashSpace
 				};
 			}
+			if(toRemove.len() > 0) {
+				_item.playInventorySound(this.Const.Items.InventoryEventType.Equipped);
+			}
 			foreach (idx in toRemove) {
 				local upgrade = _item.getUpgrade(idx);
 				if (upgrade.isDestroyedOnRemove()) {
@@ -323,18 +326,23 @@
 
 	local onCanSwapItem = o.onCanSwapItem;
 	o.onCanSwapItem = function (_data) {
-		// if checked, use vanilla
-		if (::Legends.Mod.ModSettings.getSetting("SellDialogNamed").getValue())
-			return onCanSwapItem(_data);
-
 		// if not town shop, use vanilla
 		if (_data[1] != "world-town-screen-shop-dialog-module.stash")
 			return onCanSwapItem(_data);
 
-		// if item null, use vanilla
 		local itemWrapper = this.Stash.getItemAtIndex(_data[0]);
+		// if item null, use vanilla
 		if (itemWrapper == null)
 			return onCanSwapItem(_data);
+
+		local ret = onCanSwapItem(_data);
+		// if checked, add overlay data to draw a proper icon
+		if (::Legends.Mod.ModSettings.getSetting("SellDialogNamed").getValue()) {
+			ret.Item.slot <- itemWrapper.item.getSlotType();
+			ret.Item.imageOverlayPath <- itemWrapper.item.getIconOverlay();
+			ret.Item.upgrades <- itemWrapper.item.getUpgrades();
+			return ret;
+		}
 
 		// little switcheroo to suppress named items in dialog checks
 		local orgIsPrecious = itemWrapper.item.isPrecious;
@@ -342,8 +350,6 @@
 
 		itemWrapper.item.isPrecious = @() this.isItemType(this.Const.Items.ItemType.Legendary) || this.isItemType(this.Const.Items.ItemType.Quest) || this.m.IsPrecious;
 		itemWrapper.item.isUnique = @() this.isItemType(this.Const.Items.ItemType.Legendary) || this.isItemType(this.Const.Items.ItemType.Quest) || this.m.IsUnique;
-
-		local ret = onCanSwapItem(_data);
 
 		itemWrapper.item.isPrecious = orgIsPrecious;
 		itemWrapper.item.isUnique = orgIsUnique;

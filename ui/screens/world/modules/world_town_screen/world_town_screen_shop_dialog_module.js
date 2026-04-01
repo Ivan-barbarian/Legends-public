@@ -305,14 +305,44 @@ WorldTownScreenShopDialogModule.prototype.createSwapConfirmationDialogContent = 
     var leftColumn = $('<div class="left-column"/>');
     result.append(leftColumn);
 
+    var itemImageContainer = $('<div class="item-image-container"/>');
+    leftColumn.append(itemImageContainer);
+
     var itemImage = $('<img/>');
     itemImage.attr('src', Path.ITEMS + _item.Icon);
-    leftColumn.append(itemImage);
+    itemImageContainer.append(itemImage);
+
+    if (_item.imageOverlayPath && _item.imageOverlayPath.length > 0) {
+        var drawOrder = [];
+        if (_item && (_item.slot === "head" || _item.slot === "body") && _item.upgrades[0]) {
+            drawOrder = _item.Helper.getLayerUpgradeDrawOrder(_item.upgrades, _item.imageOverlayPath, _item.slot, true);
+        } else {
+            for (var i = 0; i < _item.imageOverlayPath.length; i++)
+                drawOrder.push(i);
+        }
+
+        drawOrder.forEach(function (i) {
+            var imagePath = _item.imageOverlayPath[i];
+            if (imagePath === '') {
+                return;
+            }
+            var overlayImage = $('<img/>');
+            overlayImage.attr('src', Path.ITEMS + imagePath);;
+            itemImageContainer.append(overlayImage);
+        });
+    }
 
     var rightColumn = $('<div class="right-column"/>');
     result.append(rightColumn);
 
-    var itemNameLabel = $('<div class="name title-font-big font-bold font-color-title">' + _item.Name + '</div>');
+    var parsedName = XBBCODE.process(
+        {
+            text: _item.Name,
+            removeMisalignedTags: false,
+            addInLineBreaks: false
+        });
+
+    var itemNameLabel = $('<div class="name title-font-big font-bold font-color-title">' + parsedName.html + '</div>');
     rightColumn.append(itemNameLabel);
 
     var descriptionText = _confirmationText.replace(/#135213/gi, "#1e861e"); // positive values
@@ -807,7 +837,7 @@ WorldTownScreenShopDialogModule.prototype.createItemSlot = function (_owner, _in
             console.error('Failed to drop item. Source idx is invalid.');
             return;
         }
-        
+
         if (sourceOwner === WorldTownScreenShop.ItemOwner.Stash && targetOwner === WorldTownScreenShop.ItemOwner.Stash) {
             // don't allow swapping with same slot..
             if (sourceItemIdx === targetItemIdx) {
@@ -1202,7 +1232,7 @@ WorldTownScreenShopDialogModule.prototype.getSwapConfirmationOptionsFromResult =
     switch (_result) {
         case ResponseCode.ConfirmReplaceSwap:
             {
-                text = 'This item may not be acquireable later if you sell it.';
+                text = 'This item may not be acquirable later if you sell it.';
                 break;
             }
         case ResponseCode.ConfirmNoReplaceSwap:
@@ -1275,17 +1305,15 @@ WorldTownScreenShopDialogModule.prototype.notifyBackendFilterUsableButtonClicked
     SQ.call(this.mSQHandle, 'onFilterUsable');
 };
 
-WorldTownScreenShopDialogModule.prototype.notifyBackendRemoveInventoryItemUpgrades = function (_slot)
-{
-	var self = this;
-	SQ.call(this.mSQHandle, 'removeInventoryItemUpgrades', [_slot], function (data) {
-		if (data === undefined || data == null || typeof (data) !== 'object')
-		{
-			console.error('ERROR: Failed to drop paperdoll item into bag. Invalid data result.');
-			return;
-		}
+WorldTownScreenShopDialogModule.prototype.notifyBackendRemoveInventoryItemUpgrades = function (_slot) {
+    var self = this;
+    SQ.call(this.mSQHandle, 'removeInventoryItemUpgrades', [_slot], function (data) {
+        if (data === undefined || data == null || typeof (data) !== 'object') {
+            console.error('ERROR: Failed to drop paperdoll item into bag. Invalid data result.');
+            return;
+        }
 
-         if ('stashSpaceUsed' in data) {
+        if ('stashSpaceUsed' in data) {
             self.mStashSpaceUsed = data.stashSpaceUsed;
         }
 
@@ -1294,11 +1322,10 @@ WorldTownScreenShopDialogModule.prototype.notifyBackendRemoveInventoryItemUpgrad
         }
 
         if ('stash' in data) {
-            if (data.stash !== null && jQuery.isArray(data.stash))
-			{
-				data.stash.forceUpdate = _slot;
-				self.updateStashList(data.stash);
-			}
+            if (data.stash !== null && jQuery.isArray(data.stash)) {
+                data.stash.forceUpdate = _slot;
+                self.updateStashList(data.stash);
+            }
         }
-	});
+    });
 };

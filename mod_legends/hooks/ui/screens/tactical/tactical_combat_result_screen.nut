@@ -77,6 +77,9 @@
 					code = this.Const.UI.Error.NotEnoughStashSpace
 				};
 			}
+			if(toRemove.len() > 0) {
+				_item.playInventorySound(this.Const.Items.InventoryEventType.Equipped);
+			}
 			foreach (idx in toRemove) {
 				local upgrade = _item.getUpgrade(idx);
 				if (upgrade.isDestroyedOnRemove()) {

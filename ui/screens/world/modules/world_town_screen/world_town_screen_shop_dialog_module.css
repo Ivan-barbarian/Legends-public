@@ -333,6 +333,19 @@
     height: 4.0rem;
 }
 
+.world-town-screen > .l-shop-dialog-container .ui-control.popup-dialog .swap-confirmation-popup-dialog-content-container .left-column .item-image-container
+{
+    position: relative;
+}
+
+.world-town-screen > .l-shop-dialog-container .ui-control.popup-dialog .swap-confirmation-popup-dialog-content-container .left-column img
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
 .world-town-screen > .l-shop-dialog-container .ui-control.popup-dialog .swap-confirmation-popup-dialog-content-container .right-column
 {
     padding-right: 1.0rem;
