@@ -72,7 +72,7 @@ this.legend_haftstrike <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties ) {
 		if (_skill == this)
-			_properties.DamageTotalMult *= 0.3;
+			_properties.DamageTotalMult *= 0.4;
 	}
 });
 
