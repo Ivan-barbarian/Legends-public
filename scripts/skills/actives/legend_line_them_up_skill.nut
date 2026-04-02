@@ -139,9 +139,9 @@ this.legend_line_them_up_skill <- this.inherit("scripts/skills/skill", {
 			}
 
 			local target = t.getEntity();
-			local success = this.attackEntity(user, target, false);
-			if (::Legends.S.isEntityNullOrDead(t))
+			if (::Legends.S.isEntityNullOrDead(target))
 				continue;
+			local success = this.attackEntity(user, target, false);
 
 			if (success && t.IsVisibleForPlayer)
 			{
