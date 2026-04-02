@@ -81,7 +81,7 @@
 			return success;
 
 		if (success)
-			::Legends.S.applyBleed(target, _user, hp, this.m.SoundsA, this.m.SoundsB, damage);
+			::Legends.S.applyBleed(target, _user, hp, this.m.BleedingSounds, this.m.SoundOnHit, damage);
 
 		return success;
 	}
