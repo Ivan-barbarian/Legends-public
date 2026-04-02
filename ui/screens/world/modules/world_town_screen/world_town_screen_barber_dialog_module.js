@@ -66,6 +66,13 @@ var WorldTownScreenBarberDialogModule = function(_parent)
 			DownButton: null,
 			UpButton: null,
 			LayerID: 'tattoo'
+		},
+
+        TattooHead:
+		{
+			DownButton: null,
+			UpButton: null,
+			LayerID: 'tattoo_head'
 		}
 	};
 
@@ -212,6 +219,10 @@ WorldTownScreenBarberDialogModule.prototype.createDIV = function (_parentDiv)
 	var row = $('<div class="row"></div>');
 	this.mDetailsPanel.Container.append(row);
 	this.createAppearanceControlDIV("Tattoo", 'tattoo-control', this.mAppearanceOptions.Tattoo, row);
+
+    var row = $('<div class="row"></div>');
+	this.mDetailsPanel.Container.append(row);
+	this.createAppearanceControlDIV("Head Tattoo", 'tattoo-head-control', this.mAppearanceOptions.TattooHead, row);
 
     // details: buttons
     detailsRow = $('<div class="row is-button-container"/>');
