@@ -195,6 +195,10 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 	function executeFollowUpAttack(_info) {
+		local actor = this.getContainer().getActor();
+		if (::Legends.S.isEntityNullOrDead(actor)) {
+			return;
+		}
 		local entity = _info.TargetTile.getEntity();
 		if (::Legends.S.isEntityNullOrDead(entity)) {
 			return;
