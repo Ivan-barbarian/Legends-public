@@ -16,7 +16,9 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsRemovedAfterBattle = false;
 		this.m.ExcludedSkills = [
-			::Legends.Actives.getID(::Legends.Active.LegendDoubleSwing)
+			::Legends.Actives.getID(::Legends.Active.LegendDoubleSwing),
+			// Follow up attack is handled in Lunge's onTeleportDone
+			::Legends.Actives.getID(::Legends.Active.Lunge),
 		];
 	}
 
