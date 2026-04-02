@@ -311,7 +311,7 @@
 								Skill = ohSkill,
 								TargetTile = _attacker.getTile()
 							};
-							this.Time.scheduleEvent(this.TimeUnit.Virtual, ::Const.Combat.RiposteDelay * _delayMultiplier, this.onRiposte.bindenv(this), ohInfo);
+							this.Time.scheduleEvent(this.TimeUnit.Virtual, ::Const.Combat.RiposteDelay * _delayMultiplier, this.onOffhandRiposte.bindenv(this), ohInfo);
 						}
 					}
 				}
@@ -320,6 +320,14 @@
 			this.getFlags().set("PerformedRiposte", true);
 		}
 	}
+	
+	o.onOffhandRiposte <- function (_info) {
+		if (!_info.User.isAlive()) {
+			return;
+		}
+		_info.Skill.useForFree(_info.TargetTile);
+	}
+
 
 	o.resetPerks <- function ()
 	{
