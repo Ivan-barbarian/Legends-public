@@ -2481,7 +2481,7 @@ Time spent assessing an enemy, finding the arteries, will pay off in blood shed 
 
 • Costs [color=%negative%]2[/color] AP and [color=%negative%]15[/color] Fatigue.
 
-• When [color=%status%]Dual Wielding[/color] flails, both attacks apply [color=%status%]Bleed[/color].
+• When [color=%status%]Dual Wielding[/color] cleavers or whips, both attacks apply [color=%status%]Bleed[/color].
 ";
 
 ::Const.Strings.PerkDescription.LegendPrepareGraze <- @"
@@ -2503,6 +2503,8 @@ If it bleeds, we can kill it.
 • Unlocks the [color=%skill%]Prepare to Bleed[/color] skill which primes your next strike to inflict [color=%damage%]5[/color] [color=%status%]Bleed[/color] damage for the next two turns.
 
 • Costs [color=%negative%]2[/color] AP and [color=%negative%]15[/color] Fatigue.
+
+• When [color=%status%]Dual Wielding[/color] cleavers or whips, both attacks apply [color=%status%]Bleed[/color].
 
 [color=%active%][u]Active:[/u][/color]
 • Unlocks the [color=%skill%]Prepare to Graze[/color] skill which primes your next strike to inflict [color=%damage%]2[/color] [color=%status%]Bleed[/color] damage for the next five turns.
