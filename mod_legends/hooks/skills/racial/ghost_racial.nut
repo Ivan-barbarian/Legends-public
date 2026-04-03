@@ -34,5 +34,6 @@
 			return;
 
 		_hitInfo.DamageDirect = 0;
+		_hitInfo.DamageMinimum = 0;
 	}
 });
