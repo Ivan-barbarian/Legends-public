@@ -410,7 +410,7 @@ Honor doesn't win you fights, stabbing the enemy where it hurts does.
 I work best alone.
 
 [color=%passive%][u]Passive:[/u][/color]
-• With no ally within two tiles, gain a [color=%positive%]15%[/color] bonus to Melee Skill, Ranged Skill, Melee Defense, Ranged Defense, and Resolve.
+• With no ally within two tiles, gain a [color=%positive%]15%[/color] bonus to Melee Skill, Ranged Skill, Melee Defense, Ranged Defense, and Resolve. Additionally AP cost of moving accross all terrain is reduced by [color=%positive%]1[/color]
 ";
 ::Const.Perks.PerkDefObjects[::Legends.Perk.LoneWolf].Tooltip = ::Const.Strings.PerkDescription.LoneWolf;
 ::Const.Strings.PerkDescription.Recover <- @"
