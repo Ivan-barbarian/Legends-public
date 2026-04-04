@@ -106,7 +106,7 @@ this.legend_rotten_flesh_trait <- this.inherit("scripts/skills/traits/character_
 			this.setDirty(true);
 		};
 
-		actor.m.ExcludedInjuries = ::Legends.Necromancer.excludedTraits();
+		actor.m.ExcludedInjuries = ::Legends.Necromancer.ExcludedInjures();
 
 		local sw_onFactionChanged = actor.onFactionChanged;
 		actor.onFactionChanged = function () {
