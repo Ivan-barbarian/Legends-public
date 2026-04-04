@@ -7,3 +7,4 @@ except ImportError:
 
 from .client import *
 from .nexus_upload_task import *
+from .github_upload_task import *

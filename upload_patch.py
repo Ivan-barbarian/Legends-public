@@ -1,7 +1,7 @@
 from pathlib import Path
 from buildscript.lib import VersionExtractor, load_config
 from buildscript.python.upload import NexusUploadTask
-from buildscript.python.upload.github_upload_task import GithubUploadTask
+from buildscript.python.upload import GithubUploadTask
 
 
 def main():
