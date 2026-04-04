@@ -107,11 +107,9 @@ this.legend_harvest_skill <- this.inherit("scripts/skills/skill", {
 
 				if (::Legends.S.isEntityNullOrDead(_user))
 					return success;
-					
-				::Legends.S.applyBleed(target, _user, hp, this.m.SoundsA, this.m.SoundsB);
 
-				if (::Legends.S.isEntityNullOrDead(target))
-					return success;
+				if (success)
+					::Legends.S.applyBleed(target, _user, hp, this.m.SoundsA, this.m.SoundsB);
 			}
 		}
 
