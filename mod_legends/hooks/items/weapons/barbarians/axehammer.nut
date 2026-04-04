@@ -7,7 +7,6 @@
 		this.m.Ammo = 1;
 		this.m.AmmoMax = 1;
 		this.m.AmmoCost = 5;
-		this.m.ItemType = this.m.ItemType;
 	}
 
 	o.updateVariant <- function() {

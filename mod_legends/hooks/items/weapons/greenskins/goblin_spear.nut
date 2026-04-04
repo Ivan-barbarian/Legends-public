@@ -19,7 +19,6 @@
 		this.m.ConditionMax = 48.0;
 		this.m.RangeMin = 1;
 		this.m.RangeMax = 1;
-		this.m.ItemType = this.m.ItemType;
 		this.m.RangeIdeal = 1;
 		this.m.RegularDamage = 35;
 		this.m.RegularDamageMax = 60;
