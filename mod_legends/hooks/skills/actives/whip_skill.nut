@@ -8,8 +8,10 @@
 		if (::Legends.S.isEntityNullOrDead(_user))
 			return success;
 
-		if (success)
+		if (success) {
 			::Legends.S.applyBleed(target, _user, hp, this.m.SoundsA, this.m.SoundsB);
+			::Legends.S.applyBleed(target, _user, hp, this.m.SoundsA, this.m.SoundsB);
+		}
 
 		return success;
 	}
