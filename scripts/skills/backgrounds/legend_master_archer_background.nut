@@ -168,7 +168,9 @@ this.legend_master_archer_background <- this.inherit("scripts/skills/backgrounds
 
 	function onAddEquipment()
 	{
-		local items = this.getContainer().getActor().getItems();
+		local actor = this.getContainer().getActor();
+		actor.setVeteranPerks(3);
+		local items = actor.getItems();
 		local r;
 		items.equip(this.new("scripts/items/weapons/war_bow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
