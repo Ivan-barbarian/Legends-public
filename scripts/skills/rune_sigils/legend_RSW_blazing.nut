@@ -32,7 +32,13 @@ this.legend_RSW_blazing <- this.inherit("scripts/skills/skill", {
 			Applicable = @(_a) true
 		};
 
+		if (_targetEntity == null)
+			return;
+
 		local tile = _targetEntity.getTile();
+		if (tile == null)
+			return;
+
 		if (
 			tile.Subtype != ::Const.Tactical.TerrainSubtype.Snow &&
 			tile.Subtype != ::Const.Tactical.TerrainSubtype.LightSnow &&
