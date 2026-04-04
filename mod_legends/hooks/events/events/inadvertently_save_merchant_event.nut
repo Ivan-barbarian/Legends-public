@@ -4,3 +4,4 @@
 		this.onUpdateScore();
 		return this.m.Town != null;
 	}
+});
