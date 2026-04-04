@@ -40,8 +40,8 @@ this.legend_into_the_fray_skill <- this.inherit("scripts/skills/skill", {
 		this.m.DirectDamageMult = 0.2;
 		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 10;
-		this.m.MinRange = 1;
-		this.m.MaxRange = 1;
+		this.m.MinRange = 2;
+		this.m.MaxRange = 2;
 		this.m.ChanceDecapitate = 50;
 		this.m.ChanceDisembowel = 33;
 		this.m.ChanceSmash = 0;
