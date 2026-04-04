@@ -780,7 +780,7 @@
 		}
 
 		// Equipping to offhand
-		if ((targetSlot == this.Const.ItemSlot.Offhand || (mh != null && oh == null))
+		if (targetSlot == this.Const.ItemSlot.Offhand
 			&& !ohBlocked
 			&& inventory.canDualWield(entity, sourceItem))
 		{
@@ -850,7 +850,7 @@
 		}
 
 		// Equipping to offhand
-		if ((targetSlot == this.Const.ItemSlot.Offhand || (mh != null && oh == null))
+		if (targetSlot == this.Const.ItemSlot.Offhand
 			&& !ohBlocked
 			&& inventory.canDualWield(entity, sourceItem))
 		{
