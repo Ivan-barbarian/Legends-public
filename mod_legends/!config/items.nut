@@ -118,10 +118,6 @@ foreach (i in garbage)
 	"helmets/named/legend_helm_swan_named",
 ]);
 
-::Const.Items.NamedBanditShields.extend([
-	"weapons/named/legend_named_parrying_dagger"
-]);
-
 ::Const.Items.NamedSouthernShields <- [
 	"shields/named/named_sipar_shield"
 ];
@@ -158,8 +154,7 @@ foreach (i in garbage)
 	"weapons/named/legend_named_infantry_axe",
 	"weapons/named/legend_named_warhammer",
 	"weapons/named/legend_named_military_goedendag",
-	"weapons/named/legend_named_military_warscythe",
-	"weapons/named/legend_named_parrying_dagger",
+	"weapons/named/legend_named_military_warscythe"
 ]);
 
 ::Const.Items.NamedRangedWeapons.extend([
