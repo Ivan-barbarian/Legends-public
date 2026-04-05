@@ -40,7 +40,7 @@ this.legend_named_shamshir_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		if (_skill.m.IsWeaponSkill)
+		if (_skill.isAttack() && _skill.getItem() != null && _skill.getItem().getID() == this.getItem().getID())
 			_properties.ThresholdToInflictInjuryMult *= 1 - (this.m.Bonus * 0.01);
 	}
 });

@@ -39,7 +39,7 @@ this.legend_named_axe_effect <- this.inherit("scripts/skills/skill", {
 
     function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		if (_skill == this)
+		if (_skill.isAttack() && _skill.getItem() != null && _skill.getItem().getID() == this.getItem().getID())
 		{
 			_properties.DamageAgainstMult[this.Const.BodyPart.Head] *= 1 + (this.m.Bonus * 0.01);
 		}

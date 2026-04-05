@@ -40,10 +40,16 @@ this.legend_named_whip_bleed_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if (_skill.m.IsWeaponSkill == false)
+		if ( _skill == null || _skill.m.IsWeaponSkill == false )
 			return;
 
-		if (::Legends.S.skillEntityAliveCheck(this.getContainer().getActor(), _targetEntity))
+		if (!_skill.isAttack())
+			return;
+
+		if (_skill.getItem() == null)
+			return;
+
+		if (_skill.getItem().getID() != this.getItem().getID())
 			return;
 
 		if (_targetEntity.getCurrentProperties().IsImmuneToBleeding)
