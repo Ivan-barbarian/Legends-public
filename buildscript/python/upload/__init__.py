@@ -1,8 +1,9 @@
 try:
 	import requests
-	from tqdm import tqdm
+	import dacite
+	import tqdm
 except ImportError:
-	print("Missing dependencies! Run: `pip install requests tqdm`")
+	print("Missing dependencies! Run: `pip install requests tqdm dacite`")
 	exit(1)
 
 from .client import *
