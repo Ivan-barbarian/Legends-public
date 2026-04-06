@@ -15,6 +15,6 @@
 		local actor = this.getContainer().getActor();
 		if (actor.m.MoraleState == this.Const.MoraleState.Ignore)
 			return;
-		onCombatStarted(_properties);
+		onCombatStarted();
 	}
 });
