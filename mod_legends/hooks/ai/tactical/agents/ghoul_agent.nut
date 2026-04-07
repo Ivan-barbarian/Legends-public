@@ -4,6 +4,7 @@
 	o.onAddBehaviors = function ()
 	{
 		onAddBehaviors();
+		this.m.Properties.TargetPriorityHittingAlliesMult = 1.0;
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_swing"));
 	}
 });
