@@ -163,7 +163,7 @@ this.legend_specialist_abstract <- this.inherit("scripts/skills/skill", {
 
 		local item = _skill.getItem();
 
-		if (item == null)
+		if (item == null || !("isItemType" in item))
 			return false;
 
 		if (!item.isItemType(this.Const.Items.ItemType.Weapon))
