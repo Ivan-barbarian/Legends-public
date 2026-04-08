@@ -59,7 +59,7 @@ this.legend_berserker_rage_effect <- this.inherit("scripts/skills/skill", {
 				id = 12,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=%positive%]+" + this.m.RageStacks + "[/color] Bravery"
+				text = "[color=%positive%]+" + this.m.RageStacks + "[/color] Resolve"
 			},
 			{
 				id = 13,
