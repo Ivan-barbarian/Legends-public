@@ -10,7 +10,7 @@
 What could stand before you now?
 
 [color=%passive%][u]Passive:[/u][/color]
-• All damage inflicted is increased by [color=%positive%]+10%[/color] for any weapon used, including fists.
+• All damage inflicted is increased by [color=%positive%]10%[/color].
 ";
 ::Const.Perks.PerkDefObjects[::Legends.Perk.DevastatingStrikes].Tooltip = ::Const.Strings.PerkDescription.DevastatingStrikes;
 ::Const.Strings.PerkDescription.FortifiedMind <- @"
