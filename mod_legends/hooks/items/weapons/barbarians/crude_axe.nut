@@ -3,7 +3,8 @@
 	local create = o.create;
 	o.create = function() {
 		create();
-		this.setVariant(this.Math.rand(0, 2));
+		this.m.Variants = [0, 1, 2];
+		this.setVariant(this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)]);
 		this.m.Ammo = 1;
 		this.m.AmmoMax = 1;
 		this.m.AmmoCost = 5;
