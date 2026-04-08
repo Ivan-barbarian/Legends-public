@@ -337,7 +337,6 @@
 
 		local ret = onCanSwapItem(_data);
 		// if checked, add overlay data to draw a proper icon
-		::logDebug(::Legends.Mod.ModSettings.getSetting("SellDialogNamed").getValue())
 		if (::Legends.Mod.ModSettings.getSetting("SellDialogNamed").getValue() && ret.Item != null) {
 			ret.Item.slot <- itemWrapper.item.getSlotType();
 			ret.Item.imageOverlayPath <- itemWrapper.item.getIconOverlay();
