@@ -2328,7 +2328,7 @@ Use your size and strength to dominate the battlefield, combining the best of bo
 Even if your strikes don't penetrate the opponent's armor, you'll make sure they feel it.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Increases hitpoint damage by [color=%positive%]10%[/color] of the armor damage done to the target. Attacks that don't deal armor damage or fully penetrate the target's armor will not receive any bonuses, and the bonus damage is subject to damage reductions from the target.
+• Increases hitpoint damage and always inflict a minimum amount of damage to hitpoints equal to [color=%positive%]10%[/color] of the armor damage done to the target. Attacks that don't deal armor damage or fully penetrate the target's armor will not receive any bonuses, and the bonus damage is subject to damage reductions from the target.
 ";
 
 ::Const.Strings.PerkDescription.LegendClarity <- @"
