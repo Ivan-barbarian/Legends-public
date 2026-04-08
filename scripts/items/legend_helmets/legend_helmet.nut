@@ -840,12 +840,6 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 		if (this.getArmor() == 0 && this.m.HideHelmetIfDestroyed)
 		{
-			app.HideHair = false;
-					app.HideBeard = false;
-			foreach (u in this.m.Upgrades)
-		{
-			if (u != null) u.updateAppearance(app);
-		}
 			if (app.Helmet != "")
 			{
 				this.getContainer().updateAppearance();
