@@ -15,7 +15,7 @@ local map = ::Legends.Mod.ModSettings.addPage("Map Options");
 //Setting, Default, Min, Max, ?, Name, Description
 addNCSetting(map, ::MSU.Class.RangeSetting("LandRatio", 50, 45, 70, 1, "Land Mass Ratio", "Minimum land to water ratio for an acceptable map. Default is 50. Going either extremes on this slider can result in map never getting generated."));
 addNCSetting(map, ::MSU.Class.RangeSetting("Water", 38, 28, 48, 1, "Water", "Impacts how much of the map is water. Small value results in patchy water around the corners of the map. Larger numbers can create a single large island given a low enough land mass ratio."));
-addNCSetting(map, ::MSU.Class.RangeSetting("Snowline", 85, 75, 95, 1, "Snowline", "Determines where the snowline is generated. Default is 90. This value is inverted. A value of 10 would mean the top 90% of the map is snow."));
+addNCSetting(map, ::MSU.Class.RangeSetting("Snowline", 85, 75, 95, 1, "Snowline", "Determines where the snowline is generated. Default is 85. This value is inverted. A value of 10 would mean the top 90% of the map is snow."));
 addNCSetting(map, ::MSU.Class.RangeSetting("Settlements", 19, 19, 27, 1, "Settlements", "Maximum number of settlements. Depending on map size, this will try to add the number of settlements on the slider. It will keep the same ratio of settlement types as default Battle Brothers maps. Minimum distance between settlements is 12 tiles. Vanilla default is 19."));
 addNCSetting(map, ::MSU.Class.RangeSetting("Factions", 3, 1, 6, 1, "Factions", "Maximum number of Factions to try and generate. Depending on map size, this may not add all the factions on the slider."));
 
@@ -59,11 +59,11 @@ tooltip.addDivider("TooltipDivider4");
 tooltip.addTitle("TooltipUI", "UI");
 
 local cpLight = tooltip.addElement(::MSU.Class.ColorPickerSetting("HighlightLightBackground", "2,55,189,1", "Highlighted Text (Light Background)", "Customize the color for special highlighted text occurring in light backgrounds, such as in tooltips"));
-::Const.UI.Color.getHighlightLightBackgroundValue <- function() {return "#" + cpLight.getValueAsHexString().slice(0,6)}
+::Const.UI.Color.getHighlightLightBackgroundValue <- @() "#" + cpLight.getValueAsHexString().slice(0,6);
 local cpDark = tooltip.addElement(::MSU.Class.ColorPickerSetting("HighlightDarkBackground", "111,145,201,1", "Highlighted Text (Dark Background)", "Customize the color of special highlighted text occurring in dark backgrounds, such as in events"));
-::Const.UI.Color.getHighlightDarkBackgroundValue <- function() {return "#" + cpDark.getValueAsHexString().slice(0,6)}
+::Const.UI.Color.getHighlightDarkBackgroundValue <- @() "#" + cpDark.getValueAsHexString().slice(0,6);
 local cpFade = tooltip.addElement(::MSU.Class.ColorPickerSetting("FadeDarkBackground", "135,114,81,1", "Faded Text (Dark Background)", "Customize the color of faded text occurring in dark backgrounds, such as in events"));
-::Const.UI.Color.getFadeDarkBackgroundValue <- function() {return "#" + cpFade.getValueAsHexString().slice(0,6)}
+::Const.UI.Color.getFadeDarkBackgroundValue <- @() "#" + cpFade.getValueAsHexString().slice(0,6);
 tooltip.addElement(::MSU.Class.EnumSetting("ContractCategoryIconAlignment", "Middle", ["Left","Middle","Right","Below"], "Contract Category Icon Alignment", "Adjust the position of the Contract Category icon at the bottom of Contracts in the Settlement screen"));
 
 local misc = ::Legends.Mod.ModSettings.addPage("Misc");
@@ -75,7 +75,7 @@ misc.addElement(::MSU.Class.RangeSetting("MinimumChanceToHit", 5, 0, 100, 1, "Mi
 misc.addElement(::MSU.Class.RangeSetting("MaximumChanceToHit", 95, 0, 100, 1, "Maximum hitchance", "Slider for maximum hitchance percentage. Pushing this slider too far back will result in no chance to hit for anyone."));
 myEnumTooltip = "Define AI Rotation rules: 'Default' is the Vanilla behaviour, AI is free to rotate itself and your bros as long as the skill allows; 'Limited' AI can only rotate itself, but not your bros (unless they have the Twirl Perk); 'Disabled' disable AI Rotation entirely";
 misc.addElement(::MSU.Class.EnumSetting("AiRotation", "Default", ["Default", "Limited", "Disabled"], "AI Rotation Rules", myEnumTooltip));
-misc.addElement(::MSU.Class.BooleanSetting("SellDialogNamed", true, "Sell Famed Dialog", "Should sell confirmation dialog appear when selling famed items?"));
+misc.addElement(::MSU.Class.BooleanSetting("SellDialogNamed", true, "Sell Famed Dialog", "Should confirmation dialog appear when selling famed items?"));
 misc.addElement(::MSU.Class.BooleanSetting("LogOutfits", false, "Log Outfits", "An option for fashion submissions which will log the entire outfit someone is wearing when you hover it, used to add custom outfits in Legends."));
 
 local betterobituary = ::Legends.Mod.ModSettings.addPage("Obituary");

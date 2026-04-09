@@ -52,7 +52,7 @@
 	local onAfterUpdate = o.onAfterUpdate;
 	o.onAfterUpdate = function(_properties)
 	{
-		onAfterUpdate(_properties)
+		onAfterUpdate(_properties);
 		if (this.m.IsMeleeRupture) {
 			this.m.ActionPointCost = _properties.IsSpecializedInPolearms ? 4 : 5;
 		}
