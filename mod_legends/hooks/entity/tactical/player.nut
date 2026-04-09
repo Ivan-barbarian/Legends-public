@@ -1259,28 +1259,16 @@
 		*/
 		background.buildDescription();
 
-		if (background.isBackgroundType(this.Const.BackgroundType.Female))
-		{
-			this.setGender(1);
-		}
-		else
-		{
-			this.setGender(0);  //Making sure that m.Gender is set properly for the player class, preventing genderbending
-		}
+		this.setGender(background.isBackgroundType(::Const.BackgroundType.Female) ? 1 : 0);
 
 		local attributes = background.buildPerkTree();
 		local maxTraits = 0;
 
-		if (this.getFlags().has("PlayerZombie"))
-		{
-			this.m.StarWeights = background.buildAttributes("zombie", attributes);
-		}
-		else if (this.getFlags().has("PlayerSkeleton"))
-		{
-			this.m.StarWeights = background.buildAttributes("skeleton", attributes);
-		}
-		else
-		{
+		if (this.getFlags().has("PlayerZombie")) {
+			this.m.StarWeights = background.buildAttributes(::Legends.Backgrounds.Tag.Zombie, attributes);
+		} else if (this.getFlags().has("PlayerSkeleton")) {
+			this.m.StarWeights = background.buildAttributes(::Legends.Backgrounds.Tag.Skeleton, attributes);
+		} else {
 			this.m.StarWeights = background.buildAttributes(null, attributes);
 		}
 
