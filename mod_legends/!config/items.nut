@@ -127,10 +127,12 @@ foreach (i in garbage)
 	"weapons/named/legend_named_orc_flail_2h"
 ]);
 
-::Const.Items.NamedBarbarianWeapons.extend([
+::Const.Items.NamedBarbarianWeaponsHigh <- [
 	"weapons/named/legend_named_rusty_serrated_axe",
+	"weapons/named/legend_named_rusty_warcleaver",
+	"weapons/named/legend_named_horn_decorated_mace",
 	"weapons/named/legend_named_rusty_greatsword"
-]);
+];
 
 ::Const.Items.NamedGoblinWeapons.extend([
 	"weapons/named/legend_named_goblin_axe_2h",

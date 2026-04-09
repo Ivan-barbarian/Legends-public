@@ -1,5 +1,12 @@
 ::mods_hookExactClass("entity/world/locations/barbarian_sanctuary_location", function(o) 
 {
+	local create = o.create;
+	o.create = function() {
+		create();
+		if (this.Math.rand(1, 4) == 1)
+			this.m.NamedWeaponsList.extend(this.Const.Items.NamedBarbarianWeaponsHigh);
+	}
+
 	o.onDropLootForPlayer = function ( _lootTable )
 	{
 		this.location.onDropLootForPlayer(_lootTable);
