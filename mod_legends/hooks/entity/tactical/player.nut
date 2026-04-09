@@ -739,80 +739,64 @@
 		return this.actor.checkMorale(_change, _difficulty, _type, _showIconBeforeMoraleIcon, _noNewLine);
 	}
 
-	// hooked only for the comments, seems to be entirely legends changes
-	// o.addXP = function ( _xp, _scale = true )
-	// {
-	// 	local isScenarioMode = !(("State" in this.World) && this.World.State != null);
+	// overwriting entire function 
+	o.addXP = function ( _xp, _scale = true )
+	{
+		local isScenarioMode = !(("State" in this.World) && this.World.State != null);
 
-	// 	if (this.m.Level >= this.Const.LevelXP.len() || this.isGuest() || !isScenarioMode && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.m.Level >= 7 && this.getBackground().getID() == "background.slave")
-	// 	{
-	// 		return;
-	// 	}
+		if (this.m.Level >= this.Const.LevelXP.len() || this.isGuest() || !isScenarioMode && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.m.Level >= 7 && this.getBackground().getID() == "background.slave")
+			return;
 
-	// 	if (_scale)
-	// 	{
-	// 		_xp = _xp * this.Const.Combat.GlobalXPMult;
-	// 	}
+		if (_scale)
+		{
+			_xp = _xp * this.Const.Combat.GlobalXPMult;
+		}
 
-	// 	if (_scale && !isScenarioMode)
-	// 	{
-	// 		_xp = _xp * this.Const.Difficulty.XPMult[this.World.Assets.getDifficulty()];
-	// 	}
+		if (_scale && !isScenarioMode)
+		{
+			_xp = _xp * this.Const.Difficulty.XPMult[this.World.Assets.getDifficulty()];
+		}
 
-	// 	if (this.m.Level >= 11)
-	// 	{
-	// 		_xp = _xp * this.Const.Combat.GlobalXPVeteranLevelMult;
-	// 	}
+		if (this.m.Level >= 12)
+		{
+			_xp = _xp * this.Const.Combat.GlobalXPVeteranLevelMult;
+		}
 
-	// 	// if (this.getFlags().has("PlayerSkeleton")) //Disabled 27/1/23 - these are overiding the xp modifiers elsewhere including submods. therefore I have disabled them here so they may be changed in traits, events, etc. as all other stat varibles are for these types of units. - Luft
-	// 	// {
-	// 	// 	_xp = _xp * 0.33;
-	// 	// }
+		if (!isScenarioMode)
+		{
+			if (_scale)
+			{
+				_xp = _xp * this.World.Assets.m.XPMult;
 
-	// 	// if (this.getFlags().has("PlayerZombie")) //Disabled 27/1/23 - these are overiding the xp modifiers elsewhere including submods. therefore I have disabled them here so they may be changed in traits, events, etc. as all other stat varibles are for these types of units. - Luft
-	// 	// {
-	// 	// 	_xp = _xp * 0.25;
-	// 	// }
+				if (this.World.Retinue.hasFollower("follower.drill_sergeant") && this.m.Level < 12)
+				{
+					_xp = _xp * 1.2;
+				}
+			}
 
-	// 	if (!isScenarioMode)
-	// 	{
-	// 		if (_scale)
-	// 		{
-	// 			_xp = _xp * this.World.Assets.m.XPMult;
+			// a lil experiment to see if this would make avatar starts more viable
+			// if (this.World.getPlayerRoster().getSize() < 3)
+			// {
+			// 	_xp = _xp * (1.0 - (3 - this.World.getPlayerRoster().getSize()) * 0.15);
+			// }
+		}
 
-	// 			if (this.World.Retinue.hasFollower("follower.drill_sergeant"))
-	// 			{
-	// 				_xp = _xp * this.Math.maxf(1.0, 1.2 - 0.02 * (this.m.Level - 1));
-	// 			}
-	// 		}
+		if (this.m.XP + _xp * this.m.CurrentProperties.XPGainMult >= this.Const.LevelXP[this.Const.LevelXP.len() - 1])
+		{
+			this.m.CombatStats.XPGained += this.Const.LevelXP[this.Const.LevelXP.len() - 1] - this.m.XP;
+			this.m.XP = this.Const.LevelXP[this.Const.LevelXP.len() - 1];
+			return;
+		}
+		else if (!isScenarioMode && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.m.XP + _xp * this.m.CurrentProperties.XPGainMult >= this.Const.LevelXP[6] && this.getBackground().getID() == "background.slave")
+		{
+			this.m.CombatStats.XPGained += this.Const.LevelXP[6] - this.m.XP;
+			this.m.XP = this.Const.LevelXP[6];
+			return;
+		}
 
-	// 		if (this.World.getPlayerRoster().getSize() < 3)
-	// 		{
-	// 			_xp = _xp * (1.0 - (3 - this.World.getPlayerRoster().getSize()) * 0.15);
-	// 		}
-	// 	}
-
-	// 	//	if (("State" in this.World) && this.World.State != null && this.World.getPlayerRoster().getSize() < 3)
-	// 	//	{
-	// 	//		_xp = _xp * (1.0 - (3 - this.World.getPlayerRoster().getSize()) * 0.15);
-	// 	//	}
-
-	// 	if (this.m.XP + _xp * this.m.CurrentProperties.XPGainMult >= this.Const.LevelXP[this.Const.LevelXP.len() - 1])
-	// 	{
-	// 		this.m.CombatStats.XPGained += this.Const.LevelXP[this.Const.LevelXP.len() - 1] - this.m.XP;
-	// 		this.m.XP = this.Const.LevelXP[this.Const.LevelXP.len() - 1];
-	// 		return;
-	// 	}
-	// 	else if (!isScenarioMode && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.m.XP + _xp * this.m.CurrentProperties.XPGainMult >= this.Const.LevelXP[6] && this.getBackground().getID() == "background.slave")
-	// 	{
-	// 		this.m.CombatStats.XPGained += this.Const.LevelXP[6] - this.m.XP;
-	// 		this.m.XP = this.Const.LevelXP[6];
-	// 		return;
-	// 	}
-
-	// 	this.m.XP += this.Math.floor(_xp * this.m.CurrentProperties.XPGainMult);
-	// 	this.m.CombatStats.XPGained += this.Math.floor(_xp * this.m.CurrentProperties.XPGainMult);
-	// }
+		this.m.XP += this.Math.floor(_xp * this.m.CurrentProperties.XPGainMult);
+		this.m.CombatStats.XPGained += this.Math.floor(_xp * this.m.CurrentProperties.XPGainMult);
+	}
 
 	o.unlockPerk = function ( _id )
 	{
