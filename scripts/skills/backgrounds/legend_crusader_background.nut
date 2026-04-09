@@ -89,7 +89,8 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 			],
 			Enemy = [
 				::Const.Perks.OccultTree,
-				::Const.Perks.BeastTree
+				::Const.Perks.BeastTree,
+				::Const.Perks.UndeadTree
 			],
 			Class = [
 				::Const.Perks.FaithClassTree
@@ -113,9 +114,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 				::Legends.Perk.RallyTheTroops,
 				::Legends.Perk.LegendTrueBeliever,
 			],
-			[
-				::Legends.Perk.LegendFavouredEnemyUndead
-			],
+			[],
 			[],
 			[
 				::Legends.Perk.LegendTacticalManeuvers,
