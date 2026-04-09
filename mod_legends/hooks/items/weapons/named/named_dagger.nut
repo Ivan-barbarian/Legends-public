@@ -10,6 +10,14 @@
 		this.m.AmmoCost = 1;
 		this.m.WeaponType = this.Const.Items.WeaponType.Dagger;
 		this.updateVariant();
+		this.randomizeValues();
+	}
+
+	o.randomizeValues <- function ()
+	{
+		this.m.Ammo = 8;
+		this.m.AmmoMax = 8;
+		named_weapon.randomizeValues();
 	}
 
 	o.getAmmo <- function() {

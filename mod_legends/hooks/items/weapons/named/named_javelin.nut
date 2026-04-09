@@ -8,10 +8,15 @@
 		this.m.Categories = "Throwing Weapon/Spear, One-Handed";
 		this.m.WeaponType = this.Const.Items.WeaponType.Throwing | this.Const.Items.WeaponType.Spear;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.OneHanded;
-		this.m.Ammo = 6;
-		this.m.AmmoMax = 6;
 		this.updateVariant();
 		this.randomizeValues();
+	}
+
+	o.randomizeValues <- function ()
+	{
+		this.m.Ammo = 6;
+		this.m.AmmoMax = 6;
+		named_weapon.randomizeValues();
 	}
 
 	// o.setAmmo = function ()

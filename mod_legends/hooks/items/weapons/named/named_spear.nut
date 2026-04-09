@@ -11,6 +11,14 @@
 		this.m.AmmoMax = 1;
 		this.m.AmmoCost = 5;
 		this.m.WeaponType = this.Const.Items.WeaponType.Spear;
+		this.randomizeValues();
+	}
+
+	o.randomizeValues <- function ()
+	{
+		this.m.Ammo = 1;
+		this.m.AmmoMax = 1;
+		named_weapon.randomizeValues();
 	}
 
 	o.getAmmo <- function() {
