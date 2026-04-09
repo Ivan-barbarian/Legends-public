@@ -5,6 +5,5 @@
 	{
 		if (this.getContainer().getActor().isPlacedOnMap())
 			return onUpdate(_properties);
-		this.injury.onUpdate(_properties);
 	}
 });
