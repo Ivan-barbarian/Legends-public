@@ -161,6 +161,7 @@
 			local troop = ::Const.World.Common.deserializeTroop(_in);
 			troop.Party = this.WeakTableRef(this);
 			troop.Faction = this.getFaction();
+			this.m.Troops.push(troop);
 		}
 
 		// Temp fix for corrupted saves: a previous bug wrote all troops
