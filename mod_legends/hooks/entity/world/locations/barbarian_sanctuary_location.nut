@@ -3,6 +3,10 @@
 	local create = o.create;
 	o.create = function() {
 		create();
+		this.m.NamedWeaponsList.extend([
+			"weapons/named/legend_named_heavy_javelin",
+			"weapons/named/legend_named_heavy_throwing_axe"
+		]);
 		if (this.Math.rand(1, 4) == 1)
 			this.m.NamedWeaponsList.extend(this.Const.Items.NamedBarbarianWeaponsHigh);
 	}
