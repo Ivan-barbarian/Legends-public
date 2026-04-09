@@ -20,12 +20,14 @@
 			&& _attacker.getID() == this.getContainer().getActor().getID()
 			|| _skill == null
 			|| !_skill.isAttack()
-			|| !_skill.isUsingHitchance())
+			|| !_skill.isUsingHitchance()
+			|| _skill.getID != ::Legends.Effects.getID(::Legends.Effect.LegendConsecratedEffect))
 		{
 			return;
 		}
 
 		_hitInfo.DamageDirect = 0;
-		_hitInfo.DamageMinimum = 0;
+		if (_skill.getID != ::Legends.Effects.getID(::Legends.Effect.LegendConsecratedEffect))
+			_hitInfo.DamageMinimum = 0;
 	}
 });
