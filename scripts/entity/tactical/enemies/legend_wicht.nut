@@ -318,7 +318,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		if (::Legends.isLegendaryDifficulty()) {
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendSmashingShields);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendImmovableObject);
-			::Legends.Perks.grant(this, ::Legends.Perk.LegendBloodyHarvest);
+			::Legends.Perks.grant(this, ::Legends.Perk.LegendOnslaught)
 			this.m.ArmorDifficultyMult += 0.5;
 		}
 		::Legends.S.scaleBaseProperties(b); // this bit increases hitpoints
