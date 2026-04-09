@@ -2319,7 +2319,7 @@ Use your size and strength to dominate the battlefield, combining the best of bo
 
 [color=%active%][u]Active:[/u][/color]
 • Unlocks the [color=%skill%]Wind Up[/color] skill which allows you to knock back and [color=%status%]Baffle[/color] an opponent on your next swing.
-• [color=%status%]Baffled[/color] enemies suffer [color=%negative%]-15%[/color] Damage, Fatigue, and Initiative.
+• [color=%status%]Baffled[/color] enemies suffer [color=%negative%]-15%[/color] Damage, Max Fatigue, and Initiative.
 • Costs [color=%negative%]2[/color] AP and [color=%negative%]15[/color] Fatigue.
 • When wielding a two-handed weapon, reduces AP cost to [color=%negative%]1[/color]. Works only with melee weapons, unarmed attacks and one handed slings. With one handed slings it will grant the [color=%skill%]Prepare Bullet[/color] effect.
 ";
@@ -2382,7 +2382,7 @@ Don't slow down!
 [color=%passive%][u]Passive:[/u][/color]
 • Grants a [color=%positive%]50%[/color] chance to apply [color=%status%]Baffled[/color] on every hit with any weapon, when your Initiative is higher than that of your opponent.
 
-• [color=%status%]Baffled[/color] enemies have [color=%negative%]-15%[/color] damage, Fatigue, and Initiative.
+• [color=%status%]Baffled[/color] enemies suffer [color=%negative%]-15%[/color] Damage, Max Fatigue, and Initiative.
 
 • Increase melee damage by [color=%positive%]2%[/color] for every 100 points of armor.
 ";
@@ -2881,7 +2881,7 @@ A prayer of devotion grants strength to your allies and baffles the undead.
 
 • Adjacent cultists and undead are [color=%status%]Baffled[/color].
 
-• [color=%status%]Baffled[/color] enemies have their Melee Defense, Initiative, and Max Fatigue reduced by [color=%negative%]15%[/color].
+• [color=%status%]Baffled[/color] enemies suffer [color=%negative%]-15%[/color] Damage, Max Fatigue, and Initiative.
 
 •  Costs [color=%negative%]6[/color] AP and [color=%negative%]30[/color] Fatigue.
 ";
