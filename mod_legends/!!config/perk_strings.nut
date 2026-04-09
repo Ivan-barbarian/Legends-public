@@ -3025,7 +3025,11 @@ Control the elements, calling down the rain.
 All those years of studying ancient languages finally has a use.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Allows the user to create Ancient Scrolls when given Cloth and Dyes.
+• Allows the user to create Scrolls when given Cloth and Dyes.
+
+• Created scrolls can randomly be one of the following: 'Scroll of .Nut'in', 'Scroll of Natural Talent', 'Battle Scroll', 'Scroll of Experience', 'Scroll of Training'. They will be a trade item, gain the user a Gifted level up, gain [color=%positive%]50%[/color] additional experience for 3 battles, instantly gain [color=%positive%]100-150[/color] experience or instantly gain [color=%positive%]1[/color] training point, respectively.
+
+• These scrolls will make the user [color=%status%]Irritable[/color] but with a significantly lower day cooldown than reading a book or scroll. They also do not negatively impact how many books or scrolls you can read.
 ";
 
 ::Const.Strings.PerkDescription.LegendScholar <- @"
