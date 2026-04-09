@@ -456,7 +456,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 			b.ArmorMax[1]= this.Math.round(helmet.getArmorMax() * this.m.ArmorDifficultyMult);
 			this.m.Items.equip(helmet);
 		}
-
+		::Legends.Perks.grant(this, ::Legends.Perk.NineLives);
 		return true;
 	}
 
