@@ -90,6 +90,7 @@ this.legend_obliterate_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed(_skill, _targetEntity, _properties) {
 		if (_skill == this) {
+			_properties.MeleeSkill -= 75;
 			this.m.HitChanceBonus += _properties.IsSpecializedInHammers ? 25 : 0;
 			_properties.MeleeSkill += _properties.IsSpecializedInHammers ? 25 : 0;
 			_properties.DamageTotalMult *= 1.5;
