@@ -15,9 +15,9 @@
 	local onAnySkillUsed = o.onAnySkillUsed;
 	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties )
 	{
-		onAnySkillUsed( _skill, _targetEntity, _properties );
 		if (_skill == this)
 		{
+			_properties.MeleeSkill += 10;
 			if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
 			{
 				_properties.MeleeSkill += 5;
