@@ -28,8 +28,8 @@ this.legend_haftstrike <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsWeaponSkill = true;
-		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
-		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
+		this.m.InjuriesOnBody = this.Const.Injury.BluntAndPiercingBody;
+		this.m.InjuriesOnHead = this.Const.Injury.BluntAndPiercingHead;
 		this.m.HitChanceBonus = 0;
 		this.m.DirectDamageMult = 0.25;
 		this.m.ActionPointCost = 4;
