@@ -7,11 +7,9 @@
 	{
 		create();
 		this.m.Variants = [1,2,3,4,5,6];
-		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() -1)];
-		this.updateVariant();
+		this.setVariant(this.m.Variants[::Math.rand(0, this.m.Variants.len() - 1)]);
 		this.m.AmmoCost = 5;
 		this.m.WeaponType = this.Const.Items.WeaponType.Axe;
-		this.randomizeValues();
 	}
 
 	o.randomizeValues <- function ()
