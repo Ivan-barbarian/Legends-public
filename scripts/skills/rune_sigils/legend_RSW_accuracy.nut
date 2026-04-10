@@ -1,7 +1,6 @@
 this.legend_RSW_accuracy <- this.inherit("scripts/skills/skill", {
 	m = {},
-	function create()
-	{
+	function create() {
 		::Legends.Effects.onCreate(this, ::Legends.Effect.LegendRswAccuracy);
 		this.m.Description = "Rune Sigil: Accuracy";
 		this.m.Icon = "ui/rune_sigils/legend_rune_sigil.png";
@@ -12,13 +11,10 @@ this.legend_RSW_accuracy <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = true;
 	}
 
-	function onUpdate (_properties)
-	{
-		if (this.getItem() == null)
-		{
-			return;
+	function onAnySkillUsed( _skill, _targetEntity, _properties ) {
+		if (_skill.isAttack() && _skill.getItem() != null && _skill.getItem().getID() == this.getItem().getID()) {
+			_properties.MeleeSkillMult *= (1.0 + ((this.getItem().getRuneBonus1() * 1.0) / 100.0));
+			_properties.RangedSkillMult *= (1.0 + ((this.getItem().getRuneBonus2() * 1.0) / 100.0));
 		}
-		_properties.MeleeSkillMult *= (1.0 + ((this.getItem().getRuneBonus1() * 1.0) / 100.0));
-		_properties.RangedSkillMult *= (1.0 + ((this.getItem().getRuneBonus2() * 1.0) / 100.0));
 	}
 });

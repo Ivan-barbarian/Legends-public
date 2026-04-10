@@ -19,7 +19,19 @@ this.legend_RSW_blazing <- this.inherit("scripts/skills/skill", {
 	}
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor ) {
-		if (this.getItem() == null)
+		if ( _skill == null || _skill.m.IsWeaponSkill == false )
+			return;
+
+		if (!_skill.isAttack())
+			return;
+
+		if (_skill.getItem() == null)
+			return;
+
+		if (_skill.getItem().getID() != this.getItem().getID())
+			return;
+
+		if (::Legends.S.isEntityNullOrDead(_targetEntity)
 			return;
 
 		local p = {
@@ -36,9 +48,6 @@ this.legend_RSW_blazing <- this.inherit("scripts/skills/skill", {
 			Callback = ::Const.Tactical.Common.onApplyFireRune,
 			Applicable = @(_a) true
 		};
-
-		if (::Legends.S.isEntityNullOrDead(_targetEntity)
-			return;
 
 		local tile = this.m.TargetTile != null ? this.m.TargetTile : _target.getTile();
 		if (tile == null)
