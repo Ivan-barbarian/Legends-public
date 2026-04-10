@@ -208,7 +208,7 @@ class VersionExtractor:
 		"""Extract build name from register_legends.nut"""
 		with open(self.register_file, 'r') as f:
 			content = f.read()
-			match = re.search(r'BuildName\s*=\s*"(.*?)""', content)
+			match = re.search(r'BuildName\s*=\s*\"([^\"]+)\"', content)
 			if match:
 				return match.group(1)
 			else:
