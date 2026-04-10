@@ -18,6 +18,8 @@
 			this.m.FatigueCost = 13;
 			this.m.DirectDamageMult = 0.25;
 			this.m.HitChanceBonus = 5;
+			this.m.InjuriesOnBody = this.Const.Injury.CuttingAndPiercingBody;
+			this.m.InjuriesOnHead = this.Const.Injury.CuttingAndPiercingHead;
 		}
 	}
 
