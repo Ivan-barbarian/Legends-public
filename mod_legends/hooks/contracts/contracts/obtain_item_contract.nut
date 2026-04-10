@@ -60,7 +60,7 @@
 			"Sun-Fired Chalice",
 			"Basket Woven by the Blind Prophet",
 			"Bell of Good Tidings",
-			"Windchimes of Safe Passage"
+			"Windchimes of Safe Passage",
 			"Crown of Hollow Branches",
 			"Black Tear of Vellorien",
 			"Grinning Idol",
@@ -80,7 +80,7 @@
 	o.create = function()
 	{
 		create();
-this.m.DescriptionTemplates = [
+		this.m.DescriptionTemplates = [
 			"Townsfolk claim that a missing relic belonging to them has turned up in a nearby location. The place is allegedly cursed.",
 			"Rumors of some fancy lost relic being unearthed in nearby ruins has begun to circulate among the local inns.",
 			"Tales of lost treasure have been drawing adventurers and thrill-seekers to these parts for years.",
@@ -89,7 +89,7 @@ this.m.DescriptionTemplates = [
 			"You get to be the latest in a long-line of missing adventurers sent to find some local bauble.",
 			"You doubt this yokel relic even exists. Still, people have gone missing, so there is danger.",
 			"\'No-one ever comes back\'. Oh, you have a great feeling about this one.",
-			"Steal a relic, which may not exist, from a dangerous location which most folk don\'t return from. Perfect.", // 
+			"Steal a relic, which may not exist, from a dangerous location which most folk don\'t return from. Perfect.", //
 			"The inns are full of locals telling tall tales about mighty artifacts of power.",
 			"A relic could make a mighty profit or prize, if it turns out to be real of course",
 			"Whispers of a long-lost relic discovered in the nearby forest have the townsfolk buzzing with excitement.",
@@ -98,6 +98,7 @@ this.m.DescriptionTemplates = [
 			"Based on nothing but rumour & hearsay, you\'ll be paid to investigate some local legend.",
 			"A shepard claims to have found the burial site of a holy relic. Sounds like a load of hogwash, but you will be paid to investigate.",
 			"Reports of a lost artifact supposedly discovered in an abandoned temple have piqued local interest.",
+			"Whispers of a long-lost relic discovered in the nearby forest have the townsfolk buzzing with excitement.",
 		];
 	}
 
@@ -112,6 +113,27 @@ this.m.DescriptionTemplates = [
 		// "A shepard claims to have found the burial site of the %s. Sounds like a load of hogwash, but you will be paid to investigate.",
 		// "The location of the mighty %s has been a closely guarded secret for years.",
 		// "The %s is legendary in these parts. You\'ll be paid well to locate it.",
+
+	local start = o.start;
+	o.start = function () {
+		start();
+		this.m.Flags.set("ItemName", ::MSU.Array.rand(this.m.Items));
+	}
+
+	// Ran when we actually add the contract
+	o.formatDescription <- function ()
+	{
+		if (!this.m.Flags.has("ItemName"))
+			this.m.Flags.set("ItemName", ::MSU.Array.rand(this.m.Items));
+
+		local r = ::MSU.Array.rand(this.m.DescriptionTemplates);
+
+		if (r.find("%") != null)
+			r = format(r, ::Const.UI.getColorized(this.m.Flags.get("ItemName"), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+
+		this.m.Description = r;
+	}
+
 
 	local createStates = o.createStates;
 	o.createStates = function()
