@@ -97,6 +97,7 @@ this.m.DescriptionTemplates = [
 			"Relics? Load of old dung in your opinion. At least the job pays well.",
 			"Based on nothing but rumour & hearsay, you\'ll be paid to investigate some local legend.",
 			"A shepard claims to have found the burial site of a holy relic. Sounds like a load of hogwash, but you will be paid to investigate.",
+			"Reports of a lost artifact supposedly discovered in an abandoned temple have piqued local interest.",
 		];
 	}
 
