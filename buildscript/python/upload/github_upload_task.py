@@ -29,7 +29,7 @@ class GithubUploadTask:
 		if version:
 			_version = version
 
-		release = self.client.create_draft(CreateDraftReleaseRequest(version, branch, releaseName, description, draft, prerelease, generateNotes))
+		release = self.client.create_draft(CreateDraftReleaseRequest(_version, branch, releaseName, description, draft, prerelease, generateNotes))
 
 		for file in files:
 			self.fileClient.upload_file(release, file, os.path.basename(file))

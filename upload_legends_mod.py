@@ -14,7 +14,7 @@ def main():
 	bb_dir = Path(config.BB_DIR)
 
 	file = bb_dir / version_extractor.artifact_name_mod()
-	assets_file = bb_dir / version_extractor.artifact_name_mod()
+	assets_file = bb_dir / version_extractor.artifact_name_assets()
 
 	if not file.exists():
 		print(f"{version_extractor.artifact_name_mod()} or {version_extractor.artifact_name_assets()} does not exist, calling build script")
@@ -49,14 +49,14 @@ To install: drop into 'data' Battle Brothers folder
 
 		desc = f"""
 # {current_version} - {build_name}
-	
+
 `SAVE COMPATIBLE WITH {base_version}+`
 `DO NOT UNZIP YOUR MOD FILES`
 `REMOVE ALL YOUR PREVIOUS OFFICIAL LEGENDS PATCHES AND VERSIONS`
 
 Replace the `mod_legends-{previous_version}.zip` with `{version_extractor.artifact_name_mod()}`
 You need `{version_extractor.artifact_name_assets()}` to play. Download both zips.
-	
+
 ## Fixes
 		""".strip()
 		github_task = GithubUploadTask(config.GITHUB_TOKEN, owner="Battle-Brothers-Legends", repo="Legends-public")
