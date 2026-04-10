@@ -2,7 +2,7 @@ from . import LazyFileReader
 from .github_model import *
 from dataclasses import asdict
 from tqdm import tqdm
-import os, dacite, requests
+import os, dacite, requests, webbrowser
 
 
 
@@ -41,6 +41,7 @@ class GithubClient:
 			datetime: datetime.fromisoformat
 		})
 		self.base_url = "https://api.github.com"
+		self.url = "https://github.com"
 		self.owner = owner
 		self.repo = repo
 		self.headers = {
@@ -57,3 +58,10 @@ class GithubClient:
 			return dacite.from_dict(data_class=CreateDraftReleaseResponse, data=response.json(), config=self.config)
 		else:
 			raise dacite.from_dict(data_class=ApiError, data=response.json(), config=self.config)
+
+	@staticmethod
+	def openBrowser(draft, url):
+		if draft: # show edit page for drafts
+			webbrowser.open(url.replace("/releases/tag/", "/releases/edit/"))
+		else: # otherwise show release
+			webbrowser.open(url)

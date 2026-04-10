@@ -66,7 +66,13 @@ You need `{version_extractor.artifact_name_assets()}` to play. Download both zip
 
 		github_task = GithubUploadTask(config.GITHUB_TOKEN, owner="Battle-Brothers-Legends", repo="Legends-public")
 		try:
-			github_task.run([assets_file, file], desc, branch=f"release/{base_version}", releaseName=f"{build_name} {current_version}")
+			github_task.run(
+				files=[assets_file, file],
+				description=desc,
+				branch=f"release/{base_version}",
+				releaseName=f"{build_name} {current_version}",
+				openBrowserWithRelease=config.GITHUB_OPEN_RELEASE
+			)
 		except ApiError as e:
 			print(e.message)
 	else:
