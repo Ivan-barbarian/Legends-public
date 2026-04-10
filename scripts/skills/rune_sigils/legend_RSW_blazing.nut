@@ -31,7 +31,7 @@ this.legend_RSW_blazing <- this.inherit("scripts/skills/skill", {
 		if (_skill.getItem().getID() != this.getItem().getID())
 			return;
 
-		if (::Legends.S.isEntityNullOrDead(_targetEntity)
+		if (::Legends.S.isEntityNullOrDead(_targetEntity))
 			return;
 
 		local p = {
