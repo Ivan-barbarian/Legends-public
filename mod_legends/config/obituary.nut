@@ -82,7 +82,7 @@
 	@() "Replace the 3 star talent icon (row of 3) with a triangle of stars.\nHotkey: " + ::Legends.Obituary.getColoredKeybindText("stacked_talent_stars")
 ];
 ::Legends.Obituary.Tooltip["AddToObituary"] <- [
-	"Add To Obituary",
+	"Record their fate in the ledger",
 	@() "This bro will be added to the obituary, the same as any deceased bro or those who left due to certain events.\n\nThe reason shown for their departure may vary, and the tone of the message depends on whether you paid them compensation when dismissing them."
 ];
 
