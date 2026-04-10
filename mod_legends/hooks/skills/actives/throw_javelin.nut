@@ -22,6 +22,28 @@
 		this.m.Delay = 150;
 	}
 
+	o.getAmmo = function ()
+	{
+		local item = this.getItem();
+
+		if (item == null)
+		{
+			return 0;
+		}
+
+		return item.getAmmo();
+	}
+
+	o.consumeAmmo = function ()
+	{
+		local item = this.getItem();
+
+		if (item != null)
+		{
+			item.consumeAmmo();
+		}
+	}
+
 	o.getTooltip = function ()
 	{
 		local tooltip = this.getRangedTooltip(this.getDefaultTooltip());

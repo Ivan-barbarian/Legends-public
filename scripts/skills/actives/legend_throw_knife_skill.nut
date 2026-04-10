@@ -102,7 +102,7 @@ this.legend_throw_knife_skill <- this.inherit("scripts/skills/skill", {
 
 	function getAmmo()
 	{
-		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local item = this.getItem();
 
 		if (item == null)
 		{
@@ -114,13 +114,11 @@ this.legend_throw_knife_skill <- this.inherit("scripts/skills/skill", {
 
 	function consumeAmmo()
 	{
-		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local item = this.getItem();
 
 		if (item != null)
 		{
 			item.consumeAmmo();
-			if (this.canDoubleGrip());
-				item.consumeAmmo();
 		}
 	}
 
