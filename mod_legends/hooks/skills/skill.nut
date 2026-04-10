@@ -1690,9 +1690,6 @@
 			return;
 		}
 
-		if (::Legends.S.isEntityNullOrDead(_info.TargetEntity))
-			return;
-
 		_info.Container.onTargetHit(_info.Skill, _info.TargetEntity, hitInfo.BodyPart, hitInfo.DamageInflictedHitpoints, hitInfo.DamageInflictedArmor);
 		_info.User.getItems().onDamageDealt(_info.TargetEntity, this, hitInfo);
 
