@@ -53,13 +53,13 @@ This item has the power of the rune sigil of Power:
 	Script = "scripts/items/rune_sigils/legend_vala_inscription_token",
 	Tooltip = @"
 This item has the power of the rune sigil of Accuracy:
-[color=%positive%]+%bonus1%%[/color] Melee skill.
-[color=%positive%]+%bonus2%%[/color] Ranged skill.
+[color=%positive%]+%bonus1%%[/color] Melee skill on attacks with this weapon.
+[color=%positive%]+%bonus2%%[/color] Ranged skill on attacks with this weapon.
 	",
 	RuneTooltip = @"
 This item has the power of the rune sigil of Accuracy:
-[color=%positive%]+3%[/color] to [color=%positive%]+%max1%%[/color] Melee skill.
-[color=%positive%]+3%[/color] to [color=%positive%]+%max2%%[/color] Ranged skill.
+[color=%positive%]+3%[/color] to [color=%positive%]+%max1%%[/color] Melee skill on attacks with the weapon.
+[color=%positive%]+3%[/color] to [color=%positive%]+%max2%%[/color] Ranged skill on attacks with the weapon.
 	",
 	setRuneBonus = function(_item, _bonus) {
 		if (_bonus) {
