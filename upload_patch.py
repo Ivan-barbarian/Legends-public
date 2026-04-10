@@ -1,8 +1,12 @@
 from pathlib import Path
 from buildscript.lib import VersionExtractor, load_config
-from buildscript.python.upload import NexusUploadTask
-from buildscript.python.upload import GithubUploadTask
+from buildscript.python.upload import NexusUploadTask, GithubUploadTask, ApiError
+import subprocess
+import build_patch
 
+def commits(tag: str) -> str:
+	messages = subprocess.check_output(["git", "log", f"{tag}..HEAD", "--no-merges", "--format=%s", "--reverse"], encoding="utf-8").strip()
+	return "\n".join([f"- {m}" for m in messages.split("\n")])
 
 def main():
 	config = load_config(Path(__file__).parent / ".build_config.py")
@@ -15,14 +19,12 @@ def main():
 
 	file = bb_dir / version_extractor.artifact_name_mod()
 
-	if not file.exists():
-		print(f"{version_extractor.artifact_name_mod()} does not exist, calling build script")
-		import build_patch
-		build_patch.main()
+	build_patch.main()
 
 	if config.NEXUS_TOKEN is not None:
 		nexus_task = NexusUploadTask(config.NEXUS_TOKEN, 60)
-		nexus_task.run(file, f"""
+		try:
+			nexus_task.run(file, f"""
 REQUIRES VERSION 1.5.1.0+ OF VANILLA GAME
 	
 SAVE COMPATIBLE WITH {base_version}+
@@ -32,7 +34,9 @@ DO NOT UNZIP YOUR MOD FILES
 You need {version_extractor.artifact_name_assets()} to play!
 
 To install: drop into 'data' Battle Brothers folder
-		""".strip())
+			""".strip())
+		except ApiError as e:
+			print(e.message)
 	else:
 		print("NEXUS_TOKEN not found in config, skipping upload")
 
@@ -52,9 +56,13 @@ Replace the `mod_legends-{previous_version}.zip` with `{version_extractor.artifa
 You need `{version_extractor.artifact_name_assets()}` to play. If you don't have it - download it from [here](https://github.com/Battle-Brothers-Legends/Legends-public/releases/tag/{version_extractor.get_legends_assets_version()}).
 	
 ## Fixes
+{commits(previous_version)}
 		""".strip()
 		github_task = GithubUploadTask(config.GITHUB_TOKEN, owner="Battle-Brothers-Legends", repo="Legends-public")
-		github_task.run([file], desc, branch=f"release/{base_version}", releaseName=f"{build_name} {current_version}")
+		try:
+			github_task.run([file], desc, branch=f"release/{base_version}", releaseName=f"{build_name} {current_version}")
+		except ApiError as e:
+			print(e.message)
 	else:
 		print("GITHUB_TOKEN not found in config, skipping upload")
 
