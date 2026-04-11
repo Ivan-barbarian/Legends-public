@@ -20,6 +20,7 @@
 			this.m.HitChanceBonus = 5;
 			this.m.InjuriesOnBody = this.Const.Injury.CuttingAndPiercingBody;
 			this.m.InjuriesOnHead = this.Const.Injury.CuttingAndPiercingHead;
+			this.m.IsIgnoredAsAOO = true;
 		}
 	}
 
