@@ -1,4 +1,4 @@
-DamageReceivedDirectMult::mods_hookExactClass("skills/racial/ghost_racial", function (o) {
+::mods_hookExactClass("skills/racial/ghost_racial", function (o) {
 	o.m.IsWicht <- false;
 
 	o.onUpdate <- function (_properties) {
