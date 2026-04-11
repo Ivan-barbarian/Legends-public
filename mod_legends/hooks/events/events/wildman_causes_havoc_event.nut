@@ -7,14 +7,6 @@
 		create();
 		this.m.Cooldown = 60.0 * this.World.getTime().SecondsPerDay;
 		::Legends.Screens.hook(this, "A", function (_screen) {
-			if (this.m.Wildman != null && this.m.Berserker == null)
-			{
-				_screen.Text = "%townImage%Civilization is no place for a %person_wildman% like %wildman% and %they_wildman% quickly proves it.\n\nApparently, the damned %person_wildman% went crazy while in a shop and trashed the whole place. As the story goes, %they_wildman% just walked in and started taking things, not quite understanding the social norms of paying for goods. The shop owner then came after %them_wildman% with a broom, trying to shoo the %person_wildman% out of his store. Believing the broom a monster, the %person_wildman% proceeded to go completely crazy. Judging by the reports, it was quite the commotion, up to and including shite throwing.\n\nNow the shop owner is in your face demanding compensation for the damage done. Apparently he\'s wanting %compensation% crowns. Behind him, a few town militia stand with very watchful eyes.";
-			}
-			else
-			{
-				_screen.Text = "%townImage%Civilization is no place for a %person_berserker% like %wildman% and %they_berserker% quickly proves it.\n\nApparently, the damned %person_berserker% went crazy while in a shop and trashed the whole place. As the story goes, %they_berserker% just walked in and started taking things, not quite understanding the social norms of paying for goods. The shop owner then came after %them_berserker% with a broom, trying to shoo the %person_berserker% out of his store. Believing the broom a monster, the %person_berserker% proceeded to go completely crazy. Judging by the reports, it was quite the commotion, up to and including shite throwing.\n\nNow the shop owner is in your face demanding compensation for the damage done. Apparently he\'s wanting %compensation% crowns. Behind him, a few town militia stand with very watchful eyes.";
-			}
 			_screen.Options = [];
 			_screen.start <- function ( _event ) {
 				this.Options.push({
@@ -371,20 +363,36 @@
 
 		// this.logInfo("Wildnubs= " + candidates_wildchars.len() + " WildBoss= " + candidates_berserkers.len() + " Traders= " + thetraders.len());
 
-		if (candidates_wildchars.len() == 0 && candidates_berserkers.len() == 0)
-			return;
+		local hasBerserker = candidates_berserkers.len() != 0;
+		local hasWildman = candidates_wildchars.len() != 0;
 
-		if (candidates_berserkers.len() != 0)
+		if (!hasBerserker && !hasWildman) {
+			return;
+		}
+
+		if (hasBerserker && hasWildman) {
+			this.Math.rand(0, candidates_wildchars.len() + candidates_berserkers.len() - 1) < candidates_berserkers.len() ? hasWildman = false : hasBerserker = false;
+		}
+
+		if (hasBerserker)
 		{
 			this.m.Compensation = this.Math.round(1000 + 0.05 * this.World.Assets.getMoney());
 			this.m.Berserker = candidates_berserkers[this.Math.rand(0, candidates_berserkers.len() - 1)];
 		}
 
-		if (candidates_wildchars.len() != 0)
+		if (hasWildman)
 		{
 			this.m.Compensation = this.Math.round(500 + 0.03 * this.World.Assets.getMoney());
 			this.m.Wildman = candidates_wildchars[this.Math.rand(0, candidates_wildchars.len() - 1)];
 		}
+
+		::Legends.Screens.hook(this, "A", function (_screen) {
+			if (this.m.Wildman != null && this.m.Berserker == null)	{
+				_screen.Text = "%townImage%Civilization is no place for a %person_wildman% like %wildman% and %they_wildman% quickly proves it.\n\nApparently, the damned %person_wildman% went crazy while in a shop and trashed the whole place. As the story goes, %they_wildman% just walked in and started taking things, not quite understanding the social norms of paying for goods. The shop owner then came after %them_wildman% with a broom, trying to shoo the %person_wildman% out of his store. Believing the broom a monster, the %person_wildman% proceeded to go completely crazy. Judging by the reports, it was quite the commotion, up to and including shite throwing.\n\nNow the shop owner is in your face demanding compensation for the damage done. Apparently he\'s wanting %compensation% crowns. Behind him, a few town militia stand with very watchful eyes.";
+			}
+			else {
+				_screen.Text = "%townImage%Civilization is no place for a %person_berserker% like %berserker% and %they_berserker% quickly proves it.\n\nApparently, the damned %person_berserker% went crazy while in a shop and trashed the whole place. As the story goes, %they_berserker% just walked in and started taking things, not quite understanding the social norms of paying for goods. The shop owner then came after %them_berserker% with a broom, trying to shoo the %person_berserker% out of his store. Believing the broom a monster, the %person_berserker% proceeded to go completely crazy. Judging by the reports, it was quite the commotion, up to and including shite throwing.\n\nNow the shop owner is in your face demanding compensation for the damage done. Apparently he\'s wanting %compensation% crowns. Behind him, a few town militia stand with very watchful eyes.";
+			}}.bindenv(this));
 
 		if (thetraders.len() != 0)
 			this.m.Trader = thetraders[this.Math.rand(0, thetraders.len() - 1)];
