@@ -1,4 +1,4 @@
-::mods_hookExactClass("skills/racial/ghost_racial", function (o) {
+DamageReceivedDirectMult::mods_hookExactClass("skills/racial/ghost_racial", function (o) {
 	o.m.IsWicht <- false;
 
 	o.onUpdate <- function (_properties) {
@@ -19,7 +19,7 @@
 		if (_skill != null)
 			return;
 
-		if (_skill.getID == ::Legends.Effects.getID(::Legends.Effect.LegendConsecratedEffect)) {
+		if (_skill.getID == ::Legends.Effects.getID(::Legends.Effect.LegendConsecratedEffect) && this.m.IsWicht) {
 			_hitInfo.DamageDirect = 0;
 			return;
 		}
@@ -32,6 +32,7 @@
 			return;
 		}
 
+		_hitInfo.DamageReceivedDirectMult = 0;
 		_hitInfo.DamageDirect = 0;
 		_hitInfo.DamageMinimum = 0;
 	}
