@@ -9,6 +9,12 @@
 		::Legends.Screens.hook(this, "A", function (_screen) {
 			_screen.Options = [];
 			_screen.start <- function ( _event ) {
+				if (_event.m.Wildman != null && _event.m.Berserker == null)	{
+					this.Text = "%townImage%Civilization is no place for a %person_wildman% like %wildman% and %they_wildman% quickly proves it.\n\nApparently, the damned %person_wildman% went crazy while in a shop and trashed the whole place. As the story goes, %they_wildman% just walked in and started taking things, not quite understanding the social norms of paying for goods. The shop owner then came after %them_wildman% with a broom, trying to shoo the %person_wildman% out of his store. Believing the broom a monster, the %person_wildman% proceeded to go completely crazy. Judging by the reports, it was quite the commotion, up to and including shite throwing.\n\nNow the shop owner is in your face demanding compensation for the damage done. Apparently he\'s wanting %compensation% crowns. Behind him, a few town militia stand with very watchful eyes.";
+				}
+				else {
+					this.Text = "%townImage%Civilization is no place for a %person_berserker% like %berserker% and %they_berserker% quickly proves it.\n\nApparently, the damned %person_berserker% went crazy while in a shop and trashed the whole place. As the story goes, %they_berserker% just walked in and started taking things, not quite understanding the social norms of paying for goods. The shop owner then came after %them_berserker% with a broom, trying to shoo the %person_berserker% out of his store. Believing the broom a monster, the %person_berserker% proceeded to go completely crazy. Judging by the reports, it was quite the commotion, up to and including shite throwing.\n\nNow the shop owner is in your face demanding compensation for the damage done. Apparently he\'s wanting %compensation% crowns. Behind him, a few town militia stand with very watchful eyes.";
+				}
 				this.Options.push({
 					Text = "This ain\'t our problem.",
 					function getResult( _event ) {
@@ -385,14 +391,6 @@
 			this.m.Compensation = this.Math.round(500 + 0.03 * this.World.Assets.getMoney());
 			this.m.Wildman = candidates_wildchars[this.Math.rand(0, candidates_wildchars.len() - 1)];
 		}
-
-		::Legends.Screens.hook(this, "A", function (_screen) {
-			if (this.m.Wildman != null && this.m.Berserker == null)	{
-				_screen.Text = "%townImage%Civilization is no place for a %person_wildman% like %wildman% and %they_wildman% quickly proves it.\n\nApparently, the damned %person_wildman% went crazy while in a shop and trashed the whole place. As the story goes, %they_wildman% just walked in and started taking things, not quite understanding the social norms of paying for goods. The shop owner then came after %them_wildman% with a broom, trying to shoo the %person_wildman% out of his store. Believing the broom a monster, the %person_wildman% proceeded to go completely crazy. Judging by the reports, it was quite the commotion, up to and including shite throwing.\n\nNow the shop owner is in your face demanding compensation for the damage done. Apparently he\'s wanting %compensation% crowns. Behind him, a few town militia stand with very watchful eyes.";
-			}
-			else {
-				_screen.Text = "%townImage%Civilization is no place for a %person_berserker% like %berserker% and %they_berserker% quickly proves it.\n\nApparently, the damned %person_berserker% went crazy while in a shop and trashed the whole place. As the story goes, %they_berserker% just walked in and started taking things, not quite understanding the social norms of paying for goods. The shop owner then came after %them_berserker% with a broom, trying to shoo the %person_berserker% out of his store. Believing the broom a monster, the %person_berserker% proceeded to go completely crazy. Judging by the reports, it was quite the commotion, up to and including shite throwing.\n\nNow the shop owner is in your face demanding compensation for the damage done. Apparently he\'s wanting %compensation% crowns. Behind him, a few town militia stand with very watchful eyes.";
-			}}.bindenv(this));
 
 		if (thetraders.len() != 0)
 			this.m.Trader = thetraders[this.Math.rand(0, thetraders.len() - 1)];
