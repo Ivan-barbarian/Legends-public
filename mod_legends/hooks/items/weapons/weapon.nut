@@ -14,14 +14,18 @@
 	}
 
 	local onDamageDealt = o.onDamageDealt;
-	o.onDamageDealt = function ( _target, _skill, _hitInfo )
-	{
+	o.onDamageDealt = function (_target, _skill, _hitInfo) {
 		if (_skill.m.IsExecutingOffhand) {
 			_skill.m.IsExecutingOffhand = false;
-			return;
 		}
 
-		onDamageDealt( _target, _skill, _hitInfo );
+		// Both mainhand and offhand weapons are called for every hit, so we have to check
+		// which weapon actually executed the skill to avoid doubling durability loss.
+		local item = _skill.m.Item;
+		if (item != null && !item.isNull() && item.getInstanceID() != this.getInstanceID()) {
+			return;
+		}
+		onDamageDealt(_target, _skill, _hitInfo);
 	}
 
 	local getTooltip = o.getTooltip;
