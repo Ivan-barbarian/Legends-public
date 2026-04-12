@@ -2789,7 +2789,7 @@
 		Plate = [
 			[1, "plate/legend_armor_leather_lamellar", 1]], // 50 -6 250
 		Cloak = [
-			[1, "cloak/legend_armor_cloak", 21]], // 10 -1 100
+			[1, "cloak/legend_armor_cloak", 7]], // 10 -1 100
 		Tabard = [
 			[1, "tabard/legend_armor_tabard_noble"]], // 10 -0 1000
 		Attachments = [
