@@ -16,23 +16,6 @@
 	}
 
 	o.onBeforeDamageReceived <- function (_attacker, _skill, _hitInfo, _properties) {
-		if (_skill != null)
-			return;
-
-		if (_skill.getID == ::Legends.Effects.getID(::Legends.Effect.LegendConsecratedEffect) && this.m.IsWicht) {
-			_hitInfo.DamageDirect = 0;
-			return;
-		}
-
-		if (_attacker.getID() == this.getContainer().getActor().getID()
-			|| _skill == null
-			|| !_skill.isAttack()
-			|| !_skill.isUsingHitchance())
-		{
-			return;
-		}
-
-		_hitInfo.DamageReceivedDirectMult = 0;
 		_hitInfo.DamageDirect = 0;
 		_hitInfo.DamageMinimum = 0;
 	}
