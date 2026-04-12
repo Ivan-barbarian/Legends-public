@@ -1117,6 +1117,7 @@
 		Cloth = [
 			[1, "cloth/legend_armor_gambeson", [1, 2, 3]], // 65 -8 250
 			[1, "cloth/legend_armor_gambeson_wolf"], // 70 -9 300
+			[1, "cloth/legend_armor_studded_aketon"],
 			[1, "cloth/legend_armor_quilted_aketon"], // 55 -6 150
 		],
 		Chain = [
@@ -1420,6 +1421,7 @@
 	Sets = [{
 		Cloth = [
 			[1, "cloth/legend_armor_gambeson_wolf"], // 70 -9 300
+			[1, "cloth/legend_armor_studded_aketon"] 
 		],
 		Chain = [
 			[1, "chain/legend_armor_basic_mail"], // 85 -12 800
@@ -1735,7 +1737,8 @@
 		Cloth = [
 			[2, "cloth/legend_armor_gambeson"], // 65 -8 250
 			[2, "cloth/legend_armor_gambeson", [1, 2, 3]], // 65 -8 250
-			[5, "cloth/legend_armor_gambeson_wolf"] // 70 -9 300
+			[5, "cloth/legend_armor_gambeson_wolf"], // 70 -9 300
+			[1, "cloth/legend_armor_studded_aketon"] 
 		],
 		Chain = [
 			[1, "chain/legend_armor_hauberk"], // 95 -11 1750
@@ -1797,7 +1800,8 @@
 		Cloth = [
 			[2, "cloth/legend_armor_gambeson"], // 65 -8 250
 			[2, "cloth/legend_armor_gambeson", [1, 2, 3]], // 65 -8 250
-			[5, "cloth/legend_armor_gambeson_wolf"] // 70 -9 300
+			[5, "cloth/legend_armor_gambeson_wolf"], // 70 -9 300
+			[1, "cloth/legend_armor_studded_aketon"] 
 		],
 		Chain = [
 			[1, "chain/legend_armor_reinforced_mail"], // 110 -15 1750
@@ -1828,7 +1832,8 @@
 		Cloth = [
 			[2, "cloth/legend_armor_gambeson"], // 65 -8 250
 			[2, "cloth/legend_armor_gambeson", [1, 2, 3]], // 65 -8 250
-			[5, "cloth/legend_armor_gambeson_wolf"] // 70 -9 300
+			[5, "cloth/legend_armor_gambeson_wolf"], // 70 -9 300
+			[1, "cloth/legend_armor_studded_aketon"] 
 		],
 		Chain = [
 			[1, "chain/legend_armor_reinforced_mail"], // 110 -15 1750
@@ -1856,40 +1861,48 @@
 	Script = "",
 	Sets = [{
 		Cloth = [
-			[2, "cloth/legend_armor_gambeson"], // 65 -8 250
-			[5, "cloth/legend_armor_gambeson_wolf"] // 70 -9 300
+			[1, "cloth/legend_armor_gambeson"], // 65 -8 250
+			[4, "cloth/legend_armor_quilted_aketon"], // 55 -6 150
+			[4, "cloth/legend_armor_quilted_aketon", [1,26,27,28,29,30,31]], // 55 -6 150
+			[1, "cloth/legend_armor_gambeson_wolf"], // 70 -9 300
+			[1, "cloth/legend_armor_studded_aketon"]
 		],
 		Chain = [
-			[1, "chain/legend_armor_ancient_mail"] // 35 -6 300
+			[1, "chain/legend_armor_ancient_mail"], // 35 -6 300
+			[1, "chain/legend_armor_ancient_double_mail"] // 35 -6 300
 		],
 		Plate = [
-			[1, "plate/legend_armor_hide_and_bone_armor"] // 80 -11 350
+			[1, "plate/legend_armor_hide_and_bone_armor"],
+			[1, "plate/legend_armor_animal_hide_armor"],
+			[1, "plate/legend_armor_animal_hide_armor_reinforced"],
 		],
 		Cloak = [
 		],
 		Tabard = [
-
 		],
 		Attachments = [
-			[4, "armor_upgrades/legend_bone_platings_upgrade"]
+			[4, "armor_upgrades/legend_additional_padding_upgrade"],
+			[4, "armor_upgrades/legend_barbarian_horn_upgrade"],
+			[1, "armor_upgrades/legend_bone_platings_upgrade"]
 		]
 	}]
 };
 ::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.barbarian_chosen_armor_00);
 
 ::Legends.Armor.Standard.barbarian_chosen_armor_01 <- {
-	ID = "barbarian_chosen_armor_01", // 190-290 -27-43 850-2270
+	ID = "barbarian_chosen_armor_01", // 190-285 -27-43 850-2270
 	Script = "",
 	Sets = [{
 		Cloth = [
 			[1, "cloth/legend_armor_gambeson"], // 65 -8 250
 			[4, "cloth/legend_armor_quilted_aketon"], // 55 -6 150
 			[4, "cloth/legend_armor_quilted_aketon", [1,26,27,28,29,30,31]], // 55 -6 150
-			[1, "cloth/legend_armor_gambeson_wolf"] // 70 -9 300
+			[1, "cloth/legend_armor_gambeson_wolf"], // 70 -9 300
+			[1, "cloth/legend_armor_studded_aketon"]
 		],
 		Chain = [
 			[1, "chain/legend_armor_reinforced_worn_mail_shirt"], // 65 -11 350
-			[1, "chain/legend_armor_ancient_double_mail", 1], // 80 -14 750
+			[1, "chain/legend_armor_ancient_double_mail"], // 80 -14 750
 		],
 		Plate = [
 			[1, "plate/legend_armor_scrap_metal_armor"], // 65 -10 250
@@ -1898,23 +1911,86 @@
 		],
 		Cloak = [
 			[1, ""],
-			[1, "cloak/legend_armor_cloak_wooly_dark"], // 15 -2 120
-			[1, "cloak/legend_armor_southern_scarf", 7], // 5 -0 100
-			[1, "cloak/legend_armor_southern_scarf", 6], // 5 -0 100
-			[1, "cloak/legend_armor_southern_scarf", 13], // 5 -0 100
+			[5, "cloak/legend_armor_cloak_wooly_dark"], // 15 -2 120
 			[1, "cloak/legend_direwolf_pelt_cloak"] // 10
 		],
 		Tabard = [
-			[1, "tabard/legend_armor_southern_shoulder_cloth", 7], // 5 -0 100
-			[1, "tabard/legend_armor_southern_wrap"], // 5 -0 100
 		],
 		Attachments = [
-			[2, ""],
+			[9, ""],
 			[1, "armor_upgrades/legend_bone_platings_upgrade"]
 		]
 	}]
 };
 ::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.barbarian_chosen_armor_01);
+
+::Legends.Armor.Standard.barbarian_chosen_armor_02 <- {
+	ID = "barbarian_chosen_armor_02", // 190-285 -27-43 850-2270
+	Script = "",
+	Sets = [{
+		Cloth = [
+			[1, "cloth/legend_armor_gambeson"], // 65 -8 250
+			[4, "cloth/legend_armor_quilted_aketon"], // 55 -6 150
+			[4, "cloth/legend_armor_quilted_aketon", [1,26,27,28,29,30,31]], // 55 -6 150
+			[1, "cloth/legend_armor_gambeson_wolf"], // 70 -9 300
+			[1, "cloth/legend_armor_studded_aketon"]
+		],
+		Chain = [
+			[1, "chain/legend_armor_reinforced_worn_mail"],
+			[1, "chain/legend_armor_reinforced_mail"]
+		],
+		Plate = [
+			[1, "plate/legend_armor_hide_and_bone_armor"],
+			[1, "plate/legend_armor_animal_hide_armor"],
+			[1, "plate/legend_armor_animal_hide_armor_reinforced"],
+		],
+		Cloak = [],
+		Tabard = [
+			[1, ""]
+		],
+		Attachments = [
+			[4, "armor_upgrades/legend_additional_padding_upgrade"],
+			[4, "armor_upgrades/legend_barbarian_horn_upgrade"],
+			[1, "armor_upgrades/legend_armor_skull_chain", 1]
+		],
+	}]
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.barbarian_chosen_armor_02);
+
+::Legends.Armor.Standard.barbarian_chosen_armor_03 <- {
+	ID = "barbarian_chosen_armor_03", // 190-285 -27-43 850-2270
+	Script = "",
+	Sets = [{
+		Cloth = [
+			[1, "cloth/legend_armor_gambeson"], // 65 -8 250
+			[4, "cloth/legend_armor_quilted_aketon"], // 55 -6 150
+			[4, "cloth/legend_armor_quilted_aketon", [1,26,27,28,29,30,31]], // 55 -6 150
+			[1, "cloth/legend_armor_gambeson_wolf"], // 70 -9 300
+			[1, "cloth/legend_armor_studded_aketon"]
+		],
+		Chain = [
+			[1, ""]
+		],
+		Plate = [
+			[1, "plate/legend_armor_scrap_metal_armor"], // 65 -10 250
+			[1, "plate/legend_armor_rugged_scale_armor"], // 95 -15 700
+			[1, "plate/legend_armor_heavy_iron_armor"], 
+		],
+		Cloak = [
+			[1, ""],
+			[5, "cloak/legend_armor_cloak_wooly_dark"], // 15 -2 120
+			[1, "cloak/legend_unhold_fur_cloak"]
+		],
+		Tabard = [
+			[1, ""]
+		],
+		Attachments = [
+			[9, ""],
+			[1, "armor_upgrades/legend_barbarian_horn"]
+		],
+	}]
+};
+::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.barbarian_chosen_armor_03);
 
 ::Legends.Armor.Standard.brown_monk_armor_00 <- {
 	ID = "brown_monk_armor_00", // 27-45 -2-4 75-155
@@ -2626,6 +2702,7 @@
 		Cloth = [
 			[1, "cloth/legend_armor_quilted_aketon"], // 55 -6 150
 			[1, "cloth/legend_armor_gambeson_wolf"], // 70 -9 300
+			[1, "cloth/legend_armor_studded_aketon"] 
 		],
 		Chain = [
 			[1, "chain/legend_armor_reinforced_mail"], // 110 -15 1750
