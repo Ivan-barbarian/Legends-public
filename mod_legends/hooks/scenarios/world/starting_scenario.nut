@@ -127,7 +127,7 @@
 			return;
 		}
 
-		local isRefundable = true;
+		local isRefundable = false;
 
 		if (_addSkill && _background.getContainer() != null)
 		{
@@ -136,7 +136,6 @@
 		}
 
 		_background.addPerk(_perk, _row, isRefundable);
-		if (!isRefundable) _background.getPerk(_perk).IsRefundable = false;
 	}
 
 	o.onGenerateBro <- function (_bro)
