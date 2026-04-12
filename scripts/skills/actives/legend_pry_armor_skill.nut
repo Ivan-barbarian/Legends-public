@@ -5,7 +5,7 @@ this.legend_pry_armor_skill <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendPryArmor);
-		this.m.Description = "Tear a weak spot in your opponent\'s armor to reveal a weakspot. Will apply Compromised Armor on every successful hit, which increases damage ignoring armor by 20%.";
+		this.m.Description = "Tear a weak spot in your opponent\'s armor to reveal a weakspot. Will apply Compromised Armor on every successful hit, which increases damage ignoring armor and armor damage by 20%.";
 		this.m.KilledString = "Torn Apart";
 		this.m.Icon = "skills/legend_active_pry_armor_warhammer.png";
 		this.m.IconDisabled = "skills/legend_active_pry_armor_warhammer_bw.png";
@@ -59,7 +59,7 @@ this.legend_pry_armor_skill <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Applies Compromised Armor on successful hits"
+				text = "Applies [color=%status%]Compromised Armor[/color] on successful hits"
 			}
 		]);
 		return ret;
