@@ -785,17 +785,17 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		local repair = this.getRepair();
 		local repairMax = this.getRepairMax();
 
-		if (this.getArmor() > 15 && isPlayer || this.getArmor() > 30 && this.getArmor() / this.getArmorMax() >= 0.25 && (isLucky || this.Math.rand(1, 100) <= 70) || isBlacksmithed)
+		if (this.getArmor() > 5 && isPlayer || this.getArmor() >= 5 && this.getArmor() / this.getArmorMax() >= 0.2 && (isLucky || this.Math.rand(1, 100) <= 70) || isBlacksmithed)
 		{
 			return true;
 		}
 
-		if (repair > 15 && isPlayer)
+		if (repair >= 5 && isPlayer)
 		{
 			return true;
 		}
 
-		if (repair > 30 && repair / repairMax >= 0.25 && (isLucky || this.Math.rand(1, 100) <= 70))
+		if (repair >= 5 && repair / repairMax >= 0.2 && (isLucky || this.Math.rand(1, 100) <= 70))
 		{
 			return true;
 		}
