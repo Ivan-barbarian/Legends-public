@@ -183,8 +183,21 @@
 
 ::Legends.Helmet.Ancient.ancient_priest_diadem <- {
 	ID = "ancient/ancient_priest_diadem",
-	Script = "scripts/items/legend_helmets/helmets/legend_ancient_priest_diadem",
-	Sets = []
+	Script = "",
+	Sets = [{
+		Hoods = [
+			[1, "hood/legend_helmet_southern_headband_coin"]
+		],
+		Helms = [],
+		Tops = [
+			[1, "top/legend_helmet_ancient_crown"]
+		],
+		Vanity = [
+			[1, "vanity/legend_helmet_wings"],
+			[1, "vanity/legend_helmet_feather_crest"],
+			[1, "vanity/legend_helmet_metal_bird"]
+		]
+	}]
 };
 ::Const.LegendMod.HelmObjs.push(::Legends.Helmet.Ancient.ancient_priest_diadem);
 
