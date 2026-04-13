@@ -57,7 +57,7 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 		if (this.m.IsPolearm) {
 			this.m.FatigueCost = 25;
 			this.m.ActionPointCost = 7;
-			this.m.DirectDamageMult = 0.5;
+			this.m.DirectDamageMult = 0.6;
 		}
 		if (this.m.IsTwoHanded) {
 			this.m.FatigueCost = 25;
