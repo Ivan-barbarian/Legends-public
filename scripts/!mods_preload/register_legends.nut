@@ -1,6 +1,6 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "19.3.13",
+	Version = "19.3.14",
 	Name = "Legends Mod",
 	BuildName = "Left & Right",
 	IsStartingNewCampaign = false
@@ -10,7 +10,7 @@
 ::mods_queue(::Legends.ID, [
 	"mod_legends_assets(>=19.3.13)",
 	"mod_msu(>=1.7.0)",
-	"vanilla(>=1.5.1-5)",
+	"vanilla(>=1.5.1-8)",
 	"vanilla(<1.5.2)",
 	"dlc_lindwurm",
 	"dlc_unhold",
