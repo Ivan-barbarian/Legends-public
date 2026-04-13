@@ -4,8 +4,7 @@ this.legend_throw_knife_skill <- this.inherit("scripts/skills/skill", {
 		AdditionalHitChance = -10,
 		DistractedChance = 25,
 	},
-	function create()
-	{
+	function create() {
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendThrowKnife);
 		this.m.Description = "Throw one of your backup daggers for each free hand. Grants a chance to distract the enemy on head hits. Cannot be used while engaged in melee.";
 		this.m.Icon = "skills/active_throw_knife.png";
@@ -47,13 +46,11 @@ this.legend_throw_knife_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ProjectileTimeScale = 1.5;
 	}
 
-	function getTooltip()
-	{
+	function getTooltip() {
 		local tooltip = this.getRangedTooltip(this.getDefaultTooltip());
 
 		local ammo = this.getAmmo();
-		if (ammo > 0)
-		{
+		if (ammo > 0) {
 			tooltip.push({
 				id = 8,
 				type = "text",
@@ -62,8 +59,7 @@ this.legend_throw_knife_skill <- this.inherit("scripts/skills/skill", {
 				param = [["_ammo", ammo]]
 			});
 		}
-		else
-		{
+		else {
 			tooltip.push({
 				id = 8,
 				type = "text",
@@ -72,8 +68,7 @@ this.legend_throw_knife_skill <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
-		if (this.Tactical.isActive() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
-		{
+		if (this.Tactical.isActive() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions())) {
 			tooltip.push({
 				id = 9,
 				type = "text",
@@ -85,8 +80,7 @@ this.legend_throw_knife_skill <- this.inherit("scripts/skills/skill", {
 		return tooltip;
 	}
 
-	function canDoubleGrip ()
-	{
+	function canDoubleGrip () {
 		local missinghand = this.m.Container.getSkillByID("injury.missing_hand");
 		local newhand = ::Legends.Traits.get(this, ::Legends.Trait.LegendProstheticHand);
 		local main = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
@@ -94,43 +88,37 @@ this.legend_throw_knife_skill <- this.inherit("scripts/skills/skill", {
 		return (missinghand == null || newhand != null) && main != null && off == null && main.isDoubleGrippable();
 	}
 
-	function isUsable()
-	{
+	function isUsable() {
 		local ammoNeeded = this.canDoubleGrip() ? 2 : 1;
 		return !this.Tactical.isActive() || this.skill.isUsable() && this.getAmmo() >= ammoNeeded && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
 	}
 
-	function getAmmo()
-	{
-		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+	function getAmmo() {
+		local item = this.getItem();
 
-		if (item == null)
-		{
+		if (item == null) {
 			return 0;
 		}
 
 		return item.getAmmo();
 	}
 
-	function consumeAmmo()
-	{
-		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+	function consumeAmmo() {
+		local item = this.getItem();
 
-		if (item != null)
-		{
+		if (item != null) {
 			item.consumeAmmo();
-			if (this.canDoubleGrip());
-				item.consumeAmmo();
+			if (this.canDoubleGrip()) {
+				item.consumeAmmo()
+			}
 		}
 	}
 
-	function onUse( _user, _targetTile )
-	{
+	function onUse( _user, _targetTile ) {
 		local target = _targetTile.getEntity();
 		local success = this.attackEntity(_user, _targetTile.getEntity());
 		this.consumeAmmo();
-		if (!_user.isHiddenToPlayer() || _targetTile.IsVisibleForPlayer)
-		{
+		if (!_user.isHiddenToPlayer() || _targetTile.IsVisibleForPlayer) {
 			this.m.IsDoingAttackMove = false;
 			this.getContainer().setBusy(true);
 
@@ -140,24 +128,21 @@ this.legend_throw_knife_skill <- this.inherit("scripts/skills/skill", {
 			if (::Legends.S.isEntityNullOrDead(target))
 				return success;
 
-			::Time.scheduleEvent(::TimeUnit.Virtual, 150, function ( _skill )
-			{
+			::Time.scheduleEvent(::TimeUnit.Virtual, 150, function ( _skill ) {
 
 				success = this.attackEntity(_user, target) || success;
 				_skill.m.IsDoingAttackMove = true;
 				_skill.getContainer().setBusy(false);
 			}.bindenv(this), this);		
 		}
-		else if (!::Legends.S.isEntityNullOrDead(target))
-		{
+		else if (!::Legends.S.isEntityNullOrDead(target)) {
 			return this.attackEntity(_user, target) || success;
 		}
 
 		return success;
 	}
 
-	function onTargetHit ( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
-	{
+	function onTargetHit ( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor ) {
 		if (_skill != this)
 			return;
 
@@ -167,16 +152,14 @@ this.legend_throw_knife_skill <- this.inherit("scripts/skills/skill", {
 		if (!_bodyPart == ::Const.BodyPart.Head)
 			return;
 
-		if (this.Math.rand(1, 100) <= this.m.DistractedChance)
-		{
+		if (this.Math.rand(1, 100) <= this.m.DistractedChance) {
 			::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Distracted);
 			if (!this.getContainer().getActor().isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer)
 				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " struck a hit that leaves " + this.Const.UI.getColorizedEntityName(_targetEntity) + " distracted");
 		}
 	}
 
-	function onAfterUpdate ( _properties )
-	{
+	function onAfterUpdate ( _properties ) {
 		if (this.getContainer().hasPerk(::Legends.Perk.LegendPointBlank))
 			this.m.MinRange = 1;
 
@@ -186,10 +169,8 @@ this.legend_throw_knife_skill <- this.inherit("scripts/skills/skill", {
 		this.m.DistractedChance = _properties.IsSpecializedInDaggers ? 50 : 25;
 	}
 
-	function onAnySkillUsed ( _skill, _targetEntity, _properties )
-	{
-		if (_skill == this)
-		{
+	function onAnySkillUsed ( _skill, _targetEntity, _properties ) {
+		if (_skill == this) {
 			_properties.DamageTotalMult *= 0.7;
 			_properties.RangedSkill += this.m.AdditionalAccuracy;
 			_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;

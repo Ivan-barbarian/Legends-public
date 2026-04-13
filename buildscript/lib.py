@@ -18,8 +18,9 @@ class Config:
 	REPO_DIR: str = "Legends-public"
 	BB_DIR: str = None
 	BUILD_DIR: str = "./build"
-	NEXUS_TOKEN: str = None
-	GITHUB_TOKEN: str = None
+	NEXUS_TOKEN: str = None # nexus personal api key
+	GITHUB_TOKEN: str = None # github token for uploads
+	GITHUB_OPEN_RELEASE: bool = False # open browser with release page after upload successful
 
 def load_config(config_path: Path) -> Config:
 	"""Load configuration from .build_config.py if it exists"""

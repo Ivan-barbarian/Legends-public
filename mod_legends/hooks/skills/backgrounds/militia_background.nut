@@ -50,7 +50,6 @@
 				::Const.Perks.AgileTree
 			],
 			Enemy = [
-				::Const.Perks.OutlawTree,
 				::Const.Perks.OutlawTree
 			],
 			Class = [

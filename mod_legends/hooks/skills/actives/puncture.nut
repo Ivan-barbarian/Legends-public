@@ -13,6 +13,7 @@
 			this.m.Overlay = "active_halfsword";
 			this.m.ActionPointCost = this.m.IsGreatHalfsword ? 7 : 5;
 			this.m.FatigueCost = this.m.IsGreatHalfsword ? 35 : 25;
+			this.m.IsIgnoredAsAOO = true;
 			this.m.IsHidden = true;
 		}
 	}

@@ -15,9 +15,14 @@ this.legend_compromised_armor_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsRemovedAfterBattle = true;
 	}
 
+	function getDescription() {
+		return "This character has their armor compromised from a recent strike. Increase damage ignoring armor and armor damage done by [color=%positive%]20%[/color]."
+	}
+
 	function onUpdate( _properties )
 	{
 		_properties.DamageReceivedDirectMult *= 1.2;
+		_properties.DamageReceivedArmorMult *= 1.2;
 	}
 
 	function onTurnEnd()

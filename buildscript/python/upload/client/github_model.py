@@ -23,6 +23,7 @@ class CreateDraftReleaseRequest:
 class CreateDraftReleaseResponse:
 	id: int
 	upload_url: str
+	html_url: str
 
 @dataclass
 class ListAssetsRequest:

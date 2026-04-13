@@ -49,7 +49,7 @@ this.legend_RSW_blazing <- this.inherit("scripts/skills/skill", {
 			Applicable = @(_a) true
 		};
 
-		local tile = this.m.TargetTile != null ? this.m.TargetTile : _target.getTile();
+		local tile = this.m.TargetTile != null ? this.m.TargetTile : _targetEntity.getTile();
 		if (tile == null)
 			return;
 

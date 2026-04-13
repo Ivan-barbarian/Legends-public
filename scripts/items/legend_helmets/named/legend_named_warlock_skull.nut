@@ -1,5 +1,7 @@
 this.legend_named_warlock_skull <- this.inherit("scripts/items/legend_helmets/legend_named_helmet_upgrade", {
-	m = {},
+	m = {
+		StackCount = 0
+	},
 	function create()
 	{
 		this.legend_named_helmet_upgrade.create();
@@ -45,7 +47,7 @@ this.legend_named_warlock_skull <- this.inherit("scripts/items/legend_helmets/le
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Whenever getting hurt would normally trigger a morale check, instead gain [color=%positive%]10[/color] morale"
+			text = "Gain [color=%positive%]+10[/color] bonus to resolve in morale checks for every hit you took in the battle"
 		});
 		return result;
 	}
@@ -58,7 +60,7 @@ this.legend_named_warlock_skull <- this.inherit("scripts/items/legend_helmets/le
 		this.m.Vision = 0;
 	}
 
-	// taste the pain
+	// taste the pain, kinda
 	function onDamageReceived (_damage, _fatalityType, _attacker)
 	{
 		local ret = this.legend_helmet_upgrade.onDamageReceived(_damage, _fatalityType, _attacker);
@@ -75,10 +77,8 @@ this.legend_named_warlock_skull <- this.inherit("scripts/items/legend_helmets/le
 		if (this.Tactical.TurnSequenceBar.getActiveEntity().getID() != _attacker.getID())
 			return ret;
 
-		this.getContainer().getActor().getCurrentProperties().MoraleCheckBravery[0] += 10;
-		this.getContainer().getActor().getCurrentProperties().MoraleCheckBravery[1] += 10;
-		this.getContainer().getActor().getCurrentProperties().MoraleCheckBravery[2] += 10;
-
+		++this.m.StackCount;
+		
 		return ret;
 	}
 
@@ -86,6 +86,9 @@ this.legend_named_warlock_skull <- this.inherit("scripts/items/legend_helmets/le
 	{
 		this.legend_named_helmet_upgrade.onUpdateProperties( _properties );
 		_properties.IsAffectedByLosingHitpoints = false;
+		_properties.MoraleCheckBravery[0] += this.m.StackCount * 10;
+		_properties.MoraleCheckBravery[1] += this.m.StackCount * 10;
+		_properties.MoraleCheckBravery[2] += this.m.StackCount * 10;
 	}
 
 	function randomizeValues()
@@ -94,5 +97,11 @@ this.legend_named_warlock_skull <- this.inherit("scripts/items/legend_helmets/le
 		this.m.StaminaModifier = this.Math.rand(1, 2) * -1;
 		this.m.Condition = this.Math.rand(90, 115);
 		this.m.ConditionMax = this.m.Condition;
+	}
+
+	
+	function onCombatFinished()
+	{
+		this.m.StackCount = 0;
 	}
 });

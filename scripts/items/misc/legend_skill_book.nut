@@ -124,7 +124,16 @@ this.legend_skill_book <- ::inherit("scripts/items/item", {
 				});
 				return result;
 			}
-			if (actor.getFlags().has("LegendsSkillBookCount"))
+			if (this.m.ID.find("ancient_scroll") != null && (actor.getSkills().hasTrait(::Legends.Trait.Bright) && actor.getFlags().getAsInt("LegendsScrollCount") > 2 || actor.getFlags().getAsInt("LegendsScrollCount"))) {
+				result.push({
+					id = 10,
+					type = "text",
+					icon = "ui/icons/cancel.png",
+					text = "Cannot be used as this chracter has already read a skill book"
+				});
+				return result;
+			}
+			if (actor.getFlags().has("LegendsSkillBookCount") && this.m.ID.find("book") != null)
 			{
 				result.push({
 					id = 10,

@@ -13,6 +13,22 @@
 		return "This character is debilitated and will only do [color=%negative%] 75% [/color] damage and take [color=%negative%] 115% [/color] damage for [color=%negative%]" + this.m.TurnsLeft + "[/color] more turn(s).";
 	}
 
+	o.getEffectDurationString <- function ()
+	{
+		local ret = "";
+
+		if (this.m.TurnsLeft == 2)
+		{
+			ret = "two turns";
+		}
+		else
+		{
+			ret = "one turn";
+		}
+
+		return ret;
+	}
+
 	o.getLogEntryOnAdded <- function ( _user, _victim )
 	{
 		return _user + " has debilitated " + _victim + " for " + this.getEffectDurationString();

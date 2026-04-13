@@ -11,6 +11,7 @@
 	// Follows the [% chance, script|function] convention
 	o.m.OnDeathLootTable <- [];
 	o.m.HitInfo <- null;
+	o.m.IsOffhandFlipped <- false;
 
 	o.getGender <- function()
 	{
@@ -486,22 +487,31 @@
 		}
 
 		// Flip the offhand weapon sprite when dual wielding
-		if (hasSprite("shield_icon") && _appearance.Shield.len() != 0) {
-			if (::Legends.Weapons.isDualWielding(this)) {
+		if (hasSprite("shield_icon") && _appearance.Shield.len() != 0) 
+		{
+			if (::Legends.Weapons.isDualWielding(this)) 
+			{
 				this.setAlwaysApplySpriteOffset(true);
 				local flip = !this.isAlliedWithPlayer();
 				local oh = this.getItems().getItemAtSlot(::Const.ItemSlot.Offhand);
 				local ohSprite = getSprite("shield_icon");
 				ohSprite.setHorizontalFlipping(!flip);
-				if (oh != null && oh.isItemType(this.Const.Items.ItemType.TwoHanded)) {
+				if (oh != null && oh.isItemType(this.Const.Items.ItemType.TwoHanded)) 
+				{
 					// WIP, not sure if dual-wielding two handed weapons will stay
 					ohSprite.Scale = 0.80;
 					setSpriteOffset("shield_icon", this.createVec(flip ? -10 : 10, 0));
-				} else {
+				} 
+				else 
+				{
 					ohSprite.Scale = 1.0;
 					setSpriteOffset("shield_icon", this.createVec(flip ? -40 : 40, 0));
 				}
-			} else {
+				this.m.IsOffhandFlipped = true;
+			} 
+			else if (this.m.IsOffhandFlipped) //We only want to reset sprite position when it's actually needed
+			{
+				this.m.IsOffhandFlipped = false;
 				local ohSprite = getSprite("shield_icon");
 				ohSprite.setHorizontalFlipping(!this.isAlliedWithPlayer());
 				ohSprite.Scale = 1.0;

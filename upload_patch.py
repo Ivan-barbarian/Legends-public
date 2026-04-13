@@ -60,7 +60,13 @@ You need `{version_extractor.artifact_name_assets()}` to play. If you don't have
 		""".strip()
 		github_task = GithubUploadTask(config.GITHUB_TOKEN, owner="Battle-Brothers-Legends", repo="Legends-public")
 		try:
-			github_task.run([file], desc, branch=f"release/{base_version}", releaseName=f"{build_name} {current_version}")
+			github_task.run(
+				files=[file],
+				description=desc,
+				branch=f"release/{base_version}",
+				releaseName=f"{build_name} {current_version}",
+				openBrowserWithRelease=config.GITHUB_OPEN_RELEASE
+			)
 		except ApiError as e:
 			print(e.message)
 	else:

@@ -57,9 +57,9 @@
 		return tooltip;
 	}
 
-	o.getAmmo <- function ()
+	o.getAmmo = function ()
 	{
-		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local item = this.getItem();
 
 		if (item == null)
 		{
@@ -69,9 +69,9 @@
 		return item.getAmmo();
 	}
 
-	o.consumeAmmo <- function ()
+	o.consumeAmmo = function ()
 	{
-		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local item = this.getItem();
 
 		if (item != null)
 		{

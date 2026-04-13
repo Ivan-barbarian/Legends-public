@@ -2,6 +2,12 @@
 	o.m.IsGoedendagThrust <- false;
 	o.m.DazeChance <- 25;
 
+	local create = o.create;
+	o.create = function() {
+		create();
+		this.m.HitChanceBonus = 20;
+	}
+
 	o.setItem <- function (_item) {
 		this.skill.setItem(_item);
 		if (this.m.IsGoedendagThrust) {
@@ -65,5 +71,10 @@
 
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
 		return this.attackEntity(_user, _targetTile.getEntity());
+	}
+
+	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties ) {
+		if (_skill == this)
+			_properties.MeleeSkill += 20;
 	}
 });

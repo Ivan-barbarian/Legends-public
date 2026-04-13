@@ -1020,7 +1020,7 @@
 
 		if (this.m.IsRanged)
 		{
-			toHit = toHit + (distanceToTarget - this.m.MinRange) * properties.HitChanceAdditionalWithEachTile * properties.HitChanceWithEachTileMult;
+			toHit = toHit + (distanceToTarget - this.Math.min(this.m.MinRange, this.m.MinRangeForPerTile)) * properties.HitChanceAdditionalWithEachTile * properties.HitChanceWithEachTileMult;
 		}
 
 		if (levelDifference < 0)

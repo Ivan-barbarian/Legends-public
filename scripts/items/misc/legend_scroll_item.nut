@@ -3,8 +3,7 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 		Selection = null,
 		Cooldown = 10
 	},
-	function create()
-	{
+	function create() {
 		this.item.create();
 		this.m.ID = "misc.legend_scroll";
 		this.m.Name = "Scroll";
@@ -15,18 +14,29 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 		this.m.IsDroppedAsLoot = true;
 		this.m.IsUsable = true;
 		this.m.Value = 2000;
-		this.m.Selection = ::Math.rand(0, 4);
+		this.randomSelection();
 	}
 
-	function playInventorySound( _eventType )
-	{
+	function randomSelection() {
+		local r = this.Math.rand(0, 100);
+		if (r < 50)
+			this.m.Selection = 0;
+		else if (r < 55)
+			this.m.Selection = 1;
+		else if (r < 70)
+			this.m.Selection = 2;
+		else if (r < 85)
+			this.m.Selection = 3;
+		else if (r <= 100)
+			this.m.Selection = 4;
+	}
+
+	function playInventorySound( _eventType ) {
 		::Sound.play("sounds/scribble.wav", ::Const.Sound.Volume.Inventory);
 	}
 
-	function getTooltip()
-	{
-		local result = [
-			{
+	function getTooltip() {
+		local result = [{
 				id = 1,
 				type = "title",
 				text = getName()
@@ -84,54 +94,44 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 		return result;
 	}
 
-	function getBuyPrice()
-	{
+	function getBuyPrice() {
 		if (this.m.Selection == 0)
 			return this.item.getBuyPrice();
 
-		if (this.m.IsSold)
-		{
+		if (this.m.IsSold) {
 			return this.getSellPrice();
 		}
 
-		if (("State" in this.World) && this.World.State != null && this.World.State.getCurrentTown() != null)
-		{
+		if (("State" in this.World) && this.World.State != null && this.World.State.getCurrentTown() != null) {
 			return this.Math.max(this.getSellPrice(), this.Math.ceil(this.getValue() * this.World.State.getCurrentTown().getBeastPartsPriceMult()));
 		}
-		else
-		{
+		else {
 			return this.Math.ceil(this.getValue());
 		}
 	}
 
 	// turn the nutin scroll into a trade item
-	function getSellPrice()
-	{
+	function getSellPrice() {
 		if (this.m.Selection == 0)
 			return this.item.getSellPrice();
 
-		if (this.m.IsBought)
-		{
+		if (this.m.IsBought) {
 			return this.getBuyPrice();
 		}
 
-		if (("State" in this.World) && this.World.State != null && this.World.State.getCurrentTown() != null)
-		{
+		if (("State" in this.World) && this.World.State != null && this.World.State.getCurrentTown() != null) {
 			return this.Math.floor(this.getValue() * this.World.State.getCurrentTown().getBeastPartsPriceMult());
 		}
-		else
-		{
+		else {
 			return this.Math.floor(this.getValue());
 		}
 	}
 
-	function applyScrollEffect( _result = null, _actor = null )
-	{
+	function applyScrollEffect( _result = null, _actor = null ) {
 		if (_result == null)
 			_result = ::Math.rand(0, 4);
 
-		switch (_result)
-		{
+		switch (_result) {
 		case 1:
 			return gainGiftedEffect(_actor);
 		case 2:
@@ -145,10 +145,8 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 		}
 	}
 
-	function getCooldown()
-	{
-		switch (this.m.Selection)
-		{
+	function getCooldown() {
+		switch (this.m.Selection) {
 			case 1:
 				return 50;
 			case 2:
@@ -162,16 +160,14 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 		}
 	}
 
-	function applySideEffect( _actor )
-	{
+	function applySideEffect( _actor ) {
 		::Legends.Effects.grant(_actor, ::Legends.Effect.LegendHeadache, function (_effect) {
 			_effect.m.IrritableHealingTime = this.getCooldown();
 		}.bindenv(this));
 	}
 
 
-	function isAbleToUseScroll( _actor )
-	{
+	function isAbleToUseScroll( _actor ) {
 		local effect = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendIrritable);
 		local injury = ::Legends.Effects.get(_actor, ::Legends.Effect.LegendHeadache);
 		if (injury != null)
@@ -188,44 +184,36 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 		return true;
 	}
 
-	function gainTrainingPoint( _actor )
-	{
+	function gainTrainingPoint( _actor ) {
 		local trait = ::Legends.Traits.get(_actor, ::Legends.Trait.LegendIntensiveTraining);
 		trait.addRandomSkills(_actor, 1);
 		return format("You gain free [color=%s]1[/color] towards [color=%s]Intensive Training[/color].", ::Const.UI.Color.PositiveValue, ::Const.UI.Color.Status);
 	}
 
-	function gainGiftedEffect( _actor )
-	{
+	function gainGiftedEffect( _actor ) {
 		_actor.m.LevelUps += 1;
 		_actor.fillAttributeLevelUpValues(1, true);
 		return format("You gain free [color=%s]Gifted[/color] perk worth amount of level-up stats.", ::Const.UI.Color.NegativeValue);
 	}
 
-	function gainExperience( _actor )
-	{
+	function gainExperience( _actor ) {
 		_actor.addXP( this.Math.rand(100, 150));
 	}
 
-	function gainTrainingEffect( _actor )
-	{
+	function gainTrainingEffect( _actor ) {
 		local trained = ::Legends.Effects.get(_actor, ::Legends.Effect.Trained);
 
-		if (trained != null)
-		{
-			if (!::MSU.isKindOf(trained, "injury"))
-			{
+		if (trained != null) {
+			if (!::MSU.isKindOf(trained, "injury")) {
 				trained.m.Duration += 3;
 				trained.m.XPGainMult = 1.5;
 				trained.m.Description = format("Trained effect (: +50% XP for %i battles", effect.m.Duration);
 			}
-			else
-			{
+			else {
 				trained.addHealingTime(3);
 			}
 		}
-		else
-		{
+		else {
 			trained = ::Legends.Effects.new(::Legends.Effect.Trained);
 			trained.m.Description = "Trained effect (: +50% exp for 3 battles"; //todo flavor text
 			trained.m.Duration = 3;
@@ -236,8 +224,7 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 		return format("You gain [color=%s]%s[/color] effect that lasts for at least 3 battles.", ::Const.UI.Color.NegativeValue, trained.getName());
 	}
 
-	function onUse( _actor, _item = null )
-	{
+	function onUse( _actor, _item = null ) {
 		local result = this.isAbleToUseScroll(_actor);
 
 		if (typeof result == "string") {
@@ -251,18 +238,15 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 		return true;
 	}
 
-	function getValue()
-	{
+	function getValue() {
 		if (m.Selection == null || m.Selection == 0)
 			return 800;
 
 		return this.item.getValue();
 	}
 
-	function getName()
-	{
-		switch(this.m.Selection)
-		{
+	function getName() {
+		switch(this.m.Selection) {
 			case 0:
 				return "Scroll of .Nut\'in";
 			case 1:
@@ -276,10 +260,8 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 		}
 	}
 
-	function getDescription()
-	{
-		switch(this.m.Selection)
-		{
+	function getDescription() {
+		switch(this.m.Selection) {
 			case 0:
 				return "After a bit of labor the scroll seems to just be gibberish and there's nothing meaningful written on it. Can be sold to gullible scholars for a tidy sum.";
 			case 1:
@@ -293,14 +275,12 @@ this.legend_scroll_item <- ::inherit("scripts/items/item", {
 		}
 	}
 
-	function onSerialize( _out )
-	{
+	function onSerialize( _out ) {
 		this.item.onSerialize(_out);
 		_out.writeU8(this.m.Selection);
 	}
 
-	function onDeserialize( _in )
-	{
+	function onDeserialize( _in ) {
 		this.item.onDeserialize(_in);
 		this.m.Selection = _in.readU8();
 	}

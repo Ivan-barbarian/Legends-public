@@ -11,6 +11,7 @@
 			this.m.Icon = "skills/active_mordhau.png";
 			this.m.IconDisabled = "skills/active_mordhau_bw.png";
 			this.m.Overlay = "active_mordhau";
+			this.m.IsIgnoredAsAOO = true;
 			this.m.ActionPointCost = this.m.IsGreatMordhau ? 7 : 5;
 			this.m.FatigueCost = this.m.IsGreatMordhau ? 18 : 14;
 

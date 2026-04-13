@@ -83,11 +83,11 @@
 
 	o.setScreen <- function (_screen, _restartIfAlreadyActive = true) {
 		if (this.isHuskValid(_screen)) {
-			this.contract.setScreen(this.getScreen("HuskSmash"), _restartIfAlreadyActive);
+			this.contract.setScreen(this.getScreen("HuskSmash"));
 			return;
 		}
 		// otherwise just proceed
-		this.contract.setScreen(_screen, _restartIfAlreadyActive);
+		this.contract.setScreen(_screen);
 	}
 
 	o.isHuskValid <- function (_screen) {

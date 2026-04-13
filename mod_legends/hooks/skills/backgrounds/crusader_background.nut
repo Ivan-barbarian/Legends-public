@@ -194,17 +194,17 @@
 		local items = actor.getItems();
 
 		local weapons = [
-			"scripts/items/weapons/longsword",
-			"scripts/items/weapons/legend_zweihander",
-			"scripts/items/weapons/greatsword",
-			"scripts/items/weapons/two_handed_hammer",
-			"scripts/items/weapons/two_handed_flail",
-			"scripts/items/weapons/two_handed_flanged_mace",
-			"scripts/items/weapons/arming_sword",
-			"scripts/items/weapons/winged_mace",
-			"scripts/items/weapons/warhammer",
-			"scripts/items/weapons/flail",
-			"scripts/items/weapons/three_headed_flail"
+			"weapons/longsword",
+			"weapons/legend_zweihander",
+			"weapons/greatsword",
+			"weapons/two_handed_hammer",
+			"weapons/two_handed_flail",
+			"weapons/two_handed_flanged_mace",
+			"weapons/arming_sword",
+			"weapons/winged_mace",
+			"weapons/warhammer",
+			"weapons/flail",
+			"weapons/three_headed_flail"
 		];
 		items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 

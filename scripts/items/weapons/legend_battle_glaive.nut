@@ -45,6 +45,7 @@ this.legend_battle_glaive <- this.inherit("scripts/items/weapons/weapon", {
 		::Legends.Actives.grant(this, ::Legends.Active.Rupture, function (_skill) {
 			_skill.m.InjuriesOnBody = this.Const.Injury.CuttingAndPiercingBody;
 			_skill.m.InjuriesOnHead = this.Const.Injury.CuttingAndPiercingHead;
+			_skill.m.IsIgnoredAsAOO = true;
 		}.bindenv(this));
 		::Legends.Actives.grant(this, ::Legends.Active.LegendSkewer);
 	}

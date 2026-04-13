@@ -16,6 +16,7 @@ class GithubUploadTask:
 			draft: bool = True,
 			prerelease: bool = False,
 			generateNotes: bool = False,
+			openBrowserWithRelease: bool = False
 	):
 
 		for file in files:
@@ -34,3 +35,6 @@ class GithubUploadTask:
 		for file in files:
 			self.fileClient.upload_file(release, file, os.path.basename(file))
 			print(f"{file} has been uploaded")
+
+		if openBrowserWithRelease:
+			self.client.openBrowser(draft, release.html_url)

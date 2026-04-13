@@ -3,7 +3,7 @@ this.legend_heavy_gladiator_upgrade <- this.inherit("scripts/items/legend_armor/
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "armor_upgrade.legend_heavy_gladiator_upgrade";
+		this.m.ID = "legend_armor_upgrade.body.legend_heavy_gladiator_upgrade";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Metal Armor Pieces";
 		this.m.Description = "A metal armguard that provides additional protection, used by gladiators in fighting pits.";

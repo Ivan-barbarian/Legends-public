@@ -57,8 +57,7 @@ this.legend_freedom_of_movement_effect <- this.inherit("scripts/skills/skill", {
 	// MSU custom-added event
 	function onOtherActorTooltip( _tooltip, _targetActor )
 	{
-		if (::MSU.isNull(_targetActor) || _targetActor.isPlayerControlled())
-		{
+		if (::MSU.isNull(_targetActor) || !_targetActor.isPlayerControlled()) {
 			return;
 		}
 

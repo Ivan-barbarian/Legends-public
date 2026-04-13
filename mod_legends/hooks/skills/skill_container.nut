@@ -1,18 +1,21 @@
 ::mods_hookNewObject("skills/skill_container", function (o) {
-	// o.buildPropertiesForUse = function( _caller, _targetEntity )
-	// {
-	// 	local superCurrent = this.m.Actor.getCurrentProperties().getClone();
-	// 	local updating = this.m.IsUpdating;
-	// 	this.m.IsUpdating = true;
+	local buildPropertiesForUse = o.buildPropertiesForUse;
+	o.buildPropertiesForUse = function (_caller, _targetEntity) {
+		local ret = buildPropertiesForUse(_caller, _targetEntity);
 
-	// 	foreach( i, skill in this.m.Skills )
-	// 	{
-	// 		skill.onAnySkillUsed(_caller, _targetEntity, superCurrent);
-	// 	}
+		// When dual wielding two weapons of the same type only one skill instance lives
+		// in the container (because they are deduped by id), so the onAnySkillUsed of the
+		// other weapon skill instance never fires. We need to call it manually to make sure
+		// all skills get their bonuses applied (eg. thrust +20 melee skill).
+		foreach (skill in this.m.Skills) {
+			if (skill == _caller) {
+				return ret;
+			}
+		}
 
-	// 	this.m.IsUpdating = updating;
-	// 	return superCurrent;
-	// }
+		_caller.onAnySkillUsed(_caller, _targetEntity, ret);
+		return ret;
+	}
 
 	// o.buildPropertiesForDefense = function( _attacker, _skill )
 	// {

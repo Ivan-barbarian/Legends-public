@@ -1,4 +1,25 @@
 ::mods_hookExactClass("scenarios/world/militia_scenario", function (o) {
+	o.m.PeasantPerks <- [
+		::Legends.Perk.LegendSpecialistButcher,
+		::Legends.Perk.LegendSpecialistBlacksmith,
+		::Legends.Perk.LegendSpecialistMilitia,
+		::Legends.Perk.LegendSpecialistMiner,
+		::Legends.Perk.LegendSpecialistFarmhand,
+		::Legends.Perk.LegendSpecialistPoacher,
+		::Legends.Perk.LegendSpecialistGravedigger,
+		::Legends.Perk.LegendSpecialistWoodsman,
+		::Legends.Perk.LegendSpecialistHerbalist,
+		::Legends.Perk.LegendSpecialistShepherd,
+		::Legends.Perk.LegendSpecialistInventor,
+		::Legends.Perk.LegendSpecialistCultist,
+		::Legends.Perk.LegendSpecialistBodyguard,
+		::Legends.Perk.LegendSpecialistInquisition,
+		::Legends.Perk.LegendSpecialistClub,
+		::Legends.Perk.LegendSpecialistSharpshooter,
+		::Legends.Perk.LegendSpecialistRaider,
+		::Legends.Perk.LegendSpecialistSpearfisher,
+		::Legends.Perk.LegendSpecialistPrisoner,
+	];
 	o.create = function ()
 	{
 		this.m.ID = "scenario.militia";
@@ -236,6 +257,12 @@
 		::Legends.Traits.grant(bro, ::Legends.Trait.LegendHateNobles);
 		::Legends.Traits.grant(bro, ::Legends.Trait.LegendPeasant);
 		bro.getSprite("socket").setBrush("bust_base_militia");
+	}
+
+	o.onBuildPerkTree <- function ( _background )
+	{
+		local perk = ::MSU.Array.rand(this.m.PeasantPerks);
+		this.addScenarioPerk(_background, perk);
 	}
 
 	o.onUpdateHiringRoster <- function ( _roster )

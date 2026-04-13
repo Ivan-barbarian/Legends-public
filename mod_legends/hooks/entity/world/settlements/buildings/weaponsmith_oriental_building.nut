@@ -161,6 +161,11 @@
 			{
 				R = 99,
 				P = 2.0,
+				S = "accessory/gloves/legend_cestus_item_named"
+			},
+			{
+				R = 99,
+				P = 2.0,
 				S = "weapons/named/legend_named_nomad_sling"
 			},
 			{
