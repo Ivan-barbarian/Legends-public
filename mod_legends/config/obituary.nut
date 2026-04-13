@@ -206,7 +206,7 @@
     ["background.vagabond"]                       = { pos = "Drifted along the open road",                 	neg = "" },
     ["background.wildman"]                        = { pos = "Wandered the wilds once more",                	neg = "" },
     ["background.witchhunter"]                    = { pos = "Reported back to the guild",       	       	neg = "Believed killed by a hexen" },
-    ["background.legend_alchemist"]               = { pos = "Pursued the Philosopher\s Stone", 			   	neg = "" },
+    ["background.legend_alchemist"]               = { pos = "Pursued the Philosopher's Stone", 			   	neg = "" },
     ["background.legend_ancient_summoner"]        = { pos = "Returned to esoteric practices", 			   	neg = "" },
     ["background.legend_assassin_commander"]      = { pos = "Founded a deadly martial arts school", 	   	neg = "" },
     ["background.legend_astrologist"]             = { pos = "Found meaning in the stars", 				   	neg = "" },
