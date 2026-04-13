@@ -186,13 +186,9 @@ class BrushBuilder:
         if brushes_dir.exists():
             shutil.rmtree(brushes_dir)
         brushes_dir.mkdir(exist_ok=True)
-
-        import time
-        start = time.time()
         # Build each brush
         with ProcessPoolExecutor() as executor:
             executor.map(self.brush.build_brush, brushes)
-        print("Elapsed build brush", time.time() - start)
 
     def build(self):
         """Main build process"""
