@@ -21,13 +21,15 @@
 
 	o.getTooltip = function () {
 		local ret = this.getDefaultTooltip();
-		local effects = this.m.IsGreatMordhau ? "stagger" : "daze";
-		ret.push({
-			id = 7,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Has a [color=%positive%]100%[/color] chance to" + effects + " on a hits to the head"
-		});
+		if (this.m.IsMordhau) {
+			local effects = this.m.IsGreatMordhau ? "stagger" : "daze";
+			ret.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Has a [color=%positive%]100%[/color] chance to" + effects + " on a hits to the head"
+			});
+		}
 		return ret;
 	}
 
