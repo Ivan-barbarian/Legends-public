@@ -224,6 +224,7 @@
 ::Legends.Compat.HardIncompat.add("mod_xpInReserve", "1.0"); // XP in Reserve
 ::Legends.Compat.HardIncompat.add("sato_corpse_loot_fix"); // Sato's Corpse Loot Fix
 ::Legends.Compat.HardIncompat.add("mod_career_stats", "1.0.2"); // I've seen this mod being the issue in logs as cause of errors
+::Legends.Compat.HardIncompat.add("mod_black_pyramid", "1.0.2"); // ai slop
 //endregion
 
 //region SoftIncompat
