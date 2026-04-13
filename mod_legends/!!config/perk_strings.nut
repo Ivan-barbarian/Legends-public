@@ -1460,7 +1460,7 @@ Your skill on the butcher's block seems to be easily translated to chopping limb
 
 • When taking [color=%perk%]Cleaver Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
 
-• For other weapons classified as Cleavers, but not Whips, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
+• For other weapons classified as Cleavers, but not Whips, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% by 5% for each level with the maximum bonus gained at level 15.
 ";
 
 ::Const.Strings.PerkDescription.LegendSpecialistBlacksmith <- @"
@@ -1471,7 +1471,7 @@ Diligent practice with the hammer each day has proven to be equally good at craf
 
 • When taking [color=%perk%]Hammer Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
 
-• For other weapons classified as One Handed Hammers, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
+• For other weapons classified as One Handed Hammers, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% by 5% for each level with the maximum bonus gained at level 15.
 ";
 
 ::Const.Strings.PerkDescription.LegendSpecialistPrisoner <- @"
@@ -1482,7 +1482,7 @@ Life on the streets has shown you how to properly bury a knife in another person
 
 • When taking [color=%perk%]Dagger Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
 
-• For other weapons classified as Daggers, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
+• For other weapons classified as Daggers, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% by 5% for each level with the maximum bonus gained at level 15.
 
 • You will also receive the Deathblow skill and Daggers that already have Deathblow, like Qatal Daggers, will have a buffed version.
 ";
@@ -1504,7 +1504,7 @@ You have mastered the trusty spear and you can use it both for dealing damage an
 
 • When taking [color=%perk%]Spear Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
 
-• For other weapons classified as Spears you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
+• For other weapons classified as Spears you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% by 5% for each level with the maximum bonus gained at level 15.
 ";
 
 ::Const.Strings.PerkDescription.LegendSpecialistMiner <- @"
@@ -1515,7 +1515,7 @@ Cracking rocks and cracking skulls aren't that much different.
 
 • When taking [color=%perk%]Hammer Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
 
-• For other weapons classified as Two Handed Hammers, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
+• For other weapons classified as Two Handed Hammers, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% by 5% for each level with the maximum bonus gained at level 15.
 
 • The bonus will be doubled against Ifrits and Rock Unholds.
 ";
@@ -1528,7 +1528,7 @@ Years of using farming tools have given you an understanding of how to stab true
 
 • When taking [color=%perk%]Polearm Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
 
-• For other weapons classified as Polearms, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
+• For other weapons classified as Polearms, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% by 5% for each level with the maximum bonus gained at level 15.
 ";
 
 ::Const.Strings.PerkDescription.LegendSpecialistPoacher <- @"
@@ -1545,7 +1545,7 @@ From small game to big bounties.
 
 • When taking [color=%perk%]Bow Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
 
-• For other weapons classified as Bows, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
+• For other weapons classified as Bows, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% by 5% for each level with the maximum bonus gained at level 15.
 
 • The bonus will be doubled against Wolves and Hyenas.
 ";
@@ -1558,7 +1558,7 @@ You used to dig up graves, now you're digging graves.
 
 • When taking [color=%perk%]Mace Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
 
-• For other weapons classified as Two Handed Mace, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
+• For other weapons classified as Two Handed Mace, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% by 5% for each level with the maximum bonus gained at level 15.
 
 • If you are using a Shovel you will also receive the Knock Out skill.
 
@@ -1573,7 +1573,7 @@ Timber!
 
 • When taking [color=%perk%]Axe Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
 
-• For non-specialist weapons classified as Two Handed Axes, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
+• For non-specialist weapons classified as Two Handed Axes, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% by 5% for each level with the maximum bonus gained at level 15.
 
 • Allows this character to harvest wood while in camp.
 
@@ -1588,7 +1588,7 @@ Call an 'erbalist...But not for me!
 
 • When taking [color=%perk%]Sword Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage. Additionally reduces the Action Point cost of [color=%skill%]Slash[/color] by [color=%negative%]1[/color] when using a Sickle.
 
-• For other weapons classified as One Handed Swords, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
+• For other weapons classified as One Handed Swords, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% by 5% for each level with the maximum bonus gained at level 15.
 ";
 
 ::Const.Strings.PerkDescription.LegendSpecialistReaper <- @"
@@ -1608,7 +1608,7 @@ Practice in the arts of punishment makes the tips of the cattail to inflict horr
 
 • When taking [color=%perk%]Flail Mastery[/color] or [color=%positive%]Cleaver Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
 
-• For other weapons classified as Flails or Whips, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
+• For other weapons classified as Flails or Whips, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% by 5% for each level with the maximum bonus gained at level 15.
 ";
 
 ::Const.Strings.PerkDescription.LegendSpecialistShepherd <- @"
@@ -1619,7 +1619,7 @@ Slinger? I hardly knew 'er!
 
 • When taking [color=%perk%]Sling Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
 
-• For other weapons classified as Slings, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
+• For other weapons classified as Slings, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% by 5% for each level with the maximum bonus gained at level 15.
 ";
 
 ::Const.Strings.PerkDescription.LegendSpecialistInventor <- @"
@@ -1634,7 +1634,7 @@ Using your wits and tools, you've managed to create aids, which help you use unw
 
 • When taking [color=%perk%]Spear Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
 
-• For other weapons classified as Firearms, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
+• For other weapons classified as Firearms, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% by 5% for each level with the maximum bonus gained at level 15.
 ";
 
 ::Const.Strings.PerkDescription.LegendSpecialistBodyguard <- @"
@@ -1645,7 +1645,7 @@ Eating and sleeping with your blade has turned it into an extension of your arm.
 
 • When taking [color=%perk%]Sword Mastery[/color] gain [color=%positive%]10%[/color] damage.
 
-• For other weapons classified as a Two-Handed Sword, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
+• For other weapons classified as a Two-Handed Sword, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% by 5% for each level with the maximum bonus gained at level 15.
 ";
 
 ::Const.Strings.PerkDescription.LegendSpecialistInquisition <- @"
@@ -1658,7 +1658,7 @@ Nobody expects the Inquisition!
 
 • Gain [color=%positive%]+12[/color] chance to hit while using a Wooden Stake.
 
-• For other weapons classified as Crossbows, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
+• For other weapons classified as Crossbows, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% by 5% for each level with the maximum bonus gained at level 15.
 
 • While using Crossbows the bonus will be doubled against Hexe and Alps.
 ";
@@ -1671,7 +1671,7 @@ Mastering the art of leaning against a wall with a big stick has it's benefits.
 
 • When taking [color=%perk%]Mace Mastery[/color] gain [color=%positive%]10%[/color] damage.
 
-• For other weapons classified as One-Handed Mace, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
+• For other weapons classified as One-Handed Mace, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% by 5% for each level with the maximum bonus gained at level 15.
 ";
 
 ::Const.Strings.PerkDescription.LegendSpecialistSelfdefense <- @"
@@ -1691,7 +1691,7 @@ An axe to the back of the head solves many issues, you even get to keep the loot
 
 • When taking [color=%perk%]Axe Mastery[/color] or [color=%perk%]Throwing Mastery[/color] gain [color=%positive%]10%[/color] damage.
 
-• For other weapons classified as One-Handed Axes, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
+• For other weapons classified as One-Handed Axes, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% by 5% for each level with the maximum bonus gained at level 15.
 ";
 
 ::Const.Strings.PerkDescription.LegendSpecialistSpearfisher <- @"
@@ -1704,7 +1704,7 @@ Throwing a spear and throwing a net is just muscle memory at this point.
 
 • Each time you use a throwing weapon, you can use [color=%skill%]Throw Net[/color] for free.
 
-• For other weapons classified as Throwing, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
+• For other weapons classified as Throwing, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% by 5% for each level with the maximum bonus gained at level 15.
 ";
 
 ::Const.Strings.PerkDescription.LegendSpecialistSharpshooter <- @"
@@ -1715,7 +1715,7 @@ Thread the needle from this distance? No sweat.
 
 • When taking [color=%perk%]Bow Mastery[/color] gain [color=%positive%]10%[/color] damage.
 
-• For other weapons classified as Longbows, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation.
+• For other weapons classified as Longbows, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% by 5% for each level with the maximum bonus gained at level 15.
 
 • The additional range gained is still subject to vision penalties.
 ";
