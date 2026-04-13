@@ -3,19 +3,16 @@
 OS-agnostic brush building script for Legends mod
 Replaces build_brushes.sh with cross-platform Python implementation
 """
-
-import os
 import sys
-import subprocess
 import shutil
 import argparse
 from pathlib import Path
-import platform
+from concurrent.futures import ProcessPoolExecutor
+from buildscript.lib import BrushUtils
 
 
 class BrushBuildError(Exception):
     """Custom exception for brush build errors"""
-
     pass
 
 
@@ -29,15 +26,11 @@ class BrushBuilder:
 
         self.build_dir = Path(build_dir)
         self.repo_dir = repo_dir
-        self.bin_dir = self.current_dir.parent / "bin"
-
-        # Determine executable extension based on OS
-        self.exe_ext = ".exe" if platform.system() == "Windows" else ".sh"
+        self.brush = BrushUtils(self.current_dir, self.repo_dir)
 
         print(f"Build directory: {self.build_dir}")
         print(f"Repository directory: {self.repo_dir}")
         print(f"Current directory: {self.current_dir}")
-        print(f"Binary directory: {self.bin_dir}")
 
     def handle_exit(self, result, context=""):
         """Handle subprocess exit codes"""
@@ -141,55 +134,6 @@ class BrushBuilder:
 
         return armor_brushes
 
-    def build_brush(self, brush_path):
-        """Build a single brush using bbrusher"""
-        print(f"Building {brush_path} brush...")
-
-        bbrusher_exe = self.bin_dir / f"bbrusher{self.exe_ext}"
-        if not bbrusher_exe.exists():
-            raise BrushBuildError(f"bbrusher executable not found at {bbrusher_exe}")
-
-        # Convert forward slashes to underscores for brush name
-        brush_name = brush_path.replace("/", "_")
-        brush_file = self.current_dir / "brushes" / f"{brush_name}.brush"
-        unpacked_dir = self.current_dir / "unpacked" / brush_path
-
-        if not unpacked_dir.exists():
-            print(
-                f"Warning: Unpacked directory {unpacked_dir} does not exist, skipping {brush_path}"
-            )
-            return
-
-        try:
-            # Change to bin directory
-            original_cwd = os.getcwd()
-            os.chdir(self.bin_dir)
-
-            # Run bbrusher command
-            cmd = [
-                str(bbrusher_exe),
-                "pack",
-                "--gfxPath",
-                f"../{self.repo_dir}/",
-                str(brush_file),
-                str(unpacked_dir),
-            ]
-
-            result = subprocess.run(
-                cmd, capture_output=True, text=True, encoding="utf-8", errors="replace"
-            )
-
-            # Change back to original directory
-            os.chdir(original_cwd)
-
-            self.check_for_error(result.stdout, brush_path)
-
-            return result.stdout
-
-        except Exception as e:
-            os.chdir(original_cwd)  # Ensure we change back even on error
-            raise BrushBuildError(f"Failed to build brush {brush_path}: {e}")
-
     def copy_brushes_and_gfx(self):
         """Copy brushes and graphics to build directory for packaging"""
         print(f"Copying brushes to {self.build_dir}/brushes ...")
@@ -243,9 +187,12 @@ class BrushBuilder:
             shutil.rmtree(brushes_dir)
         brushes_dir.mkdir(exist_ok=True)
 
+        import time
+        start = time.time()
         # Build each brush
-        for brush in brushes:
-            self.build_brush(brush)
+        with ProcessPoolExecutor() as executor:
+            executor.map(self.brush.build_brush, brushes)
+        print("Elapsed build brush", time.time() - start)
 
     def build(self):
         """Main build process"""
@@ -291,4 +238,8 @@ def main():
 
 
 if __name__ == "__main__":
+    import time
+    start_time = time.time()
     main()
+    end_time = time.time()
+    print(f"Execution time: {end_time - start_time} seconds")
