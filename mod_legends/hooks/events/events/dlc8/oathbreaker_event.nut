@@ -30,6 +30,7 @@
 					this.List.push({
 						id = 10,
 						icon = "ui/items/" + item.getIcon(),
+						imageOverlayPath = item.getIconOverlay(),
 						text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.makeName()
 					});
 					item = this.Const.World.Common.pickHelmet([
@@ -40,6 +41,7 @@
 					this.List.push({
 						id = 10,
 						icon = "ui/items/" + item.getIcon(),
+						imageOverlayPath = item.getIconOverlay(),
 						text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.makeName()
 					});
 					this.World.Assets.addMoney(-9000);
