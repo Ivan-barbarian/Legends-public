@@ -612,7 +612,7 @@ Unlock the deadly art of poisoning and be able to lick your poisoned weapon with
 'Excuse me'
 
 [color=%active%][u]Active:[/u][/color]
-• Enables the character to move swiftly and safely through any Zone of Control one turn. The first attack against you will be an automatic miss. Can only be used if your total armor weight is 30 or less.
+• Enables the character to move swiftly and safely through any Zone of Control for one turn. The first attack against you will be an automatic miss. Can only be used if your total armor weight is 30 or less.
 
 • Costs [color=%negative%]4[/color] AP and [color=%negative%]20[/color] Fatigue.
 ";
