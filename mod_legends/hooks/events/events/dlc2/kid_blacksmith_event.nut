@@ -21,7 +21,8 @@
 							this.List.push({
 								id = 10,
 								icon = "ui/items/" + item.getIcon(),
-								text = "Your " + item.getName() + " is repaired"
+								imageOverlayPath = item.getIconOverlay(),
+								text = "Your " + item.makeName() + " is repaired"
 							});
 							items++;
 

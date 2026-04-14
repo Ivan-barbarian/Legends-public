@@ -95,7 +95,7 @@ this.legend_blacksmith_craft_armor <- this.inherit("scripts/events/event", {
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
 					imageOverlayPath = item.getIconOverlay(),
-					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.makeName()
+					text = "You gain " + item.makeName()
 				});
 				this.List.push(::Legends.EventList.changeMood(_event.m.Blacksmith, 2.0, "Created a masterwork Armor"));
 			}
@@ -194,7 +194,7 @@ this.legend_blacksmith_craft_armor <- this.inherit("scripts/events/event", {
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
 					imageOverlayPath = item.getIconOverlay(),
-					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.makeName()
+					text = "You gain " + item.makeName()
 				});
 				this.List.push(::Legends.EventList.changeMood(_event.m.Blacksmith, 2.0, "Created a masterwork Armor"));
 			}
