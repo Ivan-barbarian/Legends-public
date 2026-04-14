@@ -11,7 +11,7 @@
 			this.m.Icon = "skills/active_halfsword.png";
 			this.m.IconDisabled = "skills/active_halfsword_bw.png";
 			this.m.Overlay = "active_halfsword";
-			this.m.ActionPointCost = this.m.IsGreatHalfsword ? 7 : 5;
+			this.m.ActionPointCost = this.m.IsGreatHalfsword ? 6 : 4;
 			this.m.FatigueCost = this.m.IsGreatHalfsword ? 35 : 25;
 			this.m.IsIgnoredAsAOO = true;
 			this.m.IsHidden = true;
@@ -90,12 +90,11 @@
 	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties ) {
 		if (_skill == this) {
 			this.m.HitChanceBonus += this.getHitChance(_targetEntity);
-			if (this.m.IsHalfsword && _properties.IsSpecializedInSwords)
-			{
+			if (this.m.IsHalfsword && _properties.IsSpecializedInSwords) {
 				this.m.HitChanceBonus += 15;
+				_properties.DamageTotalMult *= 0.5;
 			}
-			else if (_properties.IsSpecializedInDaggers)
-			{
+			else if (_properties.IsSpecializedInDaggers) {
 				this.m.HitChanceBonus += 15;
 			}
 			_properties.MeleeSkill += this.m.HitChanceBonus;
@@ -104,8 +103,7 @@
 			_properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;
 			_properties.HitChanceMult[this.Const.BodyPart.Body] = 1.0;
 
-			if (this.canDoubleGrip())
-			{
+			if (this.canDoubleGrip()) {
 				_properties.DamageTotalMult /= 1.25;
 			}
 		}
