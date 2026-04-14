@@ -4,15 +4,14 @@ Shared library for Legends build scripts
 Contains common functions and utilities used across build scripts
 """
 from dataclasses import dataclass, fields
-from .python.bbrusher import BBrusher
 from pathlib import Path
 import os
 import sys
 import subprocess
 import shutil
 import re
+import platform
 import importlib.util
-
 
 @dataclass
 class Config:
@@ -48,6 +47,23 @@ class BuildError(Exception):
 
 class BuildUtils:
 	"""Utility class with common build functions"""
+
+	@staticmethod
+	def get_platform_paths():
+		"""Get platform-specific default paths"""
+		if platform.system() == "Windows":
+			return {
+				"bb_dir": r"c:\Steam\steamapps\common\Battle Brothers\data",
+				"exe_ext": ".exe",
+				"bat_ext": ".bat"
+			}
+		else:
+			bb_dir = os.path.expanduser("~/.local/share/Steam/steamapps/common/Battle Brothers/data")
+			return {
+				"bb_dir": bb_dir,
+				"exe_ext": ".sh",
+				"bat_ext": ".sh"
+			}
 
 	@staticmethod
 	def handle_exit(result, context=""):
@@ -302,7 +318,10 @@ class BrushUtils:
 	def __init__(self, current_dir=None, repo_dir="battlebrothers"):
 		self.current_dir = Path(current_dir) if current_dir else Path.cwd()
 		self.repo_dir = repo_dir
-		self.bbrusher = BBrusher()
+		self.bin_dir = self.current_dir.parent / "bin"
+
+		platform_info = BuildUtils.get_platform_paths()
+		self.exe_ext = platform_info["exe_ext"]
 
 	def get_helmet_brushes(self):
 		"""Get list of helmet brush directories"""
@@ -328,9 +347,20 @@ class BrushUtils:
 
 		return armor_brushes
 
+	def check_for_error(self, output, brush_name):
+		"""Check output for ERROR messages"""
+		if "ERROR" in output:
+			for line in output.split('\n'):
+				print(line)
+			raise BuildError(f"Failed to build Legends brush {brush_name}")
+
 	def build_brush(self, brush_path):
 		"""Build a single brush using bbrusher"""
 		print(f"Building {brush_path} brush...")
+
+		bbrusher_exe = self.bin_dir / f"bbrusher{self.exe_ext}"
+		if not bbrusher_exe.exists():
+			raise BuildError(f"bbrusher executable not found at {bbrusher_exe}")
 
 		# Convert forward slashes to underscores for brush name
 		brush_name = brush_path.replace("/", "_")
@@ -345,8 +375,28 @@ class BrushUtils:
 		brush_file.parent.mkdir(parents=True, exist_ok=True)
 
 		try:
-			self.bbrusher.pack_brush_from_dir(brush_file, unpacked_dir, f"../{self.repo_dir}")
+			# Change to bin directory
+			original_cwd = os.getcwd()
+			os.chdir(self.bin_dir)
+
+			# Run bbrusher command
+			cmd = [
+				str(bbrusher_exe), "pack",
+				"--gfxPath", f"../{self.repo_dir}/",
+				str(brush_file), str(unpacked_dir)
+			]
+
+			result = subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8', errors='replace')
+
+			# Change back to original directory
+			os.chdir(original_cwd)
+
+			self.check_for_error(result.stdout, brush_path)
+
+			return result.stdout
+
 		except Exception as e:
+			os.chdir(original_cwd)  # Ensure we change back even on error
 			raise BuildError(f"Failed to build brush {brush_path}: {e}")
 
 
@@ -377,6 +427,10 @@ class PythonScriptRunner:
 
 
 # Convenience functions that use the utility classes
+def get_platform_paths():
+	"""Get platform-specific default paths"""
+	return BuildUtils.get_platform_paths()
+
 def safe_copy_tree(src, dest, ignore_errors=False):
 	"""Safely copy a directory tree"""
 	return BuildUtils.safe_copy_tree(src, dest, ignore_errors)

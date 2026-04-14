@@ -12,6 +12,7 @@ from pathlib import Path
 import platform
 from buildscript.lib import VersionExtractor, BuildError, load_config
 
+
 class LegendsModBuilder:
     def __init__(self, bb_dir=None, repo_dir=None, build_dir=None):
         # Load config first
@@ -120,8 +121,11 @@ class LegendsModBuilder:
 
     def build_brushes(self):
         """Build brushes using the brush builder"""
+        print("Building brushes...")
         from build_brushes import BrushBuilder
-        BrushBuilder(str(self.build_dir), self.repo_dir).build()
+
+        brush_builder = BrushBuilder(str(self.build_dir), self.repo_dir)
+        brush_builder.build()
 
     def copy_directories(self):
         """Copy required directories to build directory"""
