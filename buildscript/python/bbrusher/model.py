@@ -23,7 +23,7 @@ class Frame:
 	def __init__(self):
 		self.name = ''
 		self.u1 = self.u2 = self.v1 = self.v2 = 0.0
-		self.edge_left = self.edge_right = self.edge_top = self.edge_bottom = 0.0
+		self.edge_left = self.edge_right = self.edge_top = self.edge_bottom = None
 
 	def pixel_rect(self, img_w, img_h):
 		"""Return (x, y, w, h) in atlas pixels."""

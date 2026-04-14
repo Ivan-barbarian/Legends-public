@@ -204,10 +204,10 @@ class BBrusher:
 				target.set('img', fr.name)
 
 				_, _, sw, sh = fr.pixel_rect(brush.img_width, brush.img_height)
-				left_def = -(sw + 1) // 2
-				right_def = sw // 2
-				top_def = -(sh + 1) // 2
-				bottom_def = sh // 2
+				left_def = int(-(sw + 1) / 2)
+				right_def = sw / 2
+				top_def = int(-(sh + 1) / 2)
+				bottom_def = sh / 2
 
 				if fr.edge_left != left_def:
 					target.set('left', str(fr.edge_left))
@@ -460,17 +460,17 @@ class BBrusher:
 
 				# Edge defaults (only set if still at zero from XML parse with no
 				# explicit override — matches bbrusher behaviour)
-				left_def = -(img.width + 1) // 2
+				left_def = int(-(img.width + 1) / 2)
 				right_def = img.width // 2
-				top_def = -(img.height + 1) // 2
+				top_def = int(-(img.height + 1) / 2)
 				bottom_def = img.height // 2
-				if fr.edge_left == 0 and left_def != 0:
+				if fr.edge_left is None:
 					fr.edge_left = float(left_def)
-				if fr.edge_right == 0 and right_def != 0:
+				if fr.edge_right is None:
 					fr.edge_right = float(right_def)
-				if fr.edge_top == 0 and top_def != 0:
+				if fr.edge_top is None:
 					fr.edge_top = float(top_def)
-				if fr.edge_bottom == 0 and bottom_def != 0:
+				if fr.edge_bottom is None:
 					fr.edge_bottom = float(bottom_def)
 
 		brush.img_width = atlas_w
