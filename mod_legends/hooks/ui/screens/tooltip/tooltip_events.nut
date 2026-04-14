@@ -3854,7 +3854,7 @@
 			];
 
 		case "world-town-screen.main-dialog-module.Arena":
-			local ttinfo = this.World.State.getCurrentTown().getBuilding("building.arena").getAttempts();
+			
 			local ret = [
 				{
 					id = 1,
@@ -3865,23 +3865,26 @@
 					id = 2,
 					type = "description",
 					text = "The arena offers an opportunity to earn gold and fame in fights that are to the death, and in front of crowds that cheer for the most gruesome manner in which lives are dispatched."
-				},
-				{
+				}
+			];
+
+			if (this.World.State.getCurrentTown() != null) {
+				local ttinfo = this.World.State.getCurrentTown().getBuilding("building.arena").getAttempts();
+				ret.push({
 					id = 3,
 					type = "hint",
 					icon = "ui/icons/melee_skill.png",
 					text = "There are " + ttinfo[0] + " / " + ttinfo[1] + " fights available today."
-				}
-			];
-
-			if (this.World.State.getCurrentTown() != null && this.World.State.getCurrentTown().getBuilding("building.arena").isClosed())
-			{
-				ret.push({
-					id = 3,
-					type = "hint",
-					icon = "ui/tooltips/warning.png",
-					text = "No more matches take place here today. Come back tomorrow!"
 				});
+				
+				if (this.World.State.getCurrentTown().getBuilding("building.arena").isClosed()) {
+					ret.push({
+						id = 3,
+						type = "hint",
+						icon = "ui/tooltips/warning.png",
+						text = "No more matches take place here today. Come back tomorrow!"
+					});
+				}
 			}
 
 			if (this.World.Contracts.getActiveContract() != null && this.World.Contracts.getActiveContract().getType() != "contract.arena" && this.World.Contracts.getActiveContract().getType() != "contract.arena_tournament")
