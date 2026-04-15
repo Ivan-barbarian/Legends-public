@@ -176,7 +176,7 @@
 	"legend_runesmith_background",
 	"legend_transmuter_background",
 	"legend_necromancer_background",
-	"legend_ancient_summoner_background",
+	//"legend_ancient_summoner_background",
 	"legend_master_archer_background",
 	"legend_berserker_background",
 	"legend_necrosavant_background",
@@ -188,7 +188,7 @@
 ];
 
 ::Const.CharacterMagicBackgrounds <- [
-	"legend_ancient_summoner_background",
+	//"legend_ancient_summoner_background",
 	"legend_conjurer_background",
 	"legend_death_summoner_background",
 	"legend_diviner_background",
