@@ -7,6 +7,8 @@ this.encounter_event <- this.inherit("scripts/encounters/encounter", {
 	function isVisible() {
 		// there's some bug that crashes it in 1st day when you don't have ambition
 		// this is supposed to be temporary fix i think...
+		if (!::World.Events.canFireEvent())
+			return false;
 		return ::World.Ambitions.hasActiveAmbition() || ::World.getTime().Time >= ::World.getTime().SecondsPerDay * 5
 	}
 
