@@ -84,6 +84,15 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 				text = this.getDescription()
 			},
 			{
+				id = 16,
+				type = "progressbar",
+				icon = "ui/tooltips/positive.png",
+				value = stats.HitChance,
+				valueMax = 25,
+				text = "" + stats.HitChance + "% / " + "25%",
+				style = "fatigue-slim"
+			},
+			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
@@ -146,6 +155,15 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 				type = "hint",
 				icon = "ui/tooltips/positive.png"
 				text = format("Activating this perk will grant a %s bonus to the relevant stats", ::Const.UI.getColorized("+" + stats.HitChance + "%", ::Const.UI.Color.PositiveValue))
+			},
+			{
+				id = 4,
+				type = "progressbar",
+				icon = "ui/tooltips/positive.png",
+				value = stats.HitChance,
+				valueMax = 25,
+				text = stats.HitChance + "% / " + "25%",
+				style = "fatigue-slim"
 			}
 		];
 

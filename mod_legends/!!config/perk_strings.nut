@@ -1905,12 +1905,10 @@ Master the difficult angles and timings of slinging rocks from afar.
 ";
 
 ::Const.Strings.PerkDescription.LegendFavouredEnemyBeast <- @"
-Enforce your position as the top of the food chain.
+Enforce your position at the top of the food chain.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill and maximum damage while fighting Beasts.
-
-• Additionally, this bonus increases the more Beasts you kill and counts all kills made previously with this character retroactively.
+• Grants bonuses to Melee Skill, Ranged Skill and maximum damage while fighting Beasts. This bonus increases with every Beast kill made by this character.
 
 • Increase per kill:
   - Nachzehrers | [color=%positive%]+0.16%[/color]
@@ -1928,18 +1926,14 @@ Enforce your position as the top of the food chain.
   - Spider Eggs | [color=%positive%]+0.5%[/color]
   - Redback | [color=%positive%]+1%[/color]
 
-• At 15% or more (including the base 5% bonus), you will unlock an extremely difficult legendary contract to hunt legendary beasts such as, Skin Ghouls, Rock Unholds, Stollwurms, Enraged Hyenas, White Direwolfs and Readback Spiders.
-
-• Total bonus capped at 25%.
+• At 15% or more increases the likelihood of receiving extremely difficult legendary contracts to hunt the following legendary Beasts: Redback Spiders, Rock Unholds, Skin Ghouls, Stollwurms and White Direwolfs.
 ";
 
 ::Const.Strings.PerkDescription.LegendFavouredEnemyOccult <- @"
 A skeptical mindset cuts through the tricks of the occult, leaving only brittle shapes to steel.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill and Resolve while fighting occult creatures.
-
-• Additionally, this bonus increases the more occult creatures you kill and counts all kills made previously with this character retroactively.
+• Grants bonuses to Melee Skill, Ranged Skill, maximum damage and Resolve while fighting the Occult. This bonus increases with every Occult kill made by this character.
 
 • Increase per kill:
   - Alp | [color=%positive%]+0.25%[/color]
@@ -1955,18 +1949,14 @@ A skeptical mindset cuts through the tricks of the occult, leaving only brittle 
   - Greenwood Schrat | [color=%positive%]+1%[/color]
   - Greenwood Sapling | [color=%positive%]+0.4%[/color]
 
-• At 15% or more (including the base 5% bonus), you will unlock multiple difficult legendary contracts to hunt Demon Alps and Hexe Coven Leaders.
-
-• Total bonus capped at 25%.
+• At 15% or more increases the likelihood of receiving extremely difficult legendary contracts to hunt the following Occult leaders: Demon Alps, Greenwood Schrats and Hexe Coven Leaders.
 ";
 
 ::Const.Strings.PerkDescription.LegendFavouredEnemyGreenskin <- @"
-Big or small, greenskins lack strength of will.
+Big or small, greenskins lack the strength of will.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill and maximum damage while fighting greenskins.
-
-• Additionally, this bonus increases the more greenskins you kill and counts all kills made previously with this character retroactively.
+• Grants bonuses to Melee Skill, Ranged Skill, maximum damage while fighting Greenskins. This bonus increases with every Greenskin kill made by this character.
 
 • Increase per kill:
   - Orc Young | [color=%positive%]+0.125%[/color]
@@ -1981,9 +1971,7 @@ Big or small, greenskins lack strength of will.
   - Goblin Shaman | [color=%positive%]+0.25%[/color]
   - Goblin Overseer | [color=%positive%]+0.25%[/color]
 
-• Also increases spawn rate of greenskin champions.
-
-• Total bonus capped at 25%.
+• Increases the likelihood of encountering Greenskin champions.
 ";
 
 //No contract
@@ -1993,9 +1981,7 @@ Big or small, greenskins lack strength of will.
 Shambling corpses come wave on wave, rising sleepless from their graves.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting undead.
-
-• Additionally, this bonus increases the more of these enemy types you kill and counts all kills made previously with this character retroactively.
+• Grants bonuses to Melee Skill, Ranged Skill, maximum damage and Resolve while fighting the Undead. This bonus increases with every Undead kill made by this character.
 
 • Increase per kill:
   - Wiederganger | [color=%positive%]+0.01%[/color]
@@ -2018,18 +2004,14 @@ Shambling corpses come wave on wave, rising sleepless from their graves.
   - Embalmed Priest | [color=%positive%]+1.25%[/color]
   - Embalmed Queen | [color=%positive%]+2%[/color]
 
-• Also increases spawn rate of undead champions.
-
-• Total bonus capped at 25%.
+• Increases the likelihood of encountering Undead champions.
 ";
 
 ::Const.Strings.PerkDescription.LegendFavouredEnemyCivilization <- @"
 We live in a society.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting law-abiding citizens.
-
-• Additionally, this bonus increases the more of these enemy types you kill and counts all kills made previously with this character retroactively.
+• Grants bonuses to Melee Skill, Ranged Skill and maximum damage while fighting law-abiding citizens. This bonus increases with every Lawful kill made by this character.
 
 • Increase per kill:
   - Footman | [color=%positive%]+0.125%[/color]
@@ -2046,11 +2028,9 @@ We live in a society.
   - Pollaxe | [color=%positive%]+0.125%[/color]
   - Sureshot | [color=%positive%]+0.125%[/color]
 
-• Also increases spawn rate of knight and fencer champions.
-• [color=%positive%]5%[/color] chance to get any items from slain enemies, that might not otherwise be available to loot. Stacks with itself and effects of a similar nature.
+• Increases the likelihood of encountering Lawful champions.
 
-
-• Total bonus capped at 25%.
+• [color=%positive%]5%[/color] chance to get any items from slain enemies, that otherwise might not be available to loot. Stacks with itself and effects of a similar nature.
 ";
 
 //Madman is registered as king
@@ -2058,9 +2038,7 @@ We live in a society.
 The uncivilized are a plague to be uprooted.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting outlaws and criminals.
-
-• Additionally, this bonus increases the more outlaws you kill and counts all kills made previously with this character retroactively.
+• Grants bonuses to Melee Skill, Ranged Skill and maximum damage while fighting outlaws and criminals. This bonus increases with every Outlaw kill made by this character.
 
 • Increase per kill:
   - Rabble | [color=%positive%]+0.025%[/color]
@@ -2085,21 +2063,16 @@ The uncivilized are a plague to be uprooted.
   - Nomad Archer | [color=%positive%]+0.0625%[/color]
   - Nomad Leader | [color=%positive%]+0.25%[/color]
 
-• Also increases spawn rate of outlaw champions.
+• Increases the likelihood of encountering Outlaw champions.
 
-• At 15% or more (including the base 5% bonus), you will unlock a multiple legendary contracts to stop a brigand army from taking over a settlement.
-• At 15% or more (including the base 5% bonus), you will unlock a very difficult legendary contract to escort an important barbarian prisoner.
-
-• Total bonus capped at 25%.
+• At 15% or more increases the likelihood of receiving extremely difficult legendary contracts to stop a brigand army from taking over a settlement and to escort an important barbarian prisoner.
 ";
 
 ::Const.Strings.PerkDescription.LegendFavouredEnemySwordmaster <- @"
 The path to martial prowess is beset by the fake and the weak. Only one can stand to be the greatest.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Grants [color=%positive%]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting elite melee combatants.
-
-• Additionally, this bonus increases the more swordmaster archetypes you kill and counts all kills made previously with this character retroactively.
+• Grants bonuses to Melee Skill, Ranged Skill and maximum damage while fighting elite melee combatants. This bonus increases with every Swordmaster kill made by this character.
 
 • Increase per kill:
   - Hedge Knight | [color=%positive%]+0.25%[/color]
@@ -2118,11 +2091,9 @@ The path to martial prowess is beset by the fake and the weak. Only one can stan
   - Executioner | [color=%positive%]+0.5%[/color]
   - Desert Devil | [color=%positive%]+0.5%[/color]
 
-• Also increases spawn rate of swordmaster archetype champions.
+• Increases the likelihood of encountering Swordmaster champions.
 
-• Unlocks a very difficult repeating event to fight a champion in single combat for a reward.
-
-• Total bonus capped at 25%.
+• Unlocks a very difficult recurring encounter in which a Swordmaster champion challenges a brother to single combat.
 ";
 
 ::Const.Strings.PerkDescription.LegendForcefulSwing <- @"
