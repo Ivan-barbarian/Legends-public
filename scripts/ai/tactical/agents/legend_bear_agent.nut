@@ -35,6 +35,7 @@ this.legend_bear_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_charge"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_default"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_swing"));
+		this.getBehavior(this.Const.AI.Behavior.ID.Split).m.MinTargets = 1;
 	}
 
 	function onUpdate()
