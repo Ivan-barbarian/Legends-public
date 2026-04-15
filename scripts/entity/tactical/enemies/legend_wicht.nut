@@ -32,10 +32,41 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/geist_idle_16.wav",
 			"sounds/enemies/geist_idle_17.wav"
 		];
+		this.m.Sound[this.Const.Sound.ActorEvent.Other1] = [
+			"sounds/enemies/wicht_movement_01.wav",
+			"sounds/enemies/wicht_movement_02.wav",
+			"sounds/enemies/wicht_movement_03.wav",
+			"sounds/enemies/wicht_movement_04.wav",
+			"sounds/enemies/wicht_movement_05.wav",
+			"sounds/enemies/wicht_movement_06.wav",
+			"sounds/enemies/wicht_movement_07.wav",
+			"sounds/enemies/wicht_movement_08.wav",
+			"sounds/enemies/wicht_movement_09.wav",
+			"sounds/enemies/wicht_movement_10.wav",
+			"sounds/enemies/wicht_movement_11.wav",
+			"sounds/enemies/wicht_movement_12.wav",
+			"sounds/enemies/wicht_movement_13.wav",
+			"sounds/enemies/wicht_movement_14.wav",
+			"sounds/enemies/wicht_movement_15.wav",
+			"sounds/enemies/wicht_movement_16.wav",
+			"sounds/enemies/wicht_movement_17.wav",
+			"sounds/enemies/wicht_movement_18.wav",
+			"sounds/enemies/wicht_movement_19.wav",
+			"sounds/enemies/wicht_movement_20.wav",
+			"sounds/enemies/wicht_movement_21.wav",
+			"sounds/enemies/wicht_movement_22.wav",
+			"sounds/enemies/wicht_movement_23.wav"
+		];
 		this.m.SoundPitch = this.Math.rand(90, 110) * 0.01;
 		this.getFlags().add("undead");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/zombie_agent");
 		this.m.AIAgent.setActor(this);
+	}
+
+	function onMovementFinish( _tile ) {
+		this.actor.onMovementFinish(_tile);
+		
+		this.Sound.play(this.m.Sound[this.Const.Sound.ActorEvent.Other1][this.Math.rand(0, this.m.Sound[this.Const.Sound.ActorEvent.Other1].len() - 1)], this.Const.Sound.Volume.TacticalMovement * this.Math.rand(90, 100) * 0.02, this.getPos(), this.m.SoundPitch);
 	}
 
 	function onDeath(_killer, _skill, _tile, _fatalityType) {
@@ -166,12 +197,9 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		this.dropLoot(_tile, tileLoot, !flip);
 		local corpse = this.generateCorpse(_tile, _fatalityType, _killer);
 
-		if (_tile == null)
-		{
+		if (_tile == null) {
 			this.Tactical.Entities.addUnplacedCorpse(corpse);
-		}
-		else
-		{
+		} else {
 			_tile.Properties.set("Corpse", corpse);
 			this.Tactical.Entities.addCorpse(_tile);
 		}
@@ -179,17 +207,14 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
 
-	function generateCorpse( _tile, _fatalityType, _killer )
-	{
-		local isResurrectable = false;
+	function generateCorpse(_tile, _fatalityType, _killer) {
 		local corpse = clone this.Const.Corpse;
 		corpse.IsResurrectable = false;
 		corpse.IsConsumable = false;
 		corpse.Items = this.getItems().prepareItemsForCorpse(_killer);
 		corpse.IsHeadAttached = _fatalityType != this.Const.FatalityType.Decapitated;
 
-		if (_tile != null)
-		{
+		if (_tile != null) {
 			corpse.Tile = _tile;
 		}
 
@@ -318,7 +343,7 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		if (::Legends.isLegendaryDifficulty()) {
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendSmashingShields);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendImmovableObject);
-			::Legends.Perks.grant(this, ::Legends.Perk.LegendOnslaught)
+			::Legends.Perks.grant(this, ::Legends.Perk.LegendOnslaught);
 			this.m.ArmorDifficultyMult += 0.5;
 		}
 		::Legends.S.scaleBaseProperties(b); // this bit increases hitpoints
@@ -434,26 +459,23 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 			"weapons/named/named_two_handed_flail"
 		];
 
-		local upgrades = [];
 		local r = this.Math.rand(1, 3);
 		if (r == 1) {
 			local armor = this.Const.World.Common.pickArmor([
 				[2, ::Legends.Armor.Named.ghost_armor_named_01],
 				[1, ::Legends.Armor.Named.ghost_armor_named_02]
 			]);
-			b.Armor[0]= this.Math.round(armor.getArmorMax() * this.m.ArmorDifficultyMult);
-			b.ArmorMax[0]= this.Math.round(armor.getArmorMax() * this.m.ArmorDifficultyMult);
+			b.Armor[0] = this.Math.round(armor.getArmorMax() * this.m.ArmorDifficultyMult);
+			b.ArmorMax[0] = this.Math.round(armor.getArmorMax() * this.m.ArmorDifficultyMult);
 			this.m.Items.equip(armor);
-		}
-		else if (r == 2) {
+		} else if (r == 2) {
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
-		}
-		else {
+		} else {
 			local helmet = this.Const.World.Common.pickHelmet([
 				[1, ::Legends.Helmet.Named.ghost_helmet_named]
 			]);
-			b.Armor[1]= this.Math.round(helmet.getArmorMax() * this.m.ArmorDifficultyMult);
-			b.ArmorMax[1]= this.Math.round(helmet.getArmorMax() * this.m.ArmorDifficultyMult);
+			b.Armor[1] = this.Math.round(helmet.getArmorMax() * this.m.ArmorDifficultyMult);
+			b.ArmorMax[1] = this.Math.round(helmet.getArmorMax() * this.m.ArmorDifficultyMult);
 			this.m.Items.equip(helmet);
 		}
 		::Legends.Perks.grant(this, ::Legends.Perk.NineLives);
