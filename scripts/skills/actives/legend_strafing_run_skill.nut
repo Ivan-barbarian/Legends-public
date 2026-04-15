@@ -339,7 +339,6 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 				closest = victim;
 			}
 		}
-
 		if (closest != null)
 		{
 			local info = {
@@ -354,7 +353,7 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAfterTeleport(_info)
 	{
-		return skill.onUse(_info.User, _info.TargetTile);
+		return _info.Skill.onUse(_info.User, _info.TargetTile);
 	}
 
 });
