@@ -14,9 +14,9 @@ this.legend_demonalp_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.TargetPriorityHittingAlliesMult = 1.0;
 		this.m.Properties.OverallDefensivenessMult = 2.0;
 		this.m.Properties.OverallFormationMult = 1.0;
-		this.m.Properties.EngageRangeMin = 7;
-		this.m.Properties.EngageRangeMax = 9;
-		this.m.Properties.EngageRangeIdeal = 9;
+		this.m.Properties.EngageRangeMin = 3;
+		this.m.Properties.EngageRangeMax = 5;
+		this.m.Properties.EngageRangeIdeal = 5;
 		this.m.Properties.PreferCarefulEngage = true;
 		this.m.Properties.PreferWait = true;
 	}
