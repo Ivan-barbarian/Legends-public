@@ -6,12 +6,8 @@ import xml.etree.ElementTree as ET
 from PIL import Image as PILImage
 from PIL.Image import Transpose
 from pathlib import Path
+from .bin_packager import BinPackager
 from .model import *
-
-
-# ── Low-level helpers ──────────────────────────────────────────────────────────
-
-
 
 
 class BBrusher:
@@ -485,7 +481,7 @@ class BBrusher:
 		# Save atlas PNG
 		img_path = os.path.join(gfx_dir, brush.img_name)
 		os.makedirs(os.path.dirname(img_path), exist_ok=True)
-		atlas.save(img_path, 'PNG')
+		atlas.save(img_path, 'PNG', optimize=True)
 
 		# Write .brush
 		with open(brush_path, 'wb') as fh:
@@ -493,3 +489,103 @@ class BBrusher:
 
 		if logs: print(f'Packed {brush.img_name} ({atlas_w}x{atlas_h}) with {len(brush.sprites)} sprites')
 
+	@staticmethod
+	def pack_brush_from_dir_smart(base_brush_path, in_dir, gfx_dir=None, max_dim=1024, logs=False):
+		"""
+		Packs sprites from in_dir into multiple .brush and .png files if they exceed max_dim.
+		experimental for now...
+		"""
+		if gfx_dir is None:
+			gfx_dir = str(Path(base_brush_path).resolve().parent.parent)
+
+		tree = ET.parse(os.path.join(in_dir, 'metadata.xml'))
+		master_brush = BBrusher.xml_to_brush(tree.getroot())
+
+		frame_images = {}
+		for sp in master_brush.sprites:
+			for fr in sp.frames:
+				if fr.name not in frame_images:
+					img_path = os.path.join(in_dir, fr.name)
+					frame_images[fr.name] = PILImage.open(img_path).convert('RGBA')
+
+		# Fill in sprite dimensions from first frame where not explicitly set
+		for sp in master_brush.sprites:
+			if sp.width == 0 and sp.frames:
+				img = frame_images[sp.frames[0].name]
+				sp.width = img.width
+				sp.height = img.height
+
+		bins = BinPackager.fill_bf(frame_images, max_dim)
+
+		base_p = Path(base_brush_path)
+		for i, b in enumerate(bins):
+			suffix = f"_{i}" if len(bins) > 1 else ""
+			sheet_brush_path = base_p.with_name(f"{base_p.stem}{suffix}{base_p.suffix}")
+			sheet_img_name = f"{base_p.stem}{suffix}.png"
+
+			sb = Brush()
+			sb.version = master_brush.version
+			sb.img_name = f"gfx/{sheet_img_name}"
+			sb.img_width = BBrusher._po2(b['used_w'])
+			sb.img_height = BBrusher._po2(b['used_h'])
+			sb.header_flags = master_brush.header_flags
+			sb.i0 = master_brush.i0
+			sb.b13_14 = master_brush.b13_14
+
+			atlas = PILImage.new('RGBA', (sb.img_width, sb.img_height), (0,0,0,0))
+			sb.sprites = []
+
+			# Group items back into Sprites for the Brush file
+			for sp in master_brush.sprites:
+				# Only pull frames that ended up in this specific bin
+				frames_in_bin = [fr for fr in sp.frames if fr.name in b['images']]
+				if not frames_in_bin:
+					continue
+
+				# Clone the sprite metadata
+				new_sp = Sprite()
+				for attr in ['id', 'hash', 'L0', 'width', 'height', 'offset_x', 'offset_y',
+							 'flags', 'b1_5', 'rot_speed', 'b6_9', 'f1', 'f2', 'ic', 'f3', 'b10_12']:
+					setattr(new_sp, attr, getattr(sp, attr))
+				new_sp.frames = []
+
+				for fr in frames_in_bin:
+					img = frame_images[fr.name]
+					px, py = b['images'][fr.name]
+
+					fr.u1 = px / sb.img_width
+					fr.u2 = (px + img.width) / sb.img_width
+					fr.v1 = py / sb.img_height
+					fr.v2 = (py + img.height) / sb.img_height
+
+					left_def = int(-(img.width + 1) / 2)
+					right_def = img.width // 2
+					top_def = int(-(img.height + 1) / 2)
+					bottom_def = img.height // 2
+
+					if fr.edge_left is None:
+						fr.edge_left = float(left_def)
+					if fr.edge_right is None:
+						fr.edge_right = float(right_def)
+					if fr.edge_top is None:
+						fr.edge_top = float(top_def)
+					if fr.edge_bottom is None:
+						fr.edge_bottom = float(bottom_def)
+
+					new_sp.frames.append(fr)
+
+				sb.sprites.append(new_sp)
+
+			for name, (px, py) in b['images'].items():
+				img = frame_images[name]
+				BBrusher._flip_blit(img, atlas, px, py)
+
+			# Save atlas PNG safely
+			img_path = os.path.join(gfx_dir, sheet_img_name)
+			os.makedirs(os.path.dirname(img_path), exist_ok=True)
+			atlas.save(img_path, 'PNG', optimize=True)
+
+			with open(sheet_brush_path, 'wb') as f:
+				f.write(BBrusher.write_brush(sb))
+
+			if logs: print(f"Packed {sheet_brush_path.name} ({sb.img_width}x{sb.img_height}) with {len(sb.sprites)} sprites.")

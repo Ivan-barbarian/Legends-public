@@ -350,6 +350,28 @@ class BrushUtils:
 			raise BuildError(f"Failed to build brush {brush_path}: {e}")
 
 
+	def build_brush_best_fit(self, brush_path):
+		"""Build a packed brush using bbrusher"""
+		print(f"Building {brush_path} brush...")
+
+		# Convert forward slashes to underscores for brush name
+		brush_name = brush_path.replace("/", "_")
+		brush_file = self.current_dir / "brushes" / f"{brush_name}.brush"
+		unpacked_dir = self.current_dir / "unpacked" / brush_path
+
+		if not unpacked_dir.exists():
+			print(f"Warning: Unpacked directory {unpacked_dir} does not exist, skipping {brush_path}")
+			return
+
+		# Ensure brushes directory exists
+		brush_file.parent.mkdir(parents=True, exist_ok=True)
+
+		try:
+			self.bbrusher.pack_brush_from_dir_smart(brush_file, unpacked_dir, f"../{self.repo_dir}/gfx")
+		except Exception as e:
+			raise BuildError(f"Failed to build brush {brush_path}: {e}")
+
+
 class PythonScriptRunner:
 	"""Utility class for running Python scripts"""
 

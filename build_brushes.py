@@ -6,6 +6,7 @@ Replaces build_brushes.sh with cross-platform Python implementation
 import sys
 import shutil
 import argparse
+import time
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor
 from buildscript.lib import BrushUtils
@@ -110,30 +111,6 @@ class BrushBuilder:
 
         generate_legend_enemies(self.current_dir)
 
-    def get_helmet_brushes(self):
-        """Get list of helmet brush directories"""
-        helmet_brushes = []
-        helmet_dir = self.current_dir / "unpacked" / "legend_helmets"
-
-        if helmet_dir.exists():
-            for subdir in helmet_dir.iterdir():
-                if subdir.is_dir() and subdir.name.isdigit():
-                    helmet_brushes.append(f"legend_helmets/{subdir.name}")
-
-        return helmet_brushes
-
-    def get_armor_brushes(self):
-        """Get list of armor brush directories"""
-        armor_brushes = []
-        armor_dir = self.current_dir / "unpacked" / "legend_armor"
-
-        if armor_dir.exists():
-            for subdir in armor_dir.iterdir():
-                if subdir.is_dir() and subdir.name.isdigit():
-                    armor_brushes.append(f"legend_armor/{subdir.name}")
-
-        return armor_brushes
-
     def copy_brushes_and_gfx(self):
         """Copy brushes and graphics to build directory for packaging"""
         print(f"Copying brushes to {self.build_dir}/brushes ...")
@@ -159,39 +136,33 @@ class BrushBuilder:
 
     def build_all_brushes(self):
         """Build all brushes"""
-        # Static brush list
-        brushes = [
-            # "entity_blood",
-            "legend_characters",
-            "legend_enemies",
-            "legend_weapons",
-            "legend_world",
-            "world_tiles",
-            "legend_horses",
-            "legend_detail",
-            "terrain",
-            "legend_ui",
-            "legend_objects",
-            "legend_effects",
-        ]
-
-        # Add dynamic helmet brushes
-        brushes.extend(self.get_helmet_brushes())
-
-        # Add dynamic armor brushes
-        brushes.extend(self.get_armor_brushes())
-
         # Create brushes directory
         brushes_dir = self.current_dir / "brushes"
         if brushes_dir.exists():
             shutil.rmtree(brushes_dir)
         brushes_dir.mkdir(exist_ok=True)
 
-        import time
         start = time.time()
         # Build each brush
         with ProcessPoolExecutor() as executor:
-            executor.map(self.brush.build_brush, brushes)
+            executor.map(self.brush.build_brush, [ # these are build as bbrusher would
+                "world_tiles",
+                "terrain",
+                "legend_detail",
+            ])
+        with ProcessPoolExecutor() as executor:
+            executor.map(self.brush.build_brush_best_fit, [ # these are using different packaging method for better compression
+                "legend_armor",
+                "legend_helmets",
+                "legend_characters",
+                "legend_enemies",
+                "legend_weapons",
+                "legend_world",
+                "legend_horses",
+                "legend_ui",
+                "legend_objects",
+                "legend_effects",
+            ])
         print("Elapsed build brush", time.time() - start)
 
     def build(self):
