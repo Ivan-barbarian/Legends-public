@@ -506,8 +506,9 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		}
 		local oldIndex;
 
-		// try/catch, so getStash() after quitting game to menu and starting a scenario doesn't crash - Narkh 2026/03/01
-		try { oldIndex =  this.World.Assets.getStash().getItemByInstanceID(_upgrade.getInstanceID());} catch (e)	{}
+		if ("Assets" in this.World && "getStash" in this.World.Assets) {
+			oldIndex =  this.World.Assets.getStash().getItemByInstanceID(_upgrade.getInstanceID());
+		}
 
 		if (oldIndex != null) oldIndex = oldIndex.index;
 		local oldItem;

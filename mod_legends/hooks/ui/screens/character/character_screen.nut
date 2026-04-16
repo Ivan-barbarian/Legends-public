@@ -196,9 +196,7 @@
 	
 	o.queryRosterSizeData <- function (_shake = false)
 	{
-		local brosInCombat = 18;
-		// try/catch, so getBrothersInFrontline() after quitting game to menu and starting a scenario doesn't crash - Narkh 2026/03/01
-		try { brosInCombat = ::World.State.getBrothersInFrontline();} catch(e) {}
+		local brosInCombat = "getBrothersInFrontline" in ::World.State ? ::World.State.getBrothersInFrontline() : 18;
 		local result = {
 			brothersInCombat = brosInCombat,
 			brothersMaxInCombat = 27,
