@@ -46,7 +46,8 @@
 				icon = "ui/icons/special.png",
 				text = "Inflicts [color=%damage%]" + fatExtra + "[/color] extra fatigue"
 			});
-		} else {
+		}
+		else {
 			ret.push({
 				id = 7,
 				type = "text",
@@ -64,14 +65,8 @@
 				icon = "ui/icons/special.png",
 				text = "Has a [color=%positive%]100%[/color] chance to daze and stagger on a hit, and stun if hitting the head"
 			});
-		} else if (properties.IsSpecializedInPolearms) {
-			ret.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Has a [color=%positive%]100%[/color] chance to" + effects + " on a hit"
-			});
-		} else if (!properties.IsSpecializedInPolearms) {
+		} 
+		else if (properties.IsSpecializedInPolearms) {
 			ret.push({
 				id = 7,
 				type = "text",
@@ -87,8 +82,10 @@
 	o.onAfterUpdate = function(_properties) {
 		if (this.m.IsStaffKnockOut) {
 			this.m.FatigueCostMult = _properties.IsSpecializedInPolearms ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+			this.m.StunChance = 100 ? _properties.IsSpecializedInStaffStun : 75;
 		} else {
 			onAfterUpdate(_properties);
+			this.m.StunChance = 100 ? _properties.IsSpecializedInStaffStun : 75;
 		}
 	}
 
@@ -107,10 +104,8 @@
 		if (success && _targetTile.IsOccupiedByActor) {
 			local target = _targetTile.getEntity();
 
-			local stun = (this.m.IsStaffKnockOut ? _user.getCurrentProperties().IsSpecializedInPolearms : _user.getCurrentProperties().IsSpecializedInMaces)
-				|| this.Math.rand(1, 100) <= this.m.StunChance;
-			local canStun = !target.getCurrentProperties().IsImmuneToStun
-				&& !target.getSkills().hasEffect(::Legends.Effect.Stunned);
+			local stun = this.Math.rand(1, 100) <= this.m.StunChance;
+			local canStun = !target.getCurrentProperties().IsImmuneToStun && !target.getSkills().hasEffect(::Legends.Effect.Stunned);
 			if (this.m.IsStaffKnockOut && stun) {
 				if (!target.getCurrentProperties().IsImmuneToDaze) {
 					::Legends.Effects.grant(target, ::Legends.Effect.Dazed);
@@ -127,10 +122,8 @@
 				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer) {
 					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has dazed " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
 				}
-			} else if (!this.m.IsStaffKnockOut
-				&& (_user.getCurrentProperties().IsSpecializedInMaces || stun)
-				&& canStun)
-			{
+			} 
+			else if (!this.m.IsStaffKnockOut && (_user.getCurrentProperties().IsSpecializedInMaces || stun) && canStun) {
 				::Legends.Effects.grant(target, ::Legends.Effect.Stunned);
 
 				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer) {
