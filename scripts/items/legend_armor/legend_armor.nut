@@ -446,11 +446,8 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		local oldIndex;
 
 
-		if ("Assets" in this.World && this.World.Assets.getStash())
-		{
-
+		if ("Assets" in this.World && this.World.Assets != null) {
 			oldIndex = this.World.Assets.getStash().getItemByInstanceID(_upgrade.getInstanceID())
-
 		}
 
 		if (oldIndex != null) oldIndex = oldIndex.index;
