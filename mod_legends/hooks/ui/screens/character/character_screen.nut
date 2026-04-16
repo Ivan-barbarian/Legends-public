@@ -264,7 +264,7 @@
 			if (typeof upgrade == "table") {
 				data.stash.removeByIndex(upgrade.index);
 				if (upgrade.item != null) {
-					this.World.Assets.getStash().insert(upgrade.item, upgrade.index);
+					data.stash.insert(upgrade.item, upgrade.index);
 				}
 			} else {
 				data.stash.removeByIndex(data.sourceIndex);
