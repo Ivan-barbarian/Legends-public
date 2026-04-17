@@ -5,7 +5,7 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 	function create()
 	{
 		this.legend_named_armor_upgrade.create();
-		this.m.ID = "legend_armor.cloak_rich";
+		this.m.ID = "legend_armor.body.cloak_rich";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Cloak;
 		this.m.Name = "";
 		this.m.Description = "An embroidered silk cloak made with the finest materials affordable only for those in positions of great power.";

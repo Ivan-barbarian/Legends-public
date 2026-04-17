@@ -5,7 +5,7 @@ this.legend_armor_cloak_emperors <- this.inherit("scripts/items/legend_armor/leg
 	function create()
 	{
 		this.legend_named_armor_upgrade.create();
-		this.m.ID = "legend_armor.cloak_emperor";
+		this.m.ID = "legend_armor.body.cloak_emperor";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Cloak;
 		this.m.Name = "The Emperor\'s Cloak";
 		this.m.Description = "A cloak of the finest material that was rumored to have been worn by the last emperor.";
