@@ -369,13 +369,13 @@ CampScreenPainterDialogModule.prototype.createDIV = function (_parentDiv) {
 
 	// details: buttons
 	detailsRow = $('<div class="row is-button-container"/>');
-	this.mDetailsPanel.Container.append(detailsRow);
-	var costsLabel = $('<div class="totalmoney title-font-normal font-bold font-bottom-shadow font-color-title">Total Cost:</div>');
+	this.mDetailsPanel.Container.append(detailsRow); // don't write out costs since painting is free
+	/*var costsLabel = $('<div class="totalmoney title-font-normal font-bold font-bottom-shadow font-color-title">Total Cost:</div>');
 	detailsRow.append(costsLabel);
 	var costsImage = $('<img class="moneyimg"/>');
 	detailsRow.append(costsImage);
 	costsImage.attr('src', Path.GFX + Asset.ICON_ASSET_MONEY);
-	this.mDetailsPanel.TotalCostText = $('<div class="totalmoneysum title-font-normal font-bold font-bottom-shadow font-color-title">0</div>');
+	this.mDetailsPanel.TotalCostText = $('<div class="totalmoneysum title-font-normal font-bold font-bottom-shadow font-color-title">0</div>');*/
 	detailsRow.append(this.mDetailsPanel.TotalCostText);
 
 	var ConfirmButtonLayout = $('<div class="l-confirm-button"/>');
@@ -623,7 +623,7 @@ CampScreenPainterDialogModule.prototype.updateDetailsPanel = function (_element)
 
 
 		self.mDetailsPanel.ConfirmButton.enableButton(false);
-		self.mDetailsPanel.TotalCostText.html("0");
+		//self.mDetailsPanel.TotalCostText.html("0"); painting is free
 
 		self.mDetailsPanel.Container.removeClass('display-none').addClass('display-block');
 	}
