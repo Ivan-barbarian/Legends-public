@@ -626,37 +626,38 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			text = this.getValueString()
 		});
 
-
-		result.push({
+		local baseIcon = {
 			id = 3,
 			type = "image",
 			image = this.m.IconLarge != "" ? this.m.IconLarge : this.m.Icon,
-			isLarge = this.m.IconLarge != "" ? true : false
-		});
+			isLarge = this.m.IconLarge != "" ? true : false,
+			imageOverlayPath = []
+		};
 
-		foreach( u in this.m.Upgrades )
-		{
-			if (u != null)
+		local upgradeLayerOrder = [
+			{ id = this.Const.Items.HelmetUpgrades.Vanity,      isLower = true  },
+			{ id = this.Const.Items.HelmetUpgrades.ExtraVanity, isLower = true  },
+			{ id = this.Const.Items.HelmetUpgrades.Helm,        isLower = true  },
+			{ id = this.Const.Items.HelmetUpgrades.Top,         isLower = true  },
+			{ id = this.Const.Items.HelmetUpgrades.Helm,        isLower = false },
+			{ id = this.Const.Items.HelmetUpgrades.Top,         isLower = false },
+			{ id = this.Const.Items.HelmetUpgrades.Vanity,      isLower = false },
+			{ id = this.Const.Items.HelmetUpgrades.ExtraVanity, isLower = false }
+		];
+		
+		foreach( u in upgradeLayerOrder )	{
+			local upgrade = this.m.Upgrades[u.id];
+			if (upgrade != null && u.isLower == upgrade.isLower())
 			{
-				if (u.getIconLarge() != null)
+				local overlay = upgrade.getIcon();
+				if (overlay != null && overlay != "")
 				{
-					result.push({
-						id = 3,
-						type = "image",
-						image = u.getIconLarge(),
-						isLarge = true
-					});
-				}
-				else
-				{
-					result.push({
-						id = 3,
-						type = "image",
-						image = u.getIcon()
-					});
+					baseIcon.imageOverlayPath.push(overlay);
 				}
 			}
 		}
+
+		result.push(baseIcon);
 
 		result.push({
 			id = 4,
@@ -710,8 +711,10 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			result.push({
 				id = 10,
 				type = "text",
-				text = "[leg_img](gfx/ui/items/%icon%,height=28px,width=28px)[/leg_img] [b][u]%name%[/u][/b]",
-				param = [["name", this.getName()], ["icon", this.m.Icon]]
+				text = "[b][u]%name%[/u][/b]",
+				icon = "ui/items/" + this.m.Icon,
+				param = [["name", this.getName()]],
+				isPartialLayer = true
 			});
 
 			result.push({

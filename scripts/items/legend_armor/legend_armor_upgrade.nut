@@ -253,8 +253,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 
 		// Other common stats found on Attachements:
 		this.applyEffectTooltips(result);
-
-		if (this.getOverlayIconLarge() != null)
+		if (this.getOverlayIconLarge() != null && this.m.Type != this.Const.Items.ArmorUpgrades.Rune)
 		{
 			result.push({
 				id = 3,
@@ -314,11 +313,13 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		});
 
 		_result.push({
-			id = 10,
-			type = "text",
-			text = "[leg_img](gfx/ui/items/%icon%,height=28px,width=28px)[/leg_img] [b][u]%name%[/u][/b]",
-			param = [["name", this.getName()], ["icon", this.m.Icon]]
-		});
+				id = 10,
+				type = "text",
+				text = "[b][u]%name%[/u][/b]",
+				icon = "ui/items/" + this.m.Icon,
+				param = [["name", this.getName()]],
+				isPartialLayer = true
+			});
 
 		if ( ::Legends.Mod.ModSettings.getSetting("ShowExpandedArmorLayerTooltip").getValue() )
 		{

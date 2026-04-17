@@ -144,7 +144,7 @@ def generate_legend_armor(base_path):
             overlay = icon = f"armor/icon_{d['vanilla']}_armor"
         else:
             brush = brushName
-            overlayLarge = f"legend_armor/inventory_{brushName}"
+            overlayLarge = inventory = f"legend_armor/inventory_{brushName}"
             overlay = icon = f"legend_armor/icon_{brushName}"
 
         if inherit:
@@ -172,6 +172,7 @@ def generate_legend_armor(base_path):
             "overlayLarge": overlayLarge,
             "overlay": overlay,
             "icon": icon,
+            "inventory": inventory,
             "impactSound": impactsound,
             "invSound": invsound,
             "names": "[" + ", ".join(f'"{n}"' for n in d["names"]) + "]" if "names" in d else "[]",

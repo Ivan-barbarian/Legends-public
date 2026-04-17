@@ -37,7 +37,7 @@ this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/legen
 		this.m.SpriteDamagedBack = "tabard_named_" + variant + "_damaged";
 		this.m.SpriteCorpseBack = "tabard_named_" + variant + "_dead";
 		this.m.Icon = "legend_armor/icon_tabard_named_" + variant + ".png";
-		this.m.IconLarge = this.m.Icon;
+		this.m.IconLarge = "legend_armor/inventory_tabard_named_" + variant + ".png";
 		this.m.OverlayIcon = "legend_armor/icon_tabard_named_" + variant + ".png";
 		this.m.OverlayIconLarge = "legend_armor/inventory_tabard_named_" + variant + ".png";
 	}

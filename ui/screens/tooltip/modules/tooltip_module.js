@@ -1729,8 +1729,7 @@ TooltipModule.prototype.updateHeaderTextDiv = function(_parentDIV, _data, _isChi
 
 TooltipModule.prototype.addAtmosphericImageDiv = function(_parentDIV, _data)
 {
-	if (!('image' in _data) || typeof(_data.image) !== 'string' || _data.image.length === 0)
-	{
+	if (!('image' in _data) || typeof(_data.image) !== 'string' || _data.image.length === 0) {
 		return null;
 	}
 
@@ -1738,14 +1737,25 @@ TooltipModule.prototype.addAtmosphericImageDiv = function(_parentDIV, _data)
 	_parentDIV.append(container);
 	container.attr('id', 'tooltip-module-atmospheric-image-' + _data.id);
 	
-	if ('isLarge' in _data && _data.isLarge === true)
-	{
+	if ('isLarge' in _data && _data.isLarge === true) {
 		container.removeClass('is-small').addClass('is-large');
 	}
 
 	var image = $('<img/>');
 	image.attr('src', Path.ITEMS + _data.image);
 	container.append(image);
+
+	if ('imageOverlayPath' in _data && Array.isArray(_data.imageOverlayPath)) {
+        container.addClass('is-layered-container'); 
+
+        _data.imageOverlayPath.forEach(function (path) {
+            if (path === null || path === '') return;
+            
+            var overlayImage = $('<img/>');
+            overlayImage.attr('src', Path.ITEMS + path);
+            container.append(overlayImage);
+        });
+    }
 
 	return container;
 };
@@ -1788,6 +1798,7 @@ TooltipModule.prototype.addContentTextDiv = function(_parentDIV, _data, _isChild
 	if (!_isChildRow)
 	{
 		container = $('<div class="row content-container"></div>');
+		if ('isPartialLayer' in _data) container.addClass('is-partial-layer');
 		container.attr('id', 'tooltip-module-content-text-container-' + _data.id);
 	}
 	else
