@@ -431,7 +431,7 @@ class Defs:
  "desc" :  "An exceptional kettle helm of unmatched quality. Adorned with golden decorative elements.",
  "adesc" : "Includes an exceptional kettle helm of unmatched quality."
  },
-{"name" : "enclave_kettle"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 1250, "con" : 145, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
+{"name" : "enclave_kettle"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 6, "value" : 1250, "con" : 145, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Kettle Sallet",
  "desc" :  "A steel helm that melds the defensive brim of a kettle hat with the sleek, protective form of a sallet.",
  "adesc" : "Includes a steel kettle sallet."
@@ -486,12 +486,12 @@ class Defs:
  "desc" :  "A conical helm fluted to redirect the force of the incoming blows.",
  "adesc" : "Includes a fluted conical helm."
  },
-{"name" : "sallet"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 800, "con" : 50, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
+{"name" : "sallet"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 6, "value" : 800, "con" : 50, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Sallet",
  "desc" :  "A metal sallet helm with an extended neck guard, a design uncommon in these lands. Well crafted to offer maximum protection with minimum weight, and without impairing vision.",
  "adesc" : "Includes a metal sallet."
  },
-{"name" : "sallet_named"                     , "layer" : "helm", "min" : 1, "max" : 9, "value" : 1600, "con" : 55, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
+{"name" : "sallet_named"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 9, "value" : 1600, "con" : 55, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Gilded Sallet",
  "desc" :  "A beautifully designed metal sallet helm with an extended neck guard, a design uncommon in these lands. Expertly crafted to offer maximum protection with minimum weight, and without impairing vision.",
  "adesc" : "Includes a beautifully designed metal sallet."
@@ -611,7 +611,7 @@ class Defs:
  "desc" :  "A restored and polished helm of a long dead legionary, once again serving its purpose after centuries of decay and neglect.",
  "adesc" : "Includes a restored ancient legionary helm."
  },
-{"name" : "tailed_conic"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 3000, "con" : 140, "stam" : -8, "vis" : -2, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate", "named" : { "con": { "min" : 140, "max" : 165 }, "fat": { "min" : 9, "max" : 7 }, "vis": { "min" : 2, "max" : 1 }, "names" : Names  },
+{"name" : "tailed_conic"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 5, "value" : 3000, "con" : 140, "stam" : -8, "vis" : -2, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate", "named" : { "con": { "min" : 140, "max" : 165 }, "fat": { "min" : 9, "max" : 7 }, "vis": { "min" : 2, "max" : 1 }, "names" : Names  },
  "title" :  "Feathered Nasal Helm",
  "desc" :  "A hardened nasal helm with a cloth band and a tail.",
  "adesc" : "Includes a nasal helm with a tail."
@@ -892,12 +892,12 @@ class Defs:
  "desc" :  "A visor that fits on an armet, protecting the lower jaw while leaving a slit for eyesight.",
  "adesc" : "Includes an armet visor."
  },
-{"name" : "wallace_sallet_visor"                     , "layer" : "top", "lower": True, "min" : 1, "max" : 3, "value" : 150, "con" : 20, "stam" : -1, "vis" : -1, "hair" : "false", "beard" : "true", "impactSound" : "plate", "invSound" : "plate",
+{"name" : "wallace_sallet_visor"                     , "layer" : "top", "min" : 1, "max" : 3, "value" : 150, "con" : 20, "stam" : -1, "vis" : -1, "hair" : "false", "beard" : "true", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Sallet Visor",
  "desc" :  "A gracefully curved iron visor, featuring two eye-slits and a few breaths in the center.",
   "adesc" : "Includes a curved iron visor."
  },
-{"name" : "wallace_sallet_visor_named"                     , "layer" : "top", "lower": True, "min" : 1, "max" : 1, "value" : 700, "con" : 35, "stam" : -1, "vis" : -1, "hair" : "false", "beard" : "true", "impactSound" : "plate", "invSound" : "plate", "named" : { "con": { "min" : 35, "max" : 50 }, "fat": { "min" : 2, "max" : 1 }, "vis": { "min" : 1, "max" : 1 }, "names" : Names  },
+{"name" : "wallace_sallet_visor_named"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 700, "con" : 35, "stam" : -1, "vis" : -1, "hair" : "false", "beard" : "true", "impactSound" : "plate", "invSound" : "plate", "named" : { "con": { "min" : 35, "max" : 50 }, "fat": { "min" : 2, "max" : 1 }, "vis": { "min" : 1, "max" : 1 }, "names" : Names  },
  "title" :  "Sallet Visor",
  "desc" :  "A beautifully painted visor bearing an exquisite caricature of a beast's visage upon the front, striking terror - and perhaps a touch of bewilderment - into any who gaze upon it.",
  "adesc" : "Includes a beautifully painted curved iron visor."
