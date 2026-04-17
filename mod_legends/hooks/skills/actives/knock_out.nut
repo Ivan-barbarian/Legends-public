@@ -82,10 +82,10 @@
 	o.onAfterUpdate = function(_properties) {
 		if (this.m.IsStaffKnockOut) {
 			this.m.FatigueCostMult = _properties.IsSpecializedInPolearms ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-			this.m.StunChance = 100 ? _properties.IsSpecializedInStaffStun : 75;
+			this.m.StunChance = _properties.IsSpecializedInStaffStun ? 100 : 75;
 		} else {
 			onAfterUpdate(_properties);
-			this.m.StunChance = 100 ? _properties.IsSpecializedInStaffStun : 75;
+			this.m.StunChance = _properties.IsSpecializedInStaffStun ? 100 : 75;
 		}
 	}
 
