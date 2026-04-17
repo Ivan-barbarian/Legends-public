@@ -341,7 +341,7 @@ class Defs:
  "desc" :  "A nordic helm with a metal face mask and cheek guards.",
   "adesc" : "Includes a nordic metal helm."
  },
-{"name" : "norman_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 150, "con" : 50, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
+{"name" : "norman_helm"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 6, "value" : 150, "con" : 50, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Nasal Helm",
  "desc" :  "A light metal helm with a nose guard.",
  "adesc" : "Includes a light metal helm."
@@ -351,12 +351,12 @@ class Defs:
  "desc" :  "A conical helm of excellent quality with polished, golden elements that catch the light with a sharp, brilliant glint.",
  "adesc" : "Includes a conical helm of excellent quality with polished, golden elements."
  },
-{"name" : "flat_top_helm_rusted"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 225, "con" : 70, "stam" : -5, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
+{"name" : "flat_top_helm_rusted"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 6, "value" : 225, "con" : 70, "stam" : -5, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Rusted Flat Top Helm",
  "desc" :  "A rusted and dented helm with a flat top, a telling sign of a negligent owner.",
  "adesc" : "Includes a rusted flat metal helm."
  },
-{"name" : "flat_top_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 325, "con" : 85, "stam" : -5, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
+{"name" : "flat_top_helm"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 6, "value" : 325, "con" : 85, "stam" : -5, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Flat Top Helm",
  "desc" :  "A flat metal helm with a nose guard, popular among the soldiers.",
  "adesc" : "Includes a flat metal helm."
