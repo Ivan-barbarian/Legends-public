@@ -20,7 +20,7 @@ this.legend_named_heavy_javelin <- inherit("scripts/items/weapons/named/named_we
 		this.m.NameList = this.Const.Strings.JavelinNames;
 		this.m.Description = "A jagged harpoon, that flies true despite it\'s weight and size. Harder to throw and hit with, but more impactful.";
 		this.m.Categories = "Throwing Weapon/Spear, One-Handed";
-		this.m.SlotType = Const.ItemSlot.Mainhand;
+		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.WeaponType = this.Const.Items.WeaponType.Throwing | this.Const.Items.WeaponType.Spear;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Ammo | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.OneHanded;
 		this.m.AddGenericSkill = true;
