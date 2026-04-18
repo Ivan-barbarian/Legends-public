@@ -42,7 +42,7 @@ this.legend_hew_skill <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnHead = this.Const.Injury.CuttingHead;
 		this.m.DirectDamageMult = 0.35;
 		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 20;
+		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 		this.m.ChanceDecapitate = 99;
@@ -119,8 +119,8 @@ this.legend_hew_skill <- this.inherit("scripts/skills/skill", {
 		if (this.m.ApplyHead)
 			_properties.HitChance[this.Const.BodyPart.Head] = 100;
 
-		_properties.DamageTotalMult *= 0.5;
-		_properties.DamageTooltipMaxMult *= 2.0;
+		_properties.DamageTotalMult *= 0.65;
+		_properties.DamageTooltipMaxMult *= 2.6;
 	}
 });
 
