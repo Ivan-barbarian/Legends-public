@@ -1,8 +1,8 @@
 ::mods_hookExactClass("skills/effects/debilitating_attack_effect", function(o) {
 
-	o.m.SkillCount <- 0,
-	o.m.LastTargetID <- 0
-	o.m.TimeAdded <- 0
+	o.m.SkillCount <- 0;
+	o.m.LastTargetID <- 0;
+	o.m.TimeAdded <- 0;
 
 	local create = o.create;
 	o.create = function() {
@@ -62,6 +62,7 @@
 		local debilitate = ::Legends.Effects.grant(_targetEntity, ::Legends.Effect.Debilitated);
 		if (!actor.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer && !_targetEntity.getFlags().has("tail"))
 			this.Tactical.EventLog.log(debilitate.getLogEntryOnAdded(this.Const.UI.getColorizedEntityName(actor), this.Const.UI.getColorizedEntityName(_targetEntity)));
+		this.removeSelf();
 	}
 
 	o.onAnySkillExecuted <- function (_skill, _targetTile, _targetEntity, _forFree) {
@@ -70,9 +71,6 @@
 
 		if (_targetEntity == null || !_targetEntity.isAttackable())
 			return;
-
-		if (!this.m.IsGarbage && this.m.TimeAdded + 0.1 < this.Time.getVirtualTimeF() && !_targetEntity.isAlliedWith(this.getContainer().getActor()))
-			this.removeSelf();
 	}
 
 });
