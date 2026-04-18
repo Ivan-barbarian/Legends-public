@@ -77,6 +77,11 @@ this.legend_demon_hound <- this.inherit("scripts/entity/tactical/actor", {
 		if (this.getCurrentProperties().IsRooted || this.getCurrentProperties().IsStunned)
 			return;
 
+		if (this.actor.m.CurrentMovementType == this.Const.Tactical.MovementType.Involuntary) {
+			this.Time.scheduleEvent(this.TimeUnit.Virtual, 50, this.teleport.bindenv(this), _tag);
+			return;
+		}
+
 		local result = {
 			TargetTile = this.getTile(),
 			Destinations = []
