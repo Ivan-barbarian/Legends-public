@@ -232,6 +232,12 @@ this.camp_manager <- {
 
 	function update( _worldState )
 	{
+		local escortEntity = ::World.State.getEscortedEntity();
+    	local isCurrentlyEscorting = escortEntity != null && !escortEntity.isNull();
+    	if (isCurrentlyEscorting != this.m.IsEscorting) {
+        	this.onEscort(isCurrentlyEscorting);
+    	}
+
 		foreach( b in this.m.Tents )
 		{
 			if (this.m.IsCamping && b.Camping() || this.m.IsEscorting && b.Escorting())
