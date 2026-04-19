@@ -1951,7 +1951,7 @@
 		Attachments = [
 			[4, "armor_upgrades/legend_additional_padding_upgrade"],
 			[4, "armor_upgrades/legend_barbarian_horn_upgrade"],
-			[1, "armor_upgrades/legend_armor_skull_chain", 1]
+			[1, "armor_upgrades/legend_armor_skull_chain_upgrade"]
 		],
 	}]
 };
@@ -1986,7 +1986,7 @@
 		],
 		Attachments = [
 			[9, ""],
-			[1, "armor_upgrades/legend_barbarian_horn"]
+			[1, "armor_upgrades/legend_barbarian_horn_upgrade"]
 		],
 	}]
 };
