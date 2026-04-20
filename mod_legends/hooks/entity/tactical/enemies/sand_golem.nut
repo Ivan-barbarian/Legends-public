@@ -22,7 +22,7 @@
 		::Legends.Perks.grant(this, ::Legends.Perk.LegendPoisonImmunity);
 		if (::Legends.isLegendaryDifficulty())
 		{
-			this.m.Hitpoints = b.Hitpoints * 1.5;
+			b.Hitpoints *= 1.5;
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendLastStand);
 			::Legends.Traits.grant(this, ::Legends.Trait.Fearless);
 			::Legends.Traits.grant(this, ::Legends.Trait.Determined);

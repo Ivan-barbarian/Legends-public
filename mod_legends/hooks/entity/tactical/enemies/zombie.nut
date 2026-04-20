@@ -14,9 +14,6 @@
 
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
-		if (::Legends.isLegendaryDifficulty()) {
-			this.m.Hitpoints = b.Hitpoints * 1.5;
-		}
 		this.m.CurrentProperties = clone b;
 		this.m.ActionPointCosts = this.Const.ZombieMovementAPCost;
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;

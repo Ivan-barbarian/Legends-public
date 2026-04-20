@@ -28,7 +28,7 @@ this.legend_greater_flesh_golem_armed <- this.inherit("scripts/entity/tactical/e
 		if (!this.actor.makeMiniboss()) {
 			return false;
 		}
-
+		::Legends.Perks.grant(this, ::Legends.Perk.Nimble);
 		this.getSprite("miniboss").setBrush("bust_miniboss_undead");
 		local weapons = [
 			"weapons/named/named_cleaver",

@@ -182,7 +182,7 @@ this.legend_warbear <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsAffectedByInjuries = false;
 		b.IsImmuneToDisarm = true;
 		this.m.ActionPoints = b.ActionPoints;
-		this.m.Hitpoints = b.Hitpoints * 1.5;
+		b.Hitpoints *= 1.5;
 		b.MeleeSkill += 20;
 		b.MeleeDefense += 10;
 		b.Bravery += 20;
