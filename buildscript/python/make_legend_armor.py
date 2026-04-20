@@ -140,7 +140,7 @@ def generate_legend_armor(base_path):
 
         if "vanilla" in d:
             brush = f"bust_{d['vanilla']}"
-            overlayLarge = f"armor/inventory_{d['vanilla']}_armor"
+            overlayLarge = inventory = f"armor/inventory_{d['vanilla']}_armor"
             overlay = icon = f"armor/icon_{d['vanilla']}_armor"
         else:
             brush = brushName
