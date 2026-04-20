@@ -54,6 +54,9 @@
 		if (_skill != this)
 			return;
 
+		if (!this.m.IsMordhau)
+			return;
+
 		if (_bodyPart != this.Const.BodyPart.Head)
 			return;
 
