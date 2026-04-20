@@ -1,10 +1,8 @@
-::mods_hookExactClass("skills/backgrounds/hedge_knight_background", function(o)
-{
+::mods_hookExactClass("skills/backgrounds/hedge_knight_background", function (o) {
 	o.m.AlreadyUsed <- false;
 	o.m.ExecutingAttack <- false;
 
-	o.create = function ()
-	{
+	o.create = function () {
 		this.character_background.create();
 		this.m.ID = "background.hedge_knight";
 		this.m.Name = "Hedge Knight";
@@ -100,8 +98,7 @@
 		}
 	}
 
-	o.getTooltip = function ()
-	{
+	o.getTooltip = function () {
 		local ret = this.character_background.getTooltip();
 		ret.push({
 			id = 13,
@@ -116,7 +113,9 @@
 	{
 		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
 
-		if (_gender != 1) return;
+		if (_gender != 1) {
+			return;
+		}
 
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
@@ -127,91 +126,92 @@
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
-	o.onTargetKilled <- function( _targetEntity, _skill )
-	{
-		if (this.m.AlreadyUsed || _skill.isRanged())
+	o.onTargetKilled <- function (_targetEntity, _skill) {
+		if (this.m.AlreadyUsed || _skill.isRanged()) {
 			return;
+		}
 
 		this.m.AlreadyUsed = true;
-		this.m.ExecutingAttack = true;
-		local tile = _targetEntity.getTile();
-		local targetTiles = [];
 
-		for( local i = 0; i != 6; i = ++i )
-		{
-			if (tile.hasNextTile(i))
-			{
-				local next = tile.getNextTile(i);
+		::Time.scheduleEvent(::TimeUnit.Virtual, 500, function( _tag ) {
+			local actor = this.getContainer().getActor();
+			if (::Legends.S.isEntityNullOrDead(actor) || actor.m.MoraleState == this.Const.MoraleState.Fleeing || actor.getCurrentProperties().IsStunned) {
+				this.m.AlreadyUsed = false;
+				return;
+			}
 
-				if (next.IsOccupiedByActor && this.Math.abs(next.Level - tile.Level) <= 1 && !next.getEntity().isAlliedWithPlayer())
-				{
-					targetTiles.push(next);
+			local tile = actor.getTile();
+			local AOO = this.getContainer().getAttackOfOpportunity();
+			local targetTiles = [];
+
+			if (AOO == null) {
+				this.m.AlreadyUsed = false;
+				return;
+			}
+
+			for (local i = 0; i != 6; i = ++i) {
+				if (tile.hasNextTile(i)) {
+					local next = tile.getNextTile(i);
+
+					if (next.IsOccupiedByActor && this.Math.abs(next.Level - tile.Level) <= 1 && !next.getEntity().isAlliedWithPlayer()	&& AOO.onVerifyTarget(tile, next)) {
+						targetTiles.push(next);
+					}
 				}
 			}
-		}
-		if (targetTiles.len() == 0)
-		{
-			this.m.ExecutingAttack = false;
-			return; 
-		}
+			if (targetTiles.len() == 0) {
+				this.m.AlreadyUsed = false;
+				return;
+			}
 
-		this.getContainer().getAttackOfOpportunity().useForFree(targetTiles[this.Math.rand(0, targetTiles.len() - 1)]);
-		this.m.ExecutingAttack = false;
+			this.m.ExecutingAttack = true;
+			AOO.useForFree(targetTiles[this.Math.rand(0, targetTiles.len() - 1)]);
+			this.m.ExecutingAttack = false;
+		}.bindenv(this), null);
 	}
 
-	o.onAnySkillUsed <- function ( _skill, _targetEntity, _properties )
-	{
-		if (this.m.ExecutingAttack)
-		{
+	o.onAnySkillUsed <- function (_skill, _targetEntity, _properties) {
+		if (this.m.ExecutingAttack) {
 			_properties.DamageTotalMult *= 0.5;
 		}
 	}
 
-	o.onTurnStart <- function()
-	{
+	o.onTurnStart <- function () {
 		this.m.AlreadyUsed = false;
 	}
 
-	o.onBuildDescription <- function ()
-	{
+	o.onBuildDescription <- function () {
 		return "{Some people are born to be feared. Well over six feet tall, %name%\'s stature alone is a threatening one. | %name%\'s shadow casts over smaller men - and they seem to only further shrink when %they% walks by. | Standing amongst men like a bear in a suit of armor, %name% earns plenty of double-takes. | Years of brutal combat with %their% equally huge brothers left %name% a scarred and scary figure.} {The hedge knight has spent many seasons taking %their% prized horse to jousting tournaments. Unfortunately, a polearm crowned %their% mount, leaving %them% without a ride. | A mercenary in the company of %themselves%, the hedge knight wandered for years, doing battle for those who offered the most crowns. | When %they% cleaved five men with one swing, three of which were on %their% side, the hedge knight was banned from service in every army in the land. | Ordered to kill a lord\'s enemies, the hedge knight kicked in the door of a family and slaughtered them all with %their% bare hands. When the lord refused to pay, %name% killed %them%, too. | The hedge knight has spent many nights sleeping peacefully beneath a pale moon - and just as many days killing ruthlessly beneath a shining sun.} {Always on the hunt for more crowns, the company of sellswords seemed like a good fit. | Too terrifying to be employed for long, %name% seeks the company of men who will not piss themselves when %they% grabs a weapon. | Tired of killing jousters and lords, as well as women and children, %name% sees mercenary work as something of a vacation. | War has apparently gotten in the way of %name%\'s jousting career. He seeks to amend that problem.}";
 
 	}
 
-	o.onSetAppearance = function ()
-	{
+	o.onSetAppearance = function () {
 		local actor = this.getContainer().getActor();
 		local tattoo_body = actor.getSprite("tattoo_body");
 		local tattoo_head = actor.getSprite("tattoo_head");
 
-		if (this.Math.rand(1, 100) <= 25)
-		{
+		if (this.Math.rand(1, 100) <= 25) {
 			local body = actor.getSprite("body");
 			tattoo_body.setBrush("scar_02_" + body.getBrush().Name);
 			tattoo_body.Visible = true;
 		}
 
-		if (this.Math.rand(1, 100) <= 25)
-		{
+		if (this.Math.rand(1, 100) <= 25) {
 			tattoo_head.setBrush("scar_02_head");
 			tattoo_head.Visible = true;
 		}
 	}
 
-	o.updateAppearance = function ()
-	{
+	o.updateAppearance = function () {
 		local actor = this.getContainer().getActor();
 		local tattoo_body = actor.getSprite("tattoo_body");
 
-		if (tattoo_body.HasBrush)
-		{
+		if (tattoo_body.HasBrush) {
 			local body = actor.getSprite("body");
 			tattoo_body.setBrush("scar_02_" + body.getBrush().Name);
 		}
 	}
 
-	o.onChangeAttributes = function ()
-	{
+	o.onChangeAttributes = function () {
 		local c = {
 			Hitpoints = [
 				12,
@@ -249,9 +249,7 @@
 		return c;
 	}
 
-
-	o.onAddEquipment = function ()
-	{
+	o.onAddEquipment = function () {
 		local actor = this.getContainer().getActor();
 		actor.setVeteranPerks(3);
 		local items = actor.getItems();
