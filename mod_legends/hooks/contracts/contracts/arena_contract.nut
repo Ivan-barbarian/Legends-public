@@ -115,6 +115,14 @@
 		createScreens();
 		foreach (s in this.m.Screens)
 		{
+			if (s.ID == "Task") {
+				local start = s.start;
+				s.start <- function () {
+					start();
+					this.Text = ::MSU.String.replace(this.Text, "The arena master", " The arena master");
+				}
+				
+			}
 			if (s.ID == "Overview")
 			{
 				s.Options.push(
@@ -130,7 +138,6 @@
 					}
 				});
 			}
-
 			if (s.ID == "Start")
 			{
 				s.Options.push({
