@@ -36,7 +36,7 @@
 
 	o.isUsable <- function()
 	{
-		return !this.Tactical.isActive() || this.skill.isUsable() && this.getAmmo() > 0 && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
+		return !this.Tactical.isActive() || this.skill.isUsable() && this.getAmmo() > 0;
 	}
 
 	o.getAmmo <- function()
