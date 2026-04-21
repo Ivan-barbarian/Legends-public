@@ -99,12 +99,6 @@ this.legend_launch_fire_bomb_skill <- this.inherit("scripts/skills/actives/throw
 		return this.skill.isHidden();
 	}
 
-
-	function isUsable()
-	{
-		return !this.Tactical.isActive() || this.skill.isUsable() && this.getAmmo() > 0 && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
-	}
-
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_skill == this)

@@ -8,10 +8,9 @@ this.legend_skin_ghoul_agent <- this.inherit("scripts/ai/tactical/agents/ghoul_a
 	}
 
 	function onAddBehaviors() {
-		this.ghoul_agent.onAddBehaviors()
+		this.ghoul_agent.onAddBehaviors();
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_swing"));
 		this.getBehavior(this.Const.AI.Behavior.ID.Swing).m.MinTargets = 1;
-
 	}
 });
 

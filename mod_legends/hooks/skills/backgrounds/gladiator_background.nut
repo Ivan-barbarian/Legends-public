@@ -302,7 +302,7 @@
 				"weapons/oriental/swordlance",
 				"weapons/oriental/polemace",
 				"weapons/fighting_axe",
-				"weapons/fighting_spear"
+				"weapons/fighting_spear",
 				"weapons/two_handed_flail",
 				"weapons/two_handed_flanged_mace",
 				"weapons/bardiche"
