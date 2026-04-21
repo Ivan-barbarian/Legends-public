@@ -1,4 +1,4 @@
-\::mods_hookExactClass("entity/tactical/humans/peasant_armed", function(o)
+::mods_hookExactClass("entity/tactical/humans/peasant_armed", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
