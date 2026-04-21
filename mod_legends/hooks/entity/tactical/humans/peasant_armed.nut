@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/humans/peasant_armed", function(o)
+\::mods_hookExactClass("entity/tactical/humans/peasant_armed", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -7,7 +7,6 @@
 		local b = this.m.BaseProperties;
 		if(::Legends.isLegendaryDifficulty())
 		{
-			b.Hitpoints *= 1.5;
 			::Legends.Perks.grant(this, ::Legends.Perk.Nimble);
 			::Legends.Traits.grant(this, ::Legends.Trait.Fearless);
 		}

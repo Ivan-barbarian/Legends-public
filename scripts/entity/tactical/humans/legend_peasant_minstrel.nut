@@ -39,7 +39,6 @@ this.legend_peasant_minstrel <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("socket").setBrush("bust_base_militia");
 		if(::Legends.isLegendaryDifficulty())
 		{
-			b.Hitpoints *= 1.5;
 			::Legends.Perks.grant(this, ::Legends.Perk.Taunt);
 			::Legends.Perks.grant(this, ::Legends.Perk.Anticipation);
 			::Legends.Perks.grant(this, ::Legends.Perk.Dodge);
