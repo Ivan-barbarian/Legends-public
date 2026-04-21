@@ -27,7 +27,7 @@
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=%positive%]100%[/color] chance to" + effects + " on a hits to the head"
+				text = "Has a [color=%positive%]100%[/color] chance to " + effects + " on hits to the head"
 			});
 		}
 		return ret;
