@@ -214,7 +214,7 @@ this.perk_legend_vala_warden <- this.inherit("scripts/skills/skill", {
 
 	function onTurnStart()
 	{
-		this.summonWarden();
+		//this.summonWarden();
 	}
 
 	function onCombatFinished()

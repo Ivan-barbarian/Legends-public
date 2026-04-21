@@ -1223,15 +1223,13 @@
 
 	o.setStartValuesEx = function ( _backgrounds, _addTraits = true, _gender = -1, _addEquipment = true )
 	{
-		if (this.isSomethingToSee() && this.World.getTime().Days >= 7)
-		{
+		if (this.isSomethingToSee() && this.World.getTime().Days >= 7) {
 			_backgrounds = this.Const.CharacterPiracyBackgrounds;
 		}
 
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
 
-		if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
-		{
+		if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled") {
 			background.setGender(_gender);
 		}
 		this.m.Skills.add(background);
@@ -1243,7 +1241,12 @@
 		*/
 		background.buildDescription();
 
-		this.setGender(background.isBackgroundType(::Const.BackgroundType.Female) ? 1 : 0);
+		if (_gender != -1) {
+    		this.setGender(_gender);
+		}
+		else {
+    		this.setGender(background.isBackgroundType(::Const.BackgroundType.Female) ? 1 : 0);
+		}
 
 		local attributes = background.buildPerkTree();
 		local maxTraits = 0;
