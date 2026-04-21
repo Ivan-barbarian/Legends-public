@@ -89,7 +89,9 @@
 
 	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties ) {
 		if (_skill == this) {
-			_properties.DamageTotalMult *= 0.5;
+			if (this.m.IsHalfsword) {
+				_properties.DamageTotalMult *= 0.5;
+			}
 			this.m.HitChanceBonus += this.getHitChance(_targetEntity);
 			if (this.m.IsHalfsword && _properties.IsSpecializedInSwords) {
 				this.m.HitChanceBonus += 15;
