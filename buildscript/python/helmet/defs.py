@@ -386,12 +386,12 @@ class Defs:
  "desc" :  "An expertly crafted nasal helm decorated with intricate golden ornaments.",
  "adesc" : "Includes an expertly crafted nasal helm."
  },
-{"name" : "bascinet"                     , "layer" : "helm", "min" : 1, "max" : 7, "value" : 400, "con" : 80, "stam" : -5, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
+{"name" : "bascinet"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 7, "value" : 400, "con" : 80, "stam" : -5, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Bascinet",
  "desc" :  "A rounded steel helm with a reinforced dome, providing solid protection for the cranium.",
  "adesc" : "Includes a steel bascinet."
  },
-{"name" : "bascinet_named"                     , "layer" : "helm", "min" : 1, "max" : 11, "value" : 1700, "con" : 90, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate", "named" : { "con": { "min" : 90, "max" : 115 }, "fat": { "min" : 4, "max" : 2 }, "vis": { "min" : 1, "max" : 0 }, "names" : Names  },
+{"name" : "bascinet_named"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 11, "value" : 1700, "con" : 90, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate", "named" : { "con": { "min" : 90, "max" : 115 }, "fat": { "min" : 4, "max" : 2 }, "vis": { "min" : 1, "max" : 0 }, "names" : Names  },
  "title" :  "Bascinet",
  "desc" :  "An exquisite bascinet with a pointed head. Very comfortable thanks to its soft leather interior.",
  "adesc" : "Includes an exquisite bascinet."
