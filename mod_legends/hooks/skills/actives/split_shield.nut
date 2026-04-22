@@ -99,6 +99,18 @@
 
 		if (shield != null) {
 			this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectSplitShield);
+
+			if (this.m.IsHammer) {
+				if (::Legends.S.skillEntityAliveCheck(_user, target)) {
+					return true;
+				}
+
+				local stagger = ::Legends.Effects.grant(target, ::Legends.Effect.Staggered);
+				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer && !target.getFlags().has("tail")) {
+					this.Tactical.EventLog.log(stagger.getLogEntryOnAdded(this.Const.UI.getColorizedEntityName(_user), this.Const.UI.getColorizedEntityName(target)));
+				}
+			}
+
 			local damage = calculateDamage(target);
 
 			local conditionBefore = shield.getCondition();
@@ -111,7 +123,7 @@
 
 			if (this.m.IsHammer) {
 				this.m.OverflowDamage = damage;
-				attackEntity(_user, target);
+				this.attackEntity(_user, target);
 				this.m.OverflowDamage = 0;
 
 				if (::Legends.S.skillEntityAliveCheck(_user, target)) {
@@ -134,7 +146,7 @@
 						this.Tactical.EventLog.log(logMessage + " and recovered 4 Action Points");
 						if (overflowDamage > 0) {
 							this.m.OverflowDamage = overflowDamage;
-							attackEntity(_user, target);
+							this.attackEntity(_user, target);
 							this.m.OverflowDamage = 0;
 						}
 					} else {
