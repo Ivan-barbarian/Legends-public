@@ -873,7 +873,8 @@ TacticalScreenTurnSequenceBarModule.prototype.selectFirstEntity = function (_ent
 	var self = this;
 	this.notifyBackendEntityEntersFirstSlot(_entity.id, function (entityData) {
 		if (entityData === null || entityData === undefined) {
-			console.error('ERROR: Failed to query entity data for entity (' + _entity.id + '). Reason: Invalid result.');
+			console.error('ERROR: Failed to query entity data for entity (' + _entity.id + '). Reason: Invalid result. Retrying...');
+			setTimeout(function () { self.selectFirstEntity(_entity, _entityDIV, _previousEntityWasHiddenToPlayer); }, 50);
 			return;
 		}
 
