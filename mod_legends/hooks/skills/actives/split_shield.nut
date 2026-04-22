@@ -121,21 +121,6 @@
 				], 1.0);
 			}
 
-			if (this.m.IsHammer) {
-				this.m.OverflowDamage = damage;
-				this.attackEntity(_user, target);
-				this.m.OverflowDamage = 0;
-
-				if (::Legends.S.skillEntityAliveCheck(_user, target)) {
-					return true;
-				}
-
-				local stagger = ::Legends.Effects.grant(target, ::Legends.Effect.Staggered);
-				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer && !target.getFlags().has("tail")) {
-					this.Tactical.EventLog.log(stagger.getLogEntryOnAdded(this.Const.UI.getColorizedEntityName(_user), this.Const.UI.getColorizedEntityName(target)));
-				}
-			}
-
 			local overflowDamage = this.Math.floor(damage - conditionBefore);
 
 			if (shield != null && shield.getCondition() == 0) {
