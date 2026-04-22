@@ -31,6 +31,7 @@ this.perk_legend_opportunist <- this.inherit("scripts/skills/skill", {
 			::Legends.Effect.LegendRedbackSpiderPoison,
 			::Legends.Effect.LegendZombiePoison,
 			::Legends.Effect.LegendRatPoison,
+			::Legends.Effect.LegendRswPoison,
 		]) {
 			if (!_targetEntity.getSkills().hasEffect(id))
 				continue;
