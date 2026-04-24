@@ -2,7 +2,7 @@ name: Propagate Release to Nexus Mods
 
 on:
   release:
-    types: [published, edit]
+    types: [published]
 
 jobs:
   upload-core:
