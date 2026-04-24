@@ -74,9 +74,7 @@
 				::Const.Perks.CivilizationTree,
 				::Const.Perks.OutlawTree
 			],
-			Class = [
-				// ::Const.Perks.RaiderClassTree
-			],
+			Class = [],
 			Profession = [],
 			Magic = []
 		}

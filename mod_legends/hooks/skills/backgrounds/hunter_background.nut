@@ -93,9 +93,7 @@
 				::Const.Perks.BeastTree,
 				::Const.Perks.OccultTree,
 			],
-			Class = [
-				// ::Const.Perks.SharpshooterClassTree
-			],
+			Class = [],
 			Profession = [],
 			Magic = []
 		}

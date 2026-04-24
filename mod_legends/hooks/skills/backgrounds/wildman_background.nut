@@ -104,9 +104,7 @@
 			Enemy = [
 				::Const.Perks.GreenskinTree
 			],
-			Class = [
-				// ::Const.Perks.ClubClassTree
-			],
+			Class = [],
 			Profession = [],
 			Magic = []
 		}
