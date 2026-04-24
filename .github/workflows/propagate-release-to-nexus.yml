@@ -2,7 +2,7 @@ name: Propagate Release to Nexus Mods
 
 on:
   release:
-    types: [published]
+    types: [published, edit]
 
 jobs:
   upload-core:
@@ -13,7 +13,6 @@ jobs:
         with:
           tag: ${{ github.event.release.tag_name }}
           fileName: "mod_legends-*.zip"
-          out-file-path: "./"
 
       - name: Extract Asset Version from This Release
         id: versions
@@ -26,7 +25,7 @@ jobs:
           RELEASE_BODY: ${{ github.event.release.body }}
 
       - name: Upload Core to Nexus
-        uses: Nexus-Mods/upload-action@v1.0.0-beta.3
+        uses: Nexus-Mods/upload-action@v1.0.0-beta.5
         with:
           api_key: ${{ secrets.NEXUS_API_KEY }}
           file_group_id: ${{ secrets.NEXUS_CORE_ID }}
@@ -52,7 +51,6 @@ jobs:
         with:
           tag: ${{ github.event.release.tag_name }}
           fileName: "mod_legends-assets-*.zip"
-          out-file-path: "./"
 
       - name: Check if Assets exist
         id: check_files
@@ -65,7 +63,7 @@ jobs:
 
       - name: Upload Assets to Nexus
         if: steps.check_files.outputs.exists == 'true'
-        uses: Nexus-Mods/upload-action@v1.0.0-beta.3
+        uses: Nexus-Mods/upload-action@v1.0.0-beta.5
         with:
           api_key: ${{ secrets.NEXUS_API_KEY }}
           file_group_id: ${{ secrets.NEXUS_ASSETS_ID }}
