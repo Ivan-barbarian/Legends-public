@@ -18,13 +18,12 @@ jobs:
       - name: Extract Asset Version from This Release
         id: versions
         run: |
-          cat << 'EOF' > release_body.txt
-          ${{ github.event.release.body }}
-          EOF
-          FULL_VERSION=$(grep -oP 'mod_legends-assets-\K[0-9.]+' release_body.txt | head -n 1)
+          FULL_VERSION=$(echo "$RELEASE_BODY" | grep -o 'mod_legends-assets-[0-9.]*' | sed 's/mod_legends-assets-//' | head -n 1 | sed 's/\.$//')
           BASE_VERSION=$(echo "$FULL_VERSION" | cut -d. -f1,2).0
           echo "full=$FULL_VERSION" >> $GITHUB_OUTPUT
           echo "base=$BASE_VERSION" >> $GITHUB_OUTPUT
+        env:
+          RELEASE_BODY: ${{ github.event.release.body }}
 
       - name: Upload Core to Nexus
         uses: Nexus-Mods/upload-action@v1.0.0-beta.3
