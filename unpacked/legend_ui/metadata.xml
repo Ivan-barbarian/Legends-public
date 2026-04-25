@@ -8,6 +8,7 @@
 	<sprite id="band_of_brothers_mini" ic="FF4C4B4D" img="skills\mini\band_of_brothers_mini.png" />
 	<sprite id="drums_of_war_mini" offsetY="35" ic="FF374B50" img="skills/mini/drums_of_war_mini.png" />
 	<sprite id="martial_march_mini" offsetY="35" ic="FF374B50" img="skills/mini/martial_march_mini.png" />
+	<sprite id="perk_41_active" ic="FF374B50" img="skills/perk_41_active.png" />
 	<sprite id="perk_barrage_mini" offsetY="35" ic="FF374B50" img="skills/mini/perk_barrage_mini.png" />
 	<sprite id="perk_sling_mastery_mini" offsetY="35" ic="FF374B50" img="skills/mini/perk_sling_mastery_mini.png" />
 	<sprite id="perk_spec_2hsword_mini" offsetY="35" ic="FF374B50" img="skills/mini/perk_spec_2hsword_mini.png" />
