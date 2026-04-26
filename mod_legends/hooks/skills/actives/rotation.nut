@@ -19,7 +19,7 @@
 		if (actor.getFaction() != this.Const.Faction.Player && setting == "Disabled")
 			return false;
 
-		if (!target.isAlive() && ::MSU.isNull(target))
+		if (::Legends.S.isEntityNullOrDead(target))
 			return false;
 
 		if (target.getCurrentProperties().IsStunned)

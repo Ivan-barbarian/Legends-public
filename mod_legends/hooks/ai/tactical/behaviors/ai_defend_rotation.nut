@@ -143,7 +143,7 @@
 		local bestScore = 1.0;
 
 		foreach (ally in allies) {
-			if (!ally.isAlive() || !ally.isPlacedOnMap()) {
+			if (::Legends.S.isEntityNullOrDead(ally)) {
 				continue;
 			}
 
@@ -156,7 +156,7 @@
 				time = this.Time.getExactTime();
 			}
 
-			if (!ally.isAlive() || !ally.isPlacedOnMap()) {
+			if (::Legends.S.isEntityNullOrDead(ally)) {
 				continue;
 			}
 
