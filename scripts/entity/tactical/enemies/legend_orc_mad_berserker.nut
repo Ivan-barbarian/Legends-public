@@ -24,6 +24,7 @@ this.legend_orc_mad_berserker <- this.inherit("scripts/entity/tactical/enemies/o
 		::Legends.Perks.grant(this, ::Legends.Perk.LegendHeightenedReflexes);
 		::Legends.Perks.grant(this, ::Legends.Perk.Adrenaline);
 		::Legends.Perks.grant(this, ::Legends.Perk.Nimble);
+		::Legends.Perks.grant(this, ::Legends.Perk.LegendAmbidextrous);
 		::Legends.Traits.grant(this, ::Legends.Trait.Fearless);
 		if (::Legends.isLegendaryDifficulty()) {
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendUberNimble);

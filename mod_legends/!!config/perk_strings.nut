@@ -2869,6 +2869,8 @@ The old gods have allowed you to wield their light.
 
 • Cultists and Undead become [color=%status%]Consecrated[/color], taking [color=%damage%]10[/color] to [color=%damage%]20[/color] damage each turn, and lose any immunity to [color=%status%]Injuries[/color], [color=%status%]Bleeding[/color], and [color=%status%]Poison[/color].
 
+• Consecrated Wichts will lose [color=%status%]Battle Forged[/color].
+
 • Additionally, Undead cannot resurrect in the area while the flame is active.
 
 • Costs [color=%negative%]7[/color] AP and [color=%negative%]30[/color] Fatigue.
