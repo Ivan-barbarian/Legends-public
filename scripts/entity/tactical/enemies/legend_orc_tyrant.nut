@@ -29,7 +29,7 @@ this.legend_orc_tyrant <- this.inherit("scripts/entity/tactical/enemies/orc_warl
 			::Legends.Perks.grant(this, ::Legends.Perk.Steadfast);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendImmovableObject);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendMuscularity);
-			::Legends.Perks.grant(this, ::Legends.Perk.LegendVengeance);
+			::Legends.Perks.grant(this, ::Legends.Perk.LegendBoneBreaker);
 		}
 	}
 
