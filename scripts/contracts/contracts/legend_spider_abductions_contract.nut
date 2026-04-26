@@ -86,6 +86,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 				tile.clear();
 				this.Contract.m.Destination = this.WeakTableRef(this.World.spawnLocation("scripts/entity/world/locations/legend_spider_nest_location", tile.Coords));
 				this.Contract.m.Destination.onSpawned();
+				this.Contract.m.Destination.setAttackable(false);
 				this.Contract.m.Destination.setFaction(::World.FactionManager.getFactionOfType(::Const.FactionType.Beasts).getID());
 				this.Contract.m.Destination.setBanner(this.World.FactionManager.getFaction(::Const.FactionType.Beasts).getPartyBanner());
 				this.Contract.m.Destination.setDiscovered(true);
@@ -116,6 +117,18 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 				// }
 
 				// TODO: Handle "successful retreat" (player rescued the townsfolk and retreated without destroying the nest)
+
+				if (this.Contract.m.Destination != null && !this.Contract.m.Destination.isNull()) {
+			        if (this.Contract.isPlayerAt(this.Contract.m.Destination)) {
+            			if (!this.TempFlags.get("AlreadyVisited")) {
+                			this.Contract.setScreen("Nest1");
+                			this.World.Contracts.showActiveContract();
+            			}
+        			}
+        			else {
+            			this.TempFlags.set("AlreadyVisited", false);
+        			}
+    			}
 
 				if (::MSU.isNull(this.Contract.m.Destination))
 				{
@@ -403,6 +416,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 					function getResult()
 					{
 						// this.TempFlags.set("IsNestEntered", true);
+						this.TempFlags.set("AlreadyVisited", true);
 						return "Nest2";
 					}
 
@@ -414,6 +428,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 					Text = "{We\'ll come back later.}",
 					function getResult()
 					{
+						this.TempFlags.set("AlreadyVisited", true);
 						return 0;
 					}
 				}
