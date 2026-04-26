@@ -1553,6 +1553,39 @@
 		return [eTransfer, bTransfer];
 	}
 
+	o.onCombatFinished <- function ()
+	{
+		this.actor.resetRenderEffects();
+		this.m.IsAlive = true;
+		this.m.IsDying = false;
+		this.m.IsAbleToDie = true;
+		this.m.Hitpoints = this.Math.max(1, this.m.Hitpoints);
+		this.m.MaxEnemiesThisTurn = 1;
+
+		if (this.m.MoraleState != this.Const.MoraleState.Ignore)
+		{
+			this.setMoraleState(this.Const.MoraleState.Steady);
+		}
+
+		this.resetBloodied(false);
+		this.getSprite("dirt").Visible = false;
+		this.getFlags().set("Devoured", false);
+		this.getFlags().set("Charmed", false);
+		this.getFlags().set("Sleeping", false);
+		this.getFlags().set("Nightmare", false);
+		this.m.Fatigue = 0;
+		this.m.ActionPoints = 0;
+		this.m.Items.onCombatFinished();
+		this.m.Skills.onCombatFinished();
+
+		if (this.m.IsAlive)
+		{
+			this.updateLevel();
+			this.updateInjuryVisuals(false);
+			this.onAppearanceChanged(this.m.Items.getAppearance(), true);
+		}
+	}
+
 	o.getStashModifier <- function ()
 	{
 		local background = this.getBackground();
