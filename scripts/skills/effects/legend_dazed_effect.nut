@@ -8,7 +8,7 @@ this.legend_dazed_effect <- this.inherit("scripts/skills/skill", {
 		::Legends.Effects.onCreate(this, ::Legends.Effect.LegendDazed);
 		this.m.Icon = "ui/perks/daze56_circle.png";
 		this.m.IconMini = "mini_daze56_circle";
-		this.m.Overlay = "daze56_circle";
+		this.m.Overlay = "status_daze56_circle";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;

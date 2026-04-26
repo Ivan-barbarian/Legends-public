@@ -1,11 +1,10 @@
 this.legend_magic_daze_skill <- this.inherit("scripts/skills/actives/legend_magic_skill", {
-	m = {
-	},
+	m = {},
 
 	function create()
 	{
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendMagicDaze);
-		this.m.Description = "Assault the senses of your target with a conjured flurry of colorful sparks, whirs, and pops. Such an astonishing display is sure to leave anyone too bewildered to fight effectively. Does no damage.";
+		this.m.Description = "Assault the senses of your target with a conjured flurry of colorful sparks, whirs, and pops. Such an astonishing display is sure to leave anyone too bewildered to fight effectively. Does no damage. Requires a staff.";
 		this.m.KilledString = "Dazed";
 		this.m.Icon = "skills/daze_square.png";
 		this.m.IconDisabled = "skills/daze_square_bw.png";
@@ -51,13 +50,12 @@ this.legend_magic_daze_skill <- this.inherit("scripts/skills/actives/legend_magi
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Hit chance based on resolve. (Displayed hit chance probably wrong)."
+			text = "Hit chance based on resolve."
 		});
 		return ret;
 	}
 
-	// Return true if _target actor would be dazed.
-	function makeDazeCheck(_target)
+	function getHitchance(_target)
 	{
 		local targetResolve = _target.getCurrentProperties().getBravery();
 		local chance = this.Math.round(40 + (this.getCurrentResolve() - targetResolve)/2);
@@ -69,23 +67,18 @@ this.legend_magic_daze_skill <- this.inherit("scripts/skills/actives/legend_magi
 		{
 			chance = 0;
 		}
-		local roll = this.Math.rand(1, 100);
-		local ret = {
-			Roll = roll,
-			Chance = chance,
-			Result = (roll <= chance)
-		}
-		return ret;
+		return chance;
 	}
 
 	function onUse( _user, _targetTile )
 	{
 		local targetEntity = _targetTile.getEntity();
-		local ret = this.makeDazeCheck(targetEntity);
+		local roll = this.Math.rand(1, 100);
+		local chance = this.getHitchance(targetEntity);
 
-		local logString = this.Const.UI.getColorizedEntityName(_user) + " tries to daze " + this.Const.UI.getColorizedEntityName(targetEntity) + " (Chance: " + ret.Chance + ", Rolled: " + ret.Roll +")\n";
+		local logString = this.Const.UI.getColorizedEntityName(_user) + " tries to daze " + this.Const.UI.getColorizedEntityName(targetEntity) + " (Chance: " + chance + ", Rolled: " + roll +")\n";
 
-		if (ret.Result)
+		if (roll <= chance)
 		{
 			this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
 
