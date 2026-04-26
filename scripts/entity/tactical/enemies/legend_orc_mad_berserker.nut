@@ -29,7 +29,7 @@ this.legend_orc_mad_berserker <- this.inherit("scripts/entity/tactical/enemies/o
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendUberNimble);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendTasteThePain);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendMuscularity);
-			::Legends.Perks.grant(this, ::Legends.Perk.LegendVengeance);
+			// ::Legends.Perks.grant(this, ::Legends.Perk.LegendVengeance);
 		}
 	}
 
