@@ -167,11 +167,6 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		// Check distance
-		if (actor.getTile().getDistanceTo(_targetEntity.getTile()) > 1) {
-			return;
-		}
-
 		// Determine the follow up depending on where the attack came from
 		local skillToUse = null;
 		if (::Legends.Weapons.isOffHandSkill(actor, _skill)) {
@@ -186,13 +181,20 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		// Schedule follow-up attack
-		if (!_forFree && skillToUse != null) {
-			this.Const.SkillCounter++;
-			::Time.scheduleEvent(::TimeUnit.Virtual, ::Const.Combat.RiposteDelay, this.executeFollowUpAttack.bindenv(this), {
-				TargetTile = _targetTile,
-				Skill = skillToUse
-			});
+		// Check distance
+		if (skillToUse != null) {
+			if (actor.getTile().getDistanceTo(_targetEntity.getTile()) > skillToUse.getMaxRange()) {
+				return;
+			}
+
+			// Schedule follow-up attack
+			if (!_forFree) {
+				this.Const.SkillCounter++;
+				::Time.scheduleEvent(::TimeUnit.Virtual, ::Const.Combat.RiposteDelay, this.executeFollowUpAttack.bindenv(this), {
+					TargetTile = _targetTile,
+					Skill = skillToUse
+				});
+			}
 		}
 	}
 
