@@ -435,6 +435,14 @@
 		}
 		::Const.LegendMod.extendVarsWithPronouns(vars, brothers[brother1], "randombrother");
 		::Const.LegendMod.extendVarsWithPronouns(vars, brothers[brother2], "randombrother2");
+
+		local veteran = brothers[0];
+		foreach( bro in brothers ) {
+			if (bro.getHireTime() < veteran.getHireTime()) {
+				veteran = bro;
+			}
+		}
+		::Const.LegendMod.extendVarsWithPronouns(vars, veteran, "veteranbrother");
 		// Dynamically handle pronouns for any additional actors in a contract
         // For this to work, any contract text using the placeholder pronoun must refer to the actor in the lowercase form of the actor's variable name
         // For example, the placeholder "%they_somebody%" will get the pronoun for this.m.Somebody
