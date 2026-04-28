@@ -1,4 +1,5 @@
 this.perk_legend_double_strike <- this.inherit("scripts/skills/skill", {
+	m = {},
 	function create() {
 		::Legends.Perks.onCreate(this, ::Legends.Perk.LegendDoubleStrike);
 		this.m.Type = this.Const.SkillType.Perk;
