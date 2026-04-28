@@ -110,9 +110,9 @@ this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 		local mainhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local offhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 		local hasNet = offhand != null && ::MSU.String.endsWith(offhand.getID(), "_net") && actor.getCurrentProperties().IsSpecializedInNets;
-		if (hasNet && mainhand == null && this.skill.isUsable())
+		if (hasNet && this.skill.isUsable())
 			return true;
-		return ((offhand == null && mainhand == null) || this.getContainer().hasEffect(::Legends.Effect.Disarmed)) && this.skill.isUsable();
+		return ((offhand == null || mainhand == null) || this.getContainer().hasEffect(::Legends.Effect.Disarmed)) && this.skill.isUsable();
 	}
 
 	function isHidden()
@@ -123,9 +123,9 @@ this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 		local mainhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local offhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 		local hasNet = offhand != null && ::MSU.String.endsWith(offhand.getID(), "_net") && actor.getCurrentProperties().IsSpecializedInNets;
-		if (hasNet && mainhand == null)
+		if (hasNet)
 			return true;
-		return mainhand != null || offhand != null && !this.getContainer().hasEffect(::Legends.Effect.Disarmed) || this.skill.isHidden() || this.m.Container.getActor().isStabled();
+		return mainhand != null && offhand != null && !this.getContainer().hasEffect(::Legends.Effect.Disarmed) || this.getContainer().getActor().getItems().hasBlockedSlot(this.Const.ItemSlot.Offhand) || this.skill.isHidden() || this.m.Container.getActor().isStabled();
 	}
 
 
