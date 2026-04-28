@@ -16,7 +16,7 @@
 	}
 
 	o.onTurnResumed <- function () {
-		this.agent.onTurnStarted();
+		this.agent.onTurnResumed();
 		this.m.UpdateAllies = true;
 		this.m.LastTile = this.m.Actor.getTile().ID;
 	}
