@@ -1565,6 +1565,9 @@ TacticalScreenTurnSequenceBarModule.prototype.updateEntityImage = function (_ent
 	}
 
 	var entityImage = entityImageLayer.find('img:first');
+	if (entityImage.attr('src') === (Path.PROCEDURAL + _entityData.imagePath)) {
+		return;
+	}
 
 	// offsets ?
 	if ('imageOffsetX' in _entityData && typeof (_entityData.imageOffsetX) === 'number') {
@@ -1583,7 +1586,7 @@ TacticalScreenTurnSequenceBarModule.prototype.updateEntityImage = function (_ent
 		if ('imagePath' in _entityData) {
 			entityImage.data('placeholder').removeClass('opacity-almost-none');
 			entityImage.attr('src', Path.PROCEDURAL + _entityData.imagePath);
-
+			
 			/* var image = new Image();
 			 image.onload = function ()
 			 {
@@ -1846,7 +1849,7 @@ TacticalScreenTurnSequenceBarModule.prototype.removeEntity = function (_entityId
 	if (entityDIV === null) {
 		//console.error('ERROR: Failed to remove entity. Reason: Entity id: ' + _entityId + ' not found.');
 		return;
-	}
+	}    
 
 	// sanity check
 	if (entityDIV.div.is('[in-removal]')) {
