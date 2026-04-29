@@ -376,7 +376,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	function getFailed( _bro )
 	{
 		this.m.Results.push({
-			Icon = "", //Should get an icon for failed training
+			Icon = "ui/tooltips/negative.png", //Should get an icon for failed training
 			Text = _bro.getName() + " didn't learn anything useful."
 		});
 	}
@@ -384,7 +384,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	function getBreak( _bro )
 	{
 		this.m.Results.push({
-			Icon = "", //Should get an icon for failed training
+			Icon = "ui/icons/days_wounded.png", //Should get an icon for failed training
 			Text = _bro.getName() + " was recovering from an injury so didn't train."
 		});
 	}
