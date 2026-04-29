@@ -913,45 +913,57 @@ TacticalScreenTurnSequenceBarModule.prototype.selectFirstEntity = function (_ent
 					easing: 'swing',
 					complete: function () {
 						// NOTE: (js) Hier zentrieren wir die Image per "Hand"...
-						var offsets = entityImage.data('offsets') || { imageOffsetX: 0, imageOffsetY: 0 };
-						var newWidth = entityImage[0].naturalWidth;
-						var newHeight = entityImage[0].naturalHeight;
-						var marginLeft = (entityImageLayer.innerWidth() - newWidth + offsets.imageOffsetX) / 2;
-						var marginTop = (entityImageLayer.innerHeight() - newHeight + offsets.imageOffsetY) / 2;
-						//console.info('w: ' + newWidth + ' h: ' + newHeight);
-						//entityImage.css({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop});
 
-						entityImage.data('placeholder').velocity({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop },
-							{
-								duration: self.mResizeFirstSlotImageTime,
-								easing: 'swing',
-								complete: function () {
-								}
-							});
+						var retries = 0;
+						var checkDataAndAnimate = function () {
+							var newWidth = entityImage[0].naturalWidth;
+							var newHeight = entityImage[0].naturalHeight;
+							if (newWidth === 0 && retries < 5) {
+								retries++;
+								setTimeout(checkDataAndAnimate, 10);
+								return;
+							}
+							if (newWidth === 0) newWidth = 120;
+							if (newHeight === 0) newHeight = 120;
+							var offsets = entityImage.data('offsets') || { imageOffsetX: 0, imageOffsetY: 0 };
+							var marginLeft = (entityImageLayer.innerWidth() - newWidth + offsets.imageOffsetX) / 2;;
+							var marginTop = (entityImageLayer.innerHeight() - newHeight + offsets.imageOffsetY) / 2;
 
-						entityImage.velocity({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop },
-							{
-								duration: self.mResizeFirstSlotImageTime,
-								easing: 'swing',
-								complete: function () {
-									entityImage.data('placeholder').css({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop });
-									entityImage.data('is-scaling', false);
+							//console.info('w: ' + newWidth + ' h: ' + newHeight);
+							//entityImage.css({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop});
 
-									var newImage = entityImage.data('newImage') || false;
-
-									if (newImage !== false) {
-										entityImage.data('placeholder').removeClass('opacity-almost-none');
-										entityImage.attr('src', newImage);
-										entityImage.data('newImage', false);
+							entityImage.data('placeholder').velocity({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop },
+								{
+									duration: self.mResizeFirstSlotImageTime,
+									easing: 'swing',
+									complete: function () {
 									}
+								});
 
-									// notify sq that a new turn image resize animation has ended
-									self.notifyBackendEntityEnteredFirstSlotFully(_entity.id);
-								}
-							});
+							entityImage.velocity({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop },
+								{
+									duration: self.mResizeFirstSlotImageTime,
+									easing: 'swing',
+									complete: function () {
+										entityImage.data('placeholder').css({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop });
+										entityImage.data('is-scaling', false);
 
+										var newImage = entityImage.data('newImage') || false;
+
+										if (newImage !== false) {
+											entityImage.data('placeholder').removeClass('opacity-almost-none');
+											entityImage.attr('src', newImage);
+											entityImage.data('newImage', false);
+										}
+
+										// notify sq that a new turn image resize animation has ended
+										self.notifyBackendEntityEnteredFirstSlotFully(_entity.id);
+									}
+								});
+						};
 						// notify sq that a new turn slot resize animation has ended
 						// Note: (js) we do this here to speed up the process of sliden through AI entities
+						checkDataAndAnimate();
 						self.notifyBackendEntityEnteredFirstSlot(_entity.id);
 					}
 				});
@@ -1586,7 +1598,7 @@ TacticalScreenTurnSequenceBarModule.prototype.updateEntityImage = function (_ent
 		if ('imagePath' in _entityData) {
 			entityImage.data('placeholder').removeClass('opacity-almost-none');
 			entityImage.attr('src', Path.PROCEDURAL + _entityData.imagePath);
-			
+
 			/* var image = new Image();
 			 image.onload = function ()
 			 {
@@ -1849,7 +1861,7 @@ TacticalScreenTurnSequenceBarModule.prototype.removeEntity = function (_entityId
 	if (entityDIV === null) {
 		//console.error('ERROR: Failed to remove entity. Reason: Entity id: ' + _entityId + ' not found.');
 		return;
-	}    
+	}
 
 	// sanity check
 	if (entityDIV.div.is('[in-removal]')) {
