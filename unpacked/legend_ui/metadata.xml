@@ -8,6 +8,7 @@
 	<sprite id="band_of_brothers_mini" ic="FF4C4B4D" img="skills\mini\band_of_brothers_mini.png" />
 	<sprite id="drums_of_war_mini" offsetY="35" ic="FF374B50" img="skills/mini/drums_of_war_mini.png" />
 	<sprite id="martial_march_mini" offsetY="35" ic="FF374B50" img="skills/mini/martial_march_mini.png" />
+	<sprite id="perfectfocus_active" ic="FF374B50" img="skills/perfectfocus_square.png" />
 	<sprite id="perk_41_active" ic="FF374B50" img="skills/perk_41_active.png" />
 	<sprite id="perk_barrage_mini" offsetY="35" ic="FF374B50" img="skills/mini/perk_barrage_mini.png" />
 	<sprite id="perk_sling_mastery_mini" offsetY="35" ic="FF374B50" img="skills/mini/perk_sling_mastery_mini.png" />
@@ -82,6 +83,8 @@
 	<sprite id="status_spears_circle" ic="FF23165B" img="skills\status_spears_circle.png" />
 	<sprite id="status_effect_doublestrike" ic="FF23165B" img="skills\status_effect_doublestrike.png" />
 	<sprite id="mini_doublestrike_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_doublestrike_circle.png" />
+	<sprite id="status_perfectfocus_circle" ic="FF23165B" img="skills\status_perfectfocus_circle.png" />
+	<sprite id="mini_perfectfocus_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_perfectfocus_circle.png" />
 	<sprite id="mini_spears_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_spears_circle.png" />
 	<sprite id="revolt_square" ic="FF23165B" img="skills\revolt_square.png" />
 	<sprite id="relax_square" ic="FF23165B" img="skills\relax_square.png" />
