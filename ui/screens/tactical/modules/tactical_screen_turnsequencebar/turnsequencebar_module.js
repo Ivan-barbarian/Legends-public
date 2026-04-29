@@ -1596,8 +1596,12 @@ TacticalScreenTurnSequenceBarModule.prototype.updateEntityImage = function (_ent
 	if (!entityImage.data('is-scaling')) {
 		// update image
 		if ('imagePath' in _entityData) {
-			entityImage.data('placeholder').removeClass('opacity-almost-none');
-			entityImage.attr('src', Path.PROCEDURAL + _entityData.imagePath);
+			setTimeout(function () {
+				if (!_entityDIV.is('[in-removal]')) {
+					entityImage.data('placeholder').removeClass('opacity-almost-none');
+					entityImage.attr('src', Path.PROCEDURAL + _entityData.imagePath);
+				}
+			}, 10);
 
 			/* var image = new Image();
 			 image.onload = function ()
@@ -1613,7 +1617,12 @@ TacticalScreenTurnSequenceBarModule.prototype.updateEntityImage = function (_ent
 	else {
 		// update image
 		if ('imagePath' in _entityData) {
-			entityImage.data('newImage', Path.PROCEDURAL + _entityData.imagePath);
+			setTimeout(function () {
+				if (!_entityDIV.is('[in-removal]')) {
+					entityImage.data('newImage', Path.PROCEDURAL + _entityData.imagePath);
+				}
+			}, 10);
+
 		}
 		else if ('imagePathFoW' in _entityData) {
 			entityImage.data('newImage', Path.GFX + _entityData.imagePathFoW);
