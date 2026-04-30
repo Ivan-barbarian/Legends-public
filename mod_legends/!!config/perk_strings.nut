@@ -430,7 +430,7 @@ Master the art of following up for devastating effects.
 
 • If the attack misses, the effect is lost.
 
-• When [color=%status%]Dual Wielding[/color] daggers, if the offhand attack successfully hits, the next mainhand attack costs [color=%positive%]-1[/color] AP and deals [color=%positive%]+10%[/color] damage.
+• When [color=%status%]Dual Wielding[/color] daggers, if both weapons successfully hit, the next mainhand attack costs [color=%positive%]-1[/color] AP and deals [color=%positive%]+10%[/color] damage.
 ";
 
 ::Const.Strings.PerkDescription.LegendVengeance <- @"
