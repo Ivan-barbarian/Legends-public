@@ -1,0 +1,129 @@
+this.legend_ai_slingshot_move_into_range <- this.inherit("scripts/ai/tactical/behavior", {
+	m = {
+		TargetTile = null,
+		Slingstaffs = [
+			"weapon.staff_sling",
+			"weapon.nomad_sling",
+			"weapon.legend_named_northern_sling",
+			"weapon.legend_named_nomad_sling",
+			"weapon.legend_northern_sling"
+		]
+	},
+
+	function create() {
+		this.m.ID = this.Const.AI.Behavior.ID.SlingshotMoveIntoRange;
+		this.m.Order = this.Const.AI.Behavior.Order.SlingshotMoveIntoRange;
+		this.behavior.create();
+	}
+
+	function onEvaluate(_entity) {
+		this.m.TargetTile = null;
+		local weapon = _entity.getMainhandItem();
+
+		if (weapon == null || this.m.Slingstaffs.find(weapon.getID()) == null) {
+			return this.Const.AI.Behavior.Score.Zero;
+		}
+
+		if (_entity.getActionPoints() < this.Const.Movement.AutoEndTurnBelowAP || _entity.getMoraleState() == this.Const.MoraleState.Fleeing) {
+			return this.Const.AI.Behavior.Score.Zero;
+		}
+
+		if (!this.getAgent().hasKnownOpponent()) {
+			return this.Const.AI.Behavior.Score.Zero;
+		}
+
+		local bestTargetTile = null;
+
+		foreach (t in this.getAgent().getKnownOpponents()) {
+			if (t.Actor.isNull()) {
+				continue;
+			}
+
+			local targetTile = t.Actor.getTile();
+			local dist = _entity.getTile().getDistanceTo(targetTile);
+
+			if (dist == 3 && targetTile.IsVisibleForEntity) {
+				bestTargetTile = targetTile;
+				break;
+			}
+		}
+
+		if (bestTargetTile == null) {
+			return this.Const.AI.Behavior.Score.Zero;
+		}
+
+		this.m.TargetTile = this.findBestTile(_entity, bestTargetTile);
+
+		if (this.m.TargetTile == null) {
+			return this.Const.AI.Behavior.Score.Zero;
+		}
+		::logDebug("passed oneval")
+		return this.Const.AI.Behavior.Score.SlingshotMoveIntoRange;
+	}
+
+	function onExecute(_entity) {
+		local navigator = this.Tactical.getNavigator();
+		::logDebug("executing")
+		if (this.m.IsFirstExecuted) {
+			local settings = navigator.createSettings();
+			settings.ActionPointCosts = _entity.getActionPointCosts();
+			settings.FatigueCosts = _entity.getFatigueCosts();
+			settings.FatigueCostFactor = 0.0;
+			settings.ActionPointCostPerLevel = _entity.getLevelActionPointCost();
+			settings.FatigueCostPerLevel = _entity.getLevelFatigueCost();
+			settings.AllowZoneOfControlPassing = false;
+			settings.ZoneOfControlCost = this.Const.AI.Behavior.ZoneOfControlAPPenalty;
+			settings.AlliedFactions = _entity.getAlliedFactions();
+			settings.Faction = _entity.getFaction();
+			navigator.findPath(_entity.getTile(), this.m.TargetTile, settings, 0);
+
+			if (this.Const.AI.PathfindingDebugMode) {
+				navigator.buildVisualisation(_entity, settings, _entity.getActionPoints(), _entity.getFatigueMax() - _entity.getFatigue());
+			}
+
+			local movement = navigator.getCostForPath(_entity, settings, _entity.getActionPoints(), _entity.getFatigueMax() - _entity.getFatigue());
+			this.m.Agent.adjustCameraToDestination(movement.End);
+
+			if (this.Const.AI.VerboseMode) {
+				this.logInfo("* " + _entity.getName() + ": Going for slingshot attack position.");
+			}
+
+			this.m.IsFirstExecuted = false;
+			return false;
+		}
+
+		if (!navigator.travel(_entity, _entity.getActionPoints(), _entity.getFatigueMax() - _entity.getFatigue())) {
+			this.m.TargetTile = null;
+			return true;
+		}
+
+		return false;
+	}
+
+	function findBestTile(_entity, _targetTile) {
+		local actorTile = _entity.getTile();
+		local bestTile = null;
+
+		for (local i = 0; i < 6; i = ++i) {
+			if (!actorTile.hasNextTile(i)) {
+				continue;
+			}
+			local nextTile = actorTile.getNextTile(i);
+
+			if (!nextTile.IsEmpty || this.Math.abs(nextTile.Level - actorTile.Level) > 1) {
+				continue;
+			}
+
+			local dist = nextTile.getDistanceTo(_targetTile);
+			if (dist == 4) {
+				::logDebug("besttilefound: "+nextTile)
+				return nextTile;
+			}
+			if (dist == 2) {
+				bestTile = nextTile;
+			}
+		}
+		::logDebug("besttile: "+bestTile)
+		return bestTile;
+	}
+});
