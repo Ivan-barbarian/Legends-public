@@ -1,4 +1,4 @@
-this.legend_ai_slingshot_move_into_range <- this.inherit("scripts/ai/tactical/behavior", {
+this.legend_ai_slingstaff_move_into_range <- this.inherit("scripts/ai/tactical/behavior", {
 	m = {
 		TargetTile = null,
 		Slingstaffs = [
@@ -11,8 +11,8 @@ this.legend_ai_slingshot_move_into_range <- this.inherit("scripts/ai/tactical/be
 	},
 
 	function create() {
-		this.m.ID = this.Const.AI.Behavior.ID.SlingshotMoveIntoRange;
-		this.m.Order = this.Const.AI.Behavior.Order.SlingshotMoveIntoRange;
+		this.m.ID = this.Const.AI.Behavior.ID.SlingstaffMoveIntoRange;
+		this.m.Order = this.Const.AI.Behavior.Order.SlingstaffMoveIntoRange;
 		this.behavior.create();
 	}
 
@@ -57,13 +57,11 @@ this.legend_ai_slingshot_move_into_range <- this.inherit("scripts/ai/tactical/be
 		if (this.m.TargetTile == null) {
 			return this.Const.AI.Behavior.Score.Zero;
 		}
-		::logDebug("passed oneval")
-		return this.Const.AI.Behavior.Score.SlingshotMoveIntoRange;
+		return this.Const.AI.Behavior.Score.SlingstaffMoveIntoRange;
 	}
 
 	function onExecute(_entity) {
 		local navigator = this.Tactical.getNavigator();
-		::logDebug("executing")
 		if (this.m.IsFirstExecuted) {
 			local settings = navigator.createSettings();
 			settings.ActionPointCosts = _entity.getActionPointCosts();
@@ -85,7 +83,7 @@ this.legend_ai_slingshot_move_into_range <- this.inherit("scripts/ai/tactical/be
 			this.m.Agent.adjustCameraToDestination(movement.End);
 
 			if (this.Const.AI.VerboseMode) {
-				this.logInfo("* " + _entity.getName() + ": Going for slingshot attack position.");
+				this.logInfo("* " + _entity.getName() + ": Going for slingstaff attack position.");
 			}
 
 			this.m.IsFirstExecuted = false;
@@ -116,14 +114,12 @@ this.legend_ai_slingshot_move_into_range <- this.inherit("scripts/ai/tactical/be
 
 			local dist = nextTile.getDistanceTo(_targetTile);
 			if (dist == 4) {
-				::logDebug("besttilefound: "+nextTile)
 				return nextTile;
 			}
 			if (dist == 2) {
 				bestTile = nextTile;
 			}
 		}
-		::logDebug("besttile: "+bestTile)
 		return bestTile;
 	}
 });
