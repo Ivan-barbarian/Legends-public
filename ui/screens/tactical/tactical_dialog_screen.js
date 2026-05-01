@@ -143,7 +143,8 @@ TacticalDialogScreen.prototype.unregister = function () {
 
 TacticalDialogScreen.prototype.show = function (_data) {
     this.loadFromData(_data);
-
+    this.mYesButton.enableButton(false);
+    this.mNoButton.enableButton(false);
     var self = this;
     this.mContainer.velocity("finish", true).velocity({ opacity: 1 },
         {
@@ -156,6 +157,8 @@ TacticalDialogScreen.prototype.show = function (_data) {
             complete: function () {
                 self.mIsVisible = true;
                 self.notifyBackendOnShown();
+                self.mYesButton.enableButton(true);
+                self.mNoButton.enableButton(true);
             }
         });
 };
@@ -240,9 +243,13 @@ TacticalDialogScreen.prototype.notifyBackendOnAnimating = function () {
 };
 
 TacticalDialogScreen.prototype.notifyBackendYesButtonPressed = function () {
+    this.mYesButton.enableButton(false);
+    this.mNoButton.enableButton(false);
     SQ.call(this.mSQHandle, 'onYesPressed');
 };
 
 TacticalDialogScreen.prototype.notifyBackendNoButtonPressed = function () {
+    this.mYesButton.enableButton(false);
+    this.mNoButton.enableButton(false);
     SQ.call(this.mSQHandle, 'onNoPressed');
 };
