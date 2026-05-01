@@ -122,10 +122,11 @@ this.legend_kick_skill <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		local mainhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local offhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-		local hasNet = offhand != null && ::MSU.String.endsWith(offhand.getID(), "_net") && actor.getCurrentProperties().IsSpecializedInNets;
+		local hasNet = actor.getCurrentProperties().IsSpecializedInNets && offhand != null && offhand.getID().find("throwing_net") != null;
 		if (hasNet)
-			return true;
-		return mainhand != null && offhand != null && !this.getContainer().hasEffect(::Legends.Effect.Disarmed) || this.getContainer().getActor().getItems().hasBlockedSlot(this.Const.ItemSlot.Offhand) || this.skill.isHidden() || this.m.Container.getActor().isStabled();
+			return false;
+		
+		return mainhand != null && offhand != null && !this.getContainer().hasEffect(::Legends.Effect.Disarmed) || this.getContainer().getActor().getItems().hasBlockedSlot(this.Const.ItemSlot.Offhand) || this.skill.isHidden() || actor.isStabled();
 	}
 
 
