@@ -1,6 +1,7 @@
 ::mods_hookExactClass("skills/actives/stab", function(o)
 {
 	o.m.IsEstocStab <- false;
+	o.m.IsBackstab <- false;
 
 	o.setItem <- function(_item) {
 		this.skill.setItem(_item);
@@ -13,6 +14,10 @@
 			this.m.DirectDamageMult = 0.2;
 			this.m.ActionPointCost = 4;
 			this.m.FatigueCost = 10;
+		}
+		if (this.m.IsBackstab) {
+			this.m.Name = "Backstab";
+			this.m.Description = "A quick and fast stab that takes advantage of a distracted target. Deals an additional 5% damage and 3% penetration per target surrounding the target.";
 		}
 	}
 
@@ -28,6 +33,26 @@
 			this.m.ActionPointCost -= 1;
 		}
 		this.m.FatigueCostMult = ::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+	}
+
+	o.onAnySkillUsed <- function ( _skill, _targetEntity, _properties )
+	{
+		if (_skill != this)
+			return;
+
+		if (_targetEntity == null)
+			return;
+
+		if (!this.m.IsBackstab)
+			return;
+
+		local surroundedCount = _targetEntity.getSurroundedCount();
+		if (surroundedCount > 0)
+		{
+			_properties.DamageRegularMult *= 1.0 + surroundedCount * 0.05;
+			_properties.DamageDirectMult *= 1.0 + surroundedCount * 0.03;
+		}
+
 	}
 
 });

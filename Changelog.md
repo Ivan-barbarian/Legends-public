@@ -7,6 +7,41 @@
 > Confers an experience point bonus based on Hitpoints lost and Injuries gained during combat. Gain 1 XP per Hitpoint and 10 per Injuries. Experience gain is reduced by 90% at level 12 and above.
 > Hitpoint damage taken is reduced by 5% and Resolve is increased by 3 for each Injury you have up to a maximum of 30% and [color=%positive%]15 achieved at 6 Injuries. Counts both regular and permanent Injuries.
 
+### Weapons
+
+**Daze Bomb**
+- will now stun if the target is already dazed
+
+**Throwing**
+- `Piercing Javelin` - if the attack is successful also attack the target behind them for 75% damage
+> 5 ap, 20 fat
+
+**Puncture Daggers**
+- `Backstab` - replaces `Stab` on puncture daggers
+> additional 5% damage and 3% armor penetration based on surround count
+- `Puncture` - unchanged
+- `Throw Dagger` - unchanged
+
+**Qatal Daggers**
+- `Stab` - will attack an additional time if under the effect of smoke
+- `Deathblow` - unchanged
+
+**2h Swordcleavers**
+- `Hew` - 60% base for each attack, +20% if the target is bleeding or injured
+- `Harvest` - 10% bonus damage down from 20% with mastery when target is bleeding
+- `Decapitate` - additionally increases head hit chance depending on how wounded the target is
+
+**1h Cleavers**
+- `Cleave` - unchanged
+- `Decapitate` - unchanged
+- `Debilitate` - a successful strike will apply `Debilitated`
+> 4 ap, 20 fat, 50% damage
+
+**Whips**
+- `Whip` - ap cost is reduced to 3
+- `Disarm` - unchanged
+- `Debilitate` - a successful strike will apply `Debilitated`
+> 4 ap, 20 fat, 50% damage, 3 range
 
 # 19.3.0 - Left & Right
 
