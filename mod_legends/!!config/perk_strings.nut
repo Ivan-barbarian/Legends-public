@@ -2923,7 +2923,7 @@ Use your athletic skill to leap high and far.
 Make use of your acrobatic skill to dodge attacks and move out of trouble.
 
 [color=%passive%][u]Passive:[/u][/color]
-• As long as there's a free tile adjacent any attack against you will be rerolled. If the attack is ranged you will use your Melee Defense and if the attack is Melee you will use your Ranged Defense for the reroll.
+• As long as there's a free tile adjacent any attack against you has a chance to be rerolled. If the attack is ranged you will use your Melee Defense and if the attack is Melee you will use your Ranged Defense for the reroll.
 ";
 
 ::Const.Strings.PerkDescription.LegendHairSplitter <- @"
