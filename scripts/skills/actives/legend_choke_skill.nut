@@ -78,8 +78,8 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 		local offhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 		local hasNet = offhand != null && ::MSU.String.endsWith(offhand.getID(), "_net") && actor.getCurrentProperties().IsSpecializedInNets;
 		if (hasNet && mainhand == null)
-			return true;
-		return mainhand != null || offhand != null && !this.getContainer().hasEffect(::Legends.Effect.Disarmed) || this.skill.isHidden() || this.m.Container.getActor().isStabled();
+			return false;
+		return mainhand != null || offhand != null && !this.getContainer().hasEffect(::Legends.Effect.Disarmed) || this.skill.isHidden() || actor.isStabled();
 	}
 
 	function onGetHitFactors( _skill, _targetTile, _tooltip )
