@@ -2923,7 +2923,11 @@ Use your athletic skill to leap high and far.
 Make use of your acrobatic skill to dodge attacks and move out of trouble.
 
 [color=%passive%][u]Passive:[/u][/color]
-• As long as there's a free tile adjacent any attack against you has a chance to be rerolled. If the attack is ranged you will use your Melee Defense and if the attack is Melee you will use your Ranged Defense for the reroll.
+• As long as there's a free tile adjacent to you grant a chance to have any attacker require two successful attack rolls in order to hit. If the attack is ranged you will use your Melee Defense and if the attack is melee you will use your Ranged Defense for the reroll. On a succesful reroll you will be moved to a random tile. 
+
+• Disabled if you are rooted or stunned.
+
+• Stacks with 'Lucky' or [color=%perk%]Premonition[/color] with the chance of either being added to the chance to reroll. 
 ";
 
 ::Const.Strings.PerkDescription.LegendHairSplitter <- @"
