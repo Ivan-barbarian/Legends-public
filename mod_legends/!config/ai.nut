@@ -36,7 +36,7 @@ local count = ::Const.AI.Behavior.ID.COUNT;
 ::Const.AI.Behavior.Order.Corruption <- 39;
 ::Const.AI.Behavior.Order.SpawnShadow <- 39;
 ::Const.AI.Behavior.Order.Howl <- 39;
-::Const.AI.Behavior.Order.SlingstaffMoveIntoRange <- 39;
+::Const.AI.Behavior.Order.SlingstaffMoveIntoRange <- 60;
 
 ::Const.AI.Behavior.Score.Howl <- 60;
 ::Const.AI.Behavior.Score.Corruption <- 480;

@@ -1,6 +1,10 @@
 this.legend_ai_slingstaff_move_into_range <- this.inherit("scripts/ai/tactical/behavior", {
 	m = {
 		TargetTile = null,
+		PossibleSkills = [
+			::Legends.Actives.getID(::Legends.Active.LegendSlingstaffBash),
+			::Legends.Actives.getID(::Legends.Active.LegendSlingHeavyStone)
+		],
 		Slingstaffs = [
 			"weapon.staff_sling",
 			"weapon.nomad_sling",
@@ -32,15 +36,22 @@ this.legend_ai_slingstaff_move_into_range <- this.inherit("scripts/ai/tactical/b
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
+		local myTile = _entity.getTile();
 		local bestTargetTile = null;
 
 		foreach (t in this.getAgent().getKnownOpponents()) {
 			if (t.Actor.isNull()) {
 				continue;
 			}
-
 			local targetTile = t.Actor.getTile();
-			local dist = _entity.getTile().getDistanceTo(targetTile);
+			local dist = myTile.getDistanceTo(targetTile);
+
+			foreach (skillID in this.m.PossibleSkills) {
+				local skill = _entity.getSkills().getSkillByID(skillID)
+        		if (dist >= skill.getMinRange() && dist <= skill.getMaxRange() && skill.onVerifyTarget(myTile, targetTile)) {
+            		return this.Const.AI.Behavior.Score.Zero; 
+        		}
+    		}
 
 			if (dist == 3 && targetTile.IsVisibleForEntity) {
 				bestTargetTile = targetTile;
