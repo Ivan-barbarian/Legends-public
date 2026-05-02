@@ -5,7 +5,7 @@
 	o.create = function()
 	{
 		create();
-		this.m.Description = "I want more! This character is greedy and will demand a higher daily payment than others with a similar background, as well as being fast to leave you if you ever run out of crowns. On the flip side, ever eager for danger pay, this character performs better the higher the wage.";
+		this.m.Description = "I want more! This character is greedy and will demand a higher daily payment than others with a similar background, as well as being fast to leave you if you ever run out of crowns. On the flip side, ever eager for danger pay, this character performs better the higher the wage. The bonus has diminishing returns.";
 	}
 
 	o.getTooltip = function ()

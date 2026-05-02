@@ -2545,7 +2545,7 @@ Any camp worth its salt will have an alcohol still fashioned out of whatever can
 Knowledge of an animal's physiology allows for better diet, exercise and care.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Increases Hitpoints by [color=%positive%]25%[/color] donkeys in the company and their carrying capacity by [color=%positive%]+12[/color].
+• Increases Hitpoints by [color=%positive%]25%[/color] for donkeys in the company and their carrying capacity by [color=%positive%]+12[/color].
 
 • Does not stack with the same perk on multiple mercenaries.
 ";
