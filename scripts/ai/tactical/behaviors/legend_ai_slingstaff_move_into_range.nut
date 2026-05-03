@@ -48,7 +48,7 @@ this.legend_ai_slingstaff_move_into_range <- this.inherit("scripts/ai/tactical/b
 
 			foreach (skillID in this.m.PossibleSkills) {
 				local skill = _entity.getSkills().getSkillByID(skillID)
-        		if (dist >= skill.getMinRange() && dist <= skill.getMaxRange() && skill.onVerifyTarget(myTile, targetTile)) {
+        		if (skill != null && dist >= skill.getMinRange() && dist <= skill.getMaxRange() && skill.onVerifyTarget(myTile, targetTile)) {
             		return this.Const.AI.Behavior.Score.Zero; 
         		}
     		}
