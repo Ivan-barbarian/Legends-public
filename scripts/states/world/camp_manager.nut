@@ -512,8 +512,7 @@ this.camp_manager <- {
 
 			local image = null;
 
-			// how about consts here? magic numbers are bad practice
-			if (highest == 4 || highest == 8 || highest == 9) {
+			if (highest == ::Const.World.TerrainType.Hills || highest == ::Const.World.TerrainType.AutumnForest || highest == ::Const.World.TerrainType.Mountains) {
 				image = building.getUIImage(highest);
 			} else {
 				image = building.getUIImage(0);
