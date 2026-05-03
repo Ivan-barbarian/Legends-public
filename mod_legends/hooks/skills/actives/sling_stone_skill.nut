@@ -36,7 +36,7 @@
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=%positive%]100%[/color] chance to baffle a target on a hit to the body"
+				text = "Has a [color=%positive%]100%[/color] chance to baffle a target on a hit"
 			},
 			{
 				id = 8,
@@ -80,7 +80,7 @@
 		}
 	}
 
-	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
+	o.onTargetHit = function ( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 		if (_skill == this && _targetEntity.isAlive() && !_targetEntity.isDying())
 		{
