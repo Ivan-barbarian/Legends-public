@@ -951,7 +951,10 @@ TacticalScreenTurnSequenceBarModule.prototype.selectFirstEntity = function (_ent
 										var newImage = entityImage.data('newImage') || false;
 
 										if (newImage !== false) {
-											entityImage.data('placeholder').removeClass('opacity-almost-none');
+											var placeholder = entityImage.data('placeholder');
+											if (placeholder) {
+												placeholder.removeClass('opacity-almost-none');
+											}
 											entityImage.attr('src', newImage);
 											entityImage.data('newImage', false);
 										}
@@ -1598,7 +1601,10 @@ TacticalScreenTurnSequenceBarModule.prototype.updateEntityImage = function (_ent
 		if ('imagePath' in _entityData) {
 			setTimeout(function () {
 				if (!_entityDIV.is('[in-removal]')) {
-					entityImage.data('placeholder').removeClass('opacity-almost-none');
+					var placeholder = entityImage.data('placeholder');
+					if (placeholder) {
+						placeholder.removeClass('opacity-almost-none');
+					}
 					entityImage.attr('src', Path.PROCEDURAL + _entityData.imagePath);
 				}
 			}, 10);

@@ -63,9 +63,9 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.AIAgent.setActor(this);
 	}
 
-	function onMovementFinish( _tile ) {
+	function onMovementFinish(_tile) {
 		this.actor.onMovementFinish(_tile);
-		
+
 		this.Sound.play(this.m.Sound[this.Const.Sound.ActorEvent.Other1][this.Math.rand(0, this.m.Sound[this.Const.Sound.ActorEvent.Other1].len() - 1)], this.Const.Sound.Volume.TacticalMovement * this.Math.rand(90, 100) * 0.02, this.getPos(), this.m.SoundPitch);
 	}
 
@@ -144,26 +144,26 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 			this.Tactical.spawnParticleEffect(false, effect.Brushes, _tile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 40));
 
 			local appearance = this.getItems().getAppearance();
-
-			//will need edits if wichts start using front/back upgrades similar to human.nut
+			local targetScale = 0.9;
 			local armorLayers = [
 				"CorpseArmor",
 				"CorpseArmorLayerChain",
 				"CorpseArmorLayerPlate",
 				"CorpseArmorLayerTabbard",
-				"CorpseArmorUpgradeBack",
-				"CorpseArmorUpgradeFront",
 				"CorpseArmorLayerCloakBack",
 				"CorpseArmorLayerCloakFront",
 			];
 
+			if (appearance.CorpseArmorUpgradeFront != "") {
+				armorLayers.push("CorpseArmorUpgradeBack");
+			} else {
+				armorLayers.insert(3, "CorpseArmorUpgradeBack");
+			}
+
 			foreach (layer in armorLayers) {
 				if (appearance[layer] != "") {
 					local decal = _tile.spawnDetail(appearance[layer], this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-					if (decal != null) {
-						decal.Scale = 0.9;
-						decal.setBrightness(0.9);
-					}
+					decal.Scale = targetScale;
 				}
 			}
 
@@ -183,12 +183,14 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 				foreach (layer in helmetLayers) {
 					if (appearance[layer] != "") {
 						local decal = _tile.spawnDetail(appearance[layer], this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-						if (decal != null) {
-							decal.Scale = 0.9;
-							decal.setBrightness(0.9);
-						}
+						decal.Scale = targetScale;
 					}
 				}
+			}
+
+			if (appearance.CorpseArmorUpgradeFront != "") {
+				local decal = _tile.spawnDetail(appearance.CorpseArmorUpgradeFront, this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
+				decal.Scale = targetScale;
 			}
 		}
 		this.spawnTerrainDropdownEffect(_tile);
