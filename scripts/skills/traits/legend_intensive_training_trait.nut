@@ -366,10 +366,12 @@ this.legend_intensive_training_trait <- this.inherit("scripts/skills/traits/char
 
 	function onCombatFinished()
 	{
+		if (this.Tactical.isActive()) {
 		if (this.m.SettlementTrainingDelay > 0)
 			this.m.SettlementTrainingDelay -= 1;
 		if (this.m.TraitRerollDelay > 0)
 			this.m.TraitRerollDelay -= 1;
+		}
 		this.skill.onCombatFinished();
 	}
 
