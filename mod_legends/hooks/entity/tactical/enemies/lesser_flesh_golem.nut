@@ -18,6 +18,10 @@
 		::Legends.S.scaleBaseProperties(b);
 	}
 
+	o.onDeath = function ( _killer, _skill, _tile, _fatalityType ) {
+		this.legend_flesh_golem.onDeath( _killer, _skill, _tile, _fatalityType );
+	}
+
 	o.getLootForTile = function( _killer, _loot ) {
 		return _loot;
 	}

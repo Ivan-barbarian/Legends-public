@@ -188,7 +188,7 @@
 				foreach (layer in helmetLowerLayers) {
 					if (appearance[layer] != "") {
 						local decal = _tile.spawnDetail(appearance[layer], this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-							decal.Scale = targetScale;
+						decal.Scale = targetScale;
 					}
 				}
 
@@ -286,7 +286,6 @@
 				//foreach (layer in helmetLowerLayers) {
 				//	if (appearance[layer] != "") {
 				//		decap[idx].Scale = targetScale;
-				//		decap[idx].setBrightness(targetBrightness);
 				//		idx = ++idx;
 				//	}
 				//}
@@ -327,7 +326,6 @@
 				//foreach (layer in helmetLayers) {
 				//	if (appearance[layer] != "") {
 				//		decap[idx].Scale = targetScale;
-				//		decap[idx].setBrightness(targetBrightness);
 				//		idx = ++idx;
 				//	}
 				//}
