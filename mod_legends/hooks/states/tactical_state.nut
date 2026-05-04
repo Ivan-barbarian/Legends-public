@@ -73,6 +73,22 @@
 		}
 	};
 
+	o.onProcessAI = function() {
+		if (this.Tactical.State == null || this.Tactical.State.isBattleEnded())	{
+			return;
+		}
+
+		local activeEntity = this.Tactical.TurnSequenceBar.getActiveEntity();
+
+		if (activeEntity != null && activeEntity.getAIAgent().isEvaluating()) {
+			if (this.Time.getVirtualTime() < activeEntity.getAIAgent().m.NextEvaluationTime) {
+            	return; 
+        	}
+
+			activeEntity.getAIAgent().think(true);
+		}
+	}
+
 	o.onBattleEnded = function()
 	{
 		if (this.m.IsExitingToMenu)
