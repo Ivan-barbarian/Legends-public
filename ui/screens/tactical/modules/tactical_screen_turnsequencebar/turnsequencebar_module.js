@@ -867,14 +867,23 @@ TacticalScreenTurnSequenceBarModule.prototype.searchSelectedSkillDIV = function 
 };
 
 
-TacticalScreenTurnSequenceBarModule.prototype.selectFirstEntity = function (_entity, _entityDIV, _previousEntityWasHiddenToPlayer) {
+TacticalScreenTurnSequenceBarModule.prototype.selectFirstEntity = function (_entity, _entityDIV, _previousEntityWasHiddenToPlayer, _retryCount) {
 	// notify sq that a new entity went into the first slot
 	// +  query entity data from sq backend
 	var self = this;
+	var retryCount = (_retryCount === undefined) ? 0 : _retryCount;
+    var maxRetries = 10;
+
 	this.notifyBackendEntityEntersFirstSlot(_entity.id, function (entityData) {
 		if (entityData === null || entityData === undefined) {
-			console.error('ERROR: Failed to query entity data for entity (' + _entity.id + '). Reason: Invalid result. Retrying...');
-			setTimeout(function () { self.selectFirstEntity(_entity, _entityDIV, _previousEntityWasHiddenToPlayer); }, 50);
+			if (retryCount < maxRetries) {
+				console.error('ERROR: Failed to query entity data for entity (' + _entity.id + '). Reason: Invalid result. Retrying...');
+				setTimeout(function () { self.selectFirstEntity(_entity, _entityDIV, _previousEntityWasHiddenToPlayer); }, 100);
+			}
+			else{
+				console.error('ERROR: Failed to query entity data for entity (' + _entity.id + '). Reason: Invalid result. Removing the entity from the sequence bar and moving to the next one...');
+				self.removeEntity(_entity.id);
+			}
 			return;
 		}
 
@@ -945,13 +954,14 @@ TacticalScreenTurnSequenceBarModule.prototype.selectFirstEntity = function (_ent
 									duration: self.mResizeFirstSlotImageTime,
 									easing: 'swing',
 									complete: function () {
-										entityImage.data('placeholder').css({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop });
+										var placeholder = entityImage.data('placeholder');
+										if (placeholder) {
+											entityImage.data('placeholder').css({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop });
+										}
 										entityImage.data('is-scaling', false);
 
 										var newImage = entityImage.data('newImage') || false;
-
 										if (newImage !== false) {
-											var placeholder = entityImage.data('placeholder');
 											if (placeholder) {
 												placeholder.removeClass('opacity-almost-none');
 											}
