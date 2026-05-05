@@ -425,29 +425,27 @@
 		local deathLoot = this.getItems().getDroppableLoot(_killer);
 		local tileLoot = this.getLootForTile(_killer, deathLoot);
 
-		if (_fatalityType != this.Const.FatalityType.Unconscious)
-		{
+		if (_fatalityType != this.Const.FatalityType.Unconscious) {
 			this.dropLoot(_tile, tileLoot, !flip);
 		}
 
 		local corpse = this.generateCorpse(_tile, _fatalityType, _killer);
 
-		if (_tile == null)
-		{
+		if (_tile == null) {
 			this.Tactical.Entities.addUnplacedCorpse(corpse);
-		}
-		else
-		{
+		} else {
 			_tile.Properties.set("Corpse", corpse);
 			this.Tactical.Entities.addCorpse(_tile);
 		}
 
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
-		_tile.Properties.get("Corpse").isHuman = 1;
+		if (_tile != null) {
+			_tile.Properties.get("Corpse").isHuman = 1;
 
-		if (needToCheese) {
-			_tile.Properties.get("Corpse").IsResurrectable = false; // mark as can't be raised back as undead
-			::World.FactionManager.get().isUndeadScourge = originalFunc; // undo the cheese
+			if (needToCheese) {
+				_tile.Properties.get("Corpse").IsResurrectable = false; // mark as can't be raised back as undead
+				::World.FactionManager.get().isUndeadScourge = originalFunc; // undo the cheese
+			}
 		}
 	}
 
