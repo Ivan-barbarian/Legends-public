@@ -40,19 +40,28 @@
 	}
 
 	o.onAdded = function () {
-		// Legends Steel Brow Stun -> Daze logic here
-		local skill = ::Legends.Perks.get(this, ::Legends.Perk.SteelBrow);
-		local otherSkill = ::Legends.Perks.get(this, ::Legends.Perk.LegendImmovableObject);
-		if (skill != null || (otherSkill != null && otherSkill.m.SteelBrow)) {
-			if (this.getContainer().getActor().getTile().IsVisibleForPlayer) {
-				local actualSkill = skill != null ? skill : otherSkill;
-				this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " resists the Stun with " + actualSkill.getName() + " and is Dazed instead.");
-			}
-			this.removeSelf();
-			::Legends.Effects.grant(this, ::Legends.Effect.Dazed);
+		// Legends Stun immunity logic here (Composure, Immovable Object, Steel Brow)
+		local composure = ::Legends.Perks.get(this, ::Legends.Perk.LegendComposure);
+		local immovableObject = ::Legends.Perks.get(this, ::Legends.Perk.LegendImmovableObject);
+		local steelBrow = ::Legends.Perks.get(this, ::Legends.Perk.SteelBrow);
+		if (composure != null || (immovableObject != null && immovableObject.m.isGrantingStunImmunity)) {
+    		if (this.getContainer().getActor().getTile().IsVisibleForPlayer) {
+        		local sourceOfImmunity = composure != null ? composure.getName() : immovableObject.getName();
+        		this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " is immune to Stun due to " + sourceOfImmunity + ".");
+    		}
+    		this.removeSelf();
+    		return;
+		}
+
+		if (steelBrow != null) {
+    		if (this.getContainer().getActor().getTile().IsVisibleForPlayer) {
+        		this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " is immune to Stun due to " + steelBrow.getName() + " and is Dazed instead.");
+    		}
+    		this.removeSelf();
+    		::Legends.Effects.grant(this, ::Legends.Effect.Dazed);
 			return;
 		}
-		// End of Legends Steel Brow logic
+		// End of Stun immunity logic
 		local statusResisted = this.getContainer().getActor().getCurrentProperties().IsResistantToAnyStatuses
 			? this.Math.rand(1, 100) <= 50
 			: false;
@@ -63,7 +72,7 @@
 
 		if (statusResisted) {
 			if (!this.getContainer().getActor().isHiddenToPlayer()) {
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " shook off being stunned thanks to his unnatural physiology");
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " shook off being stunned thanks to his unnatural physiology.");
 			}
 
 			this.removeSelf();
@@ -73,7 +82,6 @@
 			::Legends.Effects.remove(this, ::Legends.Effect.Riposte);
 			::Legends.Effects.remove(this, ::Legends.Effect.LegendReturnFavor);
 			::Legends.Effects.remove(this, ::Legends.Effect.PossessedUndead);
-
 			::Legends.Effects.remove(this, ::Legends.Effect.LegendValaCurrentlyChanting);
 			::Legends.Effects.remove(this, ::Legends.Effect.LegendValaInTrance);
 		} else {
