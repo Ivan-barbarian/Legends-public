@@ -133,7 +133,7 @@
 
 		this.m.AlreadyUsed = true;
 
-		::Time.scheduleEvent(::TimeUnit.Virtual, 50, function( _tag ) {
+		::Time.scheduleEvent(::TimeUnit.Virtual, 10, function( _tag ) {
 			local actor = this.getContainer().getActor();
 			if (::Legends.S.isEntityNullOrDead(actor) || actor.m.MoraleState == this.Const.MoraleState.Fleeing || actor.getCurrentProperties().IsStunned) {
 				this.m.AlreadyUsed = false;
