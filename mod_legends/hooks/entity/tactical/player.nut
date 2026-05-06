@@ -1931,12 +1931,6 @@
 		}
 
 		tt.extend(upgrade.getTooltip());
-		tt.push({
-			id = 1,
-			type = "hint",
-			icon = "ui/icons/mouse_left_button.png",
-			text = "UnEquip layer"
-		});
 
 		foreach( t in tt )
 		{

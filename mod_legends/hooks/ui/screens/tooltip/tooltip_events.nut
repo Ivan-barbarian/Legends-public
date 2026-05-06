@@ -443,12 +443,14 @@
 		case "character-screen-inventory-list-module.stash":
 			if (_item.isUsable())
 			{
-				tooltip.push({
-					id = 1,
-					type = "hint",
-					icon = "ui/icons/mouse_right_button.png",
-					text = "Use item"
-				});
+				if(!("DisableBaseUseTooltip" in _item.m) && !_item.isItemType(::Const.Items.ItemType.Armor) && !_item.isItemType(::Const.Items.ItemType.Helmet) && !_item.isItemType(::Const.Items.ItemType.Named) ) {
+					tooltip.push({
+						id = 1,
+						type = "hint",
+						icon = "ui/icons/mouse_right_button.png",
+						text = "Use item"
+					});
+				}
 			}
 			else if (_item.getSlotType() != this.Const.ItemSlot.None && _item.getSlotType() != this.Const.ItemSlot.Bag)
 			{
@@ -485,8 +487,9 @@
 				});
 			}
 
-			if (_item.getRepair() >= _item.getRepairMax())
-			{
+			local slot = _item.getSlotType();
+			if (_item.getRepair() >= _item.getRepairMax() && ( slot == this.Const.ItemSlot.Body || slot == this.Const.ItemSlot.Head || slot == this.Const.ItemSlot.Mainhand || slot == this.Const.ItemSlot.Offhand ) && !_item.isItemType(::Const.Items.ItemType.Net))
+			{	
 				tooltip.push({
 					id = 3,
 					type = "hint",

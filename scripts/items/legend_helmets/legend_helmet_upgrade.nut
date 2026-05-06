@@ -210,24 +210,33 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 			});
 		}
 
-		result.push({
-			id = 65,
-			type = "hint",
-			icon = "ui/icons/mouse_right_button.png",
-			text = "Right-click or left-click and drag onto the helmet of the currently selected character to attach."
-		});
-		result.push({
-			id = 66,
-			type = "hint",
-			icon = "ui/icons/mouse_right_button_shift_drag.png",
-			text = "Hold Shift and drag onto a helmet in the stash to attach."
-		});
-		result.push({
-			id = 67,
-			type = "hint",
-			icon = "ui/icons/mouse_left_button_shift.png", //I wish I could vanish this easily
-			text = "Hold Left-Shift and Left-Click this layer square to toggle it hidden on this character (stats & other benefits will not be affected)."
-		});
+		if (this.m.Armor == null) {
+			result.push({
+				id = 65,
+				type = "hint",
+				icon = "ui/icons/mouse_right_button.png",
+				text = "Right-click or left-click and drag onto the helmet of the currently selected character to attach."
+			});
+			result.push({
+				id = 66,
+				type = "hint",
+				icon = "ui/icons/mouse_right_button_shift_drag.png",
+				text = "Hold Shift and drag onto a helmet in the stash to attach."
+			});
+		} else {
+			result.push({
+				id = 1,
+				type = "hint",
+				icon = "ui/icons/mouse_left_button_shift.png",
+				text = "Hold Left-Shift and Left-Click this layer square to toggle it hidden on this character (stats & other benefits will not be affected)."
+			});
+			result.push({
+				id = 2,
+				type = "hint",
+				icon = "ui/icons/mouse_left_button.png",
+				text = "Unequip layer"
+			});
+		}
 		result.push({
 			id = 4,
 			type = "progressbar",
