@@ -109,9 +109,10 @@
 		return ret;
 	}
 
-	o.setGender <- function (_gender = -1)
-	{
-		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
+	o.setGender <- function (_gender = -1) {
+		if (_gender == -1) {
+			_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
+		}
 
 		if (_gender != 1) {
 			return;
@@ -133,7 +134,8 @@
 
 		this.m.AlreadyUsed = true;
 
-		::Time.scheduleEvent(::TimeUnit.Virtual, 10, function( _tag ) {
+		local executeFollowup;
+		executeFollowup = (function( _tag ) {
 			local actor = this.getContainer().getActor();
 			if (::Legends.S.isEntityNullOrDead(actor) || actor.m.MoraleState == this.Const.MoraleState.Fleeing || actor.getCurrentProperties().IsStunned) {
 				this.m.AlreadyUsed = false;
@@ -149,15 +151,30 @@
 				return;
 			}
 
+			local targetsAreMovingInvoluntarily = false;
+
 			for (local i = 0; i != 6; i = ++i) {
 				if (tile.hasNextTile(i)) {
 					local next = tile.getNextTile(i);
 
 					if (next.IsOccupiedByActor && this.Math.abs(next.Level - tile.Level) <= 1 && !next.getEntity().isAlliedWithPlayer()	&& AOO.onVerifyTarget(tile, next)) {
-						targetTiles.push(next);
+						local entity = next.getEntity();
+						if (entity.m.CurrentMovementType == this.Const.Tactical.MovementType.Involuntary || ::Tactical.getNavigator().isTravelling(entity)) {
+							targetsAreMovingInvoluntarily = true;
+							break;
+						}
+						if (AOO.onVerifyTarget(tile, next)) {
+							targetTiles.push(next);
+						}
 					}
 				}
 			}
+
+			if (targetsAreMovingInvoluntarily) {
+            	::Time.scheduleEvent(::TimeUnit.Virtual, 50, executeFollowup, _tag);
+            	return;
+        	}
+
 			if (targetTiles.len() == 0) {
 				this.m.AlreadyUsed = false;
 				return;
@@ -166,7 +183,8 @@
 			this.m.ExecutingAttack = true;
 			AOO.useForFree(targetTiles[this.Math.rand(0, targetTiles.len() - 1)]);
 			this.m.ExecutingAttack = false;
-		}.bindenv(this), null);
+		}).bindenv(this);
+		::Time.scheduleEvent(::TimeUnit.Virtual, 10, executeFollowup, this);
 	}
 
 	o.onAnySkillUsed <- function (_skill, _targetEntity, _properties) {
