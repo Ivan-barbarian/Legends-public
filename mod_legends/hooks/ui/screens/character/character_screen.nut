@@ -359,7 +359,16 @@
 		}
 
 		if (!this.Tactical.isActive() && data.sourceItem.isUsable()) {
-			local result = data.sourceItem.onUse(data.inventory.getActor());
+			local targetItem = null;
+			
+			if (typeof _data == "array" && _data.len() >= 4 && _data[3] == "offhand" && data.sourceItem.getID().find("inscription") != null) { //for equipping runes on offhand with shift
+        		targetItem = data.inventory.getItemAtSlot(this.Const.ItemSlot.Offhand);
+				if(targetItem != null && ((targetItem.getItemType() & this.Const.Items.ItemType.Weapon) == 0)){
+					targetItem = null;
+				}
+    		}
+
+			local result = data.sourceItem.onUse(data.inventory.getActor(), targetItem);
 			if (result) {
 				if (typeof result == "table") {
 					data.stash.removeByIndex(result.index);
