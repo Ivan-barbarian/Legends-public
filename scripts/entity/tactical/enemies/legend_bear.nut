@@ -201,7 +201,7 @@ this.legend_bear <- this.inherit("scripts/entity/tactical/actor", {
 
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
-		this.m.CurrentProperties = clone b;
+		b.MeleeSkill += 10;
 		this.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
 		this.m.Items.getAppearance().Body = "bear_01";
@@ -235,20 +235,18 @@ this.legend_bear <- this.inherit("scripts/entity/tactical/actor", {
 		::Legends.Actives.grant(this, ::Legends.Active.LegendBearBite);
 		::Legends.Actives.grant(this, ::Legends.Active.LegendBearClaws);
 		::Legends.Actives.grant(this, ::Legends.Active.UnstoppableCharge);
+		::Legends.Perks.grant(this, ::Legends.Perk.LegendBattleheart);
 		if(::Legends.isLegendaryDifficulty())
 		{
 			b.Armor[this.Const.BodyPart.Head] += 50;
 			b.ArmorMax[this.Const.BodyPart.Head] += 50;		
 			b.Armor[this.Const.BodyPart.Body] += 120;
 			b.ArmorMax[this.Const.BodyPart.Body] += 120;
-			// this.m.Hitpoints = 2 * b.Hitpoints;
-			b.MeleeSkill += 10;
-			::Legends.Perks.grant(this, ::Legends.Perk.LegendBattleheart);
+			b.Hitpoints *= 2;			
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendLastStand);
 			::Legends.Traits.grant(this, ::Legends.Trait.Fearless);
 		}
-
-
+		this.m.CurrentProperties = clone b;
 	}
 
 	function assignRandomEquipment()
