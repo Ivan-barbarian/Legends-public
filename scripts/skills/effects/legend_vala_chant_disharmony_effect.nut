@@ -3,22 +3,28 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/effects
 
 	function create() {
 		this.legend_vala_chant.create();
-		this.m.Range = 3;
+		this.m.Range = 4;
 		::Legends.Effects.onCreate(this, ::Legends.Effect.LegendValaChantDisharmonyEffect);
 	}
 
 	function calculateBonus(_distance) {
-		local bonus = ((this.m.Vala.getFatigueMax() - this.m.Vala.getFatigue()) / 15.0) + this.m.Vala.getBravery() / 15.0;
+		local bonus = this.m.Vala.getBravery() / 5.0;
 
 		if (this.isMastered()) {
 			bonus *= 1.1;
 		}
 		if (_distance == 2) {
 			bonus *= 0.75;
-		} else if (_distance == 3) {
+		}
+		else if (_distance == 3) {
 			bonus *= 0.5;
 		}
-		return bonus;
+		else if (_distance == 4) {
+			bonus *= 0.25;
+		}
+		else {
+			return 0;
+		}
 	}
 
 	function getTooltip() {
@@ -32,14 +38,6 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/effects
 				text = this.getName()
 			},
 		];
-		if (distance == 1) {
-			ret.push({
-				id = 10,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Unable to enforce Zones of Control"
-			});
-		}
 
 		ret.push({
 			id = 10,
@@ -52,29 +50,24 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/effects
 	function onUpdate(_properties) {
 		local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
 		if (!this.checkEntities()) {
-			this.updateEffect(false, distance);
+			this.updateEffect(false);
 			return;
 		}
 
 		if (!this.isInRange()) {
-			this.updateEffect(false, distance);
+			this.updateEffect(false);
 			return;
 		}
 
 		local bonus = calculateBonus(distance);
-		_properties.Initiative *= 1.0 - 0.01 * this.Math.round(bonus);
+		_properties.InitiativeMult *= 1.0 - 0.01 * this.Math.round(bonus);
 
-		this.updateEffect(true, distance);
+		this.updateEffect(true);
 	}
 
-	function updateEffect(_v, _distance) {
+	function updateEffect(_v) {
 		local actor = this.getContainer().getActor();
 		if (_v) {
-			if (_distance == 1) {
-				actor.m.IsUsingZoneOfControl = false;
-			} else {
-				actor.m.IsUsingZoneOfControl = true;
-			}
 			this.m.Name = "Disharmony";
 			this.m.Icon = "skills/status_effect_65.png";
 			this.m.IconMini = "status_effect_65_mini";
@@ -95,30 +88,16 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/effects
 
 		local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
 		if (!this.checkEntities()) {
-			this.updateEffect(false, distance);
+			this.updateEffect(false);
 			return;
 		}
 
 		if (!this.isInRange()) {
-			this.updateEffect(false, distance);
+			this.updateEffect(false);
 			return;
 		}
 
 		this.spawnIcon("status_effect_65", this.getContainer().getActor().getTile());
-		this.updateEffect(true, distance);
-	}
-
-	function onRemoved() {
-		this.getContainer().getActor().m.IsUsingZoneOfControl = true;
-		this.getContainer().getActor().onSkillsUpdated();
-	}
-
-	function onDeath(_fatalityType) {
-		this.getContainer().getActor().m.IsUsingZoneOfControl = true;
-	}
-
-	function onCombatFinished() {
-		this.getContainer().getActor().m.IsUsingZoneOfControl = true;
-		this.removeSelf();
+		this.updateEffect(true);
 	}
 });

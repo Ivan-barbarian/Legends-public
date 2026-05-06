@@ -43,7 +43,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 		{
 			return 0.75;
 		}
-		else if (distance == 1){
+		else if (distance == 1) {
 			return 1.0;
 		}
 		else{

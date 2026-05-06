@@ -1139,9 +1139,9 @@ Obtain mastery over chants.
 A very disagreeable and cacophonous chant can makes it almost impossible for enemies to focus and concentrate properly.
 
 [color=%active%][u]Active:[/u][/color]
-• Unlocks the [color=%skill%]Disharmony[/color] chant which prevents enemies from enforcing Zones of Control while adjacent to the Vala and enemies within 3 tiles of the Vala will be afflicted by a malus to Initiative.
+• Unlocks the [color=%skill%]Disharmony[/color] chant which afflicts enemies within 4 tiles of the Vala will be afflicted by a malus to Initiative.
 
-• The debuff to Initiative increases by [color=%negative%]1%[/color] for every 15 points of Resolve and Fatigue the Vala has.
+• The debuff to Initiative increases by [color=%negative%]1%[/color] for every 5 points of Resolve the Vala has.
 
 • The reduction weakens by [color=%negative%]25%[/color] per one tile the target is away from the Vala.
 
