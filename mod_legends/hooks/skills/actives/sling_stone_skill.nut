@@ -61,7 +61,6 @@
 	o.onAfterUpdate = function ( _properties )
 	{
 		this.m.MaxRange = this.m.Item.getRangeMax() + (_properties.IsSpecializedInSlings ? 1 : 0);
-		this.m.AdditionalAccuracy = _properties.IsSpecializedInSlings ? (this.m.Item.getAdditionalAccuracy() + 5) : this.m.Item.getAdditionalAccuracy();
 		this.m.FatigueCostMult = _properties.IsSpecializedInSlings ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 
@@ -69,7 +68,9 @@
 	{
 		if (_skill == this)
 		{
+			this.m.AdditionalAccuracy += _properties.IsSpecializedInSlings ? (this.m.Item.getAdditionalAccuracy() + 10) : this.m.Item.getAdditionalAccuracy();
 			_properties.RangedSkill += this.m.AdditionalAccuracy;
+			this.m.HitChanceBonus += this.m.AdditionalAccuracy;
 			_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;
 			_properties.FatigueDealtPerHitMult += 2.0;
 		}

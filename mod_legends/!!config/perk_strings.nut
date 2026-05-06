@@ -1413,7 +1413,7 @@ Carefully evaluate your enemies and bide your time.
 Lets hope your enemies like fighting in the shade.
 
 [color=%passive%][u]Passive:[/u][/color]
-•[color=%skill%]Sling Stone[/color] will now [color=%skill%]Debilitate[/color] on headshots and [color=%skill%]Baffle[/color] on body shots.
+• [color=%skill%]Sling Stone[/color] will now [color=%skill%]Debilitate[/color] on headshots, [color=%skill%]Baffle[/color] on body shots and ignore shield bonuses.
 
 • [color=%skill%]Fire Handgonne[/color] will apply [color=%skill%]Shellshocked[/color] on headshots.
 
