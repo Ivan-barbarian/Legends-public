@@ -195,12 +195,12 @@ enemies = r"""
 
 <sprite id="legend_orc_behemoth_guts" offsetY="30" f="6402" ic="FF191B63" width="169" height="139" img="entity\orcs\legend_orc_behemoth_guts.png" left="-48" right="40" top="-9" bottom="47" />
 
-<sprite id="legend_orc_behemoth_armour_01" offsetX="-5" offsetY="35" ic="FF555758" width="174" height="214" img="entity\orcs\legend_orc_behemoth_armour_01.png" left="-68" right="72" top="-81" bottom="90" />
-<sprite id="legend_orc_behemoth_armour_01_damaged" offsetX="-5" offsetY="35" ic="FF171844" width="174" height="214" img="entity\orcs\legend_orc_behemoth_armour_01_damaged.png" left="-68" right="72" top="-81" bottom="90" />
-<sprite id="legend_orc_behemoth_armour_01_dead" offsetY="30" f="64FE" ic="FF3F4149" width="169" height="139" img="entity\orcs\legend_orc_behemoth_armour_01_dead.png" left="-84" right="85" top="-70" bottom="62" />
-<sprite id="legend_orc_behemoth_armour_01_dead_arrows" offsetX="-5" offsetY="20" f="64FB" ic="FF41484D" width="238" height="186" img="entity\orcs\legend_orc_behemoth_armour_01_dead_arrows.png" left="-37" right="35" top="4" bottom="60" />
-<sprite id="legend_orc_behemoth_armour_01_dead_guts" offsetX="-5" offsetY="20" f="6401" ic="FF101042" width="238" height="186" img="entity\orcs\legend_orc_behemoth_armour_01_dead_guts.png" left="-52" right="24" top="10" bottom="60" />
-<sprite id="legend_orc_behemoth_armour_01_dead_javelin" offsetX="-5" offsetY="20" f="64FB" ic="FF131A27" width="238" height="186" img="entity\orcs\legend_orc_behemoth_armour_01_dead_javelin.png" left="-47" right="25" top="-7" bottom="89" />
+<sprite id="legend_orc_behemoth_armor_01" offsetX="-5" offsetY="35" ic="FF555758" width="174" height="214" img="entity\orcs\legend_orc_behemoth_armour_01.png" left="-68" right="72" top="-81" bottom="90" />
+<sprite id="legend_orc_behemoth_armor_01_damaged" offsetX="-5" offsetY="35" ic="FF171844" width="174" height="214" img="entity\orcs\legend_orc_behemoth_armour_01_damaged.png" left="-68" right="72" top="-81" bottom="90" />
+<sprite id="legend_orc_behemoth_armor_01_dead" offsetY="30" f="64FE" ic="FF3F4149" width="169" height="139" img="entity\orcs\legend_orc_behemoth_armour_01_dead.png" left="-84" right="85" top="-70" bottom="62" />
+<sprite id="legend_orc_behemoth_armor_01_dead_arrows" offsetX="-5" offsetY="20" f="64FB" ic="FF41484D" width="238" height="186" img="entity\orcs\legend_orc_behemoth_armour_01_dead_arrows.png" left="-37" right="35" top="4" bottom="60" />
+<sprite id="legend_orc_behemoth_armor_01_dead_guts" offsetX="-5" offsetY="20" f="6401" ic="FF101042" width="238" height="186" img="entity\orcs\legend_orc_behemoth_armour_01_dead_guts.png" left="-52" right="24" top="10" bottom="60" />
+<sprite id="legend_orc_behemoth_armor_01_dead_javelin" offsetX="-5" offsetY="20" f="64FB" ic="FF131A27" width="238" height="186" img="entity\orcs\legend_orc_behemoth_armour_01_dead_javelin.png" left="-47" right="25" top="-7" bottom="89" />
 
 <sprite id="legend_orc_behemoth_helmet_01" offsetX="-5" offsetY="35" f1="-30" f2="10" ic="FF636C75" width="174" height="214" img="entity\orcs\legend_orc_behemoth_helmet_01.png" left="-68" right="36" top="-13" bottom="71" />
 <sprite id="legend_orc_behemoth_helmet_01_damaged" offsetX="-5" offsetY="35" f1="-30" f2="10" ic="FF636C75" width="174" height="214" img="entity\orcs\legend_orc_behemoth_helmet_01_damaged.png" left="-68" right="36" top="-13" bottom="71" />

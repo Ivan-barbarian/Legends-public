@@ -165,7 +165,7 @@ this.legend_orc <- this.inherit("scripts/entity/tactical/actor", {
 				//}
 			}
 
-			if (_fatalityType == this.Const.FatalityType.Disemboweled) {
+			if (_fatalityType == this.Const.FatalityType.Disemboweled && sprite_prefix != "bust_orc_04") { // warlords have very heavy armor and no guts sprites
 				if (appearance.CorpseArmor != "") {
 					decal = _tile.spawnDetail(appearance.CorpseArmor + "_guts", this.Const.Tactical.DetailFlag.Corpse, flip);
 				} else {
