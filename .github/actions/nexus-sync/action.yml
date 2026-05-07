@@ -40,8 +40,8 @@ runs:
       with:
         api_key: ${{ inputs.api_key }}
         file_group_id: ${{ inputs.core_id }}
-        filename: mod_legends-${{ inputs.tag_name }}.zip
-        display_name: mod_legends-${{ inputs.tag_name }}.zip
+        filename: mod_legends-${{ inputs.tag_name }}
+        display_name: mod_legends-${{ inputs.tag_name }}
         version: ${{ inputs.tag_name }}
         description: |
           REQUIRES VERSION 1.5.1.8+ OF VANILLA GAME
@@ -70,8 +70,8 @@ runs:
       with:
         api_key: ${{ inputs.api_key }}
         file_group_id: ${{ inputs.assets_id }}
-        filename: mod_legends-assets-${{ inputs.tag_name }}.zip
-        display_name: mod_legends-assets-${{ inputs.tag_name }}.zip
+        filename: mod_legends-assets-${{ inputs.tag_name }}
+        display_name: mod_legends-assets-${{ inputs.tag_name }}
         version: ${{ inputs.tag_name }}
         description: |
           This is an asset library required to play the mod.
