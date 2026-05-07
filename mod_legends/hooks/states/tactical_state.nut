@@ -73,6 +73,94 @@
 		}
 	};
 
+	o.computeEntityPath = function(_activeEntity, _mouseEvent) {
+		if (this.m.IsGameFinishable && this.isBattleEnded() || this.wasInCameraMovementMode()) {
+			return;
+		}
+
+		this.m.LastTileSelected = this.Tactical.getTile(this.Tactical.screenToTile(_mouseEvent.getX(), _mouseEvent.getY()));
+
+		if (!this.m.LastTileSelected.IsDiscovered
+			|| _activeEntity.getCurrentProperties().IsRooted)
+		{
+			this.Cursor.setCursor(this.Const.UI.Cursor.Denied);
+			return;
+		}
+
+		if (this.m.LastTileSelected.ID == _activeEntity.getTile().ID) {
+			this.Cursor.setCursor(this.Const.UI.Cursor.Denied);
+			this.Tactical.getNavigator().clearVisualisation();
+			this.Tactical.getHighlighter().clear();
+			this.Tactical.TurnSequenceBar.resetActiveEntityCostsPreview();
+			this.m.CurrentActionState = null;
+			return;
+		}
+
+		this.m.CurrentActionState = this.Const.Tactical.ActionState.ComputePath;
+		local settings = this.Tactical.getNavigator().createSettings();
+		settings.ActionPointCosts = _activeEntity.getActionPointCosts();
+		settings.FatigueCosts = _activeEntity.getFatigueCosts();
+		settings.FatigueCostFactor = this.Const.Movement.FatigueCostFactor;
+		settings.ActionPointCostPerLevel = _activeEntity.getLevelActionPointCost();
+		settings.FatigueCostPerLevel = _activeEntity.getLevelFatigueCost();
+		settings.ZoneOfControlCost = 4;
+		settings.AlliedFactions = _activeEntity.getAlliedFactions();
+		settings.Faction = _activeEntity.getFaction();
+		settings.AllowZoneOfControlPassing = true;
+		settings.IsPlayer = true;
+
+		if (this.Tactical.getNavigator().findPath(_activeEntity.getTile(), this.m.LastTileSelected, settings, 0)) {
+			this.Cursor.setCursor(this.Const.UI.Cursor.Boot);
+			this.Tactical.getNavigator().buildVisualisation(_activeEntity, settings, _activeEntity.getActionPoints(), _activeEntity.getFatigueMax() - _activeEntity.getFatigue());
+			this.Tactical.getHighlighter().clear();
+			this.Tactical.getHighlighter().highlightZoneOfControl(_activeEntity.getAlliedFactions());
+			settings.ZoneOfControlCost = 0;
+			local movementCosts = this.Tactical.getNavigator().getCostForPath(_activeEntity, settings, _activeEntity.getActionPoints(), _activeEntity.getFatigueMax() - _activeEntity.getFatigue());
+
+			if (movementCosts.Tiles != 0) {
+				this.Tactical.TurnSequenceBar.setActiveEntityCostsPreview(movementCosts);
+			} else {
+				this.Tactical.TurnSequenceBar.flashProgressbars(movementCosts.IsMissingActionPoints, movementCosts.IsMissingFatigue);
+			}
+		} else {
+			this.Cursor.setCursor(this.Const.UI.Cursor.Denied);
+			this.Tactical.getNavigator().clearVisualisation();
+			this.Tactical.getHighlighter().clear();
+			this.Tactical.TurnSequenceBar.resetActiveEntityCostsPreview();
+			this.m.CurrentActionState = null;
+		}
+	}
+
+	o.executeEntityTravel = function(_activeEntity, _mouseEvent) {
+		if (this.wasInCameraMovementMode()) {
+			return;
+		}
+
+		local tile = this.Tactical.getTile(this.Tactical.screenToTile(_mouseEvent.getX(), _mouseEvent.getY()));
+
+		if (this.Tactical.getNavigator().HasValidPath
+			&& this.m.LastTileSelected.X == tile.X
+			&& this.m.LastTileSelected.Y == tile.Y)
+		{
+			local movementCosts = this.Tactical.getNavigator().getCostForPath(_activeEntity, this.Tactical.getNavigator().getLastSettings(), _activeEntity.getActionPoints(), _activeEntity.getFatigueMax() - _activeEntity.getFatigue());
+
+			if (movementCosts.Tiles != 0) {
+				this.Cursor.setCursor(this.Const.UI.Cursor.Hourglass);
+				this.m.CurrentActionState = this.Const.Tactical.ActionState.TravelPath;
+				this.m.ActiveEntityNeedsUpdate = true;
+				this.Tactical.getNavigator().clearVisualisation();
+				this.Tactical.getHighlighter().clear();
+				this.Tactical.getShaker().cancel(_activeEntity);
+
+				if (this.Tactical.getCamera().Level < tile.Level) {
+					this.Tactical.getCamera().Level = tile.Level;
+				}
+			}
+		} else {
+			this.computeEntityPath(_activeEntity, _mouseEvent);
+		}
+	}
+
 	o.onProcessAI = function() {
 		if (this.Tactical.State == null || this.Tactical.State.isBattleEnded())	{
 			return;
