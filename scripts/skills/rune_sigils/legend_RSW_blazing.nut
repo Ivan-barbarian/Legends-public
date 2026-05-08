@@ -86,10 +86,11 @@ this.legend_RSW_blazing <- this.inherit("scripts/skills/skill", {
 				tile.clear(::Const.Tactical.DetailFlag.Scorchmark);
 				tile.spawnDetail("impact_decal", ::Const.Tactical.DetailFlag.Scorchmark, false, true);
 			}
-		}
+		
 
-		if (tile.IsOccupiedByActor) {
-			::Const.Tactical.Common.onApplyFireRune(tile, tile.getEntity());
+			if (tile.IsOccupiedByActor) {
+				::Const.Tactical.Common.onApplyFireRune(tile, tile.getEntity());
+			}
 		}
 	}
 });

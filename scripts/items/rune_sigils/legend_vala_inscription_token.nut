@@ -13,7 +13,6 @@ this.legend_vala_inscription_token <- this.inherit("scripts/items/item", {
 		this.m.IsAllowedInBag = false;
 		this.m.IsUsable = true;
 		this.m.Value = 100;
-		this.m.DisableBaseUseTooltip <- true;
 	}
 
 	function getTooltip() {
