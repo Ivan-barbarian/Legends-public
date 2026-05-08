@@ -237,6 +237,9 @@
 	}
 
 	o.onHiredByScenario <- function(bro) {
+		if (bro.isStabled()) {
+			return;
+		}
 		if (!bro.getBackground().isBackgroundType(::Const.BackgroundType.Outlaw)) {
 			bro.worsenMood(0.5, "Is uncomfortable with joining raiders");
 		} else {
@@ -252,6 +255,9 @@
 	}
 
 	o.onGenerateBro <- function(bro) {
+		if (bro.isStabled()) {
+			return;
+		}
 		if (!bro.getBackground().isBackgroundType(::Const.BackgroundType.Outlaw)) {
 			bro.m.HiringCost = ::Math.floor(bro.m.HiringCost * 1.5);
 			bro.getBaseProperties().DailyWageMult *= 1.5;

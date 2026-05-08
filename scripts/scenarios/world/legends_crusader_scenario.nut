@@ -146,6 +146,9 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 	}
 
 	function onGenerateBro(bro) {
+		if (bro.isStabled()) {
+			return;
+		}
 		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader)) {
 			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75); //1.0 = default
 			bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default

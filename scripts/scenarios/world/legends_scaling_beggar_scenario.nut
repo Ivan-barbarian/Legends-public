@@ -143,6 +143,9 @@ this.legends_scaling_beggar_scenario <- this.inherit("scripts/scenarios/world/st
 
 	function onHiredByScenario( bro )
 	{
+		if (bro.isStabled()) {
+			return;
+		}
 		if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
 		{
 			bro.getSkills().add(this.new("scripts/skills/injury/sickness_injury"));

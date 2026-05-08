@@ -235,6 +235,9 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 
 	function onHiredByScenario( bro )
 	{
+		if (bro.isStabled()) {
+			return;
+		}
 		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader))
 		{
 			bro.improveMood(1.0, "Joined a righteous cause");
@@ -273,6 +276,9 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 
 	function onGenerateBro(bro)
 	{
+		if (bro.isStabled()) {
+			return;
+		}
 		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader))
 		{
 			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75); //1.0 = default
