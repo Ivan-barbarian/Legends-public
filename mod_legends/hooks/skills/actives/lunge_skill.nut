@@ -55,12 +55,20 @@
 		}
 
 		local items = _entity.getItems();
+    	local mh = items.getItemAtSlot(::Const.ItemSlot.Mainhand);
 		local oh = items.getItemAtSlot(::Const.ItemSlot.Offhand);
-		if (oh == null || items.hasBlockedSlot(::Const.ItemSlot.Offhand)) {
+		local weaponWhichUsedLunge = this.getItem().getInstanceID();
+		local followUpWeapon = null;
+    	if (weaponWhichUsedLunge == mh.getInstanceID()) {
+        	followUpWeapon = oh;
+    	} else if (weaponWhichUsedLunge == oh.getInstanceID()) {
+        	followUpWeapon = mh;
+    	}
+		if (followUpWeapon == null || items.hasBlockedSlot(::Const.ItemSlot.Offhand)) {
 			return;
 		}
 
-		local skillToUse = ::Legends.Weapons.findPrimaryAttackSkill(_entity, oh);
+		local skillToUse = ::Legends.Weapons.findPrimaryAttackSkill(_entity, followUpWeapon);
 		if (skillToUse == null) {
 			return;
 		}
