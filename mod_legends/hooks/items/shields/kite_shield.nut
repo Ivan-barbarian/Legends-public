@@ -74,9 +74,9 @@
 		foreach (banner in ::Const.PlayerBanners)
 		{
 			bannerID = banner.slice("banner_".len()).tointeger();
+			bannerID = bannerID >= 50 ? bannerID : bannerID + 11;
 			if (this.m.Variants.find(bannerID) == null)
 			{
-				bannerID = bannerID >= 50 ? bannerID : bannerID + 11;
 				this.m.Variants.push(bannerID);
 			}
 		}
