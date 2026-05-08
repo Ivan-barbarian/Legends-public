@@ -2373,7 +2373,7 @@ Years of practice lead this character to fall back to their instincts and basic 
 Carpe juggular!
 
 [color=%passive%][u]Passive:[/u][/color]
-• Gain an additional [color=%positive%]20%[/color] damage on hits to the head and chance to hit the head against targets that are [color=%status%]Debilitated[/color] or have sustained any injury effects, like a broken arm.
+• Gain an additional [color=%positive%]20%[/color] damage on hits to the head and chance to hit the head against targets that are [color=%status%]Debilitated[/color], [color=%status%]Knocked Over[/color] or have sustained any injury effects, like a broken arm.
 
 • Also grants [color=%positive%]+10%[/color] damage on hits to the head and chance to hit the head against targets who suffer from any of the following effects: [color=%status%]Baffled[/color], [color=%status%]Dazed[/color], [color=%status%]Distracted[/color], [color=%status%]Grappled[/color], [color=%status%]Netted[/color], [color=%status%]Rooted[/color], [color=%status%]Shellshocked[/color], [color=%status%]Sleeping[/color], [color=%status%]Staggered[/color], [color=%status%]Stunned[/color], [color=%status%]Vulnerable[/color], [color=%status%]Webbed[/color], or [color=%status%]Withered[/color].
 ";
