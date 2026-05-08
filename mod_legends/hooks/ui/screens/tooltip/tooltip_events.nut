@@ -443,7 +443,7 @@
 		case "character-screen-inventory-list-module.stash":
 			if (_item.isUsable())
 			{
-				if(!("DisableBaseUseTooltip" in _item.m) && !_item.isItemType(::Const.Items.ItemType.Armor) && !_item.isItemType(::Const.Items.ItemType.Helmet) && !_item.isItemType(::Const.Items.ItemType.Named) ) {
+				if(_item.getID().find("inscription") == null && !_item.isItemType(::Const.Items.ItemType.Armor) && !_item.isItemType(::Const.Items.ItemType.Helmet) && !_item.isItemType(::Const.Items.ItemType.Named) ) {
 					tooltip.push({
 						id = 1,
 						type = "hint",

@@ -53,7 +53,7 @@ Learn to move on difficult terrain.
 [color=%passive%][u]Passive:[/u][/color]
 • Action Point costs for movement on all terrain is reduced by [color=%negative%]-1[/color] to a minimum of [color=%negative%]2[/color] Action Points per tile.
 
-• Fatigue cost from movement is reduced by [color=%negative%]50%[/color].
+• Base Fatigue cost of movement on difficult terrain is reduced by [color=%negative%]50%[/color].
 
 • Changing height levels has no additional Action Point cost anymore.
 [color=%passive%][u]Active:[/u][/color]

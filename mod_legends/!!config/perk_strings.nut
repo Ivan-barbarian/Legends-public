@@ -392,7 +392,7 @@ Strike back with interest!
 Take a deep breath, then get to work.
 
 [color=%active%][u]Active:[/u][/color]
-• Unlocks the [color=%skill%]Perfect Focus[/color] skill which allows the use of all other skills at [color=%negative%]half[/color] the normal Action Point cost (rounded down), but increases Fatigue cost by [color=%positive%]+75%[/color] for one round.
+• Unlocks the [color=%skill%]Perfect Focus[/color] skill which allows the use of all other skills at [color=%negative%]half[/color] the normal Action Point cost (rounded down), but increases Fatigue costs by [color=%positive%]+75%[/color] for one round.
 
 • Costs [color=%negative%]1[/color] AP and [color=%negative%]10[/color] Fatigue.
 ";
@@ -588,7 +588,7 @@ Exert yourself to move one tile at an unusually quick speed.
 You're a well-rounded athlete!
 
 [color=%passive%][u]Passive:[/u][/color]
-• Reduce the Fatigue cost of all your skills by a percentage equal to [color=%negative%]20%[/color] of your maximum usable Fatigue after gear weight is accounted for.
+• Reduce the Fatigue cost of all your skills and movement by a percentage equal to [color=%negative%]20%[/color] of your maximum usable Fatigue after gear weight is accounted for.
 ";
 
 ::Const.Strings.PerkDescription.LegendSpecPoison <- @"
@@ -2125,7 +2125,7 @@ Balancing your armor can allow protect against different threats.
 Well fitting armor lets you strike faster and fight longer.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Reduce the Fatigue cost of all your skills by [color=%negative%]15%[/color], and gain [color=%positive%]30%[/color] Initiative.
+• Reduce the Fatigue cost of all your skills and movement by [color=%negative%]15%[/color], and gain [color=%positive%]30%[/color] Initiative.
 
 • The bonus decreases if the combined Weight penalties of your body and head armor exceed half of your maximum Fatigue. Maximum fatigue is influenced by the weight of all your combined gear, not just armor.
 ";
