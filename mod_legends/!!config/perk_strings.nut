@@ -2240,7 +2240,7 @@ You're as capable with one hand as the other!
 [color=%passive%][u]Passive:[/u][/color]
 • When your offhand is free, follow up attacks with [color=%skill%]Hand to Hand[/color]. Gain [color=%positive%]+5[/color] Melee Skill and [color=%positive%]+10[/color] Melee Defense if both hands are free.
 
-• If using a Buckler, Mummy Shield or Parrying Dagger, follow up attacks with [color=%skill%]Buckler Bash[/color] or [color=%skill%]Stab[/color] instead.
+• If using a Buckler or Mummy Shield, follow up attacks with [color=%skill%]Buckler Bash[/color] instead.
 
 • When dual wielding other weapons, the weight penalty is reduced by [color=%positive%]33%[/color].
 ";
