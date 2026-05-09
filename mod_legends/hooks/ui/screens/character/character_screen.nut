@@ -196,9 +196,7 @@
 	
 	o.queryRosterSizeData <- function (_shake = false)
 	{
-		local brosInCombat = 18;
-		// try/catch, so getBrothersInFrontline() after quitting game to menu and starting a scenario doesn't crash - Narkh 2026/03/01
-		try { brosInCombat = ::World.State.getBrothersInFrontline();} catch(e) {}
+		local brosInCombat = ("State" in ::World && this.World.State != null) ? ::World.State.getBrothersInFrontline() : 18;
 		local result = {
 			brothersInCombat = brosInCombat,
 			brothersMaxInCombat = 27,
@@ -266,7 +264,7 @@
 			if (typeof upgrade == "table") {
 				data.stash.removeByIndex(upgrade.index);
 				if (upgrade.item != null) {
-					this.World.Assets.getStash().insert(upgrade.item, upgrade.index);
+					data.stash.insert(upgrade.item, upgrade.index);
 				}
 			} else {
 				data.stash.removeByIndex(data.sourceIndex);
@@ -361,7 +359,16 @@
 		}
 
 		if (!this.Tactical.isActive() && data.sourceItem.isUsable()) {
-			local result = data.sourceItem.onUse(data.inventory.getActor());
+			local targetItem = null;
+			
+			if (typeof _data == "array" && _data.len() >= 4 && _data[3] == "offhand" && data.sourceItem.getID().find("inscription") != null) { //for equipping runes on offhand with shift
+        		targetItem = data.inventory.getItemAtSlot(this.Const.ItemSlot.Offhand);
+				if(targetItem != null && ((targetItem.getItemType() & this.Const.Items.ItemType.Weapon) == 0)){
+					targetItem = null;
+				}
+    		}
+
+			local result = data.sourceItem.onUse(data.inventory.getActor(), targetItem);
 			if (result) {
 				if (typeof result == "table") {
 					data.stash.removeByIndex(result.index);
@@ -633,12 +640,14 @@
 			}
 			foreach (idx in toRemove) {
 				local upgrade = _item.getUpgrade(idx);
+				upgrade.setTransactionPrice(null);
 				if (upgrade.isDestroyedOnRemove()) {
 					continue;
 				}
 				this.Stash.add(_item.removeUpgrade(idx));
 			}
 		}
+		_item.setTransactionPrice(null);
 		return this.UIDataHelper.convertStashAndEntityToUIData(_entity, null, false, this.m.InventoryFilter);
 	}
 

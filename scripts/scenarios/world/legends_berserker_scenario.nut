@@ -208,6 +208,9 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 
 	function onGenerateBro(bro)
 	{
+		if (bro.isStabled()) {
+			return;
+		}
 		if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn) && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw) && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat)) // Added this check for backgrounds like retired soldier
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25); //1.0 = default
@@ -225,6 +228,9 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 
 	function onHiredByScenario( bro )
 	{
+		if (bro.isStabled()) {
+			return;
+		}
 		if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn) && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw) && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 		{
 			bro.worsenMood(1.5, "Disturbed by your wild and erratic nature");

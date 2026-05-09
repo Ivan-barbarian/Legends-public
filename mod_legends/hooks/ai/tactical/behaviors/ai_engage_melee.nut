@@ -1,7 +1,7 @@
 ::mods_hookExactClass("ai/tactical/behaviors/ai_engage_melee", function(o)
 {
 	// todo, renamed because it doesn't work properly, hangs battle... - chopeks
-	o.onEvaluate2 <- function ( _entity )
+	o.onEvaluate <- function ( _entity )
 	{
 		// Function is a generator.
 		local score = 1.0;
@@ -469,12 +469,11 @@
 							continue;
 						}
 
-						for( ; tile.getDistanceTo(myTile) > 4;  )
-						{
+						if (tile.getDistanceTo(myTile) > 4) {
+							continue;
 						}
-
-						for( ; zocs > inZonesOfControl;  )
-						{
+						if(zocs > inZonesOfControl){
+							continue;
 						}
 
 						if (t.Actor.getID() == bestTarget.getID() && tile.Level <= myTile.Level && tile.IsBadTerrain == myTile.IsBadTerrain && this.hasNegativeTileEffect(tile, _entity) == this.hasNegativeTileEffect(myTile, _entity) && (this.m.Skill == null || !this.m.Skill.isDisengagement()))
@@ -828,6 +827,11 @@
 				{
 					local movementCosts = navigator.getCostForPath(_entity, settings, _entity.getActionPoints(), _entity.getFatigueMax() - _entity.getFatigue());
 
+					if (movementCosts.End == null || typeof movementCosts.End != "instance") {
+						::logDebug("AI_ENGAGE_MELEE: Illegal potential destination.");
+						continue;
+					}
+
 					if (movementCosts.Tiles == 0 || movementCosts.End.ID == myTile.ID)
 					{
 						continue;
@@ -846,6 +850,10 @@
 							navigator.clipPathToDistance(myTile, this.getProperties().EngageTileLimit);
 							waitAfterMove = true;
 							movementCosts = navigator.getCostForPath(_entity, settings, _entity.getActionPoints(), _entity.getFatigueMax() - _entity.getFatigue());
+							if (movementCosts.End == null || typeof movementCosts.End != "instance") {
+								::logDebug("AI_ENGAGE_MELEE: Illegal path after clipping.");
+								continue;
+							}
 							movementCosts.IsComplete = false;
 							intermediateTile = movementCosts.End;
 						}
@@ -855,6 +863,10 @@
 						navigator.clipPathToDistance(myTile, this.getProperties().EngageTileLimit - 1);
 						waitAfterMove = true;
 						movementCosts = navigator.getCostForPath(_entity, settings, _entity.getActionPoints(), _entity.getFatigueMax() - _entity.getFatigue());
+						if (movementCosts.End == null || typeof movementCosts.End != "instance") {
+							::logDebug("AI_ENGAGE_MELEE: Illegal path after clipping.");
+							continue;
+						}
 						movementCosts.IsComplete = false;
 						intermediateTile = movementCosts.End;
 					}
@@ -869,6 +881,10 @@
 						navigator.clipPathToDistance(myTile, myTile.getDistanceTo(movementCosts.End) - 1);
 						waitAfterMove = true;
 						movementCosts = navigator.getCostForPath(_entity, settings, _entity.getActionPoints(), _entity.getFatigueMax() - _entity.getFatigue());
+						if (movementCosts.End == null || typeof movementCosts.End != "instance") {
+							::logDebug("AI_ENGAGE_MELEE: Illegal path after clipping.");
+							continue;
+						}
 						movementCosts.IsComplete = false;
 						intermediateTile = movementCosts.End;
 					}
@@ -886,8 +902,21 @@
 						attackAfterMove = true;
 					}
 
-					local willRunIntoSpearwall = this.querySpearwallValueForTile(_entity, movementCosts.End) != 0;
-					local willRunIntoNegativeTileEffect = this.hasNegativeTileEffect(movementCosts.End, _entity);
+					local willRunIntoSpearwall = false;
+					local willRunIntoNegativeTileEffect = false;
+					if (movementCosts.End != null && typeof movementCosts.End == "instance") {
+						willRunIntoSpearwall = this.querySpearwallValueForTile(_entity, movementCosts.End) != 0;
+						willRunIntoNegativeTileEffect = this.hasNegativeTileEffect(movementCosts.End, _entity);
+					}
+					else {
+						::logDebug("AI_ENGAGE_MELEE: Spearwall hasNextTile Bug");
+						this.logDebug("Entity: " + _entity.getName());
+						this.logDebug("My Tile: " + myTile.X + "," + myTile.Y);
+						this.logDebug("Target Destination Tile: " + t.Tile.X + "," + t.Tile.Y);
+						this.logDebug("MovementCosts.Tiles: " + movementCosts.Tiles);
+						this.logDebug("MovementCosts.End Type: " + typeof movementCosts.End);
+						if (typeof movementCosts.End == "instance") this.logDebug("MovementCosts.End Pos: " + movementCosts.End.X + "," + movementCosts.End.Y);
+					}
 					local currentlyAtNegativeTileEffect = this.hasNegativeTileEffect(myTile, _entity);
 
 					if (inZonesOfControl > 0 && t.IsSkillUsable && this.m.Skill != null && this.m.Skill.isDisengagement())
@@ -899,8 +928,8 @@
 						}
 						else
 						{
-							for( ; inZonesOfControl > 1;  )
-							{
+							if(inZonesOfControl > 1){
+								continue;
 							}
 						}
 					}
@@ -1098,7 +1127,7 @@
 
 							if (this.hasNegativeTileEffect(intermediateTile, _entity))
 							{
-								destinationScore = destinationScore - this.Const.AI.Behavior.EngageBadTerrainPenalty * this.getProperties().EngageOnBadTerrainPenaltyMult;
+								destinationScore = destinationScore - this.Const.AI.Behavior.EngageBadTerrainEffectPenalty * this.getProperties().EngageOnBadTerrainPenaltyMult;
 							}
 						}
 					}

@@ -201,6 +201,9 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 
 	function onHiredByScenario( bro )
 	{
+		if (bro.isStabled()) {
+			return;
+		}
 		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Druid) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Ranger))
 		{
 			bro.improveMood(1.0, "Supports the ranger cause");
@@ -214,6 +217,9 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 
 	function onGenerateBro(bro)
 	{
+		if (bro.isStabled()) {
+			return;
+		}
 		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Druid) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Ranger))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75); //1.0 = default

@@ -6,6 +6,7 @@
 		create();
 		this.m.Icon = "skills/perfectfocus_square.png";
 		this.m.IconDisabled = "skills/perfectfocus_square_bw.png";
+		this.m.Overlay = "perfectfocus_active";
 		this.m.Order = this.Const.SkillOrder.BeforeLast;
 	}
 

@@ -4,9 +4,12 @@ from buildscript.python.upload import NexusUploadTask, GithubUploadTask, ApiErro
 import subprocess
 import build_patch
 
+
 def commits(tag: str) -> str:
 	messages = subprocess.check_output(["git", "log", f"{tag}..HEAD", "--no-merges", "--format=%s", "--reverse"], encoding="utf-8").strip()
-	return "\n".join([f"- {m}" for m in messages.split("\n")])
+	lines = [m.split("     ")[0] for m in messages.split("\n")]
+	return "\n".join([f"- {m}" for m in lines])
+
 
 def main():
 	config = load_config(Path(__file__).parent / ".build_config.py")

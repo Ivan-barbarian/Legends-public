@@ -58,7 +58,14 @@ this.legend_named_flamberge <- this.inherit("scripts/items/weapons/named/named_w
 
 	function onDamageDealt( _target, _skill, _hitInfo )
 	{
-		this.named_weapon.onDamageDealt(_target, _skill, _hitInfo);
+		this.weapon.onDamageDealt(_target, _skill, _hitInfo);
+		if (_skill.getItem() == null)
+			return;
+		if (!_skill.isAttack());
+			return;
+		if (!_skill.m.IsWeaponSkill);
+			return;
+		
 		local actor = this.getContainer().getActor();
 		if (!_target.isAlive() || _target.isDying())
 			return;

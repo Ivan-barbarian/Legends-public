@@ -479,10 +479,8 @@
   <sprite id="icon_named_two_handed_orc_flail_02" offsetY="35" ic="FF2E3236" width="140" height="142" img="icons\icon_named_two_handed_orc_flail_02.png" left="-32" right="70" top="-69" bottom="9" />
   <sprite id="icon_named_two_handed_orc_flail_03_bloodied" offsetY="35" ic="FF2B2F37" width="140" height="142" img="icons\icon_named_two_handed_orc_flail_03_bloodied.png" left="-32" right="70" top="-69" bottom="9" />
   <sprite id="icon_named_two_handed_orc_flail_03" offsetY="35" ic="FF2E3236" width="140" height="142" img="icons\icon_named_two_handed_orc_flail_03.png" left="-32" right="70" top="-69" bottom="9" />
-  <sprite id="icon_named_warbrand_04_bloodied" offsetY="35" ic="FF565D65" width="130" height="142" img="icons\icon_named_warbrand_04_bloodied.png" left="-58" right="6" top="-63" bottom="71" />
-  <sprite id="icon_named_warbrand_04" offsetY="35" ic="FF616968" width="130" height="142" img="icons\icon_named_warbrand_04.png" left="-58" right="6" top="-63" bottom="71" />
-  <sprite id="icon_named_warbrand_05_bloodied" offsetY="35" ic="FF565D66" width="130" height="142" img="icons\icon_named_warbrand_05_bloodied.png" left="-58" right="6" top="-63" bottom="71" />
-  <sprite id="icon_named_warbrand_05" offsetY="35" ic="FF616969" width="130" height="142" img="icons\icon_named_warbrand_05.png" left="-58" right="6" top="-63" bottom="71" />
+  <sprite id="icon_named_warbrand_04_bloodied" offsetY="35" ic="FF565D66" width="130" height="142" img="icons\icon_named_warbrand_04_bloodied.png" left="-58" right="6" top="-63" bottom="71" />
+  <sprite id="icon_named_warbrand_04" offsetY="35" ic="FF616969" width="130" height="142" img="icons\icon_named_warbrand_04.png" left="-58" right="6" top="-63" bottom="71" />
   <sprite id="icon_named_warhammer_04_bloodied" offsetY="35" ic="FF3B404A" width="49" height="109" img="icons\icon_named_warhammer_04_bloodied.png" left="0" right="47" top="-70" bottom="12" />
   <sprite id="icon_named_warhammer_04" offsetY="35" ic="FF3B404A" width="49" height="109" img="icons\icon_named_warhammer_04.png" left="0" right="47" top="-70" bottom="12" />
   <sprite id="icon_named_warhammer_05_bloodied" offsetY="35" ic="FF3B404A" width="65" height="108" img="icons\icon_named_warhammer_05_bloodied.png" left="0" right="49" top="-70" bottom="11" />
@@ -1002,6 +1000,8 @@
   <sprite id="icon_named_longsword_02_bloodied" offsetY="35" ic="FF4D4E59" width="130" height="142" img="icons\icon_named_longsword_02_bloodied.png" left="-62" right="34" top="-63" bottom="45" />
   <sprite id="icon_named_longsword_03" offsetY="35" ic="FF3B404A" width="128" height="172" img="icons\icon_named_longsword_03.png" left="-68" right="30" top="-60" bottom="69" />
   <sprite id="icon_named_longsword_03_bloodied" offsetY="35" ic="FF3B404A" width="128" height="172" img="icons\icon_named_longsword_03_bloodied.png" left="-68" right="30" top="-60" bottom="69" />
+  <sprite id="icon_named_longsword_04_bloodied" offsetY="35" ic="FF565D65" width="130" height="142" img="icons\icon_named_longsword_04_bloodied.png" left="-58" right="6" top="-63" bottom="71" />
+  <sprite id="icon_named_longsword_04" offsetY="35" ic="FF616968" width="130" height="142" img="icons\icon_named_longsword_04.png" left="-58" right="6" top="-63" bottom="71" />
 
   <sprite id="icon_zweihander_01" offsetY="35" ic="FF575759" width="130" height="142" img="icons\icon_zweihander_01.png" left="-64" right="32" top="-61" bottom="49" />
   <sprite id="icon_zweihander_01_bloodied" offsetY="35" ic="FF4E4E54" width="130" height="142" img="icons\icon_zweihander_01_bloodied.png" left="-64" right="32" top="-61" bottom="49" />

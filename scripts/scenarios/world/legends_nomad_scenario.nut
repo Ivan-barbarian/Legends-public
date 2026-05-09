@@ -198,7 +198,11 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	}
 
 	function onHiredByScenario( bro )
-	{								//also contains nomad_ranged
+	{
+		if (bro.isStabled()) {
+			return;
+		}
+									//also contains nomad_ranged
 		if (bro.getBackground().getID() == "background.nomad" || bro.getBackground().getID() == "background.legend_muladi")
 		{
 			bro.improveMood(1.5, "I walk with those on the path of the Interloper");
@@ -221,6 +225,9 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onGenerateBro(bro)
 	{
+		if (bro.isStabled()) {
+			return;
+		}
 		if (bro.getBackground().getID() == "background.nomad" || bro.getBackground().getID() == "background.legend_muladi" || bro.getBackground().getID() == "background.bladedancer")
 		{
 			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75); //1.0 = default

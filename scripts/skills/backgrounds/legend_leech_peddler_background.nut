@@ -84,7 +84,6 @@ this.legend_leech_peddler_background <- this.inherit("scripts/skills/backgrounds
 				::Const.Perks.BeastTree //lol, lmao.
 			],
 			Class = [
-				// ::Const.Perks.SickleClassTree,
 				::Const.Perks.HealerClassTree
 			],
 			Profession = [

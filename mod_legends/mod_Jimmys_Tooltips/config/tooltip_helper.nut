@@ -738,7 +738,7 @@ local function colorizeInGreen( _text )
 		return _tooltip;
 
 	local condition = _item.getRepair(), conditionMax = _item.getRepairMax();
-	local isValid = condition > 30 && condition / conditionMax >= 0.25;
+	local isValid = condition >= 5 && condition / conditionMax >= 0.2;
 	local conditionExpected = condition;
 
 	if (_expectedDamage != null)

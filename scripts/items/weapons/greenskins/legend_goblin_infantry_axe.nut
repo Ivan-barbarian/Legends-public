@@ -8,6 +8,7 @@ this.legend_goblin_infantry_axe <- this.inherit("scripts/items/weapons/weapon", 
 		this.m.Categories = "Axe, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_goblin_longaxe.png";
 		this.m.Icon = "weapons/melee/legend_goblin_longaxe_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Axe;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
@@ -40,10 +41,9 @@ this.legend_goblin_infantry_axe <- this.inherit("scripts/items/weapons/weapon", 
 			_skill.m.Icon = "skills/active_67.png";
 			_skill.m.IconDisabled = "skills/active_67_sw.png";
 			_skill.m.Overlay = "active_67";
+			_skill.setApplyAxeMastery(true);
 			_skill.m.ActionPointCost = 4;
 			_skill.setFatigueCost(_skill.getFatigueCostRaw() + 5);
 		}.bindenv(this));
 	}
-
 });
-

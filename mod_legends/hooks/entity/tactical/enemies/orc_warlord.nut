@@ -113,6 +113,10 @@
 		::Legends.S.scaleBaseProperties(b);
 	}
 
+	o.onDeath = function ( _killer, _skill, _tile, _fatalityType ) {
+		this.legend_orc.onDeath( _killer, _skill, _tile, _fatalityType );
+	}
+
 	o.assignRandomEquipment = function ()
 	{
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)

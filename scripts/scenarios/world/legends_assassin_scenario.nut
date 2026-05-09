@@ -156,6 +156,8 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 
 	function onHiredByScenario( bro )
 	{
+		if (bro.isStabled())
+			return;
 		if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
 		{
 			bro.worsenMood(1.0, "Is uncomfortable with joining an assassin");

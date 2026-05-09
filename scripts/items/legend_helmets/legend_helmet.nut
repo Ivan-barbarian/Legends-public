@@ -506,9 +506,15 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		}
 		local oldIndex;
 
-		// try/catch, so getStash() after quitting game to menu and starting a scenario doesn't crash - Narkh 2026/03/01
-		try { oldIndex =  this.World.Assets.getStash().getItemByInstanceID(_upgrade.getInstanceID());} catch (e)	{}
-
+		if ("Assets" in this.World && this.World.Assets != null) {
+			oldIndex =  this.World.Assets.getStash().getItemByInstanceID(_upgrade.getInstanceID());
+		}
+		else {
+			local gt = this.getroottable();
+			if ("Stash" in gt && gt.Stash != null) {
+				oldIndex = gt.Stash.getItemByInstanceID(_upgrade.getInstanceID());
+			}
+		}
 		if (oldIndex != null) oldIndex = oldIndex.index;
 		local oldItem;
 		if (this.m.Upgrades[slot] != null)
@@ -620,37 +626,38 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			text = this.getValueString()
 		});
 
-
-		result.push({
+		local baseIcon = {
 			id = 3,
 			type = "image",
 			image = this.m.IconLarge != "" ? this.m.IconLarge : this.m.Icon,
-			isLarge = this.m.IconLarge != "" ? true : false
-		});
+			isLarge = this.m.IconLarge != "" ? true : false,
+			imageOverlayPath = []
+		};
 
-		foreach( u in this.m.Upgrades )
-		{
-			if (u != null)
+		local upgradeLayerOrder = [
+			{ id = this.Const.Items.HelmetUpgrades.Vanity,      isLower = true  },
+			{ id = this.Const.Items.HelmetUpgrades.ExtraVanity, isLower = true  },
+			{ id = this.Const.Items.HelmetUpgrades.Helm,        isLower = true  },
+			{ id = this.Const.Items.HelmetUpgrades.Top,         isLower = true  },
+			{ id = this.Const.Items.HelmetUpgrades.Helm,        isLower = false },
+			{ id = this.Const.Items.HelmetUpgrades.Top,         isLower = false },
+			{ id = this.Const.Items.HelmetUpgrades.Vanity,      isLower = false },
+			{ id = this.Const.Items.HelmetUpgrades.ExtraVanity, isLower = false }
+		];
+		
+		foreach( u in upgradeLayerOrder )	{
+			local upgrade = this.m.Upgrades[u.id];
+			if (upgrade != null && u.isLower == upgrade.isLower())
 			{
-				if (u.getIconLarge() != null)
+				local overlay = upgrade.getIcon();
+				if (overlay != null && overlay != "")
 				{
-					result.push({
-						id = 3,
-						type = "image",
-						image = u.getIconLarge(),
-						isLarge = true
-					});
-				}
-				else
-				{
-					result.push({
-						id = 3,
-						type = "image",
-						image = u.getIcon()
-					});
+					baseIcon.imageOverlayPath.push(overlay);
 				}
 			}
 		}
+
+		result.push(baseIcon);
 
 		result.push({
 			id = 4,
@@ -704,8 +711,10 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			result.push({
 				id = 10,
 				type = "text",
-				text = "[leg_img](gfx/ui/items/%icon%,height=28px,width=28px)[/leg_img] [b][u]%name%[/u][/b]",
-				param = [["name", this.getName()], ["icon", this.m.Icon]]
+				text = "[b][u]%name%[/u][/b]",
+				icon = "ui/items/" + this.m.Icon,
+				param = [["name", this.getName()]],
+				isPartialLayer = true
 			});
 
 			result.push({
@@ -785,17 +794,17 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		local repair = this.getRepair();
 		local repairMax = this.getRepairMax();
 
-		if (this.getArmor() > 15 && isPlayer || this.getArmor() > 30 && this.getArmor() / this.getArmorMax() >= 0.25 && (isLucky || this.Math.rand(1, 100) <= 70) || isBlacksmithed)
+		if (this.getArmor() > 5 && isPlayer || this.getArmor() >= 5 && this.getArmor() / this.getArmorMax() >= 0.2 && (isLucky || this.Math.rand(1, 100) <= 70) || isBlacksmithed)
 		{
 			return true;
 		}
 
-		if (repair > 15 && isPlayer)
+		if (repair >= 5 && isPlayer)
 		{
 			return true;
 		}
 
-		if (repair > 30 && repair / repairMax >= 0.25 && (isLucky || this.Math.rand(1, 100) <= 70))
+		if (repair >= 5 && repair / repairMax >= 0.2 && (isLucky || this.Math.rand(1, 100) <= 70))
 		{
 			return true;
 		}

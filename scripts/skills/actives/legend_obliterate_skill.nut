@@ -100,7 +100,7 @@ this.legend_obliterate_skill <- this.inherit("scripts/skills/skill", {
 	function onAnySkillUsed(_skill, _targetEntity, _properties) {
 		if (_skill == this) {
 			this.m.HitChanceBonus += this.adjustHitchance(_targetEntity, _properties);
-			_properties.MeleeSkill += this.m.HitChanceBonus
+			_properties.MeleeSkill += this.m.HitChanceBonus;
 			_properties.DamageTotalMult *= 1.5;
 			_properties.ThresholdToInflictInjuryMult *= 0.66;
 		}

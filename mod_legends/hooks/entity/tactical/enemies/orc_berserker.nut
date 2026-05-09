@@ -94,6 +94,10 @@
 		}
 	}
 
+	o.onDeath = function ( _killer, _skill, _tile, _fatalityType ) {
+		this.legend_orc.onDeath( _killer, _skill, _tile, _fatalityType );
+	}
+
 	o.assignRandomEquipment = function () {
 		local weapons = [
 			"weapons/greenskins/orc_axe",

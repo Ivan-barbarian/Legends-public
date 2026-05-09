@@ -287,6 +287,21 @@
 	height: 11.2rem;
 }
 
+.tooltip-module .left-content-container .l-image-container.is-layered-container {
+    position: relative;
+}
+
+.tooltip-module .left-content-container .l-image-container.is-layered-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.tooltip-module .left-content-container .l-image-container.is-layered-container img:first-child {
+    position: relative; 
+}
+
 .tooltip-module .left-content-container img
 {
 	width : 100%;
@@ -325,6 +340,24 @@
 	margin-top: 0.4rem;
 }
 
+.row.content-container.is-partial-layer { /* a bit of a hack to move the image into the left column on is-partial-layer as its much easier to track upgrade block heights like this */
+	overflow: visible;
+}
+
+.row.content-container.is-partial-layer .l-left-column {
+    width: 0; 
+	position: relative;
+	margin-left: -7rem;
+}
+
+.row.content-container.is-partial-layer .l-left-column img {
+    width: 5.6rem; 
+    height: auto;
+	position: absolute;
+	top: 0.4rem;
+	left: 0;
+	object-fit: contain;
+}
 
 .tooltip-module .content-container .l-right-column
 {

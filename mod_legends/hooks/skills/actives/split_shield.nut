@@ -99,21 +99,8 @@
 
 		if (shield != null) {
 			this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectSplitShield);
-			local damage = calculateDamage(target);
-
-			local conditionBefore = shield.getCondition();
-			shield.applyShieldDamage(damage);
-			if (!this.Tactical.getNavigator().isTravelling(target)) {
-				this.Tactical.getShaker().shake(target, _user.getTile(), 2, this.Const.Combat.ShakeEffectSplitShieldColor, this.Const.Combat.ShakeEffectSplitShieldHighlight, this.Const.Combat.ShakeEffectSplitShieldFactor, 1.0, [
-					"shield_icon"
-				], 1.0);
-			}
 
 			if (this.m.IsHammer) {
-				this.m.OverflowDamage = damage;
-				attackEntity(_user, target);
-				this.m.OverflowDamage = 0;
-
 				if (::Legends.S.skillEntityAliveCheck(_user, target)) {
 					return true;
 				}
@@ -122,6 +109,16 @@
 				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer && !target.getFlags().has("tail")) {
 					this.Tactical.EventLog.log(stagger.getLogEntryOnAdded(this.Const.UI.getColorizedEntityName(_user), this.Const.UI.getColorizedEntityName(target)));
 				}
+			}
+
+			local damage = calculateDamage(target);
+
+			local conditionBefore = shield.getCondition();
+			shield.applyShieldDamage(damage);
+			if (!this.Tactical.getNavigator().isTravelling(target)) {
+				this.Tactical.getShaker().shake(target, _user.getTile(), 2, this.Const.Combat.ShakeEffectSplitShieldColor, this.Const.Combat.ShakeEffectSplitShieldHighlight, this.Const.Combat.ShakeEffectSplitShieldFactor, 1.0, [
+					"shield_icon"
+				], 1.0);
 			}
 
 			local overflowDamage = this.Math.floor(damage - conditionBefore);
@@ -134,7 +131,7 @@
 						this.Tactical.EventLog.log(logMessage + " and recovered 4 Action Points");
 						if (overflowDamage > 0) {
 							this.m.OverflowDamage = overflowDamage;
-							attackEntity(_user, target);
+							this.attackEntity(_user, target);
 							this.m.OverflowDamage = 0;
 						}
 					} else {

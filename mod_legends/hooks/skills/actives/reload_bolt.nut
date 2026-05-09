@@ -40,6 +40,10 @@
 		onAfterUpdate(_properties);
 		this.m.ActionPointCost = this.m.FreeReload ? this.m.FreeReloadAPCost : this.m.RegularAPCost;
 		this.m.FatigueCost = this.m.FreeReload ? this.m.FreeReloadFatCost : this.m.RegularFatCost;
+		local actor = this.getContainer().getActor();
+		if (actor != null && actor.isAlive()) {
+			actor.setDirty(true); 
+		}
 	}
 
 	o.onTargetHit <- function ( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
@@ -59,9 +63,5 @@
 		this.m.FreeReload = true;
 		this.m.ActionPointCost = this.m.FreeReloadAPCost;
 		this.m.FatigueCost = this.m.FreeReloadFatCost;
-		local actor = this.getContainer().getActor();
-        if (actor != null && actor.isAlive()) {
-            actor.setDirty(true); 
-        }
 	}
 });

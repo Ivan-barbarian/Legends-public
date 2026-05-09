@@ -34,7 +34,7 @@ this.legend_peasant_butcher <- this.inherit("scripts/entity/tactical/human", {
 
 		if(::Legends.isLegendaryDifficulty())
 		{
-			this.m.Hitpoints = b.Hitpoints * 1.5;
+			b.Hitpoints *= 1.25;
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendLacerate);
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendCarnage);
 			::Legends.Traits.grant(this, ::Legends.Trait.Fearless);

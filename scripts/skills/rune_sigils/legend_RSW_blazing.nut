@@ -9,7 +9,7 @@ this.legend_RSW_blazing <- this.inherit("scripts/skills/skill", {
 		this.m.Type = this.Const.SkillType.Special | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.VeryLast;
 		this.m.IsActive = false;
-		this.m.IsStacking = false;
+		this.m.IsStacking = true;
 		this.m.IsHidden = true;
 	}
 
@@ -25,10 +25,10 @@ this.legend_RSW_blazing <- this.inherit("scripts/skills/skill", {
 		if (!_skill.isAttack())
 			return;
 
-		if (_skill.getItem() == null)
+		if (_skill.getItem() == null || this.getItem() == null)
 			return;
 
-		if (_skill.getItem().getID() != this.getItem().getID())
+		if (_skill.getItem().getInstanceID() != this.getItem().getInstanceID())
 			return;
 
 		if (::Legends.S.isEntityNullOrDead(_targetEntity))
@@ -86,10 +86,11 @@ this.legend_RSW_blazing <- this.inherit("scripts/skills/skill", {
 				tile.clear(::Const.Tactical.DetailFlag.Scorchmark);
 				tile.spawnDetail("impact_decal", ::Const.Tactical.DetailFlag.Scorchmark, false, true);
 			}
-		}
+		
 
-		if (tile.IsOccupiedByActor) {
-			::Const.Tactical.Common.onApplyFireRune(tile, tile.getEntity());
+			if (tile.IsOccupiedByActor) {
+				::Const.Tactical.Common.onApplyFireRune(tile, tile.getEntity());
+			}
 		}
 	}
 });

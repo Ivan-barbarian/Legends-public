@@ -1951,7 +1951,7 @@
 		Attachments = [
 			[4, "armor_upgrades/legend_additional_padding_upgrade"],
 			[4, "armor_upgrades/legend_barbarian_horn_upgrade"],
-			[1, "armor_upgrades/legend_armor_skull_chain", 1]
+			[1, "armor_upgrades/legend_armor_skull_chain_upgrade"]
 		],
 	}]
 };
@@ -1986,7 +1986,7 @@
 		],
 		Attachments = [
 			[9, ""],
-			[1, "armor_upgrades/legend_barbarian_horn"]
+			[1, "armor_upgrades/legend_barbarian_horn_upgrade"]
 		],
 	}]
 };
@@ -2848,9 +2848,9 @@
 		Cloth = [
 			[1, "cloth/legend_armor_knightly_robe", 7]], // 60 -2 450
 		Chain = [
-			[1, "chain/legend_armor_mail_shirt_simple", 1]], // 25 -3 250
+			[1, "chain/legend_armor_mail_shirt_simple"]], // 25 -3 250
 		Plate = [
-			[1, "plate/legend_armor_scale_shirt", 1]], // 85 -10 1750
+			[1, "plate/legend_armor_scale_shirt"]], // 85 -10 1750
 		Cloak = [
 			[1, "cloak/legend_armor_decorative_hood", 8],
 			[1, "cloak/legend_armor_shoulder_cloth", 2]], // 15 -1 50
@@ -2955,7 +2955,7 @@
 		Plate = [
 			[1, "plate/legend_armor_leather_brigandine_hardened_full", 1], // 140 -19 3000
 			[1, "plate/legend_armor_leather_riveted"], // 95 -13 900
-			[1, "plate/legend_armor_scale_shirt", 1], // 85 -10 1750
+			[1, "plate/legend_armor_scale_shirt"], // 85 -10 1750
 			[1, "plate/legend_armor_leather_brigandine", 1]], // 65 -8 750
 		Cloak = [
 			[1, ""]],

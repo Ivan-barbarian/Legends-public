@@ -53,7 +53,7 @@ Learn to move on difficult terrain.
 [color=%passive%][u]Passive:[/u][/color]
 • Action Point costs for movement on all terrain is reduced by [color=%negative%]-1[/color] to a minimum of [color=%negative%]2[/color] Action Points per tile.
 
-• Fatigue cost from movement is reduced by [color=%negative%]50%[/color].
+• Base Fatigue cost of movement on difficult terrain is reduced by [color=%negative%]50%[/color].
 
 • Changing height levels has no additional Action Point cost anymore.
 [color=%passive%][u]Active:[/u][/color]
@@ -141,7 +141,7 @@ Master combat with axes and destroying shields.
 [color=%passive%][u]Passive:[/u][/color]
 • Skills build up [color=%negative%]25%[/color] less Fatigue.
 
-• [color=%skill%]Split Shield[/color] damage is increased by [color=%positive%]50%[/color] when used with axes. When [color=%status%]Dual Wielding[/color] axes, [color=%skill%]Split Shield[/color] damage is combined.
+• [color=%skill%]Split Shield[/color] damage is increased by [color=%positive%]50%[/color] when used with axes.
 
 • [color=%skill%]Round Swing[/color] gains [color=%positive%]+5%[/color] chance to hit.
 
@@ -453,7 +453,7 @@ Nailed it!
 Become one with your weapon and go for the weak spots!
 
 [color=%passive%][u]Passive:[/u][/color]
-• When holding a Buckler, Mummy Shield or Parrying Dagger in your offhand an extra [color=%positive%]+25%[/color] of damage ignores armor on Melee Attacks.
+• When holding a Buckler or Mummy Shield in your offhand an extra [color=%positive%]+25%[/color] of damage ignores armor on Melee Attacks.
 
 [color=%passive%][u]Active:[/u][/color] Unlocks the [color=%skill%]Flourish[/color] skill, which will increase fatigue cost by [color=%positive%]50%[/color] and as long as you are faster than your target grants a chance on each attack to ignore armor completely based on the initiative difference between you and your target. As long as you are faster than the target, any attack that inflicts at least [color=%positive%]1[/color] point of damage to Hitpoints triggers a morale check for the opponent with a penalty equal to [color=%negative%]20%[/color] of the Initiative difference between you and the target.
 ";
