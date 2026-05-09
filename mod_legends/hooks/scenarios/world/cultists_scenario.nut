@@ -127,7 +127,7 @@
 
 	o.onHiredByScenario <- function ( _bro ) //cultist hire
 	{
-		if (bro.isStabled()) {
+		if (_bro.isStabled()) {
 			return;
 		}
 		if (this.isCultist(_bro.getBackground()))

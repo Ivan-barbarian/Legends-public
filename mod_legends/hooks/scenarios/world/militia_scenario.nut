@@ -252,11 +252,11 @@
 	}
 
 
-	o.onHiredByScenario <- function ( bro )
+	o.onHiredByScenario <- function ( _bro )
 	{
-		::Legends.Traits.grant(bro, ::Legends.Trait.LegendHateNobles);
-		::Legends.Traits.grant(bro, ::Legends.Trait.LegendPeasant);
-		bro.getSprite("socket").setBrush("bust_base_militia");
+		::Legends.Traits.grant(_bro, ::Legends.Trait.LegendHateNobles);
+		::Legends.Traits.grant(_bro, ::Legends.Trait.LegendPeasant);
+		_bro.getSprite("socket").setBrush("bust_base_militia");
 	}
 
 	o.onBuildPerkTree <- function ( _background )

@@ -113,12 +113,12 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		return false;
 	}
 
-	function onHiredByScenario(bro) {
-		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader)) {
-			bro.improveMood(1.5, "Joined a righteous cause");
-			bro.getSprite("socket").setBrush("bust_base_crusader"); //custom base
+	function onHiredByScenario(_bro) {
+		if (_bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader)) {
+			_bro.improveMood(1.5, "Joined a righteous cause");
+			_bro.getSprite("socket").setBrush("bust_base_crusader"); //custom base
 		} else {
-			bro.worsenMood(2.0, "Dislikes your sermons");
+			_bro.worsenMood(2.0, "Dislikes your sermons");
 		}
 	}
 

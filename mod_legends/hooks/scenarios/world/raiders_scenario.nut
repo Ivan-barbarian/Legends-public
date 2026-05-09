@@ -236,14 +236,14 @@
 		return false; // produces a lot of bugs with unlayered armors
 	}
 
-	o.onHiredByScenario <- function(bro) {
-		if (bro.isStabled()) {
+	o.onHiredByScenario <- function(_bro) {
+		if (_bro.isStabled()) {
 			return;
 		}
-		if (!bro.getBackground().isBackgroundType(::Const.BackgroundType.Outlaw)) {
-			bro.worsenMood(0.5, "Is uncomfortable with joining raiders");
+		if (!_bro.getBackground().isBackgroundType(::Const.BackgroundType.Outlaw)) {
+			_bro.worsenMood(0.5, "Is uncomfortable with joining raiders");
 		} else {
-			bro.improveMood(1.5, "Is excited at becoming a raider");
+			_bro.improveMood(1.5, "Is excited at becoming a raider");
 		}
 	}
 
