@@ -1,6 +1,6 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "19.3.25",
+	Version = "19.3.26",
 	Name = "Legends Mod",
 	BuildName = "Left & Right",
 	IsStartingNewCampaign = false
