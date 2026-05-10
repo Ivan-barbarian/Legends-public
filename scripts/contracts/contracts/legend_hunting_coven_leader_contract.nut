@@ -97,6 +97,14 @@ this.legend_hunting_coven_leader_contract <- this.inherit("scripts/contracts/con
 				this.Flags.set("StartTime", this.Time.getVirtualTimeF());
 				this.Flags.set("Delay", this.Math.rand(10, 30) * 1.0);
 				local envoy = this.World.getGuestRoster().create("scripts/entity/tactical/humans/firstborn");
+				local items = envoy.getItems();
+					items.equip(this.Const.World.Common.pickArmor([
+						[1, ::Legends.Armor.Standard.linen_tunic]
+					]));
+					items.equip(this.Const.World.Common.pickHelmet([
+						[1, ::Legends.Helmet.Standard.feathered_hat],
+						[3, ::Legends.Helmet.None]
+					]));
 				envoy.setName(this.Flags.get("ProtecteeName"));
 				envoy.setTitle("");
 				envoy.setFaction(1);
