@@ -538,7 +538,7 @@ Learn to find your enemies before they find you.
 • While on duty in the scout tent they grant [color=%positive%]+10%[/color] scouting.
 
 [color=%active%][u]Active:[/u][/color]
-• Unlocks the [color=%skill%]Mark Target[/color] skill.
+• Unlocks the [color=%skill%]Mark Target[/color] skill which afflicts your target with [color=%status%]Marked[/color], reducing their Melee and Ranged defense by [color=%negative%]10[/color] and increasing Damage Received from all sources by up to [color=%negative%]20%[/color] depending on the targets max Hitpoints.
 
 • Costs [color=%negative%]2[/color] AP and [color=%negative%]15[/color] Fatigue.
 ";
@@ -1413,9 +1413,9 @@ Carefully evaluate your enemies and bide your time.
 Lets hope your enemies like fighting in the shade.
 
 [color=%passive%][u]Passive:[/u][/color]
-• [color=%skill%]Sling Stone[/color] will now [color=%skill%]Debilitate[/color] on headshots, [color=%skill%]Baffle[/color] on body shots and ignore shield bonuses.
+• [color=%skill%]Sling Stone[/color] will now [color=%status%]Debilitate[/color] on headshots, [color=%status%]Baffle[/color] on body shots and ignore shield bonuses.
 
-• [color=%skill%]Fire Handgonne[/color] will apply [color=%skill%]Shellshocked[/color] on headshots.
+• [color=%skill%]Fire Handgonne[/color] will apply [color=%status%]Shellshocked[/color] on headshots.
 
 • [color=%skill%]Sling Heavy Stone[/color] will stun on headshots.
 
