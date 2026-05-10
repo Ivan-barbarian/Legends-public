@@ -217,9 +217,11 @@ this.legends_player_is_rich_op_backgrounds_event <- this.inherit("scripts/events
 		foreach( bro in brothers )
 		{
 			if (bro.getSkills().hasTrait(::Legends.Trait.Player) && bro.getBackground().getID() != "background.legend_commander_trader")
-			{
 				continue;
-			}
+
+			if (bro.isStabled() || bro.getBackground().getID() == "background.slave")
+				continue;
+
 			switch (bro.getBackground().getID())
 			{
 
