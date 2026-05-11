@@ -487,7 +487,7 @@ Looking for this?
 Like a beast of prey, you hunt the weak.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Inflict an additional [color=%positive%]20%[/color] damage against targets that are [color=%status%]Debilitated[/color] or have sustained any injury effects, like a broken arm.
+• Inflict an additional [color=%positive%]20%[/color] damage against targets that are [color=%status%]Debilitated[/color], [color=%status%]Knocked Over[/color] or have sustained any injury effects, like a broken arm.
 
 • Also grants [color=%positive%]+10%[/color] damage against targets who suffer from any of the following effects: [color=%status%]Baffled[/color], [color=%status%]Dazed[/color], [color=%status%]Distracted[/color], [color=%status%]Grappled[/color], [color=%status%]Netted[/color], [color=%status%]Rooted[/color], [color=%status%]Shellshocked[/color], [color=%status%]Sleeping[/color], [color=%status%]Staggered[/color], [color=%status%]Stunned[/color], [color=%status%]Vulnerable[/color], [color=%status%]Webbed[/color], or [color=%status%]Withered[/color].
 ";
