@@ -68,6 +68,22 @@ this.legend_named_heavy_javelin <- inherit("scripts/items/weapons/named/named_we
 		this.addSkill(this.new("scripts/skills/actives/throw_javelin"));
 	}
 
+	function onPutIntoBag()
+	{
+		this.item.onPutIntoBag();
+		if (this.m.Name.len() == 0)
+		{
+			if (this.Math.rand(1, 100) <= 25)
+			{
+				this.setName(this.getContainer().getActor().getName() + "\'s " + this.m.NameList[this.Math.rand(0, this.m.NameList.len() - 1)]);
+			}
+			else
+			{
+				this.setName(this.createRandomName());
+			}
+		}
+	}
+
 	function setAmmo(_a)
 	{
 		this.weapon.setAmmo(_a);
