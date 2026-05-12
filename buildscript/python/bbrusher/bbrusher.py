@@ -424,7 +424,7 @@ class BBrusher:
 		for sp in brush.sprites:
 			for fr in sp.frames:
 				if fr.name not in frame_images:
-					img_path = os.path.join(in_dir, fr.name)
+					img_path = os.path.join(in_dir, fr.name.replace('\\', '/'))
 					# print(fr.name)
 					frame_images[fr.name] = PILImage.open(img_path).convert('RGBA')
 
@@ -505,7 +505,7 @@ class BBrusher:
 		for sp in master_brush.sprites:
 			for fr in sp.frames:
 				if fr.name not in frame_images:
-					img_path = os.path.join(in_dir, fr.name)
+					img_path = os.path.join(in_dir, fr.name.replace('\\', '/'))
 					frame_images[fr.name] = PILImage.open(img_path).convert('RGBA')
 
 		# Fill in sprite dimensions from first frame where not explicitly set
