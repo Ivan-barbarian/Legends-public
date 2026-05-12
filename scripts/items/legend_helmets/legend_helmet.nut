@@ -775,6 +775,16 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		return result;
 	}
 
+	function onAddedToStash( _stashID ) {
+		foreach (u in this.m.Upgrades) {
+			if (u != null && u.isNamed()) {
+				if (u.m.Name.len() == 0) {
+					u.setName(u.createRandomName());
+				}
+			}
+		}
+	}
+
 	function isDroppedAsLoot()
 	{
 		if (!this.item.isDroppedAsLoot())
