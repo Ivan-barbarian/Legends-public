@@ -23,6 +23,11 @@ this.perk_legend_grappler <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillExecuted( _skill, _targetTile, _targetEntity, _forFree )
 	{
+		local items = this.getContainer().getActor().getItems();
+		if (items.getItemAtSlot(::Const.ItemSlot.Mainhand) != null && items.getItemAtSlot(::Const.ItemSlot.Offhand) != null) {
+    		return;
+		}
+
 		if (_skill.getID() != ::Legends.Actives.getID(::Legends.Active.HandToHand))
 			return;
 
