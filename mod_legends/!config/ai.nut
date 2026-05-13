@@ -24,13 +24,15 @@ local count = ::Const.AI.Behavior.ID.COUNT;
 ::Const.AI.Behavior.ID.SpawnShadow <- count++;
 ::Const.AI.Behavior.ID.Corruption <- count++;
 ::Const.AI.Behavior.ID.SlingstaffMoveIntoRange <- count++;
+::Const.AI.Behavior.ID.Harvest <- count++;
 ::Const.AI.Behavior.ID.COUNT = count;
 
 ::Const.AI.Behavior.Name.extend([
 	"Howl",
 	"SpawnShadow",
 	"Corruption",
-	"SlingstaffMoveIntoRange"
+	"SlingstaffMoveIntoRange",
+	"Harvest"
 ]);
 
 ::Const.AI.Behavior.Order.Corruption <- 39;
