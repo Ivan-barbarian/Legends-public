@@ -876,4 +876,54 @@
 		this.Tactical.TopbarRoundInformation.update();
 		this.m.MaxHostiles = this.Math.max(this.m.MaxHostiles, this.Tactical.Entities.getHostilesNum());
 	}
+
+
+	o.tactical_flee_screen_onFleePressed = function () {
+		this.Sound.play("sounds/retreat_01.wav", 0.75);
+
+		if (this.isScenarioMode() || this.isEveryoneSafe()) {
+			this.m.IsFleeing = true;
+			this.m.MenuStack.pop();
+			this.m.TacticalDialogScreen.hide();
+			this.m.TacticalScreen.hide();
+			this.Time.clearEvents();
+			this.setPause(true);
+			this.flee();
+		} else if (!this.m.IsAutoRetreat) {
+			this.m.IsAutoRetreat = true;
+			this.m.MenuStack.pop();
+			this.Settings.getTempGameplaySettings().FasterPlayerMovement = true;
+			this.Settings.getTempGameplaySettings().FasterAIMovement = true;
+			this.Tactical.getCamera().zoomTo(this.Math.maxf(this.Tactical.getCamera().Zoom, 1.5), 1.0);
+			this.Time.setVirtualSpeed(1.5);
+			local alive = this.Tactical.Entities.getAllInstancesAsArray();
+
+			foreach (bro in alive) {
+				if (bro.isAlive() && this.isKindOf(bro, "player")) {
+					if (bro.getSkills().hasEffect(::Legends.Effect.Charmed)) {
+						local agent = bro.getSkills().getSkillByID(::Legends.Effects.getID(::Legends.Effect.Charmed)).m.OriginalAgent;
+						agent.setUseHeat(true);
+						agent.getProperties().BehaviorMult[this.Const.AI.Behavior.ID.Retreat] = 1.0;
+					} else if (bro.getSkills().hasEffect(::Legends.Effect.LegendIntenselyCharmed)) {
+						local agent = bro.getSkills().getSkillByID(::Legends.Effects.getID(::Legends.Effect.LegendIntenselyCharmed)).m.OriginalAgent;
+						agent.setUseHeat(true);
+						agent.getProperties().BehaviorMult[this.Const.AI.Behavior.ID.Retreat] = 1.0;
+					} else {
+						bro.getAIAgent().setUseHeat(true);
+						bro.getAIAgent().getProperties().BehaviorMult[this.Const.AI.Behavior.ID.Retreat] = 1.0;
+					}
+
+					this.Tactical.TurnSequenceBar.updateEntity(bro.getID());
+				}
+			}
+
+			local activeEntity = this.Tactical.TurnSequenceBar.getActiveEntity();
+
+			if (activeEntity != null && activeEntity.isPlayerControlled()) {
+				activeEntity.getAIAgent().setFinished(false);
+			}
+
+			this.updateCurrentEntity();
+		}
+	}
 });
