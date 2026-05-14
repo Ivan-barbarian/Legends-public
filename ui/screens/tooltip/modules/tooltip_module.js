@@ -20,6 +20,7 @@ var TooltipModule = function()
 	// container
 	this.mParent    = null;
 	this.mContainer = null;
+	this.mScrollWrapper = null;
 	
 	// current element data
 	this.mCurrentData    = null;
@@ -96,9 +97,40 @@ TooltipModule.prototype.onDisconnection = function ()
 };
 
 
-TooltipModule.prototype.createDIV = function ()
-{
+TooltipModule.prototype.createDIV = function () {
 	this.mContainer = $('<div class="tooltip-module ui-control-tooltip-module display-none"></div>');
+
+	var self = this;
+	//looks like this is only ran once per game start, so no need to remove listeners
+	console.error("Tooltip Event Listeners Added");
+	window.addEventListener('mousewheel', function (event) {
+		if (!self.mIsVisible || !self.mScrollWrapper)
+			return;
+		var sw = self.mScrollWrapper[0];
+    	if (sw.scrollHeight <= sw.clientHeight)
+        	return;
+		var delta = event.wheelDelta || -event.detail;
+		sw.scrollTop += (delta > 0 ? -40 : 40);
+		event.preventDefault();
+		event.stopImmediatePropagation();
+		return false;
+	}, true);
+
+	window.addEventListener('keydown', function (event) {
+		if (!self.mIsVisible || !self.mScrollWrapper)
+			return;
+		if (!event.ctrlKey)
+			return;
+		var sw = self.mScrollWrapper[0];
+		if (event.keyCode === 38) {
+			sw.scrollTop -= 10;
+			event.preventDefault();
+		}
+		else if (event.keyCode === 40) {
+			sw.scrollTop += 10;
+			event.preventDefault();
+		}
+	}, true);
 };
 
 
@@ -919,12 +951,15 @@ TooltipModule.prototype.buildFromData = function(_data, _shouldBeUpdated, _conte
 		var ornament = $('<div class="top-ornament"></div>');
 		this.mContainer.append(ornament);
 
+		this.mScrollWrapper = $('<div class="tooltip-scroll-wrapper"></div>');
+        this.mContainer.append(this.mScrollWrapper);
+
 		// create: container
 		headerContainer = $('<div class="header-container"></div>');
-		this.mContainer.append(headerContainer);
+		this.mScrollWrapper.append(headerContainer);
 
 		contentContainer = $('<div class="content-container"></div>');
-		this.mContainer.append(contentContainer);
+		this.mScrollWrapper.append(contentContainer);
 
 		leftContentContainer = $('<div class="left-content-container"></div>');
 		contentContainer.append(leftContentContainer);
@@ -932,20 +967,20 @@ TooltipModule.prototype.buildFromData = function(_data, _shouldBeUpdated, _conte
 		contentContainer.append(rightContentContainer);
 
 		footerContainer = $('<div class="footer-container"></div>');
-		this.mContainer.append(footerContainer);
+		this.mScrollWrapper.append(footerContainer);
 
 		hintContainer= $('<div class="hint-container"></div>');
-		this.mContainer.append(hintContainer);
+		this.mScrollWrapper.append(hintContainer);
 	}
 	else
 	{
-		// accquire: container
-		headerContainer       = this.mContainer.find('.header-container:first');
-		contentContainer      = this.mContainer.find('.content-container:first');
+		// acquire: container
+		headerContainer       = this.mScrollWrapper.find('.header-container:first');
+		contentContainer      = this.mScrollWrapper.find('.content-container:first');
 		leftContentContainer  = contentContainer.find('.left-content-container:first');
 		rightContentContainer = contentContainer.find('.right-content-container:first');
-		footerContainer       = this.mContainer.find('.footer-container:first');
-		hintContainer         = this.mContainer.find('.hint-container:first');
+		footerContainer       = this.mScrollWrapper.find('.footer-container:first');
+		hintContainer         = this.mScrollWrapper.find('.hint-container:first');
 
 		// sanity check
 		if (headerContainer.length === 0 ||

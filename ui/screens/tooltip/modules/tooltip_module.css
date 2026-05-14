@@ -27,6 +27,18 @@
 	background-position: bottom;
 }
 
+.tooltip-scroll-wrapper {
+    width: 100%;
+    position: relative; 
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.tooltip-scroll-wrapper::-webkit-scrollbar {
+	display: none;
+    width: 0;
+}
+
 .tooltip-module.is-full-width
 {
 	max-width: 30.0rem;
