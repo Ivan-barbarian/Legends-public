@@ -971,6 +971,9 @@ TooltipModule.prototype.buildFromData = function(_data, _shouldBeUpdated, _conte
 
 		hintContainer= $('<div class="hint-container"></div>');
 		this.mScrollWrapper.append(hintContainer);
+
+		this.mScrollHint = $('<div class="tooltip-scroll-hint display-none"></div>');
+		this.mContainer.append(this.mScrollHint);
 	}
 	else
 	{

@@ -73,6 +73,13 @@ TooltipModule.prototype.setupUITooltip = function(_targetDIV, _data)
 	this.mContainer.removeClass('display-none').addClass('display-block');
 	this.mContainer.css({ left: posLeft, top: posTop });
 	this.mContainer.velocity("finish", true).velocity({ opacity: 0.99 }, { duration: this.mFadeInTime }); // Anti Alias Fix
+
+	var self = this;
+	if (self.mScrollWrapper[0].scrollHeight > self.mScrollWrapper.height()) {
+		self.mScrollHint.removeClass('display-none').addClass('display-block');
+	} else {
+		self.mScrollHint.removeClass('display-block').addClass('display-none');
+	}
 };
 
 TooltipModule.prototype.setupTileTooltip = function()
@@ -126,4 +133,11 @@ TooltipModule.prototype.setupTileTooltip = function()
 	this.mContainer.removeClass('display-none').addClass('display-block');
 	this.mContainer.css({ left: posLeft, top: posTop });
 	this.mContainer.velocity("finish", true).velocity({ opacity: 0.99 }, { duration: this.mFadeInTime }); // Anti Alias Fix
+
+	var self = this;
+	if (self.mScrollWrapper[0].scrollHeight > self.mScrollWrapper.height()) {
+		self.mScrollHint.removeClass('display-none').addClass('display-block');
+	} else {
+		self.mScrollHint.removeClass('display-block').addClass('display-none');
+	}
 };
