@@ -374,7 +374,7 @@ Ankles, hands, elbows and knees, you've learned how to fight dirty to secure vic
 [color=%active%][u]Active:[/u][/color]
 • Unlocks the [color=%skill%]Debilitate[/color] skill which can prime your next attack to [color=%status%]Cripple[/color] a target for three turns, reducing their ability to inflict damage by [color=%negative%]-25%[/color] and increasing the damage they take by [color=%positive%]+15%[/color].
 
-• Costs [color=%negative%]3[/color] AP and [color=%negative%]10[/color] Fatigue. Works on enemy targets hit.
+• Costs [color=%negative%]3[/color] AP and [color=%negative%]10[/color] Fatigue. Works on all enemy targets hit.
 ";
 
 ::Const.Strings.PerkDescription.LegendReturnFavor <- @"
