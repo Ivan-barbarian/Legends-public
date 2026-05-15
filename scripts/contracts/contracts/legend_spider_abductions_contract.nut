@@ -544,7 +544,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 				// TODO: scale reward based on the number of survivors who made it back?
 				if (survivorCount == this.Flags.get("NumAbductees"))
 				{
-					this.Text += "{The townsfolk you rescued step forward.%SPEECH_ON%They saved all of us! We thought we were all done for, but they kept us safe.\"\n\n\"And not a single one of us was left behind either!\"\n\n\"All shall hear of the %companyname%!\"\n\n\"Hear, hear!%SPEECH_OFF%}";
+					this.Text += "{\n\nAs you leave the employer's chambers, the townsfolk you rescued gather around.%SPEECH_ON%They saved all of us! We thought we were all done for, but they kept us safe.\"\n\n\"And not a single one of us was left behind either!\"\n\n\"All shall hear of the %companyname%!\"\n\n\"Hear, hear!%SPEECH_OFF%}";
 					this.Contract.addSituation(this.new("scripts/entity/world/settlements/situations/legend_word_of_mouth_situation"), 5, this.Contract.m.Home, this.List);
 				}
 				this.List.push({
