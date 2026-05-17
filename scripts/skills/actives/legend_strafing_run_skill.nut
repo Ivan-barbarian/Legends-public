@@ -298,9 +298,13 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-	function onAfterTeleport(_info) {
-		local success = _info.Skill.onUse(_info.User, _info.TargetTile);
-		return success;
+	function onAfterTeleport(_info)    {
+		local ret = _info.Skill.onUse(_info.User, _info.TargetTile);
+		if (_info.User != null && _info.User.isAlive() && !_info.User.isDying()) {
+			_info.User.getSkills().update();
+			_info.User.setDirty(true);
+		}
+		return ret;
 	}
 });
 
