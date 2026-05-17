@@ -457,7 +457,7 @@ Become one with your weapon and go for the weak spots!
 [color=%passive%][u]Passive:[/u][/color]
 • When holding a Buckler or Mummy Shield in your offhand an extra [color=%positive%]+25%[/color] of damage ignores armor on Melee Attacks.
 
-[color=%passive%][u]Active:[/u][/color] Unlocks the [color=%skill%]Flourish[/color] skill, which will increase fatigue cost by [color=%positive%]50%[/color] and as long as you are faster than your target grants a chance on each attack to ignore armor completely based on the initiative difference between you and your target. As long as you are faster than the target, any attack that inflicts at least [color=%positive%]1[/color] point of damage to Hitpoints triggers a morale check for the opponent with a penalty equal to [color=%negative%]20%[/color] of the Initiative difference between you and the target.
+[color=%passive%][u]Active:[/u][/color] Unlocks the [color=%skill%]Flourish[/color] skill, which will increase fatigue cost by [color=%positive%]75%[/color], Action Point Cost [color=%positive%]1[/color] and as long as you are faster than your target grants a chance on each attack to ignore armor completely based on the initiative difference between you and your target. As long as you are faster than the target, any attack that inflicts at least [color=%positive%]1[/color] point of damage to Hitpoints triggers a morale check for the opponent with a penalty equal to [color=%negative%]20%[/color] of the Initiative difference between you and the target.
 ";
 ::Const.Perks.PerkDefObjects[::Legends.Perk.Duelist].Tooltip = ::Const.Strings.PerkDescription.Duelist;
 ::Const.Strings.PerkDescription.CripplingStrikes <- @"
