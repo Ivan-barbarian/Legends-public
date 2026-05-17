@@ -2080,7 +2080,7 @@ The path to martial prowess is beset by the fake and the weak. Only one can stan
   - Zweihander | [color=%positive%]+0.25%[/color]
   - Swordmaster | [color=%positive%]+0.5%[/color]
   - Bandit Leader | [color=%positive%]+0.25%[/color]
-  - Bandit Warlord | [color=%positive%]+1%[/color]
+  - Robber Baron | [color=%positive%]+1%[/color]
   - Fencer | [color=%positive%]+0.25%[/color]
   - Barbarian King | [color=%positive%]+1%[/color]
   - Sergeant | [color=%positive%]+0.0125%[/color]
