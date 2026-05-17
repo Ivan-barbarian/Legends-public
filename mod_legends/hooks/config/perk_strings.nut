@@ -36,6 +36,8 @@ Everything can be learned if you put your mind to it.
 • At the twelfth character level, you gain an additional perk point.
 
 • The bonus experience stays until level 99.
+
+• Doesn't get as irritated while reading.
 ";
 ::Const.Perks.PerkDefObjects[::Legends.Perk.Student].Tooltip = ::Const.Strings.PerkDescription.Student;
 ::Const.Strings.PerkDescription.KillingFrenzy <- @"
