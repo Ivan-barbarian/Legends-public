@@ -19,8 +19,7 @@
 	padding-bottom: 1.0rem;
 	position : absolute;
 
-	overflow-y: visible;
-	overflow-x: hidden;
+	overflow: visible;
 	/*pointer-events: none;*/
 
 	background-image: url("coui://gfx/ui/skin/mod_tooltip_255_bottom.png");
@@ -66,7 +65,7 @@
 
 .tooltip-module .top-ornament
 {
-	width: 31.5rem;
+	width: 25.5rem;
 	height: 1.3rem;
 	top: -0.3rem;
 	left: -0.3rem;
