@@ -547,7 +547,6 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		if (this.getInitiativeModifier() != 0) _properties.Initiative += this.getInitiativeModifier();
 		if (this.getThreatModifier() != 0) _properties.Threat += this.getThreatModifier();
 		if (this.getResolveModifier() != 0) _properties.Bravery += this.getResolveModifier();
-		if (this.getFatiguePenaltyMultiplier() != 0) _properties.Stamina += this.getCurrentFatigueModifier();	// We are adding to the Stamina of the wearer
 	}
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
