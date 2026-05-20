@@ -652,11 +652,13 @@ local function colorizeInGreen( _text )
 
 	local slot = _item.getSlotType();
 	if (slot == ::Const.ItemSlot.Body || slot == ::Const.ItemSlot.Head) {
+		if(_item.getUpgrades().len() > 0){
 			foreach (u in _item.m.Upgrades) {
 				 if (u != null && u.getIcon() != "" && u.getIcon().find("rune_sigils") == null) {
 					paths.push("ui/items/" + u.getIcon());
 				}
 			}
+		}
 	}
 	return paths;
 }
