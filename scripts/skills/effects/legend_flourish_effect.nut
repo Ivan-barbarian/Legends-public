@@ -51,7 +51,7 @@ this.legend_flourish_effect <- this.inherit("scripts/skills/skill", {
 				type = "text",
 				icon = "ui/icons/direct_damage.png",
 				text = "Chance on each attack to ignore armor completely, the chance is [color=%positive%]50%[/color] of the Initiative difference between you and the target as long as you are faster"
-			},,
+			},
 			{
 				id = 10,
 				type = "text",
@@ -136,7 +136,7 @@ this.legend_flourish_effect <- this.inherit("scripts/skills/skill", {
 				_properties.SkillCostAdjustments.push({
 					ID = skill.m.ID,
 					APAdjust = 1,
-					FatigueMultAdjust = 1.75;
+					FatigueMultAdjust = 1.75
 				});
 			}
 		}
