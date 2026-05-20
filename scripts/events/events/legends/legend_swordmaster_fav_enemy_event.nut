@@ -240,6 +240,8 @@ this.legend_swordmaster_fav_enemy_event <- this.inherit("scripts/events/event", 
 	}
 
 	function onUpdateScore() {
+		this.m.isValidForEncounter = false;
+		
 		if (!this.World.getTime().IsDaytime) {
 			return;
 		}
