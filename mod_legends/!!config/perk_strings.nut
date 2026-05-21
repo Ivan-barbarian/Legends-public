@@ -437,11 +437,9 @@ Master the art of following up for devastating effects.
 'You've done it now!'
 
 [color=%passive%][u]Passive:[/u][/color]
-• After receiving a blow, the next attack this character attempts will inflict [color=%positive%]+100%[/color] damage to both Hitpoints and armor.
+• After receiving a hit, or a death of a party member or a pet, gain a stack of [color=%effect]Vengeance[/color], which allows you to deal [color=%positive%]20%[/color] extra Damage.
 
-• If the attack misses the effect is wasted. Does not work from friendly fire or any self inflicted damage.
-
-• Additionally a party member or pet dying will trigger the effect.
+• The damage does not stack and each attack consumes one charge.
 ";
 
 ::Const.Strings.PerkDescription.LegendBruiser <- @"
