@@ -392,9 +392,9 @@ Strike back with interest!
 Take a deep breath, then get to work.
 
 [color=%active%][u]Active:[/u][/color]
-• Unlocks the [color=%skill%]Perfect Focus[/color] skill which allows the use of all other skills at [color=%negative%]half[/color] the normal Action Point cost (rounded down), but increases Fatigue costs by [color=%positive%]+75%[/color] for one round.
+• Unlocks the [color=%skill%]Perfect Focus[/color] skill which grants stacking [color=%skill%]Perfect Focus[/color]. Each stack increases your Action Points by [color=%positive%]3[/color].
 
-• Costs [color=%negative%]1[/color] AP and [color=%negative%]10[/color] Fatigue.
+• Costs [color=%negative%]0[/color] AP and [color=%negative%]30[/color] Fatigue.
 ";
 
 // ::Const.Strings.PerkDescription.Furor <- @"

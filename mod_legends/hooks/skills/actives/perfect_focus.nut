@@ -8,6 +8,8 @@
 		this.m.IconDisabled = "skills/perfectfocus_square_bw.png";
 		this.m.Overlay = "perfectfocus_active";
 		this.m.Order = this.Const.SkillOrder.BeforeLast;
+		this.m.ActionPointCost = 0;
+		this.m.FatigueCost = 30;
 	}
 
 	o.getTooltip = function()
@@ -32,31 +34,17 @@
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "All skills cost [color=%positive%]50%[/color] less Action Points, rounded down"
-			},
-			{
-				id = 8,
-				type = "text",
-				icon = "ui/icons/fatigue.png",
-				text = "All skills cost [color=%positive%]75%[/color] more fatigue"
+				text = "Adds a stacking [color=%effect%]Perfect Focus[/color] which increases your Action Points by [color=%positive%]3[/color]"
 			}
 		];
 		return ret;
 	}
 
-	o.isUsable = function ()
-	{
-		return this.skill.isUsable() && !this.getContainer().hasEffect(::Legends.Effect.LegendPerfectFocus);
+	o.isUsable = function () {
+		return this.skill.isUsable();
 	}
 
-	o.onUse = function ( _user, _targetTile )
-	{
-		if (!this.getContainer().hasEffect(::Legends.Effect.LegendPerfectFocus))
-		{
-			::Legends.Effects.grant(this, ::Legends.Effect.LegendPerfectFocus);
-			return true;
-		}
-
-		return false;
+	o.onUse = function ( _user, _targetTile ) {
+		::Legends.Effects.grant(this, ::Legends.Effect.LegendPerfectFocus);
 	}
 });
