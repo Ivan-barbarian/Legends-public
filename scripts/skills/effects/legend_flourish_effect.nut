@@ -131,7 +131,7 @@ this.legend_flourish_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate(_properties) {
 		local skills = [];
-		foreach (skill in this.m.Skills.queryActives()) {
+		foreach (skill in this.getContainer().queryActives()) {
 			if (skill.isAttack()) {
 				_properties.SkillCostAdjustments.push({
 					ID = skill.m.ID,
