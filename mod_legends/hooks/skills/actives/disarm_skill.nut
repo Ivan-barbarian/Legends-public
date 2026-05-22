@@ -1,5 +1,5 @@
 ::mods_hookExactClass("skills/actives/disarm_skill", function(o)
-{
+{/*
 	local create = o.create;
 	o.create = function()
 	{
@@ -15,5 +15,5 @@
 		{
 			this.m.HitChanceBonus += 10;
 		}
-	}
+	}*/
 });
