@@ -221,7 +221,7 @@
 ::Const.Strings.PerkName.LegendMagicBurningHands <- "Burning Hands";
 ::Const.Strings.PerkName.LegendMagicChainLightning <- "Chain Lightning";
 ::Const.Strings.PerkName.LegendMagicCircleOfProtection <- "Circle of Protection";
-::Const.Strings.PerkName.LegendMagicDaze <- "Daze";
+::Const.Strings.PerkName.LegendMagicDaze <- "Stupefy";
 ::Const.Strings.PerkName.LegendMagicHailstone <- "Hailstone";
 ::Const.Strings.PerkName.LegendMagicHealingWind <- "Healing Wind";
 ::Const.Strings.PerkName.LegendMagicImbue <- "Imbue";
@@ -253,7 +253,7 @@
 ::Const.Strings.PerkName.LegendHex <- "Hex";
 ::Const.Strings.PerkName.LegendMiasma <- "Miasma";
 ::Const.Strings.PerkName.LegendDarkflight <- "Darkflight";
-::Const.Strings.PerkName.LegendDaze <- "Daze";
+::Const.Strings.PerkName.LegendDaze <- "Stupefy";
 ::Const.Strings.PerkName.LegendStun <- "Stun";
 ::Const.Strings.PerkName.LegendHorrify <- "Horrify";
 ::Const.Strings.PerkName.LegendPush <- "Revolt";
@@ -680,13 +680,13 @@ Disapparate from your current location and reappear on the other side of the bat
 Assault the senses of your target with a flurry of colorful movement and sounds.
 
 [color=%active%][u]Active:[/u][/color]
-• Unlocks the [color=%skill%]Daze[/color] skill which applies the [color=%status%]Bewildered[/color] effect on hit.
+• Unlocks the [color=%skill%]Daze[/color] skill which applies the [color=%status%]Stupefied[/color] effect on hit.
 
 • Chance to hit is based on Ranged Skill and has a range of six tiles.
 
-• [color=%status%]Bewildered[/color] enemies have their Initiative, Fatigue, and damage reduced by [color=%negative%]-50%[/color].
+• [color=%status%]Stupefied[/color] enemies have their Initiative, Fatigue, and damage reduced by [color=%negative%]-50%[/color].
 
-• If you have the [color=%perk%]Taunt[/color] perk, chance to hit is [color=%positive%]doubled[/color].
+• If you have the [color=%perk%]Battlefield Control[/color] perk, the chance to hit is [color=%positive%]doubled[/color].
 
 • Costs [color=%negative%]5[/color] AP and [color=%negative%]20[/color] Fatigue.
 ";

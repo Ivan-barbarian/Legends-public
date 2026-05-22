@@ -1683,7 +1683,7 @@ activesDefs.push({
 	ID = "actives.legend_daze",
 	Script = "scripts/skills/actives/legend_daze_skill",
 	Const = "LegendDaze",
-	Name = "Daze",
+	Name = "Stupefy",
 });
 
 ::Legends.Active.LegendDrumsOfLife <- null;
@@ -2443,7 +2443,7 @@ activesDefs.push({
 	ID = "actives.legend_magic_daze",
 	Script = "scripts/skills/actives/legend_magic_daze_skill",
 	Const = "LegendMagicDaze",
-	Name = "Daze",
+	Name = "Stupefy",
 });
 
 ::Legends.Active.LegendMagicHailstone <- null;
