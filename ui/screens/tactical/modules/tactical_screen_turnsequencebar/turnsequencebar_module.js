@@ -878,7 +878,7 @@ TacticalScreenTurnSequenceBarModule.prototype.selectFirstEntity = function (_ent
 		if (entityData === null || entityData === undefined) {
 			if (retryCount < maxRetries) {
 				console.error('ERROR: Failed to query entity data for entity (' + _entity.id + '). Reason: Invalid result. Retrying...');
-				setTimeout(function () { self.selectFirstEntity(_entity, _entityDIV, _previousEntityWasHiddenToPlayer); }, 100);
+				setTimeout(function () { self.selectFirstEntity(_entity, _entityDIV, _previousEntityWasHiddenToPlayer, ++retryCount); }, 100);
 			}
 			else{
 				console.error('ERROR: Failed to query entity data for entity (' + _entity.id + '). Reason: Invalid result. Removing the entity from the sequence bar and moving to the next one...');
