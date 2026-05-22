@@ -46,4 +46,16 @@
 			}.bindenv(this), { bar = this, EntityID = _entityId });
 		}
 	}
+
+	// this should clean up an invalid entity and allow the game flow to continue if JS is stuck on a null entity; called by js through selectFirstEntity
+	o.onForceRemoveInvalidEntity <- function (_entityID) {
+		for (local i = 0; i < this.m.CurrentEntities.len(); i++) {
+			local entity = this.m.CurrentEntities[i];
+			if (::Legends.S.isEntityNullOrDead(entity) && entity.getID() == _entityID) {
+				this.m.IsLocked = false;
+				this.removeEntity(entity);
+				return;
+			}
+		}
+	}
 });
