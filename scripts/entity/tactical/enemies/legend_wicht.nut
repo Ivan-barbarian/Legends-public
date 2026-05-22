@@ -192,8 +192,9 @@ this.legend_wicht <- this.inherit("scripts/entity/tactical/actor", {
 				local decal = _tile.spawnDetail(appearance.CorpseArmorUpgradeFront, this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 				decal.Scale = targetScale;
 			}
+
+			this.spawnTerrainDropdownEffect(_tile);
 		}
-		this.spawnTerrainDropdownEffect(_tile);
 		local deathLoot = this.getItems().getDroppableLoot(_killer);
 		local tileLoot = this.getLootForTile(_killer, deathLoot);
 		this.dropLoot(_tile, tileLoot, !flip);
