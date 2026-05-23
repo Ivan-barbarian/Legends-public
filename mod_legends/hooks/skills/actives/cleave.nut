@@ -22,6 +22,7 @@
 			return getTooltip();
 
 		local ret = this.getDefaultTooltip();
+		local properties = this.getContainer().getActor().getCurrentProperties();
 		local dmg = this.getContainer().getActor().getCurrentProperties().IsSpecializedInCleavers ? 10 : 5;
 		ret.push({
 			id = 7,
@@ -35,7 +36,7 @@
 			icon = "ui/icons/special.png",
 			text = "Inflicts additional stacking [color=%damage%]" + dmg + "[/color] bleeding damage per turn, for 2 turns"
 		});
-		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms) {
+		if (!::Legends.S.isCharacterWeaponSpecialized(properties, this.getItem())) {
 			ret.push({
 				id = 6,
 				type = "text",
@@ -48,12 +49,8 @@
 
 	local onAfterUpdate = o.onAfterUpdate;
 	o.onAfterUpdate = function ( _properties ) {
-		if (this.m.IsScytheCleave) {
-			this.m.FatigueCostMult = _properties.IsSpecializedInPolearms ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-			this.m.ActionPointCost = _properties.IsSpecializedInPolearms ? 5 : 6;
-		}
-		else {
-			onAfterUpdate(_properties);
+		if (this.m.IsScytheCleave && ::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem())) {
+			this.m.ActionPointCost -= 1;
 		}
 	}
 

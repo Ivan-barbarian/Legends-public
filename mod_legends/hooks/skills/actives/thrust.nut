@@ -39,7 +39,7 @@
 	local onAfterUpdate = o.onAfterUpdate;
 	o.onAfterUpdate = function (_properties) {
 		onAfterUpdate(_properties);
-		this.m.DazeChance = _properties.IsSpecializedInMaces ? 50 : 25;
+		this.m.DazeChance = ::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) ? 50 : 25;
 	}
 
 	o.onTargetHit <- function (_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor) {

@@ -69,7 +69,7 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local ret = this.getDefaultTooltip();
 		local properties = this.getContainer().getActor().getCurrentProperties();
-		if ((this.m.IsPolearm && !properties.IsSpecializedInPolearms) || (this.m.IsTwoHanded && !properties.IsSpecializedInSpears)) {
+		if ((this.m.IsPolearm || this.m.IsTwoHanded) && !::Legends.S.isCharacterWeaponSpecialized(properties, this.getItem())) {
 			ret.push({
 				id = 6,
 				type = "text",
@@ -81,15 +81,9 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 	function onAfterUpdate( _properties ) {
-		if (this.m.IsPolearm) {
-			this.m.FatigueCostMult = _properties.IsSpecializedInPolearms ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-			this.m.ActionPointCost = _properties.IsSpecializedInPolearms ? 6 : 7;
-			return;
+		if ((this.m.IsPolearm || this.m.IsTwoHanded ) && ::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem())) {
+			this.m.ActionPointCost -= 1;
 		}
-		else if (this.m.IsTwoHanded) {
-			this.m.ActionPointCost = _properties.IsSpecializedInSpears ? 6 : 7;
-		}
-		this.m.FatigueCostMult = _properties.IsSpecializedInSpears ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 
 	function onUse( _user, _targetTile ) {

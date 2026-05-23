@@ -44,7 +44,7 @@ this.legend_ranged_lash_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local ret = this.getDefaultTooltip();
 
-		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms)
+		if (!::Legends.S.isCharacterWeaponSpecialized(this.getContainer().getActor().getCurrentProperties(), this.getItem()))
 		{
 			ret.push({
 				id = 6,
@@ -59,9 +59,9 @@ this.legend_ranged_lash_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.FatigueCostMult = _properties.IsSpecializedInFlails ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-		this.m.ActionPointCost = _properties.IsSpecializedInPolearms ? 4 : 5;
-		this.m.IsShieldRelevant = !_properties.IsSpecializedInFlails;
+		if (::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()))
+			this.m.ActionPointCost -= 1;
+		this.m.IsShieldRelevant = !::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem());
 	}
 
 	function onUse( _user, _targetTile )
@@ -74,7 +74,7 @@ this.legend_ranged_lash_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			if (_targetEntity != null && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
+			if (_targetEntity != null && !::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
 			{
 				this.m.HitChanceBonus += -15;
 				_properties.MeleeSkill += -15;

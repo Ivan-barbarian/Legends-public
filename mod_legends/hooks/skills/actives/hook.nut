@@ -45,18 +45,9 @@
 		return ret;
 	}
 
-	local onAfterUpdate = o.onAfterUpdate;
-	o.onAfterUpdate = function ( _properties )
-	{
-		if (this.m.IsChain)
-		{
-			this.m.FatigueCostMult = _properties.IsSpecializedInFlails ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-			this.m.ActionPointCost = _properties.IsSpecializedInFlails ? 5 : 6;
-		}
-		else
-		{
-			onAfterUpdate( _properties );
-		}
+	o.onAfterUpdate = function ( _properties ) {
+		if (::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()))
+			this.m.ActionPointCost -= 1;
 	}
 
 	o.onTargetSelected <- function ( _targetTile )

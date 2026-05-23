@@ -1,5 +1,4 @@
 ::mods_hookExactClass("skills/actives/split_shield", function (o) {
-	o.m.IsOrcWeapon <- false;
 	o.m.IsHammer <- false;
 	o.m.OverflowDamage <- 0;
 
@@ -59,10 +58,6 @@
 			}
 		}
 		return ret;
-	}
-
-	o.setApplyOrcWeapon <- function (_f) {
-		this.m.IsOrcWeapon = _f;
 	}
 
 	o.calculateDamage <- function (_target) {
@@ -165,9 +160,8 @@
 	local onAfterUpdate = o.onAfterUpdate;
 	o.onAfterUpdate = function (_properties) {
 		onAfterUpdate(_properties);
-		if (this.m.IsOrcWeapon) {
-			this.m.ActionPointCost = 5;
-		}
+		if (::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) && this.m.MaxRange == 2)
+			this.m.ActionPointCost -= 1;
 	}
 
 	o.onAnySkillUsed = function (_skill, _targetEntity, _properties) {
