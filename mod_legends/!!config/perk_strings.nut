@@ -394,6 +394,8 @@ Take a deep breath, then get to work.
 [color=%active%][u]Active:[/u][/color]
 • Unlocks the [color=%skill%]Perfect Focus[/color] skill which grants stacking [color=%skill%]Perfect Focus[/color]. Each stack increases your Action Points by [color=%positive%]3[/color].
 
+• Undead characters can only use this once per turn.
+
 • Costs [color=%negative%]0[/color] AP and [color=%negative%]30[/color] Fatigue.
 ";
 

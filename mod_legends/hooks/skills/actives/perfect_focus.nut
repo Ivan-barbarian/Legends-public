@@ -1,8 +1,7 @@
 ::mods_hookExactClass("skills/actives/perfect_focus", function(o)
 {
 	local create = o.create;
-	o.create = function ()
-	{
+	o.create = function () {
 		create();
 		this.m.Icon = "skills/perfectfocus_square.png";
 		this.m.IconDisabled = "skills/perfectfocus_square_bw.png";
@@ -14,8 +13,7 @@
 
 	o.getTooltip = function()
 	{
-		local ret = [
-			{
+		local ret = [ {
 				id = 1,
 				type = "title",
 				text = this.getName()
@@ -37,11 +35,25 @@
 				text = "Adds a stacking [color=%effect%]Perfect Focus[/color] which increases your Action Points by [color=%positive%]3[/color]"
 			}
 		];
+
+		if (this.getContainer().getActor().getFlags().has("undead")) {
+			ret.push({
+				{
+					id = 7,
+					type = "text",
+					icon = "ui/icons/warning.png",
+					text = "Already used this turn"
+				}
+			})
+		}
 		return ret;
 	}
 
 	o.isUsable = function () {
-		return this.skill.isUsable();
+		if (!this.getContainer().getActor().getFlags().has("undead"))
+			return this.skill.isUsable();
+
+		return this.skill.isUsable() && !this.getContainer().hasEffect(::Legends.Effect.PerfectFocus);
 	}
 
 	o.onUse = function ( _user, _targetTile ) {
