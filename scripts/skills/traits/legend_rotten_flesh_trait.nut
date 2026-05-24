@@ -148,7 +148,7 @@ this.legend_rotten_flesh_trait <- this.inherit("scripts/skills/traits/character_
 		_properties.XPGainMult *= 0.75;
 		_properties.DailyWageMult *= 0;
 		_properties.DailyFood += 1;
-		this.getContainer().getActor().ActionPointCosts = this.Const.ZombieMovementAPCost;
+		this.getContainer().getActor().m.ActionPointCosts = this.Const.ZombieMovementAPCost;
 	}
 
 	function onApplyAppearance() {
