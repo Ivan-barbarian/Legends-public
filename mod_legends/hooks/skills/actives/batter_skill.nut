@@ -9,7 +9,7 @@
 			text = "Has a range of [color=%positive%]2[/color] tiles"
 		});
 
-		if (!::Legends.S.isCharacterWeaponSpecialized(properties, this.getItem())) {
+		if (!::Legends.S.isCharacterWeaponSpecialized(this.getContainer().getActor().getCurrentProperties(), this.getItem())) {
 			ret.push({
 				id = 6,
 				type = "text",
