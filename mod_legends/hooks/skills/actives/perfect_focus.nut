@@ -38,12 +38,10 @@
 
 		if (this.getContainer().getActor().getFlags().has("undead")) {
 			ret.push({
-				{
-					id = 7,
-					type = "text",
-					icon = "ui/icons/warning.png",
-					text = "Already used this turn"
-				}
+				id = 7,
+				type = "text",
+				icon = "ui/icons/warning.png",
+				text = "Already used this turn"
 			})
 		}
 		return ret;
