@@ -1,6 +1,6 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "19.3.27",
+	Version = "19.3.28",
 	Name = "Legends Mod",
 	BuildName = "Left & Right",
 	IsStartingNewCampaign = false
@@ -8,7 +8,7 @@
 
 ::mods_registerMod(::Legends.ID, ::Legends.Version, ::Legends.Name);
 ::mods_queue(::Legends.ID, [
-	"mod_legends_assets(>=19.3.27)",
+	"mod_legends_assets(>=19.3.28)",
 	"mod_msu(>=1.7.0)",
 	"vanilla(>=1.5.1-8)",
 	"vanilla(<1.5.2)",
