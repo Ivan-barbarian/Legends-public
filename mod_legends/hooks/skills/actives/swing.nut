@@ -11,7 +11,7 @@
 	o.setItem <- function (_item) {
 		this.skill.setItem(_item);
 		if (this.m.IsStaffSwing) {
-			this.m.ActionPointCost = 5;
+			this.m.ActionPointCost = 6;
 		}
 	}
 
