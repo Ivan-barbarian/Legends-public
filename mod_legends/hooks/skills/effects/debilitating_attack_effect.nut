@@ -67,7 +67,7 @@
 		} else {
 			this.Time.scheduleEvent(this.TimeUnit.Virtual, 10, function (_effect) {
 				_effect.removeSelf();
-				_effect.getContainer().getActor().setDirty(true);
+				actor.setDirty(true);
 			}, this);
 		}
 	}
