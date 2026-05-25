@@ -78,12 +78,11 @@
 	
 	local onAfterUpdate = o.onAfterUpdate;
 	o.onAfterUpdate = function ( _properties ) {
-		if (this.m.IsHalfsword && ::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem())) {
+		if (!this.m.IsHalfsword && ::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem())) {
 			this.m.ActionPointCost -= 1;
 		}
 		else {
 			this.m.IsHidden = !this.canDoubleGrip() && !this.m.Item.isItemType(this.Const.Items.ItemType.TwoHanded);
-			this.m.FatigueCostMult = _properties.IsSpecializedInSwords ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		}
 	}
 
