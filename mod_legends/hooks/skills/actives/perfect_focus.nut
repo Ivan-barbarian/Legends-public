@@ -47,12 +47,16 @@
 		return ret;
 	}
 
-	o.isUsable = function () {
-		if (!this.getContainer().getActor().getFlags().has("undead"))
-			return this.skill.isUsable();
-
-		return this.skill.isUsable() && !this.getContainer().hasEffect(::Legends.Effect.PerfectFocus);
+	o.isHidden <- function() {
+		return this.getContainer().getActor().getFlags().has("undead");
 	}
+
+	// o.isUsable = function () {
+	// 	if (!this.getContainer().getActor().getFlags().has("undead"))
+	// 		return this.skill.isUsable();
+
+	// 	return this.skill.isUsable() && !this.getContainer().hasEffect(::Legends.Effect.PerfectFocus);
+	// }
 
 	o.onUse = function ( _user, _targetTile ) {
 		::Legends.Effects.grant(this, ::Legends.Effect.LegendPerfectFocus);
