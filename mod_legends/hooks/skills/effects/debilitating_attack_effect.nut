@@ -41,7 +41,7 @@
 	}
 
 	o.onTargetHit = function (_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor) {
-		local actor = this.getContainer().getActor();
+		local actor = _skill.getContainer().getActor();
 		if (::Legends.S.isEntityNullOrDead(actor, _targetEntity)) {
 			return;
 		}
@@ -50,8 +50,7 @@
 			return;
 		}
 
-		if (this.m.SkillCount == this.Const.SkillCounter
-			&& this.m.LastTargetID == _targetEntity.getID()) {
+		if (this.m.SkillCount == this.Const.SkillCounter && this.m.LastTargetID == _targetEntity.getID()) {
 			return;
 		}
 
