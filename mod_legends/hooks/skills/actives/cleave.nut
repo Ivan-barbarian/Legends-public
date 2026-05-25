@@ -24,7 +24,7 @@
 
 		local ret = this.getDefaultTooltip();
 		local properties = this.getContainer().getActor().getCurrentProperties();
-		local dmg = ::Legends.S.isCharacterWeaponSpecialized(properties, this.getItem())) ? 10 : 5;
+		local dmg = ::Legends.S.isCharacterWeaponSpecialized(properties, this.getItem()) ? 10 : 5;
 		ret.push({
 			id = 7,
 			type = "text",
