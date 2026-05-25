@@ -8,13 +8,6 @@
 		this.m.HitChanceBonus = -5;
 	}
 
-	o.setItem <- function (_item) {
-		this.skill.setItem(_item);
-		if (this.m.IsStaffSwing) {
-			this.m.ActionPointCost = 6;
-		}
-	}
-
 	o.getTooltip = function () {
 		local ret = this.getDefaultTooltip();
 		ret.push({
