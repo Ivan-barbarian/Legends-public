@@ -60,6 +60,15 @@
 		if (!actor.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer && !_targetEntity.getFlags().has("tail")) {
 			this.Tactical.EventLog.log(debilitate.getLogEntryOnAdded(this.Const.UI.getColorizedEntityName(actor), this.Const.UI.getColorizedEntityName(_targetEntity)));
 		}
+		this.removeEffectAfterAllTargetsHit(_skill);
+	}
+
+	o.onTargetMissed = function (_skill, _targetEntity) {
+		this.removeEffectAfterAllTargetsHit(_skill);
+	}
+
+	o.removeEffectAfterAllTargetsHit <- function (_skill) {
+		local actor = _skill.getContainer().getActor();
 		if (!_skill.isAOE()) {
 			this.removeSelf();
 			actor.setDirty(true);
