@@ -1,5 +1,6 @@
 ::mods_hookExactClass("skills/actives/lunge_skill", function (o) {
 	o.m.isGreatLunge <- false;
+	o.m.IsStaffLunge <- false;
 
 	o.setItem <- function (_item) {
 		this.skill.setItem(_item);
@@ -27,6 +28,9 @@
 		onAfterUpdate(_properties);
 		if (::Legends.Perks.has(this.getContainer(), ::Legends.Perk.LegendFreedomOfMovement)) {
 			this.m.FatigueCostMult *= 0.5;
+		}
+		if (::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) && this.m.IsStaffLunge) {
+			this.m.ActionPointCost -= 1;
 		}
 	}
 
