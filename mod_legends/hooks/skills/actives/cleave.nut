@@ -10,6 +10,7 @@
 			this.m.IconDisabled = "skills/active_61_sw.png";
 			this.m.Overlay = "active_61";
 			this.m.FatigueCost = 15;
+			this.m.ActionPointCost = 6;
 			this.m.MinRange = 1;
 			this.m.MaxRange = 2;
 		}
