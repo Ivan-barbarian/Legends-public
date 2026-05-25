@@ -392,7 +392,7 @@ Strike back with interest!
 Take a deep breath, then get to work.
 
 [color=%active%][u]Active:[/u][/color]
-• Unlocks the [color=%skill%]Perfect Focus[/color] skill which grants stacking [color=%skill%]Perfect Focus[/color]. Each stack increases your Action Points by [color=%positive%]3[/color].
+• Unlocks the [color=%skill%]Perfect Focus[/color] skill which grants stacking [color=%effect%]Perfect Focus[/color]. Each stack increases your Action Points by [color=%positive%]3[/color] on use.
 
 • Undead characters can only use this once per turn.
 
