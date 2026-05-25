@@ -42,6 +42,19 @@ this.legend_pry_armor_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ChanceSmash = 50;
 	}
 
+	function setItem (_item) {
+		if (this.m.IsPolearm) {
+			this.m.Description = "Tear a weak spot in your opponent\'s armor to reveal a weakspot. Will apply Compromised Armor on every successful hit, which increases damage ignoring armor and armor damage by 20%. Can cover the distance of 2 tiles and can be used from behind the frontline, outside the range of most melee weapons.";
+			this.m.FatigueCost = 35;
+			this.m.ActionPointCost = 6;
+			this.m.MaxRange = 2;
+			this.m.Icon = "skills/legend_active_pry_armor_polehammer.png";
+			this.m.IconDisabled = "skills/legend_active_pry_armor_polehammer_bw.png";
+			this.m.Overlay = "active_legend_pry_armor_polehammer";
+		}
+		this.skill.setItem(_item);
+	}
+
 	function getTooltip()
 	{
 		local ret = this.getDefaultTooltip();

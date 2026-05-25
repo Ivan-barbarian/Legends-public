@@ -34,36 +34,38 @@
 {
 	switch (true)
 	{
-		case _weapon.isWeaponType(::Const.Items.WeaponType.Axe):
-			return _properties.IsSpecializedInAxes;
-		case _weapon.isWeaponType(::Const.Items.WeaponType.Bow):
-			return _properties.IsSpecializedInBows;
-		case _weapon.isWeaponType(::Const.Items.WeaponType.Cleaver):
-			return _properties.IsSpecializedInCleavers;
-		case _weapon.isWeaponType(::Const.Items.WeaponType.Crossbow):
-		case _weapon.isWeaponType(::Const.Items.WeaponType.Firearm): // handgonne
-			return _properties.IsSpecializedInCrossbows;
-		case _weapon.isWeaponType(::Const.Items.WeaponType.Dagger):
-			return _properties.IsSpecializedInDaggers;
-		case _weapon.isWeaponType(::Const.Items.WeaponType.Flail):
-			return _properties.IsSpecializedInFlails;
-		case _weapon.isWeaponType(::Const.Items.WeaponType.Hammer):
-			return _properties.IsSpecializedInHammers;
-		case _weapon.isWeaponType(::Const.Items.WeaponType.Mace):
-			return _properties.IsSpecializedInMaces;
-		case _weapon.isWeaponType(::Const.Items.WeaponType.Sling):
-			return _properties.IsSpecializedInSlings;
-		case _weapon.isWeaponType(::Const.Items.WeaponType.Spear):
-			return _properties.IsSpecializedInSpears;
-		case _weapon.isWeaponType(::Const.Items.WeaponType.Sword):
-			return _properties.IsSpecializedInSwords;
-		case _weapon.isWeaponType(::Const.Items.WeaponType.Throwing):
-			return _properties.IsSpecializedInThrowing;
-		case _weapon.isWeaponType(::Const.Items.WeaponType.Staff):
-		case _weapon.isWeaponType(::Const.Items.WeaponType.Polearm):
-			return _properties.IsSpecializedInPolearms;
-		case _weapon.isWeaponType(::Const.Items.WeaponType.Musical):
-			return _properties.IsSpecializedInMusic;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Axe) && _properties.IsSpecializedInAxes:
+			return true;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Bow) && _properties.IsSpecializedInBows:
+			return true;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Cleaver) && _properties.IsSpecializedInCleavers:
+			return true;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Crossbow) && _properties.IsSpecializedInCrossbows:
+			return true;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Firearm) && _properties.IsSpecializedInCrossbows: // handgonne
+			return true;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Dagger) && _properties.IsSpecializedInDaggers:
+			return true;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Flail) && _properties.IsSpecializedInFlails:
+			return true;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Hammer) && _properties.IsSpecializedInHammers:
+			return true;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Mace) && _properties.IsSpecializedInMaces:
+			return true;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Sling) && _properties.IsSpecializedInSlings:
+			return true;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Spear) && _properties.IsSpecializedInSpears:
+			return true;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Sword) && _properties.IsSpecializedInSwords:
+			return true;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Throwing) && _properties.IsSpecializedInThrowing:
+			return true;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Staff) && _properties.IsSpecializedInPolearms:
+			return true;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Polearm) && _properties.IsSpecializedInPolearms:
+			return true;
+		case _weapon.isWeaponType(::Const.Items.WeaponType.Musical) && _properties.IsSpecializedInMusic:
+			return true;
 		default:
 			return false;
 	}
