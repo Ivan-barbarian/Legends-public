@@ -1,7 +1,6 @@
 this.legend_ranged_lash_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
-	function create()
-	{
+	function create() {
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendRangedLash);
 		this.m.Description = "Aim for an opponent\'s head. Somewhat unpredictable in damage, but able to strike over or around shield cover with a bit of luck.";
 		this.m.Icon = "skills/active_91.png";
@@ -40,12 +39,10 @@ this.legend_ranged_lash_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ChanceSmash = 50;
 	}
 
-	function getTooltip()
-	{
+	function getTooltip() {
 		local ret = this.getDefaultTooltip();
 
-		if (!::Legends.S.isCharacterWeaponSpecialized(this.getContainer().getActor().getCurrentProperties(), this.getItem()))
-		{
+		if (!::Legends.S.isCharacterWeaponSpecialized(this.getContainer().getActor().getCurrentProperties(), this.getItem())) {
 			ret.push({
 				id = 6,
 				type = "text",
@@ -57,11 +54,11 @@ this.legend_ranged_lash_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-	function onAfterUpdate( _properties )
-	{
-		if (::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()))
+	function onAfterUpdate( _properties ) {
+		if (::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem())) {
 			this.m.ActionPointCost -= 1;
-		this.m.IsShieldRelevant = !::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem());
+			this.m.IsShieldRelevant = false;
+		}
 	}
 
 	function onUse( _user, _targetTile )
