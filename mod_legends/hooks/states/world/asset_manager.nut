@@ -1149,39 +1149,40 @@
 
 		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
+			local mult = bro.getSkills().hasPerk(::Legends.Perk.LegendWheelMaintenance) ? 105.0 : 100.0;
 			local terrains = bro.getBackground().getModifiers().Terrain;
 			ret.TerrainModifiers[0][0] = "Plains";
-			ret.TerrainModifiers[0][1] += terrains[2] * 100.0;
+			ret.TerrainModifiers[0][1] += terrains[2] * mult;
 
 			ret.TerrainModifiers[1][0] = "Swamp";
-			ret.TerrainModifiers[1][1] += terrains[3] * 100.0;
+			ret.TerrainModifiers[1][1] += terrains[3] * mult;
 
 			ret.TerrainModifiers[2][0] = "Hills";
-			ret.TerrainModifiers[2][1] += terrains[4] * 100.0;
+			ret.TerrainModifiers[2][1] += terrains[4] * mult;
 
 			ret.TerrainModifiers[3][0] = "Forests";
-			ret.TerrainModifiers[3][1] += terrains[5] * 100.0;
+			ret.TerrainModifiers[3][1] += terrains[5] * mult;
 
 			ret.TerrainModifiers[4][0] = "Mountains";
-			ret.TerrainModifiers[4][1] += terrains[9] * 100.0;
+			ret.TerrainModifiers[4][1] += terrains[9] * mult;
 
 			ret.TerrainModifiers[5][0] = "Farmland";
-			ret.TerrainModifiers[5][1] += terrains[11] * 100.0;
+			ret.TerrainModifiers[5][1] += terrains[11] * mult;
 
 			ret.TerrainModifiers[6][0] = "Snow";
-			ret.TerrainModifiers[6][1] += terrains[12] * 100.0;
+			ret.TerrainModifiers[6][1] += terrains[12] * mult;
 
 			ret.TerrainModifiers[7][0] = "Highlands";
-			ret.TerrainModifiers[7][1] += terrains[14] * 100.0;
+			ret.TerrainModifiers[7][1] += terrains[14] * mult;
 
 			ret.TerrainModifiers[8][0] = "Stepps";
-			ret.TerrainModifiers[8][1] += terrains[15] * 100.0;
+			ret.TerrainModifiers[8][1] += terrains[15] * mult;
 
 			ret.TerrainModifiers[9][0] = "Deserts";
-			ret.TerrainModifiers[9][1] += terrains[17] * 100.0;
+			ret.TerrainModifiers[9][1] += terrains[17] * mult;
 
 			ret.TerrainModifiers[10][0] = "Oases";
-			ret.TerrainModifiers[10][1] += terrains[18] * 100.0;
+			ret.TerrainModifiers[10][1] += terrains[18] * mult;
 
 			ret.Brothers.push({
 				Name = bro.getName(),

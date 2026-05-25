@@ -1,6 +1,8 @@
 this.legend_double_swing_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		BothHitMiddle = false
+		BothHitMiddle = false,
+		TilesLeft = 1,
+		TIlesRight = 1
 	},
 
 	function create() {

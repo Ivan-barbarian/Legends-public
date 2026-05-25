@@ -55,16 +55,8 @@ this.legend_skewer_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		if (this.m.IsSpearSkewer)
-		{
-			this.m.FatigueCostMult = _properties.IsSpecializedInSpears ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-			this.m.ActionPointCost = _properties.IsSpecializedInSpears ? 5 : 6;
-		}
-		else
-		{
-			this.m.FatigueCostMult = _properties.IsSpecializedInPolearms ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-			this.m.ActionPointCost = _properties.IsSpecializedInPolearms ? 5 : 6;
-		}
+		if (::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()))
+			this.m.ActionPointCost -= 1;
 	}
 
 	function onUse( _user, _targetTile )

@@ -17,7 +17,7 @@ this.legend_dazed_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "This character has received so heavy a blow that they are dazed, confused and gasping for air. Will wear off in [color=%negative%]" + this.m.TurnsLeft + "[/color] turn(s).";
+		return "This character has been stupefied, left confused and gasping for air. The effect will wear off in [color=%negative%]" + this.m.TurnsLeft + "[/color] turn(s).";
 	}
 
 	function getTooltip()

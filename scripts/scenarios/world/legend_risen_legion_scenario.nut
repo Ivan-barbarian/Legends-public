@@ -273,12 +273,12 @@ this.legend_risen_legion_scenario <- this.inherit("scripts/scenarios/world/start
 		}
 	}
 
-	function onHiredByScenario( bro )
+	function onHiredByScenario( _bro )
 	{
-		if (!bro.getSkills().hasTrait(::Legends.Trait.RacialSkeleton) && bro.getFlags().has("skeleton"))
+		if (!_bro.getSkills().hasTrait(::Legends.Trait.RacialSkeleton) && _bro.getFlags().has("skeleton"))
 		{
-			::Legends.Traits.grant(bro, ::Legends.Trait.RacialSkeleton);
-			::Legends.Traits.grant(bro, ::Legends.Trait.LegendFleshless);
+			::Legends.Traits.grant(_bro, ::Legends.Trait.RacialSkeleton);
+			::Legends.Traits.grant(_bro, ::Legends.Trait.LegendFleshless);
 		}
 	}
 

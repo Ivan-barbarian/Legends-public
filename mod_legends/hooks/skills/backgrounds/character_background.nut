@@ -1351,8 +1351,9 @@
 		// THE COMMMENT ABOVE IS PROBABLY WRONG. Scenario doesn't seem to be null here on deserialize. But some weird
 		// shenanigans are still happening, so I will test some more. -- Midas
 		local origin = this.World.Assets.getOrigin();
-		if (origin != null)
+		if (origin != null && this.getContainer() != null && !this.getContainer().getActor().getFlags().get("ScenarioPerkSet"))
 		{
+			this.getContainer().getActor().getFlags().set("ScenarioPerkSet", true);
 			origin.onBuildPerkTree(this);
 		}
 

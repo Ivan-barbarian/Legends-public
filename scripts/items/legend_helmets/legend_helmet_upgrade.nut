@@ -469,7 +469,7 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		{
 			slot = this.Const.Items.HelmetUpgrades.ExtraVanity;
 		}
-		if (this.isVisible() == false || this.getCondition() == 0)
+		if (this.isVisible() == false || this.getCondition() == 0 && this.m.Armor.m.HideHelmetIfDestroyed)
 		{
 			sprite = "";
 			spriteCorpse = "";

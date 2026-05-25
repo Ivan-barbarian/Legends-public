@@ -8,7 +8,7 @@ this.legend_named_estoc <- this.inherit("scripts/items/weapons/named/named_weapo
 		this.named_weapon.create();
 		this.m.ID = "weapon.legend_named_estoc";
 		this.m.NameList = this.Const.Strings.EstocNames;
-		this.m.Description = "To craft a wellmade Estoc is difficult, requiring both a stiff and elegant for the thrust of a swift and mobile fencer. Yet, the smith that crafted this did more than craft a wellmade one, he crafted a masterpiece.";
+		this.m.Description = "A sleek and thin blade that easily slips between gaps in the armor as if guided there. Whoever crafted this masterwork knew what a mobile fencer wants for.";
 		this.m.IconLarge = "weapons/melee/legend_estoc_01_named_01.png";
 		this.m.Icon = "weapons/melee/legend_estoc_01_named_01_70x70.png";
 		this.m.WeaponType = this.Const.Items.WeaponType.Sword;

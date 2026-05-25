@@ -4,7 +4,7 @@
 		create();
 		::Legends.Screens.hook(this, "A", function (_screen) {
 			_screen.Text = "[img]gfx/ui/events/event_64.png[/img] %noble% suddenly enters your tent. %They're_noble% attired in armor and %their_noble% weapon is at %their_noble% side. It almost seems as if %they_noble% dressed up for this occasion, and %they_noble% does indeed stand upright and proper. You ask what it is %they_noble% wants, and %they_noble% speaks with %their_noble% head held high and %their_noble% eyes looking straight ahead.%SPEECH_ON%It has come to my attention that %lowborn% is paid more than I. While I\'ve no issue with the %person_lowborn% personally, I do want to point out that %they_lowborn% is a %person_lowborn% with no birthright to anything but %their_lowborn% own two feet. You can\'t possibly have a lowborn being paid more than a %person_noble% of the purple. We nobles deserve more.%SPEECH_OFF%";
-			_screen.Options[0].Text = "I will see to it you are paid no less than %them_lowborn."
+			_screen.Options[0].Text = "I will see to it you are paid no less than %them_lowborn%."
 		});
 		::Legends.Screens.hook(this, "B", function (_screen) {
 			_screen.Text = "[img]gfx/ui/events/event_64.png[/img]You don\'t necessarily agree with %them_noble%, but at the same time you can see that denying this request may cause some heretofore unseen problems. With a few dashes of your quill pen across the roster scroll, you assign %noble% a higher salary and tell %them_noble% to expect a heavier purse come next payday. The %person_noble% finally looks at you and bows from the waist.%SPEECH_ON%You\'ve made the good and proper decision.%SPEECH_OFF%%They_noble% turns on %their_noble% heels and marches back out with as much gusto as %they_noble% did coming in.";

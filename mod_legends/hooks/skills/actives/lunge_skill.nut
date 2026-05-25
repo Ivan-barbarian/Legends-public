@@ -1,12 +1,13 @@
 ::mods_hookExactClass("skills/actives/lunge_skill", function (o) {
 	o.m.isGreatLunge <- false;
+	o.m.IsStaffLunge <- false;
 
 	o.setItem <- function (_item) {
 		this.skill.setItem(_item);
 		if (this.m.isGreatLunge) {
 			this.m.Name = "Great Lunge";
 			this.m.Description = "A stronger lunge towards a target 2 tiles away, followed by a precise thrusting attack to catch them unprepared. The faster you are, the more damage you do.";
-			this.m.ActionPointCost = 5;
+			this.m.ActionPointCost = this.m.IsStaffLunge ? 6 : 5;
 			this.m.FatigueCost = 30;
 		}
 	}
@@ -27,6 +28,9 @@
 		onAfterUpdate(_properties);
 		if (::Legends.Perks.has(this.getContainer(), ::Legends.Perk.LegendFreedomOfMovement)) {
 			this.m.FatigueCostMult *= 0.5;
+		}
+		if (::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) && this.m.IsStaffLunge) {
+			this.m.ActionPointCost -= 1;
 		}
 	}
 

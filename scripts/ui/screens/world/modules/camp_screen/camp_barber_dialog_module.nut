@@ -76,48 +76,37 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		local isFemale = bro.getGender() == 1;
 		local ethnicity = bro.getEthnicity();
 
-		if (temp.getSprite("hair").HasBrush)
-		{
-			color = temp.getSprite("hair").getBrush().Name;
-		}
-		else if (temp.getSprite("beard").HasBrush)
-		{
-			color = temp.getSprite("beard").getBrush().Name;
-		}
-		else
-		{
-			color = "brown";
+		if (temp.getFlags().has("BarberColor")) {
+        	color = temp.getFlags().get("BarberColor");
+    	} else {
+			if (temp.getSprite("hair").HasBrush) {
+				color = temp.getSprite("hair").getBrush().Name;
+			} else if (temp.getSprite("beard").HasBrush) {
+				color = temp.getSprite("beard").getBrush().Name;
+			} else {
+				color = "brown";
+			}
+
+			if (this.String.contains(color, "_black_")) {
+				color = "black";
+			} else if (this.String.contains(color, "_blonde_")) {
+				color = "blonde";
+			} else if (this.String.contains(color, "_grey_")) {
+				color = "grey";
+			} else if (this.String.contains(color, "_red_")) {
+				color = "red";
+			} else {
+				color = "brown";
+			}
+
+			temp.getFlags().set("BarberColor", color);
 		}
 
-		if (this.String.contains(color, "_black_"))
-		{
-			color = "black";
-		}
-		else if (this.String.contains(color, "_blonde_"))
-		{
-			color = "blonde";
-		}
-		else if (this.String.contains(color, "_grey_"))
-		{
-			color = "grey";
-		}
-		else if (this.String.contains(color, "_red_"))
-		{
-			color = "red";
-		}
-		else
-		{
-			color = "brown";
-		}
-
-		if (_layerID == "color")
-		{
+		if (_layerID == "color") {
 			local index = 0;
 
-			foreach( i, s in this.Const.HairColors.All )
-			{
-				if (s == color)
-				{
+			foreach( i, s in this.Const.HairColors.All ) {
+				if (s == color)	{
 					index = i;
 					break;
 				}
@@ -125,34 +114,29 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 
 			index = index + _change;
 
-			if (index >= this.Const.HairColors.All.len())
-			{
+			if (index >= this.Const.HairColors.All.len()) {
 				index = 0;
 			}
-			else if (index < 0)
-			{
+			else if (index < 0)	{
 				index = this.Const.HairColors.All.len() - 1;
 			}
 
 			color = this.Const.HairColors.All[index];
 
-			if (isFemale)
-			{
+			temp.getFlags().set("BarberColor", color);
+
+			if (isFemale) {
 				this.changeIndexEx(this.Const.Hair.BarberFemale, temp.getSprite("hair"), 0, "hair", color, "");
 				this.changeIndexEx(this.Const.Beards.BarberFemale, temp.getSprite("beard"), 0, "beard", color, "");
 			}
-			else
-			{
+			else {
 				this.changeIndexEx(this.Const.Hair.Barber, temp.getSprite("hair"), 0, "hair", color, "");
 				this.changeIndexEx(this.Const.Beards.Barber, temp.getSprite("beard"), 0, "beard", color, "");
 			}
 
-			if (temp.getSprite("beard").HasBrush && this.doesBrushExist(temp.getSprite("beard").getBrush().Name + "_top"))
-			{
+			if (temp.getSprite("beard").HasBrush && this.doesBrushExist(temp.getSprite("beard").getBrush().Name + "_top")) {
 				temp.getSprite("beard_top").setBrush(temp.getSprite("beard").getBrush().Name + "_top");
-			}
-			else
-			{
+			} else {
 				temp.getSprite("beard_top").resetBrush();
 			}
 		}
@@ -294,77 +278,103 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		return bro.getImagePath();
 	}
 
-	function changeIndex( _list, _sprite, _change )
-	{
+	function changeIndex(_list, _sprite, _change) {
 		local currentBrush = _sprite.HasBrush ? _sprite.getBrush().Name : "";
-		local index = 0;
+		local index = -1;
 
-		foreach( i, s in _list )
-		{
-			if (s == currentBrush)
-			{
+		foreach (i, s in _list) {
+			if (s == currentBrush) {
 				index = i;
 				break;
 			}
 		}
 
-		index = index + _change;
+		if (index == -1) {
+			index = _change > 0 ? 0 : _list.len() - 1;
+		} else {
+			index = index + _change;
+			if (index >= _list.len()) {
+				index = 0;
+			} else if (index < 0) {
+				index = _list.len() - 1;
+			}
+		}
 
-		if (index >= _list.len())
-		{
-			index = 0;
-		}
-		else if (index < 0)
-		{
-			index = _list.len() - 1;
-		}
-
-		if (_list[index] != "")
-		{
-			_sprite.setBrush(_list[index]);
-		}
-		else
-		{
-			_sprite.resetBrush();
+		if (_list.len() > 0 && index >= 0 && index < _list.len()) {
+			if (_list[index] != "") {
+				_sprite.setBrush(_list[index]);
+			} else {
+				_sprite.resetBrush();
+			}
 		}
 	}
 
-	function changeIndexEx( _list, _sprite, _change, _prefix, _midfix, _suffix )
-	{
+	function changeIndexEx(_list, _sprite, _change, _prefix, _midfix, _suffix) {
 		local currentBrush = _sprite.HasBrush ? _sprite.getBrush().Name : "";
-		local index = 0;
+		local index = -1;
 
-		if (currentBrush != "")
-    {
-        foreach( i, s in _list )
-        {
-            if (s != "" && currentBrush.find(s) != null) 
-            {
-                index = i;
-                break;
-            }
-        }
-    }
-
-		index = index + _change;
-
-		if (index >= _list.len())
-		{
-			index = 0;
-		}
-		else if (index < 0)
-		{
-			index = _list.len() - 1;
+		local cleanList = [];
+		foreach (item in _list) {
+			if (cleanList.find(item) == null) {
+				cleanList.push(item);
+			}
 		}
 
-		if (_list[index] != "")
-		{
-			_sprite.setBrush(_prefix + (_prefix != "" ? "_" : "") + _midfix + (_midfix != "" ? "_" : "") + _list[index] + (_suffix != "" ? "_" : "") + _suffix);
+		foreach (i, s in cleanList) {
+			if (s == "" && currentBrush == "") { // bald
+				index = i;
+				break;
+			}
+
+			if (s == "" || currentBrush == "") {
+				continue;
+			}
+
+			local isMatch = false;
+
+			local expected1 = _prefix + (_prefix != "" ? "_" : "") + _midfix + (_midfix != "" ? "_"	: "") + s + (_suffix != "" ? "_" : "") + _suffix; // hair_brown_xx
+			local expected2 = _prefix + (_prefix != "" ? "_" : "") + s + (_suffix != "" ? "_" : "") + _suffix; // hair shaved
+
+			if (currentBrush == expected1 || currentBrush == expected2) {
+					index = i;
+					break;
+			}
+
+			if (currentBrush == expected1 || currentBrush == expected2) {
+				isMatch = true;
+			} else if (_change == 0 && (_prefix == "hair" || _prefix == "beard")) { // color
+				foreach (c in this.Const.HairColors.All) {
+					if (currentBrush == _prefix + "_" + c + "_" + s	|| currentBrush == _prefix + "_" + s)
+					{
+						isMatch = true;
+						break;
+					}
+				}
+			}
+
+			if (isMatch) {
+				index = i;
+				break;
+			}
 		}
-		else
-		{
-			_sprite.resetBrush();
+
+		if (index == -1) {
+			index = _change > 0 ? 0 : cleanList.len() - 1;
+		} else {
+			index = index + _change;
+			if (index >= cleanList.len()) {
+				index = 0;
+			} else if (index < 0) {
+				index = cleanList.len() - 1;
+			}
+		}
+
+		if (cleanList.len() > 0 && index >= 0 && index < cleanList.len()) {
+			if (cleanList[index] != "") {
+				_sprite.setBrush(_prefix + (_prefix != "" ? "_" : "") + _midfix + (_midfix != "" ? "_" : "") + cleanList[index] + (_suffix != "" ? "_" : "") + _suffix);
+			} else {
+				_sprite.resetBrush();
+			}
 		}
 	}
-
 });

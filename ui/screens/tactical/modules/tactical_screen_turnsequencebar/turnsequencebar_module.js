@@ -878,11 +878,11 @@ TacticalScreenTurnSequenceBarModule.prototype.selectFirstEntity = function (_ent
 		if (entityData === null || entityData === undefined) {
 			if (retryCount < maxRetries) {
 				console.error('ERROR: Failed to query entity data for entity (' + _entity.id + '). Reason: Invalid result. Retrying...');
-				setTimeout(function () { self.selectFirstEntity(_entity, _entityDIV, _previousEntityWasHiddenToPlayer); }, 100);
+				setTimeout(function () { self.selectFirstEntity(_entity, _entityDIV, _previousEntityWasHiddenToPlayer, ++retryCount); }, 100);
 			}
 			else{
 				console.error('ERROR: Failed to query entity data for entity (' + _entity.id + '). Reason: Invalid result. Removing the entity from the sequence bar and moving to the next one...');
-				self.removeEntity(_entity.id);
+				self.notifyBackendForceRemoveInvalidEntity(_entity.id);
 			}
 			return;
 		}
@@ -2200,4 +2200,8 @@ TacticalScreenTurnSequenceBarModule.prototype.notifyBackendQueryEntityStatusEffe
 
 TacticalScreenTurnSequenceBarModule.prototype.notifyBackendQueryEntity = function (_entityId, _callback) {
 	SQ.call(this.mSQHandle, 'onQueryEntity', _entityId, _callback);
+};
+
+TacticalScreenTurnSequenceBarModule.prototype.notifyBackendForceRemoveInvalidEntity = function (_entityId, _callback) {
+	SQ.call(this.mSQHandle, 'onForceRemoveInvalidEntity', _entityId, _callback);
 };

@@ -8,7 +8,7 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Overlay = "active_strafing_run";
 		this.m.SoundOnUse = [];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OtherTargeted;
+		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
@@ -69,7 +69,7 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCostMult = 1.0;
 		if (_properties.IsSpecializedInCrossbows)
 		{
-			this.m.FatigueCostMult = Const.Combat.WeaponSpecFatigueMult;
+			this.m.FatigueCostMult = ::Const.Combat.WeaponSpecFatigueMult;
 			this.m.ActionPointCost -= 1;
 		}
 	}
@@ -298,9 +298,13 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-	function onAfterTeleport(_info) {
-		local success = _info.Skill.onUse(_info.User, _info.TargetTile);
-		return success;
+	function onAfterTeleport(_info)    {
+		local ret = _info.Skill.onUse(_info.User, _info.TargetTile);
+		if (_info.User != null && _info.User.isAlive() && !_info.User.isDying()) {
+			_info.User.getSkills().update();
+			_info.User.setDirty(true);
+		}
+		return ret;
 	}
 });
 

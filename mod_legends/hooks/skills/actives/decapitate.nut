@@ -1,6 +1,5 @@
 ::mods_hookExactClass("skills/actives/decapitate", function(o)
 {
-	o.m.ApplyAxeMastery <- false;
 	o.m.IsScytheDecapitate <- false;
 	o.m.IsTwoHand <- false;
 
@@ -45,7 +44,7 @@
 			icon = "ui/icons/vision.png",
 			text = "Has a range of [color=%positive%]2[/color] tiles"
 		});
-		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms) {
+		if (!::Legends.S.isCharacterWeaponSpecialized(p, this.getItem())) {
 			ret.push({
 				id = 6,
 				type = "text",
@@ -56,17 +55,19 @@
 		return ret;
 	}
 
-	local onAfterUpdate = o.onAfterUpdate;
 	o.onAfterUpdate = function ( _properties ) {
-		if (this.m.ApplyAxeMastery) {
-			this.m.FatigueCostMult = _properties.IsSpecializedInAxes ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-		}
-		else if (this.m.IsScytheDecapitate) {
-			this.m.FatigueCostMult = _properties.IsSpecializedInPolearms ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-			this.m.ActionPointCost = _properties.IsSpecializedInPolearms ? 5 : 6;
-		}
-		else {
-			onAfterUpdate(_properties);
+		if (::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) && this.m.IsScytheDecapitate)
+			this.m.ActionPointCost -= 1;
+	}
+
+	local onAnySkillUsed = o.onAnySkillUsed;
+	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties ) {
+		onAnySkillUsed(_skill, _targetEntity, _properties);
+		if (!this.m.IsScytheDecapitate)
+			return;
+		if (_targetEntity != null && !::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1) {
+			_properties.MeleeSkill += -15;
+			this.m.HitChanceBonus += -5;
 		}
 	}
 });

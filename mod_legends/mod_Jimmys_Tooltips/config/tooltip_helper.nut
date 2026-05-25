@@ -583,11 +583,14 @@ local function colorizeInGreen( _text )
 		if (!_item.m.IsDroppedAsLoot)
 			continue;
 
+		local upgradeIconPaths = ::ModJimmysTooltips.getItemIconPaths(_item);
+
 		local ret = {
 			id = _startID,
 			type = "hint",
-			icon = checkForIcon("ui/items/", _item),
-			text = _item.getName()
+			icon = upgradeIconPaths[0],
+			icons = upgradeIconPaths
+			text = _item.makeName()
 		};
 
 		switch(_item.getSlotType())
@@ -640,6 +643,24 @@ local function colorizeInGreen( _text )
 		return "ui/items/supplies/legend_placeholder.png";
 	else
 		return toAdd + _item.getIcon();
+}
+
+::ModJimmysTooltips.getItemIconPaths <- function (_item) {
+	local paths = [];
+	local baseIcon = ::ModJimmysTooltips.checkForIcon("ui/items/", _item);
+	paths.push(baseIcon);
+
+	local slot = _item.getSlotType();
+	if (slot == ::Const.ItemSlot.Body || slot == ::Const.ItemSlot.Head) {
+		if(_item.getUpgrades().len() > 0){
+			foreach (u in _item.m.Upgrades) {
+				 if (u != null && u.getIcon() != "" && u.getIcon().find("rune_sigils") == null) {
+					paths.push("ui/items/" + u.getIcon());
+				}
+			}
+		}
+	}
+	return paths;
 }
 
 ::ModJimmysTooltips.modGetStandardLootChance <- function( _tooltip, _item, _isArmor = false )

@@ -40,20 +40,21 @@ this.legend_ai_slingstaff_move_into_range <- this.inherit("scripts/ai/tactical/b
 		local bestTargetTile = null;
 
 		foreach (t in this.getAgent().getKnownOpponents()) {
-			if (t.Actor.isNull()) {
+			if (::Legends.S.isEntityNullOrDead(t.Actor)) {
 				continue;
 			}
 			local targetTile = t.Actor.getTile();
-			local dist = myTile.getDistanceTo(targetTile);
 
-			foreach (skillID in this.m.PossibleSkills) {
-				local skill = _entity.getSkills().getSkillByID(skillID)
-        		if (skill != null && dist >= skill.getMinRange() && dist <= skill.getMaxRange() && skill.onVerifyTarget(myTile, targetTile)) {
-            		return this.Const.AI.Behavior.Score.Zero; 
-        		}
-    		}
+			/*local dist = myTile.getDistanceTo(targetTile);
 
-			if (dist == 3 && targetTile.IsVisibleForEntity) {
+            foreach (skillID in this.m.PossibleSkills) {
+                local skill = _entity.getSkills().getSkillByID(skillID);
+                if (skill != null && skill.isUsable() && dist >= skill.getMinRange() && dist <= skill.getMaxRange() && skill.onVerifyTarget(myTile, targetTile)) {
+                    return this.Const.AI.Behavior.Score.Zero;
+                }
+            }*/
+
+			if (myTile.getDistanceTo(targetTile) == 3 && targetTile.IsVisibleForEntity) {
 				bestTargetTile = targetTile;
 				break;
 			}
@@ -112,6 +113,8 @@ this.legend_ai_slingstaff_move_into_range <- this.inherit("scripts/ai/tactical/b
 	function findBestTile(_entity, _targetTile) {
 		local actorTile = _entity.getTile();
 		local bestTile = null;
+		local allies = _entity.getAlliedFactions();
+		local properties = _entity.getCurrentProperties();
 
 		for (local i = 0; i < 6; i = ++i) {
 			if (!actorTile.hasNextTile(i)) {
@@ -122,6 +125,21 @@ this.legend_ai_slingstaff_move_into_range <- this.inherit("scripts/ai/tactical/b
 			if (!nextTile.IsEmpty || this.Math.abs(nextTile.Level - actorTile.Level) > 1) {
 				continue;
 			}
+
+			local apCost = _entity.getActionPointCosts()[nextTile.Type] * properties.MovementAPCostMult;
+			local fatCost = _entity.getFatigueCosts()[nextTile.Type] * properties.MovementFatigueCostMult * properties.FatigueEffectMult;
+			if (this.Math.abs(nextTile.Level - actorTile.Level) == 1) {
+				apCost += _entity.getLevelActionPointCost();
+				fatCost += _entity.getLevelFatigueCost();
+			}
+			
+        	if (apCost > _entity.getActionPoints() || fatCost > _entity.getFatigueMax() - _entity.getFatigue()) {
+            		continue;
+        	}
+
+			if (nextTile.getZoneOfControlCountOtherThan(allies) > 0) {
+            	continue;
+        	}
 
 			local dist = nextTile.getDistanceTo(_targetTile);
 			if (dist == 4) {

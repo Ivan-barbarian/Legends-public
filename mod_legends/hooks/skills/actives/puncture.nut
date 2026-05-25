@@ -19,8 +19,7 @@
 	}
 
 	local create = o.create;
-	o.create = function()
-	{
+	o.create = function() {
 		create();
 		this.m.HitChanceBonus = this.m.IsGreatHalfsword ? -80 : -65;
 	}
@@ -43,17 +42,18 @@
 		return tooltip;
 	}
 
-	o.canDoubleGrip = function ()
-	{
+	o.canDoubleGrip = function () {
+		local actor = this.getContainer().getActor();
 		local missinghand = this.m.Container.getSkillByID("injury.missing_hand");
 		local newhand = ::Legends.Traits.get(this, ::Legends.Trait.LegendProstheticHand);
-		local main = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		local off = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-		return (missinghand == null || newhand != null) && main != null && off == null && main.isDoubleGrippable();
+		local main = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local off = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+		local hasXbow = off != null && ::MSU.String.endsWith(off.getID(), "_hand_crossbow");
+		local hasNet = off != null && ::MSU.String.endsWith(off.getID(), "_net") && actor.getCurrentProperties().IsSpecializedInNets;
+		return (missinghand == null || newhand != null) && main != null && (off == null || hasXbow || hasNet) && main.isDoubleGrippable();
 	}
 
-	o.getHitChance <- function (_targetEntity)
-	{
+	o.getHitChance <- function (_targetEntity) {
 		if (_targetEntity == null)
 			return 0;
 
@@ -78,8 +78,8 @@
 	
 	local onAfterUpdate = o.onAfterUpdate;
 	o.onAfterUpdate = function ( _properties ) {
-		if (!this.m.IsHalfsword) {
-			return onAfterUpdate(_properties);
+		if (this.m.IsHalfsword && ::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem())) {
+			this.m.ActionPointCost -= 1;
 		}
 		else {
 			this.m.IsHidden = !this.canDoubleGrip() && !this.m.Item.isItemType(this.Const.Items.ItemType.TwoHanded);

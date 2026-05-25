@@ -51,7 +51,7 @@
 		if (_skill == null)
 			return;
 
-		if (_skill.getID() != ::Legends.Actives.getID(::Legends.Active.ShootBolt) && _skill.getID() != ::Legends.Actives.getID(::Legends.Active.ShootStake))
+		if (_skill.getID() != ::Legends.Actives.getID(::Legends.Active.ShootBolt) && _skill.getID() != ::Legends.Actives.getID(::Legends.Active.ShootStake) && _skill.getID() != ::Legends.Actives.getID(::Legends.Active.LegendPiercingBolt))
 			return;
 
 		if (!::Legends.Perks.has(this.getContainer(), ::Legends.Perk.LegendBarrage))

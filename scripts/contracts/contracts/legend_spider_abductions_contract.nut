@@ -485,7 +485,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 		this.m.Screens.push({
 			ID = "NestDestroyed",
 			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_123.png[/img]{As the last little nightmare falls silent, there is a firm calmness over the battlefield. The broken and torn web covering the ground now gently breaks apart and spreads to the winds, succumbing to it\'s wounds the same way as it\'s creators have. A mixture of blood and poison pools under each sticky corpse as crows gather nearby for your departure.\n\n You order the %companyname% to clear out any remaining eggs in the nest, and prepare to bring the survivors back to %townname%}",
+			Text = "[img]gfx/ui/events/event_123.png[/img]{As the last of the skittering nightmares falls silent, a firm calmness takes over the battlefield. The torn web covering the ground gently breaks apart and drifts to the wind, as if succumbing to its wounds just as its spinners did. A mixture of blood and venom pools under each of the sticky corpses as carrion birds gather nearby, patiently awaiting your departure.\n\n You order the %companyname% to clear out any eggs remaining in the nest and prepare to escort the survivors back to %townname%}",
 			Image = "",
 			List = [],
 			Options = [
@@ -508,7 +508,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 		this.m.Screens.push({
 			ID = "Success1",
 			Title = "Upon your return...",
-			Text = "[img]gfx/ui/events/event_43.png[/img]{The townsfolk of %townname% thank you and %employer% expresses no concern. They continue to pace up and down %their_employer% chambers, dictating in muttered tones to a scribe about some other crisis. The steward pulls you to one side and hands you your payment. No words are exchanged.\n\n Today was one danger, tomorrow will yield another - either way, you can expect to be back here soon with more to say and more to kill.}",
+			Text = "[img]gfx/ui/events/event_43.png[/img]{The townsfolk of %townname% offer their gratitude, but %employer% barely registers your presence. %They_employer% paces the length of %their_employer% chambers, dictating a response to some fresh crisis to a scribe, who dutifully jots it all down on a lengthy roll of parchment. The steward quietly pulls you aside and presses a heavy purse into your hands, with no unnecessary words exchanged.\n\n Today's threat may be dealt with, but tomorrow will yield another. But that's just as well - without monsters to kill there'd be no coin to earn.}",
 			Image = "",
 			List = [],
 			Options = [
@@ -544,7 +544,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 				// TODO: scale reward based on the number of survivors who made it back?
 				if (survivorCount == this.Flags.get("NumAbductees"))
 				{
-					this.Text += "{The townsfolk you rescued step forward.%SPEECH_ON%They saved all of us! We thought we were all done for, but they kept us safe.\"\n\n\"And not a single one of us was left behind either!\"\n\n\"All shall hear of the %companyname%!\"\n\n\"Hear, hear!%SPEECH_OFF%}";
+					this.Text += "{\n\nAs you leave the employer's chambers, the townsfolk you rescued gather around.%SPEECH_ON%They saved all of us! We thought we were all done for, but they kept us safe.\"\n\n\"And not a single one of us was left behind either!\"\n\n\"All shall hear of the %companyname%!\"\n\n\"Hear, hear!%SPEECH_OFF%}";
 					this.Contract.addSituation(this.new("scripts/entity/world/settlements/situations/legend_word_of_mouth_situation"), 5, this.Contract.m.Home, this.List);
 				}
 				this.List.push({

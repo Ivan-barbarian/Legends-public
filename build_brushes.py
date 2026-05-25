@@ -3,17 +3,20 @@
 OS-agnostic brush building script for Legends mod
 Replaces build_brushes.sh with cross-platform Python implementation
 """
-import sys
-import shutil
+
 import argparse
+import shutil
+import sys
 import time
-from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor
+from pathlib import Path
+
 from buildscript.lib import BrushUtils
 
 
 class BrushBuildError(Exception):
     """Custom exception for brush build errors"""
+
     pass
 
 
@@ -145,24 +148,36 @@ class BrushBuilder:
         start = time.time()
         # Build each brush
         with ProcessPoolExecutor() as executor:
-            executor.map(self.brush.build_brush, [ # these are build as bbrusher would
-                "world_tiles",
-                "terrain",
-                "legend_detail",
-            ])
+            list(
+                executor.map(
+                    self.brush.build_brush,
+                    # these are build as bbrusher would
+                    [
+                        "world_tiles",
+                        "terrain",
+                        "legend_detail",
+                    ],
+                )
+            )
         with ProcessPoolExecutor() as executor:
-            executor.map(self.brush.build_brush_best_fit, [ # these are using different packaging method for better compression
-                "legend_armor",
-                "legend_helmets",
-                "legend_characters",
-                "legend_enemies",
-                "legend_weapons",
-                "legend_world",
-                "legend_horses",
-                "legend_ui",
-                "legend_objects",
-                "legend_effects",
-            ])
+            list(
+                executor.map(
+                    self.brush.build_brush_best_fit,
+                    # these are using different packaging method for better compression
+                    [
+                        "legend_armor",
+                        "legend_helmets",
+                        "legend_characters",
+                        "legend_enemies",
+                        "legend_weapons",
+                        "legend_world",
+                        "legend_horses",
+                        "legend_ui",
+                        "legend_objects",
+                        "legend_effects",
+                    ],
+                )
+            )
         print("Elapsed build brush", time.time() - start)
 
     def build(self):
@@ -194,7 +209,9 @@ class BrushBuilder:
 def main():
     """Main entry point"""
     parser = argparse.ArgumentParser(description="Build brushes for Legends mod")
-    parser.add_argument("build_dir", nargs="?", help="Build directory (default: ./build)")
+    parser.add_argument(
+        "build_dir", nargs="?", help="Build directory (default: ./build)"
+    )
     parser.add_argument(
         "repo_dir",
         nargs="?",

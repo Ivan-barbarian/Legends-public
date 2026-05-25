@@ -57,7 +57,8 @@
 	{
 		onAfterUpdate(_properties);
 		if (this.m.IsMeleeRupture) {
-			this.m.ActionPointCost = _properties.IsSpecializedInPolearms ? 4 : 5;
+			if (::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()))
+				this.m.ActionPointCost -= 1;
 		}
 	}
 
@@ -67,7 +68,7 @@
 
 			if (this.m.IsMeleeRupture)
 				return;
-			if (_targetEntity != null && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1) {
+			if (_targetEntity != null && !::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1) {
 				_properties.MeleeSkill += -15;
 				this.m.HitChanceBonus = -10;
 			}

@@ -32,14 +32,14 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function getHideHair()
 	{
-		if (this.m.HideHair && this.getArmor() != 0)
+		if (this.m.HideHair && (this.getArmor() != 0 || !this.m.HideHelmetIfDestroyed))
 		{
 			return true;
 		}
 
 		foreach (u in this.m.Upgrades)
 		{
-			if (u != null && u.m.HideHair && u.isVisible() && u.getCondition() != 0)
+			if (u != null && u.m.HideHair && u.isVisible() && (u.getCondition() != 0 || !this.m.HideHelmetIfDestroyed))
 			{
 				return true;
 			}
@@ -50,14 +50,14 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function getHideBeard()
 	{
-		if (this.m.HideBeard && this.getArmor() != 0)
+		if (this.m.HideBeard && (this.getArmor() != 0 || !this.m.HideHelmetIfDestroyed))
 		{
 			return true;
 		}
 
 		foreach (u in this.m.Upgrades)
 		{
-			if (u != null && u.m.HideBeard && u.isVisible() && u.getCondition() != 0)
+			if (u != null && u.m.HideBeard && u.isVisible() && (u.getCondition() != 0 || !this.m.HideHelmetIfDestroyed))
 			{
 				return true;
 			}
@@ -773,6 +773,16 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 
 		return result;
+	}
+
+	function onAddedToStash( _stashID ) {
+		foreach (u in this.m.Upgrades) {
+			if (u != null && u.isNamed()) {
+				if (u.m.Name.len() == 0) {
+					u.setName(u.createRandomName());
+				}
+			}
+		}
 	}
 
 	function isDroppedAsLoot()

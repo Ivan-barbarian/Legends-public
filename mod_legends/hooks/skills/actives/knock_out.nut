@@ -81,7 +81,7 @@
 	local onAfterUpdate = o.onAfterUpdate;
 	o.onAfterUpdate = function(_properties) {
 		if (this.m.IsStaffKnockOut) {
-			this.m.FatigueCostMult = _properties.IsSpecializedInPolearms ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+			this.m.FatigueCostMult = ::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 			this.m.StunChance = _properties.IsSpecializedInStaffStun ? 100 : 75;
 		} else {
 			onAfterUpdate(_properties);
@@ -97,7 +97,11 @@
 			return success;
 		}
 
-		if (!_user.isAlive() || _user.isDying()) {
+		if (::Legends.S.isEntityNullOrDead(_user)) {
+			return success;
+		}
+
+		if (::Legends.S.isEntityNullOrDead(_targetTile.getEntity())) {
 			return success;
 		}
 

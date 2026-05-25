@@ -287,20 +287,20 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Flags.set("IsLegendsNoble", true);
 	}
 
-	function onHiredByScenario( bro )
+	function onHiredByScenario( _bro )
 	{
-		if (bro.isStabled()) {
+		if (_bro.isStabled()) {
 			return;
 		}
-		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble))
+		if (_bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble))
 		{
-			bro.improveMood(0.5, "Supports your cause as a usurper, will cost less to maintain.");
+			_bro.improveMood(0.5, "Supports your cause as a usurper, will cost less to maintain.");
 		}
-		else if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
+		else if (_bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
 		{
-			bro.worsenMood(0.5, "Resents you as nobility, will try to squeeze money from you.");
+			_bro.worsenMood(0.5, "Resents you as nobility, will try to squeeze money from you.");
 		}
-		bro.improveMood(0.5, "Learned a new skill");
+		_bro.improveMood(0.5, "Learned a new skill");
 	}
 
 	function onUpdateHiringRoster( _roster )
@@ -328,22 +328,22 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 	}
 
-	function onGenerateBro(bro)
+	function onGenerateBro(_bro)
 	{
-		if (bro.isStabled()) {
+		if (_bro.isStabled()) {
 			return;
 		}
-		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble))
+		if (_bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble))
 		{
-			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75); //1.0 = default
-			bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
-			bro.getSkills().update();
+			_bro.m.HiringCost = this.Math.floor(_bro.m.HiringCost * 0.75); //1.0 = default
+			_bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
+			_bro.getSkills().update();
 		}
-		else if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
+		else if (_bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
 		{
-			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.5); //1.0 = default
-			bro.getBaseProperties().DailyWageMult *= 1.5; //1.0 = default
-			bro.getSkills().update();
+			_bro.m.HiringCost = this.Math.floor(_bro.m.HiringCost * 1.5); //1.0 = default
+			_bro.getBaseProperties().DailyWageMult *= 1.5; //1.0 = default
+			_bro.getSkills().update();
 		}
 	}
 

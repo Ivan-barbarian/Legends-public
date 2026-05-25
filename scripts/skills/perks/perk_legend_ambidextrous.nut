@@ -135,8 +135,7 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (_targetEntity != null
-			&& (!items.hasBlockedSlot(this.Const.ItemSlot.Offhand) || off == null || hasNet || !::MSU.isNull(this.m.offHandSkill)))
+		if (_targetEntity != null && ((off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand)) || hasNet || !::MSU.isNull(this.m.offHandSkill)))
 		{
 			if (!_forFree) {
 				if (_targetTile == null || actor.getTile() == null) {

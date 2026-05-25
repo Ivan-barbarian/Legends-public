@@ -226,21 +226,21 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 	}
 
 
-	function onHiredByScenario( bro )
+	function onHiredByScenario( _bro )
 	{
-		if (bro.isStabled()) {
+		if (_bro.isStabled()) {
 			return;
 		}
-		if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn) && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw) && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
+		if (!_bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn) && !_bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw) && !_bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 		{
-			bro.worsenMood(1.5, "Disturbed by your wild and erratic nature");
+			_bro.worsenMood(1.5, "Disturbed by your wild and erratic nature");
 		}
-		else if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
+		else if (_bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat) || _bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
 		{
-			bro.improveMood(1.0, "Excited by your lust for battle");
+			_bro.improveMood(1.0, "Excited by your lust for battle");
 		}
 
-		bro.improveMood(0.5, "Learned a new skill");
+		_bro.improveMood(0.5, "Learned a new skill");
 	}
 
 	function onBuildPerkTree( _background )

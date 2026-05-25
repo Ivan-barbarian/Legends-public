@@ -137,7 +137,7 @@
 		local executeFollowup;
 		executeFollowup = (function( _tag ) {
 			local actor = this.getContainer().getActor();
-			if (::Legends.S.isEntityNullOrDead(actor) || actor.m.MoraleState == this.Const.MoraleState.Fleeing || actor.getCurrentProperties().IsStunned) {
+			if (::Legends.S.isEntityNullOrDead(actor) || actor.m.MoraleState == this.Const.MoraleState.Fleeing || actor.getCurrentProperties().IsStunned || !::Tactical.TurnSequenceBar.isActiveEntity(actor)) {
 				this.m.AlreadyUsed = false;
 				return;
 			}

@@ -36,6 +36,8 @@ Everything can be learned if you put your mind to it.
 • At the twelfth character level, you gain an additional perk point.
 
 • The bonus experience stays until level 99.
+
+• Doesn't get as irritated while reading.
 ";
 ::Const.Perks.PerkDefObjects[::Legends.Perk.Student].Tooltip = ::Const.Strings.PerkDescription.Student;
 ::Const.Strings.PerkDescription.KillingFrenzy <- @"
@@ -204,9 +206,12 @@ Master polearms and keeping the enemy at bay.
 [color=%passive%][u]Passive:[/u][/color]
 • Skills build up [color=%negative%]25%[/color] less Fatigue.
 
-• Polearm skills have their Action Point cost reduced by [color=%negative%]1[/color] and no longer have a penalty for attacking targets directly adjacent.
+• [color=%skill%]Rupture[/color] increases [color=%status%]Bleeding[/color] damage inflicted to [color=%positive%]10[/color].
 
 • Increases [color=%status%]Daze[/color] chance when using [color=%skill%]Staff Daze[/color] to [color=%positive%]100%[/color] and increase the range of [color=%skill%]Leap[/color] by [color=%positive%]1[/color] when using a staff.
+
+• Other polearm skills have their Action Point cost reduced by [color=%negative%]1[/color] and no longer have a penalty for attacking targets directly adjacent.
+
 ";
 ::Const.Perks.PerkDefObjects[::Legends.Perk.SpecPolearm].Tooltip = ::Const.Strings.PerkDescription.SpecPolearm;
 ::Const.Strings.PerkDescription.SpecHammer <- @"
@@ -455,7 +460,7 @@ Become one with your weapon and go for the weak spots!
 [color=%passive%][u]Passive:[/u][/color]
 • When holding a Buckler or Mummy Shield in your offhand an extra [color=%positive%]+25%[/color] of damage ignores armor on Melee Attacks.
 
-[color=%passive%][u]Active:[/u][/color] Unlocks the [color=%skill%]Flourish[/color] skill, which will increase fatigue cost by [color=%positive%]50%[/color] and as long as you are faster than your target grants a chance on each attack to ignore armor completely based on the initiative difference between you and your target. As long as you are faster than the target, any attack that inflicts at least [color=%positive%]1[/color] point of damage to Hitpoints triggers a morale check for the opponent with a penalty equal to [color=%negative%]20%[/color] of the Initiative difference between you and the target.
+[color=%passive%][u]Active:[/u][/color] Unlocks the [color=%skill%]Flourish[/color] skill, which will increase fatigue cost by [color=%positive%]75%[/color], Action Point Cost [color=%positive%]1[/color] and as long as you are faster than your target grants a chance on each attack to ignore armor completely based on the initiative difference between you and your target. As long as you are faster than the target, any attack that inflicts at least [color=%positive%]1[/color] point of damage to Hitpoints triggers a morale check for the opponent with a penalty equal to [color=%negative%]20%[/color] of the Initiative difference between you and the target.
 ";
 ::Const.Perks.PerkDefObjects[::Legends.Perk.Duelist].Tooltip = ::Const.Strings.PerkDescription.Duelist;
 ::Const.Strings.PerkDescription.CripplingStrikes <- @"
@@ -487,7 +492,7 @@ Looking for this?
 Like a beast of prey, you hunt the weak.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Inflict an additional [color=%positive%]20%[/color] damage against targets that are [color=%status%]Debilitated[/color] or have sustained any injury effects, like a broken arm.
+• Inflict an additional [color=%positive%]20%[/color] damage against targets that are [color=%status%]Debilitated[/color], [color=%status%]Knocked Over[/color] or have sustained any injury effects, like a broken arm.
 
 • Also grants [color=%positive%]+10%[/color] damage against targets who suffer from any of the following effects: [color=%status%]Baffled[/color], [color=%status%]Dazed[/color], [color=%status%]Distracted[/color], [color=%status%]Grappled[/color], [color=%status%]Netted[/color], [color=%status%]Rooted[/color], [color=%status%]Shellshocked[/color], [color=%status%]Sleeping[/color], [color=%status%]Staggered[/color], [color=%status%]Stunned[/color], [color=%status%]Vulnerable[/color], [color=%status%]Webbed[/color], or [color=%status%]Withered[/color].
 ";

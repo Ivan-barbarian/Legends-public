@@ -1374,4 +1374,42 @@
 
 		return this.Const.AI.Behavior.Score.Zero;
 	}
+
+	// The original onExecute builds its path only once, and calls navigator.travel() later. If
+	// the cached path becomes invalid in between (typically the destination tile was taken by
+	// a spawned schrat sapling, but could be anything else) then engine will ctd.
+	// Try to detect that (either actor or tile are invalid) and abort early (same code as vanilla).
+	local onExecute = o.onExecute;
+	o.onExecute = function (_entity) {
+		local onTravel = this.m.TargetTile != null
+			&& !this.m.IsFirstExecuted
+			&& this.m.Skill == null;
+
+		if (onTravel) {
+			local actorGone = this.m.TargetActor != null
+				&& (this.m.TargetActor.isNull() || !this.m.TargetActor.isAlive());
+
+			local tileBlocked = false;
+			if (this.m.TargetTile.IsOccupiedByActor && this.m.TargetActor != null) {
+				local target = this.m.TargetTile.getEntity();
+				local isNotSelf = target.getID() != _entity.getID();
+				local isNotTarget = target.getID() != this.m.TargetActor.getID();
+				tileBlocked = isNotSelf && isNotTarget;
+			}
+
+			if (actorGone || tileBlocked) {
+				if (::Const.AI.VerboseMode) {
+					::logWarning("ai_engage_melee: aborting stale path for " + _entity.getName());
+				}
+				this.m.TargetTile = null;
+				this.m.TargetActor = null;
+				this.m.OriginTile = null;
+				this.m.TargetDistance = 0;
+				return true;
+			}
+		}
+
+		return onExecute(_entity);
+	}
+	
 });

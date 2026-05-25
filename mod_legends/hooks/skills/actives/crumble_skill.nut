@@ -17,7 +17,7 @@
 			text = "Inflicts [color=%damage%]" + fatPerHit + "[/color] extra fatigue"
 		});
 
-		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInMaces)
+		if (!::Legends.S.isCharacterWeaponSpecialized(this.getContainer().getActor().getCurrentProperties(), this.getItem()))
 		{
 			ret.push({
 				id = 6,
@@ -35,7 +35,7 @@
 		{
 			_properties.FatigueDealtPerHitMult += 2.0;
 
-			if (_targetEntity != null && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInMaces && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
+			if (_targetEntity != null && !::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
 			{
 				_properties.MeleeSkill += -15;
 				this.m.HitChanceBonus = -15;

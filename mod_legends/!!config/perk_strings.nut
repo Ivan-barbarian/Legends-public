@@ -221,7 +221,7 @@
 ::Const.Strings.PerkName.LegendMagicBurningHands <- "Burning Hands";
 ::Const.Strings.PerkName.LegendMagicChainLightning <- "Chain Lightning";
 ::Const.Strings.PerkName.LegendMagicCircleOfProtection <- "Circle of Protection";
-::Const.Strings.PerkName.LegendMagicDaze <- "Daze";
+::Const.Strings.PerkName.LegendMagicDaze <- "Stupefy";
 ::Const.Strings.PerkName.LegendMagicHailstone <- "Hailstone";
 ::Const.Strings.PerkName.LegendMagicHealingWind <- "Healing Wind";
 ::Const.Strings.PerkName.LegendMagicImbue <- "Imbue";
@@ -253,7 +253,7 @@
 ::Const.Strings.PerkName.LegendHex <- "Hex";
 ::Const.Strings.PerkName.LegendMiasma <- "Miasma";
 ::Const.Strings.PerkName.LegendDarkflight <- "Darkflight";
-::Const.Strings.PerkName.LegendDaze <- "Daze";
+::Const.Strings.PerkName.LegendDaze <- "Stupefy";
 ::Const.Strings.PerkName.LegendStun <- "Stun";
 ::Const.Strings.PerkName.LegendHorrify <- "Horrify";
 ::Const.Strings.PerkName.LegendPush <- "Revolt";
@@ -374,7 +374,7 @@ Ankles, hands, elbows and knees, you've learned how to fight dirty to secure vic
 [color=%active%][u]Active:[/u][/color]
 • Unlocks the [color=%skill%]Debilitate[/color] skill which can prime your next attack to [color=%status%]Cripple[/color] a target for three turns, reducing their ability to inflict damage by [color=%negative%]-25%[/color] and increasing the damage they take by [color=%positive%]+15%[/color].
 
-• Costs [color=%negative%]3[/color] AP and [color=%negative%]10[/color] Fatigue. Works on enemy targets hit.
+• Costs [color=%negative%]3[/color] AP and [color=%negative%]10[/color] Fatigue. Works on all enemy targets hit.
 ";
 
 ::Const.Strings.PerkDescription.LegendReturnFavor <- @"
@@ -392,9 +392,11 @@ Strike back with interest!
 Take a deep breath, then get to work.
 
 [color=%active%][u]Active:[/u][/color]
-• Unlocks the [color=%skill%]Perfect Focus[/color] skill which allows the use of all other skills at [color=%negative%]half[/color] the normal Action Point cost (rounded down), but increases Fatigue costs by [color=%positive%]+75%[/color] for one round.
+• Unlocks the [color=%skill%]Perfect Focus[/color] skill which grants stacking [color=%effect%]Perfect Focus[/color]. Each stack increases your Action Points by [color=%positive%]3[/color] on use.
 
-• Costs [color=%negative%]1[/color] AP and [color=%negative%]10[/color] Fatigue.
+• Undead characters can not use this ability, but instead gain [color=%positive%]+3[/color] Action Points.
+
+• Costs [color=%negative%]0[/color] AP and [color=%negative%]30[/color] Fatigue.
 ";
 
 // ::Const.Strings.PerkDescription.Furor <- @"
@@ -437,11 +439,9 @@ Master the art of following up for devastating effects.
 'You've done it now!'
 
 [color=%passive%][u]Passive:[/u][/color]
-• After receiving a blow, the next attack this character attempts will inflict [color=%positive%]+100%[/color] damage to both Hitpoints and armor.
+• After receiving a hit, or a death of a party member or a pet, gain a stack of [color=%effect]Vengeance[/color], which allows you to deal [color=%positive%]20%[/color] extra Damage.
 
-• If the attack misses the effect is wasted. Does not work from friendly fire or any self inflicted damage.
-
-• Additionally a party member or pet dying will trigger the effect.
+• The damage does not stack and each attack consumes one charge.
 ";
 
 ::Const.Strings.PerkDescription.LegendBruiser <- @"
@@ -538,7 +538,7 @@ Learn to find your enemies before they find you.
 • While on duty in the scout tent they grant [color=%positive%]+10%[/color] scouting.
 
 [color=%active%][u]Active:[/u][/color]
-• Unlocks the [color=%skill%]Mark Target[/color] skill.
+• Unlocks the [color=%skill%]Mark Target[/color] skill which afflicts your target with [color=%status%]Marked[/color], reducing their Melee and Ranged defense by [color=%negative%]10[/color] and increasing Damage Received from all sources by up to [color=%negative%]20%[/color] depending on the targets max Hitpoints.
 
 • Costs [color=%negative%]2[/color] AP and [color=%negative%]15[/color] Fatigue.
 ";
@@ -682,13 +682,13 @@ Disapparate from your current location and reappear on the other side of the bat
 Assault the senses of your target with a flurry of colorful movement and sounds.
 
 [color=%active%][u]Active:[/u][/color]
-• Unlocks the [color=%skill%]Daze[/color] skill which applies the [color=%status%]Bewildered[/color] effect on hit.
+• Unlocks the [color=%skill%]Daze[/color] skill which applies the [color=%status%]Stupefied[/color] effect on hit.
 
 • Chance to hit is based on Ranged Skill and has a range of six tiles.
 
-• [color=%status%]Bewildered[/color] enemies have their Initiative, Fatigue, and damage reduced by [color=%negative%]-50%[/color].
+• [color=%status%]Stupefied[/color] enemies have their Initiative, Fatigue, and damage reduced by [color=%negative%]-50%[/color].
 
-• If you have the [color=%perk%]Taunt[/color] perk, chance to hit is [color=%positive%]doubled[/color].
+• If you have the [color=%perk%]Battlefield Control[/color] perk, the chance to hit is [color=%positive%]doubled[/color].
 
 • Costs [color=%negative%]5[/color] AP and [color=%negative%]20[/color] Fatigue.
 ";
@@ -1413,13 +1413,13 @@ Carefully evaluate your enemies and bide your time.
 Lets hope your enemies like fighting in the shade.
 
 [color=%passive%][u]Passive:[/u][/color]
-• [color=%skill%]Sling Stone[/color] will now [color=%skill%]Debilitate[/color] on headshots, [color=%skill%]Baffle[/color] on body shots and ignore shield bonuses.
+• [color=%skill%]Sling Stone[/color] will now [color=%status%]Debilitate[/color] on headshots, [color=%status%]Baffle[/color] on body shots and ignore shield bonuses.
 
-• [color=%skill%]Fire Handgonne[/color] will apply [color=%skill%]Shellshocked[/color] on headshots.
+• [color=%skill%]Fire Handgonne[/color] will apply [color=%status%]Shellshocked[/color] on headshots.
 
 • [color=%skill%]Sling Heavy Stone[/color] will stun on headshots.
 
-• [color=%skill%]Shoot Bolt[/color] and [color=%skill%]Shoot Stake[/color] headshots reduces the cost of [color=%skill%]Shoot Stake[/color] to [color=%negative%]0[/color] AP and [color=%negative%]10[/color] Fatigue.
+• [color=%skill%]Shoot Bolt[/color], [color=%skill%]Piercing Bolt[/color] and [color=%skill%]Shoot Stake[/color] headshots reduces the cost of [color=%skill%]Reload Bolt[/color] to [color=%negative%]0[/color] AP and [color=%negative%]10[/color] Fatigue.
 ";
 
 ::Const.Strings.PerkDescription.LegendStaffBlock <- @"
@@ -2080,7 +2080,7 @@ The path to martial prowess is beset by the fake and the weak. Only one can stan
   - Zweihander | [color=%positive%]+0.25%[/color]
   - Swordmaster | [color=%positive%]+0.5%[/color]
   - Bandit Leader | [color=%positive%]+0.25%[/color]
-  - Bandit Warlord | [color=%positive%]+1%[/color]
+  - Robber Baron | [color=%positive%]+1%[/color]
   - Fencer | [color=%positive%]+0.25%[/color]
   - Barbarian King | [color=%positive%]+1%[/color]
   - Sergeant | [color=%positive%]+0.0125%[/color]
@@ -2276,7 +2276,7 @@ Make liberal use of alcohol and food to motivate your mercenaries.
 Some folks take joy in the simple pleasures of destroying shields.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Grants an additional [color=%positive%]+100%[/color] damage to shields when using [color=%skill%]Split Shield[/color] or a Throwing Spear.
+• Grants an additional [color=%positive%]+50%[/color] damage to shields when using [color=%skill%]Split Shield[/color] or a Throwing Spear.
 • If the shield is destroyed, gain [color=%positive%]4[/color] additional AP and any damage above the max durability of the target's shield will hit the target.
 
 • When [color=%status%]Dual Wielding[/color] axes, [color=%skill%]Split Shield[/color] uses the combined shield damage from both weapons.
