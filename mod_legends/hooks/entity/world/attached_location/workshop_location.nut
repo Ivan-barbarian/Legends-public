@@ -4,7 +4,7 @@
 	o.create = function ()
 	{
 		create();
-		this.m.Description = "The workshop is proficient in making all kinds of tools and other supplies needed to keep carts and machines working. Contributes armor parts, ironmongers and blacksmiths to the local town";
+		this.m.Description = "The workshop is proficient in making all kinds of tools and other supplies needed to keep carts and machines working. Contributes armor parts, ironmongers and blacksmiths to the local town.";
 	}
 
 	local onUpdateProduce = o.onUpdateProduce;
