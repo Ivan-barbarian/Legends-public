@@ -17,29 +17,15 @@
 	}
 
 	local onUse = o.onUse;
-	o.onUse = function(_user, _targetTile)
-	{
+	o.onUse = function(_user, _targetTile) {
 		if (this.m.IsEstocStab)
 			this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectThrust);
 		return onUse(_user, _targetTile);
 	}
 
-	o.onAfterUpdate = function ( _properties )
-	{
-		if (this.m.IsEstocStab)
-		{
-			this.m.FatigueCostMult = _properties.IsSpecializedInSwords ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-			return;
-		}
-
-		if (_properties.IsSpecializedInDaggers)
-		{
-			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
-			this.m.ActionPointCost = 3;
-		}
-		else
-		{
-			this.m.FatigueCostMult = 1.0;
+	o.onAfterUpdate = function ( _properties ) {
+		if (!this.m.IsEstocStab && ::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem())) {
+			this.m.ActionPointCost -= 1;
 		}
 	}
 
