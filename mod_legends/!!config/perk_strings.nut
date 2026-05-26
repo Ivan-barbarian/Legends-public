@@ -336,7 +336,9 @@
 Hold your ground!
 
 [color=%passive%][u]Passive:[/u][/color]
-• Gain a stacking [color=%positive%]+5[/color] Melee Skill, Ranged Skill and Melee Defense as long as you have not moved during your turn. You will start combat with 1 stack.
+• Gain a stacking Melee Skill, Ranged Skill and Melee Defense as long as you have not moved during your turn. You will start combat with 1 stack.
+
+• The first stack grants [color=%positive%]5[/color] bonus, and each subsequent stack grants 1 less up to a maximum of [color=%positive%]15[/color] granted at 5 stacks.
 
 • If you were to receive [color=%status%]Stagger[/color] instead remove a stack.
 ";

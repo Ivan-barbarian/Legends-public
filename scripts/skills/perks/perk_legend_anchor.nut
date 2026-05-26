@@ -1,7 +1,8 @@
 this.perk_legend_anchor <- this.inherit("scripts/skills/skill", {
 	m = {
 		Stacks = 1,
-		HasMoved = false
+		HasMoved = false,
+		Bonuses = [0, 5, 9, 12, 14, 15, 15] // 6 is a failsafe ig
 	},
 	function create()
 	{
@@ -23,7 +24,7 @@ this.perk_legend_anchor <- this.inherit("scripts/skills/skill", {
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "[color=%positive%]+" + (this.m.Stacks * 5) + "[/color] Melee Skill, Ranged Skill and Melee Defense"
+			text = "[color=%positive%]+" + (this.m.Bonuses[this.m.Stacks]) + "[/color] Melee Skill, Ranged Skill and Melee Defense"
 		});
 		tooltip.push({
 			id = 11,
@@ -33,11 +34,6 @@ this.perk_legend_anchor <- this.inherit("scripts/skills/skill", {
 		});
 
 		return tooltip;
-	}
-
-	function getBonus()
-	{
-		return this.m.Stacks == 0 ? 0 : this.m.Bonus;
 	}
 
 	function onUpdate ( _properties )
@@ -50,10 +46,12 @@ this.perk_legend_anchor <- this.inherit("scripts/skills/skill", {
 			actor.getFlags().set("CanNotBeStaggered", false);
 		}
 
+		this.m.Stacks = this.Math.max(this.m.Stacks, 5);
+
 		actor.getFlags().set("CanNotBeStaggered", true);
-		_properties.MeleeSkill += this.m.Stacks * 5;
-		_properties.RangedSkill += this.m.Stacks * 5;
-		_properties.MeleeDefense += this.m.Stacks * 5;
+		_properties.MeleeSkill += this.m.Bonuses[this.m.Stacks];
+		_properties.RangedSkill += this.m.Bonuses[this.m.Stacks];
+		_properties.MeleeDefense += this.m.Bonuses[this.m.Stacks];
 	}
 
 	function onTurnEnd()
