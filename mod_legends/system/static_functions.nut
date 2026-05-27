@@ -101,9 +101,9 @@
 
 ::Legends.S.getOverlappingNeighbourActors <- function (_actor, _secondActor)
 {
-	local firstActorEntities = Legends.S.getNeighbouringActors(_actor.getTile());
+	local firstActorEntities = ::Legends.S.getNeighbouringActors(_actor.getTile());
 	local overlaps = [];
-	foreach (entity in Legends.S.getNeighbouringActors(_secondActor.getTile()))
+	foreach (entity in ::Legends.S.getNeighbouringActors(_secondActor.getTile()))
 	{
 		if (firstActorEntities.find(entity) != null);
 		{
@@ -116,7 +116,7 @@
 
 ::Legends.S.isInZocWithActor <- function (_actor, _secondActor)
 {
-	if (!_secondActor.isAlive() || !_secondActor.isDying())
+	if (::Legends.S.isEntityNullOrDead(_secondActor))
 		return false;
 
 	if (_secondActor.isNonCombatant())
