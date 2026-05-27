@@ -8,7 +8,7 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Overlay = "active_strafing_run";
 		this.m.SoundOnUse = [];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Order = this.Const.SkillOrder.OffensiveTargeted+1;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
