@@ -208,7 +208,7 @@
 	return this.Math.maxf(0.5, (100.0 - toolEfficiencyModifier) / 100.0);
 }
 
-::Legends.S.applyBleed <- function (_target, _actor, _hpBefore, _soundsA, _soundsB, _damage = 0, _effect = ::Legends.Effect.Bleeding) {
+::Legends.S.applyBleed <- function (_target, _actor, _hpBefore, _soundsA, _soundsB, _damage = 0, _effect = ::Legends.Effect.Bleeding, _bypassHitpointsCheck = false) {
 	local damage = 0;
 	if (_damage > 0) {
 		damage = _damage;
@@ -225,7 +225,7 @@
 			this.Sound.play(_soundsB[this.Math.rand(0, _soundsB.len() - 1)], this.Const.Sound.Volume.Skill, _actor.getPos());
 		}
 	}
-	else if (!_target.getCurrentProperties().IsImmuneToBleeding && _hpBefore - _target.getHitpoints() >= this.Const.Combat.MinDamageToApplyBleeding ) {
+	else if (!_target.getCurrentProperties().IsImmuneToBleeding && (_hpBefore - _target.getHitpoints() >= this.Const.Combat.MinDamageToApplyBleeding || _bypassHitpointsCheck)) {
 		::Legends.Effects.grant(_target, _effect, function(_effect) {
 			if (_actor.getFaction() == this.Const.Faction.Player )
 				_effect.setActor(_actor);
