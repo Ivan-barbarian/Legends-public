@@ -3,10 +3,10 @@
 
 	o.onApplyArmorFilter <- function (_filter) {
 		// used by armor filter
-		m.InventoryFilter = ::Const.Items.ItemFilter.Armor;
+		this.m.InventoryFilter = ::Const.Items.ItemFilter.Armor;
 		::Sound.play("sounds/coins_02.wav", ::Const.Sound.Volume.Actor);
 
-		if (m.JSDataSourceHandle == null) {
+		if (this.m.JSDataSourceHandle == null) {
 			return;
 		}
 
@@ -14,10 +14,10 @@
 			&& _filter.Helmet.len() == ::Const.Items.HelmetUpgrades.COUNT)
 		{
 			::UIDataHelper.m.ArmorFilter = null;
-			loadStashList();
+			this.loadStashList();
 		} else {
 			::UIDataHelper.m.ArmorFilter = _filter;
-			m.JSDataSourceHandle.asyncCall("loadStashList", ::UIDataHelper.filterArmorFromStashToUIData());
+			this.m.JSDataSourceHandle.asyncCall("loadStashList", ::UIDataHelper.filterArmorFromStashToUIData());
 		}
 	}
 
@@ -959,7 +959,10 @@
 					return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromBag);
 				}
 
-				data.inventory.unequip(data.sourceItem);
+				if (data.inventory.unequip(data.sourceItem) == false) { // check if unequip was successful and rollback if not
+                    data.inventory.addToBag(targetItem, data.targetItemIdx);
+                    return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromTargetSlot);
+                }
 
 				if (data.inventory.equip(targetItem) == false) {
 					data.inventory.unequip(targetItem);
@@ -968,7 +971,12 @@
 					return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToEquipBagItem);
 				}
 
-				data.inventory.addToBag(data.sourceItem, data.targetItemIdx);
+				if (data.inventory.addToBag(data.sourceItem, data.targetItemIdx) == false) { // check if addToBag was successful and rollback if not
+                    data.inventory.unequip(targetItem);
+                    data.inventory.equip(data.sourceItem);
+                    data.inventory.addToBag(targetItem, data.targetItemIdx);
+                    return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToPutItemIntoBag);
+                }
 			} else {
 				data.inventory.unequip(data.sourceItem);
 				data.inventory.addToBag(data.sourceItem, data.targetItemIdx);
