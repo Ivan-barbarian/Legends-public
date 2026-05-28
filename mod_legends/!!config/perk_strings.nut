@@ -2342,7 +2342,7 @@ The mere sight of this character sends enemies fleeing.
 A skilled mercenary has unimpeded movement regardless of armor.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Reduces Fatigue cost of [color=%skill%]Climb[/color], [color=%skill%]Lunge[/color], [color=%skill%]Footwork[/color], [color=%skill%]Rotation[/color], [color=%skill%]Leap[/color], [color=%skill%]Quick Step[/color], [color=%skill%]Evasion[/color] and [color=%skill%]Tumble[/color] by [color=%negative%]50%[/color].
+• Reduces Fatigue cost of [color=%skill%]Climb[/color], [color=%skill%]Lunge[/color], [color=%skill%]Footwork[/color], [color=%skill%]Rotation[/color], [color=%skill%]Leap[/color], [color=%skill%]Quick Step[/color], [color=%skill%]Evasion[/color] by [color=%negative%]50%[/color].
 
 • The Action Point cost of [color=%skill%]Climb[/color], [color=%skill%]Footwork[/color] and [color=%skill%]Rotation[/color] is reduced by [color=%negative%]1[/color], [color=%skill%]Leap[/color] by [color=%negative%]3[/color] and [color=%skill%]Evasion[/color] by [color=%negative%]2[/color].
 
