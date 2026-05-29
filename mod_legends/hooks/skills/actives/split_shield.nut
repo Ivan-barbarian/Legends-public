@@ -157,11 +157,11 @@
 		return true;
 	}
 
-	local onAfterUpdate = o.onAfterUpdate;
 	o.onAfterUpdate = function (_properties) {
-		onAfterUpdate(_properties);
-		if (::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) && this.m.MaxRange == 2)
+		this.m.FatigueCostMult = ::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		if (::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) && this.m.MaxRange == 2) {
 			this.m.ActionPointCost -= 1;
+		}
 	}
 
 	o.onAnySkillUsed = function (_skill, _targetEntity, _properties) {

@@ -84,6 +84,7 @@ this.legend_heartseeker_skill <- this.inherit("scripts/skills/skill", {
 		if ((this.m.IsPolearm || this.m.IsTwoHanded ) && ::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem())) {
 			this.m.ActionPointCost -= 1;
 		}
+		this.m.FatigueCostMult = ::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 
 	function onUse( _user, _targetTile ) {

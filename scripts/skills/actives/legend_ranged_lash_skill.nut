@@ -57,22 +57,19 @@ this.legend_ranged_lash_skill <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties ) {
 		if (::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem())) {
 			this.m.ActionPointCost -= 1;
+			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
 			this.m.IsShieldRelevant = false;
 		}
 	}
 
-	function onUse( _user, _targetTile )
-	{
+	function onUse( _user, _targetTile ) {
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectChop);
 		return this.attackEntity(_user, _targetTile.getEntity());
 	}
 
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
-	{
-		if (_skill == this)
-		{
-			if (_targetEntity != null && !::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
-			{
+	function onAnySkillUsed( _skill, _targetEntity, _properties ) {
+		if (_skill == this) {
+			if (_targetEntity != null && !::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1) {
 				this.m.HitChanceBonus += -15;
 				_properties.MeleeSkill += -15;
 			}

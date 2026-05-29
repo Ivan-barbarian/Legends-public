@@ -64,8 +64,10 @@ this.legend_halberd_smite_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		if (::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()))
+		if (::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem())) {
+			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
 			this.m.ActionPointCost -= 1;
+		}
 	}
 
 	function onUse( _user, _targetTile )

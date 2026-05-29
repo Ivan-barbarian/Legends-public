@@ -80,8 +80,10 @@ this.legend_pry_armor_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		if (this.m.IsPolearm && ::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()))
+		if (this.m.IsPolearm && ::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem())) {
 			this.m.ActionPointCost -= 1;
+		}
+		this.m.FatigueCostMult = ::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 
 	function onTargetHit ( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )

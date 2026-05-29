@@ -52,6 +52,7 @@
 	o.onAfterUpdate = function ( _properties ) {
 		if (this.m.IsScytheCleave && ::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem())) {
 			this.m.ActionPointCost -= 1;
+			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
 		}
 	}
 
