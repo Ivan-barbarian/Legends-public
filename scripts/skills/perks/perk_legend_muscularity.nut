@@ -8,12 +8,13 @@ this.perk_legend_muscularity <- this.inherit("scripts/skills/skill", {
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		local item = _skill.getItem();
+		local isHandToHand = _skill.getID() == ::Legends.Actives.getID(::Legends.Active.LegendChoke) || _skill.getID() == ::Legends.Actives.getID(::Legends.Active.HandToHand)
 
-		if (item != null && item.isItemType(this.Const.Items.ItemType.Defensive) && !item.isItemType(this.Const.Items.ItemType.Weapon))
+		if (!isHandToHand || (item != null && item.isItemType(this.Const.Items.ItemType.Defensive) && !item.isItemType(this.Const.Items.ItemType.Weapon)))
 			return;
 
 		local isValidRanged = item != null && item.isItemType(this.Const.Items.ItemType.Weapon) && (item.isWeaponType(this.Const.Items.WeaponType.Throwing) || item.isWeaponType(this.Const.Items.WeaponType.Bow));
-		if (!_skill.isRanged() || (isValidRanged && item.isItemType(this.Const.Items.ItemType.Weapon)))
+		if (!_skill.isRanged() || (isValidRanged && item.isItemType(this.Const.Items.ItemType.Weapon)) || isHandToHand)
 		{
 			_properties.DamageTotalMult *= 1.0 + this.getBonus();
 		}
