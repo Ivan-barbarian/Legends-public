@@ -126,7 +126,7 @@
 
 		if (this.isRuned())
 		{
-			this.updateRuneSigil();
+			this.item.updateRuneSigil();
 		}
 	}
 });
