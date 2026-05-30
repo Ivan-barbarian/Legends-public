@@ -28,6 +28,11 @@
 		}
 
 		local origin = this.pickWeightedRandom(potential_origins);
+
+		if (origin == null) {
+            return;
+        }
+
 		local myTile = origin.getTile();
 		local spawnpoints = [];
 		spawnpoints.push(myTile);
