@@ -7,7 +7,7 @@
 		create();
 		foreach (s in this.m.Screens) {
 			if (s.ID == "A") {
-				s.Text = "[img]gfx/ui/events/event_05.png[/img]While resting, the men start a conversation about how far away the sun is. %otherbrother% looks up at it, wincing and gritting %their_other% teeth as %they_other% just about blinds himself in %their_other% measuring. Finally, %they_other% looks back down.%SPEECH_ON%I\'d wager it\'s about ten to fifteen miles away.%SPEECH_OFF%%They_other% nods at %their_other% own presumably accurate summation.%SPEECH_ON%Aye, probably not even that far. I heard a story about an archer in a faraway land hitting it with an arrow.%SPEECH_OFF%";
+				s.Text = "[img]gfx/ui/events/event_05.png[/img]While resting, the men start a conversation about how far away the sun is. %otherbrother% looks up at it, wincing and gritting %their_other% teeth as %they_other% just about blinds %themselves_other% in %their_other% measuring. Finally, %they_other% looks back down.%SPEECH_ON%I\'d wager it\'s about ten to fifteen miles away.%SPEECH_OFF%%They_other% nods at %their_other% own presumably accurate summation.%SPEECH_ON%Aye, probably not even that far. I heard a story about an archer in a faraway land hitting it with an arrow.%SPEECH_OFF%";
 				local start = s.start;
 				s.start <- function (_event) {
 					start(_event);
