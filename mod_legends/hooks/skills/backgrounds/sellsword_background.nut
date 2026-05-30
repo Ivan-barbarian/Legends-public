@@ -65,7 +65,6 @@
 			],
 			Enemy = [
 				::Const.Perks.OutlawTree,
-				::Const.Perks.OutlawTree,
 				::Const.Perks.CivilizationTree
 			],
 			Class = [],
