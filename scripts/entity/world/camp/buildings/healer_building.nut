@@ -232,7 +232,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				if (bro == null || !this.isBroInRoster(bro)) {
                 	continue;
             	}
-				if (queueEntry.Injury.isNull() || queueEntry.Injury.getQueue() == 0) {
+				if (("isNull" in queueEntry.Injury && queueEntry.Injury.isNull()) || queueEntry.Injury.getQueue() == 0) {
 					continue;
 				}
 
@@ -360,7 +360,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 		for (local i = this.m.Queue.len() - 1; i >= 0; --i)	{
 			local obj = this.m.Queue[i];
-			if (obj == null || obj.Injury == null || obj.Injury.isNull() || obj.Injury.isGarbage()) {
+			if (obj == null || obj.Injury == null || ("isNull" in obj.Injury && obj.Injury.isNull()) || ("isGarbage" in obj.Injury && obj.Injury.isGarbage())) {
 				this.m.Queue.remove(i);
 				continue;
 			}
