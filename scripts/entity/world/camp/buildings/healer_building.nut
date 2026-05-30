@@ -340,19 +340,8 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		return ret;
 	}
 
-	function getHealUpdateText()
-	{
-		local totalTime = this.Math.ceil(this.m.PointsNeeded / this.getRate());
-		local percent = (this.m.Camp.getElapsedHours() / totalTime) * 100.0;
-		if (percent >= 100)
-		{
-			return "Health points ... 100%";
-		}
-
-		return "Health points ... " + percent + "%";
-	}
-
 	function update() {
+		// Injury block
 		local modifiers = this.getModifiers();
 		if (this.m.Queue == null) {
 			this.init();
@@ -407,21 +396,38 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			}
 		}
 
-		local text = this.getUpdateText();
-		if (text != "") {
-			text += "</br>";
+		local injuryText = this.getUpdateText();
+		if (injuryText != "") {
+			injuryText += "</br>";
 		}
 
-		foreach (bro in this.World.getPlayerRoster().getAll()) {
+		// Hitpoints block
+		local brothers = this.World.getPlayerRoster().getAll();
+		local currentMissingHP = 0.0;
+		local healText = "Health points ... ";
+
+		foreach (bro in brothers) {
 			if (bro.getHitpointsMax() - bro.getHitpoints() <= 0) {
 				continue;
 			}
-
 			bro.setCampHealing(bro.getCampHealing() + this.getRate());
-			bro.setHitpoints(this.Math.minf(bro.getHitpointsMax(), bro.getHitpoints() + this.getRate()));
+			local newHitpoints = this.Math.minf(bro.getHitpointsMax(), bro.getHitpoints() + this.getRate());
+			bro.setHitpoints(newHitpoints);
+			local missing = bro.getHitpointsMax().tofloat() - newHitpoints;
+			if (missing > 0) {
+				currentMissingHP += missing;
+			}
 		}
 
-		return text + this.getHealUpdateText();
+		if (::Math.abs(currentMissingHP) < 0.01) {
+			healText += "100";
+		} else {
+			if (currentMissingHP > this.m.PointsNeeded) {
+				this.m.PointsNeeded = currentMissingHP;
+			}
+			healText += this.Math.floor(((this.m.PointsNeeded - currentMissingHP) / this.m.PointsNeeded) * 100.0);
+		}
+		return injuryText + healText + "%";
 	}
 
 	function healInjury( _idx )
