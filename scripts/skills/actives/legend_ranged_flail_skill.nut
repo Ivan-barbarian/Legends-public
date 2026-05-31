@@ -1,7 +1,6 @@
 this.legend_ranged_flail_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
-	function create()
-	{
+	function create() {
 		::Legends.Actives.onCreate(this, ::Legends.Active.LegendRangedFlail);
 		this.m.Description = "Flailing at an opponent. Somewhat unpredictable in damage, but able to strike over or around shield cover.";
 		this.m.KilledString = "Smashed";
@@ -30,7 +29,7 @@ this.legend_ranged_flail_skill <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.DirectDamageMult = 0.3;
-		this.m.ActionPointCost = 4;
+		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 13;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 2;
@@ -42,8 +41,7 @@ this.legend_ranged_flail_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.getDefaultTooltip();
-		ret.extend([
-			{
+		ret.extend([{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/vision.png",
@@ -51,8 +49,7 @@ this.legend_ranged_flail_skill <- this.inherit("scripts/skills/skill", {
 			}
 		]);
 
-		if (!::Legends.S.isCharacterWeaponSpecialized(this.getContainer().getActor().getCurrentProperties(), this.getItem()))
-		{
+		if (!::Legends.S.isCharacterWeaponSpecialized(this.getContainer().getActor().getCurrentProperties(), this.getItem())) {
 			ret.push({
 				id = 6,
 				type = "text",
@@ -64,25 +61,22 @@ this.legend_ranged_flail_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-	function onAfterUpdate( _properties )
-	{
-		if (::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()))
+	function onAfterUpdate( _properties ) {
+		if (::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem())) {
 			this.m.ActionPointCost -= 1;
-		this.m.IsShieldRelevant = !::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem());
+			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
+			this.m.IsShieldRelevant = false;
+		}
 	}
 
-	function onUse( _user, _targetTile )
-	{
+	function onUse( _user, _targetTile ) {
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectChop);
 		return this.attackEntity(_user, _targetTile.getEntity());
 	}
 
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
-	{
-		if (_skill == this)
-		{
-			if (_targetEntity != null && !::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
-			{
+	function onAnySkillUsed( _skill, _targetEntity, _properties ) {
+		if (_skill == this) {
+			if (_targetEntity != null && !::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1) {
 				this.m.HitChanceBonus += -15;
 				_properties.MeleeSkill += -15;
 			}

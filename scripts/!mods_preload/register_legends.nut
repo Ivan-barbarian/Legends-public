@@ -1,6 +1,6 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "19.3.32",
+	Version = "19.3.35",
 	Name = "Legends Mod",
 	BuildName = "Left & Right",
 	IsStartingNewCampaign = false
@@ -27,7 +27,7 @@
 	::include("mod_legends/load.nut");
 });
 
-// some mods can be easily 'fixed' by loadind after legends, that what it is for
+// some mods can be easily 'fixed' by loading after legends, that what it is for
 ::mods_registerMod(::Legends.ID + "_load_order_fix", ::Legends.Version, ::Legends.Name + " - Load order fix");
 ::mods_queue(::Legends.ID + "_load_order_fix", [
 	">mod_legends", // mods listed here will be forced to load after legends

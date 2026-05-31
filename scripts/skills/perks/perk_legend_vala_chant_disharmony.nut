@@ -22,6 +22,10 @@ this.perk_legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCost = 30;
 	}
 
+	function getDescription() {
+		return "A very disagreeable and cacophonous chant can makes it almost impossible for enemies to focus and concentrate properly.";
+	}
+
 	function isUsable()
 	{
 		local actor = this.getContainer().getActor();

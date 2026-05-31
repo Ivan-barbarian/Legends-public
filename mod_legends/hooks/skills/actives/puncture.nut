@@ -76,15 +76,15 @@
 		return mod + this.Math.round(chance);
 	}
 	
-	local onAfterUpdate = o.onAfterUpdate;
 	o.onAfterUpdate = function ( _properties ) {
-		if (this.m.IsHalfsword && ::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem())) {
+		if (!this.m.IsHalfsword && ::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem())) {
 			this.m.ActionPointCost -= 1;
 		}
-		else {
+		else if (this.m.IsHalfsword) {
 			this.m.IsHidden = !this.canDoubleGrip() && !this.m.Item.isItemType(this.Const.Items.ItemType.TwoHanded);
-			this.m.FatigueCostMult = _properties.IsSpecializedInSwords ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		}
+
+		this.m.FatigueCostMult = ::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) ? this.Const.Combat.WeaponSpecFatigueMult : 1.0; 
 	}
 
 	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties ) {
@@ -93,10 +93,10 @@
 				_properties.DamageTotalMult *= 0.5;
 			}
 			this.m.HitChanceBonus += this.getHitChance(_targetEntity);
-			if (this.m.IsHalfsword && _properties.IsSpecializedInSwords) {
+			if (this.m.IsHalfsword && ::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem())) {
 				this.m.HitChanceBonus += 15;
 			}
-			else if (_properties.IsSpecializedInDaggers) {
+			else if (::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem())) {
 				this.m.HitChanceBonus += 15;
 			}
 			_properties.MeleeSkill += this.m.HitChanceBonus;

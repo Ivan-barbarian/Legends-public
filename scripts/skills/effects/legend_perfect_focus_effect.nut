@@ -11,6 +11,7 @@ this.legend_perfect_focus_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
 		this.m.IsStacking = true;
+		this.m.IsHidden = true;
 	}
 
 	function getIconDisabled()

@@ -69,9 +69,27 @@
 			_screen.Text = "[img]gfx/ui/events/event_22.png[/img]{Just as the battle ends and things begin to quiet, you hear a %person_dude% shouting. You move toward the noise to find a prisoner of the brigands. %They're_dude% got ropes over %their_dude% mouth and hands which you quickly undo. As he catches %their_dude% breath, %they_dude% meekly asks if maybe %they_dude% could join your outfit. | You find a prisoner tied up in the brigands\' camp. Freeing %them_dude%, %they_dude% explains that %they_dude% is from %randomtown%, and was kidnapped by the vagabonds just a few days ago. %They_dude% asks if maybe %they_dude% could join your band of mercenaries. | Rummaging what\'s left of the brigands\' camp, you discover a prisoner of theirs. Freeing %them_dude%, the %person_dude% sits up and explains that the brigands kidnapped %them_dude% as %they_dude% was traveling to %randomtown% in seek of work. You wonder if maybe %they_dude% could work for you instead... | A %person_dude% is left behind after the battle. %They're_dude% not a brigand, but in fact a prisoner of theirs. When you ask who %they_dude% is, %they_dude% mentions that %they_dude% is from %randomtown% and that %they're_dude% looking for work. You ask if %they_dude% can wield a sword. %They_dude% nods.}";
 		});
 		::Legends.Screens.hook(this, "Volunteer2", function (_screen) {
+			_screen.start = function () {
+				this.Characters.push(this.Contract.m.Dude.getImagePath());
+				this.World.getPlayerRoster().add(this.Contract.m.Dude);
+				this.Contract.m.Dude.onHired();
+			}
+			_screen.Options[0].getResult = function () {
+				this.World.getTemporaryRoster().clear();
+				this.Contract.m.Dude = null;
+				return 0;
+			}
 			_screen.Text = "[img]gfx/ui/events/event_22.png[/img]{The %person_dude% joins your ranks, immersing %themselves_dude% in a crowd of brothers who seem to take to %them_dude% warmly enough for a group of paid killers. The newly hired states %they're_dude% good with all weapons, but you figure you\'ll be the one to decide what %they're_dude% best with. | The prisoner grins from ear to ear as you wave %them_dude% in. A few brothers ask what weapons they should give %them_dude%, but you shrug and figure you\'ll see to yourself what to arm the %person_dude% with.}";
 		});
 		::Legends.Screens.hook(this, "Volunteer3", function (_screen) {
+			_screen.start = function () {
+				this.Characters.push(this.Contract.m.Dude.getImagePath());
+			}
+			_screen.Options[0].getResult <- function () {
+				this.World.getTemporaryRoster().clear();
+				this.Contract.m.Dude = null;
+				return 0;
+			}
 			_screen.Text = "[img]gfx/ui/events/event_22.png[/img]{You shake your head no. The %person_dude% frowns.%SPEECH_ON%Are you sure? I\'m pretty good with...%SPEECH_OFF%You cut %them_dude% off.%SPEECH_ON%I\'m sure. Now enjoy your newfound freedom, stranger.%SPEECH_OFF% | You appraise the %person_dude% and figure %they're_dude% not fit for the life of a sellsword.%SPEECH_ON%We appreciate the offer, stranger, but the mercenary life is a dangerous one. Go home to your family, your work, your home.%SPEECH_OFF% | You\'ve enough men to see you through, although you find yourself tempted to replace %randombrother% just to see the %person_randombrother%\'s reaction to a demotion. Instead, you offer the prisoner a handshake and send %them_dude% on %their_dude% way. Although disappointed, %they_dude% does thank you for freeing %them_dude%.}";
 		});
 		::Legends.Screens.hook(this, "Success1", function (_screen) {

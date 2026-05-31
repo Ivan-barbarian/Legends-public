@@ -56,8 +56,10 @@
 	}
 
 	o.onAfterUpdate = function ( _properties ) {
-		if (::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) && this.m.IsScytheDecapitate)
+		if (::Legends.S.isCharacterWeaponSpecialized(_properties, this.getItem()) && this.m.IsScytheDecapitate) {
 			this.m.ActionPointCost -= 1;
+		}
+		this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
 	}
 
 	local onAnySkillUsed = o.onAnySkillUsed;

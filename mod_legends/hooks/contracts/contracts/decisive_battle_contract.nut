@@ -222,7 +222,7 @@
 		onPrepareVariables(_vars);
 
 		if (this.m.Commander.Name == "") {
-			this.onPrepare();
+			this.generateActors();
 		}
 
 		foreach (v in _vars) {

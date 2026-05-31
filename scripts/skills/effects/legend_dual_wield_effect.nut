@@ -162,8 +162,12 @@ this.legend_dual_wield_effect <- this.inherit("scripts/skills/skill", {
 		local mh = items.getItemAtSlot(::Const.ItemSlot.Mainhand);
 		local off = items.getItemAtSlot(::Const.ItemSlot.Offhand);
 
+		if (::Legends.S.isEntityNullOrDead(actor)) {
+			return;
+		}
+
 		// Check target is valid
-		if (_targetEntity == null || !_targetEntity.isAlive() || _targetEntity.isDying()) {
+		if ( ::Legends.S.isEntityNullOrDead(_targetEntity)) {
 			return;
 		}
 

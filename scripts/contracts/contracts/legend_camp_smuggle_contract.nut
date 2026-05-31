@@ -308,7 +308,17 @@ this.legend_camp_smuggle_contract <- ::inherit("scripts/contracts/legend_camp_co
 				Text = "{Pick the package and head out.}",
 				function getResult() {
 					this.Contract.m.Town.getSprite("selection").Visible = false;
-					this.Contract.m.Camp = ::WeakTableRef(::World.FactionManager.getFactionOfType(::Const.FactionType.Bandits).getNearestSettlement(::World.State.getPlayer().getTile()));
+					local playerTile = ::World.State.getPlayer().getTile();
+                    local banditFaction = ::World.FactionManager.getFactionOfType(::Const.FactionType.Bandits);
+                    local targetCamp = banditFaction.getNearestSettlement(playerTile);
+                    if (targetCamp == null) {
+                        local tile = this.Contract.getTileToSpawnLocation(playerTile, 9, 15);
+                        tile.clear();
+                        targetCamp = ::World.spawnLocation("scripts/entity/world/locations/bandit_camp_location", tile.Coords);
+						targetCamp.onSpawned();
+                        targetCamp.setFaction(banditFaction.getID());
+                    }
+                    this.Contract.m.Camp = ::WeakTableRef(targetCamp);
 					this.Contract.m.Camp.getFlags().set("isContractLocation", true);
 					this.Contract.m.Camp.setDiscovered(true);
 					::World.uncoverFogOfWar(this.Contract.m.Camp.getPos(), 250.0);

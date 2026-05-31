@@ -1457,17 +1457,31 @@
 			ret.push({
 				id = id++,
 				type = "text",
-				text = "Terrain Movement Modifiers:"
+				text = "Terrain Movement Speed:"
 			});
 
-			foreach( bro in data.TerrainModifiers )
-			{
-				if (bro[1] == 0) continue;
-				ret.push({
-					id = id++,
-					type = "text",
-					text = bro[0] + " [color=%positive%]" + bro[1] + "%[/color]"
-				});
+			foreach( terrainModifier in data.TerrainModifiers ) {
+				local name = terrainModifier[0];
+				local speed = terrainModifier[1];
+				// avoid float rounding errors, don't show when 100% speed
+				if (this.Math.abs(speed - 100.0) < 0.01) {
+        			continue;
+    			}
+				local speedText = ::format("%.2f", speed);
+				if (speed > 100.0) {
+					ret.push({
+						id = id++,
+						type = "text",
+						text = name + " [color=%positive%]" + speedText + "%[/color]"
+					});
+				}
+				else {
+					ret.push({
+						id = id++,
+						type = "text",
+						text = name + " [color=%negative%]" + speedText + "%[/color]"
+					});
+				}
 			}
 
 			ret.push({

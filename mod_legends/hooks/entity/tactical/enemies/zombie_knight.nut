@@ -29,6 +29,15 @@
 		::Legends.Perks.grant(this, ::Legends.Perk.LegendStrengthInNumbers);
 	}
 
+	local onResurrected = o.onResurrected;
+	o.onResurrected = function (_info) {
+		onResurrected(_info);
+		if (!_info.IsHeadAttached) {
+			this.m.Skills.removeByID(::Legends.Actives.getID(::Legends.Active.ZombieBite));
+			this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand"));
+		}
+	}
+
 	o.assignRandomEquipment = function()
 	{
 		local r;

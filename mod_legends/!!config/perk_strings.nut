@@ -336,7 +336,9 @@
 Hold your ground!
 
 [color=%passive%][u]Passive:[/u][/color]
-• Gain a stacking [color=%positive%]+5[/color] Melee Skill, Ranged Skill and Melee Defense as long as you have not moved during your turn. You will start combat with 1 stack.
+• Gain a stacking Melee Skill, Ranged Skill and Melee Defense as long as you have not moved during your turn. You will start combat with 1 stack.
+
+• The first stack grants [color=%positive%]5[/color] bonus, and each subsequent stack grants 1 less up to a maximum of [color=%positive%]15[/color] granted at 5 stacks.
 
 • If you were to receive [color=%status%]Stagger[/color] instead remove a stack.
 ";
@@ -2340,7 +2342,7 @@ The mere sight of this character sends enemies fleeing.
 A skilled mercenary has unimpeded movement regardless of armor.
 
 [color=%passive%][u]Passive:[/u][/color]
-• Reduces Fatigue cost of [color=%skill%]Climb[/color], [color=%skill%]Lunge[/color], [color=%skill%]Footwork[/color], [color=%skill%]Rotation[/color], [color=%skill%]Leap[/color], [color=%skill%]Quick Step[/color], [color=%skill%]Evasion[/color] and [color=%skill%]Tumble[/color] by [color=%negative%]50%[/color].
+• Reduces Fatigue cost of [color=%skill%]Climb[/color], [color=%skill%]Lunge[/color], [color=%skill%]Footwork[/color], [color=%skill%]Rotation[/color], [color=%skill%]Leap[/color], [color=%skill%]Quick Step[/color], [color=%skill%]Evasion[/color] by [color=%negative%]50%[/color].
 
 • The Action Point cost of [color=%skill%]Climb[/color], [color=%skill%]Footwork[/color] and [color=%skill%]Rotation[/color] is reduced by [color=%negative%]1[/color], [color=%skill%]Leap[/color] by [color=%negative%]3[/color] and [color=%skill%]Evasion[/color] by [color=%negative%]2[/color].
 

@@ -9,7 +9,7 @@
 			_screen.Text = "[img]gfx/ui/events/event_03.png[/img]{%cultist% the cultist leans toward the fire, %their_cultist% face almost touching the flames. The men glance at %them_cultist% as %their_cultist% eyes go wide, the wetness drying and peeling back until blood veins grow fat on the white. %They_cultist% leans back.%SPEECH_ON%Shadows are but ambassadors of the greater dark.%SPEECH_OFF%The campfire crackles and the %person_cultist%\'s shadow blossoms against the priory wall, and for a moment the company sees something else in that black, something twisted and leaning in, an entity not at all at the behest of %cultist%\'s shape. As the fires die down, the shadow cuts to pieces and draws away into the greater night, and only the cultist\'s own shadowed self remains, flickering uncertainly against the priory walls.}";
 		});
 		::Legends.Screens.hook(this, "D", function (_screen) {
-			_screen.Text = "[img]gfx/ui/events/event_40.png[/img]{Standing up, %monk% the monk makes an appeal to the old gods. %They_monk% has one hand to %their_monk% chest as the other swings upward as though in a great oratory offering.%SPEECH_ON%It is not the shadows we should mind, but the fire which has produced them, for it is the flame which the gods have bestowed upon us, such that we may carry the day into the night, and make our productive habits unending, and our allegiance to that which is good unerring.%SPEECH_OFF%The men shout \'hear hear!\'}";
+			_screen.Text = "[img]gfx/ui/events/event_40.png[/img]{Standing up, %monk% the %monk_background_name% makes an appeal to the old gods. %They_monk% has one hand to %their_monk% chest as the other swings upward as though in a great oratory offering.%SPEECH_ON%It is not the shadows we should mind, but the fire which has produced them, for it is the flame which the gods have bestowed upon us, such that we may carry the day into the night, and make our productive habits unending, and our allegiance to that which is good unerring.%SPEECH_OFF%The men shout \'hear hear!\'}";
 		});
 		::Legends.Screens.hook(this, "E", function (_screen) {
 			_screen.Text = "[img]gfx/ui/events/event_82.png[/img]{One of the mercenaries stands up and points across the campfire and announces that %mercenary% has the scariest shadow of them all. The large sellsword looks over as if annoyed %their_mercenary% name was spoken aloud. %They_mercenary% grits %their_mercenary% teeth and slowly raises %their_mercenary% hands and the rest of the company fearfully rears back. %mercenary% laces %their_mercenary% fingers and puts the thumbs out.%SPEECH_ON%This is a chicken. See?%SPEECH_OFF%The men glance at the shadows on the wall. It looks absolutely nothing like a chicken, but nobody dares to say that. They all nod and agree.%SPEECH_ON%Frankly, %mercenary%, that is the best cock I\'ve ever seen.%SPEECH_OFF%The men roar with laughter, but %mercenary% gets to %their_mercenary% feet and the laughter stops.%SPEECH_ON%I said it was a chicken, didn\'t I?%SPEECH_OFF%The other man nods hurriedly and agrees it was indeed a chicken. Tensions settle down, but the shadow games are effectively over.}";
@@ -20,5 +20,14 @@
 		::Legends.Screens.hook(this, "H", function (_screen) {
 			_screen.Text = "[img]gfx/ui/events/event_51.png[/img]{As the men bandy back and forth making shadows, %killer%, the alleged killer on the run, walks up to the camp carrying armfuls of jewelry and other goods, their metals glistening with crimson sheens. %They're_killer% murmuring to %themselves_killer%, but then suddenly stops and looks at the rest of the company.%SPEECH_ON%Oh. You guys are still awake? I was just, uh, out. Doing things.%SPEECH_OFF%There\'s blood on %their_killer% face and caked under %their_killer% fingernails. Sensing %themselves_killer% in trouble, %they_killer% drops the goods.%SPEECH_ON%These are for the company, of course. I\'m just so, uh, thankful that you all took me in. Thought I\'d repay the favor, you know?%SPEECH_OFF%The men stare at the goods. You ask the %person_killer% if someone is going to come looking for those items. %They_killer% grins.%SPEECH_ON%No sir, of course not. I made sure of it. Oh captain, did I make sure of it, heh, heh, heh.%SPEECH_OFF%You tell the %person_killer% to put the goods into inventory, but to be sure to clean them up first. As %they_killer% walks away, the rest of the men quietly exchange glances. There\'s no more shadow games left to play, it seems.}";
 		});
+	}
+
+	local onPrepareVariables = o.onPrepareVariables;
+	o.onPrepareVariables = function( _vars ) {
+		onPrepareVariables(_vars);
+		_vars.push([
+			"monk_background_name",
+			this.m.Monk != null ? this.m.Monk.m.Background.m.Name.tolower() : ""
+		]);
 	}
 });

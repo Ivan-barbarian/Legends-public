@@ -317,7 +317,7 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 
 	function onBuildPerkTree( _background )
 	{
-		if (_background.getID() == "background.gravedigger" || _background.getID() == "background.graverobber" || _background.getID() == "background.cultist")
+		if (_background.getID() == "background.gravedigger" || _background.getID() == "background.graverobber" || _background.getID() == "background.cultist" || _background.getID() == "background.anatomist")
 		{
 			this.addScenarioPerk(_background, ::Const.Perks.PerkDefs.LegendSiphon);
 		}

@@ -7,8 +7,13 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/active_strafing_run_bw.png";
 		this.m.Overlay = "active_strafing_run";
 		this.m.SoundOnUse = [];
+		this.m.ShotSounds <- [
+			"sounds/combat/bolt_shot_01.wav",
+			"sounds/combat/bolt_shot_02.wav",
+			"sounds/combat/bolt_shot_03.wav"
+		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Order = this.Const.SkillOrder.OffensiveTargeted+1;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
@@ -158,6 +163,7 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 		local betterThanNothing;
 		local ZOC = [];
 		local dirToTarget = _tag.OldTile.getDirectionTo(myTile);
+		_entity.playSound(::Const.Sound.ActorEvent.Move, 2.0);
 
 		for( local i = 0; i != 6; i = ++i ) {
 			if (!myTile.hasNextTile(i)) { }
@@ -293,6 +299,8 @@ this.legend_strafing_run_skill <- this.inherit("scripts/skills/skill", {
 				Skill = skill,
 				TargetTile = closest.getTile()
 			};
+			local sound = this.m.ShotSounds[this.Math.rand(0, this.m.Sound.len() - 1)];
+			this.Sound.play(sound, this.Const.Sound.Volume.Skill, this.getContainer().getActor().getPos());
 			local delay = this.Math.max(this.Const.Combat.RiposteDelay, skill.m.Delay);
 			this.Time.scheduleEvent(this.TimeUnit.Virtual, delay, this.onAfterTeleport.bindenv(this), info);
 		}
