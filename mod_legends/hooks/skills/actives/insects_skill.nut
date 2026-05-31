@@ -9,6 +9,10 @@
 		this.m.MaxLevelDifference = 8;
 	}
 
+	o.getDescription <- function() {
+		return "Conjure a cloud of a thousand black flies to swarm an enemy. The insects seek to crawl into every crack in the armor and every bodily orifice, almost completely overwhelming the target's ability to fight for [color=" + this.Const.UI.Color.NegativeValue + "]" + 3 + "[/color] turns.";
+	}
+
 	o.getTooltip <- function ()
 	{
 		return [
