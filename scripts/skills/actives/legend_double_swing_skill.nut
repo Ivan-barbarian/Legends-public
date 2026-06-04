@@ -91,19 +91,14 @@ this.legend_double_swing_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-	function onAfterUpdate(_properties) {
-		local actor = this.getContainer().getActor();
-		local items = actor.getItems();
+	function onAfterUpdate (_properties) {
+		local items = this.getContainer().getActor().getItems();
 		local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-		if (mh.isWeaponType(this.Const.Items.WeaponType.Dagger)
-			&& _properties.IsSpecializedInDaggers)
-		{
+		if (mh != null && mh.isWeaponType(this.Const.Items.WeaponType.Dagger) && _properties.IsSpecializedInDaggers) {
 			this.m.ActionPointCost -= 1;
 		}
-		if (oh.isWeaponType(this.Const.Items.WeaponType.Dagger)
-			&& _properties.IsSpecializedInDaggers)
-		{
+		if (oh != null && oh.isWeaponType(this.Const.Items.WeaponType.Dagger) && _properties.IsSpecializedInDaggers) {
 			this.m.ActionPointCost -= 1;
 		}
 	}
