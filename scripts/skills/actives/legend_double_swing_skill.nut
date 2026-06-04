@@ -92,6 +92,7 @@ this.legend_double_swing_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 	function onAfterUpdate (_properties) {
+		local items = _user.getItems();
 		local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 		if (mh.isWeaponType(this.Const.Items.WeaponType.Dagger) && _properties.IsSpecializedInDaggers) {
