@@ -91,13 +91,19 @@ this.legend_double_swing_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-	function onAfterUpdate (_properties) {
+	function onAfterUpdate(_properties) {
+		local actor = this.getContainer().getActor();
+		local items = actor.getItems();
 		local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-		if (mh.isWeaponType(this.Const.Items.WeaponType.Dagger) && _properties.IsSpecializedInDaggers) {
+		if (mh.isWeaponType(this.Const.Items.WeaponType.Dagger)
+			&& _properties.IsSpecializedInDaggers)
+		{
 			this.m.ActionPointCost -= 1;
 		}
-		if (oh.isWeaponType(this.Const.Items.WeaponType.Dagger) && _properties.IsSpecializedInDaggers) {
+		if (oh.isWeaponType(this.Const.Items.WeaponType.Dagger)
+			&& _properties.IsSpecializedInDaggers)
+		{
 			this.m.ActionPointCost -= 1;
 		}
 	}
@@ -110,25 +116,25 @@ this.legend_double_swing_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 	function getFatigueCost() {
-        local actor = this.getContainer().getActor();
-        
-        if (actor == null || !::Legends.Weapons.isDualWielding(actor)) {
-            return this.skill.getFatigueCost(); 
-        }
+		local actor = this.getContainer().getActor();
 
-        local items = actor.getItems();
-        local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-        local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+		if (actor == null || !::Legends.Weapons.isDualWielding(actor)) {
+			return this.skill.getFatigueCost();
+		}
 
-        local mhSkill = ::Legends.Weapons.findPrimaryAttackSkill(actor, mh);
-        local ohSkill = ::Legends.Weapons.findPrimaryAttackSkill(actor, oh);
-        
-        if (mhSkill != null && ohSkill != null) {
-            return this.Math.max(this.FatigueCost, mhSkill.getFatigueCost() + ohSkill.getFatigueCost());
-        }
+		local items = actor.getItems();
+		local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 
-        return this.skill.getFatigueCost();
-    }
+		local mhSkill = ::Legends.Weapons.findPrimaryAttackSkill(actor, mh);
+		local ohSkill = ::Legends.Weapons.findPrimaryAttackSkill(actor, oh);
+
+		if (mhSkill != null && ohSkill != null) {
+			return this.Math.max(this.FatigueCost, mhSkill.getFatigueCost() + ohSkill.getFatigueCost());
+		}
+
+		return this.skill.getFatigueCost();
+	}
 
 	function onUse(_user, _targetTile) {
 		this.m.BothHitMiddle = false;
