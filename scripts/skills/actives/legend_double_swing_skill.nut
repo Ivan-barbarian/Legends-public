@@ -91,6 +91,17 @@ this.legend_double_swing_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
+	function onAfterUpdate (_properties) {
+		local mh = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local oh = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+		if (mh.isWeaponType(this.Const.Items.WeaponType.Dagger) && _properties.IsSpecializedInDaggers) {
+			this.m.ActionPointCost -= 1;
+		}
+		if (oh.isWeaponType(this.Const.Items.WeaponType.Dagger) && _properties.IsSpecializedInDaggers) {
+			this.m.ActionPointCost -= 1;
+		}
+	}
+
 	function isUsable() {
 		if (!this.skill.isUsable()) {
 			return false;
@@ -113,7 +124,7 @@ this.legend_double_swing_skill <- this.inherit("scripts/skills/skill", {
         local ohSkill = ::Legends.Weapons.findPrimaryAttackSkill(actor, oh);
         
         if (mhSkill != null && ohSkill != null) {
-            return mhSkill.getFatigueCost() + ohSkill.getFatigueCost();
+            return this.Math.max(this.FatigueCost, mhSkill.getFatigueCost() + ohSkill.getFatigueCost());
         }
 
         return this.skill.getFatigueCost();
