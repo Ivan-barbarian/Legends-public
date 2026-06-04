@@ -156,6 +156,7 @@
 ::Const.Strings.PerkName.LegendWhipThemInShape <- "Whip them in Shape";
 ::Const.Strings.PerkName.LegendTacticalManeuvers <- "Tactical Maneuvers";
 ::Const.Strings.PerkName.LegendVersatile <- "Versatile";
+::Const.Strings.PerkName.LegendNearDeathExperience <- "Near Death Experience";
 
 //MASTERIES - skills that have a unified effect on their weapon class
 ::Const.Strings.PerkName.LegendSpecPoison <- "Poison Mastery";
@@ -3416,6 +3417,15 @@ Oftentimes better than a master of one.
 • Confers a [color=%positive%]25%[/color] damage bonus to Ranged Damage on next attack when attacking with a Melee Attack and a [color=%positive%]25%[/color] damage bonus to Melee Damage on next attack when attacking with a Ranged Attack. If the attack misses, the effect is lost.
 
 • Gain [color=%positive%]10%[/color] of your base Ranged Skill as Melee Skill and [color=%positive%]10%[/color] of your base Melee Skill as Ranged Skill.
+";
+
+::Const.Strings.PerkDescription.LegendNearDeathExperience <- @"
+Your often and close experience with near death has left you robust and resilient.
+
+[color=%passive%][u]Passive:[/u][/color]
+• Confers an experience point bonus based on Hitpoints lost and [color=%status%]Injuries[/color] gained during combat. Gain [color=%positive%]1[/color] XP per Hitpoint and [color=%positive%]10[/color] per [color=%status%]Injuries[/color]. Experience gain is reduced by [color=%negative%]90%[/color] at level 12 and above.
+
+• Hitpoint damage taken is reduced by [color=%negative%]5%[/color] and Resolve is increased by [color=%positve%]3[/color] for each [color=%status%]Injury[/color] you have up to a maximum of [color=%negative%]30%[/color] and [color=%positive%]15[/color] achieved at 6 [color=%status%]Injuries[/color]. Counts both regular and permanent [color=%status%]Injuries[/color].
 ";
 
 ::Const.Strings.PerkDescription.LegendSpecDualWield <- @"

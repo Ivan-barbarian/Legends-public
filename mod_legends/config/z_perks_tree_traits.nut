@@ -178,7 +178,9 @@ if (!("Perks" in ::Const))
 		]
 	},
 	Tree = [
-		[],
+		[
+			::Legends.Perk.LegendNearDeathExperience
+		],
 		[
 			::Legends.Perk.Taunt
 		],

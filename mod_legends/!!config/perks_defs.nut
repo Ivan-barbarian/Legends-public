@@ -2740,6 +2740,17 @@ perkDefObjects.push({
 	Const = "LegendNightRaider"
 });
 
+::Legends.Perk.LegendNearDeathExperience <- null;
+perkDefObjects.push({
+	ID = "perk.legend_near_death_experience",
+	Script = "scripts/skills/perks/perk_legend_near_death_experience",
+	Name = ::Const.Strings.PerkName.LegendNearDeathExperience,
+	Tooltip = ::Const.Strings.PerkDescription.LegendNearDeathExperience,
+	Icon = "ui/perks/perk_near_death_experience.png",
+	IconDisabled = "ui/perks/perk_near_death_experience_bw.png",
+	Const = "LegendNearDeathExperience"
+});
+
 ::Legends.Perk.LegendAdaptive <- null;
 perkDefObjects.push({
 	ID = "perk.legend_adaptive",

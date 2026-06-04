@@ -1,3 +1,13 @@
+# 19.4.0 - Name Pending
+
+## Perks
+
+### New Perks
+- `Near Death Experience` - Martyr Trait Tree
+> Confers an experience point bonus based on Hitpoints lost and Injuries gained during combat. Gain 1 XP per Hitpoint and 10 per Injuries. Experience gain is reduced by 90% at level 12 and above.
+> Hitpoint damage taken is reduced by 5% and Resolve is increased by 3 for each Injury you have up to a maximum of 30% and [color=%positive%]15 achieved at 6 Injuries. Counts both regular and permanent Injuries.
+
+
 # 19.3.0 - Left & Right
 
 ## Dual Wielding
