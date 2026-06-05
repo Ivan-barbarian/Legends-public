@@ -101,8 +101,6 @@ TooltipModule.prototype.createDIV = function () {
 	this.mContainer = $('<div class="tooltip-module ui-control-tooltip-module display-none"></div>');
 
 	var self = this;
-	//looks like this is only ran once per game start, so no need to remove listeners
-	console.error("Tooltip Event Listeners Added");
 	window.addEventListener('mousewheel', function (event) {
 		if (!self.mIsVisible || !self.mScrollWrapper)
 			return;

@@ -13,7 +13,7 @@
 	}
 	o.getCostForCraft <- function  ()
 	{
-		return getCost() * this.m.CraftMultiplier;
+		return this.getCost() * this.m.CraftMultiplier;
 	}
 
 	o.getIcon = function ()
@@ -251,6 +251,7 @@
 			Description = this.getDescription(),
 			ImagePath = this.getIcon(),
 			LargeImagePath = this.getIconLarge() != null ? this.getIconLarge() : this.getIcon(),
+			IconOverlay = this.m.PreviewCraftable.getIconOverlay(),
 			Ingredients = this.getIngredients(),
 			Cost = this.getCost(),
 			IsCraftable = this.isCraftable(),
