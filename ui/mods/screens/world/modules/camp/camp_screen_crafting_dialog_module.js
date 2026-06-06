@@ -545,6 +545,7 @@ CampScreenCraftingDialogModule.prototype.addListEntry = function (_data)
 				overlayImage.css({
 					'width': _image.css('width'),
 					'height': _image.css('height'),
+					'pointer-events': 'none'
 				});
 				parent.append(overlayImage);
 			}
