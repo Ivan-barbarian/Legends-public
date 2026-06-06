@@ -36,13 +36,14 @@ runs:
         RELEASE_BODY: ${{ inputs.release_body }}
 
     - name: Upload Core to Nexus
-      uses: Nexus-Mods/upload-action@v1.0.0-beta.5
+      uses: Nexus-Mods/upload-action@v1.0.0-beta.7
       with:
         api_key: ${{ inputs.api_key }}
         file_group_id: ${{ inputs.core_id }}
         filename: mod_legends-${{ inputs.tag_name }}.zip
         display_name: mod_legends-${{ inputs.tag_name }}
         version: ${{ inputs.tag_name }}
+        allow_mod_manager_download: false
         description: |
           REQUIRES VERSION 1.5.1.8+ OF VANILLA GAME
 
@@ -66,13 +67,14 @@ runs:
 
     - name: Upload Assets
       if: steps.check_files.outputs.exists == 'true'
-      uses: Nexus-Mods/upload-action@v1.0.0-beta.5
+      uses: Nexus-Mods/upload-action@v1.0.0-beta.7
       with:
         api_key: ${{ inputs.api_key }}
         file_group_id: ${{ inputs.assets_id }}
         filename: mod_legends-assets-${{ inputs.tag_name }}.zip
         display_name: mod_legends-assets-${{ inputs.tag_name }}
         version: ${{ inputs.tag_name }}
+        allow_mod_manager_download: false
         description: |
           This is an asset library required to play the mod.
 
