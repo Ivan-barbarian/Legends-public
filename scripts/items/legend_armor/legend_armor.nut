@@ -611,6 +611,13 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 				text = "Weight: " + ::Legends.S.colorize("" + ::Legends.S.getSign(this.getStaminaModifier()) + this.Math.abs(this.getStaminaModifier()), this.getStaminaModifier())
 			});
 		}
+		else {
+			result.push({
+				id = 5,
+				type = "text",
+				text = "&nbsp;\n&nbsp;"
+			});
+		}
 
 		if (this.getStaminaModifier() < 0 && ::Legends.Mod.ModSettings.getSetting("ShowArmorPerFatigueValue").getValue() )
 		{

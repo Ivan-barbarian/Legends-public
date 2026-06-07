@@ -8,17 +8,11 @@
 	o.m.MinRangeForPerTile <- 2; // to fix HitChanceAdditionalWithEachTile in cases where the min range is higher than 2
 	o.m.IsExecutingOffhand <- false;
 
-	o.getDescription = function()
-	{
+	o.getDescription = function () {
 		local vars = [];
-		if (this.getContainer() == null || (typeof this.getContainer() == "instance" && this.getContainer().isNull()) || this.getContainer().getActor() == null)
-		{
-			this.logError("Skill: " + this.getName() + " is missing a" + (this.getContainer() == null ? " Container" : "n Actor") + " when getting description");
-			this.MSU.Log.printStackTrace();
-		}
-		else
-		{
-			local actor = this.getContainer().getActor();
+		local container = this.getContainer();
+		if (container != null && (typeof container == "instance" && !container.isNull()) && container.getActor() != null) {
+			local actor = container.getActor();
 			vars.extend([
 				[
 					"name",

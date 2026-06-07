@@ -125,7 +125,7 @@ this.legend_double_swing_skill <- this.inherit("scripts/skills/skill", {
 		local ohSkill = ::Legends.Weapons.findPrimaryAttackSkill(actor, oh);
 
 		if (mhSkill != null && ohSkill != null) {
-			return this.Math.max(this.FatigueCost, mhSkill.getFatigueCost() + ohSkill.getFatigueCost());
+			return this.Math.max(this.m.FatigueCost, mhSkill.getFatigueCost() + ohSkill.getFatigueCost());
 		}
 
 		return this.skill.getFatigueCost();
