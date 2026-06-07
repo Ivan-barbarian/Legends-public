@@ -52,7 +52,7 @@
 		"Bone Disc of Saint Corven",
 		"Warding Ring of Nine Etchings",
 		"Banner of the Mudwall Militia",
-		"Ledger of the Town\’s First Tax Evasion",
+		"Ledger of the Town\'s First Tax Evasion",
 		"Broken Sword That Ended the Pig War",
 		"Mask of the Festival Goat",
 		"Cloak of the Rainbringer",

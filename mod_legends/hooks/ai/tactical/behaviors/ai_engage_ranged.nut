@@ -7,7 +7,7 @@
 		::Legends.Actives.getID(::Legends.Active.LegendShootDart),
 		::Legends.Actives.getID(::Legends.Active.LegendShootStone),
 		::Legends.Actives.getID(::Legends.Active.LegendShootPreciseStone),
-		::Legends.Actives.getID(::Legends.Active.LegendPiercingShot),
+		::Legends.Actives.getID(::Legends.Active.LegendPiercingJavelin),
 		::Legends.Actives.getID(::Legends.Active.LegendPiercingBolt),
 		::Legends.Actives.getID(::Legends.Active.ThrowJavelin),
 		::Legends.Actives.getID(::Legends.Active.ThrowAxe),

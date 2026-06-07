@@ -2614,12 +2614,12 @@ activesDefs.push({
 	Name = "Piercing Javelin",
 });
 
-::Legends.Active.LegendPiercingShot <- null;
+::Legends.Active.LegendPiercingBolt <- null;
 activesDefs.push({
-	ID = "actives.legend_piercing_shot",
-	Script = "scripts/skills/actives/legend_piercing_shot_skill",
-	Const = "LegendPiercingShot",
-	Name = "Piercing Shot",
+	ID = "actives.legend_piercing_bolt",
+	Script = "scripts/skills/actives/legend_piercing_bolt_skill",
+	Const = "LegendPiercingBolt",
+	Name = "Piercing Bolt",
 });
 
 ::Legends.Active.LegendPoisonWeapon <- null;
