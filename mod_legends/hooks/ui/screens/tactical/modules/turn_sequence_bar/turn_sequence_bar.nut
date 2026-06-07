@@ -58,4 +58,26 @@
 			}
 		}
 	}
+
+	// normally TSB checks on the entity's turn if that entity is the last one on the bar but the tail is behind the head
+	// slight delay to allow the tsb to clean up and recheck the next round init
+	o.ForceRecheckNextTurnCondition <- function () {
+		if (this.m.IsBattleEnded) {
+			return;
+		}
+
+		if (this.m.OnNextTurnListener != null) {
+			if (!this.m.OnNextTurnListener()) {
+				return;
+			}
+		}
+		this.Time.scheduleEvent(this.TimeUnit.Virtual, 10, function (_tag) {
+			if (this.getCurrentEntities().len() == 0 && !this.m.IsInitNextRound) {
+				this.m.IsLocked = false;
+				//this.m.IsInitNextRound = true; //alternative fix, but setting isLocked to false allows the check to go on naturally
+				//this.m.CheckEnemyRetreat = true;
+			}
+		}.bindenv(this), null);
+	}
+	
 });
