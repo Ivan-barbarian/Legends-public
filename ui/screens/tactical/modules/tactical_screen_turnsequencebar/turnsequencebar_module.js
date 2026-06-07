@@ -925,6 +925,7 @@ TacticalScreenTurnSequenceBarModule.prototype.selectFirstEntity = function (_ent
 
 						var retries = 0;
 						var checkDataAndAnimate = function () {
+							var offsets = entityImage.data('offsets') || { imageOffsetX: 0, imageOffsetY: 0 };
 							var newWidth = entityImage[0].naturalWidth;
 							var newHeight = entityImage[0].naturalHeight;
 							if (newWidth === 0 && retries < 5) {
@@ -934,7 +935,6 @@ TacticalScreenTurnSequenceBarModule.prototype.selectFirstEntity = function (_ent
 							}
 							if (newWidth === 0) newWidth = 120;
 							if (newHeight === 0) newHeight = 120;
-							var offsets = entityImage.data('offsets') || { imageOffsetX: 0, imageOffsetY: 0 };
 							var marginLeft = (entityImageLayer.innerWidth() - newWidth + offsets.imageOffsetX) / 2;;
 							var marginTop = (entityImageLayer.innerHeight() - newHeight + offsets.imageOffsetY) / 2;
 
