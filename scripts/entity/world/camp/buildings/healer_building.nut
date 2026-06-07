@@ -311,20 +311,32 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	}
 
 
-	function getUpdateText()
-	{
-		local injTotal = this.m.Queue.len();
-		local healedTotal = this.m.InjuriesHealed.len();
+	function getUpdateText() {
+		local remainingInjuries = 0;
+    	local activeInjury = null;
 
-		if (injTotal <= 0)
+		foreach (obj in this.m.Queue)
 		{
+			if (obj != null && obj.Injury != null && !obj.Injury.isTreated()) {
+				remainingInjuries++;
+
+				if (activeInjury == null) {
+					activeInjury = obj;
+				}
+			}
+		}
+
+		
+		local healedTotal = this.m.InjuriesHealed.len();
+		local injTotal = healedTotal + remainingInjuries;
+
+		if (injTotal <= 0) {
 			return "";
 		}
 
 		local ret = "Injuries Treated ... " + healedTotal + " of " + injTotal;
 
-		if (injTotal == healedTotal && injTotal > 0)
-		{
+		if (remainingInjuries == 0) {
 			return ret;
 		}
 
@@ -333,8 +345,8 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			return "No injuries being treated (Out of medicine!)";
 		}
 
-		local injPercent = this.Math.floor(this.m.Queue[this.m.InjuriesHealed.len()].Injury.getTreatedPercentage() * 10000) / 100.0;
-		local injName = this.m.Queue[this.m.InjuriesHealed.len()].Injury.getName();
+		local injPercent = this.Math.floor(activeInjury.Injury.getTreatedPercentage() * 10000) / 100.0;
+		local injName = activeInjury.Injury.getName();
 		ret += "\n" +  injPercent + "% of " + injName + " healed";
 
 		return ret;
