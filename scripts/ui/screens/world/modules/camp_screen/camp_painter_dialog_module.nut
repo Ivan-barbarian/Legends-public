@@ -35,6 +35,7 @@ this.camp_painter_dialog_module <- this.inherit("scripts/ui/screens/ui_module", 
 					Plate = bodyarmorbase.getUpgrade(this.Const.Items.ArmorUpgrades.Plate),
 					Tabard = bodyarmorbase.getUpgrade(this.Const.Items.ArmorUpgrades.Tabbard),
 					Cloak = bodyarmorbase.getUpgrade(this.Const.Items.ArmorUpgrades.Cloak)
+					Attachment = bodyarmorbase.getUpgrade(this.Const.Items.ArmorUpgrades.Attachment),
 				};
 				foreach (key, value in bodyarmor)
 				{
@@ -141,6 +142,14 @@ this.camp_painter_dialog_module <- this.inherit("scripts/ui/screens/ui_module", 
 			else
 			{shield.Shield <- null;}
 
+			// add upgrades arrays to check visibility for combined draws
+			if (bodyarmorbase != null) {
+				bodyarmorfinal.Upgrades <- bodyarmorbase.getUpgrades();
+			}
+			if (helmetbase != null) {
+				helmetfinal.Upgrades <- helmetbase.getUpgrades();
+			}
+
 			local e = {
 				ID = b.getID(),
 				Name = b.getName(),
@@ -220,7 +229,8 @@ this.camp_painter_dialog_module <- this.inherit("scripts/ui/screens/ui_module", 
 						Chain = bodyarmorbase.getUpgrade(this.Const.Items.ArmorUpgrades.Chain),
 						Plate = bodyarmorbase.getUpgrade(this.Const.Items.ArmorUpgrades.Plate),
 						Tabard = bodyarmorbase.getUpgrade(this.Const.Items.ArmorUpgrades.Tabbard),
-						Cloak = bodyarmorbase.getUpgrade(this.Const.Items.ArmorUpgrades.Cloak)
+						Cloak = bodyarmorbase.getUpgrade(this.Const.Items.ArmorUpgrades.Cloak),
+						Attachment = bodyarmorbase.getUpgrade(this.Const.Items.ArmorUpgrades.Attachment)
 					};
 					foreach(key, value in bodyarmor)
 					{

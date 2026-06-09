@@ -50,6 +50,10 @@ var CampScreenPainterDialogModule = function (_parent) {
 				{ MasterKey: "BodyArmor", Key: "Cloak", Image: null, Value: null, Left: null, Right: null, Reset: null, Input: null, Combined: null },
 				{ MasterKey: "Helmet", Key: "ExtraVanity", Image: null, Value: null, Left: null, Right: null, Reset: null, Input: null, Combined: null }
 			],
+			[
+				{ Row: null },
+				{ MasterKey: "BodyArmor", Key: "Attachment", Image: null, Value: null, Left: null, Right: null, Reset: null, Input: null, Combined: null }
+			],
 		];
 
 	// assets labels
@@ -146,9 +150,9 @@ CampScreenPainterDialogModule.prototype.createDIV = function (_parentDiv) {
 	backgroundRow.append(headertext);
 	headertext = $('<div class="helmetname title-font-normal font-bold font-color-brother-name">Helmet</div>');
 	backgroundRow.append(headertext);
-	headertext = $('<div class="weaponname title-font-normal font-bold font-color-brother-name">Weapon</div>');
+	headertext = $('<div class="weaponname title-font-normal font-bold font-color-brother-name">Mainhand</div>');
 	backgroundRow.append(headertext);
-	headertext = $('<div class="shieldname title-font-normal font-bold font-color-brother-name">Shield</div>');
+	headertext = $('<div class="shieldname title-font-normal font-bold font-color-brother-name">Offhand</div>');
 	backgroundRow.append(headertext);
 
 	// details: layers
@@ -205,52 +209,54 @@ CampScreenPainterDialogModule.prototype.createDIV = function (_parentDiv) {
 		}, '', 6);
 
 		//SECOND COLUMN
-		container = $('<div class="l-stats-row-icon"/>');
-		container.css('left', '41.0rem'); //21.0rem
-		row.append(container);
-		self.layers[r][2].Image = $('<img class="row-icon-img"/>');
-		container.append(self.layers[r][2].Image);
+		if (self.layers[r].length > 2) {
+			container = $('<div class="l-stats-row-icon"/>');
+			container.css('left', '41.0rem'); //21.0rem
+			row.append(container);
+			self.layers[r][2].Image = $('<img class="row-icon-img"/>');
+			container.append(self.layers[r][2].Image);
 
-		container = $('<div class="value-container"/>');
-		container.css('left', '41.5rem'); //21.5rem
-		row.append(container);
-		self.layers[r][2].Value = $('<div class="label text-font-very-small font-color-value font-shadow-outline">1000</div>');
-		container.append(self.layers[r][2].Value);
+			container = $('<div class="value-container"/>');
+			container.css('left', '41.5rem'); //21.5rem
+			row.append(container);
+			self.layers[r][2].Value = $('<div class="label text-font-very-small font-color-value font-shadow-outline">1000</div>');
+			container.append(self.layers[r][2].Value);
 
-		container = $('<div class="l-input"/>');
-		container.css('left', '30.4rem'); //27.8rem'
-		row.append(container);
-		self.layers[r][2].Input = container.createInput('', 0, 2, null, null, 'title-font-medium font-bold font-color-brother-name', function (_input) {
-			self.ProcessInputChange(2, _value[2].MasterKey, _value[2].Key, _input);
-		}, 2, function (_input) {
-			var iText = _input.getInputText();
-			var iTextInd = iText.indexOf('/');
-			if (iTextInd > 0) {
-				iText = iText.slice(0, iTextInd);
-				_input.setInputText(iText);
-			}
-		});
-		self.layers[r][2].Input.css('width', '10.4rem');
-		self.layers[r][2].Input.css('background-size', '10.4rem 2.8rem');
+			container = $('<div class="l-input"/>');
+			container.css('left', '30.4rem'); //27.8rem'
+			row.append(container);
+			self.layers[r][2].Input = container.createInput('', 0, 2, null, null, 'title-font-medium font-bold font-color-brother-name', function (_input) {
+				self.ProcessInputChange(2, _value[2].MasterKey, _value[2].Key, _input);
+			}, 2, function (_input) {
+				var iText = _input.getInputText();
+				var iTextInd = iText.indexOf('/');
+				if (iTextInd > 0) {
+					iText = iText.slice(0, iTextInd);
+					_input.setInputText(iText);
+				}
+			});
+			self.layers[r][2].Input.css('width', '10.4rem');
+			self.layers[r][2].Input.css('background-size', '10.4rem 2.8rem');
 
-		container = $('<div class="l-leftbutton"/>');
-		container.css('left', '33.4rem'); //27.3rem
-		row.append(container);
-		self.layers[r][2].Left = container.createImageButton(Path.GFX + Asset.BUTTON_ARROW_LEFT, function () {
-			self.ArrowClicked(2, _value[2].MasterKey, _value[2].Key, -1);
-		}, '', 6);
-		container = $('<div class="l-rightbutton"/>');
-		container.css('left', '36.9rem'); //30.8rem
-		row.append(container);
-		self.layers[r][2].Right = container.createImageButton(Path.GFX + Asset.BUTTON_ARROW_RIGHT, function () {
-			self.ArrowClicked(2, _value[2].MasterKey, _value[2].Key, 1);
-		}, '', 6);
-		container = $('<div class="l-resetbutton"/>');
-		container.css('left', '29.9rem'); //34.3rem
-		row.append(container);
-		self.layers[r][2].Reset = container.createImageButton(Path.GFX + Asset.BUTTON_QUIT, function () {
-			self.ResetVariant(2, _value[2].MasterKey, _value[2].Key);
-		}, '', 6);
+			container = $('<div class="l-leftbutton"/>');
+			container.css('left', '33.4rem'); //27.3rem
+			row.append(container);
+			self.layers[r][2].Left = container.createImageButton(Path.GFX + Asset.BUTTON_ARROW_LEFT, function () {
+				self.ArrowClicked(2, _value[2].MasterKey, _value[2].Key, -1);
+			}, '', 6);
+			container = $('<div class="l-rightbutton"/>');
+			container.css('left', '36.9rem'); //30.8rem
+			row.append(container);
+			self.layers[r][2].Right = container.createImageButton(Path.GFX + Asset.BUTTON_ARROW_RIGHT, function () {
+				self.ArrowClicked(2, _value[2].MasterKey, _value[2].Key, 1);
+			}, '', 6);
+			container = $('<div class="l-resetbutton"/>');
+			container.css('left', '29.9rem'); //34.3rem
+			row.append(container);
+			self.layers[r][2].Reset = container.createImageButton(Path.GFX + Asset.BUTTON_QUIT, function () {
+				self.ResetVariant(2, _value[2].MasterKey, _value[2].Key);
+			}, '', 6);
+		}
 	});
 
 	var armorcontainer = $('<div class="l-armor-icon"/>');
@@ -260,8 +266,10 @@ CampScreenPainterDialogModule.prototype.createDIV = function (_parentDiv) {
 	for (var r = 0; r < this.layers.length; r++) {
 		self.layers[r][1].Combined = $('<img class="armor-icon-img"/>');
 		armorcontainer.append(self.layers[r][1].Combined);
-		self.layers[r][2].Combined = $('<img class="helmet-icon-img"/>');
-		helmetcontainer.append(self.layers[r][2].Combined);
+		if (self.layers[r].length > 2) {
+			self.layers[r][2].Combined = $('<img class="helmet-icon-img"/>');
+			helmetcontainer.append(self.layers[r][2].Combined);
+		}
 	}
 	self.layers[0][3].Combined = $('<img class="armor-icon-img"/>');
 	self.layers[0][4].Combined = $('<img class="armor-icon-img"/>');
@@ -540,33 +548,67 @@ CampScreenPainterDialogModule.prototype.updateDetailsPanel = function (_element)
 			}
 		});
 
+		var armorOrder = self.getLayerDrawOrder('BodyArmor', data.BodyArmor);
+		$.each(armorOrder, function (i, layerInfo) {
+			for (var r = 0; r < self.layers.length; r++) {
+				if (self.layers[r][1].Key === layerInfo.key) {
+					var layerObj = self.layers[r][1];
+					layerObj.Combined.css({ 'z-index': layerInfo.p });
+					if (layerInfo.visible) {
+						layerObj.Combined.removeClass('display-none').addClass('display-block');
+					} else {
+						layerObj.Combined.removeClass('display-block').addClass('display-none');
+					}
+					break;
+				}
+			}
+		});
+
 		$.each(data.Helmet, function (_key, _value) {
 			for (var r = 0; r < self.layers.length; r++) {
-				if (self.layers[r][2].Key == _key) {
-					if (_value != null) {
-						self.layers[r][2].Image.attr('src', Path.ITEMS + data.Helmet[_key]['Icon']);
-						self.layers[r][2].Combined.attr('src', Path.ITEMS + data.Helmet[_key]['IconLarge']);
-						if (data.Helmet[_key]['Variants'] > 1) {
-							self.layers[r][2].Value.html("");//self.layers[r][2].Value.html("" + data.Helmet[_key]['Value']); painting is free
-							self.layers[r][2].Value.css({ opacity: 0.5 });
-							self.layers[r][2].Input.setInputTextBP(data.Helmet[_key]['Variant'] + "/" + data.Helmet[_key]['Variants']);
-							self.layers[r][2].Left.enableButton(true);
-							self.layers[r][2].Right.enableButton(true);
+				if (self.layers[r][2] !== undefined) {
+					if (self.layers[r][2].Key == _key) {
+						if (_value != null) {
+							self.layers[r][2].Image.attr('src', Path.ITEMS + data.Helmet[_key]['Icon']);
+							self.layers[r][2].Combined.attr('src', Path.ITEMS + data.Helmet[_key]['IconLarge']);
+							if (data.Helmet[_key]['Variants'] > 1) {
+								self.layers[r][2].Value.html("");//self.layers[r][2].Value.html("" + data.Helmet[_key]['Value']); painting is free
+								self.layers[r][2].Value.css({ opacity: 0.5 });
+								self.layers[r][2].Input.setInputTextBP(data.Helmet[_key]['Variant'] + "/" + data.Helmet[_key]['Variants']);
+								self.layers[r][2].Left.enableButton(true);
+								self.layers[r][2].Right.enableButton(true);
+							}
 						}
-					}
-					else //no layer
-					{
-						self.layers[r][2].Image.attr('src', Path.GFX + 'ui/icons/talent_0.png');
-						self.layers[r][2].Combined.attr('src', Path.GFX + 'ui/icons/talent_0.png');
-					}
+						else //no layer
+						{
+							self.layers[r][2].Image.attr('src', Path.GFX + 'ui/icons/talent_0.png');
+							self.layers[r][2].Combined.attr('src', Path.GFX + 'ui/icons/talent_0.png');
+						}
 
-					if (_value == null || data.Helmet[_key]['Variants'] <= 1) {
-						self.layers[r][2].Value.html("");
-						self.layers[r][2].Input.setInputTextBP("");
-						self.layers[r][2].Left.enableButton(false);
-						self.layers[r][2].Right.enableButton(false);
+						if (_value == null || data.Helmet[_key]['Variants'] <= 1) {
+							self.layers[r][2].Value.html("");
+							self.layers[r][2].Input.setInputTextBP("");
+							self.layers[r][2].Left.enableButton(false);
+							self.layers[r][2].Right.enableButton(false);
+						}
+						self.layers[r][2].Reset.enableButton(false);
+						break;
 					}
-					self.layers[r][2].Reset.enableButton(false);
+				}
+			}
+		});
+
+		var helmetOrder = self.getLayerDrawOrder('Helmet', data.Helmet);
+		$.each(helmetOrder, function (i, layerInfo) {
+			for (var r = 0; r < self.layers.length; r++) {
+				if (self.layers[r][2].Key === layerInfo.key) {
+					var layerObj = self.layers[r][2];
+					layerObj.Combined.css({ 'z-index': layerInfo.p });
+					if (layerInfo.visible) {
+						layerObj.Combined.removeClass('display-none').addClass('display-block');
+					} else {
+						layerObj.Combined.removeClass('display-block').addClass('display-none');
+					}
 					break;
 				}
 			}
@@ -757,11 +799,13 @@ CampScreenPainterDialogModule.prototype.UpdateCost = function () {
 	});
 	$.each(data.Helmet, function (_key, _value) {
 		for (var r = 0; r < self.layers.length; r++) {
-			if (self.layers[r][2].Key == _key) {
-				if (_value != null && self.layers[r][2].Reset.isEnabled()) {
-					totalcost = totalcost + data.Helmet[_key]['Value'];
+			if (self.layers[r][2] !== undefined) {
+				if (self.layers[r][2].Key == _key) {
+					if (_value != null && self.layers[r][2].Reset.isEnabled()) {
+						totalcost = totalcost + data.Helmet[_key]['Value'];
+					}
+					break;
 				}
-				break;
 			}
 		}
 	});
@@ -941,7 +985,7 @@ CampScreenPainterDialogModule.prototype.changeRosterEntry = function () {
 	var result = {
 		ID: data['ID'],
 		Cost: 0,
-		BodyArmor: { Cloth: {}, Chain: {}, Plate: {}, Tabard: {}, Cloak: {} },
+		BodyArmor: { Cloth: {}, Chain: {}, Plate: {}, Tabard: {}, Cloak: {}, Attachment: {} },
 		Helmet: { Hood: {}, Helm: {}, Top: {}, Vanity: {}, ExtraVanity: {} },
 		Weapon: { Weapon: {} },
 		Shield: { Shield: {} }
@@ -969,20 +1013,22 @@ CampScreenPainterDialogModule.prototype.changeRosterEntry = function () {
 	});
 	$.each(data.Helmet, function (_key, _value) {
 		for (var r = 0; r < self.layers.length; r++) {
-			if (self.layers[r][2].Key == _key) {
-				if (_value != null && self.layers[r][2].Reset.isEnabled()) {
-					totalcost = totalcost + data.Helmet[_key]['Value'];
-					var curvariant = self.layers[r][2].Input.getInputText();
-					var iTextInd = curvariant.indexOf('/');
-					curvariant = curvariant.slice(0, iTextInd);
-					curvariant = parseInt(curvariant, 10);
-					result.Helmet[_key]['ID'] = data.Helmet[_key].ID;
-					result.Helmet[_key]['Variant'] = curvariant;
+			if (self.layers[r][2] !== undefined) {
+				if (self.layers[r][2].Key == _key) {
+					if (_value != null && self.layers[r][2].Reset.isEnabled()) {
+						totalcost = totalcost + data.Helmet[_key]['Value'];
+						var curvariant = self.layers[r][2].Input.getInputText();
+						var iTextInd = curvariant.indexOf('/');
+						curvariant = curvariant.slice(0, iTextInd);
+						curvariant = parseInt(curvariant, 10);
+						result.Helmet[_key]['ID'] = data.Helmet[_key].ID;
+						result.Helmet[_key]['Variant'] = curvariant;
+					}
+					else {
+						result.Helmet[_key] = null;
+					}
+					break;
 				}
-				else {
-					result.Helmet[_key] = null;
-				}
-				break;
 			}
 		}
 	});
@@ -1034,6 +1080,67 @@ CampScreenPainterDialogModule.prototype.changeRosterEntry = function () {
 			self.updateDetailsPanel(self.mSelectedEntry);
 		}
 	});
+};
+
+CampScreenPainterDialogModule.prototype.getLayerDrawOrder = function (_slot, _data) {
+	var layers = [];
+	var upgrades = _data.Upgrades || {};
+
+	if (_slot === 'BodyArmor') {
+		var keys = ['Chain', 'Plate', 'Tabard', 'Cloak', 'Attachment'];
+
+		// check for specific pauldrons that change draw order
+		var hasFrontBackShoulders = false;
+		if (_data.Attachment && _data.Attachment.Icon) {
+			var path = _data.Attachment.Icon;
+			if (path.indexOf("pauldrons_shoulderplates_heraldic") !== -1 ||
+				path.indexOf("pauldrons_barbarian_horn") !== -1 ||
+				path.indexOf("pauldrons_padding_fur") !== -1) {
+				hasFrontBackShoulders = true;
+			}
+		}
+
+		keys.forEach(function (key, idx) {
+			var item = _data[key];
+			if (item != null) {
+				var p = idx;
+				var state = upgrades[idx];
+				if (key === 'Cloak') p = hasFrontBackShoulders ? 3 : 4;
+				if (key === 'Attachment') p = hasFrontBackShoulders ? 4 : 3;
+				var isVisible = true;
+				if (state === 2 || state === -1) {
+					isVisible = false;
+				}
+
+				layers.push({ key: key, p: p, visible: isVisible });
+			}
+		});
+	}
+	else if (_slot === 'Helmet') {
+		var keys = ['Helm', 'Top', 'Vanity', 'ExtraVanity'];
+		keys.forEach(function (key, idx) {
+			var item = _data[key];
+			if (item != null) {
+				var p = idx + 4;
+				var state = upgrades[idx];
+				if (state === 3) {
+					if (key === 'Helm') p = 2;
+					if (key === 'Top') p = 3;
+					if (key === 'Vanity') p = 0;
+					if (key === 'ExtraVanity') p = 1;
+				}
+
+				var isVisible = true;
+				if (state === 2 || state === -1) {
+					isVisible = false;
+				}
+
+				layers.push({ key: key, p: p, visible: isVisible });
+			}
+		});
+	}
+	layers.sort(function (a, b) { return a.p - b.p; });
+	return layers;
 };
 
 CampScreenPainterDialogModule.prototype.notifyBackendModuleShown = function () {
