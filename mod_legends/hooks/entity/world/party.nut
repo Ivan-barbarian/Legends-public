@@ -39,6 +39,19 @@
 			}
 		}
 
+		// add noble house flavor tooltip
+		if (f != null && f.getType() == ::Const.FactionType.NobleHouse) {
+			local flavor = ::Const.GetFactionNobleFlavorText(f);
+			local icon = f.getUIBanner();
+
+			foreach (entry in ret) {
+				if ("icon" in entry && entry.icon == icon) {
+					entry.text += flavor;
+					break;
+				}
+			}
+		}
+
 		if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue() && this.World.Assets.m.IsBrigand && this.m.Flags.get("IsCaravan"))
 		{
 			local inv = this.getStashInventory().getItems();

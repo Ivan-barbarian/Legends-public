@@ -7,6 +7,46 @@ foreach (item in ::Const.FactionTrait) {
 // new legends faction traits
 ::Const.FactionTrait.FreeCompany <- ++lastTrait;
 ::Const.FactionTrait.DummyFaction <- ++lastTrait;
+::Const.FactionTrait.Chivalrous <- ++lastTrait;
+::Const.FactionTrait.Generous <- ++lastTrait;
+::Const.FactionTrait.Loyal <- ++lastTrait;
+::Const.FactionTrait.Merciful <- ++lastTrait;
+::Const.FactionTrait.Industrious <- ++lastTrait;
+::Const.FactionTrait.Prosperous <- ++lastTrait;
+::Const.FactionTrait.Visionary <- ++lastTrait;
+::Const.FactionTrait.Wise <- ++lastTrait;
+::Const.FactionTrait.Diplomatic <- ++lastTrait;
+::Const.FactionTrait.Pragmatic <- ++lastTrait;
+::Const.FactionTrait.Cosmopolitan <- ++lastTrait;
+::Const.FactionTrait.Courageous <- ++lastTrait;
+::Const.FactionTrait.Peaceful <- ++lastTrait;
+::Const.FactionTrait.Crusader <- ++lastTrait;
+::Const.FactionTrait.Pious <- ++lastTrait;
+::Const.FactionTrait.Stern <- ++lastTrait;
+::Const.FactionTrait.Martial <- ++lastTrait;
+::Const.FactionTrait.Traditionalist <- ++lastTrait;
+::Const.FactionTrait.Mystical <- ++lastTrait;
+::Const.FactionTrait.Cultured <- ++lastTrait;
+::Const.FactionTrait.Vigilant <- ++lastTrait;
+::Const.FactionTrait.Stewardly <- ++lastTrait;
+::Const.FactionTrait.Scholarly <- ++lastTrait;
+::Const.FactionTrait.Distrustful <- ++lastTrait;
+::Const.FactionTrait.Parsimonious <- ++lastTrait;
+::Const.FactionTrait.Mercantile <- ++lastTrait;
+::Const.FactionTrait.Bureaucratic <- ++lastTrait;
+::Const.FactionTrait.Ambitious <- ++lastTrait;
+::Const.FactionTrait.Destitute <- ++lastTrait;
+::Const.FactionTrait.Cruel <- ++lastTrait;
+::Const.FactionTrait.Spiteful <- ++lastTrait;
+::Const.FactionTrait.Greedy <- ++lastTrait;
+::Const.FactionTrait.Ruthless <- ++lastTrait;
+::Const.FactionTrait.Bloodthirsty <- ++lastTrait;
+::Const.FactionTrait.Paranoid <- ++lastTrait;
+::Const.FactionTrait.Arrogant <- ++lastTrait;
+::Const.FactionTrait.Cursed <- ++lastTrait;
+::Const.FactionTrait.Inbred <- ++lastTrait;
+::Const.FactionTrait.Unstable <- ++lastTrait;
+::Const.FactionTrait.Decadent <- ++lastTrait;
 // ensure actions list is big enough to fit our stuff
 while(::Const.FactionTrait.Actions.len() <= lastTrait)
 	::Const.FactionTrait.Actions.push([]);

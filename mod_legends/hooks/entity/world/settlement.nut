@@ -142,6 +142,21 @@
 	o.getTooltip = function ()
 	{
 		local ret = getTooltip();
+		// add noble house flavor tooltip
+		foreach (i in this.m.Factions) {
+			local f = this.World.FactionManager.getFaction(i);
+			if (f == null || f.getType() != ::Const.FactionType.NobleHouse) {
+				continue;
+			}
+
+			local icon = f.getUIBanner();
+			foreach (entry in ret) {
+				if ("icon" in entry && entry.icon == icon) {
+					entry.text += ::Const.GetFactionNobleFlavorText(f);
+					break;
+				}
+			}
+		}
 
 		if (!this.m.IsActive)
 			return ret;
