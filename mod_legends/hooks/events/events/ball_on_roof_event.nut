@@ -1,6 +1,6 @@
-::mods_hookExactClass("events/events/ball_on_roof_event", function(o) {
+::mods_hookExactClass("events/events/ball_on_roof_event", function (o) {
 	local create = o.create;
-	o.create = function() {
+	o.create = function () {
 		create();
 		// %otherbrother% refers to this.m.Other. For %otherbrother%-related pronouns, use %they_other%. Thank Vanilla code for this confusion
 		::Legends.Screens.hook(this, "Good", function (_screen) {
@@ -39,5 +39,62 @@
 				});
 			}
 		});
+	}
+
+	o.onUpdateScore = function () {
+		if (!this.World.getTime().IsDaytime) {
+			return;
+		}
+
+		local towns = this.World.EntityManager.getSettlements();
+		local nearTown = false;
+		local town;
+		local playerTile = this.World.State.getPlayer().getTile();
+
+		foreach (t in towns) {
+			if (t.getTile().getDistanceTo(playerTile) <= 4 && t.isAlliedWithPlayer()) {
+				nearTown = true;
+				town = t;
+				break;
+			}
+		}
+
+		if (!nearTown) {
+			return;
+		}
+
+		local brothers = this.World.getPlayerRoster().getAll();
+
+		if (brothers.len() < 3) {
+			return;
+		}
+
+		local candidates_surefooted = [];
+		local candidates_other = [];
+
+		foreach (b in brothers) {
+			if (b.getSkills().hasSkill("trait.sure_footing")) {
+				candidates_surefooted.push(b);
+			} else if (b.getSkills().hasSkill("trait.player")) {
+				candidates_other.push(b);
+			}
+		}
+
+		if (candidates_other.len() == 0) {
+			return;
+		}
+
+		this.m.Other = candidates_other[this.Math.rand(0, candidates_other.len() - 1)];
+
+		if (candidates_surefooted.len() != 0) {
+			this.m.Surefooted = candidates_surefooted[this.Math.rand(0, candidates_surefooted.len() - 1)];
+		}
+
+		do {
+			this.m.OtherOther = brothers[this.Math.rand(0, brothers.len() - 1)];
+		} while (this.m.OtherOther == null || this.m.OtherOther.getID() == this.m.Other.getID());
+
+		this.m.Town = town;
+		this.m.Score = 15;
 	}
 })
