@@ -1,11 +1,26 @@
 # 19.4.0 - Name Pending
 
+## Noble House Changes
+- introduced 40 new traits into the noble house trait system
+- expanded the number of mottos available to noble houses
+- added noble house traits to units and towns belonging to noble houses
+- modified the faction window to include traits
+- added short description to noble house traits available upon mouseover in faction window
+
 ## Perks
 
 ### New Perks
 - `Near Death Experience` - Martyr Trait Tree
 > Confers an experience point bonus based on Hitpoints lost and Injuries gained during combat. Gain 1 XP per Hitpoint and 10 per Injuries. Experience gain is reduced by 90% at level 12 and above.
 > Hitpoint damage taken is reduced by 5% and Resolve is increased by 3 for each Injury you have up to a maximum of 30% and [color=%positive%]15 achieved at 6 Injuries. Counts both regular and permanent Injuries.
+
+## Item Changes
+
+### Armors
+- added Segmented Breastplate
+- separated Horn Plate Upgrade (L5) into Kraken Shoulderplates (L5) and Horn Plate (L1)
+- fixes and recolors of existing armor
+- plate_full_greaves_named and plate_full_greaves_painted merged into a single item
 
 ### Weapons
 
@@ -53,6 +68,19 @@
 - `Warcry` - each warcry now applies 5 stacks of rage
 - `Orc Berserker` - Base HP dropped to 200, gain `Colossus` and 10% damage that they had in vanilla, gain `Nimble` on Legendary Difficulty
 - `Orc Mad Berserker` - lose `Nudist`, gain 10% damage, gain the ability to use `Adrenaline`
+
+## Events
+- added a new town encounter during drought
+- added a new event requiring a well read person
+
+## Bug Fixes
+- black market in town screens can now be highlighted on mouseover
+- painter tent allows painting the shoulder layer
+- text fixes
+- bros can now use the basic training options until level 12 in town training halls instead of 11
+
+### For modders:
+- it is now possible to use [i][/i] and [size=18px][/size] to customize ui text size easily with xbbcode
 
 # 19.3.0 - Left & Right
 
