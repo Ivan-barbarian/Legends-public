@@ -8,7 +8,7 @@ this.legend_pauldron_upgrade <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.Name = "Iron Pauldrons";
 		this.m.Description = "Heavy segments of iron plate excellent for protecting shoulders. Worn over armor, they can help deflect incoming blows.";
 		this.m.ArmorDescription = "Includes a set of iron pauldrons.";
-		this.m.Variants = [1];
+		this.m.Variants = [1,2,3,4,5,6];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;

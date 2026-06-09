@@ -119,7 +119,7 @@ class Defs:
  "desc" :  "A mail aventail that extends from below the eyeline to cover the neck and lower face.",
 "adesc" : "Includes a mail aventail."
  },
-{"name" : "aventail_named"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 1500, "con" : 60, "stam" : -3, "vis" : 0, "hair" : "false", "beard" : "true", "impactSound" : "chain", "invSound" : "chain", "named" : { "con": { "min" : 65, "max" : 75 }, "fat": { "min" : 2, "max" : 2 }, "vis": { "min" : 0, "max" : 0 }, "names" : Names  },
+{"name" : "aventail_named"                     , "layer" : "hood", "min" : 1, "max" : 5, "base" : True, "value" : 1500, "con" : 60, "stam" : -3, "vis" : 0, "hair" : "false", "beard" : "true", "impactSound" : "chain", "invSound" : "chain", "named" : { "con": { "min" : 65, "max" : 75 }, "fat": { "min" : 2, "max" : 2 }, "vis": { "min" : 0, "max" : 0 }, "names" : Names  },
 "title" :  "",
 "desc" :  "Truly fit for a knight, this mail aventail is made from the highest quality materials and boasts precious decorations and ornaments.",
 "adesc" : "Includes a mail aventail of the highest quality."
@@ -139,7 +139,7 @@ class Defs:
  "desc" :  "A full mail hood with an integrated neck guard.",
  "adesc" : "Includes a full mail hood."
  },
-{"name" : "chain_hood_full_named"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 3600, "con" : 80, "stam" : -4, "vis" : 0, "hair" : "true", "beard" : "true", "impactSound" : "chain", "invSound" : "chain", "named" : { "con": { "min" : 85, "max" : 95 }, "fat": { "min" : 3, "max" : 3 }, "vis": { "min" : 0, "max" : 0 }, "names" : Names  },
+{"name" : "chain_hood_full_named"                     , "layer" : "hood", "min" : 1, "max" : 5, "base" : True, "value" : 3600, "con" : 80, "stam" : -4, "vis" : 0, "hair" : "true", "beard" : "true", "impactSound" : "chain", "invSound" : "chain", "named" : { "con": { "min" : 85, "max" : 95 }, "fat": { "min" : 3, "max" : 3 }, "vis": { "min" : 0, "max" : 0 }, "names" : Names  },
  "title" :  "",
  "desc" :  "Truly fit for a knight, this mail coif is made from the highest quality materials and boasts precious decorations and ornaments.",
  "adesc" : "Includes a full mail hood of the highest quality."

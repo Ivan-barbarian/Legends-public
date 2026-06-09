@@ -12,7 +12,6 @@
 ];
 
 ::Const.Items.LegendNamedPlateLayers <- [
-	"legend_armor/plate/legend_armor_plate_full_greaves_painted",
 	"legend_armor/plate/legend_armor_plate_full_greaves_named",
 	"legend_armor/plate/legend_armor_leather_jacket_named",
 	"legend_armor/plate/legend_armor_leather_studded_jacket_named",

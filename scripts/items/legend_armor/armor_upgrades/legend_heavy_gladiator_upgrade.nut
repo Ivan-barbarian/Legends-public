@@ -8,7 +8,7 @@ this.legend_heavy_gladiator_upgrade <- this.inherit("scripts/items/legend_armor/
 		this.m.Name = "Metal Armor Pieces";
 		this.m.Description = "A metal armguard that provides additional protection, used by gladiators in fighting pits.";
 		this.m.ArmorDescription = "Includes a metal armguard.";
-		this.m.Variants = [1];
+		this.m.Variants = [1,2,3,4,5,6,7];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;

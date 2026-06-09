@@ -8,7 +8,7 @@ this.legend_armor_sacred_shield_upgrade <- this.inherit("scripts/items/legend_ar
 		this.m.Name = "Sacred Shield";
 		this.m.Description = "A holy relic shield to be strapped to the shoulder, it protects the wearer both physically and spiritually. Primarily of benefit to the strong of mind.";
 		this.m.ArmorDescription = "Includes a holy relic shield.";
-		this.m.Variants = [1];
+		this.m.Variants = [1,2,3,4,5,6];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;

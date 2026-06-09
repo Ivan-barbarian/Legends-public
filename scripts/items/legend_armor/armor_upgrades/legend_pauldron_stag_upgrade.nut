@@ -10,7 +10,7 @@ this.legend_pauldron_stag_upgrade <- this.inherit("scripts/items/legend_armor/le
 		this.m.ArmorDescription = "Includes a set of stag-shaped pauldrons.";
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
-		this.m.Variants = [1];
+		this.m.Variants = [1, 2, 3, 4, 5, 6];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 2200;

@@ -8,7 +8,7 @@ this.legend_metal_pauldrons_upgrade <- this.inherit("scripts/items/legend_armor/
 		this.m.Name = "Metal Pauldrons";
 		this.m.Description = "Sturdy metal pauldrons providing an additional layer of protection for shoulders and arms, while considerably weighing the wearer down.";
 		this.m.ArmorDescription = "Includes a set of sturdy metal pauldrons.";
-		this.m.Variants = [1];
+		this.m.Variants = [1,2,3,4,5];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;

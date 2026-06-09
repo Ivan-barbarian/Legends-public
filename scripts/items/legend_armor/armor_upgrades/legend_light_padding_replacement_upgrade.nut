@@ -8,7 +8,7 @@ this.legend_light_padding_replacement_upgrade <- this.inherit("scripts/items/leg
 		this.m.Name = "Light Padding Replacement";
 		this.m.Description = "A light yet durable replacement padding crafted from exotic materials.";
 		this.m.ArmorDescription = "Includes a light yet durable padding replacement.";
-		this.m.Variants = [1];
+		this.m.Variants = [1, 2, 3, 4, 5];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;

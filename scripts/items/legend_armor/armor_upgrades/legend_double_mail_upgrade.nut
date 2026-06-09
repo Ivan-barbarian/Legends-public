@@ -8,7 +8,7 @@ this.legend_double_mail_upgrade <- this.inherit("scripts/items/legend_armor/lege
 		this.m.Name = "Double Mail";
 		this.m.Description = "A set of thick double mail patches worn as shoulderguards. Heavy, but effective in adding to an armor\'s protection.";
 		this.m.ArmorDescription = "Includes a set of thick double mail shoulderguards.";
-		this.m.Variants = [1];
+		this.m.Variants = [1,2,3,4];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;

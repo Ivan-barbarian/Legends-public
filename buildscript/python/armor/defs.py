@@ -28,33 +28,33 @@ class Defs:
         {"name": "cloak_stollwurm", "min" : 1, "max" : 2, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
         {"name": "cloak_rich", "min" : 1, "max" : 6, "layer": "cloak", "impactSound" : "leather", "invSound" : "cloth"},
         ### Pauldrons
-        #{"name": "horn_plate", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
-        {"name": "pauldrons", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
-        {"name": "pauldrons_barbarian_horn", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "bone", "invSound" : "bone", "front_back": { "front" : [-54,4,-57,21], "front_dead" : [-9,43,-55,29], "back": [9,51,-41,19], "back_dead": [-51,-17,-50,16] }},
-        {"name": "pauldrons_belt_shield", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "leather", "invSound" : "leather"},
-        {"name": "pauldrons_bone_platings", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "bone", "invSound" : "bone"},
-        {"name": "pauldrons_chain_and_mail", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "chain", "invSound" : "chain"},
-        {"name": "pauldrons_double_mail", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "chain", "invSound" : "chain"},
-        {"name": "pauldrons_gladiator_light", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "leather", "invSound" : "cloth"},
-        {"name": "pauldrons_gladiator_heavy", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
-        {"name": "pauldrons_heavy", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "pauldrons", "min" : 1, "max" : 6, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "pauldrons_barbarian_horn", "min" : 1, "max" : 4, "layer": "attachment", "impactSound" : "bone", "invSound" : "bone", "front_back": { "front" : [-54,4,-57,21], "front_dead" : [-9,43,-55,29], "back": [9,51,-41,19], "back_dead": [-51,-17,-50,16] }},
+        {"name": "pauldrons_belt_shield", "min" : 1, "max" : 6, "layer": "attachment", "impactSound" : "leather", "invSound" : "leather"},
+        {"name": "pauldrons_bone_platings", "min" : 1, "max" : 3, "layer": "attachment", "impactSound" : "bone", "invSound" : "bone"},
+        {"name": "pauldrons_chain_and_mail", "min" : 1, "max" : 4, "layer": "attachment", "impactSound" : "chain", "invSound" : "chain"},
+        {"name": "pauldrons_double_mail", "min" : 1, "max" : 4, "layer": "attachment", "impactSound" : "chain", "invSound" : "chain"},
+        {"name": "pauldrons_gladiator_light", "min" : 1, "max" : 5, "layer": "attachment", "impactSound" : "leather", "invSound" : "cloth"},
+        {"name": "pauldrons_gladiator_heavy", "min" : 1, "max" : 7, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "pauldrons_heavy", "min" : 1, "max" : 6, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
         {"name": "pauldrons_heraldic_plates", "min" : 1, "max" : 2, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
-        {"name": "pauldrons_joint_cover", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
-        {"name": "pauldrons_leather", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "leather", "invSound" : "leather"},
-        {"name": "pauldrons_leather_neck", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "leather", "invSound" : "leather"},
-        {"name": "pauldrons_mail_patch", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "chain", "invSound" : "chain"},
-        {"name": "pauldrons_metal", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
-        {"name": "pauldrons_metal_plates", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
-        {"name": "pauldrons_named", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "pauldrons_joint_cover", "min" : 1, "max" : 8, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "pauldrons_kraken", "min" : 1, "max" : 4, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "pauldrons_leather", "min" : 1, "max" : 5, "layer": "attachment", "impactSound" : "leather", "invSound" : "leather"},
+        {"name": "pauldrons_leather_neck", "min" : 1, "max" : 5, "layer": "attachment", "impactSound" : "leather", "invSound" : "leather"},
+        {"name": "pauldrons_mail_patch", "min" : 1, "max" : 4, "layer": "attachment", "impactSound" : "chain", "invSound" : "chain"},
+        {"name": "pauldrons_metal", "min" : 1, "max" : 5, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "pauldrons_metal_plates", "min" : 1, "max" : 5, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "pauldrons_named", "min" : 1, "max" : 10, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
         {"name": "pauldrons_padding_fur", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "leather", "invSound" : "cloth", "front_back": { "front" : [-56,4,-57,21], "front_dead" : [-2,50,-69,13], "back": [15,55,-54,16], "back_dead": [-58,-12,-48,26] }},
-        {"name": "pauldrons_padding_light", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "leather", "invSound" : "cloth"},
+        {"name": "pauldrons_padding_light", "min" : 1, "max" : 5, "layer": "attachment", "impactSound" : "leather", "invSound" : "cloth"},
         {"name": "pauldrons_protective_runes", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "leather", "invSound" : "leather"},
         {"name": "pauldrons_shoulderplates_heraldic", "min" : 1, "max" : 5, "layer": "attachment", "impactSound" : "leather", "invSound" : "leather", "front_back": { "front" : [-47,-9,-39,3], "front_dead" : [2,44,-47,-5], "back": [23,49,-31,3], "back_dead": [-53,-31,-36,-2] }},
-        {"name": "pauldrons_skull_chain", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "chain", "invSound" : "chain"},
-        {"name": "pauldrons_spiked_chain", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "chain", "invSound" : "chain"},
-        {"name": "pauldrons_stag", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
-        {"name": "pauldrons_strong", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
-        {"name": "pauldrons_swan", "min" : 1, "max" : 1, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "pauldrons_skull_chain", "min" : 1, "max" : 5, "layer": "attachment", "impactSound" : "chain", "invSound" : "chain"},
+        {"name": "pauldrons_spiked_chain", "min" : 1, "max" : 4, "layer": "attachment", "impactSound" : "chain", "invSound" : "chain"},
+        {"name": "pauldrons_stag", "min" : 1, "max" : 6, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "pauldrons_strong", "min" : 1, "max" : 6, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
+        {"name": "pauldrons_swan", "min" : 1, "max" : 6, "layer": "attachment", "impactSound" : "plate", "invSound" : "plate"},
         #{"name": "runed", "layer": "rune"}
     ]
 
@@ -90,7 +90,7 @@ class Defs:
  "desc" :  "A heavy, padded tunic that offers decent protection.",
  "adesc" :""
 },
-{"name": "gambeson_wolf",                          "layer": "cloth", "min": 1, "max": 2, "value" : 300, "con" : 70, "stam" : -9, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "gambeson_wolf",                          "layer": "cloth", "min": 1, "max": 6, "value" : 300, "con" : 70, "stam" : -9, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Wolf Gambeson",
  "desc" :  "A heavy tunic lined with a thick wolf pelt that offers decent protection.",
  "adesc" :""
@@ -106,7 +106,7 @@ class Defs:
  "desc" :  "A sturdy, quilted coat that offers decent protection.",
  "adesc" :""
 },
-{"name": "studded_aketon",                         "layer": "cloth", "min": 1, "max": 1, "value" : 350, "con" : 80, "stam" : -9, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "studded_aketon",                         "layer": "cloth", "min": 1, "max": 7, "value" : 350, "con" : 80, "stam" : -9, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Studded Aketon",
  "desc" :  "A long, sturdy coat reinforced with metal studs that offers good protection.",
  "adesc" :""
@@ -121,7 +121,7 @@ class Defs:
  "desc" :  "A rugged, large robe made of simple cloth usually worn by monks and similar individuals who don\'t care for fashion.",
  "adesc" :""
 },
-{"name": "vala_dress",                                  "layer": "cloth", "min": 1, "max": 1, "value" : 0, "con" : 40, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "vala_dress",                                  "layer": "cloth", "min": 1, "max": 21, "value" : 0, "con" : 40, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Vala\'s Dress",
  "desc" :  "A strong leather dress worn by a vala on her travels.",
  "adesc" :""
@@ -131,7 +131,7 @@ class Defs:
  "desc" :  "A rugged, surprisingly light cloak ideal for a vala\'s journeys through the lands.",
  "adesc" :""
 },
-{"name": "fur_rabble",                            "layer": "cloth", "min": 1, "max": 1, "value" : 100, "con" : 5, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "fur_rabble",                            "layer": "cloth", "min": 1, "max": 9, "value" : 100, "con" : 5, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Fur Armor",
  "desc" :  "Matted fur and rags, torn and filthy.",
  "adesc" :""
@@ -146,17 +146,17 @@ class Defs:
  "desc" :  "A soft, wide robe worn by practitioners of the arcane arts.",
  "adesc" :""
 },
-{"name": "robes_anatomist",                            "layer": "cloth", "min": 1, "max": 1, "value" : 350, "con" : 70, "stam" : -7, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "robes_anatomist",                            "layer": "cloth", "min": 1, "max": 7, "value" : 350, "con" : 70, "stam" : -7, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Anatomist\'s Robe",
  "desc" :  "A dark robe and gloves worn by those who tinker with flesh and filth.",
  "adesc" :""
 },
-{"name": "wanderers_coat",                            "layer": "cloth", "min": 1, "max": 1, "value" : 120, "con" : 45, "stam" : -4, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "wanderers_coat",                            "layer": "cloth", "min": 1, "max": 3, "value" : 120, "con" : 45, "stam" : -4, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Wanderer\'s Coat",
  "desc" :  "A coat well suited to wandering the lands.",
  "adesc" :""
 },
-{"name": "robes_nun",                              "layer": "cloth", "min": 1, "max": 2, "value" : 25, "con" : 22, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "robes_nun",                              "layer": "cloth", "min": 1, "max": 7, "value" : 25, "con" : 22, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Nun\'s Robe",
  "desc" :  "A rugged, large robe made of simple cloth. Usually worn by young nuns.",
  "adesc" :""
@@ -201,7 +201,7 @@ class Defs:
  "desc" :  "A simple cloth tunic with a thin collar that offers limited protection.",
  "adesc" :""
 },
-{"name": "tunic_collar_deep",                                  "layer": "cloth", "min": 1, "max": 1, "value" : 25, "con" : 20, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "tunic_collar_deep",                                  "layer": "cloth", "min": 1, "max": 7, "value" : 25, "con" : 20, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth",
  "title" : "Deep Collar Linen Tunic",
  "desc" : "A simple cloth tunic with a deep collar that offers limited protection.",
  "adesc" :""
@@ -237,7 +237,7 @@ class Defs:
  "desc" :  "A long, sturdy and tunic of southern origin that offers decent protection.",
  "adesc" : ""
 },
-{"name": "southern_split_gambeson",           "layer": "cloth", "min": 1, "max": 1, "value" : 250, "con" : 65, "stam" : -8, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "southern_split_gambeson",           "layer": "cloth", "min": 1, "max": 5, "value" : 250, "con" : 65, "stam" : -8, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Southern Split Gambeson",
  "desc" :  "A long, sturdy tunic of southern origin that is split at the bottom.",
  "adesc" : ""
@@ -293,38 +293,38 @@ class Defs:
  "desc" :  "A set of chain mail that offers good protection, but is very fatiguing to wear.",
  "adesc" : "Includes a set of long and heavy chain mail."
 },
-{"name": "hauberk",                          "layer": "chain", "min": 1, "max": 1, "value" : 1750, "con" : 95, "stam" : -11, "impactSound" : "chain", "invSound" : "chain",
+{"name": "hauberk",                          "layer": "chain", "min": 1, "max": 4, "value" : 1750, "con" : 95, "stam" : -11, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Hauberk",
  "desc" :  "Heavy chain mail that offers good protection, but is very fatiguing to wear.",
  "adesc" : "Includes a set of long and heavy chain mail."
 },
-{"name": "hauberk_full",                     "layer": "chain", "min": 1, "max": 1, "value" : 2500, "con" : 115, "stam" : -14, "impactSound" : "chain", "invSound" : "chain",
+{"name": "hauberk_full",                     "layer": "chain", "min": 1, "max": 4, "value" : 2500, "con" : 115, "stam" : -14, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Full Hauberk",
  "desc" :  "Long and heavy chain mail that offers good protection, but is very fatiguing to wear.",
  "adesc" : "Includes a set of long and heavy chain mail."
 },
-{"name": "hauberk_full_named",               "layer": "chain", "min": 1, "max": 1, "value" : 5000, "con" : 120, "stam" : -15, "impactSound" : "chain", "invSound" : "chain",
+{"name": "hauberk_full_named",               "layer": "chain", "min": 1, "max": 5, "value" : 5000, "con" : 120, "stam" : -15, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "",
  "desc" :  "Truly fit for a knight, this mail hauberk is made from the highest quality materials and boasts precious decorations and ornaments.",
  "adesc" : "Includes a mail hauberk made from the highest quality materials and boasting precious decorations and ornaments.",
  "named" : { "con": { "min" : 125, "max" : 150 }, "fat": { "min" : 13, "max" : 9 }, "names" : ["Heraldic Mail", "Splendor", "Grandiosity", "Pageantry", "Swank", "Full Mail", "Mail Hauberk", "Chain Mail", "Duty", "Honor", "Noble Mail"]  } 
 },
-{"name": "hauberk_sleeveless",                "layer": "chain", "min": 1, "max": 1, "value" : 1250, "con" : 65, "stam" : -7, "impactSound" : "chain", "invSound" : "chain",
+{"name": "hauberk_sleeveless",                "layer": "chain", "min": 1, "max": 4, "value" : 1250, "con" : 65, "stam" : -7, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Sleeveless Hauberk",
  "desc" :  "Long and heavy chain mail that offers good protection, but is very fatiguing to wear.",
  "adesc" : "Includes a set of long and heavy chain mail."
 },
-{"name": "mail_shirt",                       "layer": "chain", "min": 1, "max": 1, "value" : 375, "con" : 50, "stam" : -6, "impactSound" : "chain", "invSound" : "chain",
+{"name": "mail_shirt",                       "layer": "chain", "min": 1, "max": 4, "value" : 375, "con" : 50, "stam" : -6, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Basic Mail Shirt",
  "desc" :  "A basic mail shirt. Offers decent and affordable protection against slashing and piercing attacks.",
  "adesc" : "Includes a basic mail shirt."
 },
-{"name": "mail_shirt_simple",                "layer": "chain", "min": 1, "max": 1, "value" : 250, "con" : 25, "stam" : -3, "impactSound" : "chain", "invSound" : "chain",
+{"name": "mail_shirt_simple",                "layer": "chain", "min": 1, "max": 4, "value" : 250, "con" : 25, "stam" : -3, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Simple Mail Shirt",
  "desc" :  "A simple mail shirt. Offers decent and affordable protection against slashing and piercing attacks.",
  "adesc" : "Includes a simple mail shirt."
 },
-{"name": "reinforced_mail",                  "layer": "chain", "min": 1, "max": 1, "value" : 1750, "con" : 110, "stam" : -15, "impactSound" : "chain", "invSound" : "chain",
+{"name": "reinforced_mail",                  "layer": "chain", "min": 1, "max": 4, "value" : 1750, "con" : 110, "stam" : -15, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Reinforced Mail",
  "desc" :  "Long and heavy reinforced chain mail that offers good protection, but is very fatiguing to wear.",
  "adesc" : "Includes a set of long and heavy reinforced chain mail."
@@ -339,7 +339,7 @@ class Defs:
  "desc" :  "A reinforced mail shirt that is rotting at the seams.",
  "adesc" : "Includes a rotten, reinforced mail shirt."
 },
-{"name": "reinforced_worn_mail",             "layer": "chain", "min": 1, "max": 1, "value" : 1250, "con" : 105, "stam" : -17, "impactSound" : "chain", "invSound" : "chain",
+{"name": "reinforced_worn_mail",             "layer": "chain", "min": 1, "max": 4, "value" : 1250, "con" : 105, "stam" : -17, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Reinforced Worn Mail",
  "desc" :  "Long and heavy reinforced chain mail that offers good protection, but is very fatiguing to wear.",
  "adesc" : "Includes a set of long and heavy reinforced, worn chain mail."
@@ -354,7 +354,7 @@ class Defs:
  "desc" :  "This light mail shirt has seen better times, but still grants decent protection.",
  "adesc" : "Includes a rusty and patched mail shirt."
 },
-{"name": "short_mail",                       "layer": "chain", "min": 1, "max": 1, "value" : 500, "con" : 60, "stam" : -8, "impactSound" : "chain", "invSound" : "chain",
+{"name": "short_mail",                       "layer": "chain", "min": 1, "max": 4, "value" : 500, "con" : 60, "stam" : -8, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Short Mail",
  "desc" :  "Short chain mail that offers good protection, but is fatiguing to wear.",
  "adesc" : "Includes a set of short chain mail."
@@ -372,7 +372,7 @@ class Defs:
 #     "desc" :  "", \
 #     "adesc" : ""
 # },
-{"name": "southern_cloth",                       "layer": "chain", "min": 1, "max": 1, "value" : 50, "con" : 30, "stam" : -2, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "southern_cloth",                       "layer": "chain", "min": 1, "max": 20, "value" : 50, "con" : 30, "stam" : -2, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Nomad Outer Robe",
  "desc" :  "A durable cloth robe designed to shield the wearer from the sun's heat and the sting of minor cuts.",
  "adesc" : "Includes a heavy nomad robe."
@@ -382,7 +382,7 @@ class Defs:
  "desc" :  "A thick cloth vest padded with dense wool to protect against blunt hits.",
  "adesc" : "Includes a thick cloth vest."
 },
-{"name": "southern_mail",                       "layer": "chain", "min": 1, "max": 1, "value" : 1400, "con" : 100, "stam" : -13, "impactSound" : "chain", "invSound" : "chain",
+{"name": "southern_mail",                       "layer": "chain", "min": 1, "max": 4, "value" : 1400, "con" : 100, "stam" : -13, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Southern Mail",
  "desc" :  "A long and heavy mail shirt of southern design made with slightly thinner and lighter metal rings than those used in the north",
  "adesc" : "Includes a long and heavy mail shirt."
@@ -390,17 +390,17 @@ class Defs:
 
 ### Plate
 
-{"name": "leather_brigandine",               "layer": "plate", "min": 1, "max": 1, "value" : 750, "con" : 65, "stam" : -8, "impactSound" : "leather", "invSound" : "leather",
+{"name": "leather_brigandine",               "layer": "plate", "min": 1, "max": 5, "value" : 750, "con" : 65, "stam" : -8, "impactSound" : "leather", "invSound" : "leather",
  "title" :  "Leather Brigandine Armor",
  "desc" :  "A thick leather brigandine studded with steel rivets for added protection.",
  "adesc" : "Includes a thick studded leather brigandine."
 },
-{"name": "leather_brigandine_hardened",      "layer": "plate", "min": 1, "max": 1, "value" : 1250, "con" : 110, "stam" : -15, "impactSound" : "leather", "invSound" : "leather",
+{"name": "leather_brigandine_hardened",      "layer": "plate", "min": 1, "max": 4, "value" : 1250, "con" : 110, "stam" : -15, "impactSound" : "leather", "invSound" : "leather",
  "title" :  "Hardened Leather Brigandine Armor",
  "desc" :  "A boiled and hardened leather brigandine studded with steel rivets for added protection.",
  "adesc" : "Includes a boiled and hardened leather brigandine."
 },
-{"name": "leather_brigandine_hardened_full", "layer": "plate", "min": 1, "max": 1, "value" : 3000, "con" : 140, "stam" : -19, "impactSound" : "leather", "invSound" : "leather",
+{"name": "leather_brigandine_hardened_full", "layer": "plate", "min": 1, "max": 4, "value" : 3000, "con" : 140, "stam" : -19, "impactSound" : "leather", "invSound" : "leather",
  "title" :  "Reinforced Hardened Leather Brigandine Armor",
  "desc" :  "A boiled and hardened brigandine studded with steel rivets and reinforced with steel padded shoulders for added protection.",
  "adesc" : "Includes a reinforced and hardened leather brigandine."
@@ -421,7 +421,7 @@ class Defs:
  "desc" :  "A well-crafted leather jacket of northern make that offers good protection and flexibility.",
  "adesc" : "Includes a well-crafted leather jacket."
 },
-{"name": "leather_jacket_named",             "layer": "plate", "min": 1, "max": 1, "value" : 750, "con" : 30, "stam" : -3, "impactSound" : "leather", "invSound" : "leather",
+{"name": "leather_jacket_named",             "layer": "plate", "min": 1, "max": 11, "value" : 750, "con" : 30, "stam" : -3, "impactSound" : "leather", "invSound" : "leather",
  "title" :  "",
  "desc" :  "A well-crafted, hardened leather armor. Light to wear, yet exceptionally sturdy.",
  "adesc" : "Includes a masterwork hardened leather jacket.",
@@ -443,7 +443,7 @@ class Defs:
  "desc" :  "A basic leather jacket offering modest protection.",
  "adesc" : "Includes a basic leather jacket."
 },
-{"name": "leather_lamellar",                 "layer": "plate", "min": 1, "max": 1, "value" : 250, "con" : 50, "stam" : -6, "impactSound" : "leather", "invSound" : "leather",
+{"name": "leather_lamellar",                 "layer": "plate", "min": 1, "max": 4, "value" : 250, "con" : 50, "stam" : -6, "impactSound" : "leather", "invSound" : "leather",
  "title" :  "Leather Lamellar Armor",
  "desc" :  "Numerous overlapping leather plates provide decent protection for most of the upper body.",
  "adesc" : "Includes armor of overlapping leather plates."
@@ -453,33 +453,33 @@ class Defs:
  "desc" :  "Dark, heavy leather armor adorned with occult symbols. It offers sturdy protection and was likely used in grim rituals.",
  "adesc" : "Includes leather armor adorned with occult symbols."
 },
-{"name": "leather_lamellar_harness_heavy",   "layer": "plate", "min": 1, "max": 1, "value" : 1750, "con" : 130, "stam" : -20, "impactSound" : "plate", "invSound" : "plate",
+{"name": "leather_lamellar_harness_heavy",   "layer": "plate", "min": 1, "max": 5, "value" : 1750, "con" : 130, "stam" : -20, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Lamellar Harness",
  "desc" :  "A rugged body harness made of thick overlapping metal plates that cover most of the upper body, but is exceptionally heavy.",
  "adesc" : "Includes a heavy lamellar harness made of thick overlapping metal plates."
 },
-{"name": "leather_lamellar_harness_reinforced", "layer": "plate", "min": 1, "max": 1, "value" : 350, "con" : 55, "stam" : -7, "impactSound" : "plate", "invSound" : "plate",
+{"name": "leather_lamellar_harness_reinforced", "layer": "plate", "min": 1, "max": 5, "value" : 350, "con" : 55, "stam" : -7, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Reinforced Lamellar Harness",
  "desc" :  "A body armor made of thick overlapping metal plates that cover most of the upper body.",
  "adesc" : "Includes body armor made of thick overlapping metal plates that cover most of the upper body."
 },
-{"name": "leather_lamellar_heavy",           "layer": "plate", "min": 1, "max": 1, "value" : 4750, "con" : 165, "stam" : -24, "impactSound" : "plate", "invSound" : "plate",
+{"name": "leather_lamellar_heavy",           "layer": "plate", "min": 1, "max": 5, "value" : 4750, "con" : 165, "stam" : -24, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Heavy Lamellar Armor",
  "desc" :  "A heavy lamellar armor that covers most parts of the body with thick, overlapping metal plates for maximum protection.",
  "adesc" : "Includes heavy lamellar armor that covers most parts of the body with thick, overlapping metal plates."
 },
-{"name": "leather_lamellar_heavy_named",     "layer": "plate", "min": 1, "max": 1, "value" : 7500, "con" : 140, "stam" : -23, "impactSound" : "plate", "invSound" : "plate",
+{"name": "leather_lamellar_heavy_named",     "layer": "plate", "min": 1, "max": 5, "value" : 7500, "con" : 140, "stam" : -23, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "",
  "desc" :  "An extraordinarily well-crafted piece of lamellar armor. It is overlaid with beaten gold, which makes it truly stand out.",
  "adesc" : "Includes an extraordinarily well-crafted gold plated lamellar harness.",
  "named" : { "con": { "min" : 175, "max" : 195 }, "fat": { "min" : 23, "max" : 19 }, "names" : ["Harness", "Ward", "Defense", "Splendor", "Golden Lamellar"]  }
 },
-{"name": "leather_lamellar_reinforced",      "layer": "plate", "min": 1, "max": 1, "value" : 2500, "con" : 150, "stam" : -23, "impactSound" : "plate", "invSound" : "plate",
+{"name": "leather_lamellar_reinforced",      "layer": "plate", "min": 1, "max": 4, "value" : 2500, "con" : 150, "stam" : -23, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Reinforced Leather Lamellar Armor",
  "desc" :  "Numerous overlapping metal reinforced leather plates that provides excellent protection for most of the upper body but is very heavy.",
  "adesc" : "Includes armor of overlapping reinforced metal leather plates."
 },
-{"name": "leather_padded",                   "layer": "plate", "min": 1, "max": 2, "value" : 175, "con" : 40, "stam" : -5, "impactSound" : "leather", "invSound" : "leather",
+{"name": "leather_padded",                   "layer": "plate", "min": 1, "max": 5, "value" : 175, "con" : 40, "stam" : -5, "impactSound" : "leather", "invSound" : "leather",
  "title" :  "Padded Leather Armor",
  "desc" :  "A suit of padded leather reinforced with metal studs for added protection.",
  "adesc" : "Includes a suit of reinforced padded leather armor."
@@ -489,114 +489,126 @@ class Defs:
  "desc" :  "A long leather coat reinforced with large metal rivets offering good protection, but very fatiguing to wear.",
  "adesc" : "Includes a long leather coat reinforced with large metal rivets."
 },
-{"name": "leather_riveted_light",            "layer": "plate", "min": 1, "max": 1, "value" : 700, "con" : 80, "stam" : -11, "impactSound" : "leather", "invSound" : "leather",
+{"name": "leather_riveted_light",            "layer": "plate", "min": 1, "max": 9, "value" : 700, "con" : 80, "stam" : -11, "impactSound" : "leather", "invSound" : "leather",
  "title" :  "Footman\'s Leather Armor",
  "desc" :  "A leather armor reinforced with metal rivets. Fatiguing to wear.",
  "adesc" : "Includes a leather armor reinforced with metal rivets."
 },
-{"name": "leather_scale",                    "layer": "plate", "min": 1, "max": 1, "value" : 600, "con" : 70, "stam" : -9, "impactSound" : "leather", "invSound" : "leather",
+{"name": "leather_scale",                    "layer": "plate", "min": 1, "max": 3, "value" : 600, "con" : 70, "stam" : -9, "impactSound" : "leather", "invSound" : "leather",
  "title" :  "Leather Scale Armor",
  "desc" :  "A thick leather scale armor that offers extra protection.",
  "adesc" : "Includes a thick scaled leather armor."
 },
-{"name": "plate_ancient_chest",              "layer": "plate", "min": 1, "max": 1, "value" : 750, "con" : 105, "stam" : -18, "impactSound" : "plate", "invSound" : "plate",
+{"name": "plate_ancient_chest",              "layer": "plate", "min": 1, "max": 4, "value" : 750, "con" : 105, "stam" : -18, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Ancient Breastplate",
  "desc" :  "A heavy tarnished thick breastplate of ancient origin that offers some protection.",
  "adesc" : "Includes a heavy tarnished thick breastplate of ancient origin."
 },
-{"name": "plate_ancient_chest_restored",     "layer": "plate", "min": 1, "max": 1, "value" : 1500, "con" : 110, "stam" : -15, "impactSound" : "plate", "invSound" : "plate",
+{"name": "plate_ancient_chest_restored",     "layer": "plate", "min": 1, "max": 19, "value" : 1500, "con" : 110, "stam" : -15, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Restored Ancient Breastplate",
  "desc" :  "A restored thick breastplate of ancient origin made lighter and more durable.",
  "adesc" : "Includes a restored thick breastplate of ancient origin."
 },
-{"name": "plate_ancient_gladiator",          "layer": "plate", "min": 1, "max": 1, "value" : 100, "con" : 35, "stam" : -6, "impactSound" : "plate", "invSound" : "plate",
+{"name": "plate_ancient_gladiator",          "layer": "plate", "min": 1, "max": 4, "value" : 100, "con" : 35, "stam" : -6, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Ancient Gladiator Harness",
  "desc" :  "A tarnished gladiator outfit of ancient origin providing basic protection.",
  "adesc" : "Includes a tarnished gladiator outfit of ancient origin."
 },
-{"name": "plate_ancient_harness",            "layer": "plate", "min": 1, "max": 1, "value" : 1500, "con" : 115, "stam" : -19, "impactSound" : "chain", "invSound" : "chain",
+{"name": "plate_ancient_harness",            "layer": "plate", "min": 1, "max": 4, "value" : 1500, "con" : 115, "stam" : -19, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Ancient Plate Harness",
  "desc" :  "Made of thick metal plates and mail, this heavy ancient armor still offers great protection even after countless years. It\'s crusted and rotten in parts, however, severely limiting the mobility of the wearer.",
  "adesc" : "Includes an ancient plate harness of thick metal plates and mail."
 },
-{"name": "plate_ancient_mail",               "layer": "plate", "min": 1, "max": 1, "value" : 300, "con" : 45, "stam" : -7, "impactSound" : "chain", "invSound" : "chain",
+{"name": "plate_ancient_mail",               "layer": "plate", "min": 1, "max": 4, "value" : 300, "con" : 45, "stam" : -7, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Ancient Plated Mail",
  "desc" :  "An ancient mail armor with plated arm guards. Despite offering limited protection, it's very heavy and severely limits the mobility of the wearer.",
  "adesc" : "Includes an ancient mail armor with plated arm guards."
 },
-{"name": "plate_ancient_scale",              "layer": "plate", "min": 1, "max": 1, "value" : 1000, "con" : 105, "stam" : -17, "impactSound" : "chain", "invSound" : "chain",
+{"name": "plate_ancient_scale",              "layer": "plate", "min": 1, "max": 4, "value" : 1000, "con" : 105, "stam" : -17, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Ancient Scale Coat",
  "desc" :  "A heavy, tarnished scale coat of ancient design, which belongs in a collection rather than on the battlefield.",
  "adesc" : "Includes an ancient, heavy, tarnished scale coat."
 },
-{"name": "plate_ancient_scale_coat",         "layer": "plate", "min": 1, "max": 1, "value" : 2000, "con" : 140, "stam" : -24, "impactSound" : "plate", "invSound" : "plate",
+{"name": "plate_ancient_scale_coat",         "layer": "plate", "min": 1, "max": 4, "value" : 2000, "con" : 140, "stam" : -24, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Ancient Plated Scale Coat",
  "desc" :  "A heavy coat of scales, partly reinforced with a layer of plated metal on top. It\'s a massive armor of ancient origin that didn\'t age well.",
  "adesc" : "Includes an ancient, heavy, reinforced scale coat."
 },
-{"name": "plate_ancient_scale_harness",      "layer": "plate", "min": 1, "max": 1, "value" : 500, "con" : 75, "stam" : -12, "impactSound" : "chain", "invSound" : "chain",
+{"name": "plate_ancient_scale_harness",      "layer": "plate", "min": 1, "max": 4, "value" : 500, "con" : 75, "stam" : -12, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Ancient Scale Harness",
  "desc" :  "A sturdy, but heavy and partly decayed ancient scale harness.",
  "adesc" : "Includes a heavy and partly decayed ancient scale harness."
 },
-{"name": "plate_ancient_scale_coat_restored",         "layer": "plate", "min": 1, "max": 1, "value" : 3000, "con" : 170, "stam" : -23, "impactSound" : "chain", "invSound" : "chain",
+{"name": "plate_ancient_scale_coat_restored",         "layer": "plate", "min": 1, "max": 5, "value" : 3000, "con" : 170, "stam" : -23, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Embalmed Ancient Scale Coat",
  "desc" :  "A scale coat of ancient design, miraculously well preserved and functional despite its age.",
  "adesc" : "Includes an ancient heavy scale coat in excellent condition."
 },
-{"name": "plate_ancient_scale_harness_restored",      "layer": "plate", "min": 1, "max": 1, "value" : 500, "con" : 130, "stam" : -15, "impactSound" : "chain", "invSound" : "chain",
+{"name": "plate_ancient_scale_harness_restored",      "layer": "plate", "min": 1, "max": 5, "value" : 500, "con" : 130, "stam" : -15, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Embalmed Ancient Scale Harness",
  "desc" :  "A sturdy, ancient scale harness, remarkably well-preserved and functional.",
  "adesc" : "Includes a remarkably well-preserved ancient scale harness."
 },
-{"name": "plate_chest",                      "layer": "plate", "min": 1, "max": 1, "value" : 2250, "con" : 125, "stam" : -17, "impactSound" : "plate", "invSound" : "plate",
+{"name": "segmented_breastplate",                      "layer": "plate", "min": 1, "max": 6, "value" : 2000, "con" : 110, "stam" : -13, "impactSound" : "plate", "invSound" : "plate",
+ "title" :  "Breastplate Armor",
+ "desc" :  "A heavy breastplate comprised of small steel plates, which allow good movement range and protection.",
+ "adesc" : "Includes a breastplate of small steel plates."
+},
+{"name": "plate_chest",                      "layer": "plate", "min": 1, "max": 6, "value" : 2250, "con" : 125, "stam" : -17, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Breastplate Armor",
  "desc" :  "A heavy breastplate made of solid, plated steel, offering formidable protection at the cost of significant weight.",
  "adesc" : "Includes a breastplate of solid, plated steel."
 },
-{"name": "rotten_plate_chest",               "layer": "plate", "min": 1, "max": 1, "value" : 1250, "con" : 100, "stam" : -16, "impactSound" : "plate", "invSound" : "plate",
+{"name": "rotten_plate_chest",               "layer": "plate", "min": 1, "max": 5, "value" : 1250, "con" : 100, "stam" : -16, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Decayed Breastplate Armor",
  "desc" :  "A worn breastplate of decaying, plated steel. Long years of neglect have left the metal pitted and brittle, offering only some of its former protection.",
  "adesc" : "Includes a worn breastplate of decaying, plated steel."
 },
-{"name": "plate_cuirass",                    "layer": "plate", "min": 1, "max": 1, "value" : 3500, "con" : 150, "stam" : -21, "impactSound" : "plate", "invSound" : "plate",
+{"name": "plate_cuirass",                    "layer": "plate", "min": 1, "max": 6, "value" : 3500, "con" : 150, "stam" : -21, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Plate Cuirass Armor",
  "desc" :  "A heavy body vest of solid, plated steel designed for protecting the vitals.",
  "adesc" : "Includes a heavy body vest of solid, plated steel."
 },
-{"name": "plate_full",                       "layer": "plate", "min": 1, "max": 1, "value" : 4500, "con" : 160, "stam" : -22, "impactSound" : "plate", "invSound" : "plate",
+{"name": "horn_plate_named",                    "layer": "plate", "min": 1, "max": 4, "value" : 3500, "con" : 150, "stam" : -21, "impactSound" : "plate", "invSound" : "plate",
+ "title" :  "",
+ "desc" :  "A sturdy breastplate with a matching set of greaves made of a material harvested from a great beast.",
+ "adesc" : "Includes a sturdy breastplate with greaves.",
+ "named" : { "con": { "min" : 150, "max" : 175 }, "fat": { "min" : 15, "max" : 13 }, "names" : ["Showstopper", "Hunt", "Impasse", "Horn Plate"]  }
+},
+{"name": "plate_full",                       "layer": "plate", "min": 1, "max": 6, "value" : 4500, "con" : 160, "stam" : -22, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Full Coat of Plate Armor",
  "desc" :  "A full set of solid, plated steel armor.",
  "adesc" : "Includes a full set of solid, plated steel armor."
 },
-{"name": "plate_full_greaves",               "layer": "plate", "min": 1, "max": 4, "value" : 5000, "con" : 170, "stam" : -26, "impactSound" : "plate", "invSound" : "plate",
+{"name": "plate_full_greaves",               "layer": "plate", "min": 1, "max": 24, "value" : 5000, "con" : 170, "stam" : -26, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Full Coat of Heavy Plate Armor",
  "desc" :  "A complete harness of solid, plated steel that provides complete protection for the torso and limbs.",
  "adesc" : "Includes a full set of solid, plated steel armor with greaves."
 },
-{"name": "plate_full_greaves_named",         "layer": "plate", "min": 1, "max": 3, "value" : 10000, "con" : 170, "stam" : -26, "impactSound" : "plate", "invSound" : "plate",
+{"name": "plate_full_greaves_named",         "layer": "plate", "min": 1, "max": 4, "value" : 10000, "con" : 170, "stam" : -26, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "",
  "desc" :  "A masterfully crafted harness of solid, plated steel.",
  "adesc" : "Includes a masterfully crafted set of painted, solid plated steel with matching greaves.",
  "named" : { "con": { "min" : 185, "max" : 225 }, "fat": { "min" : 25, "max" : 23 }, "names" : ["Glory", "Triumph", "Victory", "Joy"]  }
 },
+#REMOVE THIS LATER
 {"name": "plate_full_greaves_painted",       "layer": "plate", "min": 1, "max": 1, "value" : 10000, "con" : 170, "stam" : -26, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "",
  "desc" :  "A masterfully crafted harness of solid, plated steel, finished with a layer of decorative paint.",
  "adesc" : "Includes a masterfully crafted set of painted, solid plated steel with matching greaves.",
  "named" : { "con": { "min" : 185, "max" : 225 }, "fat": { "min" : 25, "max" : 23 }, "names" : ["Ward", "Death", "Barrier", "Plate Armor", "Dark Plated Armor", "Life Stealer"]  }
 },
-{"name": "scale",                            "layer": "plate", "min": 1, "max": 1, "value" : 2250, "con" : 100, "stam" : -12, "impactSound" : "chain", "invSound" : "chain",
+{"name": "scale",                            "layer": "plate", "min": 1, "max": 6, "value" : 2250, "con" : 100, "stam" : -12, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Scale Armor",
  "desc" :  "A sturdy body vest made of overlapping metal scales.",
  "adesc" : "Includes a body vest of overlapping metal scales."
 },
-{"name": "noble_padded",                            "layer": "plate", "min": 1, "max": 1, "value" : 2800, "con" : 70, "stam" : -6, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "noble_padded",                            "layer": "plate", "min": 1, "max": 7, "value" : 2800, "con" : 70, "stam" : -6, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Padded Noble Vest",
  "desc" :  "An expensive padded vest with thick leather strapping, tailored for high-society protection.",
  "adesc" : "Includes an expensive padded vest with thick leather strapping."
 },
-{"name": "scale_coat",                       "layer": "plate", "min": 1, "max": 1, "value" : 2500, "con" : 120, "stam" : -15, "impactSound" : "chain", "invSound" : "chain",
+{"name": "scale_coat",                       "layer": "plate", "min": 1, "max": 6, "value" : 2500, "con" : 120, "stam" : -15, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Coat of Scales",
  "desc" :  "A heavy coat of thick, overlapping metal scales, which cover most of the body.",
  "adesc" : "Includes a heavy coat of thick, overlapping metal scales."
@@ -606,18 +618,18 @@ class Defs:
  "desc" :  "A very well crafted scale armor of considerable value.",
  "adesc" : "Includes a well crafted scale armor."
 },
-{"name": "scale_coat_named",                 "layer": "plate", "min": 1, "max": 1, "value" : 5000, "con" : 160, "stam" : -22, "impactSound" : "chain", "invSound" : "chain",
+{"name": "scale_coat_named",                 "layer": "plate", "min": 1, "max": 3, "value" : 5000, "con" : 160, "stam" : -22, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "",
  "desc" :  "A heavy coat of small, interlocking metal scales that cover most of the body. The style and craftsmanship hint at the armor coming from a far-away region.",
  "adesc" : "Includes a heavy coat of small, interlocking metal scales.",
  "named" : { "con": { "min" : 130, "max" : 160 }, "fat": { "min" : 14, "max" : 10 }, "names" : ["Scale Shirt", "Scale Armor", "Dragonskin", "Snakeskin", "Scales", "Wyrmskin", "Goldskin", "Scale Tunic", "Golden Armor", "Golden Reminder"]  }
 },
-{"name": "rotten_scale_coat",                "layer": "plate", "min": 1, "max": 1, "value" : 600, "con" : 60, "stam" : -9, "impactSound" : "chain", "invSound" : "chain",
+{"name": "rotten_scale_coat",                "layer": "plate", "min": 1, "max": 5, "value" : 600, "con" : 60, "stam" : -9, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Decayed Coat of Scales",
  "desc" :  "A heavy coat of thick, overlapping metal scales that are worn and missing in places, offering questionable protection for its weight.",
  "adesc" : "Includes a heavy coat of thick, overlapping metal scales that are worn and decaying."
 },
-{"name": "scale_shirt",                      "layer": "plate", "min": 1, "max": 1, "value" : 1750, "con" : 85, "stam" : -10, "impactSound" : "chain", "invSound" : "chain",
+{"name": "scale_shirt",                      "layer": "plate", "min": 1, "max": 6, "value" : 1750, "con" : 85, "stam" : -10, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Light Scale Armor",
  "desc" :  "A sturdy yet flexible shirt of small, overlapping metal scales.",
  "adesc" : "Includes body vest with small overlapping metal scales."
@@ -681,7 +693,7 @@ class Defs:
 # "adesc" : "Includes composite lamellar elements and extra padding.",
 #},
 
-{"name": "southern_named_plate",                  "layer": "plate", "min": 1, "max": 1, "value" : 9000, "con" : 210, "stam" : -25, "impactSound" : "plate", "invSound" : "plate",
+{"name": "southern_named_plate",                  "layer": "plate", "min": 1, "max": 13, "value" : 9000, "con" : 210, "stam" : -25, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "",
  "desc" :  "Ancient knowledge has been used when forging this unique set of armor. Its light mail overlapped with golden splints offers high protection with manageable encumbrance.",
  "adesc" : "Includes light mail overlapped with golden splints offering high protection with manageable encumbrance.",
@@ -698,12 +710,12 @@ class Defs:
 # "desc" :  "",
 # "adesc" : "",
 #},
-{"name": "southern_plate",                 "layer": "plate", "min": 1, "max": 2, "value" : 750, "con" : 75, "stam" : -8, "impactSound" : "plate", "invSound" : "plate",
+{"name": "southern_plate",                 "layer": "plate", "min": 1, "max": 6, "value" : 750, "con" : 75, "stam" : -8, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Mail with Lamellar Plating",
  "desc" :  "A heavy shirt of interlapping metal plates worn over mail.",
  "adesc" : "Includes a heavy shirt of interlapping metal plates."
 },
-{"name": "southern_plate_full",                    "layer": "plate", "min": 1, "max": 2, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "plate", "invSound" : "plate",
+{"name": "southern_plate_full",                    "layer": "plate", "min": 1, "max": 6, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "plate", "invSound" : "plate",
  "title" :  "Southern Long Mail Coat with Padding",
  "desc" :  "A padded, heavy coat of overlapping metal plates that provides extensive protection for the torso.",
  "adesc" : "Includes a padded, heavy coat of overlapping metal plates."
@@ -713,7 +725,7 @@ class Defs:
  "desc" :  "A padded shirt fashioned from slightly thinner and lighter leather than that used in the north.",
  "adesc" : "Includes a light padded shirt."
 },
-{"name": "southern_arm_guards",                "layer": "plate", "min": 1, "max": 1, "value" : 300, "con" : 30, "stam" : -2, "impactSound" : "leather", "invSound" : "leather",
+{"name": "southern_arm_guards",                "layer": "plate", "min": 1, "max": 20, "value" : 300, "con" : 30, "stam" : -2, "impactSound" : "leather", "invSound" : "leather",
  "title" :  "Southern arm guards",
  "desc" :  "A pair of leather arm guards favored by southern assassins for their lightweight design.",
  "adesc" : "Includes a pair of leather arm guards."
@@ -738,7 +750,7 @@ class Defs:
  "desc" :  "A worn-down, light mail shirt with rusted metal plates grafted onto it.",
  "adesc" : "Includes a light mail shirt with rusted metal plates grafted onto it."
 },
-{"name": "southern_scale",                  "layer": "plate", "min": 1, "max": 1, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "chain", "invSound" : "chain",
+{"name": "southern_scale",                  "layer": "plate", "min": 1, "max": 6, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "chain", "invSound" : "chain",
  "title" :  "Heavy Southern Lamellar",
  "desc" :  "A heavy lamellar harness of metal plates that provides good protection, but is very fatiguing to wear.",
  "adesc" : "Includes a heavy lamellar harness of metal plates."
@@ -762,7 +774,7 @@ class Defs:
  "desc" :  "A piece of cloth draped over the shoulder to protect against the sun and wind.",
  "adesc" : "Includes a piece of cloth draped over the shoulder."
 },
-{"name": "noble_shawl",           "layer": "cloak", "min": 1, "max": 2, "value" : 250, "con" : 10, "stam" : 0, "bravery" : 1, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "noble_shawl",           "layer": "cloak", "min": 1, "max": 7, "value" : 250, "con" : 10, "stam" : 0, "bravery" : 1, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Noble Shawl",
  "desc" :  "A shawl of exquisite material that wraps around the shoulders, signifying high status and wealth.",
  "adesc" : "Includes a fine noble shawl."
@@ -797,7 +809,7 @@ class Defs:
  "desc" :  "A basic wimple of plain grey cloth that signifies a life of devotion and poverty.",
  "adesc" : "Includes a basic wimple of plain grey cloth."
 },
-{"name": "tabbed_hood",           "layer": "cloak", "min": 1, "max": 1, "value" : 40, "con" : 10, "stam" : -1, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "tabbed_hood",           "layer": "cloak", "min": 1, "max": 4, "value" : 40, "con" : 10, "stam" : -1, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Tabbed Cowl",
  "desc" :  "A hooded cowl with dour, tabbed edges that helps one stay unremarkable and unassuming.",
  "adesc" : "Includes a hooded cowl with dour, tabbed edges."
@@ -827,7 +839,7 @@ class Defs:
  "desc" :  "A refined cloak of fine, lightweight silk that marks the wearer as a distinguished figure of the highest circles.",
  "adesc" : "Includes a refined cloak of fine, lightweight silk."
 },
-{"name": "sash",           "layer": "cloak", "min": 1, "max": 2, "value" : 150, "con" : 3, "stam" : 0, "bravery" : 1, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "sash",           "layer": "cloak", "min": 1, "max": 9, "value" : 150, "con" : 3, "stam" : 0, "bravery" : 1, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Sash",
  "desc" :  "A flowing cloth sash that adds a vibrant splash of color to any attire.",
  "adesc" : "Includes a flowing cloth sash."
@@ -857,6 +869,11 @@ class Defs:
  "desc" :  "A set of straps, bags, a hooded cowl and a relic of a knightly order that offer physical and spiritual protection.",
  "adesc" : "Includes a set of leather straps, bags, a hooded cowl and a relic of a knightly order."
 },
+{"name": "cloak_vala",           "layer": "cloak", "min": 1, "max": 1, "value" : 500, "con" : 15, "stam" : 0, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth",
+ "title" :  "Vala's Cloak",
+ "desc" :  "A rugged, surprisingly light cloak ideal for a vala\'s journeys through the lands.",
+ "adesc" : "Includes a light, rugged cloak."
+},
 
 ### Tabard
 
@@ -885,12 +902,12 @@ class Defs:
  "desc" :  "A southern cloth draped over and the left shoulder.",
  "adesc" : "Includes a left sided southern wrap."
 },
-{"name": "southern_wide_belt",           "layer": "tabard", "min": 1, "max": 1, "value" : 50, "con" : 2, "stam" : 0, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "southern_wide_belt",           "layer": "tabard", "min": 1, "max": 9, "value" : 50, "con" : 2, "stam" : 0, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Southern Wide Belt",
  "desc" :  "A simple wide belt that wraps around the waist.",
  "adesc" : "Includes a simple wide belt."
 },
-{"name": "noble_vest",           "layer": "tabard", "min": 1, "max": 1, "value" : 150, "con" : 10, "stam" : -1, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "noble_vest",           "layer": "tabard", "min": 1, "max": 6, "value" : 150, "con" : 10, "stam" : -1, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Noble Vest",
  "desc" :  "A studded leather vest with decorative metallic fasteners popular among the southern nobles.",
  "adesc" : "Includes a studded leather vest."
@@ -905,7 +922,7 @@ class Defs:
  "desc" :  "A simple cloth wrap draped over the shoulder.",
  "adesc" : "Includes a simple cloth wrap."
 },
-{"name": "southern_overcloth",           "layer": "tabard", "min": 1, "max": 1, "value" : 150, "con" : 10, "stam" : -1, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth",
+{"name": "southern_overcloth",           "layer": "tabard", "min": 1, "max": 5, "value" : 150, "con" : 10, "stam" : -1, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth",
  "title" :  "Southern Overcloak",
  "desc" :  "A heavy cloth overcloak cinched with a buckled leather strap.",
  "adesc" : "Includes a heavy cloth overcloak."

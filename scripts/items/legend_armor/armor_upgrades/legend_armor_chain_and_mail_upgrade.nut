@@ -8,7 +8,7 @@ this.legend_armor_chain_and_mail_upgrade <- this.inherit("scripts/items/legend_a
 		this.m.Name = "Amulet Coif";
 		this.m.Description = "An expensive amulet on a gold chain set on a mail collar. Certain to attract attention.";
 		this.m.ArmorDescription = "Includes an expensive chain on a mail collar.";
-		this.m.Variants = [1];
+		this.m.Variants = [1,2,3,4];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;

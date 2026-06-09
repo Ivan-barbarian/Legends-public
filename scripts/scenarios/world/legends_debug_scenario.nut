@@ -192,7 +192,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"plate/legend_armor_plate_full",
 			"plate/legend_armor_plate_full_greaves",
 			"plate/legend_armor_plate_full_greaves_named",
-			"plate/legend_armor_plate_full_greaves_painted",
 			"plate/legend_armor_scale",
 			"plate/legend_armor_scale_coat",
 			"plate/legend_armor_scale_coat_named",

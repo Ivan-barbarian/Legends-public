@@ -8,7 +8,7 @@ this.legend_armor_skull_chain_upgrade <- this.inherit("scripts/items/legend_armo
 		this.m.Name = "Skull Chain";
 		this.m.Description = "A dead man's skull hanging on a heavy chain. An unmistakable mark of a headhunter.";
 		this.m.ArmorDescription = "Includes a human skull on a heavy chain.";
-		this.m.Variants = [1];
+		this.m.Variants = [1, 2, 3, 4, 5];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;

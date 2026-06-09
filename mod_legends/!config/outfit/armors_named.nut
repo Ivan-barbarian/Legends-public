@@ -109,9 +109,7 @@
 			[1, "chain/legend_armor_short_mail"] // 60 -8 500
 		],
 		Plate = [
-			// [1, "plate/legend_armor_plate_full_greaves"],
 			[1, "plate/legend_armor_plate_full_greaves_named"], // 185-225 -23-25 10000
-			[1, "plate/legend_armor_plate_full_greaves_painted"] // 185-225 -23-25 10000
 		],
 		Cloak = [
 			[1, "cloak/legend_armor_shoulder_cloth"], // 5 -0 50
@@ -188,9 +186,7 @@
 			[1, "chain/legend_armor_southern_mail"], // 100 -13 1400
 		],
 		Plate = [
-			// [1, "plate/legend_armor_plate_full_greaves"],
 			[1, "plate/legend_armor_plate_full_greaves_named"], // 185-225 -23-25 10000
-			[1, "plate/legend_armor_plate_full_greaves_painted"] // 185-225 -23-25 10000
 		],
 		Cloak = [
 			[1, "cloak/legend_armor_shoulder_cloth"], // 5 -0 50
@@ -488,7 +484,6 @@
 		],
 		Plate = [
 			[1, "plate/legend_armor_plate_full_greaves_named"], // 185-225 -23-25 10000
-			[1, "plate/legend_armor_plate_full_greaves_painted"] // 185-225 -23-25 10000
 		],
 		Cloak = [
 		],

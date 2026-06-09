@@ -8,7 +8,7 @@ this.legend_leather_shoulderguards_upgrade <- this.inherit("scripts/items/legend
 		this.m.Name = "Leather Shoulderguards";
 		this.m.Description = "A set of studded leather shoulderguards adding a little bit of resiliency to the shoulders.";
 		this.m.ArmorDescription = "Includes a set of studded leather shoulderguards.";
-		this.m.Variants = [1];
+		this.m.Variants = [1,2,3,4,5];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;

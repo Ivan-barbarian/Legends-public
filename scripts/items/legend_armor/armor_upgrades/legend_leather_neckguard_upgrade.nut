@@ -8,7 +8,7 @@ this.legend_leather_neckguard_upgrade <- this.inherit("scripts/items/legend_armo
 		this.m.Name = "Leather Neckguard";
 		this.m.Description = "A neckguard of cured leather capable of softening a blow that could otherwise prove lethal.";
 		this.m.ArmorDescription = "Includes a neckguard of cured leather.";
-		this.m.Variants = [1];
+		this.m.Variants = [1,2,3,4,5];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;

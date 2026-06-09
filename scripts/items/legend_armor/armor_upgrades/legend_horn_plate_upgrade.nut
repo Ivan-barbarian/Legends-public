@@ -26,3 +26,4 @@ this.legend_horn_plate_upgrade <- this.inherit("scripts/items/legend_armor/legen
 	}
 });
 
+// delete after or keep for submods
