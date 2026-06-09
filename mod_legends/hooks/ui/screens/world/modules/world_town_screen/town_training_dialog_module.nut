@@ -34,7 +34,7 @@
 		local roster = [];
 
 		foreach (b in brothers) {
-			if (b.getLevel() >= 11) {
+			if (b.getLevel() >= 12) {
 				continue;
 			}
 
@@ -45,7 +45,7 @@
 				continue;
 			}
 
-			if (b.getSkills().hasSkill("effects.trained")) {
+			if (b.getSkills().hasEffect(::Legends.Effect.Trained)) {
 				continue;
 			}
 
