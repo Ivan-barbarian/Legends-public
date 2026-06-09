@@ -75,7 +75,7 @@
 		foreach (b in brothers) {
 			if (b.getSkills().hasSkill("trait.sure_footing")) {
 				candidates_surefooted.push(b);
-			} else if (b.getSkills().hasSkill("trait.player")) {
+			} else if (!b.getSkills().hasSkill("trait.player")) {
 				candidates_other.push(b);
 			}
 		}
