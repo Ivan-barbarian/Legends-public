@@ -1,12 +1,12 @@
 mod_legends.Hooks.XBBCODE_process = XBBCODE.process;
 
-XBBCODE.process = function(config) {
+XBBCODE.process = function (config) {
     var ret = mod_legends.Hooks.XBBCODE_process(config);
 
-	// this one adds a [leg_img] tag that allows dynamic width and height manipulation of img in texts
+    // this one adds a [leg_img] tag that allows dynamic width and height manipulation of img in texts
     ret.html = ret.html.replace(
         /(?:\[|&#91;)leg_img(?:\]|&#93;)\(\s*([\s\S]+?)\s*\)(?:\[|&#91;)\/leg_img(?:\]|&#93;)/gi,
-        function(_match, content) {
+        function (_match, content) {
             var parts = content.split(',');
             for (var i = 0; i < parts.length; i++) {
                 parts[i] = parts[i].replace(/^\s+|\s+$/g, ''); // trim
@@ -32,6 +32,12 @@ XBBCODE.process = function(config) {
             return '<img src="coui://' + safePath + '"' + width + height + ' style="vertical-align: -3px;"/>';
         }
     );
+
+    // [i]text[/i]
+    ret.html = ret.html.replace(/(?:\[|&#91;)i(?:\]|&#93;)([\s\S]*?)(?:\[|&#91;)\/i(?:\]|&#93;)/gi, '<span style="font-style: italic;">$1</span>');
+
+    // [size=18px]text[/i]
+    ret.html = ret.html.replace(/(?:\[|&#91;)size=([^\]&#]+)(?:\]|&#93;)([\s\S]*?)(?:\[|&#91;)\/size(?:\]|&#93;)/gi, '<span style="font-size: $1;">$2</span>');
 
     return ret;
 };
