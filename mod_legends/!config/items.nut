@@ -130,7 +130,8 @@ foreach (i in garbage)
 	"weapons/named/legend_named_rusty_serrated_axe",
 	"weapons/named/legend_named_rusty_warcleaver",
 	"weapons/named/legend_named_horn_decorated_mace",
-	"weapons/named/legend_named_rusty_greatsword"
+	"weapons/named/legend_named_rusty_greatsword",
+	"weapons/named/legend_named_barbdiche"
 ];
 
 ::Const.Items.NamedGoblinWeapons.extend([

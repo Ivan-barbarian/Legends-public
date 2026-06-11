@@ -43,6 +43,10 @@
 
 ### Weapons
 
+**New Weapons**
+- Heavy Rusty Battleaxe - new barbarian bardiche
+- Named Heavy Rusty Battleaxe - named version
+
 **Daze Bomb**
 - will now stun if the target is already dazed
 
@@ -76,6 +80,9 @@
 - `Disarm` - unchanged
 - `Debilitate` - a successful strike will apply `Debilitated`
 > 4 ap, 20 fat, 50% damage, 3 range
+
+**Bardiche**
+- no longer has swing
 
 ## Enemies
 
