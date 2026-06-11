@@ -364,14 +364,14 @@ this.camp_building <- {
 		{
 			if (b.getCampAssignment() != this.m.ID)
 			{
-				continue
+				continue;
 			}
 			++count;
 		}
 		return count;
 	}
 
-	function getBanner()
+	function getBanner(bro = null)
 	{
 		return this.m.BannerImage;
 	}
@@ -471,7 +471,7 @@ this.camp_building <- {
 		{
 			if (bro.getCampAssignment() != this.m.ID)
 			{
-				continue
+				continue;
 			}
 			// Each character assigned will contribute the tent's BaseCraft plus any bonuses from their modifiers
 			// If the character does not have the relevant skill, they will contribute only the BaseCraft value
@@ -527,7 +527,7 @@ this.camp_building <- {
 			}
 			local bro = this.UIDataHelper.convertEntityToUIData(b, null);
 			local tent = this.World.Camp.getBuildingByID( b.getCampAssignment() );
-			bro.bannerImage <- tent.getBanner();
+			bro.bannerImage <- tent.getBanner(b);
 			bro.IsSelected <- b.getCampAssignment() == this.m.ID;
 			local modifier = 0;
 			if (this.m.ModName != "")

@@ -493,6 +493,13 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
 	}
 
+	function getBanner(_bro = null) {
+		if (_bro != null && ::Legends.Traits.get(_bro, ::Legends.Trait.LegendIntensiveTraining).isMaxReached())
+			return "ui/buttons/banner_train_finished.png";
+		else
+			return this.camp_building.getBanner();
+	}
+
 	function getUpdateText()
 	{
 		if (this.m.NumBros == 0)
