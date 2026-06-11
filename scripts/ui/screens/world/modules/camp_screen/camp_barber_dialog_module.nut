@@ -1,30 +1,39 @@
 
 
 this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
-	m = {},
-	function create()
-	{
+	m = {
+		Standard = {
+			Bodies = [
+            	[::Const.Bodies.BarberNorthernMale, ::Const.Bodies.BarberSouthernMale, ::Const.Bodies.AfricanMale],
+            	[::Const.Bodies.BarberNorthernFemale, ::Const.Bodies.BarberSouthernFemale, ::Const.Bodies.AfricanFemale]
+        	],
+        	Faces = [
+            	[::Const.Faces.AllWhiteMale, ::Const.Faces.SouthernMale, ::Const.Faces.AfricanMale],
+            	[::Const.Faces.AllWhiteFemale, ::Const.Faces.SouthernFemale, ::Const.Faces.AfricanFemale]
+        	],
+         	Hairs = [ [::Const.Hair.Barber], [::Const.Hair.BarberFemale] ],
+         	Beards = [ [::Const.Beards.Barber], [::Const.Beards.BarberFemale] ]
+		}
+	},
+
+	function create() {
 		this.m.ID = "CampBarberDialogModule";
 		this.ui_module.create();
 	}
 
-	function destroy()
-	{
+	function destroy() {
 		this.ui_module.destroy();
 	}
 
-	function onLeaveButtonPressed()
-	{
+	function onLeaveButtonPressed() {
 		this.m.Parent.onModuleClosed();
 	}
 
-	function queryRosterInformation()
-	{
+	function queryRosterInformation() {
 		local brothers = this.World.getPlayerRoster().getAll();
 		local roster = [];
 
-		foreach( b in brothers )
-		{
+		foreach (b in brothers) {
 			local background = b.getBackground();
 			local e = {
 				ID = b.getID(),
@@ -46,8 +55,7 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		};
 	}
 
-	function onEntrySelected( _entityID )
-	{
+	function onEntrySelected(_entityID) {
 		local roster = this.World.getTemporaryRoster();
 		roster.clear();
 		local temp = roster.create("scripts/entity/tactical/human");
@@ -64,8 +72,15 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		return temp.getImagePath();
 	}
 
-	function onUpdateAppearance( _data )
-	{
+	function getSpriteArray(bro, spriteArray, _gender, _ethnicity) {
+		local facesArray = bro.getBackground().m[spriteArray];
+		if(facesArray != null && facesArray.len()!=0)
+			return facesArray;
+		local ethnicity = this.m.Standard[spriteArray][_gender].len() > 1 ? _ethnicity : 0;
+		return this.m.Standard[spriteArray][_gender][ethnicity];
+	}
+
+	function onUpdateAppearance(_data) {
 		local _entityID = _data[0];
 		local _layerID = _data[1];
 		local _change = _data[2];
@@ -73,12 +88,14 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		local color;
 
 		local bro = this.Tactical.getEntityByID(_entityID);
-		local isFemale = bro.getGender() == 1;
+		local gender = bro.getGender();
 		local ethnicity = bro.getEthnicity();
 
+		
+
 		if (temp.getFlags().has("BarberColor")) {
-        	color = temp.getFlags().get("BarberColor");
-    	} else {
+			color = temp.getFlags().get("BarberColor");
+		} else {
 			if (temp.getSprite("hair").HasBrush) {
 				color = temp.getSprite("hair").getBrush().Name;
 			} else if (temp.getSprite("beard").HasBrush) {
@@ -87,13 +104,13 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 				color = "brown";
 			}
 
-			if (this.String.contains(color, "_black_")) {
+			if (::String.contains(color, "_black_")) {
 				color = "black";
-			} else if (this.String.contains(color, "_blonde_")) {
+			} else if (::String.contains(color, "_blonde_")) {
 				color = "blonde";
-			} else if (this.String.contains(color, "_grey_")) {
+			} else if (::String.contains(color, "_grey_")) {
 				color = "grey";
-			} else if (this.String.contains(color, "_red_")) {
+			} else if (::String.contains(color, "_red_")) {
 				color = "red";
 			} else {
 				color = "brown";
@@ -105,8 +122,8 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		if (_layerID == "color") {
 			local index = 0;
 
-			foreach( i, s in this.Const.HairColors.All ) {
-				if (s == color)	{
+			foreach (i, s in ::Const.HairColors.All) {
+				if (s == color) {
 					index = i;
 					break;
 				}
@@ -114,156 +131,57 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 
 			index = index + _change;
 
-			if (index >= this.Const.HairColors.All.len()) {
+			if (index >= ::Const.HairColors.All.len()) {
 				index = 0;
-			}
-			else if (index < 0)	{
-				index = this.Const.HairColors.All.len() - 1;
+			} else if (index < 0) {
+				index = ::Const.HairColors.All.len() - 1;
 			}
 
-			color = this.Const.HairColors.All[index];
+			color = ::Const.HairColors.All[index];
 
 			temp.getFlags().set("BarberColor", color);
 
-			if (isFemale) {
-				this.changeIndexEx(this.Const.Hair.BarberFemale, temp.getSprite("hair"), 0, "hair", color, "");
-				this.changeIndexEx(this.Const.Beards.BarberFemale, temp.getSprite("beard"), 0, "beard", color, "");
-			}
-			else {
-				this.changeIndexEx(this.Const.Hair.Barber, temp.getSprite("hair"), 0, "hair", color, "");
-				this.changeIndexEx(this.Const.Beards.Barber, temp.getSprite("beard"), 0, "beard", color, "");
-			}
+			local hairSprite = temp.getSprite("hair");
+            local hairArray = this.getSpriteArray(bro, "Hairs", gender, ethnicity);
+            this.changeIndexEx(hairArray, hairSprite, 0, "hair", color, "");
 
-			if (temp.getSprite("beard").HasBrush && this.doesBrushExist(temp.getSprite("beard").getBrush().Name + "_top")) {
-				temp.getSprite("beard_top").setBrush(temp.getSprite("beard").getBrush().Name + "_top");
+            local beardSprite = temp.getSprite("beard");
+            local beardArray = this.getSpriteArray(bro, "Beards", gender, ethnicity);
+            this.changeIndexEx(beardArray, beardSprite, 0, "beard", color, "");
+
+			if (beardSprite.HasBrush && this.doesBrushExist(beardSprite.getBrush().Name + "_top")) {
+				temp.getSprite("beard_top").setBrush(beardSprite.getBrush().Name + "_top");
 			} else {
 				temp.getSprite("beard_top").resetBrush();
 			}
-		}
-		else if (_layerID == "body")
-		{
-			if (isFemale)
-			{
-				if (ethnicity == 1)
-				{
-					this.changeIndex(this.Const.Bodies.BarberSouthernFemale, temp.getSprite("body"), _change);
-				}
-				else if (ethnicity == 2)
-				{
-					this.changeIndex(this.Const.Bodies.AfricanFemale, temp.getSprite("body"), _change);
-				}
-				else
-				{
-					this.changeIndex(this.Const.Bodies.BarberNorthernFemale, temp.getSprite("body"), _change);
-				}
-			}
-			else
-			{
-				if (ethnicity == 1)
-				{
-					this.changeIndex(this.Const.Bodies.BarberSouthernMale, temp.getSprite("body"), _change);
-				}
-				else if (ethnicity == 2)
-				{
-					this.changeIndex(this.Const.Bodies.AfricanMale, temp.getSprite("body"), _change);
-				}
-				else
-				{
-					this.changeIndex(this.Const.Bodies.BarberNorthernMale, temp.getSprite("body"), _change);
-				}
-			}
-		}
-		else if (_layerID == "head")
-		{
-			if (isFemale)
-			{
-				if (ethnicity == 1)
-				{
-					this.changeIndex(this.Const.Faces.SouthernFemale, temp.getSprite("head"), _change);
-				}
-				else if (ethnicity == 2)
-				{
-					this.changeIndex(this.Const.Faces.AfricanFemale, temp.getSprite("head"), _change);
-				}
-				else
-				{
-					this.changeIndex(this.Const.Faces.AllWhiteFemale, temp.getSprite("head"), _change);
-				}
-			}
-			else
-			{
-				if (ethnicity == 1)
-				{
-					this.changeIndex(this.Const.Faces.SouthernMale, temp.getSprite("head"), _change);
-				}
-				else if (ethnicity == 2)
-				{
-					this.changeIndex(this.Const.Faces.AfricanMale, temp.getSprite("head"), _change);
-				}
-				else
-				{
-					this.changeIndex(this.Const.Faces.AllWhiteMale, temp.getSprite("head"), _change);
-				}
-			}
-		}
-		else if (_layerID == "hair")
-		{
-			if (isFemale)
-			{
-				this.changeIndexEx(this.Const.Hair.BarberFemale, temp.getSprite("hair"), _change, "hair", color, "");
-			}
+		} else if (_layerID == "body" || _layerID == "head") {
+			local sprite = temp.getSprite(_layerID);
+            local arr = this.getSpriteArray(bro, _layerID == "body" ? "Bodies" : "Faces", gender, ethnicity);
+            this.changeIndex(arr, sprite, _change);
+		} else if (_layerID == "hair" || _layerID == "beard") {
+			local sprite = temp.getSprite(_layerID);
+            local arr = this.getSpriteArray(bro, _layerID == "hair" ? "Hairs" : "Beards", gender, ethnicity);
+            this.changeIndexEx(arr, sprite, _change, _layerID, color, "");
 
-			else
-			{
-				this.changeIndexEx(this.Const.Hair.Barber, temp.getSprite("hair"), _change, "hair", color, "");
-			}
+            if (_layerID == "beard") {
+                if (sprite.HasBrush && this.doesBrushExist(sprite.getBrush().Name + "_top")) {
+                    temp.getSprite("beard_top").setBrush(sprite.getBrush().Name + "_top");
+                } else {
+                    temp.getSprite("beard_top").resetBrush();
+                }
+            }
+		} else if (_layerID == "tattoo") {
+			this.changeIndexEx(::Const.Tattoos.All, temp.getSprite("tattoo_body"), _change, "", "", temp.getSprite("body").getBrush().Name);
+		} else if (_layerID == "tattoo_head") {
+			this.changeIndexEx(::Const.Tattoos.Head, temp.getSprite("tattoo_head"), _change, "", "", "head");
 		}
-		else if (_layerID == "beard")
-		{
-			if (isFemale)
-			{
-				this.changeIndexEx(this.Const.Beards.BarberFemale, temp.getSprite("beard"), _change, "beard", color, "");
-
-				if (temp.getSprite("beard").HasBrush && this.doesBrushExist(temp.getSprite("beard").getBrush().Name + "_top"))
-				{
-					temp.getSprite("beard_top").setBrush(temp.getSprite("beard").getBrush().Name + "_top");
-				}
-				else
-				{
-					temp.getSprite("beard_top").resetBrush();
-				}
-			}
-			else
-			{
-				this.changeIndexEx(this.Const.Beards.Barber, temp.getSprite("beard"), _change, "beard", color, "");
-
-				if (temp.getSprite("beard").HasBrush && this.doesBrushExist(temp.getSprite("beard").getBrush().Name + "_top"))
-				{
-					temp.getSprite("beard_top").setBrush(temp.getSprite("beard").getBrush().Name + "_top");
-				}
-				else
-				{
-					temp.getSprite("beard_top").resetBrush();
-				}
-			}
-		}
-		else if (_layerID == "tattoo")
-		{
-			this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), _change, "", "", temp.getSprite("body").getBrush().Name);
-		}
-		else if (_layerID == "tattoo_head")
-		{
-			this.changeIndexEx(this.Const.Tattoos.Head, temp.getSprite("tattoo_head"), _change, "", "", "head");
-		}
-
 		temp.setDirty(true);
 		return temp.getImagePath();
 	}
 
-	function onChangeAppearance( _entityID )
-	{
-		local bro = this.Tactical.getEntityByID(_entityID);
-		local temp = this.World.getTemporaryRoster().getAll()[0];
+	function onChangeAppearance(_entityID) {
+		local bro = ::Tactical.getEntityByID(_entityID);
+		local temp = ::World.getTemporaryRoster().getAll()[0];
 		bro.copySpritesFrom(temp, [
 			"body",
 			"head",
@@ -274,7 +192,7 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			"tattoo_head",
 		]);
 		bro.setDirty(true);
-		this.Sound.play(this.Const.Sound.Barber[this.Math.rand(0, this.Const.Sound.Barber.len() - 1)], 1.0);
+		::Sound.play(::Const.Sound.Barber[::Math.rand(0, ::Const.Sound.Barber.len() - 1)], 1.0);
 		return bro.getImagePath();
 	}
 
@@ -321,7 +239,8 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		}
 
 		foreach (i, s in cleanList) {
-			if (s == "" && currentBrush == "") { // bald
+			if (s == "" && currentBrush == "") {
+				// bald
 				index = i;
 				break;
 			}
@@ -336,13 +255,14 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			local expected2 = _prefix + (_prefix != "" ? "_" : "") + s + (_suffix != "" ? "_" : "") + _suffix; // hair shaved
 
 			if (currentBrush == expected1 || currentBrush == expected2) {
-					index = i;
-					break;
+				index = i;
+				break;
 			}
 
 			if (currentBrush == expected1 || currentBrush == expected2) {
 				isMatch = true;
-			} else if (_change == 0 && (_prefix == "hair" || _prefix == "beard")) { // color
+			} else if (_change == 0 && (_prefix == "hair" || _prefix == "beard")) {
+				// color
 				foreach (c in this.Const.HairColors.All) {
 					if (currentBrush == _prefix + "_" + c + "_" + s	|| currentBrush == _prefix + "_" + s)
 					{
