@@ -349,10 +349,7 @@ this.legend_shuckster_encounter <- this.inherit("scripts/encounters/encounter", 
 			Characters = [],
 			Options = [
 				{
-					
-				},
-				{
-					Text = ::World.Assets.getOrigin().getID() == "scenario.manhunters" ? "Keep %them_dude% chained, lest %they_dude% tries running again." : "We might yet make a %sibling_dude% out of you.",
+					Text = "We might yet make a %sibling_dude% out of you.",
 					function getResult(_event) {
 						_event.m.Dude.getBackground().m.RawDescription = "You saved %name% from a lynching. With nowhere else to go, the charlatan decided to put %their% talents to use as a mercenary.";
 						return "RecruitTheShuckster";
@@ -365,6 +362,7 @@ this.legend_shuckster_encounter <- this.inherit("scripts/encounters/encounter", 
 			],
 
 			function start(_event) {
+				this.Options.Text[0] = ::World.Assets.getOrigin().getID() == "scenario.manhunters" ? "Keep %them_dude% chained, lest %they_dude% tries running again." : "We might yet make a %sibling_dude% out of you."
 				::Legends.S.getClosestSettlement().getFactionOfType(::Const.FactionType.Settlement).addPlayerRelation(::Const.World.Assets.RelationMajorOffense, "You brawled with the local peasantry to protect a scammer");
 
 				//add light wounds and brawl injuries
