@@ -141,6 +141,24 @@
 		this.World.Statistics.getFlags().set("isIjirokPotionAcquired", false);
 		this.World.Statistics.getFlags().set("isIfritPotionAcquired", false);
 		this.World.Statistics.getFlags().set("isHyenaPotionAcquired", false);
+		this.World.Statistics.getFlags().set("isLesserFleshGolemPotionAcquired", false);
+		this.World.Statistics.getFlags().set("isGreaterFleshGolemPotionAcquired", false);
+		this.World.Statistics.getFlags().set("isGrandDivinerPotionAcquired", false);
+
+		this.World.Statistics.getFlags().set("isConquerorPotionAcquired", false);
+		this.World.Statistics.getFlags().set("isDemonAlpPotionAcquired", false);
+		this.World.Statistics.getFlags().set("isDemonHoundPotionAcquired", false);
+		this.World.Statistics.getFlags().set("isFallenBetrayerPotionAcquired", false);
+		this.World.Statistics.getFlags().set("isGreenwoodSchratPotionAcquired", false);
+		this.World.Statistics.getFlags().set("isHexeLeaderPotionAcquired", false);
+		this.World.Statistics.getFlags().set("isNecrosavantLorePotionAcquired", false);
+		this.World.Statistics.getFlags().set("isOrcBehemothPotionAcquired", false);
+		this.World.Statistics.getFlags().set("isOrcElitePotionAcquired", false);
+		this.World.Statistics.getFlags().set("isRedbackPotionAcquired", false);
+		this.World.Statistics.getFlags().set("isRockUnholdPotionAcquired", false);
+		this.World.Statistics.getFlags().set("isSkinghoulPotionAcquired", false);
+		this.World.Statistics.getFlags().set("isStollwurmPotionAcquired", false);
+		this.World.Statistics.getFlags().set("isWhiteDirewolfPotionAcquired", false);
 		this.World.Assets.m.Money = this.World.Assets.m.Money + 700;
 	}
 });

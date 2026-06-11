@@ -414,6 +414,118 @@ effectsDefs.push({
 	Const = "ApotheosisPotion"
 });
 
+::Legends.Effect.LegendOrcBehemothPotion <- null;
+effectsDefs.push({
+	ID = "effects.legend_orc_behemoth_potion",
+	Script = "scripts/skills/effects/legend_orc_behemoth_potion_effect",
+	Name = "Unchained Fury",
+	Const = "LegendOrcBehemothPotion"
+});
+
+::Legends.Effect.LegendOrcElitePotion <- null;
+effectsDefs.push({
+	ID = "effects.legend_orc_elite_potion",
+	Script = "scripts/skills/effects/legend_orc_elite_potion_effect",
+	Name = "Brutal Savage",
+	Const = "LegendOrcElitePotion"
+});
+
+::Legends.Effect.LegendGreenwoodSchratPotion <- null;
+effectsDefs.push({
+	ID = "effects.legend_greenwood_schrat_potion",
+	Script = "scripts/skills/effects/legend_greenwood_schrat_potion_effect",
+	Name = "Mutated Brawny Muscles",
+	Const = "LegendGreenwoodSchratPotion"
+});
+
+::Legends.Effect.LegendDemonHoundPotion <- null;
+effectsDefs.push({
+	ID = "effects.legend_demon_hound_potion",
+	Script = "scripts/skills/effects/legend_demon_hound_potion_effect",
+	Name = "Death Inducement",
+	Const = "LegendDemonHoundPotion"
+});
+
+::Legends.Effect.LegendFallenBetrayerPotion <- null;
+effectsDefs.push({
+	ID = "effects.legend_fallen_betrayer_potion",
+	Script = "scripts/skills/effects/legend_fallen_betrayer_potion_effect",
+	Name = "Serum of Resentment",
+	Const = "LegendFallenBetrayerPotion"
+});
+
+::Legends.Effect.LegendDemonAlpPotion <- null;
+effectsDefs.push({
+	ID = "effects.legend_demon_alp_potion",
+	Script = "scripts/skills/effects/legend_demon_alp_potion_effect",
+	Name = "The Third eye",
+	Const = "LegendDemonAlpPotion"
+});
+
+::Legends.Effect.LegendHexeLeaderPotion <- null;
+effectsDefs.push({
+	ID = "effects.legend_hexe_leader_potion",
+	Script = "scripts/skills/effects/legend_hexe_leader_potion_effect",
+	Name = "Uplifting Touch",
+	Const = "LegendHexeLeaderPotion"
+});
+
+::Legends.Effect.LegendRedbackPotion <- null;
+effectsDefs.push({
+	ID = "effects.legend_redback_potion",
+	Script = "scripts/skills/effects/legend_redback_potion_effect",
+	Name = "Hyper-Mutated Circulatory System",
+	Const = "LegendRedbackPotion"
+});
+
+::Legends.Effect.LegendSkinGhoulPotion <- null;
+effectsDefs.push({
+	ID = "effects.legend_skinghoul_potion",
+	Script = "scripts/skills/effects/legend_skinghoul_potion_effect",
+	Name = "Malice Unguis",
+	Const = "LegendSkinGhoulPotion"
+});
+
+::Legends.Effect.LegendNecrosavantLordPotion <- null;
+effectsDefs.push({
+	ID = "effects.legend_necrosavant_lord_potion",
+	Script = "scripts/skills/effects/legend_necrosavant_lord_potion_effect",
+	Name = "Dustmourn Coating",
+	Const = "LegendNecrosavantLordPotion"
+});
+
+::Legends.Effect.LegendConquerorPotion <- null;
+effectsDefs.push({
+	ID = "effects.legend_conqueror_potion",
+	Script = "scripts/skills/effects/legend_conqueror_potion_effect",
+	Name = "Thick Skin",
+	Const = "LegendConquerorPotion"
+});
+
+::Legends.Effect.LegendRockUnholdPotion <- null;
+effectsDefs.push({
+	ID = "effects.legend_rock_unhold_potion",
+	Script = "scripts/skills/effects/legend_rock_unhold_potion_effect",
+	Name = "Titan's Power",
+	Const = "LegendRockUnholdPotion"
+});
+
+::Legends.Effect.LegendStollwurmPotion <- null;
+effectsDefs.push({
+	ID = "effects.legend_stollwurm_potion",
+	Script = "scripts/skills/effects/legend_stollwurm_potion_effect",
+	Name = "Thorny Dragonhide",
+	Const = "LegendStollwurmPotion"
+});
+
+::Legends.Effect.LegendWhiteDirewolfPotion <- null;
+effectsDefs.push({
+	ID = "effects.legend_white_direwolf_potion",
+	Script = "scripts/skills/effects/legend_white_direwolf_potion_effect",
+	Name = "Unflagging Energy",
+	Const = "LegendWhiteDirewolfPotion"
+});
+
 ::Legends.Effect.BattleStandard <- null;
 effectsDefs.push({
 	ID = "effects.battle_standard",

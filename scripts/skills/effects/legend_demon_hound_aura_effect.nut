@@ -1,6 +1,6 @@
 this.legend_demon_hound_aura_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-	Penalty = 0
+		Penalty = 0
 	},
 	function create()
 	{

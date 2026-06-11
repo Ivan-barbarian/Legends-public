@@ -7,6 +7,25 @@
 - modified the faction window to include traits
 - added short description to noble house traits available upon mouseover in faction window
 
+## Scenarios
+
+### Anatomists
+- new conqueror potion
+- new demon alp potion
+- new demon hound potion
+- new fallen betrayer potion
+- new greendwood schrat potion
+- new hexe leader potion
+- new necrosavant lord potion
+- new orc behemoth potion
+- new orc elite potion
+- new redback potion
+- new rock unhold potion
+- new stollwurm potion
+- new skinghoul potion
+- new white direwolf potion
+>>>>>>> 0f4c89eb0e (add new anatomist potions)
+
 ## Perks
 
 ### New Perks
