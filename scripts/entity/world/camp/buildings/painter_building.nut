@@ -75,11 +75,8 @@ this.painter_building <- this.inherit("scripts/entity/world/camp/camp_building",
 		];
 	}
 
-	function getDescription()
-	{
-		local desc = "";
-		desc = desc + "Here you can spend your crowns to change the style of each piece of armour of each unit in your company ";
-		return desc;
+	function getDescription() {
+		return "Customize the appearance of weapons and armor in the company.";
 	}
 
 	function getLevel()
