@@ -491,7 +491,7 @@ class Defs:
  "desc" :  "A metal sallet helm with an extended neck guard, a design uncommon in these lands. Well crafted to offer maximum protection with minimum weight, and without impairing vision.",
  "adesc" : "Includes a metal sallet."
  },
-{"name" : "sallet_named"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 9, "value" : 1600, "con" : 55, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",
+{"name" : "sallet_named"                     , "layer" : "helm", "lower": True, "min" : 1, "max" : 9, "value" : 1600, "con" : 55, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false", "impactSound" : "plate", "invSound" : "plate",  "named" : { "con": { "min" : 65, "max" : 80 }, "fat": { "min" : 2, "max" : 1 }, "vis": { "min" : 0, "max" : 0 }, "names" : Names  },
  "title" :  "Gilded Sallet",
  "desc" :  "A beautifully designed metal sallet helm with an extended neck guard, a design uncommon in these lands. Expertly crafted to offer maximum protection with minimum weight, and without impairing vision.",
  "adesc" : "Includes a beautifully designed metal sallet."
