@@ -3,8 +3,6 @@
 	local create = o.create;
 	o.create = function() {
 		create();
-		this.m.WeaponType = ::Const.Items.WeaponType.Sword;
-		this.m.Categories = "Cleaver/Sword, One-Handed";
 		this.m.Variants = [0, 1, 2];
 		this.setVariant(this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)]);
 	}
@@ -14,6 +12,27 @@
 		this.m.Icon = "weapons/melee/scimitar_01" + v + "_70x70.png";
 		this.m.IconLarge = "weapons/melee/scimitar_01" + v + ".png";
 		this.m.ArmamentIcon = "icon_scimitar_01" + v;
+	}
+
+	o.addSkill <- function( _skill )
+	{
+		if (_skill.getID() == ::Legends.Actives.getID(::Legends.Active.Slash))
+		{
+			::Legends.Actives.grant(this.weapon, ::Legends.Active.Slash, function (_skill)
+			{
+				_skill.m.IsShamshirSlash = true;
+			}.bindenv(this));
+			return;
+		}
+
+		weapon.addSkill(_skill);
+	}
+
+	local onEquip = o.onEquip;
+	o.onEquip = function ()
+	{
+		onEquip();
+		::Legends.Actives.grant(this, ::Legends.Active.LegendDebilitate);
 	}
 
 });

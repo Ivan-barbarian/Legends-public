@@ -82,7 +82,16 @@
 > 4 ap, 20 fat, 50% damage, 3 range
 
 **Bardiche**
-- no longer has swing
+- no longer has `Swing`
+
+**Estoc**
+- `Thrust` - You have a chance to attack up to 1(3 with mastery) additional times based on the initiative difference between you and your target. The chance for each attack to be executed is rolled independently in increments of 100.
+
+**1h Shamshir and 1h scimitar**
+- `Slash` is now `Flowing Slash`
+> will attack again for 50% damage on a miss with mastery
+- `Gash` - unchanged
+- `Debilitate`
 
 ## Enemies
 
