@@ -32,6 +32,12 @@
 - `Near Death Experience` - Martyr Trait Tree
 > Confers an experience point bonus based on Hitpoints lost and Injuries gained during combat. Gain 1 XP per Hitpoint and 10 per Injuries. Experience gain is reduced by 90% at level 12 and above.
 > Hitpoint damage taken is reduced by 5% and Resolve is increased by 3 for each Injury you have up to a maximum of 30% and [color=%positive%]15 achieved at 6 Injuries. Counts both regular and permanent Injuries.
+- `Wide Swings` - Large Trait Tree
+> 50% of the skill's fatigue cost is translated to Chance to hit. This accounts for any fatigue reduction or increase.
+
+### Perk Changes
+- `Bloody Harvest` - 50% of the skill's fatigue cost is translated to Damage. This accounts for any fatigue reduction or increase.
+> used to be damage and chance to hit
 
 ## Item Changes
 

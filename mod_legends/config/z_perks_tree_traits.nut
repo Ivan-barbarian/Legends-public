@@ -634,7 +634,9 @@ if (!("Perks" in ::Const))
 		[
 			::Legends.Perk.Colossus
 		],
-		[],
+		[
+			::Legends.Perk.LegendWideSwings
+		],
 		[
 			::Legends.Perk.LegendOnslaught
 		],

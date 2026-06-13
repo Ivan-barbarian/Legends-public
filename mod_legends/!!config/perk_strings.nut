@@ -413,7 +413,14 @@ Take a deep breath, then get to work.
 There's wolves, bears, nachzehrers, and you. All beings of vicious slaughter.
 
 [color=%passive%][u]Passive:[/u][/color]
-• [color=%positive%]50%[/color] of the skill's fatigue cost is translated to Damage and Chance to hit. This accounts for any fatigue reduction or increase.
+• [color=%positive%]50%[/color] of the skill's fatigue cost is translated to Damage. This accounts for any fatigue reduction or increase.
+";
+
+::Const.Strings.PerkDescription.LegendWideSwings <- @"
+Broad attacks are hard to avoid and you're using this to your advantage.
+
+[color=%passive%][u]Passive:[/u][/color]
+• [color=%positive%]50%[/color] of the skill's fatigue cost is translated to Chance to hit. This accounts for any fatigue reduction or increase.
 ";
 
 ::Const.Strings.PerkDescription.LegendImmovableObject <- @"
