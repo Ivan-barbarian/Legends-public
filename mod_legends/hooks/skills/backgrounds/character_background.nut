@@ -1034,7 +1034,7 @@
 					}
 				}
 
-				tmp[entry.ID].PerkDefs[Legends.Perk[perk.Const]] <- true;
+				tmp[entry.ID].PerkDefs[::Legends.Perk[perk.Const]] <- true;
 			}
 		}
 
@@ -1839,7 +1839,7 @@
 	local addEquipment = o.addEquipment;
 	o.addEquipment = function () {
 		addEquipment();
-		adjustHiringCostBasedOnEquipmentLegends();
+		this.adjustHiringCostBasedOnEquipmentLegends();
 	}
 	// endhack
 })

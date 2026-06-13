@@ -6,29 +6,29 @@
         if (::Stash.isLocked())
             return null;
 
-        if (m.ArmorFilter == null)
-            return convertStashToUIData(false, ::Const.Items.ItemFilter.Armor);
+        if (this.m.ArmorFilter == null)
+            return this.convertStashToUIData(false, ::Const.Items.ItemFilter.Armor);
 
         local items = ::Stash.getItems();
 
         if (items == null)
         	return null;
 
-        if(m.ArmorFilter.Armor.len() == 0 && m.ArmorFilter.Helmet.len() == 0)
+        if(this.m.ArmorFilter.Armor.len() == 0 && this.m.ArmorFilter.Helmet.len() == 0)
 			return array(items.len(), null); // no filter is checked so there is nothing to see
 
         local i, result = [], includedBaseHelmet = false, includedBaseArmor = false;
-        local hasArmor = m.ArmorFilter.Armor.len() > 0, hasHelmet = m.ArmorFilter.Helmet.len() > 0;
+        local hasArmor = this.m.ArmorFilter.Armor.len() > 0, hasHelmet = this.m.ArmorFilter.Helmet.len() > 0;
         if (hasArmor) {
-        	i = m.ArmorFilter.Armor.find(-1);
+        	i = this.m.ArmorFilter.Armor.find(-1);
 	        if (i != null)
-	        	includedBaseArmor = m.ArmorFilter.Armor.remove(i) != null;
+	        	includedBaseArmor = this.m.ArmorFilter.Armor.remove(i) != null;
         }
 
         if (hasHelmet) {
-        	i = m.ArmorFilter.Helmet.find(-1);
+        	i = this.m.ArmorFilter.Helmet.find(-1);
 	        if (i != null)
-	        	includedBaseHelmet = m.ArmorFilter.Helmet.remove(i) != null;
+	        	includedBaseHelmet = this.m.ArmorFilter.Helmet.remove(i) != null;
         }
 
         foreach (item in items)
@@ -36,13 +36,13 @@
         	if (item != null && hasArmor && item.isItemType(::Const.Items.ItemType.Armor)) {
         		if (::isKindOf(item, "armor") && !includedBaseArmor)
         			continue;
-        		else if (::isKindOf(item, "legend_armor_upgrade") && m.ArmorFilter.Armor.find(item.m.Type) == null)
+        		else if (::isKindOf(item, "legend_armor_upgrade") && this.m.ArmorFilter.Armor.find(item.m.Type) == null)
         			continue;
         	}
         	else if (item != null && hasHelmet && item.isItemType(::Const.Items.ItemType.Helmet)) {
         		if (::isKindOf(item, "helmet") && !includedBaseHelmet)
         			continue;
-        		else if (::isKindOf(item, "legend_helmet_upgrade") && m.ArmorFilter.Helmet.find(item.m.Type) == null)
+        		else if (::isKindOf(item, "legend_helmet_upgrade") && this.m.ArmorFilter.Helmet.find(item.m.Type) == null)
         			continue;
         	}
         	else {
@@ -50,7 +50,7 @@
         		continue;
         	}
 
-			result.push(convertItemToUIData(item, true, ::Const.UI.ItemOwner.Stash));
+			result.push(this.convertItemToUIData(item, true, ::Const.UI.ItemOwner.Stash));
         }
 
         return result;
@@ -59,8 +59,8 @@
     local convertStashToUIData = o.convertStashToUIData; // used by armor filter
     o.convertStashToUIData = function(_ignoreLocked = false, _filter = 0)
     {
-        if (m.ArmorFilter != null && _filter == ::Const.Items.ItemFilter.Armor)
-            return filterArmorFromStashToUIData();
+        if (this.m.ArmorFilter != null && _filter == ::Const.Items.ItemFilter.Armor)
+            return this.filterArmorFromStashToUIData();
 
         return convertStashToUIData(_ignoreLocked, _filter);
     }

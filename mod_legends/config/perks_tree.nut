@@ -283,7 +283,7 @@ local VanillaTree = [
 		local r = this.Math.rand(0, 100);
 		if (r > (_mins.EnemyChance * 100.0))
 		{
-			continue
+			continue;
 		}
 		local _exclude = [];
 		foreach (tt in _localMap.Enemy)
@@ -333,7 +333,7 @@ local VanillaTree = [
 		local r = this.Math.rand(0, 100);
 		if (r > (_mins.ClassChance * 100.0))
 		{
-			continue
+			continue;
 		}
 		local _exclude = toExclude;
 		foreach (tt in _localMap.Class)
@@ -352,7 +352,7 @@ local VanillaTree = [
 		local r = this.Math.rand(0, 100);
 		if (r > (_mins.ProfessionChance * 100.0))
 		{
-			continue
+			continue;
 		}
 		local _exclude = toExclude;
 		foreach (tt in _localMap.Profession)
@@ -371,7 +371,7 @@ local VanillaTree = [
 		local r = this.Math.rand(0, 100);
 		if (r > (_mins.MagicChance * 100.0))
 		{
-			continue
+			continue;
 		}
 		local _exclude = [];
 		foreach (tt in _localMap.Magic)
@@ -500,7 +500,7 @@ local VanillaTree = [
 				{
 					if (::Const.Perks.isInTree(_tree, p))
 					{
-						continue
+						continue;
 					}
 					if (i >= _tree.len()) {
 						for (local j = _tree.len(); j <= i; j++) {

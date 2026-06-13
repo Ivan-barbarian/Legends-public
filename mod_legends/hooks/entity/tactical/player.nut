@@ -524,9 +524,9 @@
 
 		onHired();
 
-		if (!isStabled() && getSkills().hasTrait(::Legends.Trait.LegendIntensiveTraining) && getLevel() > 1 ) {
+		if (!this.isStabled() && this.getSkills().hasTrait(::Legends.Trait.LegendIntensiveTraining) && this.getLevel() > 1 ) {
 			local inTraining = ::Legends.Traits.get(this, ::Legends.Trait.LegendIntensiveTraining);
-			local addSkills = ::Math.rand(0, getLevel()+2);
+			local addSkills = ::Math.rand(0, this.getLevel()+2);
 			addSkills = ::Math.min(addSkills, inTraining.getMaxSkillsCanBeAdded() - 1);
 			inTraining.addRandomSkills(this, addSkills);
 		}
@@ -534,7 +534,7 @@
 		::World.Assets.getOrigin().onHiredByScenario(this);
 
 		if (::World.State.getBrothersInFrontline() > ::World.Assets.getBrothersMaxInCombat())
-			setInReserves(true);
+			this.setInReserves(true);
 
 		if (::World.State.getPlayer() != null)
 			::World.State.getPlayer().calculateModifiers();
@@ -551,7 +551,7 @@
 
 		foreach (index, injury in ::Const.Injury.Permanent)
 		{
-			if (::Const.Injury.PermaInjuryToProsthetic.rawin(injury.ID) && getSkills().hasSkill(::Const.Injury.PermaInjuryToProsthetic[injury.ID]))
+			if (::Const.Injury.PermaInjuryToProsthetic.rawin(injury.ID) && this.getSkills().hasSkill(::Const.Injury.PermaInjuryToProsthetic[injury.ID]))
 				shouldNotGet.push(index);
 		}
 
@@ -569,7 +569,7 @@
 						Script = "injury_permanent/legend_burned_injury",
 						Threshold = 0.5,
 					});
-					break
+					break;
 				}
 			}
 		}
