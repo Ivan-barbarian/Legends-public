@@ -10,7 +10,7 @@ this.legend_warlock_blueprint <- this.inherit("scripts/crafting/blueprint", {
 			"background.legend_preserver",
 			"background.legend_puppet_master",
 			"background.legend_warlock_summoner",
-			"background.legend_necro_commander"
+			"background.legend_commander_necro"
 		];
 
 		foreach (bro in this.World.getPlayerRoster().getAll()) {

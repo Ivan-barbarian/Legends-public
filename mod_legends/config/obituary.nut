@@ -263,7 +263,7 @@
     ["background.legend_necromancer"]             = { pos = "Sought unimaginable power", 					neg = "" },
     ["background.legend_necrosavant"]             = { pos = "Left for a forbidden place", 					neg = "" },
     ["background.legend_necro"]                   = { pos = "", 											neg = "" },
-    ["background.legend_necro_commander"]         = { pos = "", 											neg = "" },
+    ["background.legend_commander_necro"]         = { pos = "", 											neg = "" },
     ["background.legend_nightwatch"]              = { pos = "", 											neg = "" },
     ["background.legend_noble_2h"]                = { pos = "", 											neg = "" },
     ["background.legend_noble_background"]        = { pos = "Returned to their noble house", 				neg = "" },
