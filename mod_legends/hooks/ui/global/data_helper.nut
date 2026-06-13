@@ -56,6 +56,27 @@
         return result;
     }
 
+	o.addProfessionsToUIData <- function ( _entity, _professions, _target )	{
+		foreach( p in _professions ) {
+			_target.push(p.getID());
+		}
+	}
+
+	o.convertProfessionToUIData <- function ( _professionId )	{
+		local profession = this.Const.Professions.findById(_professionId);
+
+		if (profession != null)	{
+			return {
+				id = profession.ID,
+				name = profession.Name,
+				description = profession.Tooltip,
+				imagePath = profession.Icon
+			};
+		}
+
+		return null;
+	}
+
     local convertStashToUIData = o.convertStashToUIData; // used by armor filter
     o.convertStashToUIData = function(_ignoreLocked = false, _filter = 0)
     {
@@ -176,11 +197,13 @@
 	{
 		local result = convertEntityToUIData(_entity, _activeEntity);
 		result.perkTree <- [];
+		result.professions <- [];
+		result.professionTree <- [];
 
-		local bg = _entity.getBackground();
-		if (bg != null)
-		{
+		if (_entity.getBackground() != null) {
+			this.addProfessionsToUIData(_entity, _entity.getSkills().query(::Const.SkillType.Profession, true), result.professions);
 			result.perkTree = _entity.getBackground().getPerkTree();
+			result.professionTree = _entity.getBackground().getProfessionTree();
 		}
 
 		return result;
@@ -192,13 +215,15 @@
 		local result = convertEntityHireInformationToUIData(_entity);
 		result.Talents <- _entity.getHiringTalents();
 		result.perkTree <- _entity.getBackground().getPerkTree();
+		result.professionTree <- _entity.getBackground().getProfessionTree();
 		return result;
 	}
 
 	local addCharacterToUIData = o.addCharacterToUIData;
-	o.addCharacterToUIData = function ( _entity, _target )
-	{
+	o.addCharacterToUIData = function ( _entity, _target ) {
 		addCharacterToUIData(_entity, _target);
+		_target.professionPoints <- _entity.getProfessionPoints();
+		_target.professionPointsSpent <- _entity.getProfessionPointsSpent();
 		if (_entity.getBackground() != null)
 		{
 			_target.background <- _entity.getBackground().getID();
@@ -294,9 +319,12 @@
 	}
 
 
-	o.convertPerksToUIData = function ()
-	{
+	o.convertPerksToUIData = function () {
 		return ::Const.Perks.PerksTreeTemplate;
+	}
+
+	o.convertProfessionsToUIData <- function ()	{
+		return ::Const.Professions.ProfessionsTreeTemplate;
 	}
 
 	local convertItemToUIData = o.convertItemToUIData;

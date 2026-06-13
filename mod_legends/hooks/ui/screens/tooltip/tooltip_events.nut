@@ -1,5 +1,9 @@
 ::mods_hookNewObject("ui/screens/tooltip/tooltip_events", function(o) {
 
+	o.onQueryUIProfessionTooltipData <- function ( _entityId, _professionId )	{
+		return this.TooltipEvents.general_queryUIProfessionTooltipData(_entityId, _professionId);
+	}
+
 	o.onQueryFollowerTooltipData = function ( _followerID )
 	{
 		if (typeof _followerID == "integer")
@@ -816,6 +820,84 @@
 						type = "hint",
 						icon = "ui/icons/icon_locked.png",
 						text = "Locked until " + (perk.Unlocks - player.getPerkPointsSpent()) + " more perk point is spent"
+					});
+				}
+			}
+
+			return ret;
+		}
+
+		return null;
+	}
+
+	o.general_queryUIProfessionTooltipData <- function (_entityId, _professionId) {
+		local player = this.Tactical.getEntityByID(_entityId);
+		local profession = player.getBackground().getProfession(_professionId);
+
+		local vars = [
+			["name", player.getNameOnly()],
+			["fullname", player.getName()],
+			["title", player.getTitle()]
+		];
+		::Const.LegendMod.extendVarsWithPronouns(vars, player);
+		local tooltip = this.buildTextFromTemplate(profession.Tooltip, vars);
+
+		if (profession != null) {
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = profession.Name
+				},
+				{
+					id = 2,
+					type = "description",
+					text = tooltip
+				}
+			];
+
+			if (!player.hasProfession(_professionId)) {
+				if ((::World.State.isInCharacterScreen() || (::Tactical.isActive() && ::Tactical.State.isInCharacterScreen())) && "HasUnactivatedProfessionTooltipHints" in profession	&& profession.HasUnactivatedProfessionTooltipHints)
+				{
+					// Allow Professions to push Tooltip elements that will be displayed when the user views the Tooltips of inactive Professions in the Profession screen
+					local tempContainer = this.new("scripts/skills/skill_container");
+					local tempProfession = this.new(profession.Script); // Need to instantiate a dummy profession because the player character's profession tree doesn't hold actual professions
+					local playerClone = clone player;
+					tempProfession.m.IsForProfessionTooltip = true; // onAdded() can check for this so it doesn't do anything when the dummy profession is added to the dummy skill container
+					tempContainer.setActor(playerClone); // Associate a clone of the player character to the dummy container so that the dummy profession can read the character's data
+					tempContainer.add(tempProfession);
+					local professionHints = tempProfession.getUnactivatedProfessionTooltipHints(); // get the additional hints (these will be capable of using the character's data)
+					if (professionHints != null && professionHints.len() > 0) {
+						ret.extend(professionHints);
+					}
+					// Clean up
+					tempProfession = null;
+					tempContainer = null;
+					playerClone = null;
+				}
+
+				if (player.getProfessionPointsSpent() >= profession.Unlocks) {
+					if (player.getProfessionPoints() == 0) {
+						ret.push({
+							id = 3,
+							type = "hint",
+							icon = "ui/icons/icon_locked.png",
+							text = "Available, but this character has no profession point to spend"
+						});
+					}
+				} else if (profession.Unlocks - player.getProfessionPointsSpent() > 1) {
+					ret.push({
+						id = 3,
+						type = "hint",
+						icon = "ui/icons/icon_locked.png",
+						text = "Locked until " + (profession.Unlocks - player.getProfessionPointsSpent()) + " more profession points are spent"
+					});
+				} else {
+					ret.push({
+						id = 3,
+						type = "hint",
+						icon = "ui/icons/icon_locked.png",
+						text = "Locked until " + (profession.Unlocks - player.getProfessionPointsSpent()) + " more profession point is spent"
 					});
 				}
 			}
@@ -3124,6 +3206,20 @@
 					id = 2,
 					type = "description",
 					text = "Switch to viewing the perks of the currently selected character.\n\nThe number in braces, if any, is the number of available perk points."
+				}
+			];
+
+		case "character-screen.right-panel-header-module.ProfessionsButton":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Professions"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Switch to viewing the professions of the currently selected character.\n\nThe number in braces, if any, is the number of available profession points."
 				}
 			];
 

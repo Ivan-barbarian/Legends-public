@@ -1,5 +1,18 @@
 ::mods_hookExactClass("ui/screens/character/character_screen", function (o) {
 	o.m.SelectedBrotherID <- null;
+	o.m.ProfessionTreesLoaded <- null;
+
+	local create = o.create;
+	o.create = function() {
+		create();
+		this.m.ProfessionTreesLoaded = false;
+	}
+
+	o.loadProfessionsTrees <- function() {
+		if (this.m.JSDataSourceHandle != null) {
+			this.m.JSDataSourceHandle.asyncCall("loadProfessionTrees", this.onQueryProfessionTrees);
+		}
+	}
 
 	o.onApplyArmorFilter <- function (_filter) {
 		// used by armor filter
@@ -238,6 +251,10 @@
 			this.m.PerkTreesLoaded = true;
 			result.perkTrees <- this.onQueryPerkTrees();
 		}
+		if (this.m.ProfessionTreesLoaded == false) {
+			this.m.ProfessionTreesLoaded = true;
+			result.professionTrees <- this.onQueryProfessionTrees();
+		}
 		if ("stashSpaceUsed" in result) {
 			this.logDebug("Generating stash list info :" + result.stashSpaceUsed + " : " + result.stashSpaceMax);
 		}
@@ -337,7 +354,29 @@
 	o.onRepairInventoryItem = function (_data) {}
 
 	o.general_onQueryPerkInformation = function (_data) {
-		return this.UIDataHelper.convertPerkToUIData(_data[0], _data[1]);
+		return ::UIDataHelper.convertPerkToUIData(_data[0], _data[1]);
+	}
+
+	o.general_onQueryProfessionInformation <- function (_data) {
+		return ::UIDataHelper.convertProfessionToUIData(_data[0], _data[1]);
+	}
+
+	o.general_onUnlockProfession <- function ( _data ) {
+		local entity = ::Tactical.getEntityByID(_data[0]);
+
+		if (entity == null || !entity.isPlayerControlled())	{
+			return this.helper_convertErrorToUIData(::Const.CharacterScreen.ErrorCode.FailedToFindEntity);
+		}
+
+		if (!entity.unlockProfession(_data[1]))	{
+			return this.helper_convertErrorToUIData(::Const.CharacterScreen.ErrorCode.FailedToUnlockPerk);
+		}
+
+		if (::Tactical.isActive()) {
+			return this.UIDataHelper.convertEntityToUIData(entity, ::Tactical.TurnSequenceBar.getActiveEntity());
+		} else {
+			return this.UIDataHelper.convertEntityToUIData(entity, null);
+		}
 	}
 
 	o.general_onEquipStashItem = function (_data) {
@@ -596,6 +635,18 @@
 		}
 
 		return null;
+	}
+
+	o.onQueryProfessionTrees <- function() {
+		return this.UIDataHelper.convertProfessionsToUIData();
+	}
+
+	o.onQueryProfessionInformation <- function( _data )	{
+		return this.general_onQueryProfessionInformation(_data);
+	}
+
+	o.onUnlockProfession <- function( _data ) {
+		return this.general_onUnlockProfession(_data);
 	}
 
 	o.onFormationChanged <- function (_data) {

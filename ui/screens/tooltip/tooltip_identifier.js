@@ -328,6 +328,7 @@ var TooltipIdentifier =
 		{
 			InventoryButton: 'character-screen.right-panel-header-module.InventoryButton',
 			PerksButton: 'character-screen.right-panel-header-module.PerksButton',
+			ProfessionsButton: 'character-screen.right-panel-header-module.ProfessionsButton',
 			CloseButton: 'character-screen.right-panel-header-module.CloseButton',
 			SortButton: 'character-screen.right-panel-header-module.SortButton',
 			FilterAllButton: 'character-screen.right-panel-header-module.FilterAllButton',

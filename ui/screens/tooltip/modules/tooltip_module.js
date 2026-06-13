@@ -2620,6 +2620,13 @@ TooltipModule.prototype.notifyBackendQueryTooltipData = function (_data, _callba
                     SQ.call(this.mSQHandle, 'onQueryUIPerkTooltipData', [_data.entityId, _data.perkId], _callback);
                 }
             } break;
+			case 'ui-profession':
+            {	
+                if ('entityId' in _data && 'professionId' in _data)
+                {
+                    SQ.call(this.mSQHandle, 'onQueryUIProfessionTooltipData', [_data.entityId, _data.professionId], _callback);
+                }
+            } break;
             case 'follower':
             {
                 if ('followerId' in _data)

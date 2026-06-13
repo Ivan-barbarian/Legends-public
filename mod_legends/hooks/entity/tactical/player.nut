@@ -13,6 +13,20 @@
 	o.m.StarWeights <- [50,50,50,50,50,50,50,50];
 	// o.m.Alignment <- null,
 	o.m.CompanyID <- 0;
+	o.m.ProfessionPoints <- 0;
+	o.m.ProfessionPointsSpent <- 0;
+
+	o.getProfessionPoints <- function () {
+		return this.m.ProfessionPoints;
+	}
+
+	o.setProfessionPoints <- function ( _value ) {
+		this.m.ProfessionPoints = _value;
+	}
+
+	o.getProfessionPointsSpent <- function () {
+		return this.m.ProfessionPointsSpent;
+	}
 
 	o.getTryoutCost = function ()
 	{
@@ -842,6 +856,31 @@
 		return true;
 	}
 
+	o.unlockProfession <- function ( _id )
+	{
+		if (this.hasProfession(_id)) {
+			return true;
+		}
+
+		local profession = this.getBackground().getProfession(_id);
+
+		if (profession == null)	{
+			return false;
+		}
+
+		if (this.m.ProfessionPoints > 0) {
+			--this.m.ProfessionPoints;
+		}
+
+		++this.m.ProfessionPointsSpent;
+		local p = this.new(profession.Script);
+		this.m.Skills.add(p);
+		p.onUnlocked();
+		this.m.Skills.update();
+
+		return true;
+	}
+
 	o.updateLevel = function() {
 		while (this.m.Level < this.Const.LevelXP.len() && this.m.XP >= this.Const.LevelXP[this.m.Level])
 		{
@@ -896,6 +935,27 @@
 		return false;
 	}
 
+	o.isProfessionUnlockable <- function (_id) {
+		if (this.m.ProfessionPoints == 0 || this.hasProfession(_id)) {
+			return false;
+		}
+
+		local profession = this.getBackground().getProfession(_id);
+		if (profession == null) {
+			return false;
+		}
+
+		if (this.m.ProfessionPointsSpent >= profession.Unlocks) {
+			return true;
+		}
+
+		return false;
+	}
+
+	o.hasProfession <- function ( _id ) {
+		return this.m.Skills.hasSkill(_id);
+	}
+
 	o.isPerkTierUnlocked = function ( _category, _tier )
 	{
 		local numPerks = 0;
@@ -911,6 +971,10 @@
 			return false;
 		}
 
+		return true;
+	}
+
+	o.isProfessionTierUnlocked <- function ( _category, _tier ){
 		return true;
 	}
 
@@ -1259,6 +1323,7 @@
 			this.m.StarWeights = background.buildAttributes(null, attributes);
 		}
 
+		background.buildProfessionTree();
 		background.buildDescription();
 
 		::Legends.Traits.grant(this, ::Legends.Trait.LegendIntensiveTraining);
@@ -2047,6 +2112,8 @@
 		_out.writeF32(this.m.LastCampTime);
 		_out.writeBool(this.m.InReserves);
 		_out.writeU8(this.m.CompanyID);
+		_out.writeU8(this.m.ProfessionPoints);
+		_out.writeU8(this.m.ProfessionPointsSpent);
 	}
 
 	// copied entirely because adjustHiringCostBasedOnEquipment is commented out
@@ -2068,5 +2135,7 @@
 		this.m.LastCampTime = _in.readF32();
 		this.m.InReserves = _in.readBool();
 		this.m.CompanyID = _in.readU8();
+		this.m.ProfessionPoints = _in.readU8();
+		this.m.ProfessionPointsSpent = _in.readU8();
 	}
 });

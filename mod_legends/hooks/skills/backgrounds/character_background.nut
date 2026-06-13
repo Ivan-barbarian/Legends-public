@@ -93,6 +93,9 @@
 	o.m.PerkTreeMap <- null;
 	o.m.PerkTree <- null;
 	o.m.IsGuaranteed <- [];
+	o.m.CustomProfessionTree <- null;
+	o.m.ProfessionTreeMap <- null;
+	o.m.ProfessionTree <- null;
 
 	local create = o.create;
 	o.create = function()
@@ -1110,6 +1113,144 @@
 		}
 	}
 
+	o.getProfessionTreeDescription <- function () {
+		local text = "";
+		foreach (i, group in this.m.ProfessionTree) {
+			text += "\nTier " + (i + 1) + ": ";
+			foreach (p in group) {
+				text += p.Name + ", ";
+			}
+		}
+		return text;
+	}
+
+	o.getProfessionTree <- function () {
+		if (this.m.ProfessionTree != null) {
+			return this.m.ProfessionTree;
+		}
+
+		local pT = ::Const.Professions.ProfessionsTreeTemplate;
+		return pT != null ? pT.Tree : [];
+	}
+
+	o.getProfession <- function (_profession) {
+		local id = typeof _profession == "string" ? _profession : ::Const.Professions.ProfessionDefObjects[_profession].ID;
+
+		if (id in this.m.ProfessionTreeMap) {
+        	return this.m.ProfessionTreeMap[id];
+    	}
+    	return null;
+	}
+
+	o.addProfession <- function (_profession, _preferredRow = 0) {
+		local professionDefObject = clone ::Const.Professions.ProfessionDefObjects[_profession];
+
+		if (this.m.ProfessionTreeMap == null) {
+     	   this.buildProfessionTree(); 
+    	}
+
+		// Don't add duplicates
+		if (professionDefObject.ID in this.m.ProfessionTreeMap) {
+			return false;
+		}
+
+		// Attempt to find a valid row
+		local finalRow = _preferredRow;
+
+		while (this.m.ProfessionTree.len() <= finalRow) {
+			this.m.ProfessionTree.push([]);
+		}
+		while (this.m.CustomProfessionTree.len() <= finalRow) {
+			this.m.CustomProfessionTree.push([]);
+		}
+
+		while (this.m.ProfessionTree[finalRow].len() >= 13) {
+			finalRow++;
+			while (this.m.ProfessionTree.len() <= finalRow) {
+				this.m.ProfessionTree.push([]);
+				this.m.CustomProfessionTree.push([]);
+			}
+		}
+
+		professionDefObject.Row <- finalRow;
+    	professionDefObject.Unlocks <- finalRow;
+
+		this.m.ProfessionTree[finalRow].push(professionDefObject);
+		this.m.CustomProfessionTree[finalRow].push(_profession);
+		this.m.ProfessionTreeMap[professionDefObject.ID] <- professionDefObject;
+
+		return true;
+	}
+
+	o.addProfessionTree <- function ( _treeDef ) {
+		if (this.m.CustomProfessionTree == null) {
+			local baseTree = [];
+			foreach (row in ::Const.Professions.DefaultProfessionTree) {
+				local newRow = [];
+				foreach (p in row) newRow.push(p);
+				baseTree.push(newRow);
+			}
+			this.m.CustomProfessionTree = baseTree;
+			this.buildProfessionTree();
+		}
+
+		local tree = typeof _treeDef == "table" && ("Tree" in _treeDef) ? _treeDef.Tree : _treeDef;
+		foreach (rowIndex, row in tree) {
+			foreach (professionDef in row) {
+				this.addProfession(professionDef, rowIndex);
+			}
+		}
+    }
+
+	o.addProfessionGroup <- function (_trees) {
+		foreach (tree in _trees) {
+			this.addProfessionTree(tree);
+		}
+	}
+
+	o.removeProfession <- function (_profession) { 
+		local professionDefObject = ::Const.Professions.ProfessionDefObjects[_profession];
+		if (!(professionDefObject.ID in this.m.ProfessionTreeMap)) {
+			return false;
+		}
+
+		local row = this.m.ProfessionTreeMap[professionDefObject.ID].Row;
+
+		foreach (i, p in this.m.ProfessionTree[row]) {
+			if (p.ID == professionDefObject.ID) {
+				this.m.ProfessionTree[row].remove(i);
+				break;
+			}
+		}
+
+		foreach (i, pID in this.m.CustomProfessionTree[row]) {
+			if (pID == _profession) {
+				this.m.CustomProfessionTree[row].remove(i);
+				break;
+			}
+		}
+
+		delete this.m.ProfessionTreeMap[professionDefObject.ID];
+		return true;
+	}
+
+	o.hasProfession <- function (_profession) {
+		return ::Const.Professions.ProfessionDefObjects[_profession].ID in this.m.ProfessionTreeMap;
+	}
+
+	o.buildProfessionTree <- function () {
+        if (this.m.ProfessionTree != null) return;
+
+        if (this.m.CustomProfessionTree == null) {
+            this.m.ProfessionTree = ::Const.Professions.ProfessionsTreeTemplate.Tree;
+            this.m.ProfessionTreeMap = ::Const.Professions.ProfessionsTreeTemplate.Map;
+        } else {
+            local pT = ::Const.Professions.BuildCustomProfessionTree(this.m.CustomProfessionTree);
+            this.m.ProfessionTree = pT.Tree;
+            this.m.ProfessionTreeMap = pT.Map;
+        }
+    }
+
 	o.buildDescription = function( _isFinal = false )
 	{
 		if (this.isBackgroundType(this.Const.BackgroundType.Scenario))
@@ -1272,6 +1413,14 @@
 		this.m.PerkTree = pT.Tree;
 		this.m.PerkTreeMap = pT.Map;
 	}
+
+	o.rebuildProfessionTree <- function ( _tree )
+    {
+        this.m.CustomProfessionTree = _tree;
+        local pT = ::Const.Professions.BuildCustomProfessionTree(this.m.CustomProfessionTree);
+    	this.m.ProfessionTree = pT.Tree;
+    	this.m.ProfessionTreeMap = pT.Map;
+    }
 
 	o.getPerkTreeDynamicMins <- function ()
 	{
@@ -1777,6 +1926,18 @@
 		{
 			_out.writeU16(perk);
 		}
+
+		if (this.m.CustomProfessionTree == null) {
+            _out.writeU8(0);
+        } else {
+            _out.writeU8(this.m.CustomProfessionTree.len());
+            for (local i = 0; i < this.m.CustomProfessionTree.len(); i = ++i) {
+                _out.writeU8(this.m.CustomProfessionTree[i].len());
+                for (local j = 0; j < this.m.CustomProfessionTree[i].len(); j = ++j) {
+                    _out.writeU16(this.m.CustomProfessionTree[i][j]);
+                }
+            }
+        }
 	}
 
 	o.onDeserialize = function ( _in )
@@ -1826,6 +1987,25 @@
 		{
 			this.getPerk(_in.readU16()).IsRefundable <- false;
 		}
+
+		this.m.CustomProfessionTree = [];
+        local numProfRows = _in.readU8();
+		if (numProfRows == 0) {
+            this.m.CustomProfessionTree = null; 
+        }
+		else {
+			this.m.CustomProfessionTree = [];
+			for (local i = 0; i < numProfRows; i = ++i) {
+				local numProfessions = _in.readU8();
+				local professions = [];
+				for (local j = 0; j < numProfessions; j = ++j) {
+					professions.push(_in.readU16());
+				}
+				this.m.CustomProfessionTree.push(professions);
+			}
+		}
+
+		this.buildProfessionTree();
 	}
 
 	// little hack to remove it from onDeserialize()

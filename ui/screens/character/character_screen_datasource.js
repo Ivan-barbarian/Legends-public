@@ -49,6 +49,11 @@ var CharacterScreenDatasourceIdentifier =
 	Perks:
 	{
 		TreesLoaded: 'perks.list-loaded'
+	},
+
+	Professions:
+	{
+		TreesLoaded: 'professions.list-loaded'
 	}
 };
 
@@ -65,6 +70,7 @@ var CharacterScreenDatasource = function(_isTacticalMode)
 	this.mSelectedBrotherIndex = null;
 	this.mStashList = null;
 	this.mPerkTrees = null;
+	this.mProfessionTrees = null;
 
 	this.mStashSpaceUsed = 0;
 	this.mStashSpaceMax = 0;
@@ -165,7 +171,7 @@ CharacterScreenDatasource.prototype.createEventChannels = function()
 	this.mEventListener[CharacterScreenDatasourceIdentifier.Inventory.FormationName] = [ ];
 
 	this.mEventListener[CharacterScreenDatasourceIdentifier.Perks.TreesLoaded] = [ ];
-
+	this.mEventListener[CharacterScreenDatasourceIdentifier.Professions.TreesLoaded] = [ ];
 };
 
 
@@ -181,6 +187,7 @@ CharacterScreenDatasource.prototype.reset = function()
 	this.mSelectedBrotherIndex = null;
 	this.mStashList = null;
 	this.mPerkTrees = null;
+	this.mProfessionTrees = null;
 
 	// States
 	this.mInventoryMode = null;
@@ -491,6 +498,52 @@ CharacterScreenDatasource.prototype.getBrotherPerkPointsSpent = function (_broth
 		if (perkPoints !== null && typeof (perkPoints) == 'number')
 		{
 			return perkPoints;
+		}
+	}
+
+	return 0;
+};
+
+CharacterScreenDatasource.prototype.getBrotherProfessionPoints = function(_brother) {
+	if (_brother === null || !(CharacterScreenIdentifier.Entity.Character.Key in _brother))	{
+		return 0;
+	}
+
+	var character = _brother[CharacterScreenIdentifier.Entity.Character.Key];
+	if (character === null)	{
+		return 0;
+	}
+
+	if (CharacterScreenIdentifier.Entity.Character.ProfessionPoints in character) {
+		var professionPoints = character[CharacterScreenIdentifier.Entity.Character.ProfessionPoints];
+		if (professionPoints !== null && typeof(professionPoints) == 'number') {
+			return professionPoints;
+		}
+	}
+
+	return 0;
+};
+
+
+CharacterScreenDatasource.prototype.getBrotherProfessionPointsSpent = function (_brother)
+{
+	if (_brother === null || !(CharacterScreenIdentifier.Entity.Character.Key in _brother))
+	{
+		return 0;
+	}
+
+	var character = _brother[CharacterScreenIdentifier.Entity.Character.Key];
+	if (character === null)
+	{
+		return 0;
+	}
+
+	if (CharacterScreenIdentifier.Entity.Character.ProfessionPoints in character)
+	{
+		var professionPoints = character[CharacterScreenIdentifier.Entity.Character.ProfessionPointsSpent];
+		if (professionPoints !== null && typeof (professionPoints) == 'number')
+		{
+			return professionPoints;
 		}
 	}
 
@@ -1567,12 +1620,77 @@ CharacterScreenDatasource.prototype.queryPerkInformation = function(_perkId, _ba
 	this.notifyBackendQueryPerkInformation(_perkId, _background, _callback);
 };
 
+CharacterScreenDatasource.prototype.loadProfessionTrees = function(_data, _withoutNotify)
+{
+	this.mProfessionTrees = _data;
+
+	// notify every listener
+	if (_withoutNotify === undefined || _withoutNotify !== true) {
+		this.notifyEventListener(CharacterScreenDatasourceIdentifier.Professions.TreesLoaded, this.mProfessionTrees);
+	}
+
+	return this.mProfessionTrees;
+};
+
+CharacterScreenDatasource.prototype.loadProfessionTreesOnce = function(_data, _withoutNotify)
+{
+	if (this.mProfessionTrees === null)	{
+		this.loadProfessionTrees(_data, _withoutNotify);
+	}
+};
+
+CharacterScreenDatasource.prototype.getProfessionTrees = function()
+{
+	if (this.mProfessionTrees === null)	{
+		this.loadProfessionTrees(null, true);
+	}
+
+	return this.mProfessionTrees;
+};
+
+CharacterScreenDatasource.prototype.unlockProfession = function(_brotherId, _professionId)
+{
+	var brotherId = _brotherId;
+	if (brotherId === null)	{
+		var selectedBrother = this.getSelectedBrother();
+		if (selectedBrother === null || !(CharacterScreenIdentifier.Entity.Id in selectedBrother)) {
+			console.error('ERROR: Failed to unlock profession perk. No entity selected.');
+			return;
+		}
+
+		brotherId = selectedBrother[CharacterScreenIdentifier.Entity.Id];
+	}
+
+	var self = this;
+	this.notifyBackendUnlockProfession(brotherId, _professionId, function (data) {
+		if (data === undefined || data === null || typeof (data) !== 'object') {
+			console.error('ERROR: Failed to unlock profession perk. Invalid data result.');
+			return;
+		}
+
+		// check if we have an error
+		if (ErrorCode.Key in data) {
+			self.notifyEventListener(ErrorCode.Key, data[ErrorCode.Key]);
+		} else {
+			// find the brother and update him
+			if (CharacterScreenIdentifier.Entity.Id in data) {
+				self.updateBrother(data);
+			} else {
+				console.error('ERROR: Failed to unlock profession perk. Invalid data result.');
+			}
+		}
+	});
+};
+
+CharacterScreenDatasource.prototype.queryProfessionInformation = function(_professionId, _background, _callback) {
+	this.notifyBackendQueryProfessionInformation(_professionId, _background, _callback);
+};
 
 CharacterScreenDatasource.prototype.updateBrother = function (_data)
 {
 	if (_data === null || typeof(_data) !== 'object')
 	{
-		console.error('ERROR: Failed to updated brother. Invalid data.');
+		console.error('ERROR: Failed to update brother. Invalid data.');
 		return;
 	}
 
@@ -1830,6 +1948,16 @@ CharacterScreenDatasource.prototype.notifyBackendQueryPerkInformation = function
 CharacterScreenDatasource.prototype.notifyBackendUnlockPerk = function (_brotherId, _perkId, _callback)
 {
 	SQ.call(this.mSQHandle, 'onUnlockPerk', [_brotherId, _perkId], _callback);
+};
+
+CharacterScreenDatasource.prototype.notifyBackendQueryProfessionInformation = function (_professionId, _background, _callback)
+{
+	SQ.call(this.mSQHandle, 'onQueryProfessionInformation', [_professionId, _background], _callback);
+};
+
+CharacterScreenDatasource.prototype.notifyBackendUnlockProfession = function (_brotherId, _professionId, _callback)
+{
+	SQ.call(this.mSQHandle, 'onUnlockProfession', [_brotherId, _professionId], _callback);
 };
 
 CharacterScreenDatasource.prototype.notifyBackendUpdateNameAndTitle = function (_brotherId, _name, _title, _callback)

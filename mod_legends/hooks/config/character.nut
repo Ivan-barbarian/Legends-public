@@ -15,6 +15,11 @@
 	20000 // new veterancy
 ]; // reset for the new max level added
 
+::Const.SkillType.Profession <- 131072;
+::Const.SkillType.All = ::Const.SkillType.All | ::Const.SkillType.Profession;
+::Const.SkillType.Passive = ::Const.SkillType.Passive | ::Const.SkillType.Profession; // no combat effects, right?
+::Const.SkillOrder.Profession <- 5500;
+
 for( local i = 1; i < 88; i = ++i )
 {
 	::Const.LevelXP.push(this.Const.LevelXP[this.Const.LevelXP.len() - 1] + 4000 + 1000 * i);
