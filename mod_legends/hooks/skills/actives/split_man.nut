@@ -34,20 +34,16 @@
 	}
 
 	o.onUse = function (_user, _targetTile) {
-		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
 		local targetEntity = _targetTile.getEntity();
 
 		if (::Legends.S.isEntityNullOrDead(targetEntity)) {
 			return false;
 		}
 
+		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
 		local success = this.attackEntity(_user, targetEntity);
 
-		if (::Legends.S.isEntityNullOrDead(_user)) {
-			return success;
-		}
-
-		if (success	&& this.m.ApplyBonusToBodyPart != -1 && !_targetTile.IsEmpty && !::Legends.S.isEntityNullOrDead(targetEntity)) {
+		if (success	&& this.m.ApplyBonusToBodyPart != -1 && !_targetTile.IsEmpty && !::Legends.S.isEntityNullOrDead(_user, targetEntity) && this.getContainer() != null) {
 			local p = this.getContainer().buildPropertiesForUse(this, targetEntity);
 			local hitInfo = clone this.Const.Tactical.HitInfo;
 			local damageMult = p.MeleeDamageMult * p.DamageTotalMult;
@@ -60,7 +56,7 @@
 			hitInfo.BodyPart = this.m.ApplyBonusToBodyPart;
 			hitInfo.BodyDamageMult = 1.0;
 			hitInfo.FatalityChanceMult = 1.0;
-			targetEntity.onDamageReceived(this.getContainer().getActor(), this, hitInfo);
+			targetEntity.onDamageReceived(_user, this, hitInfo);
 		}
 
 		this.m.ApplyBonusToBodyPart = -1;
