@@ -1,7 +1,7 @@
 this.perk_legend_hammer_the_gap <- this.inherit("scripts/skills/skill", {
 	m = {
 		PreviousTile = null,
-		Bonus = 0;
+		Bonus = 0
 	},
 	function create() {
 		::Legends.Perks.onCreate(this, ::Legends.Perk.LegendHammerTheGap);

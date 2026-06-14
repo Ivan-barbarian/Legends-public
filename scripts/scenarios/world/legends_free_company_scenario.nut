@@ -83,7 +83,7 @@ this.legends_free_company_scenario <- this.inherit("scripts/scenarios/world/star
 		bros[3].setVeteranPerks(2);
 		bros[3].setStartValuesEx([ //ranged 1
 			::Legends.Background.BeastSlayer,
-			::Legend.Background.Hunter,
+			::Legends.Background.Hunter,
 			::Legends.Background.Poacher,
 			::Legends.Background.LegendConscriptRanged,
 			::Legends.Background.LegendNobleRanged,
