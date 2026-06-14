@@ -357,7 +357,7 @@ if (!("Perks" in ::Const)) {
 		]
 	},
 	Tree = [
-		[],
+		[::Legends.Perk.LegendHammerTheGap],
 		[],
 		[],
 		[::Legends.Perk.SpecDagger],

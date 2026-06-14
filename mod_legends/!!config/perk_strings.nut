@@ -141,6 +141,7 @@
 ::Const.Strings.PerkName.LegendHelpful <- "Helpful";
 ::Const.Strings.PerkName.LegendLionheart <- "Lionheart";
 ::Const.Strings.PerkName.LegendStrengthInNumbers <- "Strength in Numbers";
+::Const.Strings.PerkName.LegendHammerTheGap <- "Hammer the Gap";
 ::Const.Strings.PerkName.LegendPatientHunter <- "The Patient Hunter";
 ::Const.Strings.PerkName.LegendBarrage <- "Barrage";
 ::Const.Strings.PerkName.LegendStaffBlock <- "Staff Block";
@@ -3357,6 +3358,13 @@ Surround, distract and strike true.
 • The bonus to hitchance in melee is doubled to [color=%positive%]+10%[/color] for each ally surrounding and distracting your target.
 
 • Grants [color=%positive%]2[/color] Melee and Ranged Defense for each ally surrounding you.
+";
+
+::Const.Strings.PerkDescription.LegendHammerTheGap <- @"
+Onward unto death die like a nail hammered into a coffin.
+
+[color=%passive%][u]Passive:[/u][/color]
+• Grants a stacking [color=%positive%]+5%[/color] to hit as long as you attack the same tile. The bonus is capped at [color=%positive%]10%[/color].
 ";
 
 ::Const.Strings.PerkDescription.LegendKeenEyesight <- @"

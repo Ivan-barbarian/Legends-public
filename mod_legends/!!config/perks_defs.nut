@@ -4017,6 +4017,17 @@ perkDefObjects.push({
 	Const = "LegendStrengthInNumbers"
 });
 
+::Legends.Perk.LegendHammerTheGap <- null;
+perkDefObjects.push({
+	ID = "perk.legend_hammer_the_gap",
+	Script = "scripts/skills/perks/perk_legend_hammer_the_gap",
+	Name = ::Const.Strings.PerkName.LegendHammerTheGap,
+	Tooltip = ::Const.Strings.PerkDescription.LegendHammerTheGap,
+	Icon = "ui/perks/hammer_the_gap.png",
+	IconDisabled = "ui/perks/hammer_the_gap_bw.png",
+	Const = "LegendHammerTheGap"
+});
+
 ::Legends.Perk.LegendBackswing <- null;
 perkDefObjects.push({
 	ID = "perk.legend_backswing",

@@ -33,6 +33,7 @@
 > Hitpoint damage taken is reduced by 5% and Resolve is increased by 3 for each Injury you have up to a maximum of 30% and [color=%positive%]15 achieved at 6 Injuries. Counts both regular and permanent Injuries.
 - `Wide Swings` - Large Trait Tree
 > 50% of the skill's fatigue cost is translated to Chance to hit. This accounts for any fatigue reduction or increase.
+- `Hammer the Gap` - Grants a stacking +5% to hit as long as you attack the same tile. The bonus is capped at 10%.
 
 ### Perk Changes
 - `Bloody Harvest` - 50% of the skill's fatigue cost is translated to Damage. This accounts for any fatigue reduction or increase.
