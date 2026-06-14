@@ -24,7 +24,6 @@
 - new stollwurm potion
 - new skinghoul potion
 - new white direwolf potion
->>>>>>> 0f4c89eb0e (add new anatomist potions)
 
 ## Perks
 

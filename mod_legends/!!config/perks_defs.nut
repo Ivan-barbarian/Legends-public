@@ -1018,8 +1018,8 @@ perkDefObjects.push({
 perkDefObjects.push({
 	ID = "perk.legend_wide_swings",
 	Script = "scripts/skills/perks/perk_legend_wide_swings",
-	Name = ::Const.Strings.PerkName.LegendBloodyHarvest,
-	Tooltip = ::Const.Strings.PerkDescription.LegendBloodyHarvest,
+	Name = ::Const.Strings.PerkName.LegendWideSwings,
+	Tooltip = ::Const.Strings.PerkDescription.LegendWideSwings,
 	Icon = "ui/perks/feint_circle.png",
 	IconDisabled = "ui/perks/feint_circle_bw.png",
 	Const = "LegendWideSwings"

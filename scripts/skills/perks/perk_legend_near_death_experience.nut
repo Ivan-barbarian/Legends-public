@@ -1,4 +1,4 @@
-this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
+this.perk_legend_near_death_experience <- this.inherit("scripts/skills/skill", {
 	m = {
 		HpBefore = 0,
 		HpDamageReceived = 0,
@@ -13,23 +13,19 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 	}
 
+	function getDescription() {
+		return "Your often and close experience with near death has left you robust and resilient."
+	}
+
 	function getTooltip() {
-		if (bodyitem == null && headitem == null)
-		{
+		local tooltip = this.skill.getTooltip();
+		local bonus = 100 - this.m.Bonus * 5;
+		if (bonus < 100) {
 			tooltip.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Only receive [color=%positive%]" + fm + "%[/color] of any damage to hitpoints from attacks"
-			});
-		}
-		else
-		{
-			tooltip.push({
-				id = 6,
-				type = "text",
-				icon = "ui/tooltips/warning.png",
-				text = "[color=%negative%]This character isn\'t nude.[/color]"
+				text = "Only receive [color=%positive%]" + bonus + "%[/color] of any damage to hitpoints from attacks"
 			});
 		}
 
