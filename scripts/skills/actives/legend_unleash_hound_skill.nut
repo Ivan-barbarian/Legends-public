@@ -166,7 +166,7 @@ this.legend_unleash_hound_skill <- this.inherit("scripts/skills/actives/legend_u
 		}
 
 
-		if (this.getContainer().hasSkill(::Legends.Backgrounds.IDs.Houndmaster))
+		if (this.getContainer().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.Houndmaster)))
 		{
 			entity.setMoraleState(this.Const.MoraleState.Confident);
 		}

@@ -1,13 +1,13 @@
 ::mods_hookExactClass("events/events/dlc2/fear_beasts_event", function(o) {
 	o.m.excludedBackgrounds <- [
-		::Legends.Backgrounds.IDs.BeastSlayer,
-		::Legends.Backgrounds.IDs.Companion,
-		::Legends.Backgrounds.IDs.HedgeKnight,
-		::Legends.Backgrounds.IDs.Hunter,
-		::Legends.Backgrounds.IDs.Wildman,
-		::Legends.Backgrounds.IDs.Witchhunter,
-		::Legends.Backgrounds.IDs.LegendCompanionMelee,
-		::Legends.Backgrounds.IDs.LegendCompanionRanged,
+		::Legends.Backgrounds.getID(::Legends.Background.BeastSlayer),
+		::Legends.Backgrounds.getID(::Legends.Background.Companion),
+		::Legends.Backgrounds.getID(::Legends.Background.HedgeKnight),
+		::Legends.Backgrounds.getID(::Legends.Background.Hunter),
+		::Legends.Backgrounds.getID(::Legends.Background.Wildman),
+		::Legends.Backgrounds.getID(::Legends.Background.Witchhunter),
+		::Legends.Backgrounds.getID(::Legends.Background.LegendCompanionMelee),
+		::Legends.Backgrounds.getID(::Legends.Background.LegendCompanionRanged),
 	];
 	o.m.excludedTraits <- [
 		::Legends.Trait.Bloodthirsty,

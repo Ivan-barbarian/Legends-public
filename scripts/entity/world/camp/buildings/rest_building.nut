@@ -111,22 +111,22 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 			// "Bill and Jill play dice to wile away the hours"
 		];
 
-		if (background.getID() == ::Legends.Backgrounds.IDs.Monk)
+		if (background.getID() == ::Legends.Backgrounds.getID(::Legends.Background.Monk))
 			activities.push(bro.getName() + " enthusiastically lectured the camp on the importance of living a holy life");
 
-		if (background.getID() == ::Legends.Backgrounds.IDs.Flagellant)
+		if (background.getID() == ::Legends.Backgrounds.getID(::Legends.Background.Flagellant))
 			activities.push(bro.getName() + " spends their time in front of an idol of the Old Gods, slowly offering a flesh sacrifice");
 
-		if (background.getID() == ::Legends.Backgrounds.IDs.Cultist || background.getID() == ::Legends.Backgrounds.IDs.ConvertedCultist)
+		if (background.getID() == ::Legends.Backgrounds.getID(::Legends.Background.Cultist) || background.getID() == ::Legends.Backgrounds.getID(::Legends.Background.ConvertedCultist))
 			activities.push(bro.getName() + " enthusiastically spends their free time raving to the camp about the glories of Davkul");
 
-		if (background.getID() == ::Legends.Backgrounds.IDs.Gladiator)
+		if (background.getID() == ::Legends.Backgrounds.getID(::Legends.Background.Gladiator))
 			activities.push(bro.getName() + " decides the best use of free time is to flex freshly oiled muscles");
 
-		if (background.getID() == ::Legends.Backgrounds.IDs.Ratcatcher)
+		if (background.getID() == ::Legends.Backgrounds.getID(::Legends.Background.Ratcatcher))
 			activities.push(bro.getName() + " plays with a captured rat");
 
-		if (background.getID() == ::Legends.Backgrounds.IDs.Nomad || background.getID() == ::Legends.Backgrounds.IDs.LegendConscript)
+		if (background.getID() == ::Legends.Backgrounds.getID(::Legends.Background.Nomad) || background.getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendConscript))
 			activities.push(bro.getName() + " spends their time filling their pockets with sand");
 
 		if (background.isBackgroundType(this.Const.BackgroundType.Performing))
@@ -142,7 +142,7 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 			]);
 		}
 
-		if (background.getID() == ::Legends.Backgrounds.IDs.Assassin || background.getID() == ::Legends.Backgrounds.IDs.KillerOnTheRun || background.getID() == ::Legends.Backgrounds.IDs.AssassinSouthern || background.getID() == ::Legends.Backgrounds.IDs.LegendBountyHunter)
+		if (background.getID() == ::Legends.Backgrounds.getID(::Legends.Background.Assassin) || background.getID() == ::Legends.Backgrounds.getID(::Legends.Background.KillerOnTheRun) || background.getID() == ::Legends.Backgrounds.getID(::Legends.Background.AssassinSouthern) || background.getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendBountyHunter))
 		{
 			activities.extend([
 				bro.getName() + " organized a growing poison collection",

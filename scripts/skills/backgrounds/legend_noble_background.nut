@@ -3,7 +3,7 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = ::Legends.Backgrounds.IDs.LegendNoble;
+		this.m.ID = ::Legends.Backgrounds.getID(::Legends.Background.LegendNoble);
 		this.m.Name = "Noble";
 		this.m.Icon = "ui/backgrounds/noble_02.png";
 		this.m.BackgroundDescription = "A noble of the realm, practiced in fencing but quite unfit";

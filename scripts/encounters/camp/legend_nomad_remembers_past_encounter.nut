@@ -55,7 +55,7 @@ this.legend_nomad_remembers_past_encounter <- ::inherit("scripts/encounters/enco
 		local bros = ::World.getPlayerRoster().getAll();
 		local candidates = [];
 		foreach (bro in bros) {
-			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Nomad) {
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Nomad)) {
 				candidates.push(bro);
 			}
 		}

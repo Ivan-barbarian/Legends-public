@@ -52,7 +52,7 @@
 		local candidates = [];
 
 		foreach (bro in brothers) {
-			if (bro.getLevel() >= 4	&& bro.getLevel() <= 9	&& this.Time.getVirtualTimeF() - bro.getHireTime() > this.World.getTime().SecondsPerDay * 25.0 && bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Sellsword	&& !bro.getFlags().has("convincedToStayWithCompany") && !bro.getBackground().isBackgroundType(::Const.BackgroundType.ConvertedCultist)) {
+			if (bro.getLevel() >= 4	&& bro.getLevel() <= 9	&& this.Time.getVirtualTimeF() - bro.getHireTime() > this.World.getTime().SecondsPerDay * 25.0 && bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Sellsword)	&& !bro.getFlags().has("convincedToStayWithCompany") && !bro.getBackground().isBackgroundType(::Const.BackgroundType.ConvertedCultist)) {
 				candidates.push(bro);
 			}
 		}

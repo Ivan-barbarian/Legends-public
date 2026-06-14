@@ -22,12 +22,12 @@
 		});
 
 		this.addSkillRequirement("Have at least one of the following backgrounds: Retired Soldier, Swordmaster, Sellsword, or Gladiator", [
-			::Legends.Backgrounds.IDs.RetiredSoldier,
-			::Legends.Backgrounds.IDs.Swordmaster,
-			::Legends.Backgrounds.IDs.Sellsword,
-			::Legends.Backgrounds.IDs.Gladiator,
-			::Legends.Backgrounds.IDs.LegendCompanionMelee,
-			::Legends.Backgrounds.IDs.LegendCompanionRanged
+			::Legends.Backgrounds.getID(::Legends.Background.RetiredSoldier),
+			::Legends.Backgrounds.getID(::Legends.Background.Swordmaster),
+			::Legends.Backgrounds.getID(::Legends.Background.Sellsword),
+			::Legends.Backgrounds.getID(::Legends.Background.Gladiator),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendCompanionMelee),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendCompanionRanged)
 		], true);
 	}
 

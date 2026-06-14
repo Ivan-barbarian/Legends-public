@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = ::Legends.Backgrounds.IDs.MonkTurnedFlagellant;
+		this.m.ID = ::Legends.Backgrounds.getID(::Legends.Background.MonkTurnedFlagellant);
 		this.m.Name = "Monk turned Flagellant";
 		this.m.Icon = "ui/backgrounds/background_26.png";
 		this.m.HiringCost = 60;

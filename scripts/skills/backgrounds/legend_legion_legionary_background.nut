@@ -3,7 +3,7 @@ this.legend_legion_legionary_background <- this.inherit("scripts/skills/backgrou
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = ::Legends.Backgrounds.IDs.LegendLegionLegionary;
+		this.m.ID = ::Legends.Backgrounds.getID(::Legends.Background.LegendLegionLegionary);
 		this.m.Name = "Legionary";
 		this.m.Icon = "ui/backgrounds/background_puppet.png"; //to do
 		this.m.BackgroundDescription = "The backbone of the Empire, the Legionary has seen horrors far and wide — and now travels those lands as one.";

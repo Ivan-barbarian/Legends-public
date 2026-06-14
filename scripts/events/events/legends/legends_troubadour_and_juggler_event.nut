@@ -152,7 +152,7 @@ this.legends_troubadour_and_juggler_event <- this.inherit("scripts/events/event"
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Minstrel && bro.getGender() == 1)
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Minstrel) && bro.getGender() == 1)
 			{
 				candidates_troubadour.push(bro);
 			}
@@ -167,7 +167,7 @@ this.legends_troubadour_and_juggler_event <- this.inherit("scripts/events/event"
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Juggler)
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Juggler))
 			{
 				candidates_juggler.push(bro);
 			}

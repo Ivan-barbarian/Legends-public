@@ -139,7 +139,7 @@ this.legend_blacksmith_fix_equipment <- this.inherit("scripts/events/event", {
 
 		foreach( b in brothers )
 		{
-			if (b.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendBlacksmith)
+			if (b.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendBlacksmith))
 			{
 				candidates_blacksmith.push(b);
 			}

@@ -39,10 +39,10 @@
 					local brothers = this.World.getPlayerRoster().getAll();
 
 					foreach( bro in brothers ) {
-						if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Hunter || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Poacher || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.BeastSlayer || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderRanger)
+						if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Hunter) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Poacher) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.BeastSlayer) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderRanger))
 							continue;
 
-						if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Wildman || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Barbarian || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendBerserker || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderBerserker)
+						if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Wildman) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Barbarian) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendBerserker) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderBerserker))
 							continue;
 
 						if (this.Math.rand(1, 100) <= 25) {
@@ -83,10 +83,10 @@
 					local brothers = this.World.getPlayerRoster().getAll();
 
 					foreach( bro in brothers ) {
-						if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Hunter || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Poacher || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.BeastSlayer)
+						if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Hunter) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Poacher) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.BeastSlayer))
 							continue;
 
-						if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Wildman || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Barbarian)
+						if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Wildman) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Barbarian))
 							continue;
 
 						if (this.Math.rand(1, 100) <= 15)
@@ -174,9 +174,9 @@
 		local others = [];
 
 		foreach( bro in brothers ) {
-			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Hunter || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Poacher || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.BeastSlayer  || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendRanger  || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderRanger)
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Hunter) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Poacher) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.BeastSlayer)  || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendRanger)  || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderRanger))
 				candidates_hunter.push(bro);
-			else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Wildman)
+			else if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Wildman))
 				candidates_wildman.push(bro);
 			else if (bro.getXP() == 0)
 				candidates_recruit.push(bro);

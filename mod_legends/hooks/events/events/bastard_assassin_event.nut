@@ -86,9 +86,9 @@
 		local cantidates_assassins = [];
 
 		foreach( bro in brothers ) {
-			if (bro.getLevel() >= 6 && bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Bastard)
+			if (bro.getLevel() >= 6 && bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Bastard))
 				candidates.push(bro);
-			else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Assassin || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderAssassin)
+			else if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Assassin) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderAssassin))
 				cantidates_assassins.push(bro);
 			else if (!bro.getSkills().hasTrait(::Legends.Trait.Player))
 				candidates_other.push(bro);

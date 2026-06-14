@@ -13,14 +13,14 @@
 		];
 
 		this.addSkillRequirement("Have at least one of the following backgrounds: Beggar, Cripple, Refugee, Indebted", [
-			::Legends.Backgrounds.IDs.Beggar,
-			::Legends.Backgrounds.IDs.Cripple,
-			::Legends.Backgrounds.IDs.Refugee,
-			::Legends.Backgrounds.IDs.Slave,
-			::Legends.Backgrounds.IDs.LegendCommanderBeggar,
-			::Legends.Backgrounds.IDs.LegendCommanderBeggarScaling,
-			::Legends.Backgrounds.IDs.LegendCompanionMelee,
-			::Legends.Backgrounds.IDs.LegendCompanionRanged
+			::Legends.Backgrounds.getID(::Legends.Background.Beggar),
+			::Legends.Backgrounds.getID(::Legends.Background.Cripple),
+			::Legends.Backgrounds.getID(::Legends.Background.Refugee),
+			::Legends.Backgrounds.getID(::Legends.Background.Slave),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderBeggar),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderBeggarScaling),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendCompanionMelee),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendCompanionRanged)
 		]);
 	}
 

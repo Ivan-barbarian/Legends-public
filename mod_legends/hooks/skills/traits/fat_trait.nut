@@ -4,7 +4,7 @@
 	o.onAdded = function ()
 	{
 		local actor = this.getContainer().getActor();
-		if (actor.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendDonkey)
+		if (actor.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendDonkey))
 			return;
 
 		onAdded();

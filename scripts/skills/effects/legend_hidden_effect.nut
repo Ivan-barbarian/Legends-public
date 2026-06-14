@@ -36,7 +36,7 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 				}
 			]);
 
-			if (actor.getSkills().hasSkill(::Legends.Backgrounds.IDs.Assassin) || actor.getSkills().hasSkill(::Legends.Backgrounds.IDs.AssassinSouthern))
+			if (actor.getSkills().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.Assassin)) || actor.getSkills().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.AssassinSouthern)))
 			{
 					{
 						id = 13,
@@ -46,7 +46,7 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 					}
 			}
 
-			if (actor.getSkills().hasSkill(::Legends.Backgrounds.IDs.LegendCommanderAssassin))
+			if (actor.getSkills().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderAssassin)))
 			{
 					{
 						id = 13,
@@ -143,11 +143,11 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 			_properties.DamageRegularMin *= 1.5;
 			_properties.DamageRegularMax *= 1.5;
 
-			if (actor.getSkills().hasSkill(::Legends.Backgrounds.IDs.Assassin) || actor.getSkills().hasSkill(::Legends.Backgrounds.IDs.AssassinSouthern))
+			if (actor.getSkills().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.Assassin)) || actor.getSkills().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.AssassinSouthern)))
 			{
 			_properties.DamageRegularMax *= 1.5;
 			}
-			if (actor.getSkills().hasSkill(::Legends.Backgrounds.IDs.LegendCommanderAssassin))
+			if (actor.getSkills().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderAssassin)))
 			{
 			_properties.DamageRegularMax *= 2.0;
 			}

@@ -56,7 +56,7 @@
 		foreach( bro in brothers ) {
 			if ( bro.getSkills().hasTrait(::Legends.Trait.Player) )
 				continue;
-			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.KillerOnTheRun || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Thief || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Graverobber || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Raider || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Nomad || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderAssassin)
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.KillerOnTheRun) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Thief) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Graverobber) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Raider) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Nomad) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderAssassin))
 				candidates.push(bro);
 		}
 

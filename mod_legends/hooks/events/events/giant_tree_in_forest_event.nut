@@ -38,7 +38,7 @@
 		local brothers = this.World.getPlayerRoster().getAll();
 		local monk_candidates = [];
 
-		foreach (bro in brothers) if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Monk || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.MonkTurnedFlagellant || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendHerbalist || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendRanger || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderRanger || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendVala) {
+		foreach (bro in brothers) if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Monk) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.MonkTurnedFlagellant) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendHerbalist) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendRanger) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderRanger) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendVala)) {
 			monk_candidates.push(bro);
 		}
 

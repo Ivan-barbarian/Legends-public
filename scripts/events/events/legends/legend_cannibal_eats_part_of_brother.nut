@@ -107,7 +107,7 @@ this.legend_cannibal_eats_part_of_brother <- this.inherit("scripts/events/event"
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCannibal)
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendCannibal))
 			{
 				cannibal_candidates.push(bro);
 			}
@@ -122,7 +122,7 @@ this.legend_cannibal_eats_part_of_brother <- this.inherit("scripts/events/event"
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendDonkey)
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendDonkey))
 				continue;
 
 			if (bro.getID() != this.m.Cannibal.getID())

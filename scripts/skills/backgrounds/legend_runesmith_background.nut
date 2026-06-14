@@ -3,7 +3,7 @@ this.legend_runesmith_background <- this.inherit("scripts/skills/backgrounds/cha
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = ::Legends.Backgrounds.IDs.LegendRunesmith;
+		this.m.ID = ::Legends.Backgrounds.getID(::Legends.Background.LegendRunesmith);
 		this.m.Icon = "ui/backgrounds/background_wizard_3.png";
 		this.m.Name = "Rune Smith";
 		this.m.HiringCost = 1000;

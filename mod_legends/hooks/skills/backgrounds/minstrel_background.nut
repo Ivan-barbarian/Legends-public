@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = ::Legends.Backgrounds.IDs.Minstrel;
+		this.m.ID = ::Legends.Backgrounds.getID(::Legends.Background.Minstrel);
 		this.m.Name = "Minstrel";
 		this.m.Icon = "ui/backgrounds/troubadour.png";
 		this.m.BackgroundDescription = "A good minstrel will sing a saga to inspire the men, play the flute to calm them, or entertain them with poetry around the camp fire. A lute is not a weapon, however, and minstrels are often not used to physical labor or bloodshed.";

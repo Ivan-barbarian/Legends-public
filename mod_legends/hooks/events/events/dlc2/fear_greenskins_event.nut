@@ -1,12 +1,12 @@
 ::mods_hookExactClass("events/events/dlc2/fear_greenskins_event", function(o) {
 	o.m.excludedBackgrounds <- [
-		::Legends.Backgrounds.IDs.Companion,
-		::Legends.Backgrounds.IDs.HedgeKnight,
-		::Legends.Backgrounds.IDs.OrcSlayer,
-		::Legends.Backgrounds.IDs.LegendRanger,
-		::Legends.Backgrounds.IDs.Wildman,
-		::Legends.Backgrounds.IDs.LegendCompanionMelee,
-		::Legends.Backgrounds.IDs.LegendCompanionRanged,
+		::Legends.Backgrounds.getID(::Legends.Background.Companion),
+		::Legends.Backgrounds.getID(::Legends.Background.HedgeKnight),
+		::Legends.Backgrounds.getID(::Legends.Background.OrcSlayer),
+		::Legends.Backgrounds.getID(::Legends.Background.LegendRanger),
+		::Legends.Backgrounds.getID(::Legends.Background.Wildman),
+		::Legends.Backgrounds.getID(::Legends.Background.LegendCompanionMelee),
+		::Legends.Backgrounds.getID(::Legends.Background.LegendCompanionRanged),
 	];
 	o.m.excludedTraits <- [
 		::Legends.Trait.Bloodthirsty,

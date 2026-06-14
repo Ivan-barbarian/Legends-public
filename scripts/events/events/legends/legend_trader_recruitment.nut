@@ -82,8 +82,8 @@ this.legend_trader_recruitment <- this.inherit("scripts/events/event", {
 		{
 			switch(bro.getBackground().getID())
 			{
-			case ::Legends.Backgrounds.IDs.LegendTrader:
-			case ::Legends.Backgrounds.IDs.LegendCommanderTrader:
+			case ::Legends.Backgrounds.getID(::Legends.Background.LegendTrader):
+			case ::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderTrader):
 				return;
 			}
 

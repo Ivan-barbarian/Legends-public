@@ -37,7 +37,7 @@
 			]);
 		}
 
-		if (actor.getSkills().hasSkill(::Legends.Backgrounds.IDs.Assassin) || actor.getSkills().hasSkill(::Legends.Backgrounds.IDs.AssassinSouthern))
+		if (actor.getSkills().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.Assassin)) || actor.getSkills().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.AssassinSouthern)))
 		ret.extend([
 			{
 				id = 13,
@@ -47,7 +47,7 @@
 			}
 		]);
 
-		if (actor.getSkills().hasSkill(::Legends.Backgrounds.IDs.LegendCommanderAssassin))
+		if (actor.getSkills().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderAssassin)))
 		ret.extend([
 			{
 				id = 13,
@@ -265,11 +265,11 @@
             _properties.DamageRegularMin *= 1.2;
             _properties.DamageRegularMax *= 1.2;
 
-            if (actor.getSkills().hasSkill(::Legends.Backgrounds.IDs.Assassin) || actor.getSkills().hasSkill(::Legends.Backgrounds.IDs.AssassinSouthern))
+            if (actor.getSkills().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.Assassin)) || actor.getSkills().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.AssassinSouthern)))
             {
                 _properties.DamageRegularMax *= 1.3;
             }
-            if (actor.getSkills().hasSkill(::Legends.Backgrounds.IDs.LegendCommanderAssassin))
+            if (actor.getSkills().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderAssassin)))
             {
                 _properties.DamageRegularMax *= 1.5;
             }

@@ -197,7 +197,7 @@ this.legends_fletcher_crafts_masterwork_event <- this.inherit("scripts/events/ev
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() >= 6 && bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Bowyer)
+			if (bro.getLevel() >= 6 && bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Bowyer))
 			{
 				candidates.push(bro);
 			}

@@ -3,7 +3,7 @@ this.legend_philosopher_background <- this.inherit("scripts/skills/backgrounds/c
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = ::Legends.Backgrounds.IDs.LegendPhilosopher;
+		this.m.ID = ::Legends.Backgrounds.getID(::Legends.Background.LegendPhilosopher);
 		this.m.Icon = "ui/backgrounds/background_philosopher.png";
 		this.m.Name = "Philosopher";
 		this.m.HiringCost = 150;

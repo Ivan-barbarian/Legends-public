@@ -44,11 +44,11 @@ this.legend_monk_admires_dervish_encounter <- ::inherit("scripts/encounters/enco
 
 		local brothers = ::World.getPlayerRoster().getAll();
 
-		local candidates_dervish = brothers.filter(@(idx, bro) bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendDervish);
+		local candidates_dervish = brothers.filter(@(idx, bro) bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendDervish));
 		if (candidates_dervish.len() == 0)
 			return false;
 
-		local candidates_monk = brothers.filter(@(idx, bro) bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Monk);
+		local candidates_monk = brothers.filter(@(idx, bro) bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Monk));
 		if (candidates_monk.len() == 0)
 			return false;
 

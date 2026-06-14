@@ -1528,7 +1528,7 @@
 			}
 		}
 
-		if (("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin() != null && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getID() != ::Legends.Backgrounds.IDs.Slave)
+		if (("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin() != null && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getID() != ::Legends.Backgrounds.getID(::Legends.Background.Slave))
 		{
 			_properties.XPGainMult *= 0.9;
 		}

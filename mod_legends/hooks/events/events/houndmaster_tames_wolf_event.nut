@@ -38,7 +38,7 @@
 		local candidates = [];
 
 		foreach (bro in brothers) {
-			if (bro.getLevel() >= 5	&& (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Houndmaster || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendDruid || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderDruid || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendMuladi))
+			if (bro.getLevel() >= 5	&& (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Houndmaster) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendDruid) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderDruid) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendMuladi)))
 			{
 				candidates.push(bro);
 			}

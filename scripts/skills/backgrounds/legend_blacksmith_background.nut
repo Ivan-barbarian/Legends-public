@@ -3,7 +3,7 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = ::Legends.Backgrounds.IDs.LegendBlacksmith;
+		this.m.ID = ::Legends.Backgrounds.getID(::Legends.Background.LegendBlacksmith);
 		this.m.Name = "Blacksmith";
 		this.m.Icon = "ui/backgrounds/blacksmith.png";
 		this.m.BackgroundDescription = "Blacksmiths tend to be strong and are skilled at repairing equipment.";

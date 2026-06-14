@@ -3,7 +3,7 @@ this.legend_healer_background <- this.inherit("scripts/skills/backgrounds/charac
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = ::Legends.Backgrounds.IDs.LegendHealer;
+		this.m.ID = ::Legends.Backgrounds.getID(::Legends.Background.LegendHealer);
 		this.m.Icon = "ui/backgrounds/background_mage.png";
 		local r = this.Math.rand(0, 3);
 

@@ -2,7 +2,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = ::Legends.Backgrounds.IDs.Shepherd;
+		this.m.ID = ::Legends.Backgrounds.getID(::Legends.Background.Shepherd);
 		this.m.Name = "Shepherd";
 		this.m.Icon = "ui/backgrounds/background_44.png";
 		this.m.BackgroundDescription = "Shepherds are used to physical labor and known to keep the occasional wolf at bay with a sling.";

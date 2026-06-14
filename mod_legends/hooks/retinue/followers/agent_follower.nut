@@ -31,12 +31,12 @@
 		});
 
 		this.addSkillRequirement("Have at least one of the following backgrounds: Eunuch, Messenger, Assassin (Southern or Northern)", [
-			::Legends.Backgrounds.IDs.Eunuch,
-			::Legends.Backgrounds.IDs.Messenger,
-			::Legends.Backgrounds.IDs.Assassin,
-			::Legends.Backgrounds.IDs.AssassinSouthern,
-			::Legends.Backgrounds.IDs.LegendCompanionMelee,
-			::Legends.Backgrounds.IDs.LegendCompanionRanged
+			::Legends.Backgrounds.getID(::Legends.Background.Eunuch),
+			::Legends.Backgrounds.getID(::Legends.Background.Messenger),
+			::Legends.Backgrounds.getID(::Legends.Background.Assassin),
+			::Legends.Backgrounds.getID(::Legends.Background.AssassinSouthern),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendCompanionMelee),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendCompanionRanged)
 		]);
 	}
 

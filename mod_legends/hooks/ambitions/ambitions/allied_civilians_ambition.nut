@@ -34,7 +34,7 @@
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Brawler)
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Brawler))
 			{
 				_vars.push([
 					"brawler",

@@ -27,7 +27,7 @@
 
 			if (bro.getSkills().hasTrait(::Legends.Trait.Ailing))
 				candidates_ailing.push(bro);
-			else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Monk || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.BeastSlayer || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendHerbalist || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendWitch || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderWitch )
+			else if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Monk) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.BeastSlayer) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendHerbalist) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendWitch) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderWitch) )
 				candidates_healer.push(bro);
 		}
 

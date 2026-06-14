@@ -78,7 +78,7 @@
 					brothers.remove(i);
 				}
 			}
-			else if (brothers.len() > 1 && brothers[i].getBackground().getID() == ::Legends.Backgrounds.IDs.Slave)
+			else if (brothers.len() > 1 && brothers[i].getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Slave))
 			{
 				slaves.push(brothers[i]);
 				brothers.remove(i);

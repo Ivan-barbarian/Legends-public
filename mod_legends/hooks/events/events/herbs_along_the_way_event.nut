@@ -60,7 +60,7 @@
 		local herbalists = [];
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendHerbalist || ::Legends.Perks.has(bro, ::Legends.Perk.LegendGatherer))
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendHerbalist) || ::Legends.Perks.has(bro, ::Legends.Perk.LegendGatherer))
 			{
 				herbalists.push(bro);
 			}

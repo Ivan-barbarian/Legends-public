@@ -84,7 +84,7 @@
 				continue;
 			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Cultist))
 				candidates_cultist.push(bro);
-			else if (bro.getBackground().getID() != ::Legends.Backgrounds.IDs.Slave)
+			else if (bro.getBackground().getID() != ::Legends.Backgrounds.getID(::Legends.Background.Slave))
 				candidates_other.push(bro);
 		}
 

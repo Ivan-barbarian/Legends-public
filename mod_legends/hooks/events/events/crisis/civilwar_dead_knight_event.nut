@@ -47,7 +47,7 @@
 		local candidates = [];
 
 		foreach( bro in brothers ) {
-			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Thief || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderAssassin || bro.getSkills().hasTrait(::Legends.Trait.EagleEyes))
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Thief) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderAssassin) || bro.getSkills().hasTrait(::Legends.Trait.EagleEyes))
 				candidates.push(bro);
 		}
 

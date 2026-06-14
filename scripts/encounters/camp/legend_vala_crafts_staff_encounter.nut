@@ -118,11 +118,11 @@ this.legend_vala_crafts_staff_encounter <- this.inherit("scripts/encounters/enco
 		local randomBros = [];
 		foreach (bro in bros)
 		{
-			if (bro.getBackground().getID() != ::Legends.Backgrounds.IDs.LegendVala && !bro.getSkills().hasTrait(::Legends.Trait.Player))
+			if (bro.getBackground().getID() != ::Legends.Backgrounds.getID(::Legends.Background.LegendVala) && !bro.getSkills().hasTrait(::Legends.Trait.Player))
 			{
 				randomBros.push(bro);
 			}
-			else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendVala && bro.getLevel() >= 12)
+			else if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendVala) && bro.getLevel() >= 12)
 			{
 				this.m.Vala = bro;
 			}

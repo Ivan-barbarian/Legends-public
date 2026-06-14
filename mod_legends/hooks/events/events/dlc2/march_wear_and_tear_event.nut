@@ -62,14 +62,14 @@
 			if (bro.getSkills().hasTrait(::Legends.Trait.Player))
 				continue;
 
-			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Tailor)
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Tailor))
 				candidates_tailor.push(bro);
 			else {
 				candidates_other.push(bro);
 
-				if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Thief || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderAssassin)
+				if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Thief) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderAssassin))
 					candidates_thief.push(bro);
-				else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Vagabond || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Refugee || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Messenger)
+				else if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Vagabond) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Refugee) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Messenger))
 					candidates_vagabond.push(bro);
 			}
 		}

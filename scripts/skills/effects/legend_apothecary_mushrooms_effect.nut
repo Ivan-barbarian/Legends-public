@@ -112,7 +112,7 @@ this.legend_apothecary_mushrooms_effect <- this.inherit("scripts/skills/skill", 
 		local chance = 20;
 		local bro = this.getContainer().getActor();
 
-		if (bro.getBackground() != null && bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Wildman)
+		if (bro.getBackground() != null && bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Wildman))
 		{
 			chance = chance - 10;
 		}

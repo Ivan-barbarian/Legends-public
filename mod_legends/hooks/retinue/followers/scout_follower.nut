@@ -13,14 +13,14 @@
 		];
 
 		this.addSkillRequirement("Have at least one of the following backgrounds: Wildman/Wildwoman, Hunter, Lumberjack, Ranger, Master Archer", [
-			::Legends.Backgrounds.IDs.Wildman,
-			::Legends.Backgrounds.IDs.Hunter,
-			::Legends.Backgrounds.IDs.Lumberjack,
-			::Legends.Backgrounds.IDs.LegendRanger,
-			::Legends.Backgrounds.IDs.LegendCommanderRanger,
-			::Legends.Backgrounds.IDs.LegendMasterArcher,
-			::Legends.Backgrounds.IDs.LegendCompanionMelee,
-			::Legends.Backgrounds.IDs.LegendCompanionRanged
+			::Legends.Backgrounds.getID(::Legends.Background.Wildman),
+			::Legends.Backgrounds.getID(::Legends.Background.Hunter),
+			::Legends.Backgrounds.getID(::Legends.Background.Lumberjack),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendRanger),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderRanger),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendMasterArcher),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendCompanionMelee),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendCompanionRanged)
 		]);
 	}
 

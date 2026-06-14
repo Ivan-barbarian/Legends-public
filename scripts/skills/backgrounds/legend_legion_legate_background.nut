@@ -3,7 +3,7 @@ this.legend_legion_legate_background <- this.inherit("scripts/skills/backgrounds
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = ::Legends.Backgrounds.IDs.LegendLegionLegate;
+		this.m.ID = ::Legends.Backgrounds.getID(::Legends.Background.LegendLegionLegate);
 		this.m.Name = "Legate";
 		this.m.Icon = "ui/backgrounds/background_puppet.png"; //to do
 		this.m.BackgroundDescription = "A military figure of great experience and prowess";

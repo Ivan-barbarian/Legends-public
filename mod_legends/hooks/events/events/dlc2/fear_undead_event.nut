@@ -1,14 +1,14 @@
 ::mods_hookExactClass("events/events/dlc2/fear_undead_event", function(o) {
 	o.m.excludedBackgrounds <- [
-		::Legends.Backgrounds.IDs.Companion,
-		::Legends.Backgrounds.IDs.Crusader,
-		::Legends.Backgrounds.IDs.Gravedigger,
-		::Legends.Backgrounds.IDs.Graverobber,
-		::Legends.Backgrounds.IDs.HedgeKnight,
-		::Legends.Backgrounds.IDs.Wildman,
-		::Legends.Backgrounds.IDs.LegendCompanionMelee,
-		::Legends.Backgrounds.IDs.LegendCompanionRanged,
-		::Legends.Backgrounds.IDs.LegendCrusader
+		::Legends.Backgrounds.getID(::Legends.Background.Companion),
+		::Legends.Backgrounds.getID(::Legends.Background.Crusader),
+		::Legends.Backgrounds.getID(::Legends.Background.Gravedigger),
+		::Legends.Backgrounds.getID(::Legends.Background.Graverobber),
+		::Legends.Backgrounds.getID(::Legends.Background.HedgeKnight),
+		::Legends.Backgrounds.getID(::Legends.Background.Wildman),
+		::Legends.Backgrounds.getID(::Legends.Background.LegendCompanionMelee),
+		::Legends.Backgrounds.getID(::Legends.Background.LegendCompanionRanged),
+		::Legends.Backgrounds.getID(::Legends.Background.LegendCrusader)
 	];
 	o.m.excludedTraits <- [
 		::Legends.Trait.Bloodthirsty,

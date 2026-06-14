@@ -203,14 +203,14 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			return;
 		}
 									//also contains nomad_ranged
-		if (_bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Nomad || _bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendMuladi)
+		if (_bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Nomad) || _bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendMuladi))
 		{
 			_bro.improveMood(1.5, "I walk with those on the path of the Interloper");
 			::Legends.Traits.grant(_bro, ::Legends.Trait.LegendNomad);
 			_bro.getSprite("socket").setBrush("bust_base_nomads");
 			::Legends.Perks.grant(_bro, ::Legends.Perk.LegendWindReader);
 		}
-		else if (_bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendBladedancer)
+		else if (_bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendBladedancer))
 		{
 			_bro.improveMood(1.5, "I walk with those on the path of the Interloper");
 			::Legends.Traits.grant(_bro, ::Legends.Trait.LegendNomad);
@@ -228,7 +228,7 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		if (_bro.isStabled()) {
 			return;
 		}
-		if (_bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Nomad || _bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendMuladi || _bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendBladedancer)
+		if (_bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Nomad) || _bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendMuladi) || _bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendBladedancer))
 		{
 			_bro.m.HiringCost = this.Math.floor(_bro.m.HiringCost * 0.75); //1.0 = default
 			_bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default

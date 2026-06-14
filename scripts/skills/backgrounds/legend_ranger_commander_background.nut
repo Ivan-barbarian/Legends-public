@@ -3,7 +3,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = ::Legends.Backgrounds.IDs.LegendCommanderRanger;
+		this.m.ID = ::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderRanger);
 		this.m.Name = "Ranger";
 		this.m.Icon = "ui/backgrounds/ranger_02.png";
 		this.m.BackgroundDescription = "Rangers are expert trackers and archers, used to hunting prey of any kind";

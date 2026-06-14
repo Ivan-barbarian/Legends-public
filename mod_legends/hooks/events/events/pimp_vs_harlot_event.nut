@@ -98,13 +98,13 @@
 		local candidate_tailor = [];
 
 		foreach( bro in brothers ) {
-			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Minstrel)
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Minstrel))
 				candidate_minstrel.push(bro);
-			else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Monk)
+			else if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Monk))
 				candidate_monk.push(bro);
 			else if (bro.getSkills().hasPerk(::Legends.Perk.LegendScholar))
 				candidate_monk.push(bro);
-			else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Tailor)
+			else if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Tailor))
 				candidate_tailor.push(bro);
 		}
 

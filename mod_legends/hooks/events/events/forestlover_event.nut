@@ -27,7 +27,7 @@
 		local candidates = [];
 
 		foreach( bro in brothers )
-			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Hunter || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Poacher || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendRanger || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendHerbalist || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Lumberjack)
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Hunter) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Poacher) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendRanger) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendHerbalist) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Lumberjack))
 				candidates.push(bro);
 
 		if (candidates.len() > 0) {

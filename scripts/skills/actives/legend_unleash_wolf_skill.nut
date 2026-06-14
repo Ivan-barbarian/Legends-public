@@ -166,7 +166,7 @@ this.legend_unleash_wolf_skill <- this.inherit("scripts/skills/actives/legend_un
 		entity.setFaction(this.Const.Faction.PlayerAnimals);
 		entity.setName(this.m.EntityName);
 
-		if (this.getContainer().hasSkill(::Legends.Backgrounds.IDs.Houndmaster))
+		if (this.getContainer().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.Houndmaster)))
 		{
 			entity.setMoraleState(this.Const.MoraleState.Confident);
 		}

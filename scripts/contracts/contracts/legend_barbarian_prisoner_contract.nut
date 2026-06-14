@@ -536,7 +536,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 
 							foreach( bro in bros )
 							{
-								if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendBerserker || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderBerserker)
+								if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendBerserker) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderBerserker))
 								{
 									candidates.push(bro);
 								}

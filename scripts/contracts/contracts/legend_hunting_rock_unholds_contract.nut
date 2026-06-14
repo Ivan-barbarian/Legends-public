@@ -143,7 +143,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 
 					foreach( bro in bros )
 					{
-						if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.BeastSlayer || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Wildman || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Barbarian || bro.getSkills().hasTrait(::Legends.Trait.Dumb))
+						if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.BeastSlayer) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Wildman) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Barbarian) || bro.getSkills().hasTrait(::Legends.Trait.Dumb))
 						{
 							candidates.push(bro);
 						}

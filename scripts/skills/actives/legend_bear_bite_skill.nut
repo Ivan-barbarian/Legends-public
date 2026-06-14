@@ -57,7 +57,7 @@ function getTooltip()
 			damageMax += avgMax;
 		}
 
-		if (this.getContainer().hasSkill(::Legends.Backgrounds.IDs.Brawler) || this.getContainer().hasSkill(::Legends.Backgrounds.IDs.LegendCommanderBerserker) || this.getContainer().hasSkill(::Legends.Backgrounds.IDs.LegendBerserker) || this.getContainer().hasSkill(::Legends.Backgrounds.IDs.LegendCommanderDruid) || this.getContainer().hasSkill(::Legends.Backgrounds.IDs.LegendDruid) )
+		if (this.getContainer().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.Brawler)) || this.getContainer().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderBerserker)) || this.getContainer().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.LegendBerserker)) || this.getContainer().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderDruid)) || this.getContainer().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.LegendDruid)) )
 		{
 			damageMin = damageMin * 1.25;
 			damageMax = damageMax * 1.25;
@@ -178,7 +178,7 @@ function onAnySkillUsed( _skill, _targetEntity, _properties )
 				damageMax += muscularity;
 			}
 
-			if (this.getContainer().hasSkill(::Legends.Backgrounds.IDs.Brawler) || this.getContainer().hasSkill(::Legends.Backgrounds.IDs.LegendCommanderBerserker || this.getContainer().hasSkill(::Legends.Backgrounds.IDs.LegendBerserker)) )
+			if (this.getContainer().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.Brawler)) || this.getContainer().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderBerserker) || this.getContainer().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.LegendBerserker))) )
 			{
 				damageMin = damageMin * 1.25;
 				damageMax = damageMax * 1.25;

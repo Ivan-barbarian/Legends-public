@@ -465,7 +465,7 @@ this.legend_hunting_basilisks_contract <- this.inherit("scripts/contracts/contra
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.BeastSlayer || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendGuildmaster)
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.BeastSlayer) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendGuildmaster))
 			{
 				candidates_beastslayer.push(bro);
 			}

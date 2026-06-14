@@ -3,7 +3,7 @@ this.legend_transmuter_background <- this.inherit("scripts/skills/backgrounds/ch
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = ::Legends.Backgrounds.IDs.LegendTransmuter;
+		this.m.ID = ::Legends.Backgrounds.getID(::Legends.Background.LegendTransmuter);
 		this.m.Icon = "ui/backgrounds/background_wizard_3.png";
 		this.m.Name = "Transmuter";
 		this.m.HiringCost = 1000;

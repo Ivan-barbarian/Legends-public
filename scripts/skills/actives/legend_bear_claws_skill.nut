@@ -70,7 +70,7 @@ this.legend_bear_claws_skill <- this.inherit("scripts/skills/skill", {
 			damageMax += avgMax;
 		}
 
-		if (this.getContainer().hasSkill(::Legends.Backgrounds.IDs.Brawler) || this.getContainer().hasSkill(::Legends.Backgrounds.IDs.LegendCommanderBerserker) || this.getContainer().hasSkill(::Legends.Backgrounds.IDs.LegendBerserker) )
+		if (this.getContainer().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.Brawler)) || this.getContainer().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderBerserker)) || this.getContainer().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.LegendBerserker)) )
 		{
 			damageMin = damageMin * 1.25;
 			damageMax = damageMax * 1.25;
@@ -300,7 +300,7 @@ this.legend_bear_claws_skill <- this.inherit("scripts/skills/skill", {
 				damageMax += muscularity;
 			}
 
-			if (this.getContainer().hasSkill(::Legends.Backgrounds.IDs.Brawler) || this.getContainer().hasSkill(::Legends.Backgrounds.IDs.LegendCommanderBerserker || this.getContainer().hasSkill(::Legends.Backgrounds.IDs.LegendBerserker)) )
+			if (this.getContainer().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.Brawler)) || this.getContainer().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderBerserker) || this.getContainer().hasSkill(::Legends.Backgrounds.getID(::Legends.Background.LegendBerserker))) )
 			{
 				damageMin = damageMin * 1.25;
 				damageMax = damageMax * 1.25;

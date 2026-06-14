@@ -22,11 +22,11 @@
 		});
 
 		this.addSkillRequirement("Have at least one of the following backgrounds: Raider, Barbarian, Deserter", [
-			::Legends.Backgrounds.IDs.Raider,
-			::Legends.Backgrounds.IDs.Barbarian,
-			::Legends.Backgrounds.IDs.Deserter,
-			::Legends.Backgrounds.IDs.LegendCompanionMelee,
-			::Legends.Backgrounds.IDs.LegendCompanionRanged
+			::Legends.Backgrounds.getID(::Legends.Background.Raider),
+			::Legends.Backgrounds.getID(::Legends.Background.Barbarian),
+			::Legends.Backgrounds.getID(::Legends.Background.Deserter),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendCompanionMelee),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendCompanionRanged)
 		], true);
 	}
 

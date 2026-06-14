@@ -74,7 +74,7 @@ this.legend_muladi_trials3_event <- this.inherit("scripts/events/event", {
 				local bg = this.new("scripts/skills/backgrounds/legend_companion_ranged_background");
 				bg.m.IsNew = false;
 				local oldPerkTree = _event.m.Muladi.getBackground().m.CustomPerkTree;
-				_event.m.Muladi.getSkills().removeByID(::Legends.Backgrounds.IDs.LegendMuladi);
+				_event.m.Muladi.getSkills().removeByID(::Legends.Backgrounds.getID(::Legends.Background.LegendMuladi));
 				_event.m.Muladi.getSkills().add(bg);
 				_event.m.Muladi.getBackground().m.RawDescription = "Having suffered at the hands of the fearful and ignorant for too long, %name% has left their life as a wayfaring muladi behind, instead fully dedicating their spirit to the company and its continued success. No longer just an extra warm body to fill the ranks, this bro considers the company family, and will use their skills - both new and old - to protect it, or die trying.";
 				_event.m.Muladi.getBackground().buildDescription(true);
@@ -109,7 +109,7 @@ this.legend_muladi_trials3_event <- this.inherit("scripts/events/event", {
 	}
 
 	function onUpdateScore() {
-		local candidatesMuladi = ::World.getPlayerRoster().getAll().filter(@(_, _bro) _bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendMuladi && !_bro.getFlags().has("MuladiTrials3"));
+		local candidatesMuladi = ::World.getPlayerRoster().getAll().filter(@(_, _bro) _bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendMuladi) && !_bro.getFlags().has("MuladiTrials3"));
 		if (!candidatesMuladi.len())
 			return;
 

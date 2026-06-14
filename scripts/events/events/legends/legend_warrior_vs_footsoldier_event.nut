@@ -54,7 +54,7 @@ this.legend_warrior_vs_footsoldier_event <- this.inherit("scripts/events/event",
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendNobleShield)
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendNobleShield))
 			{
 				noble1h_candidates.push(bro);
 			}
@@ -69,7 +69,7 @@ this.legend_warrior_vs_footsoldier_event <- this.inherit("scripts/events/event",
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendNoble2h)
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendNoble2h))
 			{
 				noble2h_candidates.push(bro);
 			}

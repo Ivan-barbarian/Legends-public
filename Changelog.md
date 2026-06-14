@@ -121,6 +121,9 @@
 
 ### For modders:
 - it is now possible to use [i][/i] and [size=18px][/size] to customize ui text size easily with xbbcode
+- defs created for backgrounds
+- changed background.legend_peddler_commander -> background.legend_commander_peddler
+- legend_mage_background and legend_mage_commander_mage removed
 
 # 19.3.0 - Left & Right
 

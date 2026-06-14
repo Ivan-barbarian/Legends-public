@@ -146,7 +146,7 @@
 		if (bro.isStabled())
 			return;
 		//Can't really recruit converted cultists but its here anyway for posterity
-		if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Cultist || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.ConvertedCultist || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendLurker || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendHusk || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendMagister)
+		if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Cultist) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.ConvertedCultist) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendLurker) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendHusk) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendMagister))
 		{
 			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75); //1.0 = default
 			bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
@@ -167,7 +167,7 @@
 
 	o.onGetBackgroundTooltip <- function ( _background, _tooltip )
 	{
-		if (_background.getID() == ::Legends.Backgrounds.IDs.Cultist || _background.getID() == ::Legends.Backgrounds.IDs.ConvertedCultist || _background.getID() == ::Legends.Backgrounds.IDs.LegendLurker) // Removed husk and magister from this if
+		if (_background.getID() == ::Legends.Backgrounds.getID(::Legends.Background.Cultist) || _background.getID() == ::Legends.Backgrounds.getID(::Legends.Background.ConvertedCultist) || _background.getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendLurker)) // Removed husk and magister from this if
 		{
 			//_tooltip.pop();
 			_tooltip.push({
@@ -178,7 +178,7 @@
 			});
 		}
 
-		if (_background.getID() == ::Legends.Backgrounds.IDs.LegendHusk || _background.getID() == ::Legends.Backgrounds.IDs.LegendMagister)
+		if (_background.getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendHusk) || _background.getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendMagister))
 		{
 			//_tooltip.pop();
 			_tooltip.push({

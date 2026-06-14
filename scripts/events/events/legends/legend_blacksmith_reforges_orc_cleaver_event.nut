@@ -136,7 +136,7 @@ this.legend_blacksmith_reforges_orc_cleaver_event <- this.inherit("scripts/event
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() >= 7 && bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendBlacksmith) //if this bro level is equal to or greater than the number stated, this event can happen.
+			if (bro.getLevel() >= 7 && bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendBlacksmith)) //if this bro level is equal to or greater than the number stated, this event can happen.
 			{
 				candidates.push(bro);
 			}

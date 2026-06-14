@@ -1,4 +1,6 @@
-::Legends.Backgrounds <- {};
+if (!("Backgrounds" in ::Legends)) {
+	::Legends.Backgrounds <- {};
+}
 ::Legends.Backgrounds.Tag <- {
 	Skeleton = "skeleton",
 	Zombie = "zombie"

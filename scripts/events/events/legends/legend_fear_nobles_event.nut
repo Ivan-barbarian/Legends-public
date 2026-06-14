@@ -2,17 +2,17 @@ this.legend_fear_nobles_event <- this.inherit("scripts/events/event", {
 	m = {
 		Casualty = null,
 		excludedBackgrounds = [
-			::Legends.Backgrounds.IDs.AdventurousNoble,
-			::Legends.Backgrounds.IDs.Companion,
-			::Legends.Backgrounds.IDs.DisownedNoble,
-			::Legends.Backgrounds.IDs.HedgeKnight,
-			::Legends.Backgrounds.IDs.LegendCommanderNoble,
-			::Legends.Backgrounds.IDs.LegendCompanionMelee,
-			::Legends.Backgrounds.IDs.LegendCompanionRanged,
-			::Legends.Backgrounds.IDs.LegendNoble,
-			::Legends.Backgrounds.IDs.LegendNoble2h,
-			::Legends.Backgrounds.IDs.LegendNobleRanged,
-			::Legends.Backgrounds.IDs.LegendNobleShield
+			::Legends.Backgrounds.getID(::Legends.Background.AdventurousNoble),
+			::Legends.Backgrounds.getID(::Legends.Background.Companion),
+			::Legends.Backgrounds.getID(::Legends.Background.DisownedNoble),
+			::Legends.Backgrounds.getID(::Legends.Background.HedgeKnight),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderNoble),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendCompanionMelee),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendCompanionRanged),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendNoble),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendNoble2h),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendNobleRanged),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendNobleShield)
 		],
 		excludedTraits = [
 			::Legends.Trait.Bloodthirsty,

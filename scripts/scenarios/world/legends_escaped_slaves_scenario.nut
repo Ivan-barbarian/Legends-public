@@ -431,20 +431,20 @@ this.legends_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/st
 
 	function onHiredByScenario( _bro )
 	{
-		if (_bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave)
+		if (_bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Slave))
 		{
 			::Legends.Traits.grant(_bro, ::Legends.Trait.LegendBrothersInChains);
 			_bro.getSprite("miniboss").setBrush("bust_miniboss_indebted");
 			_bro.improveMood(1.5, "Joined a mercenary company of freed slaves");
 			this.setRetireText(_bro);
 		}
-		else if (_bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Manhunter)
+		else if (_bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Manhunter))
 		{
 			local brothers = this.World.getPlayerRoster().getAll();
 
 			foreach( _bro in brothers )
 			{
-				if (_bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave)
+				if (_bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Slave))
 				{
 					_bro.worsenMood(2.0, "You hired " + _bro.getNameOnly() + " the manhunter");
 				}

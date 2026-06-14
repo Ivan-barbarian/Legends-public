@@ -5,7 +5,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = ::Legends.Backgrounds.IDs.LegendCommanderDruid;
+		this.m.ID = ::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderDruid);
 		this.m.Name = "Druid Commander";
 		this.m.Icon = "ui/backgrounds/druid_background.png";
 		this.m.BackgroundDescription = "Druids are from the wild lands and are ardent defenders of nature.";

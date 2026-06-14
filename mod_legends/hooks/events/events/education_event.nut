@@ -29,7 +29,7 @@
 		foreach( bro in brothers ) {
 			if (bro.getSkills().hasTrait(::Legends.Trait.Dumb))
 				dumb_candidates.push(bro);
-			else if ((bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Monk || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Historian || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendInventor  ||  bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendWitch || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderWitch ) && !bro.getSkills().hasTrait(::Legends.Trait.Hesistant) || bro.getSkills().hasPerk(::Legends.Perk.LegendScholar))
+			else if ((bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Monk) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Historian) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendInventor)  ||  bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendWitch) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderWitch) ) && !bro.getSkills().hasTrait(::Legends.Trait.Hesistant) || bro.getSkills().hasPerk(::Legends.Perk.LegendScholar))
 				scholar_candidates.push(bro);
 		}
 

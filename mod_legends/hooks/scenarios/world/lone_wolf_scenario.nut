@@ -147,77 +147,77 @@
 
 		// Define tier thresholds of allowed backgrounds
 		local tier1 = [ // >1500
-			::Legends.Backgrounds.IDs.Apprentice,
-			::Legends.Backgrounds.IDs.Beggar,
-			::Legends.Backgrounds.IDs.Bowyer,
-			::Legends.Backgrounds.IDs.Brawler,
-			::Legends.Backgrounds.IDs.Butcher,
-			::Legends.Backgrounds.IDs.Cripple,
-			::Legends.Backgrounds.IDs.Daytaler,
-			::Legends.Backgrounds.IDs.Farmhand,
-			::Legends.Backgrounds.IDs.Fisherman,
-			::Legends.Backgrounds.IDs.Flagellant,
-			::Legends.Backgrounds.IDs.Gambler,
-			::Legends.Backgrounds.IDs.Gravedigger,
-			::Legends.Backgrounds.IDs.Graverobber,
-			::Legends.Backgrounds.IDs.Lumberjack,
-			::Legends.Backgrounds.IDs.Miner,
-			::Legends.Backgrounds.IDs.Minstrel,
-			::Legends.Backgrounds.IDs.Monk,
-			::Legends.Backgrounds.IDs.Poacher,
-			::Legends.Backgrounds.IDs.Ratcatcher,
-			::Legends.Backgrounds.IDs.Refugee,
-			::Legends.Backgrounds.IDs.Shepherd,
-			::Legends.Backgrounds.IDs.Squire,
-			::Legends.Backgrounds.IDs.Thief,
-			::Legends.Backgrounds.IDs.Vagabond,
-			::Legends.Backgrounds.IDs.Wildman,
-			::Legends.Backgrounds.IDs.LegendIronmonger
+			::Legends.Backgrounds.getID(::Legends.Background.Apprentice),
+			::Legends.Backgrounds.getID(::Legends.Background.Beggar),
+			::Legends.Backgrounds.getID(::Legends.Background.Bowyer),
+			::Legends.Backgrounds.getID(::Legends.Background.Brawler),
+			::Legends.Backgrounds.getID(::Legends.Background.Butcher),
+			::Legends.Backgrounds.getID(::Legends.Background.Cripple),
+			::Legends.Backgrounds.getID(::Legends.Background.Daytaler),
+			::Legends.Backgrounds.getID(::Legends.Background.Farmhand),
+			::Legends.Backgrounds.getID(::Legends.Background.Fisherman),
+			::Legends.Backgrounds.getID(::Legends.Background.Flagellant),
+			::Legends.Backgrounds.getID(::Legends.Background.Gambler),
+			::Legends.Backgrounds.getID(::Legends.Background.Gravedigger),
+			::Legends.Backgrounds.getID(::Legends.Background.Graverobber),
+			::Legends.Backgrounds.getID(::Legends.Background.Lumberjack),
+			::Legends.Backgrounds.getID(::Legends.Background.Miner),
+			::Legends.Backgrounds.getID(::Legends.Background.Minstrel),
+			::Legends.Backgrounds.getID(::Legends.Background.Monk),
+			::Legends.Backgrounds.getID(::Legends.Background.Poacher),
+			::Legends.Backgrounds.getID(::Legends.Background.Ratcatcher),
+			::Legends.Backgrounds.getID(::Legends.Background.Refugee),
+			::Legends.Backgrounds.getID(::Legends.Background.Shepherd),
+			::Legends.Backgrounds.getID(::Legends.Background.Squire),
+			::Legends.Backgrounds.getID(::Legends.Background.Thief),
+			::Legends.Backgrounds.getID(::Legends.Background.Vagabond),
+			::Legends.Backgrounds.getID(::Legends.Background.Wildman),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendIronmonger)
 		];
 
 		local tier2 = [ // >2000
-			::Legends.Backgrounds.IDs.Barbarian,
-			::Legends.Backgrounds.IDs.Bastard,
-			::Legends.Backgrounds.IDs.Cultist,
-			::Legends.Backgrounds.IDs.Deserter,
-			::Legends.Backgrounds.IDs.Houndmaster,
-			::Legends.Backgrounds.IDs.Hunter,
-			::Legends.Backgrounds.IDs.Juggler,
-			::Legends.Backgrounds.IDs.KillerOnTheRun,
-			::Legends.Backgrounds.IDs.Militia,
-			::Legends.Backgrounds.IDs.RetiredSoldier,
-			::Legends.Backgrounds.IDs.LegendBlacksmith
+			::Legends.Backgrounds.getID(::Legends.Background.Barbarian),
+			::Legends.Backgrounds.getID(::Legends.Background.Bastard),
+			::Legends.Backgrounds.getID(::Legends.Background.Cultist),
+			::Legends.Backgrounds.getID(::Legends.Background.Deserter),
+			::Legends.Backgrounds.getID(::Legends.Background.Houndmaster),
+			::Legends.Backgrounds.getID(::Legends.Background.Hunter),
+			::Legends.Backgrounds.getID(::Legends.Background.Juggler),
+			::Legends.Backgrounds.getID(::Legends.Background.KillerOnTheRun),
+			::Legends.Backgrounds.getID(::Legends.Background.Militia),
+			::Legends.Backgrounds.getID(::Legends.Background.RetiredSoldier),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendBlacksmith)
 		];
 
 		local tier3 = [ // >2650
-			::Legends.Backgrounds.IDs.AdventurousNoble,
-			::Legends.Backgrounds.IDs.BeastSlayer,
-			::Legends.Backgrounds.IDs.DisownedNoble,
-			::Legends.Backgrounds.IDs.Raider,
-			::Legends.Backgrounds.IDs.Witchhunter,
-			::Legends.Backgrounds.IDs.LegendConscript,
-			::Legends.Backgrounds.IDs.LegendInventor,
-			::Legends.Backgrounds.IDs.LegendShieldmaiden
+			::Legends.Backgrounds.getID(::Legends.Background.AdventurousNoble),
+			::Legends.Backgrounds.getID(::Legends.Background.BeastSlayer),
+			::Legends.Backgrounds.getID(::Legends.Background.DisownedNoble),
+			::Legends.Backgrounds.getID(::Legends.Background.Raider),
+			::Legends.Backgrounds.getID(::Legends.Background.Witchhunter),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendConscript),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendInventor),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendShieldmaiden)
 		];
 
 		local tier4 = [ // >3500
-			::Legends.Backgrounds.IDs.AssassinSouthern,
-			::Legends.Backgrounds.IDs.Gladiator,
-			::Legends.Backgrounds.IDs.HedgeKnight,
-			::Legends.Backgrounds.IDs.Sellsword,
-			::Legends.Backgrounds.IDs.Swordmaster,
-			::Legends.Backgrounds.IDs.LegendBladedancer,
-			::Legends.Backgrounds.IDs.LegendMasterArcher
+			::Legends.Backgrounds.getID(::Legends.Background.AssassinSouthern),
+			::Legends.Backgrounds.getID(::Legends.Background.Gladiator),
+			::Legends.Backgrounds.getID(::Legends.Background.HedgeKnight),
+			::Legends.Backgrounds.getID(::Legends.Background.Sellsword),
+			::Legends.Backgrounds.getID(::Legends.Background.Swordmaster),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendBladedancer),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendMasterArcher)
 		];
 
 		local tier5 = [ // >4500
-			::Legends.Backgrounds.IDs.Assassin,
-			::Legends.Backgrounds.IDs.Paladin,
-			::Legends.Backgrounds.IDs.LegendBerserker,
-			::Legends.Backgrounds.IDs.LegendManAtArms,
-			::Legends.Backgrounds.IDs.LegendNoble2h,
-			::Legends.Backgrounds.IDs.LegendNobleRanged,
-			::Legends.Backgrounds.IDs.LegendNobleShield
+			::Legends.Backgrounds.getID(::Legends.Background.Assassin),
+			::Legends.Backgrounds.getID(::Legends.Background.Paladin),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendBerserker),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendManAtArms),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendNoble2h),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendNobleRanged),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendNobleShield)
 		];
 
 		// Combine tiers based on current renown
@@ -234,7 +234,7 @@
 			local bgID = bro.getBackground().getID();
 
 			// Always keep donkey
-			if (bgID == ::Legends.Backgrounds.IDs.LegendDonkey)
+			if (bgID == ::Legends.Backgrounds.getID(::Legends.Background.LegendDonkey))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.0);
 				bro.getBaseProperties().DailyWageMult *= 1.0;
@@ -267,7 +267,7 @@
 
 	// o.onGenerateBro <- function (bro) //companions free everyone else normal. //Removed 14/6/26 due to all recuits being zero. Code is unnecessary now as I have just changed all companons to 0 and now everyone else should force defult as defined by vanilla logic - Luft.
 	// {
-	// 	if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Companion)
+	// 	if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Companion))
 	// 	{
 	// 		bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.0); //1.0 = default
 	// 		bro.getBaseProperties().DailyWageMult *= 0.0; //1.0 = default

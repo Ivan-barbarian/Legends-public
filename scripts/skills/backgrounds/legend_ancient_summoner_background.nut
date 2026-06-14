@@ -3,7 +3,7 @@ this.legend_ancient_summoner_background <- this.inherit("scripts/skills/backgrou
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = ::Legends.Backgrounds.IDs.LegendAncientSummoner;
+		this.m.ID = ::Legends.Backgrounds.getID(::Legends.Background.LegendAncientSummoner);
 		this.m.Icon = "ui/backgrounds/background_skelemancer.png";
 		this.m.Name = "Skelemancer";
 		this.m.HiringCost = 1000;

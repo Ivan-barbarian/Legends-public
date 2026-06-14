@@ -27,7 +27,7 @@
 
 		foreach( bro in brothers ) {
 			//If any bros fulfill the below requirements, this event will not apply/trigger to them
-			if (bro.getFlags().get("IsSpecial") || bro.getFlags().get("IsPlayerCharacter") || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendPuppet || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendDonkey)
+			if (bro.getFlags().get("IsSpecial") || bro.getFlags().get("IsPlayerCharacter") || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendPuppet) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendDonkey))
 				continue;
 
 			if (bro.getLevel() >= 3 && bro.getSkills().hasTrait(::Legends.Trait.Gluttonous) && !bro.getSkills().hasTrait(::Legends.Trait.Fat))

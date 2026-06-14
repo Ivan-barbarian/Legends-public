@@ -8,7 +8,7 @@
 		local messenger_candidates = [];
 
 		foreach( bro in brothers )
-			if (bro.getLevel() <= 3 && bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Messenger)
+			if (bro.getLevel() <= 3 && bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Messenger))
 				messenger_candidates.push(bro);
 
 		if (messenger_candidates.len() == 0)
@@ -17,7 +17,7 @@
 		local houndmaster_candidates = [];
 
 		foreach( bro in brothers )
-			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Houndmaster || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendMuladi)
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Houndmaster) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendMuladi))
 				houndmaster_candidates.push(bro);
 
 		if (houndmaster_candidates.len() == 0)

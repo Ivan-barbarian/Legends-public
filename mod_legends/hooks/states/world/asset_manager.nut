@@ -447,7 +447,7 @@
 			{
 				foreach( bro in roster )
 				{
-					if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave)
+					if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Slave))
 					{
 						slaves = ++slaves;
 					}
@@ -528,7 +528,7 @@
 
 				if (this.m.Origin.getID() == "scenario.manhunters" && slaves <= nonSlaves)
 				{
-					if (bro.getBackground().getID() != ::Legends.Backgrounds.IDs.Slave)
+					if (bro.getBackground().getID() != ::Legends.Backgrounds.getID(::Legends.Background.Slave))
 					{
 						bro.worsenMood(this.Const.MoodChange.TooFewSlaves, "Too few indebted in the company");
 					}

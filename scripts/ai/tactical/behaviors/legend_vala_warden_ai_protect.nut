@@ -181,7 +181,7 @@ this.legend_vala_warden_ai_protect <- this.inherit("scripts/ai/tactical/behavior
 
 		foreach( a in AllBrothers )
 		{
-			if (a.getBackground().getID() != ::Legends.Backgrounds.IDs.LegendVala)
+			if (a.getBackground().getID() != ::Legends.Backgrounds.getID(::Legends.Background.LegendVala))
 			{
 				continue;
 			}

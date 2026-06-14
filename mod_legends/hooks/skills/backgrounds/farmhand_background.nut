@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = ::Legends.Backgrounds.IDs.Farmhand;
+		this.m.ID = ::Legends.Backgrounds.getID(::Legends.Background.Farmhand);
 		this.m.Name = "Farmhand";
 		this.m.Icon = "ui/backgrounds/background_09.png";
 		this.m.BackgroundDescription = "Farmhands are used to hard physical labor.";

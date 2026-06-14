@@ -3,7 +3,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = ::Legends.Backgrounds.IDs.LegendVala;
+		this.m.ID = ::Legends.Backgrounds.getID(::Legends.Background.LegendVala);
 		this.m.Name = "Vala";
 		this.m.Icon = "ui/backgrounds/legend_vala.png";
 		this.m.BackgroundDescription = "A Vala is a travelling seer, shaman and sorceress.";

@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = ::Legends.Backgrounds.IDs.OrcSlayer;
+		this.m.ID = ::Legends.Backgrounds.getID(::Legends.Background.OrcSlayer);
 		this.m.Name = "Orc Slayer";
 		this.m.Icon = "ui/backgrounds/background_55.png";
 		this.m.HiringCost = 200;

@@ -63,7 +63,7 @@
 			this.World.Statistics.getFlags().increment("BrosDismissed");
 
 			if (bro.getSkills().hasSkillOfType(this.Const.SkillType.PermanentInjury)
-				&& (bro.getBackground().getID() != ::Legends.Backgrounds.IDs.Slave || this.World.Assets.getOrigin().getID() == "scenario.legend_escaped_slaves"))
+				&& (bro.getBackground().getID() != ::Legends.Backgrounds.getID(::Legends.Background.Slave) || this.World.Assets.getOrigin().getID() == "scenario.legend_escaped_slaves"))
 			{
 				this.World.Statistics.getFlags().increment("BrosWithPermanentInjuryDismissed");
 			}
@@ -71,7 +71,7 @@
 			if (payCompensation) {
 				this.World.Assets.addMoney(-10 * this.Math.max(1, bro.getDaysWithCompany()));
 
-				if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave) {
+				if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Slave)) {
 					local playerRoster = this.World.getPlayerRoster().getAll();
 
 					foreach (other in playerRoster) {
@@ -79,12 +79,12 @@
 							continue;
 						}
 
-						if (other.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave) {
+						if (other.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Slave)) {
 							other.improveMood(this.Const.MoodChange.SlaveCompensated, "Glad to see " + bro.getName() + " get reparations for his time");
 						}
 					}
 				}
-			} else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave) {
+			} else if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Slave)) {
 			} else if (bro.getLevel() >= 11
 				&& !this.World.Statistics.hasNews("dismiss_legend")
 				&& this.World.getPlayerRoster().getSize() > 1)
@@ -134,7 +134,7 @@
 				local nonIndebted = [];
 
 				foreach (bro in playerRoster) {
-					if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave) {
+					if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Slave)) {
 						indebted++;
 					} else {
 						nonIndebted.push(bro);

@@ -239,7 +239,7 @@ this.legend_traveling_bard_event <- this.inherit("scripts/events/event", {
 
 		foreach( b in brothers )
 		{
-			if (b.getBackground().getID() == ::Legends.Backgrounds.IDs.Minstrel)
+			if (b.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Minstrel))
 			{
 				candidates_minstrel.push(b);
 			}

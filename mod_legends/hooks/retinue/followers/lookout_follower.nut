@@ -14,8 +14,8 @@
 
 		this.addSkillRequirement("Have someone with the Lookout perk. Guaranteed on Thief, Poacher, Nomad and many others", [
 			::Legends.Perks.getID(::Legends.Perk.LegendLookout),
-			::Legends.Backgrounds.IDs.LegendCompanionMelee,
-			::Legends.Backgrounds.IDs.LegendCompanionRanged
+			::Legends.Backgrounds.getID(::Legends.Background.LegendCompanionMelee),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendCompanionRanged)
 		]);
 	}
 

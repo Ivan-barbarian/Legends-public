@@ -211,11 +211,11 @@
 		local candidates_shieldmaiden = [];
 
 		foreach( bro in brothers ) {
-			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Monk)
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Monk))
 				candidates_monk.push(bro);
-			else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Messenger || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Vagabond || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Refugee || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderRanger)
+			else if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Messenger) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Vagabond) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Refugee) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderRanger))
 				candidates_traveller.push(bro);
-			else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendShieldmaiden)
+			else if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendShieldmaiden))
 				candidates_shieldmaiden.push(bro);
 			else if (bro.getSkills().hasTrait(::Legends.Trait.LegendDoubleTongued))
 				candidates_doubter.push(bro);

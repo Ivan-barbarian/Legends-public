@@ -38,7 +38,7 @@
 		onUpdateScore();
 		local brothers = this.World.getPlayerRoster().getAll();
 		local candidates = [];
-		foreach (bro in brothers) if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Houndmaster || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendMuladi)	{
+		foreach (bro in brothers) if (bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Houndmaster) || bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.LegendMuladi))	{
 			candidates.push(bro);
 		}
 

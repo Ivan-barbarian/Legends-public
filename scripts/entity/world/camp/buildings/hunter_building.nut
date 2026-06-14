@@ -423,7 +423,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			local added = false;
 			if (this.getUpgraded())
 			{
-				if (bro.getBackground().getID()==::Legends.Backgrounds.IDs.Miller || bro.getBackground().getID()==::Legends.Backgrounds.IDs.Butcher || bro.getBackground().getID()==::Legends.Backgrounds.IDs.Servant || bro.getBackground().getID()==::Legends.Backgrounds.IDs.LegendCannibal)
+				if (bro.getBackground().getID()==::Legends.Backgrounds.getID(::Legends.Background.Miller) || bro.getBackground().getID()==::Legends.Backgrounds.getID(::Legends.Background.Butcher) || bro.getBackground().getID()==::Legends.Backgrounds.getID(::Legends.Background.Servant) || bro.getBackground().getID()==::Legends.Backgrounds.getID(::Legends.Background.LegendCannibal))
 				{
 					cookLevel += ::Math.floor(bro.getLevel() * 0.1);
 					if (_updateVerboseResults)
@@ -464,7 +464,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			local added = false;
 			if (this.getUpgraded())
 			{
-				if (bro.getBackground().getID()==::Legends.Backgrounds.IDs.Miller || bro.getBackground().getID()==::Legends.Backgrounds.IDs.Butcher || bro.getBackground().getID()==::Legends.Backgrounds.IDs.Servant || bro.getBackground().getID()==::Legends.Backgrounds.IDs.LegendCannibal)
+				if (bro.getBackground().getID()==::Legends.Backgrounds.getID(::Legends.Background.Miller) || bro.getBackground().getID()==::Legends.Backgrounds.getID(::Legends.Background.Butcher) || bro.getBackground().getID()==::Legends.Backgrounds.getID(::Legends.Background.Servant) || bro.getBackground().getID()==::Legends.Backgrounds.getID(::Legends.Background.LegendCannibal))
 				{
 					brewerLevel += ::Math.floor(bro.getLevel() * 0.1);
 					if (_updateVerboseResults)

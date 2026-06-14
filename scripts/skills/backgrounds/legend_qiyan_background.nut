@@ -3,7 +3,7 @@ this.legend_qiyan_background <- this.inherit("scripts/skills/backgrounds/charact
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = ::Legends.Backgrounds.IDs.LegendQiyan;
+		this.m.ID = ::Legends.Backgrounds.getID(::Legends.Background.LegendQiyan);
 		this.m.Name = "Qiyan";
 		this.m.Icon = "ui/backgrounds/background_qiyan.png";
 		this.m.BackgroundDescription = "The qiyan is a slave, seductive and knowledgeable.";

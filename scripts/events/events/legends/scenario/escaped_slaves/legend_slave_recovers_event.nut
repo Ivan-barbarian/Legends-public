@@ -82,7 +82,7 @@ this.legend_slave_recovers_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() >= 8 && bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave && !bro.getFlags().has("legend_recovered_slave"))
+			if (bro.getLevel() >= 8 && bro.getBackground().getID() == ::Legends.Backgrounds.getID(::Legends.Background.Slave) && !bro.getFlags().has("legend_recovered_slave"))
 			{
 				recovered_candidates.push(bro);
 			}

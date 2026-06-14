@@ -48,11 +48,11 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ChanceDisembowel = 0;
 		this.m.ChanceSmash = 33;
 		this.m.Backgrounds = [
-			::Legends.Backgrounds.IDs.LegendCommanderDruid,
-			::Legends.Backgrounds.IDs.LegendDruid,
-			::Legends.Backgrounds.IDs.Brawler,
-			::Legends.Backgrounds.IDs.LegendCommanderBerserker,
-			::Legends.Backgrounds.IDs.LegendBerserker
+			::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderDruid),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendDruid),
+			::Legends.Backgrounds.getID(::Legends.Background.Brawler),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendCommanderBerserker),
+			::Legends.Backgrounds.getID(::Legends.Background.LegendBerserker)
 		];
 	}
 
