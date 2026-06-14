@@ -203,10 +203,6 @@
 			{
 				garbage.push(bro);
 			}
-			else
-			{
-				this.setupBro(bro);
-			}
 		}
 
 		// Remove unqualified hires
@@ -218,28 +214,23 @@
 
 	o.onHiredByScenario <- function ( _bro ) //recruits via events
 	{
-		this.setupBro(_bro);
+		::Legends.Traits.grant(_bro, ::Legends.Trait.LegendLWRelationship);
 	}
 
-	// o.onGenerateBro <- function (bro) //companions free everyone else normal. //Removed 14/6/26 due to all recuits being zero. Code is unnecessary now as I have just changed all companons to 0 and now everyone else should force defult as defined by vanilla logic - Luft.
-	// {
-	// 	if (bro.getBackground().getID() == "background.companion")
-	// 	{
-	// 		bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.0); //1.0 = default
-	// 		bro.getBaseProperties().DailyWageMult *= 0.0; //1.0 = default
-	// 		bro.getSkills().update();
-	// 	}
-	// 	else
-	// 	{
-	// 		bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.0);
-	// 		bro.getBaseProperties().DailyWageMult *= 1.0;
-	// 		bro.getSkills().update();
-	// 	}
-	// }
-
-	o.setupBro <- function ( _bro )
+	o.onGenerateBro <- function (bro)
 	{
-		::Legends.Traits.grant(_bro, ::Legends.Trait.LegendLWRelationship);
+		if (bro.getBackground().getID() == "background.companion")
+		{
+			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.0); //1.0 = default
+			bro.getBaseProperties().DailyWageMult *= 0.0; //1.0 = default
+			bro.getSkills().update();
+		}
+		else
+		{
+			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.0);
+			bro.getBaseProperties().DailyWageMult *= 1.0;
+			bro.getSkills().update();
+		}
 	}
 });
 
