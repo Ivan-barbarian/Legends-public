@@ -1291,7 +1291,8 @@
 			_backgrounds = this.Const.CharacterPiracyBackgrounds;
 		}
 
-		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
+		local r = _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)];
+		local background = typeof r == "integer" ? ::Legends.Backgrounds.new(r) : this.new("scripts/skills/backgrounds/" + r);
 
 		if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled") {
 			background.setGender(_gender);
