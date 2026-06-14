@@ -130,9 +130,7 @@ this.legend_clothing_merchant_event <- this.inherit("scripts/events/event", {
 				case 2: //donkey bought and joins
 					local roster = this.World.getTemporaryRoster();
 					_event.m.Dude = roster.create("scripts/entity/tactical/player");
-					_event.m.Dude.setStartValuesEx([
-						"legend_donkey_background"
-					]);
+					_event.m.Dude.setStartValuesEx([::Legends.Background.LegendDonkey]);
 
 					_event.m.Dude.getBaseProperties().Hitpoints -= 35;
 					_event.m.Dude.getBaseProperties().Stamina -= 25;

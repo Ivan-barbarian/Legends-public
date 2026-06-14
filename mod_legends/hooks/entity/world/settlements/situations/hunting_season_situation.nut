@@ -12,19 +12,19 @@
 
 	o.onUpdateDraftList <- function ( _draftList )
 	{
-		_draftList.push("hunter_background");
-		_draftList.push("hunter_background");
-		_draftList.push("poacher_background");
-		_draftList.push("poacher_background");
-		_draftList.push("poacher_background");
-		_draftList.push("poacher_background");
-		_draftList.push("legend_taxidermist_background");
-		_draftList.push("legend_taxidermist_background");
-		_draftList.push("houndmaster_background");
-		_draftList.push("houndmaster_background");
-		_draftList.push("butcher_background");
-		_draftList.push("butcher_background");
-		_draftList.push("legend_master_archer_background");
-		_draftList.push("legend_master_archer_background");
+		_draftList.push(::Legends.Background.Hunter);
+		_draftList.push(::Legends.Background.Hunter);
+		_draftList.push(::Legends.Background.Poacher);
+		_draftList.push(::Legends.Background.Poacher);
+		_draftList.push(::Legends.Background.Poacher);
+		_draftList.push(::Legends.Background.Poacher);
+		_draftList.push(::Legends.Background.LegendTaxidermist);
+		_draftList.push(::Legends.Background.LegendTaxidermist);
+		_draftList.push(::Legends.Background.Houndmaster);
+		_draftList.push(::Legends.Background.Houndmaster);
+		_draftList.push(::Legends.Background.Butcher);
+		_draftList.push(::Legends.Background.Butcher);
+		_draftList.push(::Legends.Background.LegendMasterArcher);
+		_draftList.push(::Legends.Background.LegendMasterArcher);
 	}
 });

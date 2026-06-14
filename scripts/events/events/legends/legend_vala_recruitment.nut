@@ -47,9 +47,7 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 					_event.m.Vala.getFlags().add("skeleton");
 				}
 
-				_event.m.Vala.setStartValuesEx([
-					"legend_vala_background"
-				]);
+				_event.m.Vala.setStartValuesEx([::Legends.Background.LegendVala]);
 
 				if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
 				{

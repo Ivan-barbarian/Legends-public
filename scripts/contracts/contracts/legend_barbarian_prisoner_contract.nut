@@ -588,18 +588,14 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 
 				if (this.Flags.get("BerkFree"))
 				{
-					this.Contract.m.Dude.setStartValuesEx([
-						"legend_berserker_background"
-					]);
+					this.Contract.m.Dude.setStartValuesEx([::Legends.Background.LegendBerserker]);
 					this.Contract.m.Dude.setTitle("the Beast");
 					this.Contract.m.Dude.getBackground().m.RawDescription = "%name% was \'saved\' by you from execution. You decided that this killing machine is a worthy acquisition, ignoring the fact it is also the most wanted criminal in the north.";
 					this.Contract.m.Dude.getBackground().buildDescription(true);
 				}
 				else
 				{
-					this.Contract.m.Dude.setStartValuesEx([
-						"barbarian_background"
-					]);
+					this.Contract.m.Dude.setStartValuesEx([::Legends.Background.Barbarian]);
 					this.Contract.m.Dude.setTitle("the Barbarian");
 					this.Contract.m.Dude.getBackground().m.RawDescription = "%name% was \'saved\' by you from a death sentence. Recruiting this savage barbarian has put you in bad terms with the nobles of the north.";
 					this.Contract.m.Dude.getBackground().buildDescription(true);

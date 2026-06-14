@@ -41,11 +41,7 @@ this.legend_slave_finds_company_event <- this.inherit("scripts/events/event", {
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				_event.m.Dude.setStartValuesEx([
-					"slave_background",
-					"slave_southern_background",
-					"slave_barbarian_background"
-				]);
+				_event.m.Dude.setStartValuesEx([::Legends.Background.Slave,::Legends.Background.SlaveSouthern,::Legends.Background.SlaveBarbarian]);
 				this.Characters.push(_event.m.Dude.getImagePath());
 			}
 

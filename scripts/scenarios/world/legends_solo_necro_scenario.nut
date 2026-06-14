@@ -36,9 +36,7 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 		}
 
 		local bros = roster.getAll();
-		bros[0].setStartValuesEx([
-			"legend_necro_commander_background" //starts @ lvl 3
-		]);
+		bros[0].setStartValuesEx([::Legends.Background.LegendCommanderNecro]); //starts @ lvl 3
 		bros[0].setPlaceInFormation(4);
 		bros[0].setVeteranPerks(2);
 		bros[0].getSprite("miniboss").setBrush("bust_miniboss_undead");
@@ -48,9 +46,7 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 		::Legends.Perks.grant(bros[0], ::Legends.Perk.LegendPossession);
 		::Legends.Perks.grant(bros[0], ::Legends.Perk.LegendSpawnZombieLow);
 
-		bros[1].setStartValuesEx([ //ur a wizard, Harold
-			"legend_puppet_background"
-		]);
+		bros[1].setStartValuesEx([::Legends.Background.LegendPuppet]); //ur a wizard, Harold
 		bros[1].setPlaceInFormation(5);
 		bros[1].setVeteranPerks(2);
  		bros[1].getSprite("socket").setBrush("bust_base_undead");
@@ -68,9 +64,7 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 			[1, ::Legends.Armor.Standard.wizard_robe]
 		]));
 
-		bros[2].setStartValuesEx([
-			"legend_puppet_background"
-		]);
+		bros[2].setStartValuesEx([::Legends.Background.LegendPuppet]);
 		bros[2].setPlaceInFormation(3);
 		bros[2].setVeteranPerks(2);
  		bros[2].getSprite("socket").setBrush("bust_base_undead");
@@ -88,9 +82,7 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 			[1, ::Legends.Armor.Standard.noble_tunic]
 		]));
 
-		bros[3].setStartValuesEx([
-			"minstrel_background"
-		]);
+		bros[3].setStartValuesEx([::Legends.Background.Minstrel]);
 		bros[3].setPlaceInFormation(12);
 		bros[3].setVeteranPerks(2);
 		bros[3].m.PerkPoints = 2;
@@ -100,18 +92,14 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 		::Legends.Traits.grant(bros[3], ::Legends.Trait.LegendWitheringAura);
 		bros[3].getBackground().m.RawDescription = "A loyal servant and helper, you tasked %name% with keeping and distributing the \'wages\' for the actors. Until recently this was an easy task.";
 
-		bros[4].setStartValuesEx([
-			"cultist_background"
-		]);
+		bros[4].setStartValuesEx([::Legends.Background.Cultist]);
 		bros[4].setPlaceInFormation(11);
 		bros[4].setVeteranPerks(2);
 		bros[4].getSprite("socket").setBrush("bust_base_undead");
 		::Legends.Traits.grant(bros[4], ::Legends.Trait.LegendWitheringAura);
 		::Legends.Traits.grant(bros[4], ::Legends.Trait.LegendDeathlySpectre);
 
-		bros[5].setStartValuesEx([
-			"cultist_background"
-		]);
+		bros[5].setStartValuesEx([::Legends.Background.Cultist]);
 		bros[5].setPlaceInFormation(13);
 		bros[5].setVeteranPerks(2);
 		bros[5].getSprite("socket").setBrush("bust_base_undead");
@@ -265,11 +253,11 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 	{
 		local garbage = [];
 		local bros = _roster.getAll();
-		this.addBroToRoster(_roster, "graverobber_background", 4);
-		this.addBroToRoster(_roster, "gravedigger_background", 4);
-		this.addBroToRoster(_roster, "cultist_background", 4);
-		this.addBroToRoster(_roster, "anatomist_background", 5);
-		this.addBroToRoster(_roster, "legend_puppet_background", 6);
+		this.addBroToRoster(_roster, ::Legends.Background.Anatomist, 5);
+		this.addBroToRoster(_roster, ::Legends.Background.Cultist, 4);
+		this.addBroToRoster(_roster, ::Legends.Background.Gravedigger, 4);
+		this.addBroToRoster(_roster, ::Legends.Background.Graverobber, 4);
+		this.addBroToRoster(_roster, ::Legends.Background.LegendPuppet, 6);
 		foreach( i, bro in bros )
 		{
 			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader)) //delete crusader/pious recruits

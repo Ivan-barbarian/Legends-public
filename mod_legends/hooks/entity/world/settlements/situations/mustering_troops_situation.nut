@@ -11,16 +11,16 @@
 
 	o.onUpdateDraftList <- function ( _draftList )
 	{
-		_draftList.push("retired_soldier_background");
-		_draftList.push("cripple_background");
-		_draftList.push("cripple_background");
-		_draftList.push("deserter_background");
-		_draftList.push("deserter_background");
+		_draftList.push(::Legends.Background.RetiredSoldier);
+		_draftList.push(::Legends.Background.Cripple);
+		_draftList.push(::Legends.Background.Cripple);
+		_draftList.push(::Legends.Background.Deserter);
+		_draftList.push(::Legends.Background.Deserter);
 
 		if (this.World.Assets.getOrigin().getID() == "scenario.militia") {
-			_draftList.push("legend_man_at_arms_background");
-			_draftList.push("legend_man_at_arms_background");
-			_draftList.push("legend_man_at_arms_background");
+			_draftList.push(::Legends.Background.LegendManAtArms);
+			_draftList.push(::Legends.Background.LegendManAtArms);
+			_draftList.push(::Legends.Background.LegendManAtArms);
 		}
 
 	}

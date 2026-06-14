@@ -18,7 +18,7 @@
 	o.onUpdateDraftList = function ( _list )
 	{
 		if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
-			_list.push("legend_qiyan_background");
+			_list.push(::Legends.Background.LegendQiyan);
 		
 		onUpdateDraftList(_list);
 	}

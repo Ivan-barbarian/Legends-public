@@ -289,7 +289,7 @@
 	{
 		local result = getUIContractInformation();
 
-		foreach(contract in getContracts() )
+		foreach(contract in this.getContracts() )
 		{
 			foreach (entry in result.Contracts)
 			{
@@ -358,19 +358,19 @@
 	local getUIInformation = o.getUIInformation;
 	o.getUIInformation = function ()
 	{
-		this.m.UIDescription = getUIDescription();
-		this.m.UIBackground = getUIBackground();
-		this.m.UIBackgroundCenter = getUIBackgroundCenter();
-		this.m.UIBackgroundLeft = getUIBackgroundLeft();
-		this.m.UIBackgroundRight = getUIBackgroundRight();
-		this.m.UIRamp = getUIRamp();
-		this.m.UIRampPathway = getUIRampPathway();
-		this.m.UIMood = getUIMood();
-		this.m.UIForeground = getUIForeground();
+		this.m.UIDescription = this.getUIDescription();
+		this.m.UIBackground = this.getUIBackground();
+		this.m.UIBackgroundCenter = this.getUIBackgroundCenter();
+		this.m.UIBackgroundLeft = this.getUIBackgroundLeft();
+		this.m.UIBackgroundRight = this.getUIBackgroundRight();
+		this.m.UIRamp = this.getUIRamp();
+		this.m.UIRampPathway = this.getUIRampPathway();
+		this.m.UIMood = this.getUIMood();
+		this.m.UIForeground = this.getUIForeground();
 
 		local result = getUIInformation();
 
-		foreach(contract in getContracts())
+		foreach(contract in this.getContracts())
 		{
 			foreach (entry in result.Contracts)
 			{
@@ -383,12 +383,12 @@
 			}
 		}
 
-		for (local i = m.Buildings.len() - 1; i >= 0 ; --i)
+		for (local i = this.m.Buildings.len() - 1; i >= 0 ; --i)
 		{
-			if (i >= result.Slots.len() || m.Buildings[i] == null || m.Buildings[i].isHidden())
+			if (i >= result.Slots.len() || this.m.Buildings[i] == null || this.m.Buildings[i].isHidden())
 				continue;
 
-			if (m.Buildings[i].m.IsClosedAtDay && ::World.getTime().IsDaytime)
+			if (this.m.Buildings[i].m.IsClosedAtDay && ::World.getTime().IsDaytime)
 				result.Slots[i] = null;
 		}
 
@@ -408,24 +408,24 @@
 	local getUIPreloadInformation = o.getUIPreloadInformation;
 	o.getUIPreloadInformation = function()
 	{
-		this.m.UIDescription = getUIDescription();
-		this.m.UIBackground = getUIBackground();
-		this.m.UIBackgroundCenter = getUIBackgroundCenter();
-		this.m.UIBackgroundLeft = getUIBackgroundLeft();
-		this.m.UIBackgroundRight = getUIBackgroundRight();
-		this.m.UIRamp = getUIRamp();
-		this.m.UIRampPathway = getUIRampPathway();
-		this.m.UIMood = getUIMood();
-		this.m.UIForeground = getUIForeground();
+		this.m.UIDescription = this.getUIDescription();
+		this.m.UIBackground = this.getUIBackground();
+		this.m.UIBackgroundCenter = this.getUIBackgroundCenter();
+		this.m.UIBackgroundLeft = this.getUIBackgroundLeft();
+		this.m.UIBackgroundRight = this.getUIBackgroundRight();
+		this.m.UIRamp = this.getUIRamp();
+		this.m.UIRampPathway = this.getUIRampPathway();
+		this.m.UIMood = this.getUIMood();
+		this.m.UIForeground = this.getUIForeground();
 
 		local result = getUIPreloadInformation();
 
-		for (local i = m.Buildings.len() - 1; i >= 0 ; --i)
+		for (local i = this.m.Buildings.len() - 1; i >= 0 ; --i)
 		{
-			if (i >= result.Slots.len() || m.Buildings[i] == null || m.Buildings[i].isHidden())
+			if (i >= result.Slots.len() || this.m.Buildings[i] == null || this.m.Buildings[i].isHidden())
 				continue;
 
-			if (m.Buildings[i].m.IsClosedAtDay && ::World.getTime().IsDaytime)
+			if (this.m.Buildings[i].m.IsClosedAtDay && ::World.getTime().IsDaytime)
 				result.Slots[i] = null;
 		}
 
@@ -527,7 +527,7 @@
 		// Find any candidate locations in _items that have already been built
 		for (local i=0; i < _items.len(); i++)
 		{
-			local arr = split(_items[i][1].Script, "/");
+			local arr = this.split(_items[i][1].Script, "/");
 			local location = arr[arr.len() - 1];
 			if (existingLocations.find(location) != null)
 			{
@@ -558,11 +558,11 @@
 		local currentNum = this.m.AttachedLocations.len();
 
 		if (_force) this.m.AttachedLocationsMax = currentNum + _num;
-		else this.m.AttachedLocationsMax = getAttachedLocationsMax();
+		else this.m.AttachedLocationsMax = this.getAttachedLocationsMax();
 
 		buildAttachedLocation(_num, _script, _terrain, _nearbyTerrain, _additionalDistance, _mustBeNearRoad, _clearTile);
 
-		if (_force) this.m.AttachedLocationsMax = getAttachedLocationsMax();
+		if (_force) this.m.AttachedLocationsMax = this.getAttachedLocationsMax();
 
 		return this.m.AttachedLocations.len() > currentNum ? this.m.AttachedLocations.top() : null;
 	}
@@ -582,13 +582,13 @@
 
 	o.setTempBuildSettings <- function(_settings)
 	{
-		m.TempBuildSettings = _settings;
+		this.m.TempBuildSettings = _settings;
 	}
 
 	local build = o.build;
 	o.build = function ( _settings = null )
 	{
-		setTempBuildSettings(_settings);
+		this.setTempBuildSettings(_settings);
 		build();
 	}
 
@@ -597,11 +597,11 @@
 	{
 		local originalRosterMin = ::World.Assets.m.RosterSizeAdditionalMin;
 		local originalRosterMax = ::World.Assets.m.RosterSizeAdditionalMax;
-		if (_force || m.LastRosterUpdate == 0 || ((::Time.getVirtualTimeF() - m.LastRosterUpdate) / ::World.getTime().SecondsPerDay) >= 2) {
-			m.DraftList = getDraftList(); // apply the draftlist
+		if (_force || this.m.LastRosterUpdate == 0 || ((::Time.getVirtualTimeF() - this.m.LastRosterUpdate) / ::World.getTime().SecondsPerDay) >= 2) {
+			this.m.DraftList = this.getDraftList(); // apply the draftlist
 			::World.getTemporaryRoster().clear(); // using this to store the stabled
 			::World.Assets.getOrigin().setCurrentSettlement(this); // new thing added by Hanter, so i put it here
-			local stable = ::World.getTemporaryRoster(), roster = ::World.getRoster(getID());
+			local stable = ::World.getTemporaryRoster(), roster = ::World.getRoster(this.getID());
 			foreach(bro in roster.getAll())
 			{
 				if (bro.isStabled()) {
@@ -642,28 +642,28 @@
 			::World.getTemporaryRoster().clear(); // clean up
 		}
 
-		updateStables(_force);
+		this.updateStables(_force);
 	}
 
 	o.updateStables <- function ( _force = false )
 	{
-		if (!hasBuilding("building.stables"))
+		if (!this.hasBuilding("building.stables"))
 			return;
 
-		local daysPassed = (::Time.getVirtualTimeF() - m.LastStablesUpdate) / ::World.getTime().SecondsPerDay;
+		local daysPassed = (::Time.getVirtualTimeF() - this.m.LastStablesUpdate) / ::World.getTime().SecondsPerDay;
 
-		if (!_force && m.LastStablesUpdate != 0 && daysPassed < 2)
+		if (!_force && this.m.LastStablesUpdate != 0 && daysPassed < 2)
 			return;
 
-		if (m.StablesSeed != 0)
-			::Math.seedRandom(m.StablesSeed);
+		if (this.m.StablesSeed != 0)
+			::Math.seedRandom(this.m.StablesSeed);
 
-		m.StablesSeed = ::Math.floor(::Time.getRealTime() + ::Math.rand());
-		m.LastStablesUpdate = ::Time.getVirtualTimeF();
-		local current = [], roster = ::World.getRoster(getID());
+		this.m.StablesSeed = ::Math.floor(::Time.getRealTime() + ::Math.rand());
+		this.m.LastStablesUpdate = ::Time.getVirtualTimeF();
+		local current = [], roster = ::World.getRoster(this.getID());
 		local iterations = ::Math.max(1, daysPassed / 2), activeLocations = 0;
 
-		foreach( loc in getAttachedLocations() )
+		foreach( loc in this.getAttachedLocations() )
 		{
 			if (loc.isActive())
 				++activeLocations;
@@ -676,16 +676,16 @@
 		}
 
 		local minRosterSizes = [0,1,3,5];
-		local rosterMin = minRosterSizes[m.Size];
-		local rosterMax = minRosterSizes[m.Size] + activeLocations;
+		local rosterMin = minRosterSizes[this.m.Size];
+		local rosterMax = minRosterSizes[this.m.Size] + activeLocations;
 
-		if (::World.FactionManager.getFaction(m.Factions[0]).getPlayerRelation() < 50) {
-			rosterMin *= (::World.FactionManager.getFaction(m.Factions[0]).getPlayerRelation() / 50.0);
-			rosterMax *= (::World.FactionManager.getFaction(m.Factions[0]).getPlayerRelation() / 50.0);
+		if (::World.FactionManager.getFaction(this.m.Factions[0]).getPlayerRelation() < 50) {
+			rosterMin *= (::World.FactionManager.getFaction(this.m.Factions[0]).getPlayerRelation() / 50.0);
+			rosterMax *= (::World.FactionManager.getFaction(this.m.Factions[0]).getPlayerRelation() / 50.0);
 		}
 
-		rosterMin *= m.Modifiers.StablesMult;
-		rosterMax *= m.Modifiers.StablesMult;
+		rosterMin *= this.m.Modifiers.StablesMult;
+		rosterMax *= this.m.Modifiers.StablesMult;
 
 		if (iterations < 5) {
 			for( local i = 0; i < iterations; ++i )
@@ -707,7 +707,7 @@
 		}
 
 		local maxRecruits = ::Math.rand(rosterMin, rosterMax);
-		local draftList = ["legend_donkey_background"]; //getStablesList();
+		local draftList = [::Legends.Background.LegendDonkey]; //getStablesList();
 
 		/* stable list currently only contains donkey so there is no need to update in other places
 		foreach( loc in getAttachedLocations() )
@@ -761,31 +761,31 @@
 		if (_a == this.m.IsActive)
 			return;
 
-		this.m.Sprite = getSpriteName();
-		this.m.HousesType = getHousesType();
+		this.m.Sprite = this.getSpriteName();
+		this.m.HousesType = this.getHousesType();
 		setActive(_a, _burn = true);
 	}
 
 	local destroy = o.destroy;
 	o.destroy = function()
 	{
-		this.m.Sprite = getSpriteName();
+		this.m.Sprite = this.getSpriteName();
 		destroy();
 	}
 
 	local onUpdate = o.onUpdate;
 	o.onUpdate = function()
 	{
-		this.m.HousesType = getHousesType();
+		this.m.HousesType = this.getHousesType();
 		onUpdate();
 	}
 
 	local onInit = o.onInit;
 	o.onInit = function ()
 	{
-		this.m.HousesMax = getHousesMax();
-		this.m.HousesType = getHousesType();
-		this.m.Sprite = getSpriteName();
+		this.m.HousesMax = this.getHousesMax();
+		this.m.HousesType = this.getHousesType();
+		this.m.Sprite = this.getSpriteName();
 		onInit();
 		this.updateSurroundingTileData();
 	}

@@ -14,7 +14,7 @@
 	{
 		for (local i = 0; i < 22; ++i)
 		{
-			_draftList.push("witchhunter_background");
+			_draftList.push(::Legends.Background.Witchhunter);
 		}
 	}
 });

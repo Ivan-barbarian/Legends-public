@@ -31,17 +31,11 @@
 		}
 
 		local bros = roster.getAll();
-		bros[0].setStartValuesEx([
-			"companion_1h_background"
-		]);
+		bros[0].setStartValuesEx([::Legends.Background.Companion]);
 		bros[0].setPlaceInFormation(3);
-		bros[1].setStartValuesEx([
-			"companion_2h_background"
-		]);
+		bros[1].setStartValuesEx([::Legends.Background.Companion2h]);
 		bros[1].setPlaceInFormation(4);
-		bros[2].setStartValuesEx([
-			"companion_ranged_background"
-		]);
+		bros[2].setStartValuesEx([::Legends.Background.CompanionRanged]);
 		bros[2].setPlaceInFormation(5);
 
 		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);

@@ -5,38 +5,38 @@
 	{
 		create();
 		this.m.DraftList = [
-			"fisherman_background",
-			"fisherman_background",
-			"houndmaster_background",
-			"messenger_background",
-			"militia_background",
-			"militia_background",
-			"ratcatcher_background",
-			"witchhunter_background",
-			"adventurous_noble_background",
-			"bastard_background",
-			"deserter_background",
-			"raider_background",
-			"raider_background",
-			"retired_soldier_background",
-			"fisherman_background",
-			"fisherman_background",
-			"houndmaster_background",
-			"messenger_background",
-			"militia_background",
-			"militia_background",
-			"ratcatcher_background",
-			"witchhunter_background",
-			"adventurous_noble_background",
-			"bastard_background",
-			"deserter_background",
-			"raider_background",
-			"raider_background",
-			"retired_soldier_background"
+			::Legends.Background.Fisherman,
+			::Legends.Background.Fisherman,
+			::Legends.Background.Houndmaster,
+			::Legends.Background.Messenger,
+			::Legends.Background.Militia,
+			::Legends.Background.Militia,
+			::Legends.Background.Ratcatcher,
+			::Legends.Background.Witchhunter,
+			::Legends.Background.AdventurousNoble,
+			::Legends.Background.Bastard,
+			::Legends.Background.Deserter,
+			::Legends.Background.Raider,
+			::Legends.Background.Raider,
+			::Legends.Background.RetiredSoldier,
+			::Legends.Background.Fisherman,
+			::Legends.Background.Fisherman,
+			::Legends.Background.Houndmaster,
+			::Legends.Background.Messenger,
+			::Legends.Background.Militia,
+			::Legends.Background.Militia,
+			::Legends.Background.Ratcatcher,
+			::Legends.Background.Witchhunter,
+			::Legends.Background.AdventurousNoble,
+			::Legends.Background.Bastard,
+			::Legends.Background.Deserter,
+			::Legends.Background.Raider,
+			::Legends.Background.Raider,
+			::Legends.Background.RetiredSoldier
 		];
 		this.m.StablesList = [
-			"legend_donkey_background",
-			"legend_horse_rouncey"
+			::Legends.Background.LegendDonkey,
+			::Legends.Background.LegendHorseRouncey
 		];
 	}
 

@@ -37,7 +37,7 @@ this.legend_recruitment_druid_camp_encounter <- this.inherit("scripts/encounters
 			function start(_event) {
 				local roster = ::World.getTemporaryRoster();
 				_event.m.Druid = roster.create("scripts/entity/tactical/player");
-				_event.m.Druid.setStartValuesEx(["legend_druid_background"]);
+				_event.m.Druid.setStartValuesEx([::Legends.Background.LegendDruid]);
 				roster.add(_event.m.Druid);
 				this.Characters.push(_event.m.Druid.getImagePath());
 			}

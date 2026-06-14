@@ -12,31 +12,31 @@
 	o.onUpdateDraftList <- function ( _draftList )
 	{
 		if (this.m.IsSouthern) { // Necro: "this.m.IsSouthern" is always false, i don't get how this would work
-			_draftList.push("daytaler_southern_background");
-			_draftList.push("daytaler_southern_background");
-			_draftList.push("daytaler_southern_background");
-			_draftList.push("daytaler_southern_background");
-			_draftList.push("slave_southern_background");
-			_draftList.push("slave_southern_background");
-			_draftList.push("slave_southern_background");
-			_draftList.push("slave_southern_background");
-			_draftList.push("slave_southern_background");
-			_draftList.push("slave_southern_background");
+			_draftList.push(::Legends.Background.DaytalerSouthern);
+			_draftList.push(::Legends.Background.DaytalerSouthern);
+			_draftList.push(::Legends.Background.DaytalerSouthern);
+			_draftList.push(::Legends.Background.DaytalerSouthern);
+			_draftList.push(::Legends.Background.SlaveSouthern);
+			_draftList.push(::Legends.Background.SlaveSouthern);
+			_draftList.push(::Legends.Background.SlaveSouthern);
+			_draftList.push(::Legends.Background.SlaveSouthern);
+			_draftList.push(::Legends.Background.SlaveSouthern);
+			_draftList.push(::Legends.Background.SlaveSouthern);
 
 		}
 		else {
-			_draftList.push("lumberjack_background");
-			_draftList.push("lumberjack_background");
-			_draftList.push("mason_background");
-			_draftList.push("mason_background");
-			_draftList.push("daytaler_background");
-			_draftList.push("daytaler_background");
-			_draftList.push("daytaler_background");
-			_draftList.push("legend_inventor_background");
+			_draftList.push(::Legends.Background.Lumberjack);
+			_draftList.push(::Legends.Background.Lumberjack);
+			_draftList.push(::Legends.Background.Mason);
+			_draftList.push(::Legends.Background.Mason);
+			_draftList.push(::Legends.Background.Daytaler);
+			_draftList.push(::Legends.Background.Daytaler);
+			_draftList.push(::Legends.Background.Daytaler);
+			_draftList.push(::Legends.Background.LegendInventor);
 		}
 
-		_draftList.push("legend_blacksmith_background");
-		_draftList.push("legend_blacksmith_background");
-		_draftList.push("legend_blacksmith_background");
+		_draftList.push(::Legends.Background.LegendBlacksmith);
+		_draftList.push(::Legends.Background.LegendBlacksmith);
+		_draftList.push(::Legends.Background.LegendBlacksmith);
 	}
 });

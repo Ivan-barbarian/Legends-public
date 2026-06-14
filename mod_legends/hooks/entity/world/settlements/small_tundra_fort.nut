@@ -5,25 +5,25 @@
 	{
 		create();
 		this.m.DraftList = [
-			"legend_shieldmaiden_background",
-			"legend_shieldmaiden_background",
-			"apprentice_background",
-			"houndmaster_background",
+			::Legends.Background.LegendShieldmaiden,
+			::Legends.Background.LegendShieldmaiden,
+			::Legends.Background.Apprentice,
+			::Legends.Background.Houndmaster,
 			"female_daytaler_background",
-			"militia_background",
-			"militia_background",
-			"miner_background",
-			"vagabond_background",
-			"wildman_background",
-			"bastard_background",
-			"deserter_background",
-			"deserter_background",
-			"retired_soldier_background",
-			"retired_soldier_background"
+			::Legends.Background.Militia,
+			::Legends.Background.Militia,
+			::Legends.Background.Miner,
+			::Legends.Background.Vagabond,
+			::Legends.Background.Wildman,
+			::Legends.Background.Bastard,
+			::Legends.Background.Deserter,
+			::Legends.Background.Deserter,
+			::Legends.Background.RetiredSoldier,
+			::Legends.Background.RetiredSoldier
 		];
 		this.m.StablesList = [
-			"legend_donkey_background",
-			"legend_horse_rouncey"
+			::Legends.Background.LegendDonkey,
+			::Legends.Background.LegendHorseRouncey
 		];
 	}
 

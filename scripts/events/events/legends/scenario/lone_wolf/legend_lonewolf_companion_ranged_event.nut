@@ -208,9 +208,7 @@ this.legend_lonewolf_companion_ranged_event <- this.inherit("scripts/events/even
 		{
 			local roster = this.World.getTemporaryRoster();
 			this.m.Dude = roster.create("scripts/entity/tactical/player");
-			this.m.Dude.setStartValuesEx([
-				"legend_companion_ranged_background"
-			]);
+			this.m.Dude.setStartValuesEx([::Legends.Background.LegendCompanionRanged]);
 			this.m.Dude.getSprite("miniboss").setBrush("bust_miniboss");
 		}
 

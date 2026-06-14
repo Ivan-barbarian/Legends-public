@@ -92,102 +92,102 @@ this.legends_forest_fort <- this.inherit("scripts/entity/world/settlements/legen
 			"Fichtenwall"
 		]];
 		this.m.DraftLists = [[
-			"apprentice_background",
-			"houndmaster_background",
-			"brawler_background",
-			"hunter_background",
-			"hunter_background",
-			"lumberjack_background",
-			"militia_background",
-			"militia_background",
-			"wildman_background",
-			"bastard_background",
-			"deserter_background",
-			"deserter_background",
-			"retired_soldier_background",
-			"retired_soldier_background"
+			::Legends.Background.Apprentice,
+			::Legends.Background.Houndmaster,
+			::Legends.Background.Brawler,
+			::Legends.Background.Hunter,
+			::Legends.Background.Hunter,
+			::Legends.Background.Lumberjack,
+			::Legends.Background.Militia,
+			::Legends.Background.Militia,
+			::Legends.Background.Wildman,
+			::Legends.Background.Bastard,
+			::Legends.Background.Deserter,
+			::Legends.Background.Deserter,
+			::Legends.Background.RetiredSoldier,
+			::Legends.Background.RetiredSoldier
 		],[
-			"apprentice_background",
-			"houndmaster_background",
-			"brawler_background",
-			"daytaler_background",
-			"gravedigger_background",
-			"hunter_background",
-			"lumberjack_background",
-			"lumberjack_background",
-			"messenger_background",
-			"militia_background",
-			"militia_background",
-			"wildman_background",
-			"witchhunter_background",
-			"bastard_background",
-			"deserter_background",
-			"retired_soldier_background",
-			"squire_background"
+			::Legends.Background.Apprentice,
+			::Legends.Background.Houndmaster,
+			::Legends.Background.Brawler,
+			::Legends.Background.Daytaler,
+			::Legends.Background.Gravedigger,
+			::Legends.Background.Hunter,
+			::Legends.Background.Lumberjack,
+			::Legends.Background.Lumberjack,
+			::Legends.Background.Messenger,
+			::Legends.Background.Militia,
+			::Legends.Background.Militia,
+			::Legends.Background.Wildman,
+			::Legends.Background.Witchhunter,
+			::Legends.Background.Bastard,
+			::Legends.Background.Deserter,
+			::Legends.Background.RetiredSoldier,
+			::Legends.Background.Squire
 		],[
-		 	"apprentice_background",
-			"brawler_background",
-			"gambler_background",
-			"gravedigger_background",
-			"hunter_background",
-			"hunter_background",
-			"lumberjack_background",
-			"lumberjack_background",
-			"messenger_background",
-			"militia_background",
-			"militia_background",
-			"militia_background",
-			"ratcatcher_background",
-			"refugee_background",
-			"wildman_background",
-			"witchhunter_background",
-			"bastard_background",
-			"deserter_background",
-			"deserter_background",
-			"hedge_knight_background",
-			"raider_background",
-			"raider_background",
-			"retired_soldier_background",
-			"retired_soldier_background",
-			"sellsword_background",
-			"squire_background",
-			"squire_background",
-			"swordmaster_background",
-			"cripple_background",
+		 	::Legends.Background.Apprentice,
+			::Legends.Background.Brawler,
+			::Legends.Background.Gambler,
+			::Legends.Background.Gravedigger,
+			::Legends.Background.Hunter,
+			::Legends.Background.Hunter,
+			::Legends.Background.Lumberjack,
+			::Legends.Background.Lumberjack,
+			::Legends.Background.Messenger,
+			::Legends.Background.Militia,
+			::Legends.Background.Militia,
+			::Legends.Background.Militia,
+			::Legends.Background.Ratcatcher,
+			::Legends.Background.Refugee,
+			::Legends.Background.Wildman,
+			::Legends.Background.Witchhunter,
+			::Legends.Background.Bastard,
+			::Legends.Background.Deserter,
+			::Legends.Background.Deserter,
+			::Legends.Background.HedgeKnight,
+			::Legends.Background.Raider,
+			::Legends.Background.Raider,
+			::Legends.Background.RetiredSoldier,
+			::Legends.Background.RetiredSoldier,
+			::Legends.Background.Sellsword,
+			::Legends.Background.Squire,
+			::Legends.Background.Squire,
+			::Legends.Background.Swordmaster,
+			::Legends.Background.Cripple,
 		]];
 		this.m.FemaleDraftLists = [[
-			"legend_shieldmaiden_background",
-			"legend_shieldmaiden_background",
-"legend_shieldmaiden_background",
+			::Legends.Background.LegendShieldmaiden,
+			::Legends.Background.LegendShieldmaiden,
+::Legends.Background.LegendShieldmaiden,
 		],[
-			"legend_shieldmaiden_background",
-			"legend_shieldmaiden_background",
-"legend_shieldmaiden_background",
+			::Legends.Background.LegendShieldmaiden,
+			::Legends.Background.LegendShieldmaiden,
+::Legends.Background.LegendShieldmaiden,
 		],[
-			"legend_shieldmaiden_background",
-			"legend_shieldmaiden_background",
-"legend_shieldmaiden_background",
-			"legend_shieldmaiden_background"
+			::Legends.Background.LegendShieldmaiden,
+			::Legends.Background.LegendShieldmaiden,
+::Legends.Background.LegendShieldmaiden,
+			::Legends.Background.LegendShieldmaiden
 		]];
 
 		this.m.StablesLists = [[
-			"legend_donkey_background",
-			"legend_horse_rouncey"
+			::Legends.Background.LegendDonkey,
+			::Legends.Background.LegendHorseRouncey
 		],[
-			"legend_donkey_background",
-			"legend_horse_rouncey"
+			::Legends.Background.LegendDonkey,
+			::Legends.Background.LegendHorseRouncey
 		],[
-			"legend_donkey_background",
-			"legend_horse_rouncey",
-			"legend_horse_destrier",
-			"legend_horse_courser"
+			::Legends.Background.LegendDonkey,
+			::Legends.Background.LegendHorseRouncey,
+			::Legends.Background.LegendHorseDestrier,
+			::Legends.Background.LegendHorseCourser
 		]];
 		if (this.Const.DLC.Unhold)
 		{
-			this.m.DraftLists[0].push("beast_hunter_background");
-			this.m.DraftLists[1].push("beast_hunter_background");
-			this.m.DraftLists[2].push("beast_hunter_background");
-			this.m.DraftLists[2].push("beast_hunter_background");
+			this.m.DraftLists[0].push(::Legends.Background.BeastSlayer);
+			this.m.DraftLists[1].push(::Legends.Background.BeastSlayer);
+			this.m.DraftLists[2].push(::Legends.Background.BeastSlayer);
+			this.m.DraftLists[2].push(::Legends.Background.BeastSlayer);
 		}
 		this.m.Rumors = this.Const.Strings.RumorsForestSettlement;
 	}

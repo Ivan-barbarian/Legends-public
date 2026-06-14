@@ -332,9 +332,7 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 			{
 				local roster = this.World.getTemporaryRoster();
 				this.Contract.m.Dude = roster.create("scripts/entity/tactical/player");
-				this.Contract.m.Dude.setStartValuesEx([
-					"swordmaster_background"
-				]);
+				this.Contract.m.Dude.setStartValuesEx([::Legends.Background.Swordmaster]);
 
 				if (!this.Contract.m.Dude.getSkills().hasTrait(::Legends.Trait.FearBeasts) && !this.Contract.m.Dude.getSkills().hasTrait(::Legends.Trait.HateBeasts))
 				{

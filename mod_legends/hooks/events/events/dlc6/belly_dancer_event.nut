@@ -15,9 +15,7 @@
 				s.start <- function( _event ) {
 					local roster = this.World.getTemporaryRoster();
 					_event.m.Dude = roster.create("scripts/entity/tactical/player");
-					_event.m.Dude.setStartValuesEx([
-						"belly_dancer_background"
-					]);
+					_event.m.Dude.setStartValuesEx([::Legends.Background.BellyDancer]);
 					_event.m.Dude.getBackground().m.RawDescription = "You found %name% in " + _event.m.Town.getName() + ", masked by green silk and drawing crowds with rhythmic movements and impressively precise fruit slicing. The latter skill is a boon to any mercenary company, and so you didn\'t hesitate to recruit %them%.";
 					_event.m.Dude.getBackground().buildDescription(true);
 					::Legends.Traits.grant(_event.m.Dude, ::Legends.Trait.Dexterous);

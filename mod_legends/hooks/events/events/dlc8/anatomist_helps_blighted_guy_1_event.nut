@@ -8,7 +8,7 @@
 			_screen.start = function (_event) {
 				local roster = ::World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				_event.m.Dude.setStartValuesEx(["vagabond_background"], false);
+				_event.m.Dude.setStartValuesEx([::Legends.Background.Vagabond], false);
 				_event.m.Dude.setTitle("");
 				_event.m.Dude.getFlags().set("IsSpecial", true);
 				_event.m.Dude.getBackground().m.RawDescription = "" + _event.m.Anatomist.getNameOnly() + " the Anatomist rescued %name% from being buried alive for carrying some strange disease. Now %they% has the unique pleasure of both bearing the plague AND being a lab rat for some researchers. Stay over there, please.";

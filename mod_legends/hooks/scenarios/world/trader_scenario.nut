@@ -32,9 +32,7 @@
 		}
 
 		local bros = roster.getAll();
-		bros[0].setStartValuesEx([
-			"legend_peddler_commander_background"//avatar
-		]);
+		bros[0].setStartValuesEx([::Legends.Background.LegendCommanderPeddler]); //avatar
 		bros[0].setPlaceInFormation(4);
 		bros[0].setVeteranPerks(2);
 		::Legends.Traits.grant(bros[0], ::Legends.Trait.Player);
@@ -44,10 +42,7 @@
 		this.addScenarioPerk(bros[0].getBackground(), ::Const.Perks.PerkDefs.LegendPeaceful);
 		bros[0].m.PerkPointsSpent += 1;
 
-		bros[1].setStartValuesEx([
-			"caravan_hand_background",
-			"caravan_hand_southern_background"
-		]);
+		bros[1].setStartValuesEx([::Legends.Background.CaravanHand,::Legends.Background.CaravanHandSouthern]);
 		bros[1].setPlaceInFormation(5);
 		bros[1].getSprite("socket").setBrush("bust_base_caravan");
 		bros[1].getBackground().m.RawDescription = "You found %name% being thrown out of a pub and at first glance thought that was little more than a drunken miscreant. But you watched as off three would-be muggers were soon on the ground. They still managed to take off with a coin purse in the end, sure, but they could not truly defeat %name%. Impressed, you took the newly-impoverished fighter on as a caravan hand.";
@@ -186,10 +181,10 @@
 			}
 		}
 
-		this.addBroToRoster(_roster, "peddler_background", 2);
-		this.addBroToRoster(_roster, "caravan_hand_background", 3);
-		this.addBroToRoster(_roster, "sellsword_background", 7);
-		this.addBroToRoster(_roster, "hedge_knight_background", 7);
+		this.addBroToRoster(_roster, ::Legends.Background.CaravanHand, 3);
+		this.addBroToRoster(_roster, ::Legends.Background.HedgeKnight, 7);
+		this.addBroToRoster(_roster, ::Legends.Background.Peddler, 2);
+		this.addBroToRoster(_roster, ::Legends.Background.Sellsword, 7);
 
 		foreach( g in garbage )
 		{

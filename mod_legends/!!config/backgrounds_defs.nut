@@ -139,6 +139,14 @@ backgroundDefs.push({
     Name = "Caravan Hand"
 });
 
+::Legends.Background.CaravanHandSouthern <- null;
+backgroundDefs.push({
+    ID = "background.caravan_hand",
+    Script = "scripts/skills/backgrounds/caravan_hand_southern_background",
+    Const = "CaravanHandSouthern",
+    Name = "Caravan Hand"
+});
+
 ::Legends.Background.Companion <- null;
 backgroundDefs.push({
     ID = "background.companion",
@@ -160,6 +168,30 @@ backgroundDefs.push({
     ID = "background.companion",
     Script = "scripts/skills/backgrounds/companion_ranged_background",
     Const = "CompanionRanged",
+    Name = "Companion"
+});
+
+::Legends.Background.CompanionSouthern <- null;
+backgroundDefs.push({
+    ID = "background.companion",
+    Script = "scripts/skills/backgrounds/companion_1h_southern_background",
+    Const = "CompanionSouthern",
+    Name = "Companion"
+});
+
+::Legends.Background.CompanionSouthern2h <- null;
+backgroundDefs.push({
+    ID = "background.companion",
+    Script = "scripts/skills/backgrounds/companion_2h_southern_background",
+    Const = "Companion2hSouthern",
+    Name = "Companion"
+});
+
+::Legends.Background.CompanionSouthernRanged <- null;
+backgroundDefs.push({
+    ID = "background.companion",
+    Script = "scripts/skills/backgrounds/companion_ranged_southern_background",
+    Const = "CompanionRangedSouthern",
     Name = "Companion"
 });
 
@@ -211,6 +243,14 @@ backgroundDefs.push({
     Name = "Daytaler"
 });
 
+::Legends.Background.DaytalerSouthern <- null;
+backgroundDefs.push({
+    ID = "background.daytaler",
+    Script = "scripts/skills/backgrounds/daytaler_southern_background",
+    Const = "DaytalerSouthern",
+    Name = "Daytaler"
+});
+
 ::Legends.Background.Deserter <- null;
 backgroundDefs.push({
     ID = "background.deserter",
@@ -251,6 +291,14 @@ backgroundDefs.push({
     Name = "Fisherman"
 });
 
+::Legends.Background.FishermanSouthern <- null;
+backgroundDefs.push({
+    ID = "background.fisherman",
+    Script = "scripts/skills/backgrounds/fisherman_southern_background",
+    Const = "FishermanSouthern",
+    Name = "Fisherman"
+});
+
 ::Legends.Background.Flagellant <- null;
 backgroundDefs.push({
     ID = "background.flagellant",
@@ -272,6 +320,14 @@ backgroundDefs.push({
     ID = "background.gladiator",
     Script = "scripts/skills/backgrounds/gladiator_background",
     Const = "Gladiator",
+    Name = "Gladiator"
+});
+
+::Legends.Background.GladiatorOrigin <- null;
+backgroundDefs.push({
+    ID = "background.gladiator",
+    Script = "scripts/skills/backgrounds/gladiator_origin_background",
+    Const = "GladiatorOrigin",
     Name = "Gladiator"
 });
 
@@ -328,6 +384,14 @@ backgroundDefs.push({
     ID = "background.juggler",
     Script = "scripts/skills/backgrounds/juggler_background",
     Const = "Juggler",
+    Name = "Juggler"
+});
+
+::Legends.Background.JugglerSouthern <- null;
+backgroundDefs.push({
+    ID = "background.juggler",
+    Script = "scripts/skills/backgrounds/juggler_southern_background",
+    Const = "JugglerSouthern",
     Name = "Juggler"
 });
 
@@ -443,6 +507,14 @@ backgroundDefs.push({
     Name = "Nomad"
 });
 
+::Legends.Background.NomadRanged <- null;
+backgroundDefs.push({
+    ID = "background.nomad",
+    Script = "scripts/skills/backgrounds/nomad_ranged_background",
+    Const = "NomadRanged",
+    Name = "Nomad"
+});
+
 ::Legends.Background.OrcSlayer <- null;
 backgroundDefs.push({
     ID = "background.orc_slayer",
@@ -464,6 +536,14 @@ backgroundDefs.push({
     ID = "background.paladin",
     Script = "scripts/skills/backgrounds/paladin_background",
     Const = "Paladin",
+    Name = "Paladin"
+});
+
+::Legends.Background.PaladinOld <- null;
+backgroundDefs.push({
+    ID = "background.paladin",
+    Script = "scripts/skills/backgrounds/old_paladin_background",
+    Const = "PaladinOld",
     Name = "Paladin"
 });
 
@@ -555,11 +635,35 @@ backgroundDefs.push({
     Name = "Shepherd"
 });
 
+::Legends.Background.ShepherdSouthern <- null;
+backgroundDefs.push({
+    ID = "background.shepherd",
+    Script = "scripts/skills/backgrounds/shepherd_southern_background",
+    Const = "ShepherdSouthern",
+    Name = "Shepherd"
+});
+
 ::Legends.Background.Slave <- null;
 backgroundDefs.push({
     ID = "background.slave",
     Script = "scripts/skills/backgrounds/slave_background",
     Const = "Slave",
+    Name = "Slave"
+});
+
+::Legends.Background.SlaveBarbarian <- null;
+backgroundDefs.push({
+    ID = "background.slave",
+    Script = "scripts/skills/backgrounds/slave_barbarian_background",
+    Const = "Slave",
+    Name = "Slave"
+});
+
+::Legends.Background.SlaveSouthern <- null;
+backgroundDefs.push({
+    ID = "background.slave",
+    Script = "scripts/skills/backgrounds/slave_southern_background",
+    Const = "SlaveSouthern",
     Name = "Slave"
 });
 
@@ -881,6 +985,14 @@ backgroundDefs.push({
     Script = "scripts/skills/backgrounds/legend_entrancer_background",
     Const = "LegendEntrancer",
     Name = "Entrancer"
+});
+
+::Legends.Background.LegendGladiatorPrizefighter <- null;
+backgroundDefs.push({
+    ID = "background.gladiator",
+    Script = "scripts/skills/backgrounds/legend_gladiator_prizefighter_background",
+    Const = "LegendGladiatorPrizefighter",
+    Name = "Gladiator Prizefighter"
 });
 
 ::Legends.Background.LegendGuildmaster <- null;

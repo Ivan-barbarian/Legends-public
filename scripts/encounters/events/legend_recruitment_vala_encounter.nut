@@ -40,7 +40,7 @@ this.legend_recruitment_vala_encounter <- this.inherit("scripts/encounters/encou
             function start(_event) {
 				local roster = ::World.getTemporaryRoster();
 				_event.m.Vala = roster.create("scripts/entity/tactical/player");
-				_event.m.Vala.setStartValuesEx(["legend_vala_background"]);
+				_event.m.Vala.setStartValuesEx([::Legends.Background.LegendVala]);
 				this.Characters.push(_event.m.Vala.getImagePath());
             }
         }]);

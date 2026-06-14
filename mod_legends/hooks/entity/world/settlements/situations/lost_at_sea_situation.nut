@@ -13,8 +13,8 @@
 	o.onUpdateDraftList <- function ( _draftList )
 	{
 		if (this.World.Assets.getOrigin().getID() == "scenario.legends_necro" || this.World.Assets.getOrigin().getID() == "scenario.legends_solo_necro") {
-			_draftList.push("legend_puppet_background");
-			_draftList.push("legend_puppet_background");
+			_draftList.push(::Legends.Background.LegendPuppet);
+			_draftList.push(::Legends.Background.LegendPuppet);
 		}
 	}
 });

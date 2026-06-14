@@ -36,9 +36,7 @@ this.legends_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/st
 		}
 
 		local bros = roster.getAll();
-		bros[0].setStartValuesEx([
-			"slave_background"
-		]);
+		bros[0].setStartValuesEx([::Legends.Background.Slave]);
 		bros[0].getBackground().m.RawDescription = "%name% was a sellsword like yourself before being enslaved and made a pit fighter. The arena was where you first met, the two of you saving each other several times in a bout against an unhold. You have been as close as siblings ever since. When you escaped, %name% was the first to pick up arms and follow and you know %name% will be the last to put them down, too.";
 		bros[0].getBackground().buildDescription(true);
 		bros[0].setPlaceInFormation(1);
@@ -70,9 +68,7 @@ this.legends_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/st
 		local items = bros[0].getItems();
 		this.addRandomEquipment(items);
 
-		bros[1].setStartValuesEx([
-			"slave_barbarian_background"
-		]);
+		bros[1].setStartValuesEx([::Legends.Background.SlaveBarbarian]);
 		bros[1].getBackground().m.RawDescription = "A truly massive figure, %name% hulks like a boulder and has a face about as pretty. The night you escaped, you personally witnessed the savage rip a nomad\'s arm out of its socket and beat an ifrit to rubble with it. When you asked the barbarian what the newly-earned freedom meant, %name% simply responded  \'I must slay a god. Fight with you for now.\' You decided it was prudent not to press for details.";
 
 		if (this.Math.rand(1, 100 <= 50))
@@ -142,9 +138,7 @@ this.legends_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/st
 		local items = bros[1].getItems();
 		this.addRandomEquipment(items);
 
-		bros[2].setStartValuesEx([
-			"slave_southern_background"
-		]);
+		bros[2].setStartValuesEx([::Legends.Background.SlaveSouthern]);
 		bros[2].getBackground().m.RawDescription = "Formerly a gunner in a city-state regiment, %name% has never quite fit in with the rest of the Indebted. Cast out of the army and branded a heretic for some religious slight %name% refuses to talk about. The gunner was relegated to a disdained social strata and never managed to truly lose that distaste. Regardless, %name% is one of you now and shows enough talent that you are willing to overlook that personality.";
 		bros[2].getBackground().buildDescription(true);
 		bros[2].setPlaceInFormation(3);
@@ -167,9 +161,7 @@ this.legends_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/st
 			[5, ::Legends.Helmet.Southern.gunner_hat]
 		]));
 
-		bros[3].setStartValuesEx([
-			"slave_southern_background"
-		]);
+		bros[3].setStartValuesEx([::Legends.Background.SlaveSouthern]);
 		bros[3].getBackground().m.RawDescription = "If you had to describe %name% in one word, it would be \'ornery.\' Bitter about life before becoming indebted, bitter about life as a slave, and now bitter about life on the run. Perhaps that bitterness is what compels %name% to cling to life so, having taken enough lashings and beatings for three men, endured punishments meant to kill and even gotten back up after catching an ifrit toss square in the chest. %name% is pretty bitter about that one, too.";
 		bros[3].getBackground().buildDescription(true);
 		bros[3].setPlaceInFormation(4);
@@ -184,9 +176,7 @@ this.legends_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/st
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		this.addRandomEquipment(items);
 
-		bros[4].setStartValuesEx([
-			"slave_southern_background"
-		]);
+		bros[4].setStartValuesEx([::Legends.Background.SlaveSouthern]);
 		bros[4].getBackground().m.RawDescription = "A scholar in a previous life, %name% was cast into slavery for research that was deemed offensive to the Gilder. The scholar accepted a new life with a grace few can muster. When the opportunity came to escape with you however, there was no hesitation, simply stating that this was the next fated path to take. It does not really make sense to you, but you do not care to debate after seeing the gruesome death of the conscript whose equipment %name% now wears.";
 		bros[4].setTitle("the Sage");
 		bros[4].getBackground().buildDescription(true);

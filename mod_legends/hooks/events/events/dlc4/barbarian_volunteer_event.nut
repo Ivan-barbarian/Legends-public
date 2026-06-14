@@ -10,9 +10,7 @@
 				{
 					local roster = this.World.getTemporaryRoster();
 					_event.m.Dude = roster.create("scripts/entity/tactical/player");
-					_event.m.Dude.setStartValuesEx([
-						"barbarian_background"
-					]);
+					_event.m.Dude.setStartValuesEx([::Legends.Background.Barbarian]);
 					_event.m.Dude.getBackground().m.RawDescription = "%name% joined you after being exiled from %their% tribe in the north for refusing to kill %their% brother. They\'ll fight for you as well as for anyone.";
 					_event.m.Dude.getBackground().buildDescription(true);
 					_event.m.Dude.getItems().equip(this.new("scripts/items/accessory/legend_warhound_item"));

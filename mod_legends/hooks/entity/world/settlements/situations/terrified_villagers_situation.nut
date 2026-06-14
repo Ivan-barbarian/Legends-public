@@ -31,7 +31,7 @@
 	{
 		for (local i = 0; i < 6; ++i)
 		{
-			_draftList.push("gravedigger_background");
+			_draftList.push(::Legends.Background.Gravedigger);
 		}
 	}
 });

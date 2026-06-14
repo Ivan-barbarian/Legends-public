@@ -5,35 +5,35 @@
 	{
 		create();
 		this.m.DraftList = [
-			"legend_shieldmaiden_background",
-			"legend_shieldmaiden_background",
-			"apprentice_background",
-			"houndmaster_background",
-			"brawler_background",
-			"brawler_background",
-			"cultist_background",
-			"gravedigger_background",
-			"mason_background",
-			"messenger_background",
-			"militia_background",
-			"miner_background",
-			"monk_background",
-			"ratcatcher_background",
-			"refugee_background",
-			"vagabond_background",
-			"vagabond_background",
-			"wildman_background",
-			"wildman_background",
-			"witchhunter_background",
-			"adventurous_noble_background",
-			"disowned_noble_background",
-			"deserter_background",
-			"raider_background",
-			"retired_soldier_background"
+			::Legends.Background.LegendShieldmaiden,
+			::Legends.Background.LegendShieldmaiden,
+			::Legends.Background.Apprentice,
+			::Legends.Background.Houndmaster,
+			::Legends.Background.Brawler,
+			::Legends.Background.Brawler,
+			::Legends.Background.Cultist,
+			::Legends.Background.Gravedigger,
+			::Legends.Background.Mason,
+			::Legends.Background.Messenger,
+			::Legends.Background.Militia,
+			::Legends.Background.Miner,
+			::Legends.Background.Monk,
+			::Legends.Background.Ratcatcher,
+			::Legends.Background.Refugee,
+			::Legends.Background.Vagabond,
+			::Legends.Background.Vagabond,
+			::Legends.Background.Wildman,
+			::Legends.Background.Wildman,
+			::Legends.Background.Witchhunter,
+			::Legends.Background.AdventurousNoble,
+			::Legends.Background.DisownedNoble,
+			::Legends.Background.Deserter,
+			::Legends.Background.Raider,
+			::Legends.Background.RetiredSoldier
 		];
 		this.m.StablesList = [
-			"legend_donkey_background",
-			"legend_horse_rouncey"
+			::Legends.Background.LegendDonkey,
+			::Legends.Background.LegendHorseRouncey
 		];
 	}
 

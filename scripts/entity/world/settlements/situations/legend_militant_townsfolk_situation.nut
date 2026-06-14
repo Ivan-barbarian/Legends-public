@@ -96,25 +96,25 @@ this.legend_militant_townsfolk_situation <- this.inherit("scripts/entity/world/s
 	function onUpdateDraftList( _draftList )
 	{
 		// Future improvement: make the backgrounds dynamic based on attached locations or settlement type
-		_draftList.push("farmhand_background");
-		_draftList.push("farmhand_background");
-		_draftList.push("farmhand_background");
-		_draftList.push("farmhand_background");
-		_draftList.push("farmhand_background");
-		_draftList.push("farmhand_background");
-		_draftList.push("miller_background");
-		_draftList.push("miller_background");
-		_draftList.push("miller_background");
-		_draftList.push("butcher_background");
-		_draftList.push("butcher_background");
-		_draftList.push("butcher_background");
-		_draftList.push("shepherd_background");
-		_draftList.push("shepherd_background");
-		_draftList.push("shepherd_background");
-		_draftList.push("tailor_background");
-		_draftList.push("tailor_background");
-		_draftList.push("apprentice_background");
-		_draftList.push("apprentice_background");
+		_draftList.push(::Legends.Background.Farmhand);
+		_draftList.push(::Legends.Background.Farmhand);
+		_draftList.push(::Legends.Background.Farmhand);
+		_draftList.push(::Legends.Background.Farmhand);
+		_draftList.push(::Legends.Background.Farmhand);
+		_draftList.push(::Legends.Background.Farmhand);
+		_draftList.push(::Legends.Background.Miller);
+		_draftList.push(::Legends.Background.Miller);
+		_draftList.push(::Legends.Background.Miller);
+		_draftList.push(::Legends.Background.Butcher);
+		_draftList.push(::Legends.Background.Butcher);
+		_draftList.push(::Legends.Background.Butcher);
+		_draftList.push(::Legends.Background.Shepherd);
+		_draftList.push(::Legends.Background.Shepherd);
+		_draftList.push(::Legends.Background.Shepherd);
+		_draftList.push(::Legends.Background.Tailor);
+		_draftList.push(::Legends.Background.Tailor);
+		_draftList.push(::Legends.Background.Apprentice);
+		_draftList.push(::Legends.Background.Apprentice);
 	}
 });
 

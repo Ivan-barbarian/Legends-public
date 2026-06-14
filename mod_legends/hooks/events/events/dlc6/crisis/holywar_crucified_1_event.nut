@@ -18,9 +18,7 @@
 				{
 					local roster = this.World.getTemporaryRoster();
 					_event.m.Dude = roster.create("scripts/entity/tactical/player");
-					_event.m.Dude.setStartValuesEx([
-						"legend_surgeon_background"
-					]);
+					_event.m.Dude.setStartValuesEx([::Legends.Background.LegendSurgeon]);
 
 					::Legends.Effects.grant(_event.m.Dude, ::Legends.Effect.Exhausted);
 

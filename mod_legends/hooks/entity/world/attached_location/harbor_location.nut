@@ -183,8 +183,8 @@
 	local onUpdateDraftList = o.onUpdateDraftList;
 	o.onUpdateDraftList = function ( _list )
 	{
-		_list.push("fisherman_background");
-		_list.push("fisherman_background");
+		_list.push(::Legends.Background.Fisherman);
+		_list.push(::Legends.Background.Fisherman);
 		onUpdateDraftList(_list);
 	}
 

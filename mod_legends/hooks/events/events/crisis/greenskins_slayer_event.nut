@@ -9,18 +9,14 @@
 					local roster = this.World.getTemporaryRoster();
 					_event.m.Dude = roster.create("scripts/entity/tactical/player");
 					if (this.World.Assets.getOrigin().getID() == "scenario.legends_rangers") {
-						_event.m.Dude.setStartValuesEx([
-							"legend_druid_background"
-						]);
+						_event.m.Dude.setStartValuesEx([::Legends.Background.LegendDruid]);
 						_event.m.Dude.getBaseProperties().Hitpoints += 5;
 						_event.m.Dude.getBaseProperties().MeleeSkill += 5;
 						_event.m.Dude.getBaseProperties().MeleeDefense += 4;
 						_event.m.Dude.getBackground().m.RawDescription = "The forests scream and wail. Nature has been out of balance for a long time and %name% is one of the few chosen to listen.";
 						_event.m.Dude.getBackground().buildDescription(true);
 					} else {
-						_event.m.Dude.setStartValuesEx([
-							"legend_ranger_background"
-						]);
+						_event.m.Dude.setStartValuesEx([::Legends.Background.LegendRanger]);
 						_event.m.Dude.getBackground().m.RawDescription = "Part of an ancient order somewhere in the forests, %name% vowed to maintain balance of nature and all other things, even if violence was necessary.";
 						_event.m.Dude.getBackground().buildDescription(true);
 					}

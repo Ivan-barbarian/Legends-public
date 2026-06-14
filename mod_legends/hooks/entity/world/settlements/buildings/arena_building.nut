@@ -51,8 +51,8 @@
 	o.onUpdateDraftList = function ( _list)
 	{
 		onUpdateDraftList(_list);
-		_list.push("legend_gladiator_prizefighter_background");
-		_list.push("legend_gladiator_prizefighter_background");
+		_list.push(::Legends.Background.LegendGladiatorPrizefighter);
+		_list.push(::Legends.Background.LegendGladiatorPrizefighter);
 	}
 
 });

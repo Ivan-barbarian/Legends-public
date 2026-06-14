@@ -34,9 +34,7 @@
 
 		local bros = roster.getAll();
 		local talents;
-		bros[0].setStartValuesEx([
-			"hunter_background"
-		]);
+		bros[0].setStartValuesEx([::Legends.Background.Hunter]);
 		bros[0].getBackground().m.RawDescription = "{A bit of a devious runt, though a good person at heart. %name% used to hunt for the local liege, but when the nobleman died falling into an unseen ravine the hunter was blamed and kicked out of court. With some guile, %name% turned hunting talents into poaching and fur trade. Has a merchant\'s mind and was quick to engender the idea of mercenary work because of it.}";
 		bros[0].setPlaceInFormation(3);
 		bros[0].m.Talents = [];
@@ -48,9 +46,7 @@
 		bros[0].m.PerkPoints = 0;
 		bros[0].m.LevelUps = 0;
 		bros[0].m.Level = 1;
-		bros[1].setStartValuesEx([
-			"poacher_background"
-		]);
+		bros[1].setStartValuesEx([::Legends.Background.Poacher]);
 		bros[1].getBackground().m.RawDescription = "{%name% fell into poaching after a drought ravaged the personal farmstead. Like most poachers, %name% is not truly of the criminal mind. Long grouped together in the hunting gangs, the poacher was quick to nominate you as captain of the new sellsword outfit.}";
 		bros[1].setPlaceInFormation(4);
 		bros[1].m.Talents = [];
@@ -64,9 +60,7 @@
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 		items.equip(this.new("scripts/items/weapons/short_bow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
-		bros[2].setStartValuesEx([
-			"poacher_background"
-		]);
+		bros[2].setStartValuesEx([::Legends.Background.Poacher]);
 		bros[2].getBackground().m.RawDescription = "{A former jester whose gag was to shoot three water jugs out of the sky. You do not know how %name% got into poaching and you sense bitterness about some jester-related drama, but an excellent archer nonetheless. Likes to pretend being a far better shot than you. Nonsense, of course.}";
 		bros[2].setPlaceInFormation(5);
 		bros[2].m.Talents = [];

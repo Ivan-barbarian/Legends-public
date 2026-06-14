@@ -17,9 +17,8 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		local roster = this.World.getPlayerRoster();
 		local bro;
 		bro = roster.create("scripts/entity/tactical/player");
-		bro.setStartValuesEx([
-			"legend_crusader_background"
-		]); //skills on start
+		bro.setStartValuesEx([::Legends.Background.LegendCrusader]);
+		 //skills on start
 		::Legends.Traits.grant(bro, ::Legends.Trait.Player);
 		::Legends.Traits.grant(bro, ::Legends.Trait.LegendUndeadKiller);
 		this.addScenarioPerk(bro.getBackground(), this.Const.Perks.PerkDefs.FortifiedMind);
@@ -126,12 +125,11 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		local garbage = [];
 		local bros = _roster.getAll();
 
-		this.addBroToRoster(_roster, "flagellant_background", 4);
-		this.addBroToRoster(_roster, "monk_background", 4);
-		this.addBroToRoster(_roster, "monk_background", 4);
-		this.addBroToRoster(_roster, "witchhunter_background", 5);
-		this.addBroToRoster(_roster, "legend_pilgrim_background", 4);
-		this.addBroToRoster(_roster, "crusader_background", 8);
+		this.addBroToRoster(_roster, ::Legends.Background.Crusader, 8);
+		this.addBroToRoster(_roster, ::Legends.Background.Flagellant, 4);
+		this.addBroToRoster(_roster, ::Legends.Background.Monk, 8);
+		this.addBroToRoster(_roster, ::Legends.Background.Witchhunter, 5);
+		this.addBroToRoster(_roster, ::Legends.Background.LegendPilgrim, 4);
 
 		foreach (i, bro in bros) {
 

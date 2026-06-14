@@ -18,47 +18,47 @@
 
 	o.onUpdateDraftList = function ( _draftList )
 	{
-		_draftList.push("peddler_background");
-		_draftList.push("peddler_background");
-		_draftList.push("peddler_background");
-		_draftList.push("peddler_background");
-		_draftList.push("peddler_background");
-		_draftList.push("peddler_background");
-		_draftList.push("peddler_background");
-		_draftList.push("peddler_background");
-		_draftList.push("peddler_background");
-		_draftList.push("peddler_background");
-		_draftList.push("peddler_background");
-		_draftList.push("peddler_background");
-		_draftList.push("peddler_background");
-		_draftList.push("peddler_background");
-		_draftList.push("peddler_background");
-		_draftList.push("peddler_background");
-		_draftList.push("peddler_background");
-		_draftList.push("peddler_background");
-		_draftList.push("juggler_background");
-		_draftList.push("juggler_background");
-		_draftList.push("juggler_background");
-		_draftList.push("minstrel_background");
-		_draftList.push("minstrel_background");
-		_draftList.push("minstrel_background");
-		_draftList.push("legend_master_archer_background");
-		_draftList.push("legend_master_archer_background");
-		_draftList.push("legend_master_archer_background");
-		_draftList.push("legend_master_archer_background");
+		_draftList.push(::Legends.Background.Peddler);
+		_draftList.push(::Legends.Background.Peddler);
+		_draftList.push(::Legends.Background.Peddler);
+		_draftList.push(::Legends.Background.Peddler);
+		_draftList.push(::Legends.Background.Peddler);
+		_draftList.push(::Legends.Background.Peddler);
+		_draftList.push(::Legends.Background.Peddler);
+		_draftList.push(::Legends.Background.Peddler);
+		_draftList.push(::Legends.Background.Peddler);
+		_draftList.push(::Legends.Background.Peddler);
+		_draftList.push(::Legends.Background.Peddler);
+		_draftList.push(::Legends.Background.Peddler);
+		_draftList.push(::Legends.Background.Peddler);
+		_draftList.push(::Legends.Background.Peddler);
+		_draftList.push(::Legends.Background.Peddler);
+		_draftList.push(::Legends.Background.Peddler);
+		_draftList.push(::Legends.Background.Peddler);
+		_draftList.push(::Legends.Background.Peddler);
+		_draftList.push(::Legends.Background.Juggler);
+		_draftList.push(::Legends.Background.Juggler);
+		_draftList.push(::Legends.Background.Juggler);
+		_draftList.push(::Legends.Background.Minstrel);
+		_draftList.push(::Legends.Background.Minstrel);
+		_draftList.push(::Legends.Background.Minstrel);
+		_draftList.push(::Legends.Background.LegendMasterArcher);
+		_draftList.push(::Legends.Background.LegendMasterArcher);
+		_draftList.push(::Legends.Background.LegendMasterArcher);
+		_draftList.push(::Legends.Background.LegendMasterArcher);
 
 		if ( this.World.Assets.getOrigin().getID() == "scenario.militia") {
-			_draftList.push("legend_leech_peddler_background");
-			_draftList.push("legend_leech_peddler_background");
-			_draftList.push("legend_leech_peddler_background");
-			_draftList.push("legend_leech_peddler_background");
-			_draftList.push("legend_leech_peddler_background");
-			_draftList.push("legend_leech_peddler_background");
-			_draftList.push("legend_leech_peddler_background");
-			_draftList.push("legend_leech_peddler_background");
+			_draftList.push(::Legends.Background.LegendLeechPeddler);
+			_draftList.push(::Legends.Background.LegendLeechPeddler);
+			_draftList.push(::Legends.Background.LegendLeechPeddler);
+			_draftList.push(::Legends.Background.LegendLeechPeddler);
+			_draftList.push(::Legends.Background.LegendLeechPeddler);
+			_draftList.push(::Legends.Background.LegendLeechPeddler);
+			_draftList.push(::Legends.Background.LegendLeechPeddler);
+			_draftList.push(::Legends.Background.LegendLeechPeddler);
 		}
 		else if ( this.World.Assets.getOrigin().getID() == "scenario.legends_troupe") {
-			_draftList.push("legend_illusionist_background");
+			_draftList.push(::Legends.Background.LegendIllusionist);
 		}
 	}
 });

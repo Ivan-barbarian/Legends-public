@@ -13,10 +13,10 @@
 	{
 		for (local i = 0; i < 30; ++i)
 		{
-			_draftList.push("refugee_background");
+			_draftList.push(::Legends.Background.Refugee);
 		}
 		
-		_draftList.push("slave_background");
-		_draftList.push("beggar_background");
+		_draftList.push(::Legends.Background.Slave);
+		_draftList.push(::Legends.Background.Beggar);
 	}
 });

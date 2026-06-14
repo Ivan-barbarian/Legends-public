@@ -24,9 +24,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		}
 
 		local bros = roster.getAll();
-		bros[0].setStartValuesEx([
-			"flagellant_background"
-		]);
+		bros[0].setStartValuesEx([::Legends.Background.Flagellant]);
 		bros[0].getBackground().m.RawDescription = "{%name% has no greater joy than suffering in the name of the old gods. Pain and pleasure and intimately linked, just as creation and desctruction are intwined. Each lash of the whip is like the caress of an angel, and their belief is that in only through suffering can we find salvation. Few laymen understand this viewpoint, but it is respected by other servants of the old gods.}";
 		bros[0].setPlaceInFormation(4);
 		bros[0].getBaseProperties().Hitpoints += 10;
@@ -44,9 +42,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		talents[this.Const.Attributes.Bravery] = 3;
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		talents[this.Const.Attributes.MeleeSkill] = 2;
-		bros[1].setStartValuesEx([
-			"witchhunter_background"
-		]);
+		bros[1].setStartValuesEx([::Legends.Background.Witchhunter]);
 
 		bros[1].m.Talents = [];
 		local talents = bros[1].getTalents();
@@ -65,9 +61,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		::Legends.Traits.grant(bros[1], ::Legends.Trait.LegendUndeadKiller);
 		this.addScenarioPerk(bros[1].getBackground(), ::Const.Perks.PerkDefs.LegendMindOverBody);
 
-		bros[2].setStartValuesEx([
-			"monk_background"
-		], true, 1);
+		bros[2].setStartValuesEx([::Legends.Background.Monk], true, 1);
 		bros[2].m.Talents = [];
 		local talents = bros[2].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
@@ -253,12 +247,11 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 	{
 		local garbage = [];
 		local bros = _roster.getAll();
-		this.addBroToRoster(_roster, "flagellant_background", 4);
-		this.addBroToRoster(_roster, "monk_background", 6);
-		this.addBroToRoster(_roster, "witchhunter_background", 4);
-		this.addBroToRoster(_roster, "legend_youngblood_background", 4);
-		this.addBroToRoster(_roster, "crusader_background", 8);
-
+		this.addBroToRoster(_roster, ::Legends.Background.Crusader, 8);
+		this.addBroToRoster(_roster, ::Legends.Background.Flagellant, 4);
+		this.addBroToRoster(_roster, ::Legends.Background.Monk, 6);
+		this.addBroToRoster(_roster, ::Legends.Background.Witchhunter, 4);
+		this.addBroToRoster(_roster, ::Legends.Background.Youngblood, 4);
 
 		foreach( i, bro in bros )
 		{

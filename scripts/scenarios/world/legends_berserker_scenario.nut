@@ -25,9 +25,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 			i = ++i;
 		}
 		local bros = roster.getAll();
-		bros[0].setStartValuesEx([
-			"legend_berserker_commander_background"
-		]);
+		bros[0].setStartValuesEx([::Legends.Background.LegendCommanderBerserker]);
 		::Legends.Traits.grant(bros[0], ::Legends.Trait.Player);
 		this.addScenarioPerk(bros[0].getBackground(), ::Const.Perks.PerkDefs.Berserk);
 		bros[0].getFlags().set("IsPlayerCharacter", true);
@@ -200,10 +198,9 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 
 	function onUpdateHiringRoster( _roster )
 	{
-		// this.addBroToRoster(_roster, "wildwoman_background", 8)
-		this.addBroToRoster(_roster, "wildman_background", 10);
-		this.addBroToRoster(_roster, "barbarian_background", 7);
-		this.addBroToRoster(_roster, "legend_berserker_background", 9);
+		this.addBroToRoster(_roster, ::Legends.Background.Barbarian, 7);
+		this.addBroToRoster(_roster, ::Legends.Background.Wildman, 10);
+		this.addBroToRoster(_roster, ::Legends.Background.LegendBerserker, 9);
 	}
 
 	function onGenerateBro(bro)

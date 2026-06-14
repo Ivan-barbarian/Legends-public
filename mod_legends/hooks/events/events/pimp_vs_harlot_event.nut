@@ -45,18 +45,13 @@
 						_event.m.Dude.getFlags().add("PlayerSkeleton");
 						_event.m.Dude.getFlags().add("undead");
 						_event.m.Dude.getFlags().add("skeleton");
-						_event.m.Dude.setStartValuesEx([
-							"pimp_background"
-						]);
+						_event.m.Dude.setStartValuesEx([::Legends.Background.Pimp]);
 						::Legends.Traits.grant(_event.m.Dude, ::Legends.Trait.RacialSkeleton);
 						::Legends.Traits.grant(_event.m.Dude, ::Legends.Trait.LegendFleshless);
 					}
 					else
 					{
-
-						_event.m.Dude.setStartValuesEx([
-							"pimp_background"
-						]);
+						_event.m.Dude.setStartValuesEx([::Legends.Background.Pimp]);
 					}
 
 					_event.m.Dude.setTitle("the Pimp");

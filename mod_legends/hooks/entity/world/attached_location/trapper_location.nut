@@ -17,7 +17,7 @@
 	local onUpdateDraftList = o.onUpdateDraftList;
 	o.onUpdateDraftList = function ( _list )
 	{
-		_list.push("poacher_background");
+		_list.push(::Legends.Background.Poacher);
 		onUpdateDraftList(_list);
 	}
 

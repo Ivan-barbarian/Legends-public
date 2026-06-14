@@ -37,10 +37,7 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 
 		local bros = roster.getAll();
-		local talents;
-		bros[0].setStartValuesEx([
-			"legend_druid_commander_background"
-		]);
+		bros[0].setStartValuesEx([::Legends.Background.LegendCommanderDruid]);
 		bros[0].getBackground().m.RawDescription = "%name% has only ever known the wild woods, the worlds of men are strange and disgusting";
 		::Legends.Traits.grant(bros[0], ::Legends.Trait.Player);
 		::Legends.Perks.grant(bros[0], ::Legends.Perk.LegendRoots);
@@ -192,7 +189,7 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onUpdateHiringRoster( _roster )
 	{
-		this.addBroToRoster(_roster, "legend_druid_background", 8);
+		this.addBroToRoster(_roster, ::Legends.Background.LegendDruid, 8);
 		local bros = _roster.getAll();
 		local garbage = [];
 		foreach( i, bro in bros )

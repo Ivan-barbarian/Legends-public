@@ -13,24 +13,18 @@
 						_event.m.Dude.getFlags().add("PlayerSkeleton");
 						_event.m.Dude.getFlags().add("undead");
 						_event.m.Dude.getFlags().add("skeleton");
-						_event.m.Dude.setStartValuesEx([
-							"cultist_background"
-						]);
+						_event.m.Dude.setStartValuesEx([::Legends.Background.Cultist]);
 						::Legends.Traits.grant(_event.m.Dude, ::Legends.Trait.RacialSkeleton);
 						::Legends.Traits.grant(_event.m.Dude, ::Legends.Trait.LegendFleshless);
 					}
-					if (this.World.Assets.getOrigin().getID() == "scenario.cultists")
+					else if (this.World.Assets.getOrigin().getID() == "scenario.cultists")
 					{
 						_event.m.Dude.getBaseProperties().MeleeSkill += 10;
-						_event.m.Dude.setStartValuesEx([
-							"cultist_background"
-						]);
+						_event.m.Dude.setStartValuesEx([::Legends.Background.Cultist]);
 					}
 					else
 					{
-						_event.m.Dude.setStartValuesEx([
-							"cultist_background"
-						]);
+						_event.m.Dude.setStartValuesEx([::Legends.Background.Cultist]);
 					}
 
 					_event.m.Dude.setTitle("the Sacrifice");

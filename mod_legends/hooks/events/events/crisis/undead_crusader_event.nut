@@ -9,9 +9,7 @@
 					local roster = this.World.getTemporaryRoster();
 					_event.m.Dude = roster.create("scripts/entity/tactical/player");
 					if (this.World.Assets.getOrigin().getID() == "scenario.legends_crusader") {
-						_event.m.Dude.setStartValuesEx([
-							"legend_youngblood_background"
-						]);
+						_event.m.Dude.setStartValuesEx([::Legends.Background.LegendYoungblood]);
 						_event.m.Dude.getBaseProperties().Hitpoints += 5;
 						_event.m.Dude.getBaseProperties().Stamina += 7;
 						_event.m.Dude.getBaseProperties().MeleeSkill += 10;
@@ -19,9 +17,7 @@
 						_event.m.Dude.getBackground().m.RawDescription = "With nowhere else to go, %name% resorted to seeking you out after the destruction of the monastery. With their home gone, the future from %them% and the order looks bleaker still.";
 						_event.m.Dude.getBackground().buildDescription(true);
 					} else {
-						_event.m.Dude.setStartValuesEx([
-							"legend_crusader_background"
-						]);
+						_event.m.Dude.setStartValuesEx([::Legends.Background.LegendCrusader]);
 						_event.m.Dude.getBaseProperties().DailyWage = 45;
 						_event.m.Dude.getBackground().m.RawDescription = "With nowhere else to go, %name% resorted to seeking you out after the destruction of the monastery. With their home gone, the future from %them% and the order looks bleaker still.";
 						_event.m.Dude.getBackground().buildDescription(true);

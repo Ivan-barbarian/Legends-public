@@ -19,23 +19,23 @@
 
 	o.onUpdateDraftList <- function ( _draftList )
 	{
-		_draftList.push("cripple_background");
-		_draftList.push("cripple_background");
-		_draftList.push("gravedigger_background");
-		_draftList.push("beggar_background");
-		_draftList.push("beggar_background");
-		_draftList.push("deserter_background");
-		_draftList.push("militia_background");
+		_draftList.push(::Legends.Background.Cripple);
+		_draftList.push(::Legends.Background.Cripple);
+		_draftList.push(::Legends.Background.Gravedigger);
+		_draftList.push(::Legends.Background.Beggar);
+		_draftList.push(::Legends.Background.Beggar);
+		_draftList.push(::Legends.Background.Deserter);
+		_draftList.push(::Legends.Background.Militia);
 
 		if  (this.World.Assets.getOrigin().getID() == "scenario.legends_necro" || this.World.Assets.getOrigin().getID() == "scenario.legends_solo_necro") {
-			_draftList.push("legend_puppet_background");
-			_draftList.push("legend_puppet_background");
-			_draftList.push("legend_puppet_background");
+			_draftList.push(::Legends.Background.LegendPuppet);
+			_draftList.push(::Legends.Background.LegendPuppet);
+			_draftList.push(::Legends.Background.LegendPuppet);
 		}
 		else if  ( this.World.Assets.getOrigin().getID() == "scenario.militia") {
-			_draftList.push("legend_man_at_arms_background");
-			_draftList.push("legend_man_at_arms_background");
-			_draftList.push("legend_man_at_arms_background");
+			_draftList.push(::Legends.Background.LegendManAtArms);
+			_draftList.push(::Legends.Background.LegendManAtArms);
+			_draftList.push(::Legends.Background.LegendManAtArms);
 		}
 	}
 });

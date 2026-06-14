@@ -47,9 +47,7 @@ this.legend_find_slave_after_battle_event <- this.inherit("scripts/events/event"
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				_event.m.Dude.setStartValuesEx([
-					"slave_barbarian_background"
-				]);
+				_event.m.Dude.setStartValuesEx([::Legends.Background.SlaveBarbarian]);
 				local text1 = "{%name% lived in the wilds for many years, eking out an existence in the harsh northern hinterlands. | Captured as a child in a barbarian raid, %name% was raised by the northern savages as a thrall. The child never forgot town though, resolving to escape and return to true home. One day, they did just that. | %name% was a skilled hunter for the tribe. One particularly harsh winter, the life in the hinterlands seemed to all but disappear, and the barbarian had to venture further and further in search of food.}";
 				local text2 = "{Bandits found %name% on the road. | While cutting through a thicket, %name% stumbled into the middle of a brigand camp. | While hiding from wild animals in the forest, %name% encountered creatures far more dangerous: raiders.}";
 				local text3 = "{Easily overwhelmed, %name% was captured, humiliated, and forced to do menial labor for the outlaws. | The outlaws tricked %name% into giving up possessions as a toll, then subdued the barbarian when %name% fight back. As punishment, and for their own amusement, they took %name% prisoner, who was forced to maintain their camp. | The outlaws surrounded and knocked %name% out. When conciousness returned, hands and feet were already bound, and from then on %name% was forced to clean up after the highwaymen, pitch and teardown their tents, and handle any task they didn\'t feel like doing.}";
@@ -110,9 +108,7 @@ this.legend_find_slave_after_battle_event <- this.inherit("scripts/events/event"
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				_event.m.Dude.setStartValuesEx([
-					"slave_southern_background"
-				]);
+				_event.m.Dude.setStartValuesEx([::Legends.Background.SlaveSouthern]);
 				local text1 = "{A merchant by trade, %name% was tasked with leading a caravan to the north to sell incense and silks. | %name% was a nomad of the south, living outside the influence of the viziers. After being exiled from the tribe for some unknown transgression, the southerner traveled north. | A conscript in one of the many regiments of the south, %name% was tasked with guarding a caravan headed north.}";
 				local text2 = "{Brigands found %name% on the road, the battle was over and %name% made captive in a land far from home. | The bandits caught %name% off guard. The southerner struggled valiantly, but in the end %name% was bested and taken prisoner. | All was going smoothly until an impassable roadblock forced %name% to take a detour. This led to discovery by highwaymen, and one swift, brutal fight later, %name% became their prisoner.}";
 				local text3 = "{The northerners ridiculed and mocked %name% incessantly, and when they got bored of that forced %name% to do demeaning work for them. | The outlaws hoped to ransom %name%, not realizing the southerner lacked such importance. In the meantime, they put %name% to work hauling loot and supplies from their raids, overworking the southerner constantly. | In part to humiliate, and in part because they needed the help, they quickly forced %name% to handle menial labor for their camp.}";
@@ -173,9 +169,7 @@ this.legend_find_slave_after_battle_event <- this.inherit("scripts/events/event"
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				_event.m.Dude.setStartValuesEx([
-					"slave_barbarian_background"
-				]);
+				_event.m.Dude.setStartValuesEx([::Legends.Background.SlaveBarbarian]);
 				local text1 = "{%name% was once chief of their own tribe, until an ambitious rival usurped the role. To complete the humiliation, %name% was forced into thralldom. | Chosen by the Old Gods, %name% was sent out from the village to prove martial skills in combat. %name% found his match in another tribe, however, and was defeated, broken, and made a thrall. | %name% was born a thrall, forced to fight for his freedom for as long as memories go back.}";
 				local text2 = "{%name% struggled against captors constantly, unwilling to accept that fate, but those efforts brought the barbarian only to death\'s door, not freedom. That tenacity may well be what kept the northerner alive, as the tribe felt such tenacity would be wasted on a death outside of battle. | As a member of the slave caste %name% was thrust into combat after combat, but no matter what accomplishments were achieived, there was never acceptance by the rest of the barbarians. %name% could never come to accept them, either. | Years of brutal combat and abuse eventually left %name% but a shadow of a human, downtrodden and hopeless, but unable to truly accept death. %name% knew the ancestor\'s would not take this pitiful human, but saw no hope of proving worth as a thrall, either.}";
 				local text3 = "One particularly egregious transgression, however, left the tribe unable to bear %name%\'s presence further. %name% was thrown in a cage and left there to be sacrificed next day, in the hopes that death would appease the Old Gods. In a twist of fate, this separation from the rest of the tribe saved %name%\'s life, as the %companyname% descended upon the camp and slew the savages wholesale.";
@@ -235,9 +229,7 @@ this.legend_find_slave_after_battle_event <- this.inherit("scripts/events/event"
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				_event.m.Dude.setStartValuesEx([
-					"slave_background"
-				]);
+				_event.m.Dude.setStartValuesEx([::Legends.Background.Slave]);
 				local text1 = "{%name% was once a scribe in an isolated northern abbey who spent days leisurely poring over tomes and sorting collections. | %name% grew up in one of the many small hamlets that dot the northern hinterlands. | Originally a lumberjack, %name% was content to spend life in the beautiful forests of the north.}";
 				local text2 = "{But that idyllic life was shattered when barbarians raided the village, stole all the valuables, and kidnapped as many as they could carry back with them. | Life in those lands is a harsh one, however, and while prepared for many of the dangers, %name% was not prepared enough for the barbarian raiders that sacked the town and took captives. | Thinking them a misunderstood and largely inconsequential people, %name% rarely paid heed to the fearmongering about the barbarians of the north. While traveling to a nearby town, however, %name% came face-to-face with the savages, and found them just as dangerous as the rumors held. %name% was beaten senseless, tossed in a sack, and taken back to their village.}";
 				local text3 = "{%name% was deemed too weak to be put into combat like the other thralls. Instead, put to work with more menial labor. On a good day, that meant tending to sacrificial livestock or cleaning gore out of the savage\'s ritual altars. On a bad day, used as a plaything by the men - or worse, by the women - for whatever cruelty or humiliation they felt like passing the time with. | %name% was made a thrall, and was told that this was a great honor for one not born in the barbarian tribes. In practice, however, this meant being forced into blood-curdling combat against other tribes, insane hunts to capture unholds for the beastmasters, and a life of misery, imprisonment, and ridicule at the hands of the freemen. | One of the tribe elders took an interest in %name% as an interpreter. Whenever the tribe had fresh captives from the surrounding area, %name% was made to explain their fate to them. It was cruel, heart-wrenching work, but disobedience had brutal consequences. %name% just counted lucky stars to not be a thrall. It is still hard to talk about what was done to them when they failed to comply.}";
@@ -298,9 +290,7 @@ this.legend_find_slave_after_battle_event <- this.inherit("scripts/events/event"
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				_event.m.Dude.setStartValuesEx([
-					"slave_southern_background"
-				]);
+				_event.m.Dude.setStartValuesEx([::Legends.Background.SlaveSouthern]);
 				local text1 = "{A conscript in one of the many regiments of the south, %name% was always proud of work. Despite the mandatory nature of service, %name% always felt that protecting the holy city-state was the mandate of the Gilder more than the Vizier. That devotion went unnoticed by the officers, however, who sent the soldier on a doomed scouting mission to ferret out nomads hiding in the ocean of sand outside the city. | %name% used to be a treasure hunter, plumbing the depths of the myriad ruins and detritus of the old empire buried in the sands. One day a sandstorm blew them off-course while hunting for a famed library of old. Not to be deterred, %name%  pressed on after the storm died down, determined to not let the search be in vain. | %name% was a manhunter in a past life, ironically enough.  Making a comfortable living hunting down deserters, convicts, and escaped slaves, until one day they strayed too deep into the desert while hunting a quarry.}";
 				local text2 = "{It was the nomads who proved the more able hunters, however, catching the fighter by surprise and knocking them out in one fell swoop. | Isolated and unprepared to go so far afield, however, the fighter collapsed under the burning sun. %name% awoke, already the nomad\'s captive. | If %name% felt like a hunter, however, the nomads that suddenly appeared all around cured the notion. %name% certainly felt like prey while being subdued and bound.}";
 				local text3 = "{The outlaws declared %name% Indebted and forced to serve them. A deep ire, fueled by that former station, led to escape attempts and fighting back against the captors. As the beatings grew more brutal and the work more cruel, however, the ire turned to resignation. | They made %name%  their slave. At first the ignobility gnawed, but malnourishment, abuse, and the bite of the lash eventually ground %name% down into nothing but a cold, empty husk of a person. | Enslaved by the outlaws, %name% was outraged by this fate and tried to escape. They stuffed the escapee in a box for a week as punishment. Gradually, rage cooled and an empty despair settled in.}";
@@ -363,9 +353,7 @@ this.legend_find_slave_after_battle_event <- this.inherit("scripts/events/event"
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				_event.m.Dude.setStartValuesEx([
-					"slave_background"
-				]);
+				_event.m.Dude.setStartValuesEx([::Legends.Background.Slave]);
 				local text1 = "{%name% was a hunter in a past life, tracking down dangerous beasts that threatened the village. | Once a monk, %name% was always struck by wanderlust and always volunteered for any tasks that lead outside the cloistered abbey. | A courier by trade, %name% always enjoyed seeing the world and tried to take the scenic route whenever possible.}";
 				local text2 = "{One day that wandering ventured too far, however, and %name%  as confronted with a danger not prepared for: nomads from the southern deserts. Some terse words and a short scuffle saw %name% taken prisoner by the outlaws. | %name%\'s travels lead to the south, encountering a group of nomads who decided %name%\'s true purpose in life was to be their slave. Swiftly knocked out, captured, and taken back to their camp, life was never the same. | Wandering into the southern steppe turned out to be a little too far afield, however. Nomads captured %name% in a raid and took the wanderer with them, forced into slavery.}";
 				local text3 = "{%name%\'s captors explained fate politely and with patience, but their kindness ended there. The slave won\'t speak of the hardships, but the scars do the talking. | Subject to the full measure of ignobility and hardship of being treated as a thing, %name% turned to meditation for solace. It seems inner peace was found, which is good considering the physical hardships evidenced by outer appearance. | %name% was given a crash course in southern religion and made to understand debt to the Gilder, which he would be paid off by serving these new captors. Eduring the sun\'s cruel gaze and the lash\'s cruel bite in equal measure.}";
@@ -521,25 +509,19 @@ this.legend_find_slave_after_battle_event <- this.inherit("scripts/events/event"
 
 				if (cultureResult == 4)
 				{
-					_event.m.Dude.setStartValuesEx([
-						"slave_southern_background"
-					]);
+					_event.m.Dude.setStartValuesEx([::Legends.Background.SlaveSouthern]);
 					backgroundText1 = "{%name% claims to have once been an assassin of one of the southern guilds. Tasked with killing a man accused of using foul magic to bring the dead to unnatural life. The assassin tracked the target to his lair and was poised to strike. | A nomad whose tribe was massacred by a necromancer, %name% traveled far and wide in search of revenge. Eventually finding the lair of the man responsible, all that remained was to storm the redoubt and kill its inhabitant. | %name% was originally a manhunter. One day tasked with hunting down a particularly dangerous escapee: a necromancer responsible for the destruction - and subsequent resurrection - of an entire regiment. Undeterred, %name% accepted and tracked the sorcerer to his lair in the wilds.}";
 					backgroundText2 = "{It was a trap. Before the attacker could react, the %name% was surrounded by once-dead men.  The fight was bravely fought, but was eventually overwhelmed by their numbers. When %name% awoke, it was in the necromancer\'s prison. | For all that preparedness, however, the plan failed to notice the hands clawing out of the ground underneath until it was too late. The fleshy automatons that arose bound and tied , and the hunter was soon the necromancer\'s captive. | While charging in, however, the attacker was surprised to find not just the necromancer, but a host of rotting corpses surrounding as well. %name% fought, but their numbers were too great. The greated horror, was not being killed, but instead captured.}";
 				}
 				else if (cultureResult == 3)
 				{
-					_event.m.Dude.setStartValuesEx([
-						"slave_barbarian_background"
-					]);
+					_event.m.Dude.setStartValuesEx([::Legends.Background.SlaveBarbarian]);
 					backgroundText1 = "{A wildling who abandoned society long ago, %name% was content to live out the rest of life in the forests of the wild. But one day alien creatures began to roam the woods, things that should be dead, things that should not be at all. The wildling searched for the source and found a sorcerer\'s lair on the periphery of the wilds. | Tasked by the elder\'s to purge the Untoward, %name% travelled the lands putting the undead back in the ground. Always hunting for the Source, one day the search yielded fruit - a profane lair where a man in black robbed men of their deaths. | Originally a barbarian from the north, %name%\'s returned from a hunting trip to find the village utterly devastated, victims of an undead incursion. Swearing vengeance, the wildling tracked the cursed creatures down and slew them one by one, until only the mastermind behind them remained.}";
 					backgroundText2 = "{The necromancer acted first - hired ruffians kidnapped %name% in the night, and in the morning awoke a prisoner. | But %name%\'s nemesis took the initiative, and as the wildling approached grasping hands sprung from the ground and restrained. A cloaked figure, glowing red eyes, and then nothingness.  %name% came to, already in chains. | But the necromancer was not caught unaware. As the wildling charged in bravely to slay the foe, dead men in armor appeared from all around and held the wildling down. %name% was chained, rage unspent and mission unfulfilled.}";
 				}
 				else
 				{
-					_event.m.Dude.setStartValuesEx([
-						"slave_background"
-					]);
+					_event.m.Dude.setStartValuesEx([::Legends.Background.Slave]);
 					backgroundText1 = "{%name% was a witchhunter, known for the singlemindedness of the crusade against the hexen and their dark crafts. Rumors of strange magic and terrorized townspeople saw hunts lead him further and further into the wilderness. | While priests are not usually known for their investigative tendencies, %name% nonetheless was thrust into the inquisitor\'s role when when the village dead began rising from their graves. | A simple farmer, %name%\'s life was an inauspicious one, until one day people from the village started disappearing and %name% left to find them.}";
 					backgroundText2 = "But the search turned up something more sinister than expected - a necromancer performing profane experiments on both living and dead. %name% tried to run, but grasping hands and rotting bodies blocked the path, and %name% was knocked out and taken prisoner.";
 				}

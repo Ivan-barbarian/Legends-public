@@ -43,17 +43,13 @@ this.legend_civilwar_noble_event <- this.inherit("scripts/events/event", {
 						_event.m.Dude.getFlags().add("PlayerSkeleton");
 						_event.m.Dude.getFlags().add("undead");
 						_event.m.Dude.getFlags().add("skeleton");
-						_event.m.Dude.setStartValuesEx([
-							"legend_noble_commander_background"
-					]);
+						_event.m.Dude.setStartValuesEx([::Legends.Background.LegendCommanderNoble]);
 						::Legends.Traits.grant(_event.m.Dude, ::Legends.Trait.RacialSkeleton);
 						::Legends.Traits.grant(_event.m.Dude, ::Legends.Trait.LegendFleshless);
 					}
 				else
 				{
-					_event.m.Dude.setStartValuesEx([
-						"legend_noble_commander_background"
-					]);
+					_event.m.Dude.setStartValuesEx([::Legends.Background.LegendCommanderNoble]);
 				}
 				::Legends.Traits.grant(_event.m.Dude, ::Legends.Trait.LegendHateNobles);
 				this.Characters.push(_event.m.Dude.getImagePath());

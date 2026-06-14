@@ -8,9 +8,7 @@
 			_screen.start <- function (_event) {
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				_event.m.Dude.setStartValuesEx([
-					"paladin_background"
-				]);
+				_event.m.Dude.setStartValuesEx([::Legends.Background.Paladin]);
 				local dudeItems = _event.m.Dude.getItems();
 
 				if (dudeItems.getItemAtSlot(this.Const.ItemSlot.Head) != null && dudeItems.getItemAtSlot(this.Const.ItemSlot.Head).getID() == "armor.head.adorned_full_helm")

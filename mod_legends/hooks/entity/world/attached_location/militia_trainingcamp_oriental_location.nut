@@ -16,14 +16,14 @@
 	local onUpdateDraftList = o.onUpdateDraftList;
 	o.onUpdateDraftList = function ( _list )
 	{
-		_list.push("legend_dervish_background");
-		_list.push("legend_dervish_background");
+		_list.push(::Legends.Background.LegendDervish);
+		_list.push(::Legends.Background.LegendDervish);
 
 		if (this.Math.rand(0, 4) == 1)
-			_list.push("legend_conscript_background");
+			_list.push(::Legends.Background.LegendConscript);
 		
 		if (this.Math.rand(0, 4) == 1)
-			_list.push("legend_conscript_ranged_background");
+			_list.push(::Legends.Background.LegendConscriptRanged);
 		
 		onUpdateDraftList(_list);
 	}

@@ -20,9 +20,7 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		local roster = this.World.getPlayerRoster();
 		local bro;
 		bro = roster.create("scripts/entity/tactical/player");
-		bro.setStartValuesEx([
-			"legend_witch_commander_background"
-		]);
+		bro.setStartValuesEx([::Legends.Background.LegendCommanderWitch]);
 		::Legends.Traits.grant(bro, ::Legends.Trait.Player);
 		this.addScenarioPerk(bro.getBackground(), ::Const.Perks.PerkDefs.LegendMagicDaze);
 		this.addScenarioPerk(bro.getBackground(), ::Const.Perks.PerkDefs.Student);
@@ -127,7 +125,7 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 
 	function onUpdateHiringRoster( _roster )
 	{
-		this.addBroToRoster(_roster, "apprentice_background", 4);
+		this.addBroToRoster(_roster, ::Legends.Background.Apprentice, 4);
 	}
 
 	function onHiredByScenario( _bro )

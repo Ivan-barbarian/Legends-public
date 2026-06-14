@@ -36,9 +36,7 @@ this.legends_scaling_beggar_scenario <- this.inherit("scripts/scenarios/world/st
 
 		local bros = roster.getAll();
 
-		bros[0].setStartValuesEx([
-			"legend_beggar_commander_op_background"
-		]);
+		bros[0].setStartValuesEx([::Legends.Background.LegendCommanderBeggarScaling]);
 		bros[0].setVeteranPerks(2);
 		::Legends.Traits.grant(bros[0], ::Legends.Trait.Player);
 		bros[0].getFlags().set("IsPlayerCharacter", true);

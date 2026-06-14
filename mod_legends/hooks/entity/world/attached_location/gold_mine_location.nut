@@ -18,8 +18,8 @@
 	local onUpdateDraftList = o.onUpdateDraftList;
 	o.onUpdateDraftList = function ( _list )
 	{
-		_list.push("legend_ironmonger_background");
-		_list.push("peddler_background");
+		_list.push(::Legends.Background.LegendIronmonger);
+		_list.push(::Legends.Background.Peddler);
 		onUpdateDraftList(_list);
 	}
 

@@ -21,9 +21,7 @@
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
-			bro.setStartValuesEx([
-				"gladiator_origin_background"
-			]);
+			bro.setStartValuesEx([::Legends.Background.GladiatorOrigin]);
 			::Legends.Traits.remove(bro, ::Legends.Trait.Survivor);
 			::Legends.Traits.remove(bro, ::Legends.Trait.Greedy);
 			::Legends.Traits.remove(bro, ::Legends.Trait.Loyal);

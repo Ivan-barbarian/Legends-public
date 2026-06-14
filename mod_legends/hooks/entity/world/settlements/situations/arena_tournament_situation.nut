@@ -4,10 +4,10 @@
 	o.onUpdateDraftList = function ( _draftList )
 	{
 		onUpdateDraftList(_draftList);
-		_draftList.push("legend_gladiator_prizefighter_background");
-		_draftList.push("legend_gladiator_prizefighter_background");
-		_draftList.push("legend_gladiator_prizefighter_background");
-		_draftList.push("legend_gladiator_prizefighter_background");
+		_draftList.push(::Legends.Background.LegendGladiatorPrizefighter);
+		_draftList.push(::Legends.Background.LegendGladiatorPrizefighter);
+		_draftList.push(::Legends.Background.LegendGladiatorPrizefighter);
+		_draftList.push(::Legends.Background.LegendGladiatorPrizefighter);
 	}
 
 });

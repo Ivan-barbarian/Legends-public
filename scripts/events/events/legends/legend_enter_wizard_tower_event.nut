@@ -123,9 +123,7 @@ this.legend_enter_wizard_tower_event <- this.inherit("scripts/events/event", {
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				_event.m.Dude.setStartValuesEx([
-					"wildman_background"
-				]);
+				_event.m.Dude.setStartValuesEx([::Legends.Background.Wildman]);
 				_event.m.Dude.setTitle("the apprentice");
 				_event.m.Dude.getBackground().m.RawDescription = "%name% was \'hired\' by you from an old man in a tall tower";
 				_event.m.Dude.getBackground().buildDescription(true);

@@ -30,9 +30,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		// Noble Commander Create
 
 		bros[0].getFlags().set("IsPlayerCharacter", true);
-		bros[0].setStartValuesEx([
-			"legend_noble_commander_background"
-		], false);
+		bros[0].setStartValuesEx([::Legends.Background.LegendCommanderNoble], false);
 		::Legends.Traits.grant(bros[0], ::Legends.Trait.Player);
 		bros[0].setPlaceInFormation(13);
 		bros[0].setVeteranPerks(2);
@@ -45,9 +43,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		// End Noble Commander Create
 		// Noble Shield 1 Create
 
-		bros[1].setStartValuesEx([
-			"legend_noble_shield"
-		], false);
+		bros[1].setStartValuesEx([::Legends.Background.LegendNobleShield], false);
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
 		local r = this.Math.rand(1, 2);
@@ -73,9 +69,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		// End Noble Shield 1 Create
 		// Noble 2h create
 
-		bros[2].setStartValuesEx([
-			"legend_noble_2h"
-		], false);
+		bros[2].setStartValuesEx([::Legends.Background.LegendNoble2h], false);
 		bros[2].getBackground().m.RawDescription = "%name% is a hulking figure, both upward and outward. Not much of a talker, but a big eater.";
 		bros[2].getBackground().buildDescription(true);
 		::Legends.Traits.remove(bros[2], ::Legends.Trait.Tiny);
@@ -88,9 +82,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		// End Noble 2h Create
 		// Noble Shield 2 Create
 
-		bros[3].setStartValuesEx([
-			"legend_noble_shield"
-		], false);
+		bros[3].setStartValuesEx([::Legends.Background.LegendNobleShield], false);
 		local items = bros[3].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
 		r = this.Math.rand(1, 2);
@@ -116,9 +108,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		// End Noble Shield 2 Create
 		// Noble Servant Create
 
-		bros[4].setStartValuesEx([
-			"servant_background"
-		], false);
+		bros[4].setStartValuesEx([::Legends.Background.Servant], false);
 		bros[4].getBackground().m.RawDescription = "%name% has been a servant in your family for 5 generations now, it is unclear how anyone has survived this long, but there are no indications of the old coot giving up any time soon.";
 		bros[4].getBackground().buildDescription(true);
 		::Legends.Traits.grant(bros[4], ::Legends.Trait.Old);
@@ -140,9 +130,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		// End Noble Servant Create
 		// Arbalester Create
 
-		bros[5].setStartValuesEx([
-			"legend_noble_ranged"
-		], false);
+		bros[5].setStartValuesEx([::Legends.Background.LegendNobleRanged], false);
 		bros[5].getBackground().m.RawDescription = "%name% has won the house archery contest several years running, but never shuts up about it. The constant stream of narration makes the great aim easy to dodge.";
 		bros[5].getBackground().buildDescription(true);
 		::Legends.Traits.grant(bros[5], ::Legends.Trait.LegendSureshot);
@@ -307,11 +295,11 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		local garbage = [];
 		local bros = _roster.getAll();
-		this.addBroToRoster(_roster, "legend_noble_2h", 4);
-		this.addBroToRoster(_roster, "legend_noble_shield", 4);
-		this.addBroToRoster(_roster, "legend_noble_ranged", 4);
-		this.addBroToRoster(_roster, "adventurous_noble_background", 8);
-		this.addBroToRoster(_roster, "disowned_noble_background", 8);
+		this.addBroToRoster(_roster, ::Legends.Background.AdventurousNoble, 8);
+		this.addBroToRoster(_roster, ::Legends.Background.DisownedNoble, 8);
+		this.addBroToRoster(_roster, ::Legends.Background.LegendNoble2h, 4);
+		this.addBroToRoster(_roster, ::Legends.Background.LegendNobleRanged, 4);
+		this.addBroToRoster(_roster, ::Legends.Background.LegendNobleShield, 4);
 
 		foreach( i, bro in bros )
 		{

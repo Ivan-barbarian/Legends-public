@@ -36,9 +36,9 @@ this.legend_shuckster_encounter <- this.inherit("scripts/encounters/encounter", 
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
 				if(::World.Assets.getOrigin().getID() == "scenario.manhunters"){
-					_event.m.Dude.setStartValuesEx(["slave_background"]);
+					_event.m.Dude.setStartValuesEx([::Legends.Background.Slave]);
 				} else {
-					_event.m.Dude.setStartValuesEx([::Math.rand(1, 100) <= 90 ? "thief_background" : "thief_background"]); // this is the spot where we make the "rare" option a druid or a herbalist or whatever we want him to be and perhaps with the conjure rain skill for fun
+					_event.m.Dude.setStartValuesEx([::Math.rand(1, 100) <= 90 ?::Legends.Background.Thief : ::Legends.Background.Thief]); // this is the spot where we make the "rare" option a druid or a herbalist or whatever we want him to be and perhaps with the conjure rain skill for fun
 				}
 			}
 		});

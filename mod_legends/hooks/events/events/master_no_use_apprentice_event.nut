@@ -15,17 +15,13 @@
 						_event.m.Dude.getFlags().add("PlayerSkeleton");
 						_event.m.Dude.getFlags().add("undead");
 						_event.m.Dude.getFlags().add("skeleton");
-						_event.m.Dude.setStartValuesEx([
-							"apprentice_background"
-						]);
+						_event.m.Dude.setStartValuesEx([::Legends.Background.Apprentice]);
 						::Legends.Traits.grant(_event.m.Dude, ::Legends.Trait.RacialSkeleton);
 						::Legends.Traits.grant(_event.m.Dude, ::Legends.Trait.LegendFleshless);
 					}
 					else
 					{
-						_event.m.Dude.setStartValuesEx([
-							"apprentice_background"
-						]);
+						_event.m.Dude.setStartValuesEx([::Legends.Background.Apprentice]);
 					}
 
 					_event.m.Dude.getBackground().m.RawDescription = "An impatient student of a Swordmaster, %name% didn\'t have the mental aptitude to stick with the trials and tribulations of becoming a master of the blade %themselves%. But what %they% lacks in mental fortitude %they% more than makes up for in effort. You \'hired\' %them% simply by taking %them% off the old man\'s hands.";

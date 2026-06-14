@@ -93,7 +93,7 @@
 			function start( _event ) {
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				_event.m.Dude.setStartValuesEx(["legend_noble_commander_background"]);
+				_event.m.Dude.setStartValuesEx([::Legends.Background.LegendCommanderNoble]);
 				::Legends.Traits.grant(_event.m.Dude, ::Legends.Trait.Addict);
 				::Legends.Effects.grant(_event.m.Dude, ::Legends.Effect.Drunk);
 				this.Characters.push(_event.m.Dude.getImagePath());

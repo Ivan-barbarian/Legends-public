@@ -12,15 +12,11 @@
 						_event.m.Dude.getFlags().add("PlayerSkeleton");
 						_event.m.Dude.getFlags().add("undead");
 						_event.m.Dude.getFlags().add("skeleton");
-						_event.m.Dude.setStartValuesEx([
-							"cripple_background"
-						], false);
+						_event.m.Dude.setStartValuesEx([::Legends.Background.Cripple], false);
 						::Legends.Traits.grant(_event.m.Dude, ::Legends.Trait.RacialSkeleton);
 						::Legends.Traits.grant(_event.m.Dude, ::Legends.Trait.LegendFleshless);
 					} else {
-						_event.m.Dude.setStartValuesEx([
-							"cripple_background"
-						], false);
+						_event.m.Dude.setStartValuesEx([::Legends.Background.Cripple], false);
 					}
 					_event.m.Dude.setTitle("");
 					_event.m.Dude.getBackground().m.RawDescription = "You found %name% frozen half to death in the north. %They% claims %they% was a King\'s Guard once, but looking at %them% now you see but a cripple.";

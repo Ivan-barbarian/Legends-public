@@ -5,35 +5,35 @@
 	{
 		create();
 		this.m.DraftList = [
-			"legend_shieldmaiden_background",
-			"legend_shieldmaiden_background",
-			"apprentice_background",
-			"houndmaster_background",
+			::Legends.Background.LegendShieldmaiden,
+			::Legends.Background.LegendShieldmaiden,
+			::Legends.Background.Apprentice,
+			::Legends.Background.Houndmaster,
 			"female_bowyer_background",
 			"female_bowyer_background",
-			"brawler_background",
+			::Legends.Background.Brawler,
 			"female_butcher_background",
-			"daytaler_background",
-			"gravedigger_background",
-			"hunter_background",
-			"lumberjack_background",
-			"lumberjack_background",
-			"messenger_background",
-			"militia_background",
-			"militia_background",
-			"wildman_background",
-			"witchhunter_background",
-			"bastard_background",
-			"deserter_background",
-			"disowned_noble_background",
-			"disowned_noble_background",
-			"retired_soldier_background",
-			"squire_background",
-			"beast_hunter_background"
+			::Legends.Background.Daytaler,
+			::Legends.Background.Gravedigger,
+			::Legends.Background.Hunter,
+			::Legends.Background.Lumberjack,
+			::Legends.Background.Lumberjack,
+			::Legends.Background.Messenger,
+			::Legends.Background.Militia,
+			::Legends.Background.Militia,
+			::Legends.Background.Wildman,
+			::Legends.Background.Witchhunter,
+			::Legends.Background.Bastard,
+			::Legends.Background.Deserter,
+			::Legends.Background.DisownedNoble,
+			::Legends.Background.DisownedNoble,
+			::Legends.Background.RetiredSoldier,
+			::Legends.Background.Squire,
+			::Legends.Background.BeastSlayer
 		];
 		this.m.StablesList = [
-			"legend_donkey_background",
-			"legend_horse_rouncey"
+			::Legends.Background.LegendDonkey,
+			::Legends.Background.LegendHorseRouncey
 		];
 	}
 

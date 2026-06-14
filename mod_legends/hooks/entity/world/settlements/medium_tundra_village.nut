@@ -5,27 +5,27 @@
 	{
 		create();
 		this.m.DraftList = [
-			"beggar_background",
-			"bowyer_background",
-			"brawler_background",
-			"brawler_background",
-			"butcher_background",
-			"cultist_background",
-			"daytaler_background",
-			"gravedigger_background",
-			"graverobber_background",
-			"hunter_background",
-			"killer_on_the_run_background",
-			"messenger_background",
-			"militia_background",
-			"minstrel_background",
-			"monk_background",
-			"peddler_background",
-			"poacher_background",
-			"tailor_background",
-			"thief_background",
-			"vagabond_background",
-			"wildman_background"
+			::Legends.Background.Beggar,
+			::Legends.Background.Bowyer,
+			::Legends.Background.Brawler,
+			::Legends.Background.Brawler,
+			::Legends.Background.Butcher,
+			::Legends.Background.Cultist,
+			::Legends.Background.Daytaler,
+			::Legends.Background.Gravedigger,
+			::Legends.Background.Graverobber,
+			::Legends.Background.Hunter,
+			::Legends.Background.KillerOnTheRun,
+			::Legends.Background.Messenger,
+			::Legends.Background.Militia,
+			::Legends.Background.Minstrel,
+			::Legends.Background.Monk,
+			::Legends.Background.Peddler,
+			::Legends.Background.Poacher,
+			::Legends.Background.Tailor,
+			::Legends.Background.Thief,
+			::Legends.Background.Vagabond,
+			::Legends.Background.Wildman
 		];
 	}
 

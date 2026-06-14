@@ -39,9 +39,7 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].getSprite("socket").setBrush("bust_base_nomads");
 		::Legends.Traits.grant(bros[0], ::Legends.Trait.LegendNomad);
 		::Legends.Perks.grant(bros[0], ::Legends.Perk.LegendWindReader);
-		bros[0].setStartValuesEx([ // melee
-			"nomad_background"
-		]);
+		bros[0].setStartValuesEx([::Legends.Background.Nomad]);
 		bros[0].getBackground().m.RawDescription = "{%name% is someone who you have known since they were a child. They always had a keen eye but had more interest in shooting things point blank with their sling instead. Their discovery of maces and swords changed their world for the better.}";
 
 		bros[1].setPlaceInFormation(3);
@@ -49,17 +47,13 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[1].getSprite("socket").setBrush("bust_base_nomads");
 		::Legends.Traits.grant(bros[1], ::Legends.Trait.LegendNomad);
 		::Legends.Perks.grant(bros[1], ::Legends.Perk.LegendWindReader);
-		bros[1].setStartValuesEx([ //melee always to prevent all ranged parties
-			"nomad_background"
-		]);
+		bros[1].setStartValuesEx([::Legends.Background.Nomad]); //melee always to prevent all ranged parties
 		bros[1].getBackground().m.RawDescription = "{%name% came from another tribe that merged with yours not too long ago. Their family was butched in the night by \'skin men\' who could travel thirty paces in a blink of the eye. While many think them unsettled by what appears to be a raid, you can\'t help but notice how they always sleep closest to the fire every night.}";
 
 		bros[2].setPlaceInFormation(4);
 		bros[2].setVeteranPerks(2);
 		::Legends.Effects.grant(bros[2], ::Legends.Effect.Exhausted);
-		bros[2].setStartValuesEx([ ///elite for story purposes. Always ranged. No benefit from nomad trait.
-			"legend_conscript_ranged_background"
-		]);
+		bros[2].setStartValuesEx([::Legends.Background.LegendConscriptRanged]); ///elite for story purposes. Always ranged. No benefit from nomad trait.
 		bros[2].getBackground().m.RawDescription = "{This outsider was close to death when you found them in the sands. While they lack the mindset and resolve you have come to expect from others, their training from the City States makes %them% a useful weapon to use against them.}";
 
 		bros[3].setPlaceInFormation(11);
@@ -67,10 +61,7 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[3].getSprite("socket").setBrush("bust_base_nomads");
 		::Legends.Traits.grant(bros[3], ::Legends.Trait.LegendNomad);
 		::Legends.Perks.grant(bros[3], ::Legends.Perk.LegendWindReader);
-		bros[3].setStartValuesEx([ //wildcard 1
-			"nomad_background",
-			"nomad_ranged_background"
-		]);
+		bros[3].setStartValuesEx([::Legends.Background.Nomad,::Legends.Background.NomadRanged]); //wildcard 1
 		bros[3].getBackground().m.RawDescription = "{You know little about %name%, they prefer to stay quiet and keep to themselves. However their loyalty to the tribe has never come into question.}";
 
 		bros[4].setPlaceInFormation(12);
@@ -78,9 +69,7 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[4].getSprite("socket").setBrush("bust_base_nomads");
 		::Legends.Traits.grant(bros[4], ::Legends.Trait.LegendNomad);
 		::Legends.Perks.grant(bros[4], ::Legends.Perk.LegendWindReader);
-		bros[4].setStartValuesEx([ //always ranged for variety
-			"nomad_ranged_background"
-		]);
+		bros[4].setStartValuesEx([::Legends.Background.NomadRanged]); //always ranged for variety
 		bros[4].getBackground().m.RawDescription = "{Be it rabbit, snake or hyena - little stands a chance against %name% who readily hits their target with all the same precision. The change to conscripts over wildlife came as a challenge at first until they realised they just needed to aim slightly lower than normal.}";
 
 		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);
@@ -246,21 +235,21 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		local settlement = this.getCurrentSettlement();
 		if (::MSU.isKindOf(settlement, "city_state"))
 		{
-			this.addBroToRoster(_roster, "nomad_background", 3);
-			this.addBroToRoster(_roster, "nomad_ranged_background", 3);
-			this.addBroToRoster(_roster, "legend_bladedancer_background", 4);
+			this.addBroToRoster(_roster, ::Legends.Background.Nomad, 3);
+			this.addBroToRoster(_roster, ::Legends.Background.NomadRanged, 3);
+			this.addBroToRoster(_roster, ::Legends.Background.LegendBladedancer, 4);
 		}
 		else if (::MSU.isKindOf(settlement, "legends_steppe_fort") || (settlement.isMilitary() && this.isSteppeSettlement(settlement)))
 		{
-			this.addBroToRoster(_roster, "nomad_background", 3);
-			this.addBroToRoster(_roster, "nomad_ranged_background", 3);
-			this.addBroToRoster(_roster, "legend_bladedancer_background", 4);
+			this.addBroToRoster(_roster, ::Legends.Background.Nomad, 3);
+			this.addBroToRoster(_roster, ::Legends.Background.NomadRanged, 3);
+			this.addBroToRoster(_roster, ::Legends.Background.LegendBladedancer, 4);
 		}
 		else if (::MSU.isKindOf(settlement, "legends_steppe_village") || this.isSteppeSettlement(settlement))
 		{
-			this.addBroToRoster(_roster, "nomad_background", 4);
-			this.addBroToRoster(_roster, "nomad_ranged_background", 4);
-			this.addBroToRoster(_roster, "legend_bladedancer_background", 8);
+			this.addBroToRoster(_roster, ::Legends.Background.Nomad, 4);
+			this.addBroToRoster(_roster, ::Legends.Background.NomadRanged, 4);
+			this.addBroToRoster(_roster, ::Legends.Background.LegendBladedancer, 8);
 		}
 	}
 

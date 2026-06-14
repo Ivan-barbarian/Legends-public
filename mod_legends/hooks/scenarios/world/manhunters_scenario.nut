@@ -26,9 +26,7 @@
 
 		local bros = roster.getAll();
 		local talents;
-		bros[0].setStartValuesEx([
-			"manhunter_background"
-		]);
+		bros[0].setStartValuesEx([::Legends.Background.Manhunter]);
 		bros[0].setTitle("the Stoic");
 		bros[0].getBackground().m.RawDescription = "{In a sense, you don\'t particularly care for %name%. He\'s not hateful nor forgiving toward the prisoners of war, criminals, and the like. He just handles his business. But he\'s also this calm, unwavering way with you, and it\'s a bit bothersome. The man has so much potential, which is why you have him onboard for the %companyname%, but you just wished he showed some passion now and again.}";
 		bros[0].setPlaceInFormation(12);
@@ -53,9 +51,7 @@
 			}
 		}
 
-		bros[1].setStartValuesEx([
-			"manhunter_background"
-		]);
+		bros[1].setStartValuesEx([::Legends.Background.Manhunter]);
 		bros[1].setTitle("the Whip");
 		bros[1].getBackground().m.RawDescription = "{%name% is one of the worst people you have ever come to know. He is relentlessly brutal on the indebted, even by your measure, and is responsible for outright killing a few of your catches. That said, his mean streak will serve the company well. And given that you\'ve already whipped him a time or three for losing inventory, you know he can take a hit as well as he can give it.}";
 		bros[1].setPlaceInFormation(13);
@@ -77,7 +73,7 @@
 		talents[this.Const.Attributes.MeleeSkill] = 1;
 		talents[this.Const.Attributes.Hitpoints] = 1;
 		bros[2].setStartValuesEx([
-			"slave_southern_background"
+			::Legends.Background.SlaveSouthern
 		]);
 		bros[2].setTitle("the Learned");
 		bros[2].getBackground().m.RawDescription = "{You found %name% being lawed by city guards. It looked like they were gonna play a game of \'catch the scimitar\' with his wrists until you intervened, opining that he owed the Gilder far before he owed any man. You hoped to offload him to high-paying Viziers, but none would take him as he was too \'learned\' and seemed the exact sort of threat to spur an uprising. Unusual to a man of his standing, he does harbor a fair bit of respect for you.}";
@@ -92,9 +88,7 @@
 			[1, ::Legends.Helmet.Southern.nomad_head_wrap]
 		]));
 		bros[2].worsenMood(0.0, "Misses his books");
-		bros[3].setStartValuesEx([
-			"slave_background"
-		]);
+		bros[3].setStartValuesEx([::Legends.Background.Slave]);
 		bros[3].setTitle("the Northerner");
 		bros[3].getBackground().m.RawDescription = "{Not a friendly man by any means, but that\'s what the shackles are for. %name% was on the chopping block for a series of crimes when you happened upon him. You paid for his life as an investment, stating that he now owed hard work to find salvation in the Gilder\'s eyes. He\'s not so sure of your earnest beliefs, but you paid a priest to confirm that the man indeed owes his sweat to a higher sublimity.}";
 		bros[3].setPlaceInFormation(3);
@@ -106,7 +100,7 @@
 		bros[3].improveMood(2.0, "Relieved that he escaped execution");
 		bros[3].worsenMood(0.0, "Worried about what awaits him next");
 		bros[4].setStartValuesEx([
-			"slave_southern_background"
+			::Legends.Background.SlaveSouthern
 		]);
 		bros[4].setTitle("the Deserter");
 		bros[4].getBackground().m.RawDescription = "{%name% is an heirloom of heresy, a man gifted to you by one of the Vizier\'s priests. The man was a deserter in the high lord\'s army, but through wealthy connections managed to avoid execution. However, there\'s only one way to avoid the fire of the hells, and that is through indebted gratitude. He will work for you until he finds salvation, and when that happens is entirely up to you.}";
@@ -117,7 +111,7 @@
 		items.equip(this.new("scripts/items/weapons/militia_spear"));
 		bros[4].worsenMood(0.5, "Feels cursed to have deserted one army only to end up an indebted in another");
 		bros[5].setStartValuesEx([
-			"slave_southern_background"
+			::Legends.Background.SlaveSouthern
 		]);
 		bros[5].setTitle("the Beggar");
 		bros[5].getBackground().m.RawDescription = "{Found on the streets, %name% never stood much of a chance. Being a beggar, it was physically easy to slap the chains on him, and socially no one would care. The Gilder cares not for those who do not work, and every day the man squandered without putting in his sweat he accrued a debt. Now it must be paid lest he taste that desert fire for eternity. He\'s actually healthier looking now than when you found him, though he never seems to thank you for this.}";
@@ -204,7 +198,7 @@
 
 	o.onGenerateBro <- function (bro)
 	{
-		if (bro.getBackground().getID() == "slave_background")
+		if (bro.getBackground().getID() == ::Legends.Background.Slave)
 		{
 			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.5); //1.0 = default
 			bro.getBaseProperties().DailyWageMult *= 1.0; //1.0 = default (costs nothing)

@@ -45,17 +45,13 @@ this.legend_cannibal_recruitment <- this.inherit("scripts/events/event", {
 					_event.m.Cannibal.getFlags().add("PlayerSkeleton");
 					_event.m.Cannibal.getFlags().add("undead");
 					_event.m.Cannibal.getFlags().add("skeleton");
-					_event.m.Cannibal.setStartValuesEx([
-						"legend_cannibal_background"
-					]);
+					_event.m.Cannibal.setStartValuesEx([::Legends.Background.LegendCannibal]);
 					::Legends.Traits.grant(_event.m.Cannibal, ::Legends.Trait.RacialSkeleton);
 					::Legends.Traits.grant(_event.m.Cannibal, ::Legends.Trait.LegendFleshless);
 				}
 				else
 				{
-					_event.m.Cannibal.setStartValuesEx([
-						"legend_cannibal_background"
-					]);
+					_event.m.Cannibal.setStartValuesEx([::Legends.Background.LegendCannibal]);
 				}
 
 				this.Characters.push(_event.m.Cannibal.getImagePath());

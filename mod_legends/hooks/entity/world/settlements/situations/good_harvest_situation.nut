@@ -12,12 +12,12 @@
 
 	o.onUpdateDraftList <- function ( _draftList )
 	{
-		_draftList.push("farmhand_background");
-		_draftList.push("farmhand_background");
-		_draftList.push("farmhand_background");
-		_draftList.push("farmhand_background");
-		_draftList.push("miller_background");
-		_draftList.push("miller_background");
-		_draftList.push("legend_herbalist_background");
+		_draftList.push(::Legends.Background.Farmhand);
+		_draftList.push(::Legends.Background.Farmhand);
+		_draftList.push(::Legends.Background.Farmhand);
+		_draftList.push(::Legends.Background.Farmhand);
+		_draftList.push(::Legends.Background.Miller);
+		_draftList.push(::Legends.Background.Miller);
+		_draftList.push(::Legends.Background.LegendHerbalist);
 	}
 });

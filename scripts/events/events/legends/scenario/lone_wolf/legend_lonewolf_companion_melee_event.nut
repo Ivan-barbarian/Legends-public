@@ -204,9 +204,7 @@ this.legend_lonewolf_companion_melee_event <- this.inherit("scripts/events/event
 		{
 			local roster = this.World.getTemporaryRoster();
 			this.m.Dude = roster.create("scripts/entity/tactical/player");
-			this.m.Dude.setStartValuesEx([
-				"legend_companion_melee_background"
-			]);
+			this.m.Dude.setStartValuesEx([::Legends.Background.LegendCompanionMelee]);
 			this.m.Dude.getSprite("miniboss").setBrush("bust_miniboss");
 		}
 

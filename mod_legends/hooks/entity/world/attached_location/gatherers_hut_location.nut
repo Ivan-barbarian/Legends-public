@@ -17,9 +17,9 @@
 	local onUpdateDraftList = o.onUpdateDraftList;
 	o.onUpdateDraftList = function ( _list )
 	{
-		_list.push("legend_herbalist_background");
-		_list.push("legend_herbalist_background");
-		_list.push("daytaler_background");
+		_list.push(::Legends.Background.LegendHerbalist);
+		_list.push(::Legends.Background.LegendHerbalist);
+		_list.push(::Legends.Background.Daytaler);
 		onUpdateDraftList(_list);
 	}
 

@@ -36,9 +36,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 
 		local bros = roster.getAll();
-		bros[0].setStartValuesEx([
-			"legend_preserver_background" //light and fast healer
-		]);
+		bros[0].setStartValuesEx([::Legends.Background.LegendPreserver]); //light and fast healer
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);
 		bros[0].getSprite("miniboss").setBrush("bust_miniboss_undead");
@@ -47,9 +45,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		::Legends.Perks.grant(bros[0], ::Legends.Perk.BagsAndBelts);
 		::Legends.Traits.grant(bros[0], ::Legends.Trait.LegendDeathlySpectre);
 
-		bros[1].setStartValuesEx([
-			"legend_warlock_summoner_background" //sickly but good def. summons.
-		]);
+		bros[1].setStartValuesEx([::Legends.Background.LegendWarlockSummoner]); //sickly but good def. summons.
 		bros[1].setPlaceInFormation(4);
 		bros[1].setVeteranPerks(2);
 		bros[1].getSprite("miniboss").setBrush("bust_miniboss_undead");
@@ -59,9 +55,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		::Legends.Perks.grant(bros[1], ::Legends.Perk.NineLives);
 		::Legends.Traits.grant(bros[1], ::Legends.Trait.LegendDeathlySpectre);
 
-		bros[2].setStartValuesEx([
-			"legend_puppet_master_background" //strong but slow tank
-		]);
+		bros[2].setStartValuesEx([::Legends.Background.LegendPuppetMaster]); //strong but slow tank
 		bros[2].setPlaceInFormation(5);
 		bros[2].setVeteranPerks(2);
 		bros[2].getSprite("miniboss").setBrush("bust_miniboss_undead");
@@ -70,9 +64,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		::Legends.Perks.grant(bros[2], ::Legends.Perk.LegendPossession);
 		::Legends.Traits.grant(bros[2], ::Legends.Trait.LegendDeathlySpectre);
 
-		bros[3].setStartValuesEx([
-			"legend_puppet_background" //poor fucking infantry (tm)
-		]);
+		bros[3].setStartValuesEx([::Legends.Background.LegendPuppet]); //poor fucking infantry (tm)
 		bros[3].getBackground().m.RawDescription = "Once a proud necromancer, %name% took three pupils under their wing to train the next generation of great necromancers. What %name% did not seeing coming is a heart attack - one that left them like a corpse like they used to command. With this macabre irony in mind, they now serve their students in unlife as little more than fodder.";
 		bros[3].setPlaceInFormation(12);
 		bros[3].setVeteranPerks(2);
@@ -224,9 +216,9 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		local garbage = [];
 		local bros = _roster.getAll();
-		this.addBroToRoster(_roster, "graverobber_background", 4);
-		this.addBroToRoster(_roster, "gravedigger_background", 4);
-		this.addBroToRoster(_roster, "cultist_background", 4);
+		this.addBroToRoster(_roster, ::Legends.Background.Cultist, 4);
+		this.addBroToRoster(_roster, ::Legends.Background.Gravedigger, 4);
+		this.addBroToRoster(_roster, ::Legends.Background.Graverobber, 4);
 		foreach( i, bro in bros )
 		{
 			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader)) //delete crusader/pious recruits

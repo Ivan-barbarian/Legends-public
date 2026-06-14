@@ -29,23 +29,17 @@
 		}
 
 		local bros = roster.getAll();
-		bros[0].setStartValuesEx([
-			"companion_1h_background"
-		]);
+		bros[0].setStartValuesEx([::Legends.Background.Companion]);
 		bros[0].getBackground().m.RawDescription = "{You saved %name%\'s life in a battle against brigands, and he returned the favor in an alley ambush by thieves. Given that common criminals are a few levels beneath brigands, you often joke with him that he is still a little behind on the \'saving each other\'s asses\' debt.}";
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);
 
-		bros[1].setStartValuesEx([
-			"companion_2h_background"
-		]);
+		bros[1].setStartValuesEx([::Legends.Background.Companion2h]);
 		bros[1].getBackground().m.RawDescription = "{Whatever is wrong with %name% you hope he never fixes it. A character with a particular taste for battling, whoring, gambling, singing, dogfighting, skirt chasing, weirdly dish washing, vomiting and, of course, drinking, he has always been a gift to have around. He also just happens to be an excellent fighter in his own right.}";
 		bros[1].setPlaceInFormation(4);
 		bros[1].setVeteranPerks(2);
 
-		bros[2].setStartValuesEx([
-			"companion_ranged_background"
-		]);
+		bros[2].setStartValuesEx([::Legends.Background.CompanionRanged]);
 		bros[2].getBackground().m.RawDescription = "You crossed paths with %name% a number of times prior to his joining the company. First time you were both simple laborers. The second time you were sellswords. And now is the third go of it with him joining your company. If all goes well, he\'ll finally stick around this time and you\'ll both find the riches you seek.";
 		bros[2].setPlaceInFormation(5);
 		bros[2].setVeteranPerks(2);

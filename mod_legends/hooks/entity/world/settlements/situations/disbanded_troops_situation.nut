@@ -14,50 +14,50 @@
 	{
 		for (local i = 0; i < 6; ++i)
 		{
-			_draftList.push("deserter_background");
+			_draftList.push(::Legends.Background.Deserter);
 		}
 
 		for (local i = 0; i < 9; ++i)
 		{
-			_draftList.push("militia_background");
+			_draftList.push(::Legends.Background.Militia);
 		}
 		
 		for (local i = 0; i < 8; ++i)
 		{
-			_draftList.push("retired_soldier_background");
+			_draftList.push(::Legends.Background.RetiredSoldier);
 		}
 
 		for (local i = 0; i < 5; ++i)
 		{
-			_draftList.push("squire_background");
+			_draftList.push(::Legends.Background.Squire);
 		}
 		
-		_draftList.push("sellsword_background");
-		_draftList.push("sellsword_background");
-		_draftList.push("sellsword_background");
-		_draftList.push("hedge_knight_background");
-		_draftList.push("hedge_knight_background");
-		_draftList.push("hedge_knight_background");
-		_draftList.push("legend_noble_2h");
-		_draftList.push("legend_noble_2h");
-		_draftList.push("legend_noble_ranged");
-		_draftList.push("legend_noble_ranged");
-		_draftList.push("legend_noble_shield");
-		_draftList.push("legend_noble_shield");
-		_draftList.push("legend_master_archer_background");
-		_draftList.push("legend_master_archer_background");
-		_draftList.push("legend_master_archer_background");
+		_draftList.push(::Legends.Background.Sellsword);
+		_draftList.push(::Legends.Background.Sellsword);
+		_draftList.push(::Legends.Background.Sellsword);
+		_draftList.push(::Legends.Background.HedgeKnight);
+		_draftList.push(::Legends.Background.HedgeKnight);
+		_draftList.push(::Legends.Background.HedgeKnight);
+		_draftList.push(::Legends.Background.LegendNoble2h);
+		_draftList.push(::Legends.Background.LegendNoble2h);
+		_draftList.push(::Legends.Background.LegendNobleRanged);
+		_draftList.push(::Legends.Background.LegendNobleRanged);
+		_draftList.push(::Legends.Background.LegendNobleShield);
+		_draftList.push(::Legends.Background.LegendNobleShield);
+		_draftList.push(::Legends.Background.LegendMasterArcher);
+		_draftList.push(::Legends.Background.LegendMasterArcher);
+		_draftList.push(::Legends.Background.LegendMasterArcher);
 
 		if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled") {
-			_draftList.push("legend_shieldmaiden_background");
-			_draftList.push("legend_shieldmaiden_background");
-			_draftList.push("legend_shieldmaiden_background");
+			_draftList.push(::Legends.Background.LegendShieldmaiden);
+			_draftList.push(::Legends.Background.LegendShieldmaiden);
+			_draftList.push(::Legends.Background.LegendShieldmaiden);
 		}
 
 		if  ( this.World.Assets.getOrigin().getID() == "scenario.militia") {
 			for (local i = 0; i < 6; ++i)
 			{
-				_draftList.push("legend_man_at_arms_background");
+				_draftList.push(::Legends.Background.LegendManAtArms);
 			}
 		}
 	}

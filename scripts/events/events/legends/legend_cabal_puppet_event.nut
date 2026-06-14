@@ -39,9 +39,7 @@ this.legend_cabal_puppet_event <- this.inherit("scripts/events/event", {
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				_event.m.Dude.setStartValuesEx([
-					"legend_puppet_background"
-				]);
+				_event.m.Dude.setStartValuesEx([::Legends.Background.LegendPuppet]);
 				this.Characters.push(_event.m.Dude.getImagePath());
 			}
 

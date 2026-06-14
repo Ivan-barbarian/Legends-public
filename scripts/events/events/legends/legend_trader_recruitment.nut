@@ -39,9 +39,7 @@ this.legend_trader_recruitment <- this.inherit("scripts/events/event", {
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Trader = roster.create("scripts/entity/tactical/player");
-				_event.m.Trader.setStartValuesEx([
-					"legend_trader_background"
-				]);
+				_event.m.Trader.setStartValuesEx([::Legends.Background.LegendTrader]);
 				::Legends.Traits.grant(_event.m.Trader, ::Legends.Trait.Greedy);
 				this.Characters.push(_event.m.Trader.getImagePath());
 			}

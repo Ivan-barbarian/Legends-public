@@ -31,24 +31,24 @@
 	o.onUpdateDraftList <- function ( _draftList )
 	{
 		if (this.World.Assets.getOrigin().getID() == "scenario.legends_necro" || this.World.Assets.getOrigin().getID() == "scenario.legends_solo_necro") {
-			_draftList.push("legend_puppet_background");
-			_draftList.push("legend_puppet_background");
-			_draftList.push("legend_puppet_background");
-			_draftList.push("legend_puppet_background");
+			_draftList.push(::Legends.Background.LegendPuppet);
+			_draftList.push(::Legends.Background.LegendPuppet);
+			_draftList.push(::Legends.Background.LegendPuppet);
+			_draftList.push(::Legends.Background.LegendPuppet);
 		}
 		else if  ( this.World.Assets.getOrigin().getID() == "scenario.militia") {
-			_draftList.push("legend_man_at_arms_background");
-			_draftList.push("legend_man_at_arms_background");
+			_draftList.push(::Legends.Background.LegendManAtArms);
+			_draftList.push(::Legends.Background.LegendManAtArms);
 		}
 
-		_draftList.push("deserter_background");
-		_draftList.push("deserter_background");
-		_draftList.push("deserter_background");
-		_draftList.push("deserter_background");
-		_draftList.push("sellsword_background");
-		_draftList.push("sellsword_background");
-		_draftList.push("sellsword_background");
-		_draftList.push("hedge_knight_background");
-		_draftList.push("hedge_knight_background");
+		_draftList.push(::Legends.Background.Deserter);
+		_draftList.push(::Legends.Background.Deserter);
+		_draftList.push(::Legends.Background.Deserter);
+		_draftList.push(::Legends.Background.Deserter);
+		_draftList.push(::Legends.Background.Sellsword);
+		_draftList.push(::Legends.Background.Sellsword);
+		_draftList.push(::Legends.Background.Sellsword);
+		_draftList.push(::Legends.Background.HedgeKnight);
+		_draftList.push(::Legends.Background.HedgeKnight);
 	}
 });

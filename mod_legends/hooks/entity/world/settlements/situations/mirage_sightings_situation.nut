@@ -18,8 +18,8 @@
 	o.onUpdateDraftList <- function ( _draftList )
 	{
 		if ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer" && this.Math.rand(0, 5) == 1)
-			_draftList.push("legend_illusionist_background");
+			_draftList.push(::Legends.Background.LegendIllusionist);
 		else if (this.Math.rand(0, 9) == 1)
-			_draftList.push("legend_illusionist_background");
+			_draftList.push(::Legends.Background.LegendIllusionist);
 	}
 });

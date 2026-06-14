@@ -10,14 +10,14 @@
 	local onUpdateDraftList = o.onUpdateDraftList;
 	o.onUpdateDraftList = function ( _list )
 	{
-		_list.push("nomad_background");
-		_list.push("nomad_background");
+		_list.push(::Legends.Background.Nomad);
+		_list.push(::Legends.Background.Nomad);
 
 		if (this.Math.rand(0, 6) == 1)
-			_list.push("legend_conscript_background");
+			_list.push(::Legends.Background.LegendConscript);
 		
 		if (this.Math.rand(0, 6) == 1)
-			_list.push("legend_conscript_ranged_background");
+			_list.push(::Legends.Background.LegendConscriptRanged);
 		
 		onUpdateDraftList(_list);
 	}

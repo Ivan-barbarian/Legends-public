@@ -43,15 +43,15 @@
 	o.onUpdateDraftList <- function ( _draftList )
 	{
 		if  (this.World.Assets.getOrigin().getID() == "scenario.legends_necro" || this.World.Assets.getOrigin().getID() == "scenario.legends_solo_necro") {
-			_draftList.push("legend_puppet_background");
-			_draftList.push("legend_puppet_background");
+			_draftList.push(::Legends.Background.LegendPuppet);
+			_draftList.push(::Legends.Background.LegendPuppet);
 		}
 
-		_draftList.push("ratcatcher_background");
-		_draftList.push("ratcatcher_background");
-		_draftList.push("ratcatcher_background");
-		_draftList.push("ratcatcher_background");
-		_draftList.push("beast_hunter_background");
-		_draftList.push("beast_hunter_background");
+		_draftList.push(::Legends.Background.Ratcatcher);
+		_draftList.push(::Legends.Background.Ratcatcher);
+		_draftList.push(::Legends.Background.Ratcatcher);
+		_draftList.push(::Legends.Background.Ratcatcher);
+		_draftList.push(::Legends.Background.BeastSlayer);
+		_draftList.push(::Legends.Background.BeastSlayer);
 	}
 });

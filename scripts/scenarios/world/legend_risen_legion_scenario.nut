@@ -56,58 +56,42 @@ this.legend_risen_legion_scenario <- this.inherit("scripts/scenarios/world/start
 		//*** 2
 		//* * 3
 
-		bros[0].setStartValuesEx([
-			"legend_legion_slave_background"
-		]);
+		bros[0].setStartValuesEx([::Legends.Background.LegendLegionSlave]);
 		bros[0].setPlaceInFormation(3);
 		local items = bros[0].getItems();
 		items.addToBag(this.new("scripts/items/weapons/javelin"));
 
-		bros[1].setStartValuesEx([
-			"legend_legion_slave_background"
-		]);
+		bros[1].setStartValuesEx([::Legends.Background.LegendLegionSlave]);
 		bros[1].setPlaceInFormation(4);
 		local items = bros[1].getItems();
 		items.addToBag(this.new("scripts/items/weapons/javelin"));
 
-		bros[2].setStartValuesEx([
-			"legend_legion_slave_background"
-		]);
+		bros[2].setStartValuesEx([::Legends.Background.LegendLegionSlave]);
 		bros[2].setPlaceInFormation(5);
 		local items = bros[2].getItems();
 		items.addToBag(this.new("scripts/items/weapons/javelin"));
 
-		bros[3].setStartValuesEx([
-			"legend_legion_slave_background"
-		]);
+		bros[3].setStartValuesEx([::Legends.Background.LegendLegionSlave]);
 		bros[3].setPlaceInFormation(12);
 		local items = bros[3].getItems();
 		items.addToBag(this.new("scripts/items/weapons/javelin"));
 
-		bros[4].setStartValuesEx([
-			"legend_legion_auxiliary_background"
-		]);
+		bros[4].setStartValuesEx([::Legends.Background.LegendLegionAuxiliary]);
 		bros[4].setPlaceInFormation(13);
 		local items = bros[4].getItems();
 		items.addToBag(this.new("scripts/items/tools/throwing_net"));
 
-		bros[5].setStartValuesEx([
-			"legend_legion_auxiliary_background"
-		]);
+		bros[5].setStartValuesEx([::Legends.Background.LegendLegionAuxiliary]);
 		bros[5].setPlaceInFormation(14);
 		local items = bros[5].getItems();
 		items.addToBag(this.new("scripts/items/tools/throwing_net"));
 
-		bros[6].setStartValuesEx([
-			"legend_legion_legionary_background"
-		]);
+		bros[6].setStartValuesEx([::Legends.Background.LegendLegionLegionary]);
 		bros[6].setPlaceInFormation(21);
 		local items = bros[6].getItems();
 		items.addToBag(this.new("scripts/items/weapons/throwing_spear"));
 
-		bros[7].setStartValuesEx([
-			"legend_legion_legionary_background"
-		]);
+		bros[7].setStartValuesEx([::Legends.Background.LegendLegionLegionary]);
 		bros[7].setPlaceInFormation(23);
 		local items = bros[7].getItems();
 		items.addToBag(this.new("scripts/items/weapons/throwing_spear"));

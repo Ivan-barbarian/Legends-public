@@ -5,50 +5,50 @@
 	{
 		create();
 		this.m.DraftList = [
-			"caravan_hand_background",
-			"caravan_hand_background",
-			"houndmaster_background",
-			"daytaler_background",
-			"mason_background",
-			"militia_background",
-			"militia_background",
-			"shepherd_background",
-			"vagabond_background",
-			"bastard_background",
-			"deserter_background",
-			"deserter_background",
-			"retired_soldier_background",
-			"retired_soldier_background",
-			"caravan_hand_background",
-			"caravan_hand_background",
-			"houndmaster_background",
+			::Legends.Background.CaravanHand,
+			::Legends.Background.CaravanHand,
+			::Legends.Background.Houndmaster,
+			::Legends.Background.Daytaler,
+			::Legends.Background.Mason,
+			::Legends.Background.Militia,
+			::Legends.Background.Militia,
+			::Legends.Background.Shepherd,
+			::Legends.Background.Vagabond,
+			::Legends.Background.Bastard,
+			::Legends.Background.Deserter,
+			::Legends.Background.Deserter,
+			::Legends.Background.RetiredSoldier,
+			::Legends.Background.RetiredSoldier,
+			::Legends.Background.CaravanHand,
+			::Legends.Background.CaravanHand,
+			::Legends.Background.Houndmaster,
 			"female_daytaler_background",
-			"mason_background",
-			"militia_background",
-			"militia_background",
-			"shepherd_background",
-			"vagabond_background",
-			"bastard_background",
-			"deserter_background",
-			"deserter_background",
-			"retired_soldier_background",
-			"retired_soldier_background"
+			::Legends.Background.Mason,
+			::Legends.Background.Militia,
+			::Legends.Background.Militia,
+			::Legends.Background.Shepherd,
+			::Legends.Background.Vagabond,
+			::Legends.Background.Bastard,
+			::Legends.Background.Deserter,
+			::Legends.Background.Deserter,
+			::Legends.Background.RetiredSoldier,
+			::Legends.Background.RetiredSoldier
 		];
 
 		if (this.World.Assets.getOrigin().getID() == "scenario.legends_nomad")
 		{
-			this.m.DraftList.push("nomad_background");
-			this.m.DraftList.push("nomad_background");
-			this.m.DraftList.push("nomad_background");
-			this.m.DraftList.push("nomad_ranged_background");
-			this.m.DraftList.push("nomad_ranged_background");
-			this.m.DraftList.push("nomad_ranged_background");
-			this.m.DraftList.push("legend_bladedancer_background");
+			this.m.DraftList.push(::Legends.Background.Nomad);
+			this.m.DraftList.push(::Legends.Background.Nomad);
+			this.m.DraftList.push(::Legends.Background.Nomad);
+			this.m.DraftList.push(::Legends.Background.NomadRanged);
+			this.m.DraftList.push(::Legends.Background.NomadRanged);
+			this.m.DraftList.push(::Legends.Background.NomadRanged);
+			this.m.DraftList.push(::Legends.Background.LegendBladedancer);
 		}
 
 		this.m.StablesList = [
-			"legend_donkey_background",
-			"legend_horse_rouncey"
+			::Legends.Background.LegendDonkey,
+			::Legends.Background.LegendHorseRouncey
 		];
 	}
 

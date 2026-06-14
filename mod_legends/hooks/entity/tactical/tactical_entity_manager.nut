@@ -4,15 +4,15 @@
 
 	o.addNetTiles <- function( _tile )
 	{
-		if (_tile.ID in m.NetTiles) return;
-		else m.NetTiles[_tile.ID] <- _tile;
+		if (_tile.ID in this.m.NetTiles) return;
+		else this.m.NetTiles[_tile.ID] <- _tile;
 	}
 
 	local clear_tactical_entity_manager = o.clear;
 	o.clear = function()
 	{
 		clear_tactical_entity_manager();
-		m.NetTiles = {};
+		this.m.NetTiles = {};
 	}
 
  	o.spawn = function ( _properties )

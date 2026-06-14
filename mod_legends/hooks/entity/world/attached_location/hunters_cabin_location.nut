@@ -18,12 +18,12 @@
 	local onUpdateDraftList = o.onUpdateDraftList;
 	o.onUpdateDraftList = function ( _list )
 	{
-		_list.push("poacher_background");
-		_list.push("poacher_background");
-		_list.push("legend_taxidermist_background");
+		_list.push(::Legends.Background.Poacher);
+		_list.push(::Legends.Background.Poacher);
+		_list.push(::Legends.Background.LegendTaxidermist);
 
 		if (this.Math.rand(0, 9) == 1)
-			_list.push("legend_master_archer_background");
+			_list.push(::Legends.Background.LegendMasterArcher);
 
 		// todo delete it - chopeks
 //		if(this.LegendsMod.Configs().LegendMagicEnabled())
@@ -35,8 +35,8 @@
 //				r = this.Math.rand(0, 9);
 //				if (r == 1)
 //				{
-//				_list.push("legend_master_archer_background");
-//				_list.push("legend_ranger_background");
+//				_list.push(::Legends.Background.LegendMasterArcher);
+//				_list.push(::Legends.Background.LegendRanger);
 //				}
 //			}
 //			else
@@ -44,7 +44,7 @@
 //			r = this.Math.rand(0, 9);
 //				if (r == 1)
 //				{
-//				_list.push("legend_master_archer_background");
+//				_list.push(::Legends.Background.LegendMasterArcher);
 //				}
 //			}
 //

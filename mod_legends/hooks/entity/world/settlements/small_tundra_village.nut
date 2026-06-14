@@ -5,29 +5,29 @@
 	{
 		create();
 		this.m.DraftList = [
-			"brawler_background",
-			"daytaler_background",
-			"daytaler_background",
-			"farmhand_background",
-			"miner_background",
-			"peddler_background",
-			"poacher_background",
-			"shepherd_background",
-			"tailor_background",
-			"vagabond_background",
-			"wildman_background",
-			"brawler_background",
+			::Legends.Background.Brawler,
+			::Legends.Background.Daytaler,
+			::Legends.Background.Daytaler,
+			::Legends.Background.Farmhand,
+			::Legends.Background.Miner,
+			::Legends.Background.Peddler,
+			::Legends.Background.Poacher,
+			::Legends.Background.Shepherd,
+			::Legends.Background.Tailor,
+			::Legends.Background.Vagabond,
+			::Legends.Background.Wildman,
+			::Legends.Background.Brawler,
 			"female_daytaler_background",
 			"female_daytaler_background",
 			"female_farmhand_background",
-			"miner_background",
-			"peddler_background",
-			"poacher_background",
-			"shepherd_background",
+			::Legends.Background.Miner,
+			::Legends.Background.Peddler,
+			::Legends.Background.Poacher,
+			::Legends.Background.Shepherd,
 			"female_tailor_background",
-			"vagabond_background",
-			"wildman_background",
-			"wildman_background"
+			::Legends.Background.Vagabond,
+			::Legends.Background.Wildman,
+			::Legends.Background.Wildman
 		];
 	}
 });

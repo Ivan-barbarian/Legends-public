@@ -10,20 +10,20 @@
 	local onUpdateDraftList = o.onUpdateDraftList;
 	o.onUpdateDraftList = function ( _list )
 	{
-		_list.push("legend_blacksmith_background");
-		_list.push("legend_ironmonger_background");
+		_list.push(::Legends.Background.LegendBlacksmith);
+		_list.push(::Legends.Background.LegendIronmonger);
 
 		if (this.Math.rand(0, 9) == 1)
-			_list.push("legend_master_archer_background");
+			_list.push(::Legends.Background.LegendMasterArcher);
 
 		if (this.Math.rand(0, 9) == 1)
-			_list.push("legend_noble_shield");
+			_list.push(::Legends.Background.LegendNobleShield);
 		
 		if (this.Math.rand(0, 9) == 1)
-			_list.push("legend_noble_2h");
+			_list.push(::Legends.Background.LegendNoble2h);
 		
 		if (this.Math.rand(0, 9) == 1)
-			_list.push("legend_noble_ranged");
+			_list.push(::Legends.Background.LegendNobleRanged);
 		
 		onUpdateDraftList(_list);
 	}

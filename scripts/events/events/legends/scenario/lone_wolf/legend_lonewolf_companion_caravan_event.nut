@@ -164,9 +164,7 @@ this.legend_lonewolf_companion_caravan_event <- this.inherit("scripts/events/eve
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				_event.m.Dude.setStartValuesEx([
-					"tailor_background"
-				]);
+				_event.m.Dude.setStartValuesEx([::Legends.Background.Tailor]);
 				_event.m.Dude.getSprite("miniboss").setBrush("bust_miniboss");
 				_event.m.Dude.getBaseProperties().Hitpoints += 7;
 				_event.m.Dude.getBaseProperties().Bravery += 5;

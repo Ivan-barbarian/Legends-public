@@ -11,12 +11,12 @@
 
 	o.onUpdateDraftList <- function ( _draftList )
 	{
-		_draftList.push("miner_background");
-		_draftList.push("miner_background");
-		_draftList.push("miner_background");
-		_draftList.push("miner_background");
-		_draftList.push("legend_ironmonger_background");
-		_draftList.push("legend_ironmonger_background");
-		_draftList.push("legend_blacksmith_background");
+		_draftList.push(::Legends.Background.Miner);
+		_draftList.push(::Legends.Background.Miner);
+		_draftList.push(::Legends.Background.Miner);
+		_draftList.push(::Legends.Background.Miner);
+		_draftList.push(::Legends.Background.LegendIronmonger);
+		_draftList.push(::Legends.Background.LegendIronmonger);
+		_draftList.push(::Legends.Background.LegendBlacksmith);
 	}
 });

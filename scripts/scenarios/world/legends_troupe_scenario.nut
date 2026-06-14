@@ -24,9 +24,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		}
 
 		local bros = roster.getAll();
-		bros[0].setStartValuesEx([
-			"legend_illusionist_background"
-		]);
+		bros[0].setStartValuesEx([::Legends.Background.LegendIllusionist]);
 		bros[0].getBackground().m.RawDescription = "{%name% learned how to entertain on the streets, using slight of hand and magic tricks to dupe unwitting punters out of their coin. Illusion is easier with a distraction, so the choice to join others was easy.}";
 		bros[0].m.PerkPoints = 2;
 		bros[0].m.LevelUps = 2;
@@ -40,7 +38,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		items.equip(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Standard.jesters_hat]]));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/legend_northern_sling"));
-		bros[1].setStartValuesEx(["minstrel_background"],true,0);
+		bros[1].setStartValuesEx([::Legends.Background.Minstrel],true,0);
 		bros[1].getBackground().m.RawDescription = "{%name% worked providing entertainment at inns around the country, but the bar fights and road bandits make it no life for a solo artist. Joining with others was for safety as much as the show.}";
 		bros[1].setPlaceInFormation(12);
 		::Legends.Perks.grant(bros[1], ::Legends.Perk.LegendLeap);
@@ -52,7 +50,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		items.equip(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Named.jugglers_hat]]));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/lute"));
-		bros[2].setStartValuesEx(["minstrel_background"],true,1);
+		bros[2].setStartValuesEx([::Legends.Background.Minstrel],true,1);
 		bros[2].getBackground().m.RawDescription = "{%name% has been in the court of a local noble for years, but the same audience every night grows tiresome. It was time to find a band, hit the road and find some new audiences for their art.}";
 		bros[2].improveMood(1.0, "Got the band back together");
 		bros[2].setPlaceInFormation(4);
@@ -67,9 +65,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		items.equip(this.Const.World.Common.pickHelmet([[1, ::Legends.Helmet.Named.jugglers_hat]]));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/legend_drum"));
-		bros[3].setStartValuesEx([
-			"juggler_background"
-		]);
+		bros[3].setStartValuesEx([::Legends.Background.Juggler]);
 		bros[3].getBackground().m.RawDescription = "{%name% was juggling and throwing knives in markets, and agreed to join the troupe to improve the show with the skills of others}";
 		bros[3].setPlaceInFormation(13);
 		bros[3].m.PerkPoints = 1;
@@ -178,14 +174,14 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 	function onUpdateHiringRoster( _roster )
 	{
-		this.addBroToRoster(_roster, "beggar_background", 8);
-		this.addBroToRoster(_roster, "minstrel_background", 8);
-		this.addBroToRoster(_roster, "juggler_background", 8);
-		this.addBroToRoster(_roster, "eunuch_background", 8);
-		this.addBroToRoster(_roster, "belly_dancer_background", 8);
-		this.addBroToRoster(_roster, "gambler_background", 8);
-		this.addBroToRoster(_roster, "legend_illusionist_background", 9);
-		this.addBroToRoster(_roster, "legend_dervish_background", 9);
+		this.addBroToRoster(_roster, ::Legends.Background.BellyDancer, 8);
+		this.addBroToRoster(_roster, ::Legends.Background.Beggar, 8);
+		this.addBroToRoster(_roster, ::Legends.Background.Eunuch, 8);
+		this.addBroToRoster(_roster, ::Legends.Background.Gambler, 8);
+		this.addBroToRoster(_roster, ::Legends.Background.Juggler, 8);
+		this.addBroToRoster(_roster, ::Legends.Background.Minstrel, 8);
+		this.addBroToRoster(_roster, ::Legends.Background.LegendDervish, 9);
+		this.addBroToRoster(_roster, ::Legends.Background.LegendIllusionist, 9);
 	}
 
 });

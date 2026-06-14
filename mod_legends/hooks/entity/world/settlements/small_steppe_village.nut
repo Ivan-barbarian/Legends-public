@@ -5,38 +5,38 @@
 	{
 		create();
 		this.m.DraftList = [
-			"apprentice_background",
-			"beggar_background",
-			"brawler_background",
-			"caravan_hand_background",
-			"gambler_background",
-			"daytaler_background",
-			"daytaler_background",
-			"peddler_background",
-			"refugee_background",
-			"tailor_background",
-			"thief_background",
-			"vagabond_background",
-			"poacher_background",
-			"apprentice_background",
+			::Legends.Background.Apprentice,
+			::Legends.Background.Beggar,
+			::Legends.Background.Brawler,
+			::Legends.Background.CaravanHand,
+			::Legends.Background.Gambler,
+			::Legends.Background.Daytaler,
+			::Legends.Background.Daytaler,
+			::Legends.Background.Peddler,
+			::Legends.Background.Refugee,
+			::Legends.Background.Tailor,
+			::Legends.Background.Thief,
+			::Legends.Background.Vagabond,
+			::Legends.Background.Poacher,
+			::Legends.Background.Apprentice,
 			"female_beggar_background",
-			"brawler_background",
-			"caravan_hand_background",
-			"gambler_background",
+			::Legends.Background.Brawler,
+			::Legends.Background.CaravanHand,
+			::Legends.Background.Gambler,
 			"female_daytaler_background",
 			"female_daytaler_background",
-			"peddler_background",
-			"refugee_background",
+			::Legends.Background.Peddler,
+			::Legends.Background.Refugee,
 			"female_tailor_background",
 			"female_thief_background",
-			"vagabond_background",
-			"poacher_background"
+			::Legends.Background.Vagabond,
+			::Legends.Background.Poacher
 		];
 
 		if (this.World.Assets.getOrigin().getID() == "scenario.legends_nomad")
 		{
-			this.m.DraftList.push("nomad_background");
-			this.m.DraftList.push("nomad_ranged_background");
+			this.m.DraftList.push(::Legends.Background.Nomad);
+			this.m.DraftList.push(::Legends.Background.NomadRanged);
 		}
 	}
 });

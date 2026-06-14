@@ -38,9 +38,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		}
 
 		local bros = roster.getAll(); //starting party	
-		bros[0].setStartValuesEx([
-			"legend_ranger_commander_background"
-		]);
+		bros[0].setStartValuesEx([::Legends.Background.LegendCommanderRanger]);
 		bros[0].getBackground().m.RawDescription = "{%name% grew up in the rangers and was taught the ways of the forest by veteran foresters. Running through the woods for a lifetime has made %name% particularly good at tracking enemies, or tumbling into the homes of wild druids trying to escape from the modern world}";
 		::Legends.Traits.grant(bros[0], ::Legends.Trait.Player);
 		this.addScenarioPerk(bros[0].getBackground(), ::Const.Perks.PerkDefs.Pathfinder);
@@ -51,15 +49,13 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);
 
-		bros[1].setStartValuesEx([
-			"legend_druid_background"
-		]);
+		bros[1].setStartValuesEx([::Legends.Background.LegendDruid]);
 		bros[1].getBackground().m.RawDescription = "{%name% was the bastard of a noblewoman who left them in a ditch at the edge of the forest to be taken by wolves. It worked, but instead left %name% being cared for by a wolfmother with no cubs of her own. When the she-wolf was slain by vengeful poachers %name% took it upon themselves to be as far away from society as possible. Right up until a certain ranger fell headfirst into their hovel}";
 
 		::Legends.Traits.grant(bros[1], ::Legends.Trait.Player);
 		this.addScenarioPerk(bros[1].getBackground(), ::Const.Perks.PerkDefs.Pathfinder);
 		this.addScenarioPerk(bros[1].getBackground(), ::Const.Perks.PerkDefs.LegendTacticalManeuvers);
-		bros[1].worsenMood(1.5, "Had my home destroyed by an idiot");
+		bros[1].worsenMood(1.5, "Had his home destroyed by a clumsy intruder");
 		bros[1].getFlags().set("IsPlayerCharacter", true);
 		bros[1].setPlaceInFormation(4);
 		bros[1].setVeteranPerks(2);
@@ -189,12 +185,11 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 
 	function onUpdateHiringRoster( _roster )
 	{
-		this.addBroToRoster(_roster, "poacher_background", 6);
-		// this.addBroToRoster(_roster, "wildwoman_background", 6);
-		this.addBroToRoster(_roster, "wildman_background", 8);
-		this.addBroToRoster(_roster, "hunter_background", 6);
-		this.addBroToRoster(_roster, "legend_herbalist_background", 8);
-		this.addBroToRoster(_roster, "legend_ranger_background", 9);
+		this.addBroToRoster(_roster, ::Legends.Background.Hunter, 6);
+		this.addBroToRoster(_roster, ::Legends.Background.Poacher, 6);
+		this.addBroToRoster(_roster, ::Legends.Background.Wildman, 8);
+		this.addBroToRoster(_roster, ::Legends.Background.LegendHerbalist, 8);
+		this.addBroToRoster(_roster, ::Legends.Background.LegendRanger, 9);
 
 	}
 

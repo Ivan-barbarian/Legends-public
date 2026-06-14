@@ -40,9 +40,7 @@
 		local bros = roster.getAll();
 
 
-		bros[0].setStartValuesEx([
-			"legend_guildmaster_background"
-		]);
+		bros[0].setStartValuesEx([::Legends.Background.LegendGuildmaster]);
 		bros[0].getBackground().m.RawDescription = "%name% saved you in the brigand\'s ambush that destroyed your band of slayers. The Guildmaster does not hang this fact over you, for you have saved %name% many a times yourself. This slayer of beasts suffers no emotion that does not bid well in this world, and that alone makes for a sound mercenary.";
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);
@@ -64,9 +62,7 @@
 		items.equip(this.new("scripts/items/tools/throwing_net"));
 
 
-		bros[1].setStartValuesEx([
-			"beast_hunter_background"
-		]);
+		bros[1].setStartValuesEx([::Legends.Background.BeastSlayer]);
 		bros[1].getBackground().m.RawDescription = "A young whelp from the city, %name% got a start in beast slaying by rooting out the warrens of \'vicious rabbits\', as one puts it. You are not sure how true that is, but regardless %name% has demonstrated greats feats of arms on the battlefield more times than you can count.";
 		bros[1].setPlaceInFormation(4);
 		bros[1].setVeteranPerks(2);
@@ -87,9 +83,7 @@
 		items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
 
 
-		bros[2].setStartValuesEx([
-			"beast_hunter_background"
-		]);
+		bros[2].setStartValuesEx([::Legends.Background.BeastSlayer]);
 		bros[2].getBackground().m.RawDescription = "Grizzled vets are a rarity in beast slaying, and %name% sure ain\'t one. Instead, the \'slayer\' started the foray into monster hunting by reading books instead of training the sword. Still a good enough warrior at heart, it is the study and preparation that gives %name% the edge in battle.";
 		bros[2].setPlaceInFormation(5);
 		bros[2].setVeteranPerks(2);
@@ -192,8 +186,8 @@
 
 	o.onUpdateHiringRoster <- function ( _roster )
 	{
-		this.addBroToRoster(_roster, "beast_hunter_background", 7);
-		this.addBroToRoster(_roster, "legend_guildmaster_background", 10);
+		this.addBroToRoster(_roster, ::Legends.Background.BeastSlayer, 7);
+		this.addBroToRoster(_roster, ::Legends.Background.LegendGuildmaster, 10);
 	}
 
 	o.onBuildPerkTree <- function ( _background )

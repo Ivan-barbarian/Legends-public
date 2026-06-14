@@ -26,29 +26,19 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		}
 
 		local bros = roster.getAll();
-		bros[0].setStartValuesEx([
-			"legend_shieldmaiden_background"
-		], true, 1);
+		bros[0].setStartValuesEx([::Legends.Background.LegendShieldmaiden], true, 1);
 		bros[0].setPlaceInFormation(3);
 
-		bros[1].setStartValuesEx([
-			"wildman_background"
-		], true, 1);
+		bros[1].setStartValuesEx([::Legends.Background.Wildman], true, 1);
 		bros[1].setPlaceInFormation(4);
 
-		bros[2].setStartValuesEx([
-			"legend_battle_sister_background"
-		], true, 1);
+		bros[2].setStartValuesEx([::Legends.Background.LegendBattleSister], true, 1);
 		bros[2].setPlaceInFormation(5);
 
-		bros[3].setStartValuesEx([
-			"monk_background"
-		], true, 1);
+		bros[3].setStartValuesEx([::Legends.Background.Monk], true, 1);
 		bros[3].setPlaceInFormation(12);
 
-		bros[4].setStartValuesEx([
-			"legend_vala_background"
-		], true, 1);
+		bros[4].setStartValuesEx([::Legends.Background.LegendVala], true, 1);
 		::Legends.Traits.grant(bros[4], ::Legends.Trait.Player);
 		this.addScenarioPerk(bros[4].getBackground(), ::Const.Perks.PerkDefs.LegendValaWarden);
 		bros[4].m.PerkPointsSpent += 1;
@@ -56,9 +46,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		bros[4].setPlaceInFormation(13);
 		bros[4].setVeteranPerks(2);
 
-		bros[5].setStartValuesEx([
-			"adventurous_noble_background"
-		], true, 1);
+		bros[5].setStartValuesEx([::Legends.Background.AdventurousNoble], true, 1);
 		bros[5].setPlaceInFormation(14);
 		this.World.Flags.set("HasLegendCampGathering", true);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/bread_item"));
@@ -148,7 +136,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		local garbage = [];
 		local bros = _roster.getAll();
 
-		this.addBroToRoster(_roster, "legend_shieldmaiden_background", 6);
+		this.addBroToRoster(_roster, ::Legends.Background.LegendShieldmaiden, 6);
 
 		foreach( i, bro in bros )
 		{

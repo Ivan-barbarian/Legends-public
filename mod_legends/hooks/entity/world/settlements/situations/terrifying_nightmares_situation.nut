@@ -30,17 +30,17 @@
 	o.onUpdateDraftList <- function ( _draftList )
 	{
 		if ( this.World.Assets.getOrigin().getID() == "scenario.militia") {
-			_draftList.push("legend_nightwatch_background");
-			_draftList.push("legend_nightwatch_background");
-			_draftList.push("legend_nightwatch_background");
-			_draftList.push("legend_man_at_arms_background");
+			_draftList.push(::Legends.Background.LegendNightwatch);
+			_draftList.push(::Legends.Background.LegendNightwatch);
+			_draftList.push(::Legends.Background.LegendNightwatch);
+			_draftList.push(::Legends.Background.LegendManAtArms);
 		}
 
-		_draftList.push("witchhunter_background");
-		_draftList.push("witchhunter_background");
-		_draftList.push("witchhunter_background");
-		_draftList.push("beast_hunter_background");
-		_draftList.push("beast_hunter_background");
+		_draftList.push(::Legends.Background.Witchhunter);
+		_draftList.push(::Legends.Background.Witchhunter);
+		_draftList.push(::Legends.Background.Witchhunter);
+		_draftList.push(::Legends.Background.BeastSlayer);
+		_draftList.push(::Legends.Background.BeastSlayer);
 
 	}
 });

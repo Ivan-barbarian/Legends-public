@@ -3,9 +3,9 @@
 	local onUpdateDraftList = o.onUpdateDraftList;
 	o.onUpdateDraftList = function ( _draftList )
 	{
-		_draftList.push("legend_master_archer_background");
-		_draftList.push("legend_master_archer_background");
-		_draftList.push("legend_master_archer_background");
+		_draftList.push(::Legends.Background.LegendMasterArcher);
+		_draftList.push(::Legends.Background.LegendMasterArcher);
+		_draftList.push(::Legends.Background.LegendMasterArcher);
 
 		// if (_gender)
 		// {

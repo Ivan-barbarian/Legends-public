@@ -5,65 +5,65 @@
 	{
 		create();
 		this.m.DraftList.extend([
-			"apprentice_background",
-			"beggar_background",
-			"bowyer_background",
-			"brawler_background",
-			"caravan_hand_background",
-			"caravan_hand_background",
-			"caravan_hand_background",
-			"gambler_background",
-			"gravedigger_background",
-			"hunter_background",
-			"hunter_background",
-			"juggler_background",
-			"mason_background",
-			"messenger_background",
-			"militia_background",
-			"militia_background",
-			"militia_background",
-			"flagellant_background",
-			"ratcatcher_background",
-			"refugee_background",
-			"servant_background",
-			"tailor_background",
-			"vagabond_background",
-			"witchhunter_background",
-			"adventurous_noble_background",
-			"adventurous_noble_background",
-			"adventurous_noble_background",
-			"bastard_background",
-			"deserter_background",
-			"deserter_background",
-			"raider_background",
-			"raider_background",
-			"retired_soldier_background",
-			"retired_soldier_background",
-			"sellsword_background",
-			"sellsword_background",
-			"sellsword_background",
-			"swordmaster_background",
-			"hedge_knight_background",
-			"legend_ironmonger_background",
-			"legend_noble_2h",
+			::Legends.Background.Apprentice,
+			::Legends.Background.Beggar,
+			::Legends.Background.Bowyer,
+			::Legends.Background.Brawler,
+			::Legends.Background.CaravanHand,
+			::Legends.Background.CaravanHand,
+			::Legends.Background.CaravanHand,
+			::Legends.Background.Gambler,
+			::Legends.Background.Gravedigger,
+			::Legends.Background.Hunter,
+			::Legends.Background.Hunter,
+			::Legends.Background.Juggler,
+			::Legends.Background.Mason,
+			::Legends.Background.Messenger,
+			::Legends.Background.Militia,
+			::Legends.Background.Militia,
+			::Legends.Background.Militia,
+			::Legends.Background.Flagellant,
+			::Legends.Background.Ratcatcher,
+			::Legends.Background.Refugee,
+			::Legends.Background.Servant,
+			::Legends.Background.Tailor,
+			::Legends.Background.Vagabond,
+			::Legends.Background.Witchhunter,
+			::Legends.Background.AdventurousNoble,
+			::Legends.Background.AdventurousNoble,
+			::Legends.Background.AdventurousNoble,
+			::Legends.Background.Bastard,
+			::Legends.Background.Deserter,
+			::Legends.Background.Deserter,
+			::Legends.Background.Raider,
+			::Legends.Background.Raider,
+			::Legends.Background.RetiredSoldier,
+			::Legends.Background.RetiredSoldier,
+			::Legends.Background.Sellsword,
+			::Legends.Background.Sellsword,
+			::Legends.Background.Sellsword,
+			::Legends.Background.Swordmaster,
+			::Legends.Background.HedgeKnight,
+			::Legends.Background.LegendIronmonger,
+			::Legends.Background.LegendNoble2h,
 			"eunuch_southern_background"
 		]);
 		this.m.StablesList = [
-			"legend_horse_destrier",
-			"legend_horse_courser",
-			"legend_horse_destrier",
-			"legend_horse_courser"
+			::Legends.Background.LegendHorseDestrier,
+			::Legends.Background.LegendHorseCourser,
+			::Legends.Background.LegendHorseDestrier,
+			::Legends.Background.LegendHorseCourser
 		];
 		if (this.World.Assets.getOrigin().getID() == "scenario.legends_nomad")
 		{
-			this.m.DraftList.push("nomad_background");
-			this.m.DraftList.push("nomad_background");
-			this.m.DraftList.push("nomad_background");
-			this.m.DraftList.push("nomad_ranged_background");
-			this.m.DraftList.push("nomad_ranged_background");
-			this.m.DraftList.push("nomad_ranged_background");
-			this.m.DraftList.push("legend_bladedancer_background");
-			this.m.DraftList.push("legend_bladedancer_background");
+			this.m.DraftList.push(::Legends.Background.Nomad);
+			this.m.DraftList.push(::Legends.Background.Nomad);
+			this.m.DraftList.push(::Legends.Background.Nomad);
+			this.m.DraftList.push(::Legends.Background.NomadRanged);
+			this.m.DraftList.push(::Legends.Background.NomadRanged);
+			this.m.DraftList.push(::Legends.Background.NomadRanged);
+			this.m.DraftList.push(::Legends.Background.LegendBladedancer);
+			this.m.DraftList.push(::Legends.Background.LegendBladedancer);
 		}
 	}
 

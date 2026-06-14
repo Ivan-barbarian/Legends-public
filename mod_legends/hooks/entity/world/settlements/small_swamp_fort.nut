@@ -5,39 +5,39 @@
 	{
 		create();
 		this.m.DraftList = [
-			"cultist_background",
-			"houndmaster_background",
-			"daytaler_background",
-			"hunter_background",
-			"militia_background",
-			"militia_background",
-			"ratcatcher_background",
-			"ratcatcher_background",
-			"wildman_background",
-			"wildman_background",
-			"witchhunter_background",
-			"bastard_background",
-			"deserter_background",
-			"retired_soldier_background",
-			"cultist_background",
-			"houndmaster_background",
+			::Legends.Background.Cultist,
+			::Legends.Background.Houndmaster,
+			::Legends.Background.Daytaler,
+			::Legends.Background.Hunter,
+			::Legends.Background.Militia,
+			::Legends.Background.Militia,
+			::Legends.Background.Ratcatcher,
+			::Legends.Background.Ratcatcher,
+			::Legends.Background.Wildman,
+			::Legends.Background.Wildman,
+			::Legends.Background.Witchhunter,
+			::Legends.Background.Bastard,
+			::Legends.Background.Deserter,
+			::Legends.Background.RetiredSoldier,
+			::Legends.Background.Cultist,
+			::Legends.Background.Houndmaster,
 			"female_daytaler_background",
-			"hunter_background",
-			"militia_background",
-			"militia_background",
-			"ratcatcher_background",
-			"ratcatcher_background",
-			"wildman_background",
-			"witchhunter_background",
-			"bastard_background",
-			"deserter_background",
-			"retired_soldier_background",
-			"beast_hunter_background"
+			::Legends.Background.Hunter,
+			::Legends.Background.Militia,
+			::Legends.Background.Militia,
+			::Legends.Background.Ratcatcher,
+			::Legends.Background.Ratcatcher,
+			::Legends.Background.Wildman,
+			::Legends.Background.Witchhunter,
+			::Legends.Background.Bastard,
+			::Legends.Background.Deserter,
+			::Legends.Background.RetiredSoldier,
+			::Legends.Background.BeastSlayer
 		];
 
 		this.m.StablesList = [
-			"legend_donkey_background",
-			"legend_horse_rouncey"
+			::Legends.Background.LegendDonkey,
+			::Legends.Background.LegendHorseRouncey
 		];
 	}
 

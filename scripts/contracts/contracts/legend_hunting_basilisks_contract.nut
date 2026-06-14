@@ -361,9 +361,7 @@ this.legend_hunting_basilisks_contract <- this.inherit("scripts/contracts/contra
 			{
 				local roster = this.World.getTemporaryRoster();
 				this.Contract.m.Dude = roster.create("scripts/entity/tactical/player");
-				this.Contract.m.Dude.setStartValuesEx([
-					"hunter_background"
-				]);
+				this.Contract.m.Dude.setStartValuesEx([::Legends.Background.Hunter]);
 
 				if (!this.Contract.m.Dude.getSkills().hasTrait(::Legends.Trait.FearBeasts) && !this.Contract.m.Dude.getSkills().hasTrait(::Legends.Trait.HateBeasts))
 				{

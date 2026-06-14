@@ -11,11 +11,11 @@
 
 	o.onUpdateDraftList <- function ( _draftList )
 	{
-		_draftList.push("butcher_background");
-		_draftList.push("butcher_background");
-		_draftList.push("servant_background");
-		_draftList.push("servant_background");
-		_draftList.push("servant_background");
-		_draftList.push("eunuch_background");
+		_draftList.push(::Legends.Background.Butcher);
+		_draftList.push(::Legends.Background.Butcher);
+		_draftList.push(::Legends.Background.Servant);
+		_draftList.push(::Legends.Background.Servant);
+		_draftList.push(::Legends.Background.Servant);
+		_draftList.push(::Legends.Background.Eunuch);
 	}
 });

@@ -12,9 +12,7 @@
 
 	o.setupBro <- function ( _bro, _faction )
 	{
-		_bro.setStartValuesEx([
-			"deserter_background"
-		]);
+		_bro.setStartValuesEx([::Legends.Background.Deserter]);
 		_bro.worsenMood(1.0, "Was dragged from one bloody battle to the next");
 		_bro.improveMood(1.5, "Deserted from the army");
 		_bro.m.HireTime = this.Time.getVirtualTimeF();
@@ -215,13 +213,12 @@
 
 	o.onUpdateHiringRoster <- function ( _roster )
 	{
-		this.addBroToRoster(_roster, "deserter_background", 3);
-		this.addBroToRoster(_roster, "militia_background", 6);
-		this.addBroToRoster(_roster, "disowned_noble_background", 8);
-		// this.addBroToRoster(_roster, "female_disowned_noble_background", 6);
-		this.addBroToRoster(_roster, "retired_soldier_background", 6);
-		this.addBroToRoster(_roster, "swordmaster_background", 6);
-		this.addBroToRoster(_roster, "bastard_background", 6);
+		this.addBroToRoster(_roster, ::Legends.Background.Bastard, 6);
+		this.addBroToRoster(_roster, ::Legends.Background.Deserter, 3);
+		this.addBroToRoster(_roster, ::Legends.Background.DisownedNoble, 8);
+		this.addBroToRoster(_roster, ::Legends.Background.Militia, 6);
+		this.addBroToRoster(_roster, ::Legends.Background.RetiredSoldier, 6);
+		this.addBroToRoster(_roster, ::Legends.Background.Swordmaster, 6);
 	}
 
 

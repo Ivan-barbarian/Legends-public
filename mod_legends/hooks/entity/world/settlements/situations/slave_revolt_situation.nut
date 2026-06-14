@@ -19,6 +19,6 @@
 	o.onUpdateDraftList = function ( _draftList )
 	{
 		onUpdateDraftList(_draftList);
-		_draftList.push("legend_muladi_background");
+		_draftList.push(::Legends.Background.LegendMuladi);
 	}
 });

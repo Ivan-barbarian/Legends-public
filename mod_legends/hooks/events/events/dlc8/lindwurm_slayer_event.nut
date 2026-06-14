@@ -15,9 +15,7 @@
 				{
 					local roster = this.World.getTemporaryRoster();
 					_event.m.Dude = roster.create("scripts/entity/tactical/player");
-					_event.m.Dude.setStartValuesEx([
-						"lindwurm_slayer_background"
-					]);
+					_event.m.Dude.setStartValuesEx([::Legends.Background.LindwurmSlayer]);
 					this.Characters.push(_event.m.Dude.getImagePath());
 				}
 
@@ -26,9 +24,7 @@
 				s.start <- function ( _event ) {
 					local roster = this.World.getTemporaryRoster();
 					_event.m.Dude = roster.create("scripts/entity/tactical/player");
-					_event.m.Dude.setStartValuesEx([
-						"lindwurm_slayer_background"
-					]);
+					_event.m.Dude.setStartValuesEx([::Legends.Background.LindwurmSlayer]);
 					this.Characters.push(_event.m.Dude.getImagePath());
 				}
 			}

@@ -10,8 +10,8 @@
 	local onUpdateDraftList = o.onUpdateDraftList;
 	o.onUpdateDraftList = function ( _list )
 	{
-		_list.push("legend_dervish_background");
-		_list.push("legend_alchemist_background");
+		_list.push(::Legends.Background.LegendDervish);
+		_list.push(::Legends.Background.LegendAlchemist);
 		onUpdateDraftList(_list);
 	}
 
