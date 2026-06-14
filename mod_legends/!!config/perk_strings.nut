@@ -156,6 +156,7 @@
 ::Const.Strings.PerkName.LegendWhipThemInShape <- "Whip them in Shape";
 ::Const.Strings.PerkName.LegendTacticalManeuvers <- "Tactical Maneuvers";
 ::Const.Strings.PerkName.LegendVersatile <- "Versatile";
+::Const.Strings.PerkName.LegendWideSwings <- "Wide Swings";
 ::Const.Strings.PerkName.LegendNearDeathExperience <- "Near Death Experience";
 
 //MASTERIES - skills that have a unified effect on their weapon class
