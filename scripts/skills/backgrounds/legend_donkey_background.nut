@@ -3,7 +3,7 @@ this.legend_donkey_background <- this.inherit("scripts/skills/backgrounds/charac
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_donkey";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendDonkey;
 		this.m.Name = "Donkey";
 		this.m.Icon = "ui/backgrounds/donkey.png";
 		this.m.BackgroundDescription = "Donkeys are generally patient and deliberate in their actions.";

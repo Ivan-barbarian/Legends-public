@@ -468,7 +468,7 @@ this.legend_shuckster_encounter <- this.inherit("scripts/encounters/encounter", 
 	function onPrepare() {
 		local candidates = [];
 		foreach (bro in ::World.getPlayerRoster().getAll()) {
-			if (bro.getBackground().getID() == "background.manhunter" || bro.getSkills().hasPerk(::Legends.Perk.LegendMasteryNets))	{
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Manhunter || bro.getSkills().hasPerk(::Legends.Perk.LegendMasteryNets))	{
 				candidates.push(bro);
 			}
 		}

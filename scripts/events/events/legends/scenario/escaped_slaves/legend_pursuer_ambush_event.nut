@@ -250,7 +250,7 @@ this.legend_pursuer_ambush_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.slave")
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave)
 			{
 				candidates.push(bro);
 			}

@@ -3,7 +3,7 @@ this.legend_horse_rouncey <- this.inherit("scripts/skills/backgrounds/legend_hor
 	function create()
 	{
 		this.legend_horse.create();
-		this.m.ID = "background.legend_horse_rouncey";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendHorseRouncey;
 		this.m.Name = "Rouncey";
 		this.m.Icon = "ui/backgrounds/legend_horse.png";
 		this.m.BackgroundDescription = "Rounceys are primarily packhorses used to long and exhausting travels, though they are able to be trained for battle";

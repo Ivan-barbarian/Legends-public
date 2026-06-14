@@ -651,7 +651,7 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 			function start()
 			{
 				local brothers = ::World.getPlayerRoster().getAll();
-				local peddlerBackgrounds = ["background.peddler","background.legend_trader","background.legend_commander_trader"];
+				local peddlerBackgrounds = [::Legends.Backgrounds.IDs.Peddler,::Legends.Backgrounds.IDs.LegendTrader,::Legends.Backgrounds.IDs.LegendCommanderTrader];
 				foreach( bro in brothers )
 				{
 					if (peddlerBackgrounds.find(bro.getBackground().getID()) != null)

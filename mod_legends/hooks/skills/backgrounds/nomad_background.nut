@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = "background.nomad";
+		this.m.ID = ::Legends.Backgrounds.IDs.Nomad;
 		this.m.Name = "Nomad";
 		this.m.Icon = "ui/backgrounds/background_63.png";
 		this.m.BackgroundDescription = "Any nomad that survived out in the desert will have some expertise in fighting.";

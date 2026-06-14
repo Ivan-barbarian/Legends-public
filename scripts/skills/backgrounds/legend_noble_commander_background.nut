@@ -3,7 +3,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_commander_noble";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendCommanderNoble;
 		this.m.Name = "Noble Usurper";
 		this.m.Icon = "ui/backgrounds/noble_02.png";
 		this.m.BackgroundDescription = "A noble with a birthright claim to authority";

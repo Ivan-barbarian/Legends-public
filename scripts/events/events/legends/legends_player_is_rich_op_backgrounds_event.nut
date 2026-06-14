@@ -216,26 +216,26 @@ this.legends_player_is_rich_op_backgrounds_event <- this.inherit("scripts/events
 
 		foreach( bro in brothers )
 		{
-			if (bro.getSkills().hasTrait(::Legends.Trait.Player) && bro.getBackground().getID() != "background.legend_commander_trader")
+			if (bro.getSkills().hasTrait(::Legends.Trait.Player) && bro.getBackground().getID() != ::Legends.Backgrounds.IDs.LegendCommanderTrader)
 				continue;
 
-			if (bro.isStabled() || bro.getBackground().getID() == "background.slave")
+			if (bro.isStabled() || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave)
 				continue;
 
 			switch (bro.getBackground().getID())
 			{
 
-				case "background.legend_commander_trader":
+				case ::Legends.Backgrounds.IDs.LegendCommanderTrader:
 					thetrader.push(bro);
 					break;
-				case "background.assassin":
-				case "background.legend_crusader":
-				case "background.legend_berserker":
-				case "background.legend_necro":
-				case "background.legend_witch":
-				case "background.legend_trader":
-				case "background.legend_ranger":
-				case "background.regent_in_absentia":
+				case ::Legends.Backgrounds.IDs.Assassin:
+				case ::Legends.Backgrounds.IDs.LegendCrusader:
+				case ::Legends.Backgrounds.IDs.LegendBerserker:
+				case ::Legends.Backgrounds.IDs.LegendNecro:
+				case ::Legends.Backgrounds.IDs.LegendWitch:
+				case ::Legends.Backgrounds.IDs.LegendTrader:
+				case ::Legends.Backgrounds.IDs.LegendRanger:
+				case ::Legends.Backgrounds.IDs.RegentInAbsentia:
 					candidate_opbackground.push(bro);
 					break;
 				default:

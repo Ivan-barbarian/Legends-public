@@ -138,7 +138,7 @@
 		}
 		local r;
 		r = this.Math.rand(0,5);
-		if (bro.getBackground().getID() == "background.beast_slayer")
+		if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.BeastSlayer)
 		{
 			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.8);
 			bro.getBaseProperties().DailyWageMult *= 0.8;
@@ -146,7 +146,7 @@
 			::Legends.Traits.grant(bro, ::Legends.Trait.LegendBeastslayers);
 			bro.improveMood(1.5, "Hates beasts as much as you do");
 		}
-		else if (bro.getBackground().getID() == "background.legend_guildmaster")
+		else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendGuildmaster)
 		{
 			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.0);
 			bro.getBaseProperties().DailyWageMult *= 1.0;
@@ -154,7 +154,7 @@
 			::Legends.Traits.grant(bro, ::Legends.Trait.LegendBeastslayers);
 			bro.improveMood(1.5, "Excited to teach the new blood");
 		}
-		else if (bro.getBackground().getID() == "background.legend_vala" || bro.getBackground().getID() == "background.legend_druid")
+		else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendVala || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendDruid)
 		{
 			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.0);
 			bro.getBaseProperties().DailyWageMult *= 0.0;

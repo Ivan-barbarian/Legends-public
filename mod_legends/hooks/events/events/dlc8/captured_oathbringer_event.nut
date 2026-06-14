@@ -20,7 +20,7 @@
 
 				local brothers = this.World.getPlayerRoster().getAll();
 				foreach (bro in brothers) {
-					if (bro.getBackground().getID() == "background.paladin"
+					if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Paladin
 						|| !bro.getBackground().isOffendedByViolence()
 						&& this.Math.rand(1, 100) <= 75)
 					{
@@ -67,7 +67,7 @@
 
 				local brothers = this.World.getPlayerRoster().getAll();
 				foreach (bro in brothers) {
-					if (bro.getBackground().getID() == "background.paladin"
+					if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Paladin
 						|| !bro.getBackground().isOffendedByViolence()
 						&& this.Math.rand(1, 100) <= 75)
 					{

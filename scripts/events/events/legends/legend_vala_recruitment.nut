@@ -100,7 +100,7 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 		local brotherlevels = 0;
 		foreach (bro in brothers)
 		{
-			if (bro.getBackground().getID() == "background.legend_vala")
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendVala)
 				return;
 			totalbrothers += 1;
 			brotherlevels += bro.getLevel();

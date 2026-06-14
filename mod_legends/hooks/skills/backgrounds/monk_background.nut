@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = "background.monk";
+		this.m.ID = ::Legends.Backgrounds.IDs.Monk;
 		this.m.Name = "Monk";
 		this.m.Icon = "ui/backgrounds/background_13.png";
 		this.m.BackgroundDescription = "Monks tend to have a high resolve in what they do, but are not used to hard physical labor or warfare.";

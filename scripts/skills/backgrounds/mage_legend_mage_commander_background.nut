@@ -5,7 +5,7 @@ this.mage_legend_mage_commander_background <- this.inherit("scripts/skills/backg
 	{
 		this.character_background.create();
 		this.m.Name = "Mage";
-		this.m.ID = "background.mage_legend_commander_mage";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendCommanderMage;
 		this.m.Icon = "ui/backgrounds/seer_02.png";
 
 		this.m.HiringCost = 250;

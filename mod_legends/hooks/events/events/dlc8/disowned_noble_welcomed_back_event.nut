@@ -18,7 +18,7 @@
 					local background = this.new("scripts/skills/backgrounds/regent_in_absentia_background");
 					background.m.IsNew = false;
 					local oldPerkTree = _event.m.Disowned.getBackground().m.CustomPerkTree;
-					_event.m.Disowned.getSkills().removeByID("background.disowned_noble");
+					_event.m.Disowned.getSkills().removeByID(::Legends.Backgrounds.IDs.DisownedNoble);
 					_event.m.Disowned.getSkills().add(background);
 					background.buildDescription();
 					_event.m.Disowned.m.Background = background;

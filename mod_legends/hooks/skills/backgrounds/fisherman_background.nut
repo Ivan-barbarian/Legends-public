@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = "background.fisherman";
+		this.m.ID = ::Legends.Backgrounds.IDs.Fisherman;
 		this.m.Name = "Fisherman";
 		this.m.Icon = "ui/backgrounds/background_15.png";
 		this.m.BackgroundDescription = "Fishermen are used to physical labor.";

@@ -17,7 +17,7 @@
 		entity.setName(this.m.Item.getName());
 		this.m.Item.setEntity(entity);
 
-		if (this.getContainer().hasSkill("background.houndmaster"))
+		if (this.getContainer().hasSkill(::Legends.Backgrounds.IDs.Houndmaster))
 		{
 			entity.setMoraleState(this.Const.MoraleState.Confident);
 		}

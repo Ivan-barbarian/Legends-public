@@ -207,7 +207,7 @@ this.legend_blacksmith_crafts_crusadersword <- this.inherit("scripts/events/even
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() >= 9 && bro.getBackground().getID() == "background.legend_blacksmith")
+			if (bro.getLevel() >= 9 && bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendBlacksmith)
 			{
 				candidates.push(bro);
 			}

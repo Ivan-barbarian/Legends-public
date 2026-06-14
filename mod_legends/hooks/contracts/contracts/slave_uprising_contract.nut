@@ -54,7 +54,7 @@
 						local brothers = this.World.getPlayerRoster().getAll();
 						foreach( bro in brothers )
 						{
-							if (bro.getBackground().getID() == "background.slave")
+							if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave)
 							{
 								bro.worsenMood(3.0, "You took a contract to put down a slave uprising");
 							}

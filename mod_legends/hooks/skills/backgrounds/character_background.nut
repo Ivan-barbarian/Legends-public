@@ -106,16 +106,16 @@
 
 	o.convertToBackgroundType <- function ()
 	{
-		local function addToBackgroundType(_type, _constType){
+		function addToBackgroundType(_type, _constType){
 			if (!_type) return
 			this.m.BackgroundType = this.m.BackgroundType == this.Const.BackgroundType.None ? _constType : this.m.BackgroundType | _constType
 		}
-		addToBackgroundType(this.m.IsScenarioOnly, ::Const.BackgroundType.Scenario);
-		addToBackgroundType(this.m.IsUntalented, ::Const.BackgroundType.Untalented);
-		addToBackgroundType(this.m.IsOffendedByViolence, ::Const.BackgroundType.OffendedByViolence);
-		addToBackgroundType(this.m.IsCombatBackground, ::Const.BackgroundType.Combat);
-		addToBackgroundType(this.m.IsNoble, ::Const.BackgroundType.Noble);
-		addToBackgroundType(this.m.IsLowborn, ::Const.BackgroundType.Lowborn);
+		this.addToBackgroundType(this.m.IsScenarioOnly, ::Const.BackgroundType.Scenario);
+		this.addToBackgroundType(this.m.IsUntalented, ::Const.BackgroundType.Untalented);
+		this.addToBackgroundType(this.m.IsOffendedByViolence, ::Const.BackgroundType.OffendedByViolence);
+		this.addToBackgroundType(this.m.IsCombatBackground, ::Const.BackgroundType.Combat);
+		this.addToBackgroundType(this.m.IsNoble, ::Const.BackgroundType.Noble);
+		this.addToBackgroundType(this.m.IsLowborn, ::Const.BackgroundType.Lowborn);
 	}
 
 	o.isBackgroundType <- function ( _type )
@@ -1528,7 +1528,7 @@
 			}
 		}
 
-		if (("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin() != null && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getID() != "background.slave")
+		if (("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin() != null && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getID() != ::Legends.Backgrounds.IDs.Slave)
 		{
 			_properties.XPGainMult *= 0.9;
 		}

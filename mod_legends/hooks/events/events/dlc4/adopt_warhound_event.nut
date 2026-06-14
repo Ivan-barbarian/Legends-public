@@ -52,7 +52,7 @@
 		local candidates = [];
 
 		foreach( bro in brothers )
-			if (bro.getBackground().getID() == "background.houndmaster" || bro.getBackground().getID() == "background.barbarian" || bro.getBackground().getID() == "background.legend_muladi" )
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Houndmaster || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Barbarian || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendMuladi )
 				candidates.push(bro);
 
 		if (candidates.len() != 0)

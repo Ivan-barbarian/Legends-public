@@ -60,7 +60,7 @@
 		local actor = this.getContainer().getActor();
 		if (::Legends.S.isEntityNullOrDead(actor))
 			return false;
-		if (actor.getBackground().getID() == "background.legend_donkey")
+		if (actor.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendDonkey)
 			return false;
 
 		local tile = actor.getTile();

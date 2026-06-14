@@ -2,7 +2,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = "background.peddler";
+		this.m.ID = ::Legends.Backgrounds.IDs.Peddler;
 		this.m.Name = "Peddler";
 		this.m.Icon = "ui/backgrounds/background_19.png";
 		//gender neutral description

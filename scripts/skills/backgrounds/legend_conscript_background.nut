@@ -3,7 +3,7 @@ this.legend_conscript_background <- this.inherit("scripts/skills/backgrounds/cha
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_conscript";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendConscript;
 		this.m.Name = "Conscript";
 		this.m.Icon = "ui/backgrounds/background_conscript.png";
 		this.m.BackgroundDescription = "Better trained and equipped than northern militia, conscripts are the rank and file of the southern military.";

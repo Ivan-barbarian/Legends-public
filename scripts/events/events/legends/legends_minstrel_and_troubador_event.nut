@@ -71,12 +71,12 @@ this.legends_minstrel_and_troubador_event <- this.inherit("scripts/events/event"
 				continue;
 			}
 
-			if (bro.getBackground().getID() == "background.minstrel" && bro.getGender() != 1)
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Minstrel && bro.getGender() != 1)
 			{
 				candidates_minstrel.push(bro);
 			}
 
-			if (bro.getBackground().getID() == "background.minstrel" && bro.getGender() == 1)
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Minstrel && bro.getGender() == 1)
 			{
 				candidates_troubador.push(bro);
 			}

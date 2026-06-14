@@ -47,11 +47,11 @@
 		local candidates_historian = [];
 
 		foreach( bro in brothers )
-			if (bro.getBackground().getID() == "background.historian" || bro.getSkills().hasPerk(::Legends.Perk.LegendScholar))
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Historian || bro.getSkills().hasPerk(::Legends.Perk.LegendScholar))
 				candidates_historian.push(bro);
-			else if (bro.getBackground().getID() == "background.thief")
+			else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Thief)
 				candidates_thief.push(bro);
-			else if (bro.getBackground().getID() == "background.peddler")
+			else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Peddler)
 				candidates_peddler.push(bro);
 
 		if (candidates_historian.len() != 0)

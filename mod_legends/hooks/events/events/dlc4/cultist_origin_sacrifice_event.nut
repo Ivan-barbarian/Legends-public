@@ -36,7 +36,7 @@
 						if (bro.getSkills().hasEffect(::Legends.Effect.LegendAnimatedPlayerProperties))
 							continue;
 
-						if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist | this.Const.BackgroundType.Cultist) || bro.getBackground().getID() == "background.legend_commander_necro" || bro.getBackground().getID() == "background.legend_necro" || bro.getBackground().getID() == "background.legend_vala" || bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_commander_witch" || bro.getBackground().getID() == "background.legend_cannibal" || bro.getBackground().getID() == "background.legend_donkey")  {
+						if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist | this.Const.BackgroundType.Cultist) || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderNecro || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendNecro || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendVala || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendWitch || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderWitch || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCannibal || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendDonkey)  {
 							bro.improveMood(3.0, "Appeased Davkul");
 
 							if (bro.getMoodState() >= this.Const.MoodState.Neutral) {
@@ -136,7 +136,7 @@
 
 		local candidates = [];
 		foreach (bro in brothers) {
-			if (bro.getSkills().hasSkill("background.legend_husk") || bro.getSkills().hasSkill("background.legend_magister")) //Will not sacrifice any backgrounds using these IDs
+			if (bro.getSkills().hasSkill(::Legends.Backgrounds.IDs.LegendHusk) || bro.getSkills().hasSkill(::Legends.Backgrounds.IDs.LegendMagister)) //Will not sacrifice any backgrounds using these IDs
 				continue;
 
 			candidates.push(bro);

@@ -17,12 +17,12 @@
 		});
 
 		this.addSkillRequirement("Have at least one of the following backgrounds: Manhunter, Witch Hunter, Beast Slayer, Bounty Hunter", [
-			"background.witchhunter",
-			"background.beast_slayer",
-			"background.manhunter",
-			"background.legend_companion_melee",
-			"background.legend_companion_ranged",
-			"background.legend_bounty_hunter"
+			::Legends.Backgrounds.IDs.Witchhunter,
+			::Legends.Backgrounds.IDs.BeastSlayer,
+			::Legends.Backgrounds.IDs.Manhunter,
+			::Legends.Backgrounds.IDs.LegendCompanionMelee,
+			::Legends.Backgrounds.IDs.LegendCompanionRanged,
+			::Legends.Backgrounds.IDs.LegendBountyHunter
 		]);
 	}
 

@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = "background.adventurous_noble";
+		this.m.ID = ::Legends.Backgrounds.IDs.AdventurousNoble;
 		this.m.Name = "Adventurous Noble";
 		this.m.Icon = "ui/backgrounds/background_06.png";
 		this.m.BackgroundDescription = "Adventurous Nobles tend to have high resolve and melee skills, but often neglect ranged defense.";

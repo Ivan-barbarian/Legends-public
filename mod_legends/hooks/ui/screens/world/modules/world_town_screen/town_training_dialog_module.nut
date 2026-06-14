@@ -40,7 +40,7 @@
 
 			if (b.getLevel() >= 7
 				&& this.World.Assets.getOrigin().getID() == "scenario.manhunters"
-				&& b.getBackground().getID() == "background.slave")
+				&& b.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave)
 			{
 				continue;
 			}

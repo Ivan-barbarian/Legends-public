@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = "background.kings_guard";
+		this.m.ID = ::Legends.Backgrounds.IDs.KingsGuard;
 		this.m.Name = "King\'s Guard";
 		this.m.Icon = "ui/backgrounds/background_59.png";
 		this.m.BackgroundDescription = "";

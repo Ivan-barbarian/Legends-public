@@ -35,7 +35,7 @@
 		local candidates = [];
 
 		foreach( bro in brothers )
-			if (bro.getLevel() == 1 && bro.getBackground().getID() != "background.slave" && !bro.getBackground().getID() == "background.slave" && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat) && bro.getPlaceInFormation() <= 17 && bro.getLifetimeStats().Battles >= 1)
+			if (bro.getLevel() == 1 && bro.getBackground().getID() != ::Legends.Backgrounds.IDs.Slave && !bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat) && bro.getPlaceInFormation() <= 17 && bro.getLifetimeStats().Battles >= 1)
 				candidates.push(bro);
 
 		if (candidates.len() < 1)

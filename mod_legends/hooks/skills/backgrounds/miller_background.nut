@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = "background.miller";
+		this.m.ID = ::Legends.Backgrounds.IDs.Miller;
 		this.m.Name = "Miller";
 		this.m.Icon = "ui/backgrounds/background_05.png";
 		this.m.BackgroundDescription = "A miller is used to physical labor.";

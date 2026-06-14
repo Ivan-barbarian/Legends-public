@@ -16,12 +16,12 @@
 		});
 
 		this.addSkillRequirement("Have at least one of the following backgrounds: Adventurous Noble/Lady, Noble Commander, Philosopher, Historian", [
-			"background.adventurous_noble",
-			"background.historian",
-			"background.legend_philosopher",
-			"background.legend_commander_noble",
-			"background.legend_companion_melee",
-			"background.legend_companion_ranged"
+			::Legends.Backgrounds.IDs.AdventurousNoble,
+			::Legends.Backgrounds.IDs.Historian,
+			::Legends.Backgrounds.IDs.LegendPhilosopher,
+			::Legends.Backgrounds.IDs.LegendCommanderNoble,
+			::Legends.Backgrounds.IDs.LegendCompanionMelee,
+			::Legends.Backgrounds.IDs.LegendCompanionRanged
 		]);
 	}
 

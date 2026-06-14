@@ -3,7 +3,7 @@ this.legend_bladedancer_background <- this.inherit("scripts/skills/backgrounds/c
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.bladedancer";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendBladedancer;
 		this.m.Name = "Bladedancer";
 		this.m.Icon = "ui/backgrounds/background_bladedancer.png";
 		this.m.BackgroundDescription = "A skilled nomadic fighter of the south who prefers speed and reach over raw power.";

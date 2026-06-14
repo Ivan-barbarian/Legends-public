@@ -23,8 +23,8 @@
 
 		this.addSkillRequirement("Have someone with the Pacifist perk. Guaranteed on Widow, Inventor, Tailor and many others", [
 			::Legends.Perks.getID(::Legends.Perk.LegendPacifist),
-			"background.legend_companion_melee",
-			"background.legend_companion_ranged"
+			::Legends.Backgrounds.IDs.LegendCompanionMelee,
+			::Legends.Backgrounds.IDs.LegendCompanionRanged
 		], true);
 	}
 

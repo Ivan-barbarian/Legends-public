@@ -33,7 +33,7 @@ this.legend_slaves_vs_soldiers_event <- this.inherit("scripts/events/event", {
 						if (this.Math.rand(1, 100) <= 50) {
 							bro.worsenMood(1.0, "Was accused of being too mercenary")
 						}
-					} else if (bro.getBackground().getID() == "background.slave") {
+					} else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave) {
 						if (this.Math.rand(1, 100) <= 50) {
 							bro.worsenMood(1.0, "Was accused of using the company")
 						}
@@ -82,7 +82,7 @@ this.legend_slaves_vs_soldiers_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.slave")
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave)
 			{
 				slaves = ++slaves;
 			}

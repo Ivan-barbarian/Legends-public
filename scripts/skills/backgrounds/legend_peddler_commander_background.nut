@@ -3,7 +3,7 @@ this.legend_peddler_commander_background <- this.inherit("scripts/skills/backgro
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_peddler_commander";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendCommanderPeddler;
 		this.m.Name = "Merchant";
 		this.m.Icon = "ui/backgrounds/background_19.png"; //needs new
 		//gender neutral description

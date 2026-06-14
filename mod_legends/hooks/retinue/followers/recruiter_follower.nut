@@ -14,8 +14,8 @@
 
 		this.addSkillRequirement("Have a mercenary who has taken the Inspiring Presence perk. Guaranteed on Cultists, Pimps, Retired Soldiers and many others.", [
 			::Legends.Perks.getID(::Legends.Perk.InspiringPresence),
-			"background.legend_companion_melee",
-			"background.legend_companion_ranged"
+			::Legends.Backgrounds.IDs.LegendCompanionMelee,
+			::Legends.Backgrounds.IDs.LegendCompanionRanged
 		]);
 	}
 

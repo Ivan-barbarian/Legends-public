@@ -114,7 +114,7 @@
 			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Cultist)) {
 				cultist_candidates.push(bro);
 				// This requires a Cultist, that isn't a convert.
-				if ((bestCultist == null || bro.getLevel() > bestCultist.getLevel()) && bro.getBackground().getID() == "background.cultist")
+				if ((bestCultist == null || bro.getLevel() > bestCultist.getLevel()) && bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Cultist)
 					bestCultist = bro;
 
 				if (bro.getLevel() >= 11)

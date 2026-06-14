@@ -439,7 +439,7 @@
 					continue;
 				}
 
-				if (bro.getBackground().getID() == "background.slave")
+				if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave)
 				{
 					slaves = ++slaves;
 				}
@@ -458,7 +458,7 @@
 						continue;
 					}
 
-					if (bro.getBackground().getID() != "background.slave")
+					if (bro.getBackground().getID() != ::Legends.Backgrounds.IDs.Slave)
 					{
 						bro.worsenMood(this.Const.MoodChange.TooFewSlavesInBattle, "Too few indebted in battle");
 					}

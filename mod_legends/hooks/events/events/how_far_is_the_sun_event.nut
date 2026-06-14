@@ -32,7 +32,7 @@
 					local brothers = this.World.getPlayerRoster().getAll();
 
 					foreach( bro in brothers ) {
-						if (bro.getID() == _event.m.Historian.getID() || bro.getBackground().getID() == "background.historian"  || bro.getBackground().getID() == "background.legend_inventor" || bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_commander_witch"|| bro.getSkills().hasTrait(::Legends.Trait.Bright))
+						if (bro.getID() == _event.m.Historian.getID() || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Historian  || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendInventor || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendWitch || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderWitch|| bro.getSkills().hasTrait(::Legends.Trait.Bright))
 							continue;
 
 						if (this.Math.rand(1, 100) <= 33) {
@@ -54,7 +54,7 @@
 					local brothers = this.World.getPlayerRoster().getAll();
 
 					foreach( bro in brothers ) {
-						if (bro.getEthnicity() == 1 || bro.getID() == _event.m.Monk.getID() || bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Cultist) || bro.getBackground().getID() == "background.historian" || bro.getBackground().getID() == "background.historian" || bro.getBackground().getID() == "background.legend_inventor" || bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_commander_witch" || bro.getBackground().getID() == "background.legend_necro" || bro.getBackground().getID() == "background.legend_commander_necro")
+						if (bro.getEthnicity() == 1 || bro.getID() == _event.m.Monk.getID() || bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Cultist) || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Historian || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Historian || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendInventor || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendWitch || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderWitch || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendNecro || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderNecro)
 							continue;
 
 						if (this.Math.rand(1, 100) <= 33) {
@@ -196,38 +196,38 @@
 
 		foreach (bro in brothers) {
 			if (bro.getSkills().hasPerk(::Legends.Perk.LegendScholar) || ::Legends.S.oneOf(bro.getBackground().getID(),
-				"background.historian",
-				"background.legend_inventor",
-				"background.legend_witch",
-				"background.legend_commander_witch"
+				::Legends.Backgrounds.IDs.Historian,
+				::Legends.Backgrounds.IDs.LegendInventor,
+				::Legends.Backgrounds.IDs.LegendWitch,
+				::Legends.Backgrounds.IDs.LegendCommanderWitch
 			)) {
 				candidate_historian.push(bro);
-			} else if (bro.getBackground().getID() == "background.monk") {
+			} else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Monk) {
 				candidate_monk.push(bro);
 			} else if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Cultist)) {
 				candidate_cultist.push(bro);
 			} else if (::Legends.S.oneOf(bro.getBackground().getID(),
-				"background.hunter",
-				"background.poacher",
-				"background.sellsword",
-				"background.legend_ranger",
-				"background.legend_commander_ranger",
-				"background.legend_noble_ranged"
+				::Legends.Backgrounds.IDs.Hunter,
+				::Legends.Backgrounds.IDs.Poacher,
+				::Legends.Backgrounds.IDs.Sellsword,
+				::Legends.Backgrounds.IDs.LegendRanger,
+				::Legends.Backgrounds.IDs.LegendCommanderRanger,
+				::Legends.Backgrounds.IDs.LegendNobleRanged
 			)) {
 				candidate_archer.push(bro);
 			} else if (::Legends.S.oneOf(bro.getBackground().getID(),
-				"background.nomad",
-				"background.shepherd",
-				"background.manhunter",
-				"background.legend_qiyan",
-				"background.gladiator",
-				"background.legend_muladi",
-				"background.belly_dancer",
-				"background.assassin_southern",
-				"background.legend_conscript"
+				::Legends.Backgrounds.IDs.Nomad,
+				::Legends.Backgrounds.IDs.Shepherd,
+				::Legends.Backgrounds.IDs.Manhunter,
+				::Legends.Backgrounds.IDs.LegendQiyan,
+				::Legends.Backgrounds.IDs.Gladiator,
+				::Legends.Backgrounds.IDs.LegendMuladi,
+				::Legends.Backgrounds.IDs.BellyDancer,
+				::Legends.Backgrounds.IDs.AssassinSouthern,
+				::Legends.Backgrounds.IDs.LegendConscript
 			)) {
 				candidate_southerner.push(bro);
-			} else if (bro.getBackground().getID() == "background.legend_dervish") {
+			} else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendDervish) {
 				candidate_dervish.push(bro);
 			} else if (bro.getEthnicity() != 1) {
 				candidate_other.push(bro);

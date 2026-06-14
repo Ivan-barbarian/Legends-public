@@ -5,7 +5,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_commander_assassin";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendCommanderAssassin;
 		this.m.Name = "Assassin";
 		this.m.BackgroundDescription = "This character\'s history is a secret";
 		this.m.GoodEnding = "After leaving %companyname%, %name% was never heard from again. %name%\'s calling card has been found near a few accidents, so you believe the assassin is doing well.";

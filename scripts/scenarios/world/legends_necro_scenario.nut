@@ -203,13 +203,13 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onHiredByScenario( _bro )
 	{
-		if (_bro.getBackground().getID() == "background.graverobber" || _bro.getBackground().getID() == "background.gravedigger" || _bro.getBackground().getID() == "background.cultist" || _bro.getBackground().getID() == "background.converted_cultist")
+		if (_bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Graverobber || _bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Gravedigger || _bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Cultist || _bro.getBackground().getID() == ::Legends.Backgrounds.IDs.ConvertedCultist)
 		{
 			_bro.improveMood(1.5, "These people really understand me!");
 			_bro.getSprite("socket").setBrush("bust_base_undead");
 			::Legends.Traits.grant(_bro, ::Legends.Trait.LegendDeathlySpectre);
 		}
-		else if (_bro.getBackground().getID() == "background.legend_puppet")
+		else if (_bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendPuppet)
 		{
 			_bro.getSprite("socket").setBrush("bust_base_undead");
 		}
@@ -241,7 +241,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		if (bro.isStabled()) {
 			return;
 		}
-		if (bro.getBackground().getID() == "background.graverobber" || bro.getBackground().getID() == "background.gravedigger" || bro.getBackground().getID() == "background.cultist")
+		if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Graverobber || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Gravedigger || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Cultist)
 		{
 			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75); //1.0 = default
 			bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
@@ -258,7 +258,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onGetBackgroundTooltip( _background, _tooltip )
 	{
-		if (_background.getID() == "background.cultist" || _background.getID() == "background.converted_cultist" || _background.getID() == "background.gravedigger" || _background.getID() == "background.graverobber")
+		if (_background.getID() == ::Legends.Backgrounds.IDs.Cultist || _background.getID() == ::Legends.Backgrounds.IDs.ConvertedCultist || _background.getID() == ::Legends.Backgrounds.IDs.Gravedigger || _background.getID() == ::Legends.Backgrounds.IDs.Graverobber)
 		{
 			//_tooltip.pop();
 			_tooltip.push({
@@ -278,7 +278,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onBuildPerkTree( _background )
 	{
-		if (_background.getID() == "background.gravedigger" || _background.getID() == "background.graverobber")
+		if (_background.getID() == ::Legends.Backgrounds.IDs.Gravedigger || _background.getID() == ::Legends.Backgrounds.IDs.Graverobber)
 		{
 			this.addScenarioPerk(_background, ::Const.Perks.PerkDefs.LegendResurrectionist);
 		}

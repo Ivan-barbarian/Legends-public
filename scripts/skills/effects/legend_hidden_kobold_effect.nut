@@ -37,24 +37,28 @@ this.legend_hidden_kobold_effect <- this.inherit("scripts/skills/skill", {
 				}
 			]);
 
-			if (actor.getSkills().hasSkill("background.assassin") || actor.getSkills().hasSkill("background.assassin_southern"))
+			if (actor.getSkills().hasSkill(::Legends.Backgrounds.IDs.Assassin) || actor.getSkills().hasSkill(::Legends.Backgrounds.IDs.AssassinSouthern))
 			{
+				ret.extend([
 					{
 						id = 13,
 						type = "text",
 						icon = "ui/icons/regular_damage.png",
 						text = "[color=%positive%]+50%[/color] Maximum Damage from being an assassin"
 					}
+				]);
 			}
 
-			if (actor.getSkills().hasSkill("background.legend_commander_assassin"))
+			if (actor.getSkills().hasSkill(::Legends.Backgrounds.IDs.LegendCommanderAssassin))
 			{
+				ret.extend([
 					{
 						id = 13,
 						type = "text",
 						icon = "ui/icons/regular_damage.png",
 						text = "[color=%positive%]+100%[/color] Maximum Damage from being an assassin"
 					}
+				]);
 			}
 		}
 
@@ -154,11 +158,11 @@ this.legend_hidden_kobold_effect <- this.inherit("scripts/skills/skill", {
 			_properties.DamageRegularMin *= 1.5;
 			_properties.DamageRegularMax *= 1.5;
 
-			if (actor.getSkills().hasSkill("background.assassin") || actor.getSkills().hasSkill("background.assassin_southern"))
+			if (actor.getSkills().hasSkill(::Legends.Backgrounds.IDs.Assassin) || actor.getSkills().hasSkill(::Legends.Backgrounds.IDs.AssassinSouthern))
 			{
 			_properties.DamageRegularMax *= 1.5;
 			}
-			if (actor.getSkills().hasSkill("background.legend_commander_assassin"))
+			if (actor.getSkills().hasSkill(::Legends.Backgrounds.IDs.LegendCommanderAssassin))
 			{
 			_properties.DamageRegularMax *= 2.0;
 			}

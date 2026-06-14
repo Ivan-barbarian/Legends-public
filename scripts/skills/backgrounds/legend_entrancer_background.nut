@@ -3,7 +3,7 @@ this.legend_entrancer_background <- this.inherit("scripts/skills/backgrounds/cha
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_entrancer";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendEntrancer;
 		this.m.Icon = "ui/backgrounds/background_wizard_2.png";
 		local r = this.Math.rand(0, 3);
 		this.m.Name = "Entrancer";

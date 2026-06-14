@@ -3,7 +3,7 @@ this.legend_warlock_summoner_background <- this.inherit("scripts/skills/backgrou
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_warlock_summoner";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendWarlockSummoner;
 		this.m.Name = "Summoner";
 		this.m.Icon = "ui/backgrounds/background_necromancer_4.png";
 		this.m.BackgroundDescription = "Summoners practice raising the dead from the earth, what they do after that is anyone's guess...";

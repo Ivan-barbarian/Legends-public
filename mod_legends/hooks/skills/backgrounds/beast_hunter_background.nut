@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = "background.beast_slayer";
+		this.m.ID = ::Legends.Backgrounds.IDs.BeastSlayer;
 		this.m.Name = "Beast Slayer";
 		this.m.Icon = "ui/backgrounds/background_57.png";
 		this.m.BackgroundDescription = "Beast Slayers are used to expertly hunt monstrous beasts at all ranges.";

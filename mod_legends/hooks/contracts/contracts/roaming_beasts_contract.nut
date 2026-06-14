@@ -253,7 +253,7 @@
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn) && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) && !bro.getSkills().hasTrait(::Legends.Trait.Bright) && bro.getBackground().getID() != "background.hunter")
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn) && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) && !bro.getSkills().hasTrait(::Legends.Trait.Bright) && bro.getBackground().getID() != ::Legends.Backgrounds.IDs.Hunter)
 			{
 				candidates_helpful.push(bro);
 			}

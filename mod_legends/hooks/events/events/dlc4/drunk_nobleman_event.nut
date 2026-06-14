@@ -126,14 +126,14 @@
 		local candidates_other = [];
 
 		foreach( bro in brothers ) {
-			if (bro.getSkills().hasTrait(::Legends.Trait.Player) && bro.getBackground().getID() != "background.legend_commander_noble")
+			if (bro.getSkills().hasTrait(::Legends.Trait.Player) && bro.getBackground().getID() != ::Legends.Backgrounds.IDs.LegendCommanderNoble)
 				continue;
 
-			if (bro.getBackground().getID() == "background.servant" || bro.getBackground().getID() == "background.slave")
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Servant || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave)
 				candidates_servant.push(bro);
-			else if (bro.getBackground().getID() == "background.thief")
+			else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Thief)
 				candidates_thief.push(bro);
-			else if (bro.getBackground().getID() == "background.legend_commander_noble")
+			else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderNoble)
 				candidates_noble.push(bro);
 			else
 				candidates_other.push(bro);

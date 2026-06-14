@@ -118,7 +118,7 @@ this.legend_minstrel_performs_at_tavern_encounter <- this.inherit("scripts/encou
 
 		local candidates = [];
 		foreach(bro in brothers) {
-			if (bro.getBackground().getID() == "background.minstrel")
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Minstrel)
 				candidates.push(bro);
 		}
 		if (candidates.len() == 0)

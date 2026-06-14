@@ -3,7 +3,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_noble_2h";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendNoble2h;
 		this.m.Name = "Warrior";
 		this.m.Icon = "ui/backgrounds/background_noble2h.png";
 		this.m.HiringCost = 500;

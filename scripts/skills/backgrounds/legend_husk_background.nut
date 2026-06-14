@@ -3,7 +3,7 @@ this.legend_husk_background <- this.inherit("scripts/skills/backgrounds/characte
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_husk";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendHusk;
 		this.m.Name = "Husk";
 		this.m.Icon = "ui/backgrounds/background_husk.png";
 		this.m.BackgroundDescription = "Once imbued with the will of a dead god, the departing of said god left this one...unpredictable.";

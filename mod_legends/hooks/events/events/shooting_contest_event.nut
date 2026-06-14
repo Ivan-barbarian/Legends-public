@@ -30,7 +30,7 @@
 		local candidates = [];
 
 		foreach( bro in brothers )
-			if (bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.poacher" || bro.getBackground().getID() == "background.sellsword" || bro.getBackground().getID() == "background.bowyer" || (bro.getBackground().getID() == "background.adventurous_noble" && bro.getGender() == 1) || bro.getBackground().getID() == "background.legend_ranger")
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Hunter || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Poacher || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Sellsword || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Bowyer || (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.AdventurousNoble && bro.getGender() == 1) || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendRanger)
 				if (!bro.getFlags().has("ParticipatedInShootingContests") || bro.getFlags().get("ParticipatedInShootingContests") < 3)
 					candidates.push(bro);
 

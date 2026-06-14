@@ -150,11 +150,11 @@ this.legend_ironmonger_offends_blacksmith_encounter <- this.inherit("scripts/enc
 
 		local brothers = ::World.getPlayerRoster().getAll();
 
-		local candidates_blacksmith = brothers.filter(@(idx, bro) bro.getBackground().getID() == "background.legend_blacksmith");
+		local candidates_blacksmith = brothers.filter(@(idx, bro) bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendBlacksmith);
 		if (candidates_blacksmith.len() == 0)
 			return false;
 
-		local candidates_ironmonger = brothers.filter(@(idx, bro) bro.getBackground().getID() == "background.legend_ironmonger");
+		local candidates_ironmonger = brothers.filter(@(idx, bro) bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendIronmonger);
 		if (candidates_ironmonger.len() == 0)
 			return false;
 

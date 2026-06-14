@@ -427,7 +427,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			{
 				if (item == null)
 				{
-					continue
+					continue;
 				}
 
 				if (item.getRepair() >= item.getRepairMax())
@@ -488,7 +488,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			{
 				if (item == null)
 				{
-					continue
+					continue;
 				}
 
 				if (item.getRepair() >= item.getRepairMax())
@@ -518,7 +518,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			if (s == null)
 			{
-				continue
+				continue;
 			}
 
 			if (_filter == 99 && s.Bro != null)
@@ -559,7 +559,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			if (s == null)
 			{
-				continue
+				continue;
 			}
 
 			for (index; index < this.m.Repairs.len(); index = ++index)
@@ -662,7 +662,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			if (r != null)
 			{
-				continue
+				continue;
 			}
 			targetList[i] = sourceItem;
 			sourceList[sourceItemIdx] = null;

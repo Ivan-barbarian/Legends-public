@@ -300,7 +300,7 @@ this.legend_blacksmith_craft_armor <- this.inherit("scripts/events/event", {
 
 		foreach( b in brothers )
 		{
-			if (b.getLevel() > 9 && b.getBackground().getID() == "background.legend_blacksmith")
+			if (b.getLevel() > 9 && b.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendBlacksmith)
 			{
 				candidates_blacksmith.push(b);
 			}

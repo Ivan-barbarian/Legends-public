@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = "background.mason";
+		this.m.ID = ::Legends.Backgrounds.IDs.Mason;
 		this.m.Name = "Mason";
 		this.m.Icon = "ui/backgrounds/background_17.png";
 		this.m.BackgroundDescription = "A good mason is used to physical labor and studying to improve his craft.";

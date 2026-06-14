@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = "background.messenger";
+		this.m.ID = ::Legends.Backgrounds.IDs.Messenger;
 		this.m.Name = "Messenger";
 		this.m.Icon = "ui/backgrounds/background_46.png";
 		this.m.BackgroundDescription = "Messengers are used to long and tiring travels.";

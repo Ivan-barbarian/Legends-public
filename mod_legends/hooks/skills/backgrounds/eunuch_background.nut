@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = "background.eunuch";
+		this.m.ID = ::Legends.Backgrounds.IDs.Eunuch;
 		this.m.Name = "Eunuch";
 		this.m.Icon = "ui/backgrounds/background_52.png";
 		this.m.BackgroundDescription = "The fact that eunuchs can\'t sire children is probably a secondary concern for a mercenary company.";

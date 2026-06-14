@@ -4,7 +4,7 @@ this.mage_background <- this.inherit("scripts/skills/backgrounds/character_backg
 	{
 		this.character_background.create();
 		this.m.Name = "Mage";
-		this.m.ID = "background.mage";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendMage;
 		this.m.Icon = "ui/backgrounds/background_39.png";
 		local r = this.Math.rand(0, 3);
 

@@ -1,20 +1,22 @@
 ::mods_hookExactClass("events/events/dlc2/fear_undead_event", function(o) {
 	o.m.excludedBackgrounds <- [
-		"companion",
-		"crusader",
-		"gravedigger",
-		"graverobber",
-		"wildman",
-		"wildwoman",
-		"hedge_knight"
+		::Legends.Backgrounds.IDs.Companion,
+		::Legends.Backgrounds.IDs.Crusader,
+		::Legends.Backgrounds.IDs.Gravedigger,
+		::Legends.Backgrounds.IDs.Graverobber,
+		::Legends.Backgrounds.IDs.HedgeKnight,
+		::Legends.Backgrounds.IDs.Wildman,
+		::Legends.Backgrounds.IDs.LegendCompanionMelee,
+		::Legends.Backgrounds.IDs.LegendCompanionRanged,
+		::Legends.Backgrounds.IDs.LegendCrusader
 	];
 	o.m.excludedTraits <- [
-		"fear_undead",
-		"hate_undead",
-		"fearless",
-		"brave",
-		"determined",
-		"bloodthirsty"
+		::Legends.Trait.Bloodthirsty,
+		::Legends.Trait.Brave,
+		::Legends.Trait.Determined,
+		::Legends.Trait.Fearless,
+		::Legends.Trait.FearUndead,
+		::Legends.Trait.HateUndead
 	];
 
 	local create = o.create;
@@ -56,11 +58,11 @@
 				continue;
 
 			foreach (background in this.m.excludedBackgrounds)
-				if (bro.getBackground().getID() == "background." + background)
+				if (bro.getBackground().getID() == background)
 					continue;
 
 			foreach (trait in this.m.excludedTraits)
-				if (bro.getSkills().hasSkill("trait." + trait))
+				if (bro.getSkills().hasTrait(trait))
 					continue;
 
 			candidates.push(bro);

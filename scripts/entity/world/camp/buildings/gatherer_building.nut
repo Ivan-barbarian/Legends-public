@@ -400,11 +400,11 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 			switch(bro.getBackground().getID())
 			{
-				case "background.legend_vala":
-				case "background.legend_herbalist":
-				case "background.legend_alchemist":
-				case "background.legend_druid":
-				case "background.legend_commander_druid":
+				case ::Legends.Backgrounds.IDs.LegendVala:
+				case ::Legends.Backgrounds.IDs.LegendHerbalist:
+				case ::Legends.Backgrounds.IDs.LegendAlchemist:
+				case ::Legends.Backgrounds.IDs.LegendDruid:
+				case ::Legends.Backgrounds.IDs.LegendCommanderDruid:
 					map.Apothecary += bro.getLevel();
 			}
 

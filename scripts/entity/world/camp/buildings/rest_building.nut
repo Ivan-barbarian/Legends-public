@@ -111,22 +111,22 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 			// "Bill and Jill play dice to wile away the hours"
 		];
 
-		if (background.getID() == "background.monk")
+		if (background.getID() == ::Legends.Backgrounds.IDs.Monk)
 			activities.push(bro.getName() + " enthusiastically lectured the camp on the importance of living a holy life");
 
-		if (background.getID() == "background.flagellant")
+		if (background.getID() == ::Legends.Backgrounds.IDs.Flagellant)
 			activities.push(bro.getName() + " spends their time in front of an idol of the Old Gods, slowly offering a flesh sacrifice");
 
-		if (background.getID() == "background.cultist" || background.getID() == "background.converted_cultist")
+		if (background.getID() == ::Legends.Backgrounds.IDs.Cultist || background.getID() == ::Legends.Backgrounds.IDs.ConvertedCultist)
 			activities.push(bro.getName() + " enthusiastically spends their free time raving to the camp about the glories of Davkul");
 
-		if (background.getID() == "background.gladiator")
+		if (background.getID() == ::Legends.Backgrounds.IDs.Gladiator)
 			activities.push(bro.getName() + " decides the best use of free time is to flex freshly oiled muscles");
 
-		if (background.getID() == "background.ratcatcher")
+		if (background.getID() == ::Legends.Backgrounds.IDs.Ratcatcher)
 			activities.push(bro.getName() + " plays with a captured rat");
 
-		if (background.getID() == "background.nomad" || background.getID() == "background.legend_conscript")
+		if (background.getID() == ::Legends.Backgrounds.IDs.Nomad || background.getID() == ::Legends.Backgrounds.IDs.LegendConscript)
 			activities.push(bro.getName() + " spends their time filling their pockets with sand");
 
 		if (background.isBackgroundType(this.Const.BackgroundType.Performing))
@@ -142,7 +142,7 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 			]);
 		}
 
-		if (background.getID() == "background.assassin" || background.getID() == "background.killer_on_the_run" || background.getID() == "background.assassin_southern" || background.getID() == "background.legend_bounty_hunter")
+		if (background.getID() == ::Legends.Backgrounds.IDs.Assassin || background.getID() == ::Legends.Backgrounds.IDs.KillerOnTheRun || background.getID() == ::Legends.Backgrounds.IDs.AssassinSouthern || background.getID() == ::Legends.Backgrounds.IDs.LegendBountyHunter)
 		{
 			activities.extend([
 				bro.getName() + " organized a growing poison collection",

@@ -2,7 +2,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = "background.pimp";
+		this.m.ID = ::Legends.Backgrounds.IDs.Pimp;
 		this.m.Name = "Pimp";
 		this.m.Icon = "ui/backgrounds/background_56.png";
 		this.m.HiringCost = 60;

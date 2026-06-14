@@ -2,26 +2,25 @@ this.legend_fear_nobles_event <- this.inherit("scripts/events/event", {
 	m = {
 		Casualty = null,
 		excludedBackgrounds = [
-			"companion",
-			"disowned_noble",
-			"female_disowned_noble",
-			"adventurous_noble",
-			"hedge_knight",
-			"legend_noble_2h",
-			"legend_noble",
-			"legend_commander_noble",
-			"legend_noble_ranged",
-			"legend_noble_shield"
+			::Legends.Backgrounds.IDs.AdventurousNoble,
+			::Legends.Backgrounds.IDs.Companion,
+			::Legends.Backgrounds.IDs.DisownedNoble,
+			::Legends.Backgrounds.IDs.HedgeKnight,
+			::Legends.Backgrounds.IDs.LegendCommanderNoble,
+			::Legends.Backgrounds.IDs.LegendCompanionMelee,
+			::Legends.Backgrounds.IDs.LegendCompanionRanged,
+			::Legends.Backgrounds.IDs.LegendNoble,
+			::Legends.Backgrounds.IDs.LegendNoble2h,
+			::Legends.Backgrounds.IDs.LegendNobleRanged,
+			::Legends.Backgrounds.IDs.LegendNobleShield
 		],
 		excludedTraits = [
-			"fear_nobles",
-			"legend_fear_nobles",
-			"hate_nobles",
-			"legend_hate_nobles",
-			"fearless",
-			"brave",
-			"determined",
-			"bloodthirsty"
+			::Legends.Trait.Bloodthirsty,
+			::Legends.Trait.Brave,
+			::Legends.Trait.Determined,
+			::Legends.Trait.Fearless,
+			::Legends.Trait.LegendFearNobles,
+			::Legends.Trait.LegendHateNobles
 		]
 	},
 	function create()
@@ -97,7 +96,7 @@ this.legend_fear_nobles_event <- this.inherit("scripts/events/event", {
 		{
 			foreach (background in this.m.excludedBackgrounds)
 			{
-				if (bro.getBackground().getID() == "background." + background)
+				if (bro.getBackground().getID() == background)
 					continue;
 			}
 			if (bro.getLevel() > 7)
@@ -105,7 +104,7 @@ this.legend_fear_nobles_event <- this.inherit("scripts/events/event", {
 
 			foreach (trait in this.m.excludedTraits)
 			{
-				if (bro.getSkills().hasSkill("trait." + trait))
+				if (bro.getSkills().hasTrait(trait))
 					continue;
 			}
 			candidates.push(bro);

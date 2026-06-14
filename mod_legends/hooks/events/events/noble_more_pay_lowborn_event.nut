@@ -59,7 +59,7 @@
 
 		local lowborn_candidates = [];
 
-		foreach (bro in brothers) if (bro.getDailyCost() > lowestPay && bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn)	&& bro.getBackground().getID() != "background.slave") {
+		foreach (bro in brothers) if (bro.getDailyCost() > lowestPay && bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn)	&& bro.getBackground().getID() != ::Legends.Backgrounds.IDs.Slave) {
 			lowborn_candidates.push(bro);
 		}
 

@@ -146,7 +146,7 @@
 		if (bro.isStabled())
 			return;
 		//Can't really recruit converted cultists but its here anyway for posterity
-		if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().getID() == "background.legend_lurker" || bro.getBackground().getID() == "background.legend_husk" || bro.getBackground().getID() == "background.legend_magister")
+		if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Cultist || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.ConvertedCultist || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendLurker || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendHusk || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendMagister)
 		{
 			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75); //1.0 = default
 			bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
@@ -167,7 +167,7 @@
 
 	o.onGetBackgroundTooltip <- function ( _background, _tooltip )
 	{
-		if (_background.getID() == "background.cultist" || _background.getID() == "background.converted_cultist" || _background.getID() == "background.legend_lurker") // Removed husk and magister from this if
+		if (_background.getID() == ::Legends.Backgrounds.IDs.Cultist || _background.getID() == ::Legends.Backgrounds.IDs.ConvertedCultist || _background.getID() == ::Legends.Backgrounds.IDs.LegendLurker) // Removed husk and magister from this if
 		{
 			//_tooltip.pop();
 			_tooltip.push({
@@ -178,7 +178,7 @@
 			});
 		}
 
-		if (_background.getID() == "background.legend_husk" || _background.getID() == "background.legend_magister")
+		if (_background.getID() == ::Legends.Backgrounds.IDs.LegendHusk || _background.getID() == ::Legends.Backgrounds.IDs.LegendMagister)
 		{
 			//_tooltip.pop();
 			_tooltip.push({

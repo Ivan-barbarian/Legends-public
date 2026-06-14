@@ -2,7 +2,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = "background.pacified_flagellant";
+		this.m.ID = ::Legends.Backgrounds.IDs.PacifiedFlagellant;
 		this.m.Name = "Pacified Flagellant";
 		this.m.Icon = "ui/backgrounds/background_13.png";
 		this.m.HiringCost = 60;

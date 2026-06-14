@@ -3,7 +3,7 @@
 	o.create = function()
 	{
 		this.character_background.create();
-		this.m.ID = "background.cripple";
+		this.m.ID = ::Legends.Backgrounds.IDs.Cripple;
 		this.m.Name = "Cripple";
 		this.m.Icon = "ui/backgrounds/background_51.png";
 		this.m.BackgroundDescription = "The only thing swift about a cripple is their expected demise in a real battle.";

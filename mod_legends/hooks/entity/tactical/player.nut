@@ -319,7 +319,7 @@
 				});
 			}
 
-			if (this.m.Background != null && this.m.Background.getID() == "background.companion")
+			if (this.m.Background != null && this.m.Background.getID() == ::Legends.Backgrounds.IDs.Companion)
 			{
 				text = "With the company from the very beginning.";
 			}
@@ -758,7 +758,7 @@
 	{
 		local isScenarioMode = !(("State" in this.World) && this.World.State != null);
 
-		if (this.m.Level >= this.Const.LevelXP.len() || this.isGuest() || !isScenarioMode && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.m.Level >= 7 && this.getBackground().getID() == "background.slave")
+		if (this.m.Level >= this.Const.LevelXP.len() || this.isGuest() || !isScenarioMode && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.m.Level >= 7 && this.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave)
 			return;
 
 		if (_scale)
@@ -801,7 +801,7 @@
 			this.m.XP = this.Const.LevelXP[this.Const.LevelXP.len() - 1];
 			return;
 		}
-		else if (!isScenarioMode && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.m.XP + _xp * this.m.CurrentProperties.XPGainMult >= this.Const.LevelXP[6] && this.getBackground().getID() == "background.slave")
+		else if (!isScenarioMode && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.m.XP + _xp * this.m.CurrentProperties.XPGainMult >= this.Const.LevelXP[6] && this.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave)
 		{
 			this.m.CombatStats.XPGained += this.Const.LevelXP[6] - this.m.XP;
 			this.m.XP = this.Const.LevelXP[6];
@@ -1662,7 +1662,7 @@
 			broStash = broStash + item.getStashModifier();
 		}
 
-		if (background.getID() == "background.legend_donkey")
+		if (background.getID() == ::Legends.Backgrounds.IDs.LegendDonkey)
 		{
 			broStash += background.getModifier();
 		}

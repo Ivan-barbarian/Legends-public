@@ -43,7 +43,7 @@
 
 					foreach( bro in brothers )
 					{
-						if (bro.getBackground().getID() == "background.houndmaster" || bro.getBackground().getID() == "background.legend_muladi")
+						if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Houndmaster || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendMuladi)
 						{
 							bro.worsenMood(1.0, "You didn\'t help wardogs being eaten by orcs");
 

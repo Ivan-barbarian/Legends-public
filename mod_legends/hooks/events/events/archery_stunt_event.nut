@@ -33,7 +33,7 @@
 			if (bro.getSkills().hasTrait(::Legends.Trait.Bright) || bro.getSkills().hasTrait(::Legends.Trait.Hesistant) || bro.getSkills().hasTrait(::Legends.Trait.Craven) || bro.getSkills().hasTrait(::Legends.Trait.Fainthearted) || bro.getSkills().hasTrait(::Legends.Trait.Insecure))
 				continue;
 
-			if ((bro.getBackground().getID() == "background.minstrel" || bro.getBackground().getID() == "background.juggler" || bro.getBackground().getID() == "background.vagabond") && !bro.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
+			if ((bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Minstrel || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Juggler || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Vagabond) && !bro.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
 				clown_candidates.push(bro);
 		}
 
@@ -47,7 +47,7 @@
 			if (bro.getSkills().hasTrait(::Legends.Trait.Bright) || bro.getSkills().hasTrait(::Legends.Trait.Hesistant) || bro.getSkills().hasTrait(::Legends.Trait.Craven) || bro.getSkills().hasTrait(::Legends.Trait.Fainthearted) || bro.getSkills().hasTrait(::Legends.Trait.Insecure))
 				continue;
 
-			if (bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.poacher" || bro.getBackground().getID() == "background.sellsword" || bro.getBackground().getID() == "background.bowyer" || (bro.getBackground().getID() == "background.adventurous_noble" && bro.getGender() == 1) && !bro.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Hunter || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Poacher || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Sellsword || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Bowyer || (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.AdventurousNoble && bro.getGender() == 1) && !bro.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
 				archer_candidates.push(bro);
 		}
 

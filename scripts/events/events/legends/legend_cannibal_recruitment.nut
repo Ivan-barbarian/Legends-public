@@ -82,7 +82,7 @@ this.legend_cannibal_recruitment <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.legend_cannibal")
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCannibal)
 			{
 				return;
 			}

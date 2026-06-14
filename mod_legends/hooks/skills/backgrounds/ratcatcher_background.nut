@@ -2,7 +2,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = "background.ratcatcher";
+		this.m.ID = ::Legends.Backgrounds.IDs.Ratcatcher;
 		this.m.Name = "Ratcatcher";
 		this.m.Icon = "ui/backgrounds/background_41.png";
 		this.m.BackgroundDescription = "Ratcatchers need to have quick reflexes to catch their prey.";

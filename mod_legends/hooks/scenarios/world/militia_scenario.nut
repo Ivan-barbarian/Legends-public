@@ -281,7 +281,7 @@
 				continue;
 			}
 
-			if (bro.getBackground().getID() == "background.legend_man_at_arms")
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendManAtArms)
 			{
 				bro.getSprite("accessory_special").setBrush("bust_militia_band_02"); //blue
 			}

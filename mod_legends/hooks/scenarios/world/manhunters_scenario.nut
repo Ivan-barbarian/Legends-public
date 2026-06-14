@@ -228,7 +228,7 @@
 
 	o.onHired = function ( _bro )
 	{
-		if (_bro.getBackground().getID() != "background.slave")
+		if (_bro.getBackground().getID() != ::Legends.Backgrounds.IDs.Slave)
 		{
 			::Legends.Actives.grant(_bro, ::Legends.Active.WhipSlave);
 		}
@@ -248,7 +248,7 @@
 
 	o.onUnlockPerk = function ( _bro, _perkID )
 	{
-		if (_bro.getLevel() == 7 && _bro.getBackground().getID() == "background.slave" && _perkID == ::Legends.Perks.getID(::Legends.Perk.Student))
+		if (_bro.getLevel() == 7 && _bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave && _perkID == ::Legends.Perks.getID(::Legends.Perk.Student))
 		{
 			_bro.setPerkPoints(_bro.getPerkPoints() + 1);
 		}
@@ -256,7 +256,7 @@
 
 	o.onUpdateLevel = function ( _bro )
 	{
-		if (_bro.getLevel() == 7 && _bro.getBackground().getID() == "background.slave" && _bro.getSkills().hasPerk(::Legends.Perk.Student))
+		if (_bro.getLevel() == 7 && _bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave && _bro.getSkills().hasPerk(::Legends.Perk.Student))
 		{
 			_bro.setPerkPoints(_bro.getPerkPoints() + 1);
 		}
@@ -264,9 +264,9 @@
 
 	o.onGetBackgroundTooltip = function ( _background, _tooltip )
 	{
-		if (_background.getID() != "background.slave")
+		if (_background.getID() != ::Legends.Backgrounds.IDs.Slave)
 		{
-			if (_background.getID() == "background.wildman")
+			if (_background.getID() == ::Legends.Backgrounds.IDs.Wildman)
 			{
 				_tooltip.pop();
 				_tooltip.push({
@@ -276,11 +276,11 @@
 					text = "[color=%negative%]-25%[/color] Experience Gain"
 				});
 			}
-			else if (_background.getID() == "background.apprentice")
+			else if (_background.getID() == ::Legends.Backgrounds.IDs.Apprentice)
 			{
 				_tooltip.pop();
 			}
-			else if (_background.getID() == "background.historian")
+			else if (_background.getID() == ::Legends.Backgrounds.IDs.Historian)
 			{
 				_tooltip.pop();
 				_tooltip.push({
@@ -331,7 +331,7 @@
 
 		foreach( bro in roster )
 		{
-			if (bro.getBackground().getID() == "background.slave")
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Slave)
 			{
 				indebted++;
 			}

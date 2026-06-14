@@ -52,7 +52,7 @@
 						if (bro.getID() == _event.m.Drunkard.getID())
 							continue;
 
-						if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) || bro.getBackground().getID() == "background.flagellant"  || bro.getBackground().getID() == "background.cultist"  || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().getID() == "background.monk_turned_flagellant" )
+						if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Flagellant  || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Cultist  || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.ConvertedCultist || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.MonkTurnedFlagellant )
 							continue;
 
 						bro.worsenMood(1.0, "Appalled by your order to have " + _event.m.Drunkard.getName() + " flogged");
@@ -91,7 +91,7 @@
 						if (bro.getID() == _event.m.Drunkard.getID())
 							continue;
 
-						if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) || bro.getBackground().getID() == "background.flagellant"  || bro.getBackground().getID() == "background.cultist"  || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().getID() == "background.monk_turned_flagellant" )
+						if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Flagellant  || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Cultist  || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.ConvertedCultist || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.MonkTurnedFlagellant )
 							continue;
 
 						bro.worsenMood(1.0, "Appalled by your order to have " + _event.m.Drunkard.getName() + " flogged");
@@ -197,7 +197,7 @@
 		local candidates = [];
 
 		foreach( bro in brothers )
-			if (bro.getSkills().hasTrait(::Legends.Trait.Drunkard) && bro.getBackground().getID() != "background.legend_commander_noble")
+			if (bro.getSkills().hasTrait(::Legends.Trait.Drunkard) && bro.getBackground().getID() != ::Legends.Backgrounds.IDs.LegendCommanderNoble)
 				candidates.push(bro);
 
 		if (candidates.len() == 0)

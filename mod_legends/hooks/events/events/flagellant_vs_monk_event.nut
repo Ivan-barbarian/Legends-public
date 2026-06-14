@@ -13,7 +13,7 @@
 					this.Characters.push(_event.m.Flagellant.getImagePath());
 					local background = this.new("scripts/skills/backgrounds/pacified_flagellant_background");
 					local oldPerkTree = _event.m.Flagellant.getBackground().m.CustomPerkTree;
-					_event.m.Flagellant.getSkills().removeByID("background.flagellant");
+					_event.m.Flagellant.getSkills().removeByID(::Legends.Backgrounds.IDs.Flagellant);
 					_event.m.Flagellant.getSkills().add(background);
 					_event.m.Flagellant.m.Background = background;
 					background.buildDescription();
@@ -42,7 +42,7 @@
 					this.Characters.push(_event.m.Flagellant.getImagePath());
 					local background = this.new("scripts/skills/backgrounds/monk_turned_flagellant_background");
 					local oldPerkTree = _event.m.Flagellant.getBackground().m.CustomPerkTree;
-					_event.m.Monk.getSkills().removeByID("background.monk");
+					_event.m.Monk.getSkills().removeByID(::Legends.Backgrounds.IDs.Monk);
 					_event.m.Monk.getSkills().add(background);
 					_event.m.Monk.m.Background = background;
 					background.buildDescription();

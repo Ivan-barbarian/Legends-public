@@ -203,7 +203,7 @@ this.legend_boar_charge_skill <- this.inherit("scripts/skills/skill", {
 				damageMax += muscularity;
 			}
 
-			if (this.getContainer().hasSkill("background.brawler") || this.getContainer().hasSkill("background.legend_commander_berserker" || this.getContainer().hasSkill("background.legend_berserker")) )
+			if (this.getContainer().hasSkill(::Legends.Backgrounds.IDs.Brawler) || this.getContainer().hasSkill(::Legends.Backgrounds.IDs.LegendCommanderBerserker || this.getContainer().hasSkill(::Legends.Backgrounds.IDs.LegendBerserker)) )
 			{
 				damageMin = damageMin * 1.25;
 				damageMax = damageMax * 1.25;

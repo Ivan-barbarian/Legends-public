@@ -69,7 +69,7 @@ this.legend_butcher_vs_donkey <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.butcher")
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Butcher)
 			{
 				Butcher_candidates.push(bro);
 				break;
@@ -85,7 +85,7 @@ this.legend_butcher_vs_donkey <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.legend_donkey")
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendDonkey)
 			{
 				Donkey_candidates.push(bro);
 			}

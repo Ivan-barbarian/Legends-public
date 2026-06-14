@@ -34,7 +34,7 @@
 		local oldgods_candidates = [];
 
 		foreach( bro in brothers )
-			if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.flagellant" || bro.getBackground().getID() == "background.pacified_flagellant" || bro.getBackground().getID() == "background.monk_turned_flagellant")
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Monk || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Flagellant || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.PacifiedFlagellant || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.MonkTurnedFlagellant)
 				oldgods_candidates.push(bro);
 
 		if (oldgods_candidates.len() == 0)

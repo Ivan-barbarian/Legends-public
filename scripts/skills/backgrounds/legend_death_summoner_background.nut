@@ -3,7 +3,7 @@ this.legend_death_summoner_background <- this.inherit("scripts/skills/background
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_death_summoner";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendDeathSummoner;
 		this.m.Icon = "ui/backgrounds/background_zombie.png";
 		this.m.Name = "Weidermancer";
 		this.m.HiringCost = 1000;

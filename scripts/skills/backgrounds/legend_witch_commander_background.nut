@@ -4,7 +4,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		this.character_background.create();
 		this.m.Name = "Seer";
-		this.m.ID = "background.legend_commander_witch";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendCommanderWitch;
 		this.m.Icon = "ui/backgrounds/seer_02.png";
 		this.m.HiringCost = 250;
 		this.m.DailyCost = 0;

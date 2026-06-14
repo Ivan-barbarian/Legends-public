@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = "background.manhunter";
+		this.m.ID = ::Legends.Backgrounds.IDs.Manhunter;
 		this.m.Name = "Manhunter";
 		this.m.Icon = "ui/backgrounds/background_62.png";
 		this.m.BackgroundDescription = "Manhunters are used to hunting down people in the rough environment of the south.";

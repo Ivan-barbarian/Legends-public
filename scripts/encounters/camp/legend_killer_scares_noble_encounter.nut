@@ -56,7 +56,7 @@ this.legend_killer_scares_noble_encounter <- ::inherit("scripts/encounters/encou
 			return false;
 
 		local candidates_killer = brothers.filter(@(idx, bro)
-			bro.getLevel() > 4 && (bro.getBackground().getID() == "background.assassin" || bro.getBackground().getID() == "background.killer_on_the_run")
+			bro.getLevel() > 4 && (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Assassin || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.KillerOnTheRun)
 		);
 		if (candidates_killer.len() == 0)
 			return false;

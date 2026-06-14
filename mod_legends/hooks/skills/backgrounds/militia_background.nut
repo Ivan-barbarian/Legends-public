@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = "background.militia";
+		this.m.ID = ::Legends.Backgrounds.IDs.Militia;
 		this.m.Name = "Militia";
 		this.m.Icon = "ui/backgrounds/background_35.png";
 		//gender neutral description

@@ -21,13 +21,13 @@
 		});
 
 		this.addSkillRequirement("Have at least one of the following backgrounds: Caravan Hand, Peddler, Trader, Donkey", [
-			"background.caravan_hand",
-			"background.legend_trader",
-			"background.legend_commander_trader",
-			"background.legend_donkey",
-			"background.peddler",
-			"background.legend_companion_melee",
-			"background.legend_companion_ranged"
+			::Legends.Backgrounds.IDs.CaravanHand,
+			::Legends.Backgrounds.IDs.LegendTrader,
+			::Legends.Backgrounds.IDs.LegendCommanderTrader,
+			::Legends.Backgrounds.IDs.LegendDonkey,
+			::Legends.Backgrounds.IDs.Peddler,
+			::Legends.Backgrounds.IDs.LegendCompanionMelee,
+			::Legends.Backgrounds.IDs.LegendCompanionRanged
 		]);
 	}
 

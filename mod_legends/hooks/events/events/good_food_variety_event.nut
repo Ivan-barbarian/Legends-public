@@ -4,7 +4,7 @@
 		local hasBros = false;
 
 		foreach( bro in brothers ) {
-			if (bro.getSkills().hasTrait(::Legends.Trait.Spartan) || bro.getFlags().get("IsSpecial") || bro.getFlags().get("IsPlayerCharacter") || bro.getBackground().getID() == "background.legend_puppet" || bro.getBackground().getID() == "background.legend_donkey")
+			if (bro.getSkills().hasTrait(::Legends.Trait.Spartan) || bro.getFlags().get("IsSpecial") || bro.getFlags().get("IsPlayerCharacter") || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendPuppet || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendDonkey)
 				continue;
 
 			hasBros = true;

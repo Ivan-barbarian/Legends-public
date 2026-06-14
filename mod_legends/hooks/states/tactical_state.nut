@@ -555,16 +555,16 @@
 
 			switch (bro.getBackground().getID())
 			{
-				case "background.legend_cannibal":
+				case ::Legends.Backgrounds.IDs.LegendCannibal:
 					CannibalsInRoster += 1;
 					break;
-				case "background.gravedigger":
+				case ::Legends.Backgrounds.IDs.Gravedigger:
 					zombieSalvage += 5;
 					break;
-				case "background.graverobber":
+				case ::Legends.Backgrounds.IDs.Graverobber:
 					zombieSalvage += 5;
 					break;
-				case "background.butcher":
+				case ::Legends.Backgrounds.IDs.Butcher:
 					if (bro.getSkills().hasTrait(::Legends.Trait.LegendCannibalistic))
 					{
 						CannibalisticButchersInRoster += 1;

@@ -3,7 +3,7 @@ this.legend_conjurer_background <- this.inherit("scripts/skills/backgrounds/char
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_conjurer";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendConjurer;
 		this.m.Icon = "ui/backgrounds/background_wizard_2.png";
 		this.m.Name = "Conjurer";
 		this.m.HiringCost = 1000;

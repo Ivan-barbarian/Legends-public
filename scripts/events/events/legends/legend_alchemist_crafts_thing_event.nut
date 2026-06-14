@@ -100,7 +100,7 @@ this.legend_alchemist_crafts_thing_event <- this.inherit("scripts/events/event",
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.legend_alchemist")
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendAlchemist)
 			{
 				candidates_monk.push(bro);
 			}

@@ -105,7 +105,7 @@ this.legends_minstrel_and_juggler_event <- this.inherit("scripts/events/event", 
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.minstrel" && bro.getGender() == 0)
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Minstrel && bro.getGender() == 0)
 			{
 				candidates_minstrel.push(bro);
 			}
@@ -120,7 +120,7 @@ this.legends_minstrel_and_juggler_event <- this.inherit("scripts/events/event", 
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.juggler")
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Juggler)
 			{
 				candidates_juggler.push(bro);
 			}

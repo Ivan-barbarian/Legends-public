@@ -238,7 +238,7 @@
 				}
 			}
 
-			if (bro.getBackground().getID() == "background.peddler" || bro.getBackground().getID() == "background.legend_donkey")
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Peddler || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendDonkey)
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75);
 				bro.getBaseProperties().DailyWageMult *= 1.25;

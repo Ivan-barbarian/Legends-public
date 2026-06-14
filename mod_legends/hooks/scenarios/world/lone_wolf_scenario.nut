@@ -147,30 +147,77 @@
 
 		// Define tier thresholds of allowed backgrounds
 		local tier1 = [ // >1500
-			"brawler", "squire", "butcher", "cripple", "daytaler", "miner", "minstrel",
-			"poacher", "legend_ironmonger", "wildman", "lumberjack", "apprentice",
-			"farmhand", "thief", "fisherman", "flagellant", "gambler", "gravedigger",
-			"graverobber", "beggar", "ratcatcher", "refugee", "shepherd", "bowyer", "vagabond", "monk"
+			::Legends.Backgrounds.IDs.Apprentice,
+			::Legends.Backgrounds.IDs.Beggar,
+			::Legends.Backgrounds.IDs.Bowyer,
+			::Legends.Backgrounds.IDs.Brawler,
+			::Legends.Backgrounds.IDs.Butcher,
+			::Legends.Backgrounds.IDs.Cripple,
+			::Legends.Backgrounds.IDs.Daytaler,
+			::Legends.Backgrounds.IDs.Farmhand,
+			::Legends.Backgrounds.IDs.Fisherman,
+			::Legends.Backgrounds.IDs.Flagellant,
+			::Legends.Backgrounds.IDs.Gambler,
+			::Legends.Backgrounds.IDs.Gravedigger,
+			::Legends.Backgrounds.IDs.Graverobber,
+			::Legends.Backgrounds.IDs.Lumberjack,
+			::Legends.Backgrounds.IDs.Miner,
+			::Legends.Backgrounds.IDs.Minstrel,
+			::Legends.Backgrounds.IDs.Monk,
+			::Legends.Backgrounds.IDs.Poacher,
+			::Legends.Backgrounds.IDs.Ratcatcher,
+			::Legends.Backgrounds.IDs.Refugee,
+			::Legends.Backgrounds.IDs.Shepherd,
+			::Legends.Backgrounds.IDs.Squire,
+			::Legends.Backgrounds.IDs.Thief,
+			::Legends.Backgrounds.IDs.Vagabond,
+			::Legends.Backgrounds.IDs.Wildman,
+			::Legends.Backgrounds.IDs.LegendIronmonger
 		];
 
 		local tier2 = [ // >2000
-			"militia", "deserter", "retired_soldier", "cultist", "houndmaster",
-			"hunter", "juggler", "killer_on_the_run", "barbarian", "bastard", "legend_blacksmith"
+			::Legends.Backgrounds.IDs.Barbarian,
+			::Legends.Backgrounds.IDs.Bastard,
+			::Legends.Backgrounds.IDs.Cultist,
+			::Legends.Backgrounds.IDs.Deserter,
+			::Legends.Backgrounds.IDs.Houndmaster,
+			::Legends.Backgrounds.IDs.Hunter,
+			::Legends.Backgrounds.IDs.Juggler,
+			::Legends.Backgrounds.IDs.KillerOnTheRun,
+			::Legends.Backgrounds.IDs.Militia,
+			::Legends.Backgrounds.IDs.RetiredSoldier,
+			::Legends.Backgrounds.IDs.LegendBlacksmith
 		];
 
 		local tier3 = [ // >2650
-			"adventurous_noble", "disowned_noble", "beast_hunter", "witchhunter",
-			"legend_shieldmaiden", "raider", "legend_conscript", "legend_inventor"
+			::Legends.Backgrounds.IDs.AdventurousNoble,
+			::Legends.Backgrounds.IDs.BeastSlayer,
+			::Legends.Backgrounds.IDs.DisownedNoble,
+			::Legends.Backgrounds.IDs.Raider,
+			::Legends.Backgrounds.IDs.Witchhunter,
+			::Legends.Backgrounds.IDs.LegendConscript,
+			::Legends.Backgrounds.IDs.LegendInventor,
+			::Legends.Backgrounds.IDs.LegendShieldmaiden
 		];
 
 		local tier4 = [ // >3500
-			"hedge_knight", "sellsword", "swordmaster", "legend_bladedancer",
-			"legend_master_archer", "assassin_southern", "gladiator"
+			::Legends.Backgrounds.IDs.AssassinSouthern,
+			::Legends.Backgrounds.IDs.Gladiator,
+			::Legends.Backgrounds.IDs.HedgeKnight,
+			::Legends.Backgrounds.IDs.Sellsword,
+			::Legends.Backgrounds.IDs.Swordmaster,
+			::Legends.Backgrounds.IDs.LegendBladedancer,
+			::Legends.Backgrounds.IDs.LegendMasterArcher
 		];
 
 		local tier5 = [ // >4500
-			"legend_noble_2h", "legend_noble_shield", "legend_noble_ranged",
-			"assassin", "legend_man_at_arms", "paladin", "legend_berserker"
+			::Legends.Backgrounds.IDs.Assassin,
+			::Legends.Backgrounds.IDs.Paladin,
+			::Legends.Backgrounds.IDs.LegendBerserker,
+			::Legends.Backgrounds.IDs.LegendManAtArms,
+			::Legends.Backgrounds.IDs.LegendNoble2h,
+			::Legends.Backgrounds.IDs.LegendNobleRanged,
+			::Legends.Backgrounds.IDs.LegendNobleShield
 		];
 
 		// Combine tiers based on current renown
@@ -187,7 +234,7 @@
 			local bgID = bro.getBackground().getID();
 
 			// Always keep donkey
-			if (bgID == "background.legend_donkey")
+			if (bgID == ::Legends.Backgrounds.IDs.LegendDonkey)
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.0);
 				bro.getBaseProperties().DailyWageMult *= 1.0;
@@ -195,11 +242,8 @@
 				continue;
 			}
 
-			// Strip the "background." prefix to match our allowed list
-			local short = bgID.find("background.") == 0 ? bgID.slice("background.".len()) : bgID;
-
 			// If not allowed by renown threshold, remove
-			if (allowed.find(short) == null)
+			if (allowed.find(bgID) == null)
 			{
 				garbage.push(bro);
 			}
@@ -223,7 +267,7 @@
 
 	// o.onGenerateBro <- function (bro) //companions free everyone else normal. //Removed 14/6/26 due to all recuits being zero. Code is unnecessary now as I have just changed all companons to 0 and now everyone else should force defult as defined by vanilla logic - Luft.
 	// {
-	// 	if (bro.getBackground().getID() == "background.companion")
+	// 	if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Companion)
 	// 	{
 	// 		bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.0); //1.0 = default
 	// 		bro.getBaseProperties().DailyWageMult *= 0.0; //1.0 = default

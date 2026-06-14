@@ -32,7 +32,7 @@
 					{
 						local id = bro.getBackground().getID();
 
-						if (id == "background.daytaler" || id == "background.mason" || id == "background.lumberjack" || id == "background.miller" || id == "background.farmhand" || id == "background.gravedigger") {
+						if (id == ::Legends.Backgrounds.IDs.Daytaler || id == ::Legends.Backgrounds.IDs.Mason || id == ::Legends.Backgrounds.IDs.Lumberjack || id == ::Legends.Backgrounds.IDs.Miller || id == ::Legends.Backgrounds.IDs.Farmhand || id == ::Legends.Backgrounds.IDs.Gravedigger) {
 							if (this.Math.rand(1, 100) <= 33) {
 								::Legends.Effects.grant(bro, ::Legends.Effect.Exhausted, function(_effect) {
 									this.List.push({
@@ -74,7 +74,7 @@
 					foreach( bro in brothers ) {
 						local id = bro.getBackground().getID();
 
-						if (id == "background.daytaler" || id == "background.mason" || id == "background.lumberjack" || id == "background.miller" || id == "background.farmhand" || id == "background.gravedigger") {
+						if (id == ::Legends.Backgrounds.IDs.Daytaler || id == ::Legends.Backgrounds.IDs.Mason || id == ::Legends.Backgrounds.IDs.Lumberjack || id == ::Legends.Backgrounds.IDs.Miller || id == ::Legends.Backgrounds.IDs.Farmhand || id == ::Legends.Backgrounds.IDs.Gravedigger) {
 							if (this.Math.rand(1, 100) <= 33) {
 								::Legends.Effects.grant(bro, ::Legends.Effect.Exhausted, function(_effect) {
 									this.List.push({

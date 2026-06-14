@@ -1,61 +1,61 @@
 // Unfortunately we have to manually add any backgrounds that are used in TargetDefs, as there's no way to dynamically do it
 // MAKE SURE ANY BACKGROUNDS ADDED IN TargetDefs IS ALSO ADDED HERE
 ::Const.HuntingLoot.RequiredBackgrounds <- {};
-::Const.HuntingLoot.RequiredBackgrounds["background.barbarian"] <- "Barbarian";
-::Const.HuntingLoot.RequiredBackgrounds["background.beast_slayer"] <- "Beast Slayer";
-::Const.HuntingLoot.RequiredBackgrounds["background.legend_berserker"] <- "Berserker";
-::Const.HuntingLoot.RequiredBackgrounds["background.legend_commander_berserker"] <- "Berserker Commander";
-::Const.HuntingLoot.RequiredBackgrounds["background.legend_cannibal"] <- "Cannibal";
-::Const.HuntingLoot.RequiredBackgrounds["background.cultist"] <- "Cultist";
-::Const.HuntingLoot.RequiredBackgrounds["background.converted_cultist"] <- "Converted Cultist";
-::Const.HuntingLoot.RequiredBackgrounds["background.fisherman"] <- "Fisherman";
-::Const.HuntingLoot.RequiredBackgrounds["background.hunter"] <- "Hunter";
-::Const.HuntingLoot.RequiredBackgrounds["background.lindwurm_slayer"] <- "Lindwurm Slayer";
-::Const.HuntingLoot.RequiredBackgrounds["background.legend_master_archer"] <- "Master Archer";
-::Const.HuntingLoot.RequiredBackgrounds["background.legend_muladi"] <- "Muladí";
-::Const.HuntingLoot.RequiredBackgrounds["background.nomad"] <- "Nomad";
-::Const.HuntingLoot.RequiredBackgrounds["background.poacher"] <-	"Poacher";
-::Const.HuntingLoot.RequiredBackgrounds["background.legend_ranger"] <- "Ranger";
-::Const.HuntingLoot.RequiredBackgrounds["background.legend_commander_ranger"] <- "Ranger Commander";
-::Const.HuntingLoot.RequiredBackgrounds["background.ratcatcher"] <- "Ratcatcher";
-::Const.HuntingLoot.RequiredBackgrounds["background.shepherd"] <- "Shepherd";
-::Const.HuntingLoot.RequiredBackgrounds["background.wildman"] <- "Wildman";
-::Const.HuntingLoot.RequiredBackgrounds["background.witchhunter"] <- "Witch Hunter";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.Barbarian] <- "Barbarian";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.BeastSlayer] <- "Beast Slayer";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.LegendBerserker] <- "Berserker";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.LegendCommanderBerserker] <- "Berserker Commander";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.LegendCannibal] <- "Cannibal";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.Cultist] <- "Cultist";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.ConvertedCultist] <- "Converted Cultist";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.Fisherman] <- "Fisherman";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.Hunter] <- "Hunter";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.LindwurmSlayer] <- "Lindwurm Slayer";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.LegendMasterArcher] <- "Master Archer";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.LegendMuladi] <- "Muladí";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.Nomad] <- "Nomad";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.Poacher] <-	"Poacher";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.LegendRanger] <- "Ranger";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.LegendCommanderRanger] <- "Ranger Commander";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.Ratcatcher] <- "Ratcatcher";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.Shepherd] <- "Shepherd";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.Wildman] <- "Wildman";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.Witchhunter] <- "Witch Hunter";
 // Foragers
-::Const.HuntingLoot.RequiredBackgrounds["background.anatomist"] <- "Anatomist";
-::Const.HuntingLoot.RequiredBackgrounds["background.daytaler"] <- "Daytaler";
-::Const.HuntingLoot.RequiredBackgrounds["background.legend_druid"] <- "Druid";
-::Const.HuntingLoot.RequiredBackgrounds["background.legend_commander_druid"] <- "Druid Commander";
-::Const.HuntingLoot.RequiredBackgrounds["background.farmhand"] <- "Farmhand";
-::Const.HuntingLoot.RequiredBackgrounds["background.gravedigger"] <- "Gravedigger";
-::Const.HuntingLoot.RequiredBackgrounds["background.legend_herbalist"] <- "Herbalist / Apothecary";
-::Const.HuntingLoot.RequiredBackgrounds["background.miller"] <- "Miller";
-::Const.HuntingLoot.RequiredBackgrounds["background.monk"] <- "Monk";
-::Const.HuntingLoot.RequiredBackgrounds["background.vagabond"] <- "Vagabond";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.Anatomist] <- "Anatomist";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.Daytaler] <- "Daytaler";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.LegendDruid] <- "Druid";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.LegendCommanderDruid] <- "Druid Commander";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.Farmhand] <- "Farmhand";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.Gravedigger] <- "Gravedigger";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.LegendHerbalist] <- "Herbalist / Apothecary";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.Miller] <- "Miller";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.Monk] <- "Monk";
+::Const.HuntingLoot.RequiredBackgrounds[::Legends.Backgrounds.IDs.Vagabond] <- "Vagabond";
 
 // These backgrounds will contribute to Hunt Level (and hence Hunt Tier)
 // NOTE: The "ExpertHunter" Background Type defined in each background needs to be manually maintained)
 ::Const.HuntingLoot.ExpertHunterBackgrounds <- [
-	"background.barbarian",
-	"background.beast_slayer",
-	"background.hunter",
-	"background.legend_cannibal",
-	"background.legend_commander_ranger",
-	"background.legend_muladi",
-	"background.legend_master_archer",
-	"background.legend_ranger",
-	"background.nomad",
-	"background.poacher",
-	"background.ratcatcher",
-	"background.wildman"
+	::Legends.Backgrounds.IDs.Barbarian,
+	::Legends.Backgrounds.IDs.BeastSlayer,
+	::Legends.Backgrounds.IDs.Hunter,
+	::Legends.Backgrounds.IDs.LegendCannibal,
+	::Legends.Backgrounds.IDs.LegendCommanderRanger,
+	::Legends.Backgrounds.IDs.LegendMuladi,
+	::Legends.Backgrounds.IDs.LegendMasterArcher,
+	::Legends.Backgrounds.IDs.LegendRanger,
+	::Legends.Backgrounds.IDs.Nomad,
+	::Legends.Backgrounds.IDs.Poacher,
+	::Legends.Backgrounds.IDs.Ratcatcher,
+	::Legends.Backgrounds.IDs.Wildman
 ];
 
 // Cook Backgrounds. No BackgroundType defined at this time
 ::Const.HuntingLoot.CookBackgrounds <- [
-	"background.miller",
-	"background.butcher",
-	"background.servant",
-	"background.legend_cannibal",
+	::Legends.Backgrounds.IDs.Miller,
+	::Legends.Backgrounds.IDs.Butcher,
+	::Legends.Backgrounds.IDs.Servant,
+	::Legends.Backgrounds.IDs.LegendCannibal,
 ];
 
 // Define the various targets that can be hunted / looted
@@ -139,14 +139,14 @@
 			[1,"scripts/items/loot/legend_bear_fur_item"]
 		],
 		Backgrounds = [
-			"background.barbarian",
-			"background.beast_slayer",
-			"background.legend_berserker",
-			"background.legend_commander_berserker",
-			"background.hunter",
-			"background.legend_ranger",
-			"background.legend_commander_ranger",
-			"background.wildman"
+			::Legends.Backgrounds.IDs.Barbarian,
+			::Legends.Backgrounds.IDs.BeastSlayer,
+			::Legends.Backgrounds.IDs.LegendBerserker,
+			::Legends.Backgrounds.IDs.LegendCommanderBerserker,
+			::Legends.Backgrounds.IDs.Hunter,
+			::Legends.Backgrounds.IDs.LegendRanger,
+			::Legends.Backgrounds.IDs.LegendCommanderRanger,
+			::Legends.Backgrounds.IDs.Wildman
 		]
 	},
 
@@ -164,14 +164,14 @@
 			[1,"scripts/items/trade/furs_item"]
 		],
 		Backgrounds = [
-			"background.barbarian",
-			"background.legend_berserker",
-			"background.legend_commander_berserker",
-			"background.hunter",
-			"background.poacher",
-			"background.legend_ranger",
-			"background.legend_commander_ranger",
-			"background.wildman"
+			::Legends.Backgrounds.IDs.Barbarian,
+			::Legends.Backgrounds.IDs.LegendBerserker,
+			::Legends.Backgrounds.IDs.LegendCommanderBerserker,
+			::Legends.Backgrounds.IDs.Hunter,
+			::Legends.Backgrounds.IDs.Poacher,
+			::Legends.Backgrounds.IDs.LegendRanger,
+			::Legends.Backgrounds.IDs.LegendCommanderRanger,
+			::Legends.Backgrounds.IDs.Wildman
 		]
 	},
 
@@ -201,8 +201,8 @@
 			[1,"scripts/items/trade/legend_seashells_item"]
 		],
 		Backgrounds = [
-			"background.fisherman",
-			"background.wildman"
+			::Legends.Backgrounds.IDs.Fisherman,
+			::Legends.Backgrounds.IDs.Wildman
 		]
 	},
 
@@ -219,11 +219,11 @@
 			[1,"scripts/items/trade/furs_item"]
 		],
 		Backgrounds = [
-			"background.hunter",
-			"background.poacher",
-			"background.legend_ranger",
-			"background.legend_commander_ranger",
-			"background.wildman"
+			::Legends.Backgrounds.IDs.Hunter,
+			::Legends.Backgrounds.IDs.Poacher,
+			::Legends.Backgrounds.IDs.LegendRanger,
+			::Legends.Backgrounds.IDs.LegendCommanderRanger,
+			::Legends.Backgrounds.IDs.Wildman
 		]
 	},
 
@@ -240,14 +240,14 @@
 			[1,"scripts/items/misc/adrenaline_gland_item"]
 		],
 		Backgrounds = [
-			"background.barbarian",
-			"background.beast_slayer",
-			"background.legend_berserker",
-			"background.legend_commander_berserker",
-			"background.hunter",
-			"background.legend_ranger",
-			"background.legend_commander_ranger",
-			"background.wildman"
+			::Legends.Backgrounds.IDs.Barbarian,
+			::Legends.Backgrounds.IDs.BeastSlayer,
+			::Legends.Backgrounds.IDs.LegendBerserker,
+			::Legends.Backgrounds.IDs.LegendCommanderBerserker,
+			::Legends.Backgrounds.IDs.Hunter,
+			::Legends.Backgrounds.IDs.LegendRanger,
+			::Legends.Backgrounds.IDs.LegendCommanderRanger,
+			::Legends.Backgrounds.IDs.Wildman
 		]
 	},
 
@@ -263,8 +263,8 @@
 			[1,"scripts/items/trade/legend_seashells_item"]
 		],
 		Backgrounds = [
-			"background.fisherman",
-			"background.wildman"
+			::Legends.Backgrounds.IDs.Fisherman,
+			::Legends.Backgrounds.IDs.Wildman
 		]
 	},
 
@@ -283,10 +283,10 @@
 			[2,"scripts/items/misc/ghoul_horn_item"]
 		],
 		Backgrounds = [
-			"background.legend_cannibal",
-			"background.cultist",
-			"background.converted_cultist",
-			"background.witchhunter"
+			::Legends.Backgrounds.IDs.LegendCannibal,
+			::Legends.Backgrounds.IDs.Cultist,
+			::Legends.Backgrounds.IDs.ConvertedCultist,
+			::Legends.Backgrounds.IDs.Witchhunter
 		]
 	},
 
@@ -304,10 +304,10 @@
 			[2,"scripts/items/loot/goblin_rank_insignia_item"]
 		],
 		Backgrounds = [
-			"background.legend_cannibal",
-			"background.legend_ranger",
-			"background.legend_commander_ranger",
-			"background.wildman"
+			::Legends.Backgrounds.IDs.LegendCannibal,
+			::Legends.Backgrounds.IDs.LegendRanger,
+			::Legends.Backgrounds.IDs.LegendCommanderRanger,
+			::Legends.Backgrounds.IDs.Wildman
 		]
 	},
 
@@ -325,10 +325,10 @@
 			[1,"scripts/items/misc/witch_hair_item"]
 		],
 		Backgrounds = [
-			"background.legend_cannibal",
-			"background.cultist",
-			"background.converted_cultist",
-			"background.witchhunter"
+			::Legends.Backgrounds.IDs.LegendCannibal,
+			::Legends.Backgrounds.IDs.Cultist,
+			::Legends.Backgrounds.IDs.ConvertedCultist,
+			::Legends.Backgrounds.IDs.Witchhunter
 		]
 	},
 
@@ -346,11 +346,11 @@
 			[1,"scripts/items/misc/hyena_fur_item"]
 		],
 		Backgrounds = [
-			"background.beast_slayer",
-			"background.hunter",
-			"background.nomad",
-			"background.legend_ranger",
-			"background.legend_commander_ranger"
+			::Legends.Backgrounds.IDs.BeastSlayer,
+			::Legends.Backgrounds.IDs.Hunter,
+			::Legends.Backgrounds.IDs.Nomad,
+			::Legends.Backgrounds.IDs.LegendRanger,
+			::Legends.Backgrounds.IDs.LegendCommanderRanger
 		]
 	},
 
@@ -380,11 +380,11 @@
 			[1,"scripts/items/trade/legend_small_furs_item"] // placeholder
 		],
 		Backgrounds = [
-			"background.hunter",
-			"background.nomad",
-			"background.poacher",
-			"background.legend_ranger",
-			"background.legend_commander_ranger"
+			::Legends.Backgrounds.IDs.Hunter,
+			::Legends.Backgrounds.IDs.Nomad,
+			::Legends.Backgrounds.IDs.Poacher,
+			::Legends.Backgrounds.IDs.LegendRanger,
+			::Legends.Backgrounds.IDs.LegendCommanderRanger
 		]
 	},
 
@@ -415,9 +415,9 @@
 			[4,"scripts/items/loot/rainbow_scale_item"]
 		],
 		Backgrounds = [
-			"background.beast_slayer",
-			"background.lindwurm_slayer",
-			"background.nomad"
+			::Legends.Backgrounds.IDs.BeastSlayer,
+			::Legends.Backgrounds.IDs.LindwurmSlayer,
+			::Legends.Backgrounds.IDs.Nomad
 		]
 	},
 
@@ -448,12 +448,12 @@
 			[4,"scripts/items/misc/unhold_hide_item"]
 		],
 		Backgrounds = [
-			"background.barbarian",
-			"background.beast_slayer",
-			"background.legend_berserker",
-			"background.legend_commander_berserker",
-			"background.legend_ranger",
-			"background.legend_commander_ranger"
+			::Legends.Backgrounds.IDs.Barbarian,
+			::Legends.Backgrounds.IDs.BeastSlayer,
+			::Legends.Backgrounds.IDs.LegendBerserker,
+			::Legends.Backgrounds.IDs.LegendCommanderBerserker,
+			::Legends.Backgrounds.IDs.LegendRanger,
+			::Legends.Backgrounds.IDs.LegendCommanderRanger
 		]
 	},
 
@@ -472,12 +472,12 @@
 			[3,"scripts/items/misc/frost_unhold_fur_item"]
 		],
 		Backgrounds = [
-			"background.barbarian",
-			"background.beast_slayer",
-			"background.legend_berserker",
-			"background.legend_commander_berserker",
-			"background.legend_ranger",
-			"background.legend_commander_ranger"
+			::Legends.Backgrounds.IDs.Barbarian,
+			::Legends.Backgrounds.IDs.BeastSlayer,
+			::Legends.Backgrounds.IDs.LegendBerserker,
+			::Legends.Backgrounds.IDs.LegendCommanderBerserker,
+			::Legends.Backgrounds.IDs.LegendRanger,
+			::Legends.Backgrounds.IDs.LegendCommanderRanger
 		]
 	},
 

@@ -3,7 +3,7 @@ this.legend_premonitionist_background <- this.inherit("scripts/skills/background
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_premonitionist";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendPremonitionist;
 		this.m.Icon = "ui/backgrounds/background_wizard_3.png";
 		this.m.Name = "Premonitionist";
 		this.m.HiringCost = 1000;

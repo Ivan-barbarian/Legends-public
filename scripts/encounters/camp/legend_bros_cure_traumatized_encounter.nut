@@ -220,9 +220,9 @@ this.legend_bros_cure_traumatized_encounter <- this.inherit("scripts/encounters/
 		foreach (bro in bros) {
 			if (bro.getSkills().hasSkill("injury.traumatized")) {
 				this.m.Traumatized = bro;
-			} else if (bro.getBackground().getID() == "background.monk") {
+			} else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Monk) {
 				this.m.Monk = bro;
-			} else if (bro.getBackground().getID() == "background.legend_dervish") {
+			} else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendDervish) {
 				this.m.Dervish = bro;
 			} else if (bro.getSkills().hasTrait(::Legends.Trait.Drunkard)) {
 				this.m.Drunkard = bro;

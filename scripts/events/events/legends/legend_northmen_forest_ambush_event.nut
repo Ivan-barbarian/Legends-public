@@ -330,19 +330,19 @@ this.legend_northmen_forest_ambush_event <- this.inherit("scripts/events/event",
 
 		foreach( b in brothers )
 		{
-			if (b.getBackground().getID() == "background.barbarian" || b.getBackground().getID() == "background.raider")
+			if (b.getBackground().getID() == ::Legends.Backgrounds.IDs.Barbarian || b.getBackground().getID() == ::Legends.Backgrounds.IDs.Raider)
 			{
 				candidates_barbarian.push(b);
 			}
-			else if (b.getBackground().getID() == "background.wildman" || b.getBackground().getID() == "background.legend_berserker")
+			else if (b.getBackground().getID() == ::Legends.Backgrounds.IDs.Wildman || b.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendBerserker)
 			{
 				candidates_wildman.push(b);
 			}
-			else if (b.getBackground().getID() == "background.poacher" || b.getBackground().getID() == "background.hunter" || b.getBackground().getID() == "background.legend_master_archer")
+			else if (b.getBackground().getID() == ::Legends.Backgrounds.IDs.Poacher || b.getBackground().getID() == ::Legends.Backgrounds.IDs.Hunter || b.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendMasterArcher)
 			{
 				candidates_masterarcher.push(b);
 			}
-			else if (b.getBackground().getID() == "background.assassin" || b.getBackground().getID() == "background.assassin_southern")
+			else if (b.getBackground().getID() == ::Legends.Backgrounds.IDs.Assassin || b.getBackground().getID() == ::Legends.Backgrounds.IDs.AssassinSouthern)
 			{
 				candidates_assassin.push(b);
 			}

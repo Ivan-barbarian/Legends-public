@@ -3,7 +3,7 @@ this.legend_inventor_background <- this.inherit("scripts/skills/backgrounds/char
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_inventor";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendInventor;
 		this.m.Name = "Inventor";
 		this.m.Icon = "ui/backgrounds/legend_inventor.png";
 		this.m.BackgroundDescription = "Inventors are trenchant problem solvers, fueled by a burning passion for knowledge.";

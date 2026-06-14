@@ -119,7 +119,7 @@ this.legend_barbarian_vs_shieldmaiden <- this.inherit("scripts/events/event", {
 				continue;
 			}
 
-			if ((bro.getBackground().getID() == "background.barbarian" && !bro.getFlags().has("learned")) || (bro.getBackground().getID() == "background.raider" && !bro.getFlags().has("learned")))
+			if ((bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Barbarian && !bro.getFlags().has("learned")) || (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Raider && !bro.getFlags().has("learned")))
 			{
 				Barbarian_candidates.push(bro);
 				break;
@@ -135,7 +135,7 @@ this.legend_barbarian_vs_shieldmaiden <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() > 3 && bro.getBackground().getID() == "background.legend_shieldmaiden" && !bro.getFlags().has("learned"))
+			if (bro.getLevel() > 3 && bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendShieldmaiden && !bro.getFlags().has("learned"))
 			{
 				Shieldmaiden_candidates.push(bro);
 			}

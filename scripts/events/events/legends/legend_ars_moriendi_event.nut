@@ -274,7 +274,7 @@ this.legend_ars_moriendi_event <- this.inherit("scripts/events/event", {
 				foreach (bro in brothers) {
 					local bg = bro.getBackground();
 					if (this.Math.rand(1, 100) <= 25) {
-						if (bg.getID() == "background.cultist" || bg.getID() == "background.converted_cultist")	{
+						if (bg.getID() == ::Legends.Backgrounds.IDs.Cultist || bg.getID() == ::Legends.Backgrounds.IDs.ConvertedCultist)	{
 							local entry = ::Legends.EventList.changeMood(bro, 0.5, "Felt good about being in the flock");
 							if (bro.getMoodState() > ::Const.MoodState.Neutral) {
 								this.List.push(entry);
@@ -298,7 +298,7 @@ this.legend_ars_moriendi_event <- this.inherit("scripts/events/event", {
         
         foreach( bro in brothers ) {
 			local bg = bro.getBackground();
-            if (bg.getID() == "background.monk" || bg.getID() == "background.historian" || bro.getSkills().hasPerk(::Legends.Perk.LegendScholar)) {
+            if (bg.getID() == ::Legends.Backgrounds.IDs.Monk || bg.getID() == ::Legends.Backgrounds.IDs.Historian || bro.getSkills().hasPerk(::Legends.Perk.LegendScholar)) {
                 candidates_scholar.push(bro);
             }
         }
@@ -330,7 +330,7 @@ this.legend_ars_moriendi_event <- this.inherit("scripts/events/event", {
 				candidates_doubletongued.push(bro);
 			} else if (skills.hasTrait(::Legends.Trait.Deathwish)) {
 				candidates_deathwish.push(bro);
-			} else if (bg.getID() == "background.cultist" || bg.getID() == "background.converted_cultist") {
+			} else if (bg.getID() == ::Legends.Backgrounds.IDs.Cultist || bg.getID() == ::Legends.Backgrounds.IDs.ConvertedCultist) {
 				candidates_cultist.push(bro);
 			}		            
         }

@@ -54,7 +54,7 @@ this.legend_grisly_scythe <- this.inherit("scripts/items/weapons/weapon", {
 
 		local Skills = actor.getSkills();
 
-		if (!Skills.hasSkill("background.legend_commander_necro") && !Skills.hasSkill("background.legend_necromancer") && !Skills.hasSkill("background.legend_ancient_summoner") && !Skills.hasSkill("background.legend_death_summoner"))
+		if (!Skills.hasSkill(::Legends.Backgrounds.IDs.LegendCommanderNecro) && !Skills.hasSkill(::Legends.Backgrounds.IDs.LegendNecromancer) && !Skills.hasSkill(::Legends.Backgrounds.IDs.LegendAncientSummoner) && !Skills.hasSkill(::Legends.Backgrounds.IDs.LegendDeathSummoner))
 		{
 			return;
 		}

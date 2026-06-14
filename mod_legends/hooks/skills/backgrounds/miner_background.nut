@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = "background.miner";
+		this.m.ID = ::Legends.Backgrounds.IDs.Miner;
 		this.m.Name = "Miner";
 		this.m.Icon = "ui/backgrounds/background_45.png";
 		this.m.BackgroundDescription = "A miner will be used to physical labor, but breathing in the dusty air of the mines may have taken a toll on his health over the years.";

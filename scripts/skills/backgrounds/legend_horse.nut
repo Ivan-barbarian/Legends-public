@@ -5,7 +5,7 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_horse";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendHorse;
 		this.m.Name = "Horse";
 		this.m.Icon = "ui/backgrounds/donkey.png";
 		this.m.BackgroundDescription = "Horses are used to long and exhausting travels.";

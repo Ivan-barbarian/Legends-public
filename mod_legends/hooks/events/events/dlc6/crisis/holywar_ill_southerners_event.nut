@@ -16,7 +16,7 @@
 
 					foreach( bro in brothers )
 					{
-						if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist))
+						if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Cultist || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.ConvertedCultist || bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist))
 							continue;
 
 						if (bro.getEthnicity() == 1 && this.Math.rand(1, 100) <= 66) {

@@ -126,7 +126,7 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 		{
 			if (!_targetTile.hasNextTile(i))
 			{
-				continue
+				continue;
 			}
 			local tile = _targetTile.getNextTile(i);
 			targets.push(tile);
@@ -175,7 +175,7 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 
 			for (local i = 0; i < 2; ++i)
 			{
-				if (entity.isAlive() && !entity.isDying())
+				if (!::Legends.S.isEntityNullOrDead(entity))
 					this.Const.Tactical.Common.onApplyFire(tile, entity);
 			}
 		}

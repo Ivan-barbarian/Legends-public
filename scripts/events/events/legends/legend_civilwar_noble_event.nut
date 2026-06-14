@@ -77,7 +77,7 @@ this.legend_civilwar_noble_event <- this.inherit("scripts/events/event", {
 		local roster = this.World.getPlayerRoster().getAll();
 		foreach( bro in roster)
 		{
-			if (bro.getBackground().getID() == "background.legend_commander_noble")
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderNoble)
 			{
 				return
 			}

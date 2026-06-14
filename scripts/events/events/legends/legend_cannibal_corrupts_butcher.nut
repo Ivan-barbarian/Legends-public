@@ -49,12 +49,12 @@ this.legend_cannibal_corrupts_butcher <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.legend_cannibal")
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCannibal)
 			{
 				cannibal_candidates.push(bro);
 			}
 
-			if (bro.getBackground().getID() == "background.butcher" && !bro.getSkills().hasTrait(::Legends.Trait.LegendCannibalistic))
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Butcher && !bro.getSkills().hasTrait(::Legends.Trait.LegendCannibalistic))
 			{
 				butcher_candidates.push(bro);
 			}

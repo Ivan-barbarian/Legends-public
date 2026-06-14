@@ -16,7 +16,7 @@
 		local numBros = 0;
 
 		foreach( bro in brothers ) {
-			if (bro.getBackground().getID() != "background.slave" && !bro.isStabled()) {
+			if (bro.getBackground().getID() != ::Legends.Backgrounds.IDs.Slave && !bro.isStabled()) {
 				numBros = ++numBros;
 			}
 		}

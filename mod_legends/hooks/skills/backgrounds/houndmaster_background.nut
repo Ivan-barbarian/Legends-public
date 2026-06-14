@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = "background.houndmaster";
+		this.m.ID = ::Legends.Backgrounds.IDs.Houndmaster;
 		this.m.Name = "Houndmaster";
 		this.m.Icon = "ui/backgrounds/background_50.png";
 		this.m.BackgroundDescription = "Houndmasters are used to handle dogs of war.";

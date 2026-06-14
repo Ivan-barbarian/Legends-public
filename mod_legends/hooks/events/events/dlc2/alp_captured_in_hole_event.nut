@@ -85,7 +85,7 @@
 		local brothers = this.World.getPlayerRoster().getAll();
 		local candidates_guildmaster = [];
 		foreach( bro in brothers ) {
-			if (bro.getBackground().getID() == "background.legend_guildmaster")
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendGuildmaster)
 				candidates_guildmaster.push(bro);
 		}
 		if (candidates_guildmaster.len() != 0) {

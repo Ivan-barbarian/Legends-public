@@ -38,7 +38,7 @@
 		local candidates = [];
 
 		foreach (bro in brothers) {
-			if (bro.getLevel() >= 5	&& (bro.getBackground().getID() == "background.houndmaster" || bro.getBackground().getID() == "background.legend_druid" || bro.getBackground().getID() == "background.legend_commander_druid" || bro.getBackground().getID() == "background.legend_muladi"))
+			if (bro.getLevel() >= 5	&& (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Houndmaster || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendDruid || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderDruid || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendMuladi))
 			{
 				candidates.push(bro);
 			}

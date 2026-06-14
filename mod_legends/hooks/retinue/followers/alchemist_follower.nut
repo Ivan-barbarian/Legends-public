@@ -23,13 +23,13 @@
 		});
 
 		this.addSkillRequirement("Have at least one of the following backgrounds: Herbalist, Taxidermist, Druid, Alchemist", [
-			"background.legend_herbalist",
-			"background.legend_taxidermist",
-			"background.legend_druid",
-			"background.legend_commander_druid",
-			"background.legend_alchemist",
-			"background.legend_companion_melee",
-			"background.legend_companion_ranged"
+			::Legends.Backgrounds.IDs.LegendHerbalist,
+			::Legends.Backgrounds.IDs.LegendTaxidermist,
+			::Legends.Backgrounds.IDs.LegendDruid,
+			::Legends.Backgrounds.IDs.LegendCommanderDruid,
+			::Legends.Backgrounds.IDs.LegendAlchemist,
+			::Legends.Backgrounds.IDs.LegendCompanionMelee,
+			::Legends.Backgrounds.IDs.LegendCompanionRanged
 		]);
 	}
 

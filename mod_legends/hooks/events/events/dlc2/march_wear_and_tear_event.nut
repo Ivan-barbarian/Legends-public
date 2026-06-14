@@ -62,14 +62,14 @@
 			if (bro.getSkills().hasTrait(::Legends.Trait.Player))
 				continue;
 
-			if (bro.getBackground().getID() == "background.tailor")
+			if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Tailor)
 				candidates_tailor.push(bro);
 			else {
 				candidates_other.push(bro);
 
-				if (bro.getBackground().getID() == "background.thief" || bro.getBackground().getID() == "background.legend_commander_assassin")
+				if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Thief || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendCommanderAssassin)
 					candidates_thief.push(bro);
-				else if (bro.getBackground().getID() == "background.vagabond" || bro.getBackground().getID() == "background.refugee" || bro.getBackground().getID() == "background.messenger")
+				else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Vagabond || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Refugee || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Messenger)
 					candidates_vagabond.push(bro);
 			}
 		}

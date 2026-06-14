@@ -3,7 +3,7 @@ this.legend_master_archer_background <- this.inherit("scripts/skills/backgrounds
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_master_archer";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendMasterArcher;
 		this.m.Name = "Master Archer";
 		this.m.Icon = "ui/backgrounds/background_master_archer.png";
 		this.m.BackgroundDescription = "Master Archers have spent years honing their craft in hunting, sport and war.";

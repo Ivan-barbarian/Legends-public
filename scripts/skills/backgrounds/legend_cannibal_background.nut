@@ -3,7 +3,7 @@ this.legend_cannibal_background <- this.inherit("scripts/skills/backgrounds/char
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_cannibal";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendCannibal;
 		this.m.Name = "Cannibal";
 		this.m.Icon = "ui/backgrounds/cannibal.png";
 		this.m.BackgroundDescription = "Cannibals have a thing for human flesh.";

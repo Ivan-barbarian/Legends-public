@@ -2,7 +2,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = "background.refugee";
+		this.m.ID = ::Legends.Backgrounds.IDs.Refugee;
 		this.m.Name = "Refugee";
 		this.m.Icon = "ui/backgrounds/background_38.png";
 		//gender neutral descriptions

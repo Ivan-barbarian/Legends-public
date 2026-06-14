@@ -58,7 +58,7 @@ this.legend_reserve_gets_fat_event <- this.inherit("scripts/events/event", {
 		{
 			if (bro.isInReserves())
 			{
-				if(bro.getFlags().get("IsSpecial") || bro.getFlags().get("IsPlayerCharacter") || bro.getBackground().getID() == "background.legend_puppet" || bro.getBackground().getID() == "background.legend_donkey"){
+				if(bro.getFlags().get("IsSpecial") || bro.getFlags().get("IsPlayerCharacter") || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendPuppet || bro.getBackground().getID() == ::Legends.Backgrounds.IDs.LegendDonkey){
 					continue;
 				}
 				if (!bro.getSkills().hasTrait(::Legends.Trait.Gluttonous))

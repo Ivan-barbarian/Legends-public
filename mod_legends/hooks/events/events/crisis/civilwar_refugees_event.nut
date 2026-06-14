@@ -117,9 +117,9 @@
 		foreach( bro in brothers ) {
 			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat) || bro.getSkills().hasTrait(::Legends.Trait.Bloodthirsty) || bro.getSkills().hasTrait(::Legends.Trait.Brute))
 				candidates_aggro.push(bro);
-			else if (bro.getBackground().getID() == "background.refugee")
+			else if (bro.getBackground().getID() == ::Legends.Backgrounds.IDs.Refugee)
 				candidates_refugees.push(bro);
-			else if (!bro.getSkills().hasTrait(::Legends.Trait.Player) && bro.getBackground().getID() != "background.slave")
+			else if (!bro.getSkills().hasTrait(::Legends.Trait.Player) && bro.getBackground().getID() != ::Legends.Backgrounds.IDs.Slave)
 				candidates_other.push(bro);
 		}
 

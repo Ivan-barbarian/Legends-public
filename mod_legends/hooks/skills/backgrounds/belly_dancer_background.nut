@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		this.character_background.create();
-		this.m.ID = "background.belly_dancer";
+		this.m.ID = ::Legends.Backgrounds.IDs.BellyDancer;
 		this.m.Name = "Belly Dancer";
 		this.m.Icon = "ui/backgrounds/background_64.png";
 		this.m.BackgroundDescription = "";

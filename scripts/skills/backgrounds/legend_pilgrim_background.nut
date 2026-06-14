@@ -3,7 +3,7 @@ this.legend_pilgrim_background <- this.inherit("scripts/skills/backgrounds/chara
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_pilgrim";
+		this.m.ID = ::Legends.Backgrounds.IDs.LegendPilgrim;
 		this.m.Name = "Pilgrim";
 		this.m.Icon = "ui/backgrounds/background_pilgrim.png";
 		this.m.BackgroundDescription = "Dirty and tired, these disciples of the old gods look for clarity and power in their teachings.";
