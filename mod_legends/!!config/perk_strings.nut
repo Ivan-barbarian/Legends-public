@@ -414,7 +414,7 @@ Take a deep breath, then get to work.
 There's wolves, bears, nachzehrers, and you. All beings of vicious slaughter.
 
 [color=%passive%][u]Passive:[/u][/color]
-• [color=%positive%]50%[/color] of the skill's fatigue cost is translated to Damage. This accounts for any fatigue reduction or increase.
+• [color=%positive%]50%[/color] of the skill's fatigue cost is translated to an additive multiplier increase to Damage. This accounts for any fatigue reduction or increase.
 ";
 
 ::Const.Strings.PerkDescription.LegendWideSwings <- @"
@@ -919,9 +919,9 @@ Real berserkers don't need pants.
 Put your full weight into every blow!
 
 [color=%passive%][u]Passive:[/u][/color]
-• When using Melee Weapons, Unarmed, Throwing and Bows inflict additional damage, scaling based on [color=%positive%]10%[/color] of your current Hitpoints and [color=%positive%]15%[/color] of your currently available Fatigue (Maximum Fatigue - currently accumulated Fatigue).
+• When using Melee Weapons, Unarmed, Throwing and Bows inflict additional damage, scaling based on [color=%positive%]10%[/color] of your current Hitpoints and [color=%positive%]10%[/color] of your currently available Fatigue (Maximum Fatigue - currently accumulated Fatigue).
 
-• Fatigue calculations are done after gear and values might change in combat.
+• Fatigue calculations are done after gear and values might change in combat. The bonus is an additive multiplier.
 ";
 
 ::Const.Strings.PerkDescription.LegendBattleheart <- @"
@@ -2793,7 +2793,7 @@ Your way with animals extends so far as turning those dogs that would do you har
 Your heightened senses leads your strikes to vitals.
 
 [color=%passive%][u]Passive:[/u][/color]
-• [color=%positive%]15%[/color] of your current Initiative will be translated into damage done.
+• [color=%positive%]15%[/color] of your current Initiative will be translated into damage done. The bonus is an additive multiplier. 
 ";
 
 ::Const.Strings.PerkDescription.LegendWindReader <- @"

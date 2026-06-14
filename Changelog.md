@@ -37,6 +37,10 @@
 ### Perk Changes
 - `Bloody Harvest` - 50% of the skill's fatigue cost is translated to Damage. This accounts for any fatigue reduction or increase.
 > used to be damage and chance to hit
+> moved to t5
+> the bonus is now additive multiplier
+- `Heightened Reflexes` - the damage bonus is an additive multiplier
+- `Muscularity` - bonus from fatigue dropped to 10% and the bonus is now an additive multiplier
 
 ## Item Changes
 
