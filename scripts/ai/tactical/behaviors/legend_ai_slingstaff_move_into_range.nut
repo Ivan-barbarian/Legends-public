@@ -32,6 +32,10 @@ this.legend_ai_slingstaff_move_into_range <- this.inherit("scripts/ai/tactical/b
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
+		if (_entity.getCurrentProperties().IsStunned || _entity.getCurrentProperties().IsRooted) {
+			return this.Const.AI.Behavior.Score.Zero;
+		}
+
 		if (!this.getAgent().hasKnownOpponent()) {
 			return this.Const.AI.Behavior.Score.Zero;
 		}
