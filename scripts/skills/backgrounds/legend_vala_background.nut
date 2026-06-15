@@ -183,8 +183,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 		items.equip(this.new("scripts/items/weapons/legend_staff_vala"));
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, ::Legends.Armor.Standard.legend_vala_cloak],
-			[1, ::Legends.Armor.Standard.vala_dress]
+			[1, ::Legends.Armor.Standard.legend_vala_cloak]
 		]));
 	}
 

@@ -835,13 +835,14 @@
 	Script = "",
 	Sets = [{
 		Cloth = [
-			[1, "cloth/legend_armor_vala_robe"], // 60 -0 0
+			[1, "cloth/legend_armor_vala_dress"], // 60 -0 0
 		],
 		Chain = [
 		],
 		Plate = [
 		],
 		Cloak = [
+			[1, "cloak/legend_armor_cloak_vala"]
 		],
 		Tabard = [
 		],
@@ -850,27 +851,6 @@
 	}]
 };
 ::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.legend_vala_cloak);
-
-::Legends.Armor.Standard.vala_dress <- {
-	ID = "vala_dress", // 40 -0 0
-	Script = "",
-	Sets = [{
-		Cloth = [
-			[1, "cloth/legend_armor_vala_dress"], // 40 -0 0
-		],
-		Chain = [
-		],
-		Plate = [
-		],
-		Cloak = [
-		],
-		Tabard = [
-		],
-		Attachments = [
-		]
-	}]
-};
-::Const.LegendMod.ArmorObjs.push(::Legends.Armor.Standard.vala_dress);
 
 ::Legends.Armor.Standard.legend_vampire_lord_armor <- {
 	ID = "legend_vampire_lord_armor",
