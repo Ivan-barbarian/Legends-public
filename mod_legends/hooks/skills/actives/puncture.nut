@@ -101,6 +101,7 @@
 			}
 			_properties.MeleeSkill += this.m.HitChanceBonus;
 			_properties.DamageArmorMult *= 0.0;
+			_properties.DamageDirectAdd = 0;
 			_properties.IsIgnoringArmorOnAttack = true;
 			_properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;
 			_properties.HitChanceMult[this.Const.BodyPart.Body] = 1.0;

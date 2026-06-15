@@ -168,6 +168,7 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 		_properties.DamageRegularMax = 15;
 		_properties.IsIgnoringArmorOnAttack = true;
 		_properties.DamageArmorMult *= 0.0;
+		_properties.DamageDirectAdd = 0;
 		_properties.MeleeSkill += this.m.HitChanceBonus;
 
 		// Based on decapitate

@@ -245,10 +245,6 @@
 			{
 				garbage.push(bro);
 			}
-			else
-			{
-				this.setupBro(bro);
-			}
 		}
 
 		// Remove unqualified hires
@@ -260,7 +256,7 @@
 
 	o.onHiredByScenario <- function ( _bro ) //recruits via events
 	{
-		this.setupBro(_bro);
+		::Legends.Traits.grant(_bro, ::Legends.Trait.LegendLWRelationship);
 	}
 
 	// o.onGenerateBro <- function (bro) //companions free everyone else normal. //Removed 14/6/26 due to all recuits being zero. Code is unnecessary now as I have just changed all companons to 0 and now everyone else should force defult as defined by vanilla logic - Luft.

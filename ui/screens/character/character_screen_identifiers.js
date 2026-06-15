@@ -3,7 +3,7 @@
  *	@Company:		Overhype Studios
  *
  *	@Copyright:		(c) Overhype Studios | 2013 - 2020
- * 
+ *
  *  @Author:		Overhype Studios
  *  @Date:			29.03.2017 / Reworked: 26.11.2017
  *  @Description:	Character Screen Identifiers
@@ -35,7 +35,7 @@ var CharacterScreenIdentifier =
 		PassiveSkills: 'passiveSkills',
 		StatusEffects: 'statusEffects'
 	},
-	
+
 	Item:
 	{
 		Id: 'id',
@@ -121,7 +121,7 @@ var CharacterScreenIdentifier =
 			DailyMoneyCost: 'dailyMoneyCost',
 			DaysWounded: 'daysWounded',
 			LeveledUp: 'leveledUp'
-			
+
 		},
 		Stats: 'stats',
 		Ground: 'ground'

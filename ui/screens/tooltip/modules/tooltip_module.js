@@ -13,7 +13,7 @@ var TooltipModuleIdentifier =
 var TooltipModule = function()
 {
 	this.mSQHandle = null;
-	
+
 	// event listener
 	this.mEventListener = null;
 
@@ -21,7 +21,7 @@ var TooltipModule = function()
 	this.mParent    = null;
 	this.mContainer = null;
 	this.mScrollWrapper = null;
-	
+
 	// current element data
 	this.mCurrentData    = null;
 	this.mCurrentElement = null;
@@ -35,13 +35,13 @@ var TooltipModule = function()
 	this.mCursorXOffset    = 0;
 	this.mCursorYOffset    = 0;
 	this.mDefaultYOffset   = 4;
-		
+
 	this.mMaxIconsPerRow = 7;
-	
+
 	// timing
 	this.mShowUITooltipTimer = null;
 	this.mShowTileTooltipTimer = null;
-	
+
 	this.mShowDelay = 150;//150;
 	this.mFadeInTime = 100;//100;
 	this.mProgressbarMovementDuration = 600;
@@ -150,7 +150,7 @@ TooltipModule.prototype.register = function (_parentDiv)
 	{
 		_parentDiv.append(this.mContainer);
 		this.mParent = _parentDiv;
-	
+
 		// Note: This is a workaround to hide the Tooltip if the Cursor has been moven onto the tooltip...
 		this.mContainer.on('mouseenter' + TooltipModuleIdentifier.KeyEvent.Namespace, null, this, function(_event) {
 			var self = _event.data;
@@ -216,7 +216,7 @@ TooltipModule.prototype.setCursorOffsets = function(_offsets)
  *	@param 1: The Element the Tooltip should be bound too
  *	@param 2: Data Object which could look like:
  *
- *	data: { yOffset: <number>, 
+ *	data: { yOffset: <number>,
  *			contentType: entity|skill|status-effect|ui-element <string>,
  *			entityId: <number>,
  *			skillId: <number>,
@@ -243,14 +243,14 @@ TooltipModule.prototype.bindToElement = function(_targetDIV, _data)
 		if ((Math.abs(pX - _event.pageX) + Math.abs(pY - _event.pageY)) > 0)
 		{
 			hideTooltip();
-			
+
 			// restart delay timer
 			if (self.mShowUITooltipTimer)
 			{
 				self.mShowUITooltipTimer = clearTimeout(self.mShowUITooltipTimer);
 			}
 			self.mShowUITooltipTimer = setTimeout(function(){ showTooltip(_event); }, self.mShowDelay);
-			
+
 			pX = _event.pageX;
 			pY = _event.pageY;
 		}
@@ -265,7 +265,7 @@ TooltipModule.prototype.bindToElement = function(_targetDIV, _data)
 
 	_targetDIV.on('mouseenter' + TooltipModuleIdentifier.KeyEvent.Namespace + ' mouseover' + TooltipModuleIdentifier.KeyEvent.Namespace + ' focus' + TooltipModuleIdentifier.KeyEvent.Namespace, null, this, function(_event) {
 		var self = _event.data;
-		//console.error('killmeeeeeee ' + _data.contentType); 
+		//console.error('killmeeeeeee ' + _data.contentType);
 		//TESTSTART
 /* 		var height = baseself.mContainer.outerHeight(true);
 		var targetOffset    = _targetDIV.offset();
@@ -276,12 +276,12 @@ TooltipModule.prototype.bindToElement = function(_targetDIV, _data)
 		//console.log('TooltipModule::mouseenter event triggered');
 
 		// clear timer
-		
+
 		if (self.mShowUITooltipTimer)
 		{
 			self.mShowUITooltipTimer = clearTimeout(self.mShowUITooltipTimer);
 		}
-		
+
 		// update current mouse position
 		/*
 		pX = _event.pageX;
@@ -291,7 +291,7 @@ TooltipModule.prototype.bindToElement = function(_targetDIV, _data)
 
 		// remove the tile tooltip
 		self.hideTileTooltip();
-		
+
 		// start show timer
 		self.mShowUITooltipTimer = setTimeout(function() { self.showTooltip(_targetDIV, _data); }, self.mShowDelay);
 	});
@@ -299,7 +299,7 @@ TooltipModule.prototype.bindToElement = function(_targetDIV, _data)
     _targetDIV.on('mouseleave' + TooltipModuleIdentifier.KeyEvent.Namespace + ' mouseout' + TooltipModuleIdentifier.KeyEvent.Namespace + ' blur' + TooltipModuleIdentifier.KeyEvent.Namespace, null, this, function (_event)
     {
 		var self = _event.data;
-		//console.error('killmeeeeeee 2 ' + _data.contentType); 
+		//console.error('killmeeeeeee 2 ' + _data.contentType);
 		//console.log('TooltipModule::mouseleave event triggered');
 
 		// remove mouse position listener
@@ -309,8 +309,8 @@ TooltipModule.prototype.bindToElement = function(_targetDIV, _data)
 
 		self.hideUITooltip();
 	});
-	
-	
+
+
 /*     _targetDIV.on('keydown' + TooltipModuleIdentifier.KeyEvent.Namespace, null, _targetDIV, function (_event)
     {
 		console.error('oilala');
@@ -321,20 +321,20 @@ TooltipModule.prototype.bindToElement = function(_targetDIV, _data)
 
         if (code === KeyConstants.PageDown)
 		{
-			
+
 			console.error('scrollheight ' + scrollheight + ', heigh ' + height);
 		}
 		else if (code === KeyConstants.PageUp)
 		{
-			
-		} 
+
+		}
 	}); */
 
 	// bind special callbacks
     _targetDIV.on('update-tooltip' + TooltipModuleIdentifier.KeyEvent.Namespace, null, this, function (_event)
     {
 		var self = _event.data;
-		//console.error('killmeeeeeee 3 ' + _data.contentType); 
+		//console.error('killmeeeeeee 3 ' + _data.contentType);
 
 		//console.log('TooltipModule::update-tooltip event triggered');
 
@@ -388,14 +388,14 @@ TooltipModule.prototype.setupUITooltip = function(_targetDIV, _data)
 	}
 
 	var wnd = this.mParent; // $(window);
-	
+
 	// calculate tooltip position
 	var targetOffset    = _targetDIV.offset(); //from top to element
 	var elementWidth    = _targetDIV.outerWidth(true);
 	var elementHeight   = _targetDIV.outerHeight(true);
 	var containerWidth  = this.mContainer.outerWidth(true);
 	var containerHeight = this.mContainer.outerHeight(true);
-	
+
 	var posLeft = (targetOffset.left + (elementWidth / 2)) - (containerWidth / 2);
 	var posTop  = targetOffset.top - containerHeight - offsetY;
 	var monitorheight = screen.height;
@@ -405,12 +405,12 @@ TooltipModule.prototype.setupUITooltip = function(_targetDIV, _data)
 	{
 		posLeft = targetOffset.left;
 	}
-	
+
 	if (posLeft + containerWidth > wnd.width())
 	{
 		posLeft = targetOffset.left + elementWidth - containerWidth;
 	}
-			
+
 	if (posTop < 0) //below
 	{
 		posTop = targetOffset.top + elementHeight + offsetY;
@@ -418,7 +418,7 @@ TooltipModule.prototype.setupUITooltip = function(_targetDIV, _data)
 		if ((posTop + containerHeight) > monitorheight && posTop > 100)
 		{
 			var TCenter = Math.max(Math.min(((targetOffset.top + (elementHeight / 2)) - (containerHeight/2)), monitorheight - containerHeight), offsetY);
-			
+
 			posTop = TCenter;
 			if ((posLeft - (containerWidth / 2) - (elementWidth / 2)) > 10)
 			{
@@ -444,7 +444,7 @@ TooltipModule.prototype.setupUITooltip = function(_targetDIV, _data)
 			this.mContainer.css({ 'background-size' : '25.5rem ' + (containerHeight*0.1) + 'rem' });
 		} */
 		//console.error('bgimage: ' + this.mContainer.css("background-image"));
-	//} 
+	//}
 	// show & position tooltip & animate
 	this.mContainer.removeClass('display-none').addClass('display-block');
 	this.mContainer.css({ left: posLeft, top: posTop });
@@ -508,7 +508,7 @@ TooltipModule.prototype.showTooltip = function(_targetDIV, _data)
         // setup tooltip div
         self.buildFromData(tooltipData, false, _data.contentType);
         self.setupUITooltip(_targetDIV, _data);
-    });   
+    });
 };
 
 TooltipModule.prototype.hideTooltip = function()
@@ -524,7 +524,7 @@ TooltipModule.prototype.hideTooltip = function()
 	{
 		this.mShowUITooltipTimer = clearTimeout(this.mShowUITooltipTimer);
 	}
-	
+
 	// hide tooltip
 	this.mContainer.removeClass('display-block').addClass('display-none');
 	this.mIsVisible      = false;
@@ -540,7 +540,7 @@ TooltipModule.prototype.hideUITooltip = function()
 	{
 		this.mShowUITooltipTimer = clearTimeout(this.mShowUITooltipTimer);
 	}
-	
+
 	// only hide the UI Tooltip if IT IS actually a UI Tooltip
 	var hideTooltip = true;
 	if (this.mCurrentData !== null && (this.mCurrentData.contentType === 'tile' || this.mCurrentData.contentType === 'tile-entity'))
@@ -581,7 +581,7 @@ TooltipModule.prototype.reloadUITooltip = function()
 
 		// TODO: Prüfen ob das hier an der richtigen Stelle ist und nicht noch geprüft werden muss
 		// ob es wirklich ein ui tooltip ist!
-		//this.hideTooltip(); 
+		//this.hideTooltip();
 		return;
 	}
 
@@ -628,17 +628,17 @@ TooltipModule.prototype.mouseEnterTile = function(_event)
 		console.error('ERROR: Failed to show Tile Tooltip. Reason: Parameters not valid.');
 		return;
 	}
-	
+
 	// clear timer
 	if (this.mShowTileTooltipTimer)
 	{
 		this.mShowTileTooltipTimer = clearTimeout(this.mShowTileTooltipTimer);
 	}
-	
+
 	// save current mouse position
 	this.mLastMouseX = _event.X;
 	this.mLastMouseY = _event.Y;
-	
+
 	// save data type
 	if ('EntityId' in _event)
 	{
@@ -648,7 +648,7 @@ TooltipModule.prototype.mouseEnterTile = function(_event)
 	{
 		this.mCurrentData = { contentType: 'tile' };
 	}
-	
+
 	// start delay timer
 	var self = this;
 	this.mShowTileTooltipTimer = setTimeout(function(){ self.showTileTooltip(); }, this.mShowDelay);
@@ -672,7 +672,7 @@ TooltipModule.prototype.mouseHoverTile = function(_event)
 
 		// hide tooltip
 		this.hideTileTooltip();
-		
+
 		// restore data as we need to identify the tile content
 		this.mCurrentData = currentData;
 
@@ -680,7 +680,7 @@ TooltipModule.prototype.mouseHoverTile = function(_event)
 
 		var self = this;
 		this.mShowTileTooltipTimer = setTimeout(function(){ self.showTileTooltip(); }, this.mShowDelay);
-		
+
 		this.mLastMouseX = _event.X;
 		this.mLastMouseY = _event.Y;
 	}
@@ -747,7 +747,7 @@ TooltipModule.prototype.hideTileTooltip = function()
 	{
 		this.mShowTileTooltipTimer = clearTimeout(this.mShowTileTooltipTimer);
 	}
-	
+
 	// only hide the Tile Tooltip if IT IS actually a Tile Tooltip
 	var hideTooltip = false;
 	if (this.mCurrentData !== null && (this.mCurrentData.contentType === 'tile' || this.mCurrentData.contentType === 'tile-entity'))
@@ -814,23 +814,23 @@ TooltipModule.prototype.reloadTileTooltip = function()
 TooltipModule.prototype.setupTileTooltip = function()
 {
 	var wnd = this.mParent; // $(window);
-	
+
 	var containerWidth = this.mContainer.outerWidth(true);
 	var containerHeight = this.mContainer.outerHeight(true);
-	
+
 	var posLeft = this.mLastMouseX + (this.mCursorXOffset === 0 ? (this.mCursorWidth / 2) : (this.mCursorWidth - ((this.mCursorWidth / 2) - this.mCursorXOffset)) );
 	var posTop = this.mLastMouseY + (this.mCursorYOffset === 0 ? (this.mCursorHeight / 2) : (this.mCursorHeight - ((this.mCursorHeight / 2) - this.mCursorYOffset)));
-	
+
 	if (posLeft < 0)
 	{
 		posLeft = 10;
 	}
-	
+
 	if (posLeft + containerWidth > wnd.width())
 	{
 		posLeft = wnd.width() - containerWidth - 10;
 	}
-	
+
 	if ((posTop + containerHeight) > wnd.height())
 	{
 		if (containerHeight > wnd.height())
@@ -846,9 +846,9 @@ TooltipModule.prototype.setupTileTooltip = function()
 
 	// TODO: Remove
 	//console.log('DEBUG: setupTileTooltip:(top: ' + posTop + ' left:' + posLeft + ')');
-	
+
 	// show & position tooltip & animate
-	
+
 	this.mContainer.removeClass('display-none').addClass('display-block');
 	this.mContainer.css({ left: posLeft, top: posTop });
 	this.mContainer.css({ 'background-size' : (containerWidth*0.1) + 'rem ' + Math.max((containerHeight*0.1), 55) + 'rem' });
@@ -927,7 +927,7 @@ TooltipModule.prototype.buildFromData = function(_data, _shouldBeUpdated, _conte
 		console.error('ERROR: Failed to build Tooltip. Reason: Tooltip data is invalid.');
 		return;
 	}
-	
+
 	// should the tooltip content be updated?
 	var shouldBeUpdated = false;//(_shouldBeUpdated !== undefined && _shouldBeUpdated !== false);
 
@@ -945,7 +945,7 @@ TooltipModule.prototype.buildFromData = function(_data, _shouldBeUpdated, _conte
 		this.mContainer.removeClass('is-full-width is-tile-content is-entity-content is-skill-content is-status-effect-content is-ui-element-content is-ui-item-content');
 		this.mContainer.empty();
 		this.resetInternal();
-		
+
 		var ornament = $('<div class="top-ornament"></div>');
 		this.mContainer.append(ornament);
 
@@ -999,7 +999,7 @@ TooltipModule.prototype.buildFromData = function(_data, _shouldBeUpdated, _conte
 	// vars
 	var headerWidth  = 0;
 	var tooltipWidth = 0;
-	
+
 	var hasHeader		= false;
 	var hasHeaderText	= false;
 	var hasContent		= false;
@@ -1038,7 +1038,7 @@ TooltipModule.prototype.buildFromData = function(_data, _shouldBeUpdated, _conte
 			console.error('ERROR: Failed to find "id" field while interpreting tooltip entry. Index: ' + i);
 			continue;
 		}
-	
+
 		switch(data.type)
 		{
 			// Header
@@ -1065,7 +1065,7 @@ TooltipModule.prototype.buildFromData = function(_data, _shouldBeUpdated, _conte
 				{
 					headerDescription = this.updateHeaderDescriptionDiv(headerContainer, data);
 				}
-				
+
 				hasHeader = true;
 			} break;
 
@@ -1102,7 +1102,7 @@ TooltipModule.prototype.buildFromData = function(_data, _shouldBeUpdated, _conte
 				hasHeader = true;
 				hasHeaderText = true;
 			} break;
-						
+
 			// Atmospheric image
 			case 'image':
 			{
@@ -1178,7 +1178,7 @@ TooltipModule.prototype.buildFromData = function(_data, _shouldBeUpdated, _conte
 
 						dualColumnContainer.append(dualColumnContainerLeft, dualColumnContainerRight);
 					}
-					
+
 					// Add data from left to right (as opposed to top to bottom in the left column first)
 					if (data.listCount % 2 === 1)
 					{
@@ -1228,7 +1228,7 @@ TooltipModule.prototype.buildFromData = function(_data, _shouldBeUpdated, _conte
 
 				hasFooter = true;
 			} break;
-			
+
 			case 'hint':
 			{
 				if (!shouldBeUpdated)
@@ -1242,7 +1242,7 @@ TooltipModule.prototype.buildFromData = function(_data, _shouldBeUpdated, _conte
 					hintContainer = $('<div class="hint-container"></div>');
 					this.mContainer.append(hintContainer);
 					this.addHintDiv(hintContainer, data);
-					
+
 					//this.updateHintDiv(hintContainer, data);
 				}
 
@@ -1273,7 +1273,7 @@ TooltipModule.prototype.buildFromData = function(_data, _shouldBeUpdated, _conte
 	{
 		hintContainer.addClass('display-none');
 	}
-	
+
 	// add size flags
 	//console.log('TOOLTIP: Content Type: ' + _contentType);
 	switch(_contentType)
@@ -1349,7 +1349,7 @@ TooltipModule.prototype.buildFromData = function(_data, _shouldBeUpdated, _conte
 	{
 		headerLastText.addClass('ui-control-tooltip-module-bottom-devider');
 	}
-	
+
 	if ((hasHeader || hasContent) && hasFooter)
 	{
 		footerContainer.addClass('ui-control-tooltip-module-top-devider');
@@ -1397,20 +1397,20 @@ TooltipModule.prototype.addHeaderTitleDiv = function(_parentDIV, _data)
 	var container = $('<div class="row title-container"></div>');
 	container.attr('id', 'tooltip-module-title-container-' + _data.id);
 	_parentDIV.append(container);
-	
+
 	var title = $('<div class="title title-font-normal font-bold font-color-ink"></div>');
 	title.attr('id', 'tooltip-module-title-' + _data.id);
-	
+
     var parsedText = XBBCODE.process(
     {
 		text: _data.text,
 		removeMisalignedTags: false,
 		addInLineBreaks: true
 	});
-	
+
 	title.html(parsedText.html);
 	container.append(title);
-	
+
 	if ('icon' in _data && _data.icon !== null && typeof(_data.icon) === 'string' && _data.icon.length > 0)
 	{
 		var titleImageContainer = $('<div class="title-image"></div>');
@@ -1428,7 +1428,7 @@ TooltipModule.prototype.addHeaderTitleDiv = function(_parentDIV, _data)
 TooltipModule.prototype.updateHeaderTitleDiv = function(_parentDIV, _data)
 {
 	var container = _parentDIV.find('#tooltip-module-title-container-' + _data.id + ':first');
-	
+
 	var flags = this.extractDataFlags(_data);
 	if (this.flagsContain(flags, 'remove'))
 	{
@@ -1466,14 +1466,14 @@ TooltipModule.prototype.addHeaderDescriptionDiv = function(_parentDIV, _data)
 	var description = $('<div class="description description-font-small font-color-ink"></div>');
 	description.attr('id', 'tooltip-module-title-description-' + _data.id);
 	container.append(description);
-	
+
     var parsedText = XBBCODE.process(
     {
 		text: _data.text,
 		removeMisalignedTags: false,
 		addInLineBreaks: true
 	});
-	
+
 	description.html(parsedText.html);
 
 	return container;
@@ -1482,7 +1482,7 @@ TooltipModule.prototype.addHeaderDescriptionDiv = function(_parentDIV, _data)
 TooltipModule.prototype.updateHeaderDescriptionDiv = function(_parentDIV, _data)
 {
 	var container = _parentDIV.find('#tooltip-module-title-description-container-' + _data.id + ':first');
-	
+
 	var flags = this.extractDataFlags(_data);
 	if (this.flagsContain(flags, 'remove'))
 	{
@@ -1535,7 +1535,7 @@ TooltipModule.prototype.addHeaderContentTextDiv = function(_parentDIV, _data, _i
 	// add text
 	var rightColumn = $('<div class="l-right-column"></div>');
 	container.append(rightColumn);
-	
+
 	// full with?
 	if (useFullWidth || (_isChildRow && _isParentFullWidth))
 	{
@@ -1553,7 +1553,7 @@ TooltipModule.prototype.addHeaderContentTextDiv = function(_parentDIV, _data, _i
 			removeMisalignedTags: false,
 			addInLineBreaks: true
 		});
-	
+
 		text.html(parsedText.html);
 	}
 
@@ -1565,7 +1565,7 @@ TooltipModule.prototype.addHeaderContentTextDiv = function(_parentDIV, _data, _i
 TooltipModule.prototype.updateHeaderContentTextDiv = function(_parentDIV, _data, _isChildRow)
 {
 	var container = _parentDIV.find('#tooltip-module-content-text-container-' + _data.id + ':first');
-	
+
 	var flags = this.extractDataFlags(_data);
 	if (this.flagsContain(flags, 'remove'))
 	{
@@ -1602,7 +1602,7 @@ TooltipModule.prototype.updateHeaderContentTextDiv = function(_parentDIV, _data,
 					removeMisalignedTags: false,
 					addInLineBreaks: true
 				});
-			
+
 				text.html(parsedText.html);
 			}
 		}
@@ -1635,7 +1635,7 @@ TooltipModule.prototype.addHeaderTextDiv = function(_parentDIV, _data, _isChildR
 		}
 	}
 	_parentDIV.append(container);
-	
+
 	// check if we have a label
 	var useFullWidth = true;
 	var hasIcon = ('icon' in _data);
@@ -1669,7 +1669,7 @@ TooltipModule.prototype.addHeaderTextDiv = function(_parentDIV, _data, _isChildR
 					removeMisalignedTags: false,
 					addInLineBreaks: true
 				});
-			
+
 				label.html(parsedLabel.html);
 			}
 		}
@@ -1678,7 +1678,7 @@ TooltipModule.prototype.addHeaderTextDiv = function(_parentDIV, _data, _isChildR
 	// add text
 	var rightColumn = $('<div class="l-right-column"></div>');
 	container.append(rightColumn);
-	
+
 	// full width?
 	if (useFullWidth || (_isChildRow && _isParentFullWidth))
 	{
@@ -1696,7 +1696,7 @@ TooltipModule.prototype.addHeaderTextDiv = function(_parentDIV, _data, _isChildR
 			removeMisalignedTags: false,
 			addInLineBreaks: true
 		});
-	
+
 		text.html(parsedText.html);
 	}
 
@@ -1715,7 +1715,7 @@ TooltipModule.prototype.addHeaderTextDiv = function(_parentDIV, _data, _isChildR
 TooltipModule.prototype.updateHeaderTextDiv = function(_parentDIV, _data, _isChildRow, _isParentFullWidth)
 {
 	var container = _parentDIV.find('#tooltip-module-title-text-container-' + _data.id + ':first');
-	
+
 	var flags = this.extractDataFlags(_data);
 	if (this.flagsContain(flags, 'remove'))
 	{
@@ -1751,7 +1751,7 @@ TooltipModule.prototype.updateHeaderTextDiv = function(_parentDIV, _data, _isChi
 					removeMisalignedTags: false,
 					addInLineBreaks: true
 				});
-			
+
 				text.html(parsedText.html);
 			}
 		}
@@ -1772,7 +1772,7 @@ TooltipModule.prototype.addAtmosphericImageDiv = function(_parentDIV, _data)
 	var container = $('<div class="l-image-container is-small"></div>');
 	_parentDIV.append(container);
 	container.attr('id', 'tooltip-module-atmospheric-image-' + _data.id);
-	
+
 	if ('isLarge' in _data && _data.isLarge === true) {
 		container.removeClass('is-small').addClass('is-large');
 	}
@@ -1782,11 +1782,11 @@ TooltipModule.prototype.addAtmosphericImageDiv = function(_parentDIV, _data)
 	container.append(image);
 
 	if ('imageOverlayPath' in _data && Array.isArray(_data.imageOverlayPath)) {
-        container.addClass('is-layered-container'); 
+        container.addClass('is-layered-container');
 
         _data.imageOverlayPath.forEach(function (path) {
             if (path === null || path === '') return;
-            
+
             var overlayImage = $('<img/>');
             overlayImage.attr('src', Path.ITEMS + path);
             container.append(overlayImage);
@@ -1799,7 +1799,7 @@ TooltipModule.prototype.addAtmosphericImageDiv = function(_parentDIV, _data)
 TooltipModule.prototype.updateAtmosphericImageDiv = function(_parentDIV, _data)
 {
 	var container = _parentDIV.find('#tooltip-module-atmospheric-image-' + _data.id + ':first');
-	
+
 	var flags = this.extractDataFlags(_data);
 	if (this.flagsContain(flags, 'remove'))
 	{
@@ -1880,7 +1880,7 @@ TooltipModule.prototype.addContentTextDiv = function(_parentDIV, _data, _isChild
 					removeMisalignedTags: false,
 					addInLineBreaks: true
 				});
-			
+
 				label.html(parsedLabel.html);
 			}
 		}
@@ -1889,7 +1889,7 @@ TooltipModule.prototype.addContentTextDiv = function(_parentDIV, _data, _isChild
 	// add text
 	var rightColumn = $('<div class="l-right-column"></div>');
 	container.append(rightColumn);
-	
+
 	// full with?
 	if (useFullWidth || (_isChildRow && _isParentFullWidth))
 	{
@@ -1907,7 +1907,7 @@ TooltipModule.prototype.addContentTextDiv = function(_parentDIV, _data, _isChild
 			removeMisalignedTags: false,
 			addInLineBreaks: true
 		});
-	
+
 		text.html(parsedText.html);
 	}
 
@@ -1926,7 +1926,7 @@ TooltipModule.prototype.addContentTextDiv = function(_parentDIV, _data, _isChild
 TooltipModule.prototype.updateContentTextDiv = function(_parentDIV, _data, _isChildRow)
 {
 	var container = _parentDIV.find('#tooltip-module-content-text-container-' + _data.id + ':first');
-	
+
 	var flags = this.extractDataFlags(_data);
 	if (this.flagsContain(flags, 'remove'))
 	{
@@ -1963,7 +1963,7 @@ TooltipModule.prototype.updateContentTextDiv = function(_parentDIV, _data, _isCh
 					removeMisalignedTags: false,
 					addInLineBreaks: true
 				});
-			
+
 				text.html(parsedText.html);
 			}
 		}
@@ -1977,7 +1977,7 @@ TooltipModule.prototype.updateContentTextDiv = function(_parentDIV, _data, _isCh
 /**
  * Similar to addContentTextDiv, but uses different CSS configurations.
  * Meant to be called when adding text to dual columns (i.e. when _data.type === 'textDualColumn')
- * 
+ *
  * @param {jQuery} _parentDIV The parent div to append the content created
  * @param {Object} _data The data content
  * @returns {jQuery} A container containing the populated data
@@ -2024,7 +2024,7 @@ TooltipModule.prototype.addContentDualColumnTextDiv = function(_parentDIV, _data
 					removeMisalignedTags: false,
 					addInLineBreaks: true
 				});
-			
+
 				label.html(parsedLabel.html);
 			}
 		}
@@ -2045,7 +2045,7 @@ TooltipModule.prototype.addContentDualColumnTextDiv = function(_parentDIV, _data
 			removeMisalignedTags: false,
 			addInLineBreaks: true
 		});
-	
+
 		text.html(parsedText.html);
 	}
 
@@ -2064,7 +2064,7 @@ TooltipModule.prototype.addContentDualColumnTextDiv = function(_parentDIV, _data
 /**
  * Similar to updateContentTextDiv, but uses different CSS configurations.
  * Meant to be called when adding text to dual columns (i.e. when _data.type === 'textDualColumn')
- * 
+ *
  * @param {jQuery} _parentDIV The parent div containing the content to be updated
  * @param {Object} _data The data content
  * @returns {jQuery} A container containing the populated data
@@ -2073,7 +2073,7 @@ TooltipModule.prototype.updateContentDualColumnTextDiv = function(_parentDIV, _d
 {
 	var container = _parentDIV.find('#tooltip-module-content-dual-column-row-' + _data.id + '-' + _data.listCount + ':first');
 
-	
+
 	var flags = this.extractDataFlags(_data);
 	if (this.flagsContain(flags, 'remove'))
 	{
@@ -2110,7 +2110,7 @@ TooltipModule.prototype.updateContentDualColumnTextDiv = function(_parentDIV, _d
 					removeMisalignedTags: false,
 					addInLineBreaks: true
 				});
-			
+
 				text.html(parsedText.html);
 			}
 		}
@@ -2126,13 +2126,13 @@ TooltipModule.prototype.addContentProgressbarDiv = function(_parentDIV, _data)
 	var container = $('<div class="row content-container"></div>');
 	container.attr('id', 'tooltip-module-content-progressbar-container-' + _data.id);
 	_parentDIV.append(container);
-	
+
 	var leftColumn = $('<div class="l-left-column"></div>');
 	container.append(leftColumn);
 
 	var rightColumn = $('<div class="l-right-column"></div>');
 	container.append(rightColumn);
-	
+
 	var label = $('<div class="label text-font-small font-color-label"></div>');
 	label.attr('id', 'tooltip-module-content-label-' + _data.id);
 	leftColumn.append(label);
@@ -2153,7 +2153,7 @@ TooltipModule.prototype.addContentProgressbarDiv = function(_parentDIV, _data)
 				removeMisalignedTags: false,
 				addInLineBreaks: true
 			});
-		
+
 			label.html(parsedLabel.html);
 		}
 	}
@@ -2182,7 +2182,7 @@ TooltipModule.prototype.addContentProgressbarDiv = function(_parentDIV, _data)
 		}
 		newWidth = Math.max(Math.min(newWidth, 100), 0);
 		progressbar.css({ 'width' : newWidth.toString() + '%' });
-		
+
 		if ('text' in _data)
 		{
 			if (typeof(_data.text) == 'string')
@@ -2192,7 +2192,7 @@ TooltipModule.prototype.addContentProgressbarDiv = function(_parentDIV, _data)
 					removeMisalignedTags: false,
 					addInLineBreaks: true
 				});
-			
+
 				progressbarText.html(parsedText.html);
 			}
 		}
@@ -2204,7 +2204,7 @@ TooltipModule.prototype.addContentProgressbarDiv = function(_parentDIV, _data)
 TooltipModule.prototype.updateContentProgressbarDiv = function(_parentDIV, _data)
 {
 	var container = _parentDIV.find('#tooltip-module-content-progressbar-container-' + _data.id + ':first');
-	
+
 	var flags = this.extractDataFlags(_data);
 	if (this.flagsContain(flags, 'remove'))
 	{
@@ -2268,7 +2268,7 @@ TooltipModule.prototype.addFooterIconDiv = function(_parentDIV, _data)
 				removeMisalignedTags: false,
 				addInLineBreaks: true
 			});
-		
+
 			sectionTitle.html(parsedText.html);
 		}
 	}
@@ -2314,7 +2314,7 @@ TooltipModule.prototype.addFooterIconDiv = function(_parentDIV, _data)
 TooltipModule.prototype.updateFooterIconDiv = function(_parentDIV, _data)
 {
 	var container = _parentDIV.find('#tooltip-module-section-container-' + _data.id + ':first');
-	
+
 	var flags = this.extractDataFlags(_data);
 	if (this.flagsContain(flags, 'remove'))
 	{
@@ -2361,7 +2361,7 @@ TooltipModule.prototype.addHintDiv = function(_parentDIV, _data, _isChildRow, _i
 		}
 	}
 	_parentDIV.append(container);
-	
+
 	// check if we have a label
 	var useFullWidth = true;
 	var hasIcon = ('icon' in _data);
@@ -2389,7 +2389,7 @@ TooltipModule.prototype.addHintDiv = function(_parentDIV, _data, _isChildRow, _i
             for (var i = 0; i < _data.icons.length; i++)
             {
                 var image = $('<img/>');
-                image.attr('src', Path.GFX + _data.icons[i]);          
+                image.attr('src', Path.GFX + _data.icons[i]);
                 if (i === 0) {
                     image.css({ 'display': 'block' });
                 } else {
@@ -2414,7 +2414,7 @@ TooltipModule.prototype.addHintDiv = function(_parentDIV, _data, _isChildRow, _i
 					removeMisalignedTags: false,
 					addInLineBreaks: true
 				});
-			
+
 				label.html(parsedLabel.html);
 			}
 		}
@@ -2423,7 +2423,7 @@ TooltipModule.prototype.addHintDiv = function(_parentDIV, _data, _isChildRow, _i
 	// add text
 	var rightColumn = $('<div class="l-right-column"></div>');
 	container.append(rightColumn);
-	
+
 	// full with?
 	if (useFullWidth || (_isChildRow && _isParentFullWidth))
 	{
@@ -2442,7 +2442,7 @@ TooltipModule.prototype.addHintDiv = function(_parentDIV, _data, _isChildRow, _i
 			removeMisalignedTags: false,
 			addInLineBreaks: true
 		});
-	
+
 		text.html(parsedText.html);
 	}
 
@@ -2461,15 +2461,15 @@ TooltipModule.prototype.addHintDiv = function(_parentDIV, _data, _isChildRow, _i
 		switch(_data.divider)
 		{
 			case 'top':
-			{			
+			{
 				container.addClass('ui-control-tooltip-module-top-devider');
 			} break;
 			case 'bottom':
-			{			
+			{
 				container.addClass('ui-control-tooltip-module-bottom-devider');
 			} break;
 			case 'both':
-			{			
+			{
 				container.addClass('ui-control-tooltip-module-top-devider');
 				container.addClass('ui-control-tooltip-module-bottom-devider');
 			} break;
@@ -2621,7 +2621,7 @@ TooltipModule.prototype.notifyBackendQueryTooltipData = function (_data, _callba
                 }
             } break;
 			case 'ui-profession':
-            {	
+            {
                 if ('entityId' in _data && 'professionId' in _data)
                 {
                     SQ.call(this.mSQHandle, 'onQueryUIProfessionTooltipData', [_data.entityId, _data.professionId], _callback);
